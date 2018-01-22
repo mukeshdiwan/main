@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI receiving this Message  -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.P.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>THE FOLLOWING GANG MEMBER RECORD HAS BEEN PURGED BY THE FBI COMPUTER BECAUSE AN ASSOCIATED GANG REFERENCE RECORD IS NOT ON FILE.</nc:CaveatText>
+        <!-- Only <NIC> is provided. Additional <Database-Record> information would be filled out in the record. -->
+        <ncic:GangMemberRecord s:ref="PurgedRecord"/>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:GangMemberRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:GangMemberRecord s:id="PurgedRecord">
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC Number -->
+            <nc:IdentificationID>T123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+    </ncic:GangMemberRecord>
+</ncic-ex:Exchange>

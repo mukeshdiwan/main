@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>DW</ncic:MessageTransactionCode>
+        <ncic-ex:MaintenanceRecordData s:ref="d77e16-maintenance"/>
+        <ncic-ex:RecordIdentificationData
+            s:ref="d77e16-RecordData_missingPersonIncomingEnterDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:MaintenanceRecordData (enter) -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:MaintenanceRecordData s:id="d77e16-maintenance">
+        <ncic:WantedPersonRecord s:ref="d77e16-wantedPersonRecord_enterDataSection"/>
+    </ncic-ex:MaintenanceRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:RecordIdentificationData (identification). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:RecordIdentificationData s:id="d77e16-RecordData_missingPersonIncomingEnterDataSection">
+        <ncic:WantedPersonRecord s:ref="d77e17-wantedPersonRecord_identificationDataSection"/>
+    </ncic-ex:RecordIdentificationData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="d77e16-wantedPersonRecord_enterDataSection">
+        <ncic:Detainment s:ref="d77e794-case_detainer"/>
+    </ncic:WantedPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord (identification). -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="d77e17-wantedPersonRecord_identificationDataSection">
+        <nc:Incident s:ref="d77e17-case_wantedPerson"/>
+        <!-- NIC -->
+        <j:PersonNCICIdentification>
+            <nc:IdentificationID>123</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <j:Subject s:ref="d77e56-subject_wantedPerson"/>
+    </ncic:WantedPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e17-case_wantedPerson">
+        <j:ActivityAugmentation>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>WVM990425</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e794-organization_detainer">
+        <nc:OrganizationLocation>
+            <!-- INC - IRI literal name -->
+            <nc:LocationName>WV STATE PEN</nc:LocationName>
+        </nc:OrganizationLocation>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- IRI - Incarcerating agency ORI number -->
+                <nc:IdentificationID>WV3456789</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e56-person_wantedPerson">
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JOHN</nc:PersonGivenName>
+            <nc:PersonMiddleName>JACOB</nc:PersonMiddleName>
+            <nc:PersonSurName>JONES</nc:PersonSurName>
+        </nc:PersonName>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="d77e56-subject_wantedPerson">
+        <nc:RoleOfPerson s:ref="d77e56-person_wantedPerson"/>
+    </j:Subject>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:Detainment -->
+    <!-- ******************************************************************************** -->
+    <ncic:Detainment s:id="d77e794-case_detainer">
+        <nc:ActivityDate>
+            <!-- DOD - Date of Detainer -->
+            <nc:Date>1957-08-13</nc:Date>
+        </nc:ActivityDate>
+        <j:ActivityAugmentation>
+            <!-- DNO - Detainer number -->
+            <j:CaseNumberText>ABC123</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <j:Incarceration>
+            <nc:ActivityDateRange>
+                <!-- DIS - Date incarceration starts -->
+                <nc:StartDate>
+                    <nc:Date>1957-08-13</nc:Date>
+                </nc:StartDate>
+            </nc:ActivityDateRange>
+            <nc:SupervisionSupervisor>
+                <nc:EntityOrganization s:ref="d77e794-organization_detainer"/>
+            </nc:SupervisionSupervisor>
+        </j:Incarceration>
+        <j:Sentence>
+            <j:SentenceExpirationDate>
+                <!-- DSE - Date sentence ends -->
+                <nc:Date>1988-12-12</nc:Date>
+            </j:SentenceExpirationDate>
+        </j:Sentence>
+    </ncic:Detainment>
+</ncic-ex:Exchange>

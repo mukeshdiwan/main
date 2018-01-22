@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.A.WPT.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:MaintenanceRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:MaintenanceRecordData s:id="ClearData">
+        <ncic:WantedPersonRecord s:ref="ClearWantedPersonData"/>
+    </ncic-ex:MaintenanceRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <ncic-ex:IncomingMessage s:ref="LocateMessage"/>
+    </ncic-ex:NotificationRecordData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:RecordIdentificationData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:RecordIdentificationData s:id="d77e16-recordIdentificationData">
+        <!-- Reference to OCA -->
+        <!-- <nc:Incident s:ref="RecordIdentificationIncident"/> -->
+        
+        <!-- Reference to NAM -->
+        <nc:Person s:ref="IdentifiedPerson"/>
+        <!-- NIC (parent) - NCIC number -->
+        <j:PersonNCICIdentification>
+            <nc:IdentificationID>W012345678</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+    </ncic-ex:RecordIdentificationData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingMessage. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingMessage s:id="LocateMessage">
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>CW<!--CXS for Sexual Offender--></ncic:MessageTransactionCode>
+        <ncic-ex:MaintenanceRecordData s:ref="ClearData"/>
+        <ncic-ex:RecordIdentificationData s:ref="d77e16-recordIdentificationData"/>
+    </ncic-ex:IncomingMessage>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="ClearWantedPersonData">
+        <nc:Incident s:ref="d77e198-incident_wantedPerson"/>
+        <!-- DTE - Date of Entry -->
+        <nc:ReportedDate>
+            <nc:Date>2010-10-10</nc:Date>
+        </nc:ReportedDate>
+        <ncic:RecordStatus>
+            <nc:StatusDate>
+                <!-- DCL - Date of clear -->
+                <nc:Date>2006-05-25</nc:Date>
+            </nc:StatusDate>
+            <ncic:StatusAugmentation>
+                <!-- RCA - Recovering Agency Case number -->
+                <j:CaseNumberText>WVV998169</j:CaseNumberText>
+                <ncic:StatusIssuerOrganization s:ref="IssuerOrganization"/>
+            </ncic:StatusAugmentation>
+        </ncic:RecordStatus>
+        <j:Subject s:ref="WantedSubject"/>
+    </ncic:WantedPersonRecord>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e198-incident_wantedPerson">
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e198-organization_wantedPerson"/>
+    </nc:Incident>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e198-organization_wantedPerson">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV3456789</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="IssuerOrganization">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- RRI - Recovery agency identifier -->
+                <nc:IdentificationID>WV2000002</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="IdentifiedPerson">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1957-08-13</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JOHN</nc:PersonGivenName>
+            <nc:PersonMiddleName>JACOB</nc:PersonMiddleName>
+            <nc:PersonSurName>JONES</nc:PersonSurName>
+        </nc:PersonName>
+        <j:PersonAugmentation>
+            <j:PersonFBIIdentification>
+                <!-- FBI - FBI number -->
+                <nc:IdentificationID>123456B</nc:IdentificationID>
+            </j:PersonFBIIdentification>
+            <j:PersonNCICIdentification>
+                <!-- NIC - NCIC number -->
+                <nc:IdentificationID>W123456789</nc:IdentificationID>
+            </j:PersonNCICIdentification>
+        </j:PersonAugmentation>
+    </nc:Person>
+    
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="WantedSubject">
+        <nc:RoleOfPerson s:ref="IdentifiedPerson"/>
+        <!-- EXT - Extradition -->
+        <j:SubjectExtraditionText>EXTR</j:SubjectExtraditionText>
+    </j:Subject>
+</ncic-ex:Exchange>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.Q.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+        <ncic-ex:DuplicateRecordData s:ref="DuplicateRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+        INDIVIDUAL OF YOUR RECORD WITH NIC/<!--<NIC>-->X012345678 HAS BEEN MATCHED BY 
+        <!--<Matched Fields>-->SOC Field TO THE FOLLOWING NEWLY ENTERED/MODIFIED
+        SEX OFFENDER RECORD WITH NIC/<!--<NIC>-->X012345687 IN NCIC.  PLEASE REVIEW
+        YOUR RECORD AND UPDATE RECORD AS APPROPRIATE.
+        </nc:CaveatText>
+        <ncic:SexualOffenderRecord s:ref="InputSexOffenderRecord"/>
+        <!--<Input-Transaction>-->
+        <ncic-ex:IncomingMessage />
+    </ncic-ex:NotificationRecordData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:DuplicateRecordData. -->
+    <!-- ******************************************************************************** -->    
+    <ncic-ex:DuplicateRecordData s:id="DuplicateRecordData">
+        <!--<Duplicate-Record>-->
+        <ncic:SexualOffenderRecord s:ref="DuplicateSexOffenderRecord"/>
+    </ncic-ex:DuplicateRecordData>
+    <!-- ******************************************************************************** -->
+    <!-- ncic:SexualOffenderRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:SexualOffenderRecord s:id="InputSexOffenderRecord">
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC Number -->
+            <nc:IdentificationID>X012345687</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+    </ncic:SexualOffenderRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:SexualOffenderRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:SexualOffenderRecord s:id="DuplicateSexOffenderRecord">
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC Number -->
+            <nc:IdentificationID>X012345687</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+    </ncic:SexualOffenderRecord>
+</ncic-ex:Exchange>

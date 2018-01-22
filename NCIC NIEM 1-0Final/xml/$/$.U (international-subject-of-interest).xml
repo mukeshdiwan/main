@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -->
+                <nc:IdentificationID>DCFBIWAZ0</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.U.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+        
+        <!--<Database-Record>-->
+        <!-- This would contain the Vehicle Hit response as defined in Section 3, Part 1 of 
+             the NCIC Message Book in actual implementation -->
+        <!-- Only needed elements for the example are included here -->
+        <ncic-ex:PrimaryHitData s:ref="PrimaryHitDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            CDIG NCIC PROJECT/HIT NOTIFICATION AT <!--<hhmm>--> EST <!--<yyyymmdd>-->
+            THE FOLLOWING IS A POTENTIAL HIT ON A CDIG NCIC PROJECT RECORD/SILENT HIT RECORD
+            <!--<ORI>-->CA2000000 <!--<ATR>-->LAPD - SPECIAL INVESTIGATIONS
+            <!--<SNU>-->8001 <!--<SNA>-->LINCOLN BOULEVARD
+            <!--<CTY>-->LOS ANGELES <!--<COU>-->LOS ANGELES <!--<STA>-->CA(1) <!--<CRY>-->USA
+            <!--<CT1>-->7045551211
+            <!--<Input-Transaction>-->
+                                
+            THE FOLLOWING IS THE HIT RECORD:
+            <!--<Database-Record>-->
+            
+        </nc:CaveatText>
+
+        <!-- This is the contact information related to the ORI who entered the <Input-Transaction> -->
+        <nc:ContactInformationAssociation>
+            <nc:ContactEntity s:ref="ORIOrganization"/>
+            <nc:ContactInformation s:ref="ORIOrganizationContactInfo"/>
+        </nc:ContactInformationAssociation>
+
+        <!--<Input-Transaction>-->
+        <!-- This would contain the Vehicle Enter response as defined in Part 1 of 
+             the NCIC Message Book in actual implementation -->
+        <!-- Only needed elements for the example are included here -->
+        <ncic-ex:IncomingMessage />
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="PrimaryHitDataSection">
+        <ncic:VehicleRecord s:ref="HitOnVehicleRecord"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:VehicleRecord (database record). -->
+    <!-- ******************************************************************************** -->
+    <ncic:VehicleRecord s:id="HitOnVehicleRecord">
+        <!-- This would contain the Vehicle Hit response as defined in Section 3, Part 1 of 
+             the NCIC Message Book in actual implementation -->
+    </ncic:VehicleRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Address. -->
+    <!-- ******************************************************************************** -->
+    <nc:Address s:id="NotificationORIAddress">
+        <nc:LocationStreet>
+            <!-- SNU - Street number -->
+            <nc:StreetNumberText>8001</nc:StreetNumberText>
+            <!-- SNA - Street name -->
+            <nc:StreetName>LINCOLN BOULEVARD</nc:StreetName>
+        </nc:LocationStreet>
+        <!-- CTY - City name -->
+        <nc:LocationCityName>LOS ANGELES</nc:LocationCityName>
+        <!-- COU - County name -->
+        <nc:LocationCountyName>LOS ANGELES</nc:LocationCountyName>
+        <!-- STA - State name -->
+        <j:LocationStateNCICLSTACode>CA</j:LocationStateNCICLSTACode>
+        <!-- CRY - Country name -->
+        <nc:LocationCountryName>USA</nc:LocationCountryName>
+    </nc:Address>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:ContactInformation. -->
+    <!-- ******************************************************************************** -->
+    <nc:ContactInformation s:id="ORIOrganizationContactInfo">
+        <nc:ContactTelephoneNumber>
+            <nc:FullTelephoneNumber>
+                <!-- CT1 - Confirmation Telephone Number (Primary) -->
+                <nc:TelephoneNumberFullID>7045551211</nc:TelephoneNumberFullID>
+            </nc:FullTelephoneNumber>
+        </nc:ContactTelephoneNumber>
+        <nc:ContactMailingAddress s:ref="NotificationORIAddress"/>
+    </nc:ContactInformation>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Entity. -->
+    <!-- ******************************************************************************** -->
+    <nc:Entity s:id="ORIOrganization">
+        <nc:EntityOrganization s:ref="NotificationOrganization"/>
+    </nc:Entity>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="NotificationOrganization">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>LAPD - SPECIAL INVESTIGATIONS</nc:OrganizationName>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Orginating agency identifier -->
+                <nc:IdentificationID>CA2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+</ncic-ex:Exchange>

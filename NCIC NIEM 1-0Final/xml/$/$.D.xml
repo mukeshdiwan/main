@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- ORI receiving this Message  -->
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.D.</ncic:MessageTransactionText>
+        <ncic-ex:DuplicateRecordData s:ref="DuplicateRecordInfo"/>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            <!--<ORI-Of-Duplicate-Database-Record>-->WV3000000
+            <!--<Database-Record-Status>-->LOCATED POSSIBLE DUPLICATE RECORD AT <!--<hhmm>-->1320 EST <!--<yyyymmdd>-->20040412
+            THE <!--<Database-Record-Status>-->LOCATED RECORD IS: 
+            <!--<IMMED-Confirm-Caveat>-->IMMED CONFIRM RECORD WITH ORI
+            YOUR RECORD IS:
+        </nc:CaveatText>
+        <!--<Database-Record>-->
+        <ncic:VehicleRecord s:ref="VehicleNotificationRecord"/>
+        <j:OrganizationORIIdentification>
+            <!-- ORI - Originating Agency Identifier (ORI of Duplicate Database Record) -->
+            <nc:IdentificationID>WV3000000</nc:IdentificationID>
+        </j:OrganizationORIIdentification>
+        <!-- DateTime of the Notification Triggering Event -->
+        <ncic:NotificationDateTime>2004-04-12T13:20:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- The following ncic:VehicleRecord shouldn't be use in an actual implementation and 
+         is only represented here as an example sample -->
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:DuplicateRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:DuplicateRecordData s:id="DuplicateRecordInfo">
+        <ncic:VehicleRecord s:ref="DuplicateRecord"/>
+    </ncic-ex:DuplicateRecordData>
+
+    <!-- The following ncic:VehicleRecord shouldn't be use in an actual implementation and 
+         is only represented here as an example sample -->
+    <!-- This record is the one that was entered that was searched in the NCIC databases and 
+         matched an existing record causing the notification of a duplicate record in the 
+         database to be triggered -->
+    <!-- ******************************************************************************** -->
+    <!-- ncic:VehicleRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:VehicleRecord s:id="VehicleNotificationRecord">
+        <nc:Incident s:ref="NotificationRecordIncident"/>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionCode>LV</ncic:MessageTransactionCode>
+        <!-- MKT - Message Key Translation -->
+        <ncic:MessageTransactionText>LOCATE STOLEN VEHICLE</ncic:MessageTransactionText>
+        <ncic:RecordStatus>
+            <nc:StatusDate>
+                <!-- DOR - Date of Recovery -->
+                <nc:Date>2005-10-27</nc:Date>
+            </nc:StatusDate>
+            <!--<Database-Record-Status>-->
+            <nc:StatusText>LOCATED</nc:StatusText>
+            <ncic:StatusAugmentation>
+                <!-- RCA - Recovering Agency Case number -->
+                <j:CaseNumberText>WVV998169</j:CaseNumberText>
+            </ncic:StatusAugmentation>
+        </ncic:RecordStatus>
+        <j:ItemNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>V000000001</nc:IdentificationID>
+        </j:ItemNCICIdentification>
+        <!-- Vehicle and Vehicle Registration Info Association -->
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="NotificationVehicleLicensePlateInfo"/>
+            <nc:Item s:ref="NotificationVehicleInfo"/>
+        </j:ConveyanceRegistrationAssociation>
+        <ncic:RecoveredItemOffenseSummaryAssociation>
+            <nc:Item s:ref="NotificationRecordItem"/>
+            <j:OffenseSummary s:ref="NotificationRecordOffenseSummary"/>
+        </ncic:RecoveredItemOffenseSummaryAssociation>
+    </ncic:VehicleRecord>
+
+    <!-- The following ncic:VehicleRecord shouldn't be use in an actual implementation and 
+         is only represented here as an example sample -->
+    <!-- This record is the duplicate record found in the NCIC databases and 
+         caused the notification of a duplicate record in the database to be triggered -->
+    <!-- ******************************************************************************** -->
+    <!-- ncic:VehicleRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:VehicleRecord s:id="DuplicateRecord">
+        <nc:Incident s:ref="DuplicateVehicleIncident"/>
+        <!-- ORI-Translation - Originating agency identifier -->
+        <nc:OrganizationDescriptionText>ORI IS <!--<ATR>-->WV STATE PRISON <!--<CT1>-->3045551234</nc:OrganizationDescriptionText>
+        <ncic:InvestigativeInterest s:ref="InvestigativeInterestIncident"/>
+        <!-- MKT - Message Key Translation -->
+        <ncic:MessageTransactionText>STOLEN VEHICLE</ncic:MessageTransactionText>
+        <!-- NOA - Notify originating agency -->
+        <ncic:NotifyOriginatingAgencyIndicator>true</ncic:NotifyOriginatingAgencyIndicator>
+        <ncic:RecordStatus>
+            <nc:StatusDate>
+                <!-- DOR - Date of recovery -->
+                <nc:Date>2100-01-01</nc:Date>
+            </nc:StatusDate>
+            <nc:StatusText>LOCATED</nc:StatusText>
+            <ncic:StatusAugmentation>
+                <!-- RCA - Recovering Agency Case number -->
+                <j:CaseNumberText/>
+                <ncic:StatusIssuerOrganization s:ref="RecoveryOrganization"/>
+            </ncic:StatusAugmentation>
+        </ncic:RecordStatus>
+        <j:ItemNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>V000000002</nc:IdentificationID>
+        </j:ItemNCICIdentification>
+        <!-- Vehicle and Vehicle Registration Info Association -->
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="DuplicateVehicleLicensePlateInfo"/>
+            <nc:Item s:ref="DuplicateVehicleInfo"/>
+        </j:ConveyanceRegistrationAssociation>
+        <!-- OPT - Option type for public dissemination date/text. -->
+        <ncic:PublicDisseminationDateText>IN</ncic:PublicDisseminationDateText>
+    </ncic:VehicleRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="NotificationRecordIncident">
+        <j:ActivityAugmentation>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>WVV990167</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <!-- RPP - Reason for Property Record Removal -->
+        <ncic:RecordRemovalReasonCode>NOT LOST</ncic:RecordRemovalReasonCode>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. (vehicle) -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="DuplicateVehicleIncident">
+        <nc:ActivityDate>
+            <!-- DOT - Date of theft -->
+            <nc:Date>2005-10-27</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>VEHICLE STOLEN FROM MAIN STREET</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <j:CaseLinkage>
+                <!-- LKA - Linkage Case Number -->
+                <j:CaseLinkageNumberText>WV-123456</j:CaseLinkageNumberText>
+                <j:OrganizationORIIdentification>
+                    <!-- LKI - Linkage Agency Identifier -->
+                    <nc:IdentificationID>WV456123</nc:IdentificationID>
+                </j:OrganizationORIIdentification>
+            </j:CaseLinkage>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>WVV990167</j:CaseNumberText>
+            <j:ActivityDocumentValidator>
+                <nc:EntityOrganization s:ref="ValidationOrganization"/>
+            </j:ActivityDocumentValidator>
+        </j:ActivityAugmentation>
+        <ncic:ActivityAugmentation>
+            <ncic:RecordValidationDate>
+                <!-- VLD - Date of Last Validation -->
+                <nc:Date>2005-10-27</nc:Date>
+            </ncic:RecordValidationDate>
+        </ncic:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Item. -->
+    <!-- ******************************************************************************** -->
+    <nc:Item s:id="NotificationRecordItem">
+        <j:ItemAugmentation>
+            <!-- VNP - Value of Recovered Property -->
+            <nc:ItemRecoveredValue>
+                <nc:ItemValueAmount>
+                    <nc:Amount>10000</nc:Amount>
+                </nc:ItemValueAmount>
+            </nc:ItemRecoveredValue>
+            <!-- VOR - Value of Other Recovered Property -->
+            <j:ItemRecoveredAdditionalValue>
+                <nc:ItemValueAmount>
+                    <nc:Amount>1000</nc:Amount>
+                </nc:ItemValueAmount>
+            </j:ItemRecoveredAdditionalValue>
+            <!-- VRC - Value of Recovered Contraband -->
+            <j:ItemRecoveredContrabandValue>
+                <nc:ItemValueAmount>
+                    <nc:Amount>20000</nc:Amount>
+                </nc:ItemValueAmount>
+            </j:ItemRecoveredContrabandValue>
+        </j:ItemAugmentation>
+    </nc:Item>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (investigative interest) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="InvestigativeInterestOrganization">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>WV STATE PRISON</nc:OrganizationName>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation Telephone Number (Primary) -->
+                    <nc:TelephoneNumberFullID>3045551234</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (validator) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="ValidationOrganization">
+        <!-- VLN - Name of validator -->
+        <nc:OrganizationName>WV DMV</nc:OrganizationName>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (recovery) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="RecoveryOrganization">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- RRI - Recovery agency identifier -->
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vehicle. -->
+    <!-- ******************************************************************************** -->
+    <nc:Vehicle s:id="NotificationVehicleInfo">
+        <nc:VehicleIdentification>
+            <!-- VIN - Vehicle identification number -->
+            <nc:IdentificationID>WDBBA48D1GA051451</nc:IdentificationID>
+        </nc:VehicleIdentification>
+    </nc:Vehicle>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vehicle. -->
+    <!-- ******************************************************************************** -->
+    <nc:Vehicle s:id="DuplicateVehicleInfo">
+        <!-- OAN - Owner applied number -->
+        <nc:ItemOwnerAppliedID>THE MERRY MERZ</nc:ItemOwnerAppliedID>
+        <!-- VCO - Vehicle color -->
+        <ncic:ConveyanceColorPrimaryCodeText>BLK</ncic:ConveyanceColorPrimaryCodeText>
+        <j:ConveyanceColorSecondaryCode>BRZ</j:ConveyanceColorSecondaryCode>
+        <nc:ItemImage>
+            <j:ImageAugmentation>
+                <j:ImageNCICIdentification>
+                    <!-- IMN - Image NCIC number -->
+                    <nc:IdentificationID>I856563800</nc:IdentificationID>
+                </j:ImageNCICIdentification>
+                <!-- IMT - Image type -->
+                <j:ImageCategoryCode>V</j:ImageCategoryCode>
+            </j:ImageAugmentation>
+        </nc:ItemImage>
+        <!-- VYR - Vehicle year -->
+        <nc:ItemModelYearDate>2006</nc:ItemModelYearDate>
+        <!-- VST - Vehicle style -->
+        <ncic:VehicleStyleCode>4D</ncic:VehicleStyleCode>
+        <nc:VehicleIdentification>
+            <!-- VIN - Vehicle identification number -->
+            <nc:IdentificationID>WDBBA48D1GA051451</nc:IdentificationID>
+        </nc:VehicleIdentification>
+        <!-- VMA - Vehicle make -->
+        <ncic:VehicleMakeCodeText>MERZ</ncic:VehicleMakeCodeText>
+        <!-- VMO - Vehicle model -->
+        <ncic:VehicleModelCodeText>560</ncic:VehicleModelCodeText>
+    </nc:Vehicle>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="NotificationVehicleLicensePlateInfo">
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number -->
+            <nc:IdentificationID>DOE345</nc:IdentificationID>
+        </j:ConveyanceRegistrationPlateIdentification>
+    </j:ConveyanceRegistration>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="DuplicateVehicleLicensePlateInfo">
+        <j:ConveyanceRegistrationDecal>
+            <!-- LIY - License plate year of expiration -->
+            <nc:DecalYearDate>1999</nc:DecalYearDate>
+        </j:ConveyanceRegistrationDecal>
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number -->
+            <nc:IdentificationID>DOE345</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- LIS - License plate state -->
+                <j:JurisdictionNCICLSTACode>AZ</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+        <!-- LIT - License plate type -->
+        <ncic:ConveyanceRegistrationPlateCategoryCode>SC</ncic:ConveyanceRegistrationPlateCategoryCode>
+    </j:ConveyanceRegistration>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:OffenseSummary. -->
+    <!-- ******************************************************************************** -->
+    <j:OffenseSummary s:id="NotificationRecordOffenseSummary">
+        <!-- NPA - Number of Persons Apprehended -->
+        <j:OffenseSummaryArrestQuantity>0</j:OffenseSummaryArrestQuantity>
+        <ncic:OffenseSummaryAugmentation>
+            <!-- NPF - Number of Missing Persons Found -->
+            <ncic:OffenseSummaryPersonsFoundQuantity>0</ncic:OffenseSummaryPersonsFoundQuantity>
+        </ncic:OffenseSummaryAugmentation>
+    </j:OffenseSummary>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:InvestigativeInterest. -->
+    <!-- ******************************************************************************** -->
+    <ncic:InvestigativeInterest s:id="InvestigativeInterestIncident">
+        <nc:ActivityDate>
+            <!-- DII - Date of investigative interest -->
+            <nc:Date>2000-03-12</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>UNLOCATED</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <!-- ICA - Investigative Interest Case Number -->
+            <j:CaseNumberText>VA-V002948</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="InvestigativeInterestOrganization"/>
+    </ncic:InvestigativeInterest>
+</ncic-ex:Exchange>

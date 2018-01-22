@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- ORI receiving this Message  -->
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.K.PWI</ncic:MessageTransactionText>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            <!--<Time-Period-Singular>-->72 HOUR PERSON WITH INFORMATION FOLLOW-UP
+            <!--<ORI-Of-Database-Record>-->WV1000000
+            NOTIFICATION AT <!--<hhmm>-->1320 EST <!--<yyyymmdd>-->20040412
+            PERSON WITH INFORMATION <!--<Notification-Conditions>-->HAS BEEN IN THE FOLLOWING RECORD FOR 72 HOURS
+            VERIFY STATUS OF PERSON WITH INFORMATION AND ATTEMPT TO OBTAIN WARRANT
+            
+            <!--<Database-Record>-->
+        </nc:CaveatText>
+
+        <!-- Database-Record -->
+        <!-- This would contain the Primary Hit response as defined in Section 3, Part 1 of 
+             the NCIC Message Book (excluding all alerts, ORI translations, all caveats, VLN 
+             text, and all image fields) in actual implementation -->
+        <!-- Only needed elements for the example are included here -->
+        <ncic:MissingPersonRecord s:ref="NotificationRecord"/>
+
+        <!-- Current System Time -->
+        <ncic:NotificationDateTime>2004-04-12T13:20:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:MissingPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:MissingPersonRecord s:id="NotificationRecord">
+        <nc:Incident s:ref="NotificationCase"/>
+    </ncic:MissingPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="NotificationCase">
+        <nc:IncidentJurisdictionalOrganization s:ref="InvestigativeInterestOrganization"/>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (investigative interest) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="InvestigativeInterestOrganization">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+</ncic-ex:Exchange>

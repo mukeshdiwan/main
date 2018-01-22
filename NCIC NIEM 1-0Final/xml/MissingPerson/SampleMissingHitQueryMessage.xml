@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>QM</ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData
+            s:ref="d77e1366-incomingRecordData_missingPersonIncomingQueryDataSection"/>
+        <ncic-ex:PrimaryHitData s:ref="d77e72-primaryHitData_hitDataSectionPrimary"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (query). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData
+        s:id="d77e1366-incomingRecordData_missingPersonIncomingQueryDataSection">
+        <ncic:MissingPersonRecord s:ref="d77e1367-missingPersonRecord_queryDataSection"/>
+        <!-- ENS - Expanded name search | /ncic:Message[1]/n-mis:QueryDataSection[1]/n-mis:MissingPersonQuery[1]/cjis:ExpandedNameSearchIndicator[1] -->
+        <ncic:ExtendedNameSearchIndicator>true</ncic:ExtendedNameSearchIndicator>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="d77e72-primaryHitData_hitDataSectionPrimary">
+        <!-- Caveat data -->
+        <nc:CaveatText>*** VERIFY VIN/WDBBA48D1GA051451; IT DOES NOT CONFORM TO VIN STANDARDS FOR 1981 AND LATER VEHICLES</nc:CaveatText>
+        <!-- Caveat data -->
+        <nc:CaveatText>ATTENTION: THE SOC USED IN YOUR TRANSACTION HAS NOT BEEN ASSIGNED BY THE SOCIAL SECURITY ADMINISTRATION. PLEASE CHECK FOR A DATA ENTRY ERROR.</nc:CaveatText>
+        <ncic:MissingPersonRecord s:ref="d77e74-missingPersonRecord_personHitDataResponse"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:MissingPersonRecord (query). -->
+    <!-- ******************************************************************************** -->
+    <ncic:MissingPersonRecord s:id="d77e1367-missingPersonRecord_queryDataSection">
+        <j:MissingPerson s:ref="d77e1367-missingPerson_missingPerson"/>
+    </ncic:MissingPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:MissingPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:MissingPersonRecord s:id="d77e74-missingPersonRecord_personHitDataResponse">
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>**TEST**THIS RESPONSE IS FROM NCIC TEST SYSTEM.</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>***AMBER ALERT***ISSUED FOR NIC/<!--<NIC>-->M123456789***AMBER ALERT***</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>*****PERSON WITH INFORMATION ASSOCIATED WITH NIC/M123456789*****</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>*****RECORD NIC/M123456789 IS BASED ON PERSON WITH INFORMATION MATCH*****</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>*****DO NOT ARREST OR DETAIN BASED ON PERSON WITH INFORMATION HIT*****</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>WARNING - DO NOT DETAIN BASED UPON THIS MISSING PERON RECORD</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>WARNING - THE FOLLOWING RECORD CONTAINS EXPIRED LICENSE PLATE DATA.  USE CAUTION, CONTACT ENTERING AGENCY TO CONFIRM STATUS</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>RECORD NIC/NIC32001 IS BASED ON PARTIAL VIN SEARCH - VERIFY ALL DATA BEFORE TAKING FURTHER ACTION BASED ON THIS RESPONSE</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>RECORD NIC/M123456789 IS BASED ON PARTIAL LIC SEARCH - VERIFY ALL DATA BEFORE TAKING FURTHER ACTION BASED ON THIS RESPONSE</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>DENTAL IMAGES FOR THE SUBJECT OF THIS RECORD ARE AVAILABLE ON THE LEO NDIR</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>REPEAT - DO NOT DETAIN BASED UPON NCIC RECORD WITH NIC/M123456789 FOREIGN MISSING OR ABDUCTED PERSON - IMMEDIATELY CONTACT INTERPOL, US DOJ, NLETS ORI/DCINTER00, OR TEL. NO. (202) 616-9000.</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>IMMED CONFIRM RECORD WITH ORI AND FOLLOW PROCEDURES IN INTERSTATE COMPACT ON JUVENILES</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>***REPEAT - DO NOT ARREST OR DETAIN BASED ON PERSON WITH INFORMATION HIT***</nc:CaveatText>
+        <nc:Incident s:ref="d77e124-incident_missingPerson"/>
+        <nc:LastUpdatedDate>
+            <!-- DLU - Date of last update -->
+            <nc:DateTime>2007-12-12T11:00:00-05:00</nc:DateTime>
+        </nc:LastUpdatedDate>
+        <!-- ORI-Translation - Originating agency identifier -->
+        <nc:OrganizationDescriptionText>ORI IS <!--<ATR>-->BUREAU OF IMMIGRATION AND CUSTOMS ENFORCEMENT, LAW ENFORCEMENT SUPPORT CENTER <!--<CT1>-->877 999-5372</nc:OrganizationDescriptionText>
+        <nc:ReportedDate>
+            <!-- DTE - Date of Entry -->
+            <nc:DateTime>2005-05-20T14:00:00-04:00</nc:DateTime>
+        </nc:ReportedDate>
+        <ncic:InvestigativeInterest s:ref="d77e682-incident_investigativeInterest"/>
+        <!-- MKE-Translation - Message key -->
+        <ncic:MessageTransactionText>MISSING PERSON JUVENILE</ncic:MessageTransactionText>
+        <!-- NOA - Notify originating agency -->
+        <ncic:NotifyOriginatingAgencyIndicator>true</ncic:NotifyOriginatingAgencyIndicator>
+        <ncic:RecordExpirationDate>
+            <!-- Retirement-Timestamp - Retirement timestamp -->
+            <nc:Date>2007-12-12</nc:Date>
+        </ncic:RecordExpirationDate>
+        <ncic:RecordStatus>
+            <nc:StatusDate>
+                <!-- DCL - Date of clear -->
+                <nc:Date>2006-05-25</nc:Date>
+            </nc:StatusDate>
+            <nc:StatusText>CLEARED</nc:StatusText>
+            <ncic:StatusAugmentation>
+                <!-- RCA - Recovering Agency Case number -->
+                <j:CaseNumberText>WV-M990426</j:CaseNumberText>
+                <!-- RRI - Recovering Agency Identifier -->
+                <ncic:StatusIssuerOrganization s:ref="d77e644-organization_recovered"/>
+            </ncic:StatusAugmentation>
+        </ncic:RecordStatus>
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="d77e707-conveyanceRegistration_licenseInformation"/>
+            <j:ItemRegistrationHolder s:ref="d77e144-person_missingPerson"/>
+        </j:ConveyanceRegistrationAssociation>
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="d77e294-conveyanceRegistration_missingPerson"/>
+            <nc:Item s:ref="d77e271-vehicle_missingPerson"/>
+        </j:ConveyanceRegistrationAssociation>
+        <j:ConveyanceRegistrationAssociation>
+            <ncic:AssociationAugmentation>
+                <ncic:SupplementalRecordIndicator>true</ncic:SupplementalRecordIndicator>
+            </ncic:AssociationAugmentation>
+            <nc:Item s:ref="d77e394-vehicle_supplemental"/>
+        </j:ConveyanceRegistrationAssociation>
+        <j:ConveyanceRegistrationAssociation>
+            <ncic:AssociationAugmentation>
+                <ncic:SupplementalRecordIndicator>true</ncic:SupplementalRecordIndicator>
+            </ncic:AssociationAugmentation>
+            <j:ItemRegistration s:ref="d77e417-conveyanceRegistration_supplemental"/>
+        </j:ConveyanceRegistrationAssociation>
+        <j:DriverLicenseAssociation>
+            <j:DriverLicense s:ref="d77e258-driverLicense_missingPerson"/>
+            <nc:Person s:ref="d77e144-person_missingPerson"/>
+        </j:DriverLicenseAssociation>
+        <j:DriverLicenseAssociation>
+            <ncic:AssociationAugmentation>
+                <ncic:SupplementalRecordIndicator>true</ncic:SupplementalRecordIndicator>
+            </ncic:AssociationAugmentation>
+            <j:DriverLicense s:ref="d77e384-driverLicense_supplemental"/>
+            <nc:Person s:ref="d77e144-person_missingPerson"/>
+        </j:DriverLicenseAssociation>
+        <!-- CMC - Caution and medical conditions -->
+        <j:PersonCautionInformationText>90 - Heart Condition</j:PersonCautionInformationText>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>M123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <ncic:ImagePerson s:ref="d77e722-person_photograph"/>
+        <ncic:SupplementalPerson s:ref="d77e323-person_supplemental"/>
+        <nc:ItemEntityAssociation>
+            <nc:Entity s:ref="d77e144-missingPerson_missingPerson"/>
+            <nc:Item s:ref="d77e176-jewelry_missingPerson"/>
+        </nc:ItemEntityAssociation>
+        <j:MissingPerson s:ref="d77e144-missingPerson_missingPerson"/>
+        <ncic:PersonWithInformation s:ref="d77e766-personWithInformation"/>
+    </ncic:MissingPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:PersonWithInformation. -->
+    <!-- ******************************************************************************** -->
+    <ncic:PersonWithInformation s:id="d77e766-personWithInformation">
+        <nc:RoleOfPerson s:ref="d77e771-person"/>
+        <!-- PMI - Person with information miscellaneous information -->
+        <nc:StatusDescriptionText>MISSING WITH 3 YEAR OLD DAUGHTER</nc:StatusDescriptionText>
+        <ncic:SupplementalPersonWithInformation s:ref="d77e818-personSupplemental"
+        />
+    </ncic:PersonWithInformation>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e124-incident_missingPerson">
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>CAR FOUND ABANDONED IN NYC</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <j:CaseLinkage>
+                <!-- LKA - Linkage Case Number -->
+                <j:CaseLinkageNumberText>WV-123456</j:CaseLinkageNumberText>
+                <j:OrganizationORIIdentification>
+                    <!-- LKI - Linkage Agency Identifier -->
+                    <nc:IdentificationID>WV456123</nc:IdentificationID>
+                </j:OrganizationORIIdentification>
+            </j:CaseLinkage>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>WVM990425</j:CaseNumberText>
+            <j:ActivityDocumentValidator>
+                <nc:EntityOrganization s:ref="validator_organization"/>
+            </j:ActivityDocumentValidator>
+        </j:ActivityAugmentation>
+        <ncic:ActivityAugmentation>
+            <ncic:RecordValidationDate>
+                <!-- VLD - Date of Validation -->
+                <nc:Date>1998-05-15</nc:Date>
+            </ncic:RecordValidationDate>
+        </ncic:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e124-organization_missingPerson"/>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (validator) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="validator_organization">
+        <!-- VLN - Name of validator -->
+        <nc:OrganizationName>NCMEC</nc:OrganizationName>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (investigative interest) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e682-organization_investigativeInterest">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>NEW MEXICO CHILD ADVOCATES OFFICE</nc:OrganizationName>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation telephone number -->
+                    <nc:TelephoneNumberFullID>3045551234</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- IIA - Investigation interest agency identifier -->
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (missing person) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e124-organization_missingPerson">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (recovered by) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e644-organization_recovered">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- RRI - Recovery agency identifier -->
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (missing) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e1367-person_missingPerson">
+        <nc:PersonAgeMeasure>
+            <!-- AGE - Approximate age -->
+            <nc:MeasureValueText>25</nc:MeasureValueText>
+        </nc:PersonAgeMeasure>
+        <!-- ETN - Ethnicity -->
+        <j:PersonEthnicityCode>N</j:PersonEthnicityCode>
+        <!-- EYE - Eye color -->
+        <ncic:PersonEyeColorCode>MAR</ncic:PersonEyeColorCode>
+        <!-- HAI - Hair color -->
+        <ncic:PersonHairColorCode>RED</ncic:PersonHairColorCode>
+        <nc:PersonHeightMeasure>
+            <!-- HGT - Height -->
+            <nc:MeasureValueText>504</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>PHOEBE</nc:PersonGivenName>
+            <nc:PersonMiddleName>PATRICIA</nc:PersonMiddleName>
+            <nc:PersonSurName>PALMER</nc:PersonSurName>
+        </nc:PersonName>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>W</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>F</j:PersonSexCode>
+        <nc:PersonWeightMeasure>
+            <!-- WGT - Weight -->
+            <nc:MeasureValueText>121</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (person of interest) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e771-person">
+        <nc:PersonBirthDate>
+            <!-- PIB - Person with information date of birth -->
+            <nc:Date>1999-08-13</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- PIE - Person with information ethnicity -->
+        <j:PersonEthnicityCode>N</j:PersonEthnicityCode>
+        <!-- PEY - Eye color -->
+        <ncic:PersonEyeColorCode>BR0</ncic:PersonEyeColorCode>
+        <!-- PHA - Person with information hair color -->
+        <ncic:PersonHairColorCode>BLK</ncic:PersonHairColorCode>
+        <nc:PersonHeightMeasure>
+            <!-- PHG - Person with information height -->
+            <nc:MeasureValueText>504</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <!-- PIN - Person with information name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>PHOEBE</nc:PersonGivenName>
+            <nc:PersonMiddleName>PATRICIA</nc:PersonMiddleName>
+            <nc:PersonSurName>PALMER</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonPhysicalFeature>
+            <!-- PSM - Person with information scars/marks/tattoos -->
+            <nc:PhysicalFeatureCategoryText>TD HYPNOTI</nc:PhysicalFeatureCategoryText>
+        </nc:PersonPhysicalFeature>
+        <!-- PIR - Person with information race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <!-- PIX - Person with information sex -->
+        <j:PersonSexCode>F</j:PersonSexCode>
+        <!-- PSK - Person with information skin tone -->
+        <ncic:PersonSkinToneCode>DRK</ncic:PersonSkinToneCode>
+        <nc:PersonSSNIdentification>
+            <!-- PSS - Person with information social security number -->
+            <nc:IdentificationID>311709998</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <nc:PersonWeightMeasure>
+            <!--PWG - Person with information weight -->
+            <nc:MeasureValueText>121</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (supplemental) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e818-personSupplemental">
+        <nc:PersonBirthDate>
+            <!-- PIB - Person with information date of birth -->
+            <nc:Date>1986-08-13</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- PAK - Person with information alias -->
+        <nc:PersonName>
+            <nc:PersonGivenName>PHOEBE</nc:PersonGivenName>
+            <nc:PersonMiddleName>PATRICIA</nc:PersonMiddleName>
+            <nc:PersonSurName>PALMER</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonPhysicalFeature>
+            <!-- PSM - Person with information scars/marks/tattoos -->
+            <nc:PhysicalFeatureCategoryText>CON LENSES</nc:PhysicalFeatureCategoryText>
+        </nc:PersonPhysicalFeature>
+        <nc:PersonSSNIdentification>
+            <!-- PSS - Person with information social security number -->
+            <nc:IdentificationID>567567567</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (missing) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e144-person_missingPerson">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1988-08-13</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- BLT - Blood type -->
+        <ncic:PersonBloodTypeCode>AP0S</ncic:PersonBloodTypeCode>
+        <!-- BXR - Body x-rays -->
+        <j:PersonBodyXRaysAvailableCode>N</j:PersonBodyXRaysAvailableCode>
+        <!-- CRC - Circumcision -->
+        <nc:PersonCircumcisionIndicator>false</nc:PersonCircumcisionIndicator>
+        <!-- CTZ - Citizenship -->
+        <nc:PersonCitizenshipText>US</nc:PersonCitizenshipText>
+        <!-- ETN - Ethnicity -->
+        <j:PersonEthnicityCode>N</j:PersonEthnicityCode>
+        <!-- EYE - Eye color -->
+        <ncic:PersonEyeColorCode>BR0</ncic:PersonEyeColorCode>
+        <!-- VRX - Corrective vision prescription -->
+        <nc:PersonEyewearText>OS-2D00ED25X95</nc:PersonEyewearText>
+        <!-- HAI - Hair color -->
+        <ncic:PersonHairColorCode>BLK</ncic:PersonHairColorCode>
+        <nc:PersonHeightMeasure>
+            <!-- HGT - Height -->
+            <nc:MeasureValueText>504</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <nc:PersonName>
+            <!-- NAM - Name -->
+            <nc:PersonGivenName>PHOEBE</nc:PersonGivenName>
+            <nc:PersonMiddleName>PATRICIA</nc:PersonMiddleName>
+            <nc:PersonSurName>PALMER</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonOtherIdentification>
+            <!-- MNU - Miscellaneous number -->
+            <nc:IdentificationID>AS-012345678912</nc:IdentificationID>
+        </nc:PersonOtherIdentification>
+        <nc:PersonPhysicalFeature>
+            <!-- SMT - Scars/marks/tattoos -->
+            <nc:PhysicalFeatureCategoryText>TD HYPNOTI</nc:PhysicalFeatureCategoryText>
+        </nc:PersonPhysicalFeature>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>F</j:PersonSexCode>
+        <!-- SKN - Skin tone -->
+        <ncic:PersonSkinToneCode>DRK</ncic:PersonSkinToneCode>
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social security number -->
+            <nc:IdentificationID>311709998</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <nc:PersonWeightMeasure>
+            <!-- WGT - Weight -->
+            <nc:MeasureValueText>121</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+        <j:PersonAugmentation>
+            <!-- DNA - DNA availability -->
+            <j:DNACollectedIndicator>true</j:DNACollectedIndicator>
+            <!-- DLO - DNA location -->
+            <ncic:DNALocationText>NATIONAL DNA REPOSITORY</ncic:DNALocationText>
+            <!-- FPC - Fingerprint classification -->
+            <ncic:FingerprintClassificationText>1.0.2117113TT0916111</ncic:FingerprintClassificationText>
+            <!-- DRE - Dentist's remarks -->
+            <j:PersonDentalCharacteristicGeneralText>EXCELLENT TEETH VERY WELL CARED FOR</j:PersonDentalCharacteristicGeneralText>
+            <!-- DCH - Dentist Characteristics -->
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>R</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>01</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>02</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>03</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>04</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>F</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>05</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>L</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>06</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>X</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>07</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>08</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>09</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>10</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>11</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>12</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>13</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>14</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>15</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>16</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>17</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>18</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>19</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>20</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>21</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>22</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>23</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>24</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>25</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>26</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>27</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>28</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>29</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>30</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>V</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>31</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <ncic:PersonDentalCharacteristic>
+                <ncic:PersonDentalCharacteristicNCICCode>X</ncic:PersonDentalCharacteristicNCICCode>
+                <j:ToothPositionIDCode>32</j:ToothPositionIDCode>
+            </ncic:PersonDentalCharacteristic>
+            <!-- MPA - Dental models and/or photos of teeth available -->
+            <j:PersonDentalPhotoModelAvailableIndicator>true</j:PersonDentalPhotoModelAvailableIndicator>
+            <!-- DXR - Dental X-rays available -->
+            <j:PersonDentalXRayAvailableIndicator>true</j:PersonDentalXRayAvailableIndicator>
+            <j:PersonEmancipationDate>
+                <!-- DOE - Date of emancipation -->
+                <nc:Date>2007-08-13</nc:Date>
+            </j:PersonEmancipationDate>
+            <j:PersonFBIIdentification>
+                <!-- FBI - FBI number -->
+                <nc:IdentificationID>123456B</nc:IdentificationID>
+            </j:PersonFBIIdentification>
+            <!-- FPA - Footprints available -->
+            <j:PersonFootPrintAvailableIndicator>true</j:PersonFootPrintAvailableIndicator>
+            <!-- POB - Place of birth -->
+            <j:PersonBirthplaceCode>T0</j:PersonBirthplaceCode>
+        </j:PersonAugmentation>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (supplemental) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e323-person_supplemental">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1988-08-13</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- CTZ - Citizenship -->
+        <nc:PersonCitizenshipText>US</nc:PersonCitizenshipText>
+        <nc:PersonDigitalImage>
+            <j:ImageAugmentation>
+                <j:ImageNCICIdentification>
+                    <!-- IMN - Image NCIC number -->
+                    <nc:IdentificationID>I123456789</nc:IdentificationID>
+                </j:ImageNCICIdentification>
+                <!-- IMT - Image type -->
+                <j:ImageCategoryCode>I</j:ImageCategoryCode>
+            </j:ImageAugmentation>
+        </nc:PersonDigitalImage>
+        <!-- AKA - Also known as (Alias name) -->
+        <nc:PersonName>
+            <nc:PersonGivenName>PRINCESS</nc:PersonGivenName>
+            <nc:PersonMiddleName>PHOEBE</nc:PersonMiddleName>
+            <nc:PersonSurName>PALMER</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonOtherIdentification>
+            <!-- MNU - Miscellaneous number -->
+            <nc:IdentificationID>AS-012345678912</nc:IdentificationID>
+        </nc:PersonOtherIdentification>
+        <nc:PersonPhysicalFeature>
+            <!-- SMT - Scars/marks/tattoos -->
+            <nc:PhysicalFeatureCategoryText>CON LENSES</nc:PhysicalFeatureCategoryText>
+        </nc:PersonPhysicalFeature>
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social security number -->
+            <nc:IdentificationID>123456789</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (photograph) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e722-person_photograph">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1988-08-13</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonDigitalImage>
+            <!-- Image-Data - Image data -->
+            <nc:Base64BinaryObject>mrHbPdrko3u1s7ahtgPBjtmO1s85tfG2U7pbofy9</nc:Base64BinaryObject>
+            <nc:BinaryCaptureDate>
+                <!-- DOI - Date of image -->
+                <nc:Date>2005-12-25</nc:Date>
+            </nc:BinaryCaptureDate>
+            <!-- MIS - Miscellaneous remarks -->
+            <nc:BinaryDescriptionText>MOST RECENT PHOTO PROVIDED BY FAMILY</nc:BinaryDescriptionText>
+            <j:ImageAugmentation>
+                <j:ImageNCICIdentification>
+                    <!-- IMN - Image NCIC number -->
+                    <nc:IdentificationID>I856563800</nc:IdentificationID>
+                </j:ImageNCICIdentification>
+                <!-- IMT - Image type -->
+                <j:ImageCategoryCode>M</j:ImageCategoryCode>
+            </j:ImageAugmentation>
+        </nc:PersonDigitalImage>
+        <nc:PersonHeightMeasure>
+            <!-- HGT - Height -->
+            <nc:MeasureValueText>504</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>PHOEBE</nc:PersonGivenName>
+            <nc:PersonMiddleName>PATRICIA</nc:PersonMiddleName>
+            <nc:PersonSurName>PALMER</nc:PersonSurName>
+        </nc:PersonName>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <nc:PersonWeightMeasure>
+            <!-- WGT - Weight -->
+            <nc:MeasureValueText>121</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+        <j:PersonAugmentation>
+            <j:PersonNCICIdentification>
+                <!-- NIC - NCIC number -->
+                <nc:IdentificationID>M123456780</nc:IdentificationID>
+            </j:PersonNCICIdentification>
+        </j:PersonAugmentation>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vehicle. (missing person) -->
+    <!-- ******************************************************************************** -->
+    <nc:Vehicle s:id="d77e271-vehicle_missingPerson">
+        <!-- VCO - Vehicle color -->
+        <ncic:ConveyanceColorPrimaryCodeText>RED</ncic:ConveyanceColorPrimaryCodeText>
+        <ncic:ConveyanceColorSecondaryCodeText>YEL</ncic:ConveyanceColorSecondaryCodeText>
+        <!-- VYR - Vehicle year -->
+        <nc:ItemModelYearDate>2004</nc:ItemModelYearDate>
+        <!-- VST - Vehicle style -->
+        <ncic:VehicleStyleCode>VA</ncic:VehicleStyleCode>
+        <nc:VehicleIdentification>
+            <!-- VIN - Vehicle identification number -->
+            <nc:IdentificationID>VIN3456790</nc:IdentificationID>
+        </nc:VehicleIdentification>
+        <!-- VMA - Vehicle make -->
+        <ncic:VehicleMakeCodeText>TOHO</ncic:VehicleMakeCodeText>
+        <!-- VMO - Vehicle model -->
+        <ncic:VehicleModelCodeText>CAR</ncic:VehicleModelCodeText>
+    </nc:Vehicle>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vehicle. (supplemental) -->
+    <!-- ******************************************************************************** -->
+    <nc:Vehicle s:id="d77e394-vehicle_supplemental">
+        <!-- VCO - Vehicle color -->
+        <ncic:ConveyanceColorPrimaryCodeText>BLU</ncic:ConveyanceColorPrimaryCodeText>
+        <ncic:ConveyanceColorSecondaryCodeText>GRY</ncic:ConveyanceColorSecondaryCodeText>
+        <!-- VYR - Vehicle year -->
+        <nc:ItemModelYearDate>2005</nc:ItemModelYearDate>
+        <!-- VST - Vehicle style -->
+        <ncic:VehicleStyleCode>2D</ncic:VehicleStyleCode>
+        <nc:VehicleIdentification>
+            <!-- VIN - Vehicle identification number -->
+            <nc:IdentificationID>VIN548795215</nc:IdentificationID>
+        </nc:VehicleIdentification>
+        <!-- VMA - Vehicle make -->
+        <ncic:VehicleMakeCodeText>FORD</ncic:VehicleMakeCodeText>
+        <!-- VMO - Vehicle model -->
+        <ncic:VehicleModelCodeText>ASP</ncic:VehicleModelCodeText>
+    </nc:Vehicle>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. (license plate) -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="d77e707-conveyanceRegistration_licenseInformation">
+        <j:ConveyanceRegistrationDecal>
+            <!-- LIY - License plate year of expiration -->
+            <nc:DecalYearDate>2006</nc:DecalYearDate>
+        </j:ConveyanceRegistrationDecal>
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number -->
+            <nc:IdentificationID>4JR345</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- LIS - License plate state -->
+                <j:JurisdictionNCICLSTACode>AZ</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+        <!-- LIT - License plate type -->
+        <ncic:ConveyanceRegistrationPlateCategoryCode>SC</ncic:ConveyanceRegistrationPlateCategoryCode>
+    </j:ConveyanceRegistration>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. (supplemental license plate) -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="d77e417-conveyanceRegistration_supplemental">
+        <j:ConveyanceRegistrationDecal>
+            <!-- LIY - License plate year of expiration -->
+            <nc:DecalYearDate>2006</nc:DecalYearDate>
+        </j:ConveyanceRegistrationDecal>
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number -->
+            <nc:IdentificationID>4JR345</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- LIS - License plate state -->
+                <j:JurisdictionNCICLSTACode>AZ</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+        <!-- LIT - License plate type -->
+        <ncic:ConveyanceRegistrationPlateCategoryCode>NG</ncic:ConveyanceRegistrationPlateCategoryCode>
+    </j:ConveyanceRegistration>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. (missing person license plate) -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="d77e294-conveyanceRegistration_missingPerson">
+        <j:ConveyanceRegistrationDecal>
+            <!-- LIY - License plate year of expiration -->
+            <nc:DecalYearDate>2006</nc:DecalYearDate>
+        </j:ConveyanceRegistrationDecal>
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number -->
+            <nc:IdentificationID>4JR345</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- LIS - License plate state -->
+                <j:JurisdictionNCICLSTACode>AZ</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+        <!-- LIT - License plate type -->
+        <ncic:ConveyanceRegistrationPlateCategoryCode>NG</ncic:ConveyanceRegistrationPlateCategoryCode>
+    </j:ConveyanceRegistration>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:DriverLicense. (missing person) -->
+    <!-- ******************************************************************************** -->
+    <j:DriverLicense s:id="d77e258-driverLicense_missingPerson">
+        <j:DriverLicenseExpirationDate>
+            <!-- OLY - Operator license year of expiration -->
+            <nc:YearDate>2006</nc:YearDate>
+        </j:DriverLicenseExpirationDate>
+        <j:DriverLicenseCardIdentification>
+            <!-- OLN - Operator license number -->
+            <nc:IdentificationID>AZE123456</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- OLS - Operator license state -->
+                <nc:JurisdictionText>AZ</nc:JurisdictionText>
+            </nc:IdentificationJurisdiction>
+        </j:DriverLicenseCardIdentification>
+    </j:DriverLicense>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:DriverLicense. (supplemental) -->
+    <!-- ******************************************************************************** -->
+    <j:DriverLicense s:id="d77e384-driverLicense_supplemental">
+        <j:DriverLicenseExpirationDate>
+            <!-- OLY - Operator license year of expiration -->
+            <nc:YearDate>2006</nc:YearDate>
+        </j:DriverLicenseExpirationDate>
+        <j:DriverLicenseCardIdentification>
+            <!-- OLN - Operator license number -->
+            <nc:IdentificationID>AZE123456</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- OLS - Operator license state -->
+                <nc:JurisdictionText>AZ</nc:JurisdictionText>
+            </nc:IdentificationJurisdiction>
+        </j:DriverLicenseCardIdentification>
+    </j:DriverLicense>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Jewelry. (missing person) -->
+    <!-- ******************************************************************************** -->
+    <j:Jewelry s:id="d77e176-jewelry_missingPerson">
+        <!-- JWL - Jewelry description -->
+        <nc:ItemDescriptionText>SMALL DIAMOND RING ON LEFT RING FINGER</nc:ItemDescriptionText>
+        <!-- JWT - Jewelry type -->
+        <ncic:JewelryCategoryCode>RI</ncic:JewelryCategoryCode>
+    </j:Jewelry>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Missing-person. -->
+    <!-- ******************************************************************************** -->
+    <j:MissingPerson s:id="d77e1367-missingPerson_missingPerson">
+        <nc:RoleOfPerson s:ref="d77e1367-person_missingPerson"/>
+    </j:MissingPerson>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Missing-person. -->
+    <!-- ******************************************************************************** -->
+    <j:MissingPerson s:id="d77e144-missingPerson_missingPerson">
+        <nc:RoleOfPerson s:ref="d77e144-person_missingPerson"/>
+        <!-- MPC-Translation - Missing person circumstance -->
+        <j:MissingPersonCircumstanceText>RUNAWAY</j:MissingPersonCircumstanceText>
+        <!-- MNP - Missing person -->
+        <j:MissingPersonDisappearanceCategoryCode>MP</j:MissingPersonDisappearanceCategoryCode>
+        <!-- MIF - Missing person interest -->
+        <j:MissingPersonInterestIndicator>true</j:MissingPersonInterestIndicator>
+        <j:MissingPersonLastSeenDate>
+            <!-- DLC - Date of last contact -->
+            <nc:Date>2006-05-02</nc:Date>
+        </j:MissingPersonLastSeenDate>
+    </j:MissingPerson>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:InvestigativeInterest. -->
+    <!-- ******************************************************************************** -->
+    <ncic:InvestigativeInterest s:id="d77e682-incident_investigativeInterest">
+        <nc:ActivityDate>
+            <!-- DII - Date of investigative interest -->
+            <nc:Date>2006-05-10</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>POSSIBLY SEEN IN NEW MEXICO</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <!-- ICA - Investigative Interest Case Number -->
+            <j:CaseNumberText>A5555</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e682-organization_investigativeInterest"/>
+    </ncic:InvestigativeInterest>
+</ncic-ex:Exchange>

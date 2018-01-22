@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>QB<!--/ZB--></ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData s:ref="d77e16-incomingRecordData_boatIncomingQueryDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (query). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="d77e16-incomingRecordData_boatIncomingQueryDataSection">
+        <ncic:BoatRecord s:ref="d77e17-boatRecord_queryDataSection"/>
+        <!-- IND - Image indicator -->
+        <ncic:ImageIndicator>false</ncic:ImageIndicator>
+        <!-- RSH - Related search hit -->
+        <ncic:RelatedSearchHitIndicator>false</ncic:RelatedSearchHitIndicator>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:BoatRecord (query). -->
+    <!-- ******************************************************************************** -->
+    <ncic:BoatRecord s:id="d77e17-boatRecord_queryDataSection">
+        <j:ItemNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>B875683021</nc:IdentificationID>
+        </j:ItemNCICIdentification>
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="d77e18-conveyanceRegistration_boat"/>
+            <nc:Item s:ref="d77e17-vessel_boat"/>
+        </j:ConveyanceRegistrationAssociation>
+    </ncic:BoatRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vessel. -->
+    <!-- ******************************************************************************** -->
+    <nc:Vessel s:id="d77e17-vessel_boat">
+        <nc:VesselHullIdentification>
+            <!-- BHN - Boat hull number -->
+            <nc:IdentificationID>LBC035380880</nc:IdentificationID>
+        </nc:VesselHullIdentification>
+    </nc:Vessel>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="d77e18-conveyanceRegistration_boat">
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- REG - Registration number -->
+            <nc:IdentificationID>MD12344ZZ</nc:IdentificationID>
+        </j:ConveyanceRegistrationPlateIdentification>
+    </j:ConveyanceRegistration>
+</ncic-ex:Exchange>

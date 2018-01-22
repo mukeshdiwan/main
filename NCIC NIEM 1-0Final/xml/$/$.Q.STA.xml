@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WVWSP0089</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.Q.STA.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            OFFENDER WITHIN STATE
+            <!--<ORI of SOR POC for state in STA Field>-->WVWSP0089
+            NCIC OUT OF STATE REGISTRATION NOTIFICATION AT <!--<hhmm>-->1400 EST <!--<yyyymmdd>-->20150520.
+            RECORD NIC/<!--<NIC>-->X012345687 ENTERED BY <!--<STA OF ORI>-->AR CONTAINS AN 
+            ADDRESS FOR THE SEX OFFENDER WITHIN YOUR JURISDICTION.
+        </nc:CaveatText>
+        
+        <!--<Database-Record>-->
+        <ncic:Record s:ref="SexOffenderRecord"/>
+        
+        <!-- Current System Time -->
+        <ncic:NotificationDateTime>2015-05-20T14:00:00-04:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:SexualOffenderRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:SexualOffenderRecord s:id="SexOffenderRecord">
+        <!-- This would contain the SexualOffenderRecord Primary Hit Response message format as defined in Part 3, Section 1 
+             of the NCIC Message Book in actual implementation (excluding all alerts, ORI translations, all 
+             caveats, VLN text, NOA text, and all image fields) -->
+        <!-- Only needed elements for the example are included here -->
+        <nc:Incident s:ref="SexualOffenderIncident"/>
+        <nc:ContactInformationAssociation>
+            <nc:ContactEntity>
+                <nc:EntityPerson s:ref="SexOffenderPerson"/>
+            </nc:ContactEntity>
+            <nc:ContactInformation s:ref="d77e194-contactInformation_sexualOffender"/>
+        </nc:ContactInformationAssociation>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC Number -->
+            <nc:IdentificationID>X012345687</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <j:RegisteredOffender s:ref="RegisteredOffender"/>
+    </ncic:SexualOffenderRecord>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Address. -->
+    <!-- ******************************************************************************** -->
+    <nc:Address s:id="AddressReference">
+        <!-- STA - State Name -->
+        <j:LocationStateNCICLISCode>AR</j:LocationStateNCICLISCode>
+    </nc:Address>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Address. (sexual offender) -->
+    <!-- ******************************************************************************** -->
+    <nc:Address s:id="d77e199-address_sexualOffender">
+        <nc:LocationStreet>
+            <!-- SNU - Street number -->
+            <nc:StreetNumberText>897</nc:StreetNumberText>
+            <!-- SNA - Street name -->
+            <nc:StreetName>MAIN STREET</nc:StreetName>
+        </nc:LocationStreet>
+        <!-- CTY - City name -->
+        <nc:LocationCityName>CLARKSBURG</nc:LocationCityName>
+        <!-- COU - County -->
+        <nc:LocationCountyName>HARRISON</nc:LocationCountyName>
+        <!-- STA - State name -->
+        <j:LocationStateNCICLSTACode>WV</j:LocationStateNCICLSTACode>
+        <!-- ZIP - Zip code -->
+        <nc:LocationPostalCode>26301</nc:LocationPostalCode>
+    </nc:Address>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:ContactInformation. (sexual offender) -->
+    <!-- ******************************************************************************** -->
+    <nc:ContactInformation s:id="d77e194-contactInformation_sexualOffender">
+        <nc:ContactMailingAddress s:ref="d77e199-address_sexualOffender"/>
+    </nc:ContactInformation>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="SexualOffenderIncident">
+        <nc:IncidentJurisdictionalOrganization s:ref="IncidentJurisdictionalOrganization"/>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (investigative interest) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="IncidentJurisdictionalOrganization">
+        <nc:OrganizationLocation s:ref="AddressReference"/>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>AR060015Y</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (subject) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="SexOffenderPerson">
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social security number -->
+            <nc:IdentificationID>987654321</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:RegisteredOffender. -->
+    <!-- ******************************************************************************** -->
+    <j:RegisteredOffender s:id="RegisteredOffender">
+        <nc:RoleOfPerson s:ref="RoleOfSexOffenderSubject"/>
+    </j:RegisteredOffender>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="RoleOfSexOffenderSubject">
+        <nc:RoleOfPerson s:ref="SexOffenderPerson"/>
+    </j:Subject>
+</ncic-ex:Exchange>

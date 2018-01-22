@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI receiving this Message  -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.P.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            NICB NOTIFICATION AT <!--<hhmm>-->1320 EST <!--<yyyymmdd>-->20040412
+            THE FOLLOWING RECORD HAS BEEN PURGED BY THE FBI COMPUTER DUE TO
+            EXPIRATION OF THE RETENTION PERIOD.
+            NIC/<!--<NIC>-->V123456789 OCA/<!--<OCA>-->A00001
+        </nc:CaveatText>
+
+        <!-- Other additional record types can be used for this notification. VehicleRecord is used in this sample XML file. -->
+        <ncic:VehicleRecord s:ref="PurgedRecord"/>
+
+        <!-- DateTime of the Notification Triggering Event -->
+        <ncic:NotificationDateTime>2004-04-12T13:20:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:VehicleRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:VehicleRecord s:id="PurgedRecord">
+        <nc:Incident s:ref="PurgedIncident"/>
+        <j:ItemNCICIdentification>
+            <!-- NIC - NCIC Number -->
+            <nc:IdentificationID>V123456789</nc:IdentificationID>
+        </j:ItemNCICIdentification>
+    </ncic:VehicleRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="PurgedIncident">
+        <j:ActivityAugmentation>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>A00001</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+</ncic-ex:Exchange>
