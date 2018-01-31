@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/DTR.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>DTR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>DCDEA0209</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>VADEADX00</nh2:DestinationORIID>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSResponseData n2:key="DTR">
+		<n2:ResponseText>MSG/80- FOR REPORT-NO RECORDS FOUND.
+</n2:ResponseText>
+	</n2:NLETSResponseData>
+</n2:NLETS>

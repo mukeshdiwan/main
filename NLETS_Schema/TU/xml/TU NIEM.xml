@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:nlets="http://niem.gov/niem/nlets/2.1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.00" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ..\xsd\TU.xsd">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>TU</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>GA1234567</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>OD</nh2:DestinationORIID>
+		<nh2:UserID>USER55</nh2:UserID>
+		<nh2:UserPasswordText>123456</nh2:UserPasswordText>
+	</NLETSMessageHeader>
+	<NLETSUpdateData key="TU">
+		<Agency>
+			<j:OrganizationCategoryNLETSCode>PD</j:OrganizationCategoryNLETSCode>
+			<nc:OrganizationLocation>
+				<nc:LocationAddress>
+					<nc:StructuredAddress>
+						<nc:LocationStreet/>
+						<nc:LocationCityName/>
+						<nc:LocationPostalCode/>
+					</nc:StructuredAddress>
+				</nc:LocationAddress>
+			</nc:OrganizationLocation>
+			<nc:OrganizationName>FAIRFAX CO PD</nc:OrganizationName>
+			<nc:OrganizationPrimaryContactInformation/>
+			<j:OrganizationAugmentation>
+				<j:OrganizationORIIdentification>
+					<nc:IdentificationID>VA1234567</nc:IdentificationID>
+				</j:OrganizationORIIdentification>
+				<j:AgencyAddCancelIndicator>false</j:AgencyAddCancelIndicator>
+				<j:AgencyBaselinePriorityValue>11</j:AgencyBaselinePriorityValue>
+				<j:AgencyCHRIAuthorizedIndicator>false</j:AgencyCHRIAuthorizedIndicator>
+				<j:AgencyControlTerminalIndicator>false</j:AgencyControlTerminalIndicator>
+				<j:AgencyServiceHoursCode>D</j:AgencyServiceHoursCode>
+				<j:AgencyAuthorizationCode>A</j:AgencyAuthorizationCode>
+			</j:OrganizationAugmentation>
+			<OrganizationActiveCode>A</OrganizationActiveCode>
+		</Agency>
+		<MiscellaneousUpdateText>THIS IS A TEST UPDATE</MiscellaneousUpdateText>
+	</NLETSUpdateData>
+</NLETS>

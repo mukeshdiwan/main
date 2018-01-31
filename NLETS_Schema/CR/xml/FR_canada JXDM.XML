@@ -1,0 +1,38 @@
+<n:NLETS version="3.00" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:n="http://www.nlets.org">
+<n:NLETSResponseMessage>
+<n:NLETSResponseHeader>
+<j:DocumentSource.Organization>
+<j:OrganizationORIID>
+<j:ID>
+CN0000000</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSource.Organization>
+<j:DocumentSubject.Organization>
+<j:OrganizationORIID>
+<j:ID>
+AZNLETS21</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSubject.Organization>
+<n:MessageKeyCode>
+FR</n:MessageKeyCode>
+<n:DocumentControlFieldText>
+DGREEN2345</n:DocumentControlFieldText>
+<j:DocumentReceivedDate>
+05/03/2006</j:DocumentReceivedDate>
+<n:DocumentReceivedTime>
+14:08</n:DocumentReceivedTime>
+<n:DocumentReceivedCountQuantity>
+16736</n:DocumentReceivedCountQuantity>
+<j:DocumentFiledDate>
+05/03/2006</j:DocumentFiledDate>
+<j:DocumentFiledTime>
+14:08</j:DocumentFiledTime>
+<n:DocumentFiledCountQuantity>
+00034</n:DocumentFiledCountQuantity>
+</n:NLETSResponseHeader>
+<n:NLETSResponseData Key="FR">
+<n:ResponseText><![CDATA[
+** RESPONSE FROM CANADIAN SYSTEM  -  CRIMINAL HISTORY FILE **ATN/ARTHUR PEUTYFPS:423543A&#xC;RE:  6258   Q CR LANG:E  LVL: 1       REM: N,FQ,AZNLETS21,*DGREEN2345,ARTHUR PEUTY  FPS: 423543A  NOT ON FILE - FILE STATUS CAN BE VERIFIED BY 'Q FPS'2006050317084820060503170848*** END OF CPIC RESPONSE ***OTTAWA, CANADA]]></n:ResponseText>
+</n:NLETSResponseData>
+</n:NLETSResponseMessage>
+</n:NLETS>

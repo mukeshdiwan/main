@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+            <n:DocumentUserID><j:ID>USER55</j:ID></n:DocumentUserID>
+            <n:DocumentPasswordText>123456</n:DocumentPasswordText>
+            <n:MessageKeyCode>GR</n:MessageKeyCode>
+ 			<n:DocumentControlFieldText>000000089</n:DocumentControlFieldText>
+           <j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>FA</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <j:DocumentSubject.Organization>
+              <j:OrganizationORIID>
+                 <j:ID>GA1234567</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSubject.Organization>
+			<n:DocumentReceivedTime>14:55</n:DocumentReceivedTime>
+			<j:DocumentReceivedDate>1990-11-01</j:DocumentReceivedDate>
+			<n:DocumentReceivedCountQuantity>021 N</n:DocumentReceivedCountQuantity>
+			<j:DocumentFiledTime>14:55</j:DocumentFiledTime>
+			<j:DocumentFiledDate>1990-11-01</j:DocumentFiledDate>
+			<n:DocumentFiledCountQuantity>676</n:DocumentFiledCountQuantity>
+		</n:NLETSResponseHeader>
+		<n:NLETSInquiryData Key="GQ">
+				<n:Attention>SGT PAUL JOSEPH</n:Attention>
+				<j:Aircraft>
+					<j:PropertyAssignedIDDetails>
+						<j:PropertySerialID><j:ID>64987635153</j:ID></j:PropertySerialID>
+					</j:PropertyAssignedIDDetails>
+				</j:Aircraft>
+			</n:NLETSInquiryData>
+			<n:NLETSResponseData Type="hit"> Key="GR">
+				<n:ResponseText><![CDATA[
+4 MATCHES ON SER/216
+1	N411SP	LEAR JET	24
+2	N60FJ	DEHAVILLAND	DHC-1B-2
+3	N921RM	MITSUBISHI	MU-2B-20
+4	N49BP	GIERTZ LARS M	AVID FLYER
+]]></n:ResponseText>
+			</n:NLETSResponseData>
+		</n:NLETSResponseMessage>
+</n:NLETS>

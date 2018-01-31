@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>CND200000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>EVC<!--/EFC/EIC--></ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData s:ref="VehicleIncomingEnterDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="VehicleIncomingEnterDataSection">
+        <ncic:VehicleRecord s:ref="VehicleRecordEnterDataSection"/>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:VehicleRecord (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic:VehicleRecord s:id="VehicleRecordEnterDataSection">
+        <nc:Incident s:ref="VehicleIncidentEnterDataSection"/>
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="VehicleRegistrationEnterDataSection"/>
+            <nc:Item s:ref="VehicleInfoEnterDataSection"/>
+        </j:ConveyanceRegistrationAssociation>
+        <!-- OPT - Opt Type – Vehicle -->
+        <ncic:PublicDisseminationDateText>IN</ncic:PublicDisseminationDateText>
+    </ncic:VehicleRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="VehicleIncidentEnterDataSection">
+        <nc:ActivityDate>
+            <!--CDE - Canadian Date of Entry -->
+            <nc:Date>2005-10-27</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>VEHICLE STOLEN FROM MAIN STREET</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>CNDV004421</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vehicle. -->
+    <!-- ******************************************************************************** -->
+    <nc:Vehicle s:id="VehicleInfoEnterDataSection">
+        <!-- VCO - Vehicle color -->
+        <j:ConveyanceColorPrimaryCode>BLK</j:ConveyanceColorPrimaryCode>
+        <j:ConveyanceColorSecondaryCode>RED</j:ConveyanceColorSecondaryCode>
+        <!-- VYR - Vehicle year -->
+        <nc:ItemModelYearDate>2006</nc:ItemModelYearDate>
+        <!-- VST - Vehicle style -->
+        <j:VehicleStyleCode>4D</j:VehicleStyleCode>
+        <nc:VehicleIdentification>
+            <!-- VIN - Vehicle identification number -->
+            <nc:IdentificationID>WDBBA48D1GA051451</nc:IdentificationID>
+        </nc:VehicleIdentification>
+        <!-- VMA - Vehicle make -->
+        <j:VehicleMakeCode>MERZ</j:VehicleMakeCode>
+        <!-- VMO - Vehicle model -->
+        <j:VehicleModelCode>560</j:VehicleModelCode>
+    </nc:Vehicle>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="VehicleRegistrationEnterDataSection">
+        <j:ConveyanceRegistrationDecal>
+            <!-- LIY - License plate year of expiration -->
+            <nc:DecalYearDate>2007</nc:DecalYearDate>
+        </j:ConveyanceRegistrationDecal>
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number -->
+            <nc:IdentificationID>1GH890</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- LIS - License plate state -->
+                <j:JurisdictionNCICLSTACode>WV</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+        <!-- LIT - License plate type -->
+        <j:ConveyanceRegistrationPlateCategoryCode>PC</j:ConveyanceRegistrationPlateCategoryCode>
+    </j:ConveyanceRegistration>
+</ncic-ex:Exchange>

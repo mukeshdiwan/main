@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/jxdm/5.1/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/3.1/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>Justice</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../codes/fbi_ncic/3.1/fbi_ncic.xsd" namespace="http://release.niem.gov/niem/codes/fbi_ncic/3.1/"/>
+  <xs:import schemaLocation="../../../niem-core/3.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/3.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"/>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:complexType name="ChargeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a formal allegation that a specific person has committed a specific offense.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="j:ChargeApplicabilityText" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConvictionType">
+    <xs:annotation>
+      <xs:documentation>A data type for a judgement that a defendant is guilty.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:ActivityType">
+        <xs:sequence>
+          <xs:element ref="j:ConvictionCharge" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ConvictionOffense" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ConvictionVerdict" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ConvictionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CourtType">
+    <xs:annotation>
+      <xs:documentation>A data type for a court or a unit of a court responsible for trying justice proceedings.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:OrganizationType">
+        <xs:sequence>
+          <xs:element ref="j:CourtName" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DriverLicenseBaseType">
+    <xs:annotation>
+      <xs:documentation>A data type for an authorization issued to a driver granting driving privileges.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="j:DriverLicenseIdentification" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DriverLicenseType">
+    <xs:annotation>
+      <xs:documentation>A data type for a license issued to a person granting driving privileges.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="j:DriverLicenseBaseType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImageAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about an image.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="j:ImageJuvenileIndicator" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OffenseType">
+    <xs:annotation>
+      <xs:documentation>A data type for an alleged violation of a statute, ordinance, or rule.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:ActivityType">
+        <xs:sequence>
+          <xs:element ref="j:OffenseDesignation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:OffenseAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OrganizationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about an organization.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="j:OrganizationIdentification" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a person.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="j:DNACollectedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:DriverLicense" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:PersonFBIIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:PersonStateFingerprintIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:PersonCautionInformation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:PersonBirthplace" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RegisteredOffenderType">
+    <xs:annotation>
+      <xs:documentation>A data type for information about a person who is required to register information with a law enforcement agency due to having been convicted of a certain type of crime.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegisteredOffenderConviction" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegisteredOffenderNonExpiringRegistrationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegisteredOffenderEndDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegisteredOffenderEntryDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegisteredOffenderIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegisteredOffenderCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegisteredOffenderAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VerdictType">
+    <xs:annotation>
+      <xs:documentation>A data type for a finding related to a charge.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:ActivityType">
+        <xs:sequence>
+          <xs:element ref="j:VerdictDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:VerdictDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:VerdictIssuingCourt" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:VerdictAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CaseNumberText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifying number for a case that this activity is a part of, where the case number belongs to the agency that owns the activity information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ChargeApplicabilityText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A degree of involvement a person is being charged with committing in an offense.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConvictionAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ConvictionType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConvictionCharge" type="j:ChargeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A charge for which a person was convicted.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConvictionOffense" type="j:OffenseType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An offense that a person has been found guilty of committing.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConvictionVerdict" type="j:VerdictType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A guilty verdict of a judge or jury.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourtName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a unit of a court.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNACollectedIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if DNA has been collected; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Detention" type="nc:SupervisionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A mandatory confined supervision of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DriverLicense" type="j:DriverLicenseType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A license issued to a person granting driving privileges.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DriverLicenseIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A driver license identification or driver license permit identification, including the number and state.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ImageAugmentation" type="j:ImageAugmentationType" substitutionGroup="nc:ImageAugmentationPoint">
+    <xs:annotation>
+      <xs:documentation>Additional information about an image.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ImageJuvenileIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if an image is of a juvenile; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OffenseAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for OffenseType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OffenseDesignation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a distinguishing designation of an offense.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OffenseNCICCode" type="ncic:OFFCodeType" substitutionGroup="j:OffenseDesignation">
+    <xs:annotation>
+      <xs:documentation>An offense designation as specified by FBI's National Crime Information Center (NCIC) system.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OffenseName" type="nc:TextType" substitutionGroup="j:OffenseDesignation">
+    <xs:annotation>
+      <xs:documentation>A name or designation of an offense.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationAugmentation" type="j:OrganizationAugmentationType" substitutionGroup="nc:OrganizationAugmentationPoint">
+    <xs:annotation>
+      <xs:documentation>Additional information about an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationIdentification" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an identification for an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationORIIdentification" type="nc:IdentificationType" substitutionGroup="j:OrganizationIdentification">
+    <xs:annotation>
+      <xs:documentation>A unique nine character NCIC identification (ORI) assigned to a justice-related organization by the FBI CJIS Division.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Parole" type="nc:SupervisionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An added period of control following release from prison.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonAugmentation" type="j:PersonAugmentationType" substitutionGroup="nc:PersonAugmentationPoint">
+    <xs:annotation>
+      <xs:documentation>Additional information about a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonBirthplace" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a state or country of a person's birth.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonBirthplaceCode" type="ncic:POBCodeType" substitutionGroup="j:PersonBirthplace">
+    <xs:annotation>
+      <xs:documentation>A state or country of a person's birth.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonCautionInformation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a cautionary piece of information about a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonCautionInformationText" type="nc:TextType" substitutionGroup="j:PersonCautionInformation">
+    <xs:annotation>
+      <xs:documentation>A cautionary piece of information about a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonFBIIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number issued by the FBI's Automated Fingerprint Identification System (AFIS) based on submitted fingerprints.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonStateFingerprintIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier assigned to a person by a state identification bureau, generally based on submission of the person's fingerprints to the state's Automated Fingerprint Identification System (AFIS).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PhysicalFeatureCategoryCode" type="ncic:SMTCodeType" substitutionGroup="nc:PhysicalFeatureCategory">
+    <xs:annotation>
+      <xs:documentation>A specific kind of physical feature.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Probation" type="nc:SupervisionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A judicial requirement that a person fulfill certain conditions of behavior in lieu of jail time.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegisteredOffenderAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for RegisteredOffenderType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegisteredOffenderCategoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of offense for which a person must register as being an offender.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegisteredOffenderConviction" type="j:ConvictionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A conviction that led to a person's status as a registered offender.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegisteredOffenderEndDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date a person no longer must register as an offender.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegisteredOffenderEntryDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date a person initially registered as an offender.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegisteredOffenderIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification identifying a person as a certain kind of registered offender.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegisteredOffenderNonExpiringRegistrationIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a person's requirement to register as an offender is non-expiring; false if it is not.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VerdictAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for VerdictType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VerdictDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date a verdict was given.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VerdictDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a verdict.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VerdictIssuingCourt" type="j:CourtType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A court which issued a verdict.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

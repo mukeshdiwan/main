@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/3.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:n2-50="http://www.nlets.org/niem/nlets-50-state-response/1.0" xmlns:n2="http://www.nlets.org/niem/1.0" targetNamespace="http://www.nlets.org/niem/nlets-50-state-response/1.0">
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:complexType name="FiftyStateResponseType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a 50 State Inquiry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-50:NletsResponseSummaryText" minOccurs="0"/>
+					<xs:element ref="n2-50:StateResponse" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StateResponseType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a 50 State Inquiry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-50:OriginatingORIID" minOccurs="0"/>
+					<xs:element ref="n2-50:StateResponseData" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="FiftyStateResponse" type="n2-50:FiftyStateResponseType" abstract="false" nillable="true"/>
+	<xs:element name="OriginatingORIID" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="NletsResponseSummaryText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="StateResponseData" abstract="true" nillable="true"/>
+	<xs:element name="StateResponse" type="n2-50:StateResponseType" abstract="false" nillable="true"/>
+	<xs:element name="StateResponseText" type="nc:TextType" abstract="false" substitutionGroup="n2-50:StateResponseData" nillable="true"/>
+</xs:schema>

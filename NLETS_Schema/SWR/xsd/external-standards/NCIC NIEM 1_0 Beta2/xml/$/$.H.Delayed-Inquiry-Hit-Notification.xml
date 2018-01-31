@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier (receiving this Message)  -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.H</ncic:MessageTransactionText>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+        <ncic-ex:IncomingRecordData s:ref="EntryRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="EntryRecordData">
+        <ncic:Record>
+            <nc:Incident s:ref="EntryIncidentInfo"/>
+            <nc:Person s:ref="EntryPersonInfo"/>
+        </ncic:Record>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            YOUR RECORD WITH NIC/<!--<NIC>-->2020022 OCA/<!--<OCA>-->234443333 IS A POSSIBLE DELAYED
+            INQUIRY MATCH
+            PLEASE ASSURE YOUR ENTRY IS A REASONABLE MATCH WITH THE
+            INQUIRY ON <!--<hhmm>-->1320 EDT <!--<yyyymmdd>-->20040412 CONTAINING: 
+            INQUIRING ORI/<!--<ORI>-->MD1010000 ATR/<!--<ATR>-->LAPD - SPECIAL INVESTIGATIONS
+        </nc:CaveatText>
+        <!-- This contact information is ONLY for the ORI that triggered the notification, not the record ORI. -->
+        <nc:ContactInformationAssociation>
+            <nc:ContactEntity s:ref="NotificationORI"/>
+            <nc:ContactInformation s:ref="NotificationORIContactInformation"/>
+        </nc:ContactInformationAssociation>
+        <!-- Transaction - Input Transaction -->
+        <ncic-ex:IncomingMessage>
+            <!-- HDR - Header -->
+            <ncic:MessageIdentification>
+                <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+            </ncic:MessageIdentification>
+            <ncic-ex:IncomingRecordData s:ref="EntryRecordData"/>
+        </ncic-ex:IncomingMessage>
+        <!-- DateTime of the Notification Triggering Event -->
+        <ncic:NotificationDateTime>2004-04-12T13:20:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:ContactInformation. -->
+    <!-- ******************************************************************************** -->
+    <nc:ContactInformation s:id="NotificationORIContactInformation">
+        <nc:ContactTelephoneNumber>
+            <nc:FullTelephoneNumber>
+                <!-- CT1 - Confirmation Telephone Number (Primary) -->
+                <nc:TelephoneNumberFullID>7045551211</nc:TelephoneNumberFullID>
+            </nc:FullTelephoneNumber>
+        </nc:ContactTelephoneNumber>
+    </nc:ContactInformation>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Entity. -->
+    <!-- ******************************************************************************** -->
+    <nc:Entity s:id="NotificationORI">
+        <nc:EntityOrganization s:ref="NotificationOrganization"/>
+    </nc:Entity>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="EntryIncidentInfo">
+        <j:ActivityAugmentation>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>234443333</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="NotificationOrganization">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>LAPD - SPECIAL INVESTIGATIONS</nc:OrganizationName>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Orginating agency identifier -->
+                <nc:IdentificationID>MD1010000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="EntryPersonInfo">
+        <j:PersonAugmentation>
+            <j:PersonNCICIdentification>
+                <!-- NIC - NCIC Number -->
+                <nc:IdentificationID>2020022</nc:IdentificationID>
+            </j:PersonNCICIdentification>
+        </j:PersonAugmentation>
+    </nc:Person>
+</ncic-ex:Exchange>

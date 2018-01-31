@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:ansi_d20="http://niem.gov/niem/ansi_d20/2.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nc2="http://www.nlets.org/niem/nlets-core/1.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:nrh2="http://www.nlets.gov/niem/nlets-registration-history/1.0/" xmlns:nrm2="http://www.nlets.gov/niem/nlets-registration-match/1.0/" xmlns:nrs2="http://www.nlets.gov/niem/nlets-registration-status/1.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:unece="http://niem.gov/niem/unece_rec20-misc/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/Candle/NIEM/RR/xsd/RR.xsd" version="3.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>RR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS11</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS20</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>KATESILHOL</nh2:DocumentControlFieldText>
+	</NLETSMessageHeader>
+	<NLETSInquiryData key="RQ">
+		<nc2:Vehicle>
+			<nc:VehicleIdentification/>
+			<nc:ConveyanceRegistration>
+				<nc:ConveyanceRegistrationPlateIdentification>
+					<nc:IdentificationID>DCD3195</nc:IdentificationID>
+				</nc:ConveyanceRegistrationPlateIdentification>
+				<nc:ConveyanceRegistrationPlateCategoryText>PC</nc:ConveyanceRegistrationPlateCategoryText>
+			</nc:ConveyanceRegistration>
+		</nc2:Vehicle>
+	</NLETSInquiryData>
+	<NLETSResponseData key="RR">
+		<CaveatText>Powered by Nlets</CaveatText>
+		<nrm2:RegistrationMatch>
+			<nrm2:IndividualMatch>
+				<nc:ConveyanceRegistration>
+					<nc:RegistrationExpirationDate>
+						<nc:Date>1997-08-13</nc:Date>
+					</nc:RegistrationExpirationDate>
+					<nc2:RegistrationHolder>
+						<nc:EntityOrganization/>
+						<nc:ContactMailingAddress>
+							<nc:StructuredAddress>
+								<nc:LocationStreet>
+									<nc:StreetFullText>String</nc:StreetFullText>
+								</nc:LocationStreet>
+								<nc:LocationCityName>String</nc:LocationCityName>
+								<nc:LocationCountyName>String</nc:LocationCountyName>
+								<nc:LocationStateName>String</nc:LocationStateName>
+								<nc:LocationCountryName>String</nc:LocationCountryName>
+								<nc:LocationPostalCode>String</nc:LocationPostalCode>
+							</nc:StructuredAddress>
+						</nc:ContactMailingAddress>
+						<nc2:Person>
+							<nc:PersonBirthDate>
+								<nc:Date>1967-08-13</nc:Date>
+							</nc:PersonBirthDate>
+							<nc:PersonName>
+								<nc:PersonGivenName>String</nc:PersonGivenName>
+								<nc:PersonMiddleName>String</nc:PersonMiddleName>
+								<nc:PersonSurName>String</nc:PersonSurName>
+							</nc:PersonName>
+						</nc2:Person>
+					</nc2:RegistrationHolder>
+					<nc:ConveyanceRegistrationPlateIdentification>
+						<nc:IdentificationID>String</nc:IdentificationID>
+					</nc:ConveyanceRegistrationPlateIdentification>
+					<nc:ConveyanceRegistrationPlateCategoryText>String</nc:ConveyanceRegistrationPlateCategoryText>
+				</nc:ConveyanceRegistration>
+				<nc:Vehicle>
+					<nc:VehicleIdentification/>
+				</nc:Vehicle>
+			</nrm2:IndividualMatch>
+		</nrm2:RegistrationMatch>
+	</NLETSResponseData>
+</NLETS>

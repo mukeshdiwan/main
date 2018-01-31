@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/CBR.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>CBR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>CN0000000</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS24</nh2:DestinationORIID>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSResponseData n2:key="CBR">
+		<n2:ResponseText>** RESPONSE FROM CANADIAN SYSTEM - BOAT/MOTOR FILE **********************************************************************************        -  POSSIBLE CPIC 'BOAT/MOTOR' FILE HIT.  -   YOUR INQUIRY MAY HAVE RESULTED IN MULTIPLE RECORDS BEING RETURNED.   CONFIRMATION ON THE SELECTED 'BOAT/MOTOR' MUST BE ACCOMPLISHED USING   A 'YQ' MESSAGE ADDRESSED TO THE CANADIAN LAW ENFORCEMENT AGENCY  IDENTIFIED AS THE ORIGINATOR OF THE RECORD.   YOU MUST ADD '00' TO THE END OF THE 7-DIGIT CANADIAN AGENCY ORI   IN THE RECORD.     (EXAMPLE: 'TORONTO PD ON30570 1991-01-01 12:00'         DESTINATION ORI FOR CONFIRMATION WOULD BE ON3057000)********************************************************************************RE:  1966   QUERY BOAT HIN: JRNTEST       REM: N,CBQ,AZNLETS24,*KATESILHOL,    CPI CENTRE AUDIT IC10061 2000-02-18 07:52    BOAT POWERBOAT BLUE WHITE 6 M ( 20 FT )    1990 STARCRAF SHARK INBOARD EXP: 2009-10-12   STATUS:STOLEN      LIC: 53JNTEST HIN: JRNTEST NAME: MANSPLEASURE REG: 53NTEST    REM: TEST RECORD FOR ACUPIES INTERFACE CASE: ACUPIES TEST-02    CONFIRM WITH ORIGINATING AGENCY 2006050513220220060505132203*** END OF CPIC RESPONSE ***OTTAWA, CANADA</n2:ResponseText>
+	</n2:NLETSResponseData>
+</n2:NLETS>

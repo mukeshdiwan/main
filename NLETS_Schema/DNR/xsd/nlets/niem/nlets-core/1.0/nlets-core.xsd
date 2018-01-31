@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by Aaron Gorrell (Waterhole Software) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:n2c="http://www.nlets.org/niem/nlets-core/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" targetNamespace="http://www.nlets.org/niem/nlets-core/1.0">
+	<import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../../../niem/proxy/xsd/2.0/xsd.xsd"/>
+	<import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation="../../../../niem/domains/jxdm/4.1/jxdm.xsd"/>
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../../../niem/structures/2.0/structures.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="../../../../niem/niem-core/2.0/niem-core.xsd"/>
+	<complexType name="AdditionalInformationType">
+		<annotation>
+			<documentation>Additional state specific data, added by the responding state.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2c:StateElement" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="DriverLicenseType">
+		<annotation>
+			<documentation>Details about a license issued to a person granting driving privileges.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:DriverLicenseType">
+				<sequence>
+					<element ref="n2c:DriverLicenseCommercialLicensedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="n2c:DriverLicenseNonCommercialLicensedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="n2c:DriverLicenseNonCommercialLocalClassText" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PersonType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="j:PersonType">
+				<sequence>
+					<element ref="nc:DriverLicense" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="n2c:PersonAlias" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>This element will describe the person's alias and can contain any of the person subelements.</documentation>
+						</annotation>
+					</element>
+					<element ref="n2c:PersonContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="n2c:PersonResidentialAddress" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="StateElementType">
+		<annotation>
+			<documentation>An element provided by a state, which is not defined in the StandardResponse. Use this to dynamically incorporate elements not explicitly defined in this schema. Do not add elements that have no meaning or use outside of your state. </documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2c:ElementFieldName"/>
+					<element ref="n2c:ElementFieldValue"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="StructuredAddressType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="nc:StructuredAddressType">
+				<sequence>
+					<element ref="n2c:ResidenceDateRange" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="AdditionalInformation" type="n2c:AdditionalInformationType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Additional state specific data, added by the responding state.</documentation>
+		</annotation>
+	</element>
+	<element name="Driver" type="n2c:PersonType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Describes inherent and frequently associated characteristics of a driver.</documentation>
+		</annotation>
+	</element>
+	<element name="DriverLicense" type="n2c:DriverLicenseType" abstract="false" substitutionGroup="nc:DriverLicense" nillable="true">
+		<annotation>
+			<documentation>Details about a license issued to a person granting driving privileges.</documentation>
+		</annotation>
+	</element>
+	<element name="DriverLicenseCommercialLicensedIndicator" type="niem-xsd:boolean" abstract="false" nillable="true">
+		<annotation>
+			<documentation>True indicates that the driver is authorized to drive a commercial vehicle</documentation>
+		</annotation>
+	</element>
+	<element name="DriverLicenseNonCommercialLicensedIndicator" type="niem-xsd:boolean" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Yes indicates that the driver is authorized to drive a non-commercial vehicle.</documentation>
+		</annotation>
+	</element>
+	<element name="DriverLicenseNonCommercialLocalClassText"/>
+	<element name="ElementFieldName" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The name, identifier or tag of the element.</documentation>
+		</annotation>
+	</element>
+	<element name="ElementFieldValue" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The content of the element.</documentation>
+		</annotation>
+	</element>
+	<element name="Person" type="n2c:PersonType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A human being</documentation>
+		</annotation>
+	</element>
+	<element name="PersonAlias" type="n2c:PersonType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will describe the person?s alias and can contain any of the person subelements.</documentation>
+		</annotation>
+	</element>
+	<element name="PersonContactInformation" type="nc:ContactInformationType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Details about how to contact a person</documentation>
+		</annotation>
+	</element>
+	<element name="PersonResidentialAddress" type="n2c:StructuredAddressType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Details about the current residential address of a person</documentation>
+		</annotation>
+	</element>
+	<element name="ResidenceDateRange" type="nc:DateRangeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The beginning and ending dates for the use of a residence.</documentation>
+		</annotation>
+	</element>
+	<element name="StateElement" type="n2c:StateElementType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>An element provided by a state, which is not defined in the StandardResponse. Use this to dynamically incorporate elements not explicitly defined in this schema. Do not add elements that have no meaning or use outside of your state. </documentation>
+		</annotation>
+	</element>
+</schema>

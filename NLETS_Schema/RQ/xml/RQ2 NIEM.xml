@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/RQ.xsd" version="3.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>RQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS23</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZ</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>1234567890</nh2:DocumentControlFieldText>
+		<nh2:UserID>USER55</nh2:UserID>
+		<nh2:UserPasswordText>123456</nh2:UserPasswordText>
+	</NLETSMessageHeader>
+	<NLETSInquiryData key="RQ">
+		<nc:Vehicle>
+			<nc:ConveyanceRegistrationPlateIdentification>
+				<nc:IdentificationID>LJB934</nc:IdentificationID>
+				<nc:IdentificationCategoryText>PC</nc:IdentificationCategoryText>
+				<nc:IdentificationExpirationDate><nc:Year>1983</nc:Year></nc:IdentificationExpirationDate>
+			</nc:ConveyanceRegistrationPlateIdentification>
+			<nc:VehicleIdentification/>
+		</nc:Vehicle>
+	</NLETSInquiryData>
+</NLETS>

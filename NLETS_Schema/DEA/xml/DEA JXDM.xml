@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org C:\DOCUME~1\AARONG~1\MYDOCU~1\WATERH~1\NLETS\jxdm\DEA\DEA.xsd">
+	<n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+			<n:MessageKeyCode>DEA</n:MessageKeyCode>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>VADEADX00</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>DCDEA0209</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSUpdateData Key="DEA">
+			<n:UserID>
+				<j:ID>agentx</j:ID>
+			</n:UserID>
+			<n:PasswordText>12345678</n:PasswordText>
+			<n:CaseID>
+				<j:ID>123456</j:ID>
+			</n:CaseID>
+			<j:ContactInformation>
+				<j:ContactPerson>
+					<j:PersonName>
+						<j:PersonFullName>Johnson, Cecil D.</j:PersonFullName>
+					</j:PersonName>
+				</j:ContactPerson>
+				<j:ContactOrganization>
+					<j:OrganizationName>Omaha Police Department</j:OrganizationName>
+				</j:ContactOrganization>
+				<j:ContactTelephoneNumber>
+					<j:TelephoneNumberFullID>6120121293</j:TelephoneNumberFullID>
+				</j:ContactTelephoneNumber>
+			</j:ContactInformation>
+			<n:Person>
+				<j:PersonAssignedIDDetails>
+					<j:PersonFBIID>
+						<j:ID>FBI123</j:ID>
+					</j:PersonFBIID>
+				</j:PersonAssignedIDDetails>
+				<n:PersonName>
+					<j:PersonFullName>Edwards, Paul</j:PersonFullName>
+				</n:PersonName>
+			</n:Person>
+		</n:NLETSUpdateData>
+		<n:NLETSResponseData Type="ack" Key="DEA">
+			<n:ResponseText><![CDATA[NDP/5204.OCA/DR961058.DLR/07152001.NAM/WILSON, JAMES. POC/MICHAEL KEY.PTL/CENTRAL CITY POLICE.PPN/2025552323.
+MSG/20-ENTRY ACCEPTED ? MATCHED RECORD (1 of 15).
+]]></n:ResponseText>
+		</n:NLETSResponseData>
+	</n:NLETSResponseMessage>
+</n:NLETS>

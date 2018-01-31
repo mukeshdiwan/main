@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org " xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <n:NLETSInquiryMessage>
+	<n:NLETSInquiryHeader>
+       <n:DocumentUserID><j:ID>USER55</j:ID></n:DocumentUserID>
+       <n:DocumentPasswordText>123456</n:DocumentPasswordText>
+       <n:MessageKeyCode>FQ</n:MessageKeyCode>
+       <j:DocumentSource.Organization>
+         <j:OrganizationORIID>
+           <j:ID>GA0250300</j:ID>
+         </j:OrganizationORIID>
+       </j:DocumentSource.Organization>
+       <n:DocumentDestinationID>
+         <j:ID>FL</j:ID>
+       </n:DocumentDestinationID>
+	</n:NLETSInquiryHeader>
+   <n:NLETSInquiryData Key="FQ">
+			<n:PurposeCode>C</n:PurposeCode>
+			<n:Attention>SGT JOHN DOE</n:Attention>
+			<j:Location>
+				<j:LocationAddress>
+					<j:LocationBuilding>
+						<j:BuildingName>BDLG 2</j:BuildingName>
+						<j:BuildingSubUnitText>CENTER FOR INFORMATION</j:BuildingSubUnitText>
+					</j:LocationBuilding>
+					<j:LocationStreet>
+						<j:StreetFullText>123 X STREET</j:StreetFullText>
+					</j:LocationStreet>
+					<j:LocationCityName>FAIRFAX</j:LocationCityName>
+					<j:LocationStateName>VIRGINIA</j:LocationStateName>
+					<j:LocationPostalCodeID>
+                        <j:ID>22222-2222</j:ID>
+                     </j:LocationPostalCodeID>
+				</j:LocationAddress>
+			</j:Location>
+			<n:ImageIndicator>Y</n:ImageIndicator>
+		</n:NLETSInquiryData>
+	</n:NLETSInquiryMessage>
+</n:NLETS>
+

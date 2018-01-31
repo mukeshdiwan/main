@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:WantList w:release="2.1" w:product="NIEM"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+  xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:w="http://niem.gov/niem/wantlist/2">
+  <w:Element w:name="nc:Organization" w:isReference="false"/>
+  <w:Type w:name="nc:DocumentType" w:isRequested="true"/>
+  <w:Type w:name="nc:IdentificationType" w:isRequested="false">
+    <w:ElementInType w:name="nc:IdentificationID" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
+  <w:Type w:name="nc:NumericType" w:isRequested="true"/>
+  <w:Type w:name="nc:OrganizationType" w:isRequested="true">
+    <w:ElementInType w:name="nc:OrganizationOtherIdentification"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
+  <w:Type w:name="nc:TextType" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:time" w:isRequested="true"/>
+  <w:Type w:name="xsd:date" w:isRequested="true"/>
+</w:WantList>

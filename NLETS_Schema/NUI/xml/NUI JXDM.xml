@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <n:NLETSUpdateMessage>
+		<n:NLETSUpdateHeader>
+            <n:MessageKeyCode>NUI</n:MessageKeyCode>
+ 			<n:DocumentControlFieldText>000000089</n:DocumentControlFieldText>    
+            <j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>GA1234567</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <n:DocumentDestinationID>
+               <j:ID>NA</j:ID>
+            </n:DocumentDestinationID>
+		</n:NLETSUpdateHeader>
+		<n:NLETSUpdateData Key="NUI">
+				<j:Vehicle>
+					<j:PropertyAssignedIDDetails>
+						<j:PropertyFederalID>
+                                <j:ID>12345678912</j:ID> 
+                                <j:IDIssuingAuthorityText>NICB</j:IDIssuingAuthorityText> 
+                           </j:PropertyFederalID>
+					</j:PropertyAssignedIDDetails>
+                      <j:VehiclePlateID>
+                          <j:IDExpirationDate>2004-01-01</j:IDExpirationDate>
+                      </j:VehiclePlateID> 
+				</j:Vehicle>
+			</n:NLETSUpdateData>
+		</n:NLETSUpdateMessage>
+</n:NLETS>

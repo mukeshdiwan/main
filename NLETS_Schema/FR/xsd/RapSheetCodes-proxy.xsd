@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.nlets.org/rapsheet/proxy/codes/1.0" xmlns:rap-code="http://www.nlets.org/rapsheet/codes/1.0" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.nlets.org/rapsheet/proxy/codes/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.nlets.org/rapsheet/codes/1.0" schemaLocation="RapSheetCodes_full-doc.xsd"/>
+	<xsd:import namespace="http://www.it.ojp.gov/jxdm/3.0" schemaLocation="jxdm/3.0/jxdm.xsd"/>
+	<!--Define Types-->
+	<xsd:complexType name="PurposeCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="rap-code:PurposeCodeType">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="BloodTypeType">
+		<xsd:simpleContent>
+			<xsd:extension base="rap-code:BloodTypeType">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DNALocusType">
+		<xsd:simpleContent>
+			<xsd:extension base="rap-code:DNALocusType">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EthnicityType">
+		<xsd:simpleContent>
+			<xsd:extension base="rap-code:EthnicityType">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EyeColorType">
+		<xsd:simpleContent>
+			<xsd:extension base="rap-code:EyeColorType">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="FingerprintFingerType">
+		<xsd:simpleContent>
+			<xsd:extension base="rap-code:FingerprintFingerType">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="HairColorType">
+		<xsd:simpleContent>
+			<xsd:extension base="rap-code:HairColorType">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="IDTypeType">
+		<xsd:simpleContent>
+			<xsd:extension base="rap-code:IDTypeType">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MaritalStatusType">
+		<xsd:simpleContent>
+			<xsd:extension base="rap-code:MaritalStatusType">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="RaceType">
+		<xsd:simpleContent>
+			<xsd:extension base="rap-code:RaceType">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SexType">
+		<xsd:simpleContent>
+			<xsd:extension base="rap-code:SexType">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SkinToneType">
+		<xsd:simpleContent>
+			<xsd:extension base="rap-code:SkinToneType">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+</xsd:schema>

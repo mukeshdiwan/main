@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:m="http://release.niem.gov/niem/domains/maritime/3.1/" xmlns:n2-mr="http://www.nlets.org/niem/nlets-hazardous-materials/1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" version="4.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 file:///P:/Documents/Nlets%20Response%20Standardization/Hazardous%20Materials/Schemas/MR/MR.xsd">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>MR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS23</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS23</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>1234567890</nh2:DocumentControlFieldText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSResponseData xmlns:n2="http://www.nlets.org/niem/1.0" n2:key="MR">
+		<n2-mr:ChemicalInformation>
+			<nc:Chemical>
+				<n2-mr:ChemicalNameText>Chemical Name</n2-mr:ChemicalNameText>
+				<j:HazardousMaterialCode>UN0004</j:HazardousMaterialCode>
+				<n2-mr:SubstanceAugmentation>
+					<n2-mr:ChemicalGuideText>Text Response</n2-mr:ChemicalGuideText>
+				</n2-mr:SubstanceAugmentation>
+			</nc:Chemical>
+		</n2-mr:ChemicalInformation>
+	</n2:NLETSResponseData>
+</n2:NLETS>

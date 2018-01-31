@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:nlets="http://niem.gov/niem/nlets/2.1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/niem/TA/xsd/TA.xsd" version="3.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>TA</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS24</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>OD</nh2:DestinationORIID>
+		<nh2:UserID>Kate</nh2:UserID>
+	</NLETSMessageHeader>
+	<NLETSUpdateData key="TA">
+		<Agency>
+			<j:OrganizationCategoryNLETSCode>PD</j:OrganizationCategoryNLETSCode>
+			<nc:OrganizationLocation>
+				<nc:LocationAddress>
+					<nc:StructuredAddress>
+						<nc:LocationStreet>
+							<nc:StreetFullText>123 NORTH STREET</nc:StreetFullText>
+						</nc:LocationStreet>
+						<nc:LocationCityName>FAIRFAX</nc:LocationCityName>
+						<nc:LocationPostalCode>22222</nc:LocationPostalCode>
+					</nc:StructuredAddress>
+				</nc:LocationAddress>
+				<nc:LocationName>VA</nc:LocationName>
+			</nc:OrganizationLocation>
+			<nc:OrganizationName>FAIRFAX CO PD</nc:OrganizationName>
+			<nc:OrganizationPrimaryContactInformation>
+				<nc:ContactTelephoneNumber>
+					<nc:FullTelephoneNumber>
+						<nc:TelephoneNumberFullID>1231231234</nc:TelephoneNumberFullID>
+					</nc:FullTelephoneNumber>
+				</nc:ContactTelephoneNumber>
+			</nc:OrganizationPrimaryContactInformation>
+			<j:OrganizationAugmentation>
+				<j:OrganizationORIIdentification>
+					<nc:IdentificationID>VA1234567</nc:IdentificationID>
+				</j:OrganizationORIIdentification>
+				<j:AgencyAddCancelIndicator>false</j:AgencyAddCancelIndicator>
+				<j:AgencyBaselinePriorityValue>1</j:AgencyBaselinePriorityValue>
+				<j:AgencyCHRIAuthorizedIndicator>false</j:AgencyCHRIAuthorizedIndicator>
+				<j:AgencyControlTerminalIndicator>false</j:AgencyControlTerminalIndicator>
+				<j:AgencyServiceHoursCode>A</j:AgencyServiceHoursCode>
+				<j:AgencyAuthorizationCode>Z</j:AgencyAuthorizationCode>
+			</j:OrganizationAugmentation>
+			<OrganizationActiveCode>A</OrganizationActiveCode>
+		</Agency>
+		<MiscellaneousUpdateText></MiscellaneousUpdateText>
+	</NLETSUpdateData>
+</NLETS>

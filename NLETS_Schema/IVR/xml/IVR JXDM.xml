@@ -1,0 +1,57 @@
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<n:NLETSResponseMessage>
+<n:NLETSResponseHeader>
+<n:MessageKeyCode>
+IVR</n:MessageKeyCode>
+<n:DocumentControlFieldText>
+MRI0046477</n:DocumentControlFieldText>
+<j:DocumentSource.Organization>
+<j:OrganizationORIID>
+<j:ID>
+DCINTER00</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSource.Organization>
+<j:DocumentSubject.Organization>
+<j:OrganizationORIID>
+<j:ID>
+AZNLETS24</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSubject.Organization>
+<n:DocumentReceivedTime>
+10:52</n:DocumentReceivedTime>
+<j:DocumentReceivedDate xmlns:j="http://www.it.ojp.gov/jxdm/3.0">
+05/11/2006</j:DocumentReceivedDate>
+<n:DocumentReceivedCountQuantity>
+00051</n:DocumentReceivedCountQuantity>
+<j:DocumentFiledTime xmlns:j="http://www.it.ojp.gov/jxdm/3.0">
+10:52</j:DocumentFiledTime>
+<j:DocumentFiledDate xmlns:j="http://www.it.ojp.gov/jxdm/3.0">
+05/11/2006</j:DocumentFiledDate>
+<n:DocumentFiledCountQuantity>
+00239</n:DocumentFiledCountQuantity>
+</n:NLETSResponseHeader>
+<n:NLETSInquiryData Key="IVQ">
+<j:Vehicle>
+<j:VehicleID>
+<j:ID>
+123456</j:ID>
+</j:VehicleID>
+</j:Vehicle>
+</n:NLETSInquiryData>
+<n:NLETSResponseData Key="IVR">
+<n:InterpolListResponse>
+<j:Vehicle>
+<j:VehicleID>
+<j:ID>
+123456</j:ID>
+</j:VehicleID>
+<j:VehicleEngineID>
+<j:ID />
+</j:VehicleEngineID>
+<j:VehicleMakeCode />
+<j:SubjectID />
+</j:Vehicle>
+</n:InterpolListResponse>
+</n:NLETSResponseData>
+</n:NLETSResponseMessage>
+</n:NLETS>

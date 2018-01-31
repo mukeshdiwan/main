@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org" xmlns:iso_3166="http://www.it.ojp.gov/jxdm/iso_3166/1.0" xmlns:j="http://www.it.ojp.gov/jxdm/3.0.3" xmlns:j-iso_3166="http://www.it.ojp.gov/jxdm/3.0.3/proxy/iso_3166/1.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0.3/proxy/ncic_2000/1.0.2" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0.3/proxy/xsd/1.0" xmlns:ncic="http://www.it.ojp.gov/jxdm/ncic_2000/1.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  version="">
+	<NLETSResponseMessage>
+		<NLETSResponseHeader>
+			<DocumentUserID/>
+			<MessageKeyCode>FTR</MessageKeyCode>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID></j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZNLETS23</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+			<DocumentDestinationID>
+				<j:ID>AZNLETS23</j:ID>
+			</DocumentDestinationID>
+		</NLETSResponseHeader>
+		<NLETSResponseData Key="">
+			<InterpolRecord>
+				<Subject>
+					<j:PersonName>
+						<j:PersonFullName>JOHN DOE</j:PersonFullName>
+					</j:PersonName>
+					<j:PersonPhysicalDetails/>
+					<j:PersonSocialDetails/>
+					<PersonStatus>SUSPECTED</PersonStatus>
+					<CriminalHistory>
+						<Offense>
+							<OffenseText>BANKING/FINANCIAL FRAUD</OffenseText>
+						</Offense>
+					</CriminalHistory>
+					<PersonQualificationText>CRIMINAL</PersonQualificationText>
+				</Subject>
+				<j:Document>
+					<j:DocumentDescriptiveMetadata>
+						<j:DocumentID></j:DocumentID>
+						<j:DocumentTypeText>Passport</j:DocumentTypeText>
+						<j:DocumentCreator.Organization>
+							<j:OrganizationLocation>
+								<j:LocationAddress/>
+							</j:OrganizationLocation>
+						</j:DocumentCreator.Organization>
+					</j:DocumentDescriptiveMetadata>
+				</j:Document>
+			</InterpolRecord>
+		</NLETSResponseData>
+	</NLETSResponseMessage>
+</NLETS>

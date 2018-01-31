@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" targetNamespace="http://www.nlets.org/niem/1.0">
+	<import namespace="http://release.niem.gov/niem/proxy/xsd/4.0/" schemaLocation="./niem/proxy/xsd/4.0/xs.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="./nlets-hdr/1.0/MessageHeader.xsd"/>
+	<import namespace="http://release.niem.gov/niem/niem-core/4.0/" schemaLocation="./niem/niem-core/4.0/niem-core.xsd"/>
+	<import namespace="http://release.niem.gov/niem/domains/jxdm/6.0/" schemaLocation="./niem/domains/jxdm/6.0/jxdm.xsd"/>
+	<import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="./niem/utility/structures/4.0/structures.xsd"/>
+	<complexType name="NLETSInquiryDataType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="structures:ObjectType">
+				<sequence>
+					<element ref="n2:InquiryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nc:OrganizationOtherIdentification" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+				<attribute ref="n2:key" use="required"/>
+				<attribute ref="n2:type" use="optional"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSResponseDataType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="structures:ObjectType">
+				<sequence>
+					<element ref="n2:ResponseText" minOccurs="0"/>
+					<element ref="n2:RevokedCarrierOrganization" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+				<attribute ref="n2:key" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSType">
+		<annotation>
+			<documentation>A structure that defines the root element of an NLETS message.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="structures:ObjectType">
+				<sequence>
+					<element ref="n2:NLETSMessageHeader"/>
+					<element ref="n2:NLETSInquiryData" minOccurs="0"/>
+					<element ref="n2:NLETSResponseData"/>
+				</sequence>
+				<attribute name="version" type="xsd:string" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="OrganizationAugmentationType">
+		<annotation>
+			<documentation>A structure that defines the organization returned from IFTA.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="structures:ObjectType">
+				<sequence>
+					<element ref="n2:OrganizationLicensedDate" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>	
+	<complexType name="RevokedCarrierOrganizationType">
+		<annotation>
+			<documentation>A structure that defines the organization returned from IFTA.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:OrganizationType">
+				<sequence>
+					<element ref="n2:RecordUpdateDate" minOccurs="0"/>
+				</sequence>
+				<attribute ref="n2:version" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<attribute name="key" type="xsd:string"/>
+	<attribute name="type" type="xsd:string"/>
+	<attribute name="version" type="xsd:string"/>
+	<element name="InquiryDescriptionText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains free text . Include personal descriptors (name, sex) with other relevant data (case number, booking number, state ID, miscellaneous number) followed by any additional free text.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETS" type="n2:NLETSType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The root element of a NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSInquiryData" type="n2:NLETSInquiryDataType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain all elements specific to this transaction.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSMessageHeader" type="nh2:NLETSMessageHeaderType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Metadata information about an NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSResponseData" type="n2:NLETSResponseDataType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="ResponseText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain the free text response. Nlets recommends the user of &lt;![CDATA[]]&gt; tags to ensure that the response does not contain any characters illegal in XML.</documentation>
+		</annotation>
+	</element>
+	<element name="OrganizationAugmentation" type="n2:OrganizationAugmentationType" substitutionGroup="nc:OrganizationAugmentationPoint" abstract="false" nillable="true">
+		<annotation>
+			<documentation></documentation>
+		</annotation>
+	</element>	
+	<element name="OrganizationLicensedDate" type="nc:DateType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Date of initial licensing as returned from IFTA.</documentation>
+		</annotation>
+	</element>	
+	<element name="RecordUpdateDate" type="nc:DateType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain the date of last record update as returned from IFTA.</documentation>
+		</annotation>
+	</element>
+	<element name="RevokedCarrierOrganization" type="n2:RevokedCarrierOrganizationType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain the data about the revoked carrier organization as returned from IFTA.</documentation>
+		</annotation>
+	</element>
+</schema>

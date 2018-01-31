@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/niem-core/3.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>NIEM Core.</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../proxy/xsd/3.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"/>
+  <xs:import schemaLocation="../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:complexType name="ActivityType">
+    <xs:annotation>
+      <xs:documentation>A data type for a single or set of related actions, events, or process steps.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:ActivityDateRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ActivityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddressType">
+    <xs:annotation>
+      <xs:documentation>A data type for a geophysical location described by postal information.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:AddressFullText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressDeliveryPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationCityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationState" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationPostalCode" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AssociationType">
+    <xs:annotation>
+      <xs:documentation>A data type for an association, connection, relationship, or involvement somehow linking people, things, and/or activities together.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AssociationType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BinaryType">
+    <xs:annotation>
+      <xs:documentation>A data type for a digital representation of an object encoded in a binary format.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:BinaryCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:BinaryLocationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:BinaryAvailableIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:BinaryObject" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:BinaryCaptureDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:BinaryCapturer" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:BinaryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:BinaryFormatText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:BinaryURI" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:BinarySizeValue" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ContactInformationAssociationType">
+    <xs:annotation>
+      <xs:documentation>A data type for an association between contact information and a an entity.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:AssociationType">
+        <xs:sequence>
+          <xs:element ref="nc:Contact" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ContactInformationType">
+    <xs:annotation>
+      <xs:documentation>A data type for how to contact a person or an organization.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:ContactMeans" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConveyanceType">
+    <xs:annotation>
+      <xs:documentation>A data type for a means of transport from place to place.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:ItemType">
+        <xs:sequence>
+          <xs:element ref="nc:ConveyanceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DateType">
+    <xs:annotation>
+      <xs:documentation>A data type for a calendar date.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:DateRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DispositionType">
+    <xs:annotation>
+      <xs:documentation>A data type for a result or outcome that is the product of handling, processing, or finalizing something.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:DispositionDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DispositionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EntityType">
+    <xs:annotation>
+      <xs:documentation>A data type for a person, organization, or thing capable of bearing legal rights and responsibilities.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:EntityRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IdentificationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a representation of an identity.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:IdentificationID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:IdentificationJurisdiction" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:IdentificationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:IdentificationEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:IdentificationExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:IdentificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImageType">
+    <xs:annotation>
+      <xs:documentation>A data type for a picture or visual representation of something.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:BinaryType">
+        <xs:sequence>
+          <xs:element ref="nc:ImageAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ItemType">
+    <xs:annotation>
+      <xs:documentation>A data type for an article or thing.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:ItemSerialIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ItemColor" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ItemMakeName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ItemModelName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ItemModelYearDate" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="JurisdictionType">
+    <xs:annotation>
+      <xs:documentation>A data type for a geopolitical area in which an organization, person, or object has a specific range of authority.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:LocationState" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MeasureType">
+    <xs:annotation>
+      <xs:documentation>A data type for a measurement.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:MeasureValue" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="NonNegativeDecimalSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a decimal value with a minimum value of 0.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0">
+        <xs:annotation>
+          <xs:documentation>The lowest value allowed (inclusive).</xs:documentation>
+        </xs:annotation>
+      </xs:minInclusive>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NonNegativeDecimalType">
+    <xs:annotation>
+      <xs:documentation>A data type for a decimal value with a minimum value of 0.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nc:NonNegativeDecimalSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OrganizationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a body of people organized for a particular purpose.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:OrganizationName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:OrganizationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonConveyanceAssociationType">
+    <xs:annotation>
+      <xs:documentation>A data type for an association between a person and a conveyance.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:AssociationType">
+        <xs:sequence>
+          <xs:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Conveyance" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonNameTextType">
+    <xs:annotation>
+      <xs:documentation>A data type for a name by which a person is known, referred, or addressed.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nc:ProperNameTextType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="PersonNameType">
+    <xs:annotation>
+      <xs:documentation>A data type for a combination of names and/or titles by which a person is known.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:PersonGivenName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonMiddleName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonSurName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonFullName" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonType">
+    <xs:annotation>
+      <xs:documentation>A data type for a human being.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:PersonBirthDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonDigitalImage" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonHairColor" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonHeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonLicenseIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonPhysicalFeature" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonRace" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonSex" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonSSNIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PhysicalFeatureType">
+    <xs:annotation>
+      <xs:documentation>A data type for a prominent or easily identifiable aspect of something or someone.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:PhysicalFeatureCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PhysicalFeatureDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PhysicalFeatureImage" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProperNameTextType">
+    <xs:annotation>
+      <xs:documentation>A data type for a word or phrase by which a person or thing is known, referred, or addressed.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nc:TextType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="StreetType">
+    <xs:annotation>
+      <xs:documentation>A data type for a road, thoroughfare, or highway.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:StreetFullText" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TextType">
+    <xs:annotation>
+      <xs:documentation>A data type for a character string.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="niem-xs:string"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VehicleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a conveyance designed to carry an operator, passengers and/or cargo, over land.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:ConveyanceType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VesselType">
+    <xs:annotation>
+      <xs:documentation>A data type for a mode of transportation capable of transport by water.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:ConveyanceType">
+        <xs:sequence>
+          <xs:element ref="nc:VesselHullIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:VesselAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Activity" type="nc:ActivityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A single or set of related actions, events, or process steps.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ActivityAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ActivityType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ActivityDate" type="nc:DateType" substitutionGroup="nc:ActivityDateRepresentation">
+    <xs:annotation>
+      <xs:documentation>A date of an activity.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ActivityDateRepresentation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a date an activity occurs.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AddressDeliveryPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a single place or unit at which mail is delivered.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AddressFullText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A complete address.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Base64BinaryObject" type="niem-xs:base64Binary" substitutionGroup="nc:BinaryObject">
+    <xs:annotation>
+      <xs:documentation>A base64 binary encoding of data.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BinaryAvailableIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a binary is available; false if it is not.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BinaryCaptureDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which a binary object is captured or created.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BinaryCapturer" type="nc:EntityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entity which captured or created a binary object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BinaryCategory" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of binary object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BinaryCategoryText" type="nc:TextType" substitutionGroup="nc:BinaryCategory">
+    <xs:annotation>
+      <xs:documentation>A kind of object that has been encoded.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BinaryDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a binary object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BinaryFormatText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A file format or content type of a binary object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BinaryLocationText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A physical location of a binary object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BinaryObject" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a binary encoding of data.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BinarySizeValue" type="nc:NonNegativeDecimalType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A size of a binary object in kilobytes.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BinaryURI" type="niem-xs:anyURI" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A URL or file reference of a binary object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Contact" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a person or organization to contact.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactEntity" type="nc:EntityType" substitutionGroup="nc:Contact" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entity that may be contacted by using the given contact information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactInformation" type="nc:ContactInformationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of details about how to contact a person or an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactInformationAssociation" type="nc:ContactInformationAssociationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An association between contact information and an entity.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactMailingAddress" type="nc:AddressType" substitutionGroup="nc:ContactMeans">
+    <xs:annotation>
+      <xs:documentation>A postal address by which a person or organization may be contacted.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactMeans" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a means of contacting someone.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Conveyance" type="nc:ConveyanceType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A means of transport.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ConveyanceType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceColorPrimaryText" type="nc:TextType" substitutionGroup="nc:ItemColor">
+    <xs:annotation>
+      <xs:documentation>A single, upper-most, front-most, or majority color of a conveyance.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceColorSecondaryText" type="nc:TextType" substitutionGroup="nc:ItemColor">
+    <xs:annotation>
+      <xs:documentation>A lower-most or rear-most color of a two-tone conveyance or a lesser color of a multi-colored conveyance.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Date" type="niem-xs:date" substitutionGroup="nc:DateRepresentation">
+    <xs:annotation>
+      <xs:documentation>A full date.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DateRepresentation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a representation of a date.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DispositionDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date a disposition occurred.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DispositionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A result or outcome of a disposition.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EntityOrganization" type="nc:OrganizationType" substitutionGroup="nc:EntityRepresentation">
+    <xs:annotation>
+      <xs:documentation>An organization capable of bearing legal rights and responsibilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EntityPerson" type="nc:PersonType" substitutionGroup="nc:EntityRepresentation">
+    <xs:annotation>
+      <xs:documentation>A person capable of bearing legal rights and responsibilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EntityRepresentation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a person, organization, or thing capable of bearing legal rights and responsibilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for IdentificationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationCategory" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of identification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationCategoryText" type="nc:TextType" substitutionGroup="nc:IdentificationCategory">
+    <xs:annotation>
+      <xs:documentation>A kind of identification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationEffectiveDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date an identification takes effect.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationExpirationDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date after which an identification is no longer valid.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationJurisdiction" type="nc:JurisdictionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An area, region, or unit where a unique identification is issued.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ImageAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ImageType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemColor" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a color of an item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemMakeName" type="nc:ProperNameTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of the manufacturer that produced an item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemModelName" type="nc:ProperNameTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a specific design or kind of item made by a manufacturer.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemModelYearDate" type="niem-xs:gYear" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A year in which an item was manufactured or produced.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemSerialIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification inscribed on or attached to a part, collection of parts, or complete unit by the manufacturer.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationCityName" type="nc:ProperNameTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a city or town.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationPostalCode" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier of a post office-assigned zone for an address.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationState" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationStateName" type="nc:ProperNameTextType" substitutionGroup="nc:LocationState">
+    <xs:annotation>
+      <xs:documentation>A name of a state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationStreet" type="nc:StreetType" substitutionGroup="nc:AddressDeliveryPoint">
+    <xs:annotation>
+      <xs:documentation>A road, thoroughfare or highway.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MeasureValue" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a measurement value.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MeasureValueText" type="nc:TextType" substitutionGroup="nc:MeasureValue">
+    <xs:annotation>
+      <xs:documentation>A textual description of a measurement value.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Organization" type="nc:OrganizationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unit which conducts some sort of business or operations.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for OrganizationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Person" type="nc:PersonType">
+    <xs:annotation>
+      <xs:documentation>A human being.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for PersonType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonBirthDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date a person was born.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonDigitalImage" type="nc:ImageType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A photograph or image of a person in a digital format.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonEyeColor" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a color of the eyes of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonEyeColorText" type="nc:TextType" substitutionGroup="nc:PersonEyeColor">
+    <xs:annotation>
+      <xs:documentation>A color of the eyes of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonFullName" type="nc:PersonNameTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A complete name of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonGivenName" type="nc:PersonNameTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A first name of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonHairColor" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a color of the hair of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonHairColorText" type="nc:TextType" substitutionGroup="nc:PersonHairColor">
+    <xs:annotation>
+      <xs:documentation>A color of the hair of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonHeightMeasure" type="nc:MeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A measurement of the height of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonLicenseIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification that references a license certification or registration of a person for some purpose.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonMiddleName" type="nc:PersonNameTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A middle name of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonName" type="nc:PersonNameType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A combination of names and/or titles by which a person is known.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonPhysicalFeature" type="nc:PhysicalFeatureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A prominent or easily identifiable aspect of  a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonRace" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a classification of a person based on factors such as geographical locations and genetics.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonRaceText" type="nc:TextType" substitutionGroup="nc:PersonRace">
+    <xs:annotation>
+      <xs:documentation>A classification of a person based on factors such as geographical locations and genetics.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonSSNIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique identification reference to a living person; assigned by the United States Social Security Administration.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonSex" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a gender or sex of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonSexText" type="nc:TextType" substitutionGroup="nc:PersonSex">
+    <xs:annotation>
+      <xs:documentation>A gender or sex of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonSurName" type="nc:PersonNameTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A last name or family name of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonWeightMeasure" type="nc:MeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A measurement of the weight of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PhysicalFeatureCategory" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a specific kind of physical feature.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PhysicalFeatureDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a physical feature.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PhysicalFeatureImage" type="nc:ImageType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A digital image of a physical feature.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoleOf" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a property of a role object. This specifies the base object, of which the role object is a function.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoleOfPerson" type="nc:PersonType" substitutionGroup="nc:RoleOf" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person of whom the role object is a function.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StreetFullText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A complete reference for a street.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Vehicle" type="nc:VehicleType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A conveyance designed to carry an operator, passengers and/or cargo, over land.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Vessel" type="nc:VesselType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A mode of transportation capable of transport by water.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VesselAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for VesselType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VesselHullIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification found on the main body or frame of a vessel.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

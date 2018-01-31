@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>QPO</ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData
+            s:ref="d77e16-incomingRecordData_protectionOrderIncomingQueryDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (query). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData
+        s:id="d77e16-incomingRecordData_protectionOrderIncomingQueryDataSection">
+        <ncic:ProtectionOrderRecord s:ref="d77e17-protectionOrderRecord_queryDataSection"/>
+        <!-- EBS - Expanded DOB search -->
+        <ncic:ExtendedBirthdaySearchCode>1</ncic:ExtendedBirthdaySearchCode>
+        <!-- ENS - Expanded name search -->
+        <ncic:ExtendedNameSearchIndicator>false</ncic:ExtendedNameSearchIndicator>
+        <!-- IND - Image indicator -->
+        <ncic:ImageIndicator>true</ncic:ImageIndicator>
+        <!-- RSH - Related search hit -->
+        <ncic:RelatedSearchHitIndicator>true</ncic:RelatedSearchHitIndicator>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ProtectionOrderRecord (query). -->
+    <!-- ******************************************************************************** -->
+    <ncic:ProtectionOrderRecord s:id="d77e17-protectionOrderRecord_queryDataSection">
+        <nc:Incident s:ref="d77e17-case_protectionOrder"/>
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="d77e17-conveyanceRegistration_protectionOrder"/>
+            <nc:Item s:ref="d77e17-vehicle_protectionOrder"/>
+        </j:ConveyanceRegistrationAssociation>
+        <j:DriverLicenseAssociation>
+            <j:DriverLicense s:ref="d77e49-driverLicense_protectionOrder"/>
+            <nc:Person s:ref="d77e17-person_protectionOrder"/>
+        </j:DriverLicenseAssociation>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>P123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <j:ProtectionOrder s:ref="d77e17-protectionOrder_protectionOrder"/>
+        <j:Subject s:ref="d77e17-subject_protectionOrder"/>
+    </ncic:ProtectionOrderRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e17-case_protectionOrder">
+        <j:ActivityAugmentation>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>WV-H008743</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e17-person_protectionOrder">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1977-07-07</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JACKSON</nc:PersonGivenName>
+            <nc:PersonMiddleName>JAMES</nc:PersonMiddleName>
+            <nc:PersonSurName>JEFFERSON</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonOtherIdentification>
+            <!-- MNU - Miscellaneous number -->
+            <nc:IdentificationID>AS-9900789789</nc:IdentificationID>
+        </nc:PersonOtherIdentification>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>M</j:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social security number -->
+            <nc:IdentificationID>456456456</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <j:PersonAugmentation>
+            <j:PersonFBIIdentification>
+                <!-- FBI - FBI number -->
+                <nc:IdentificationID>123456B</nc:IdentificationID>
+            </j:PersonFBIIdentification>
+        </j:PersonAugmentation>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vehicle. -->
+    <!-- ******************************************************************************** -->
+    <nc:Vehicle s:id="d77e17-vehicle_protectionOrder">
+        <nc:VehicleIdentification>
+            <!-- VIN - Vehicle identification number -->
+            <nc:IdentificationID>VIN3456790</nc:IdentificationID>
+        </nc:VehicleIdentification>
+        <!-- VMA - Vehicle make -->
+        <ncic:VehicleMakeCodeText>TOHO</ncic:VehicleMakeCodeText>
+    </nc:Vehicle>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="d77e17-conveyanceRegistration_protectionOrder">
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number -->
+            <nc:IdentificationID>WV345</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- LIS - License plate state -->
+                <j:JurisdictionNCICLSTACode>AZ</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+    </j:ConveyanceRegistration>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:DriverLicense. -->
+    <!-- ******************************************************************************** -->
+    <j:DriverLicense s:id="d77e49-driverLicense_protectionOrder">
+        <j:DriverLicenseCardIdentification>
+            <!-- OLN - Operator license number -->
+            <nc:IdentificationID>MI94569</nc:IdentificationID>
+        </j:DriverLicenseCardIdentification>
+    </j:DriverLicense>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ProtectionOrder. -->
+    <!-- ******************************************************************************** -->
+    <j:ProtectionOrder s:id="d77e17-protectionOrder_protectionOrder">
+        <nc:ActivityIdentification>
+            <!-- PNO - Protection order number -->
+            <nc:IdentificationID>DC-90235</nc:IdentificationID>
+        </nc:ActivityIdentification>
+    </j:ProtectionOrder>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="d77e17-subject_protectionOrder">
+        <nc:RoleOfPerson s:ref="d77e17-person_protectionOrder"/>
+    </j:Subject>
+</ncic-ex:Exchange>

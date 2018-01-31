@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:ansi-nist="http://niem.gov/niem/ansi-nist/2.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ncic_2000/1.0.1" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0.2/proxy/xsd/1.0" xmlns:j0="http://niem.gov/niem/domains/jxdm/4.1" xmlns:j1="http://www.it.ojp.gov/jxdm/3.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:ncic="http://www.it.ojp.gov/jxdm/ncic_2000/1.0.1" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:rap="http://www.nlets.org/rapsheet/3.0" xmlns:rap-code="http://nlets.org/niem2/rapsheet/1.0/codes" xmlns:rap-code0="http://www.nlets.org/rapsheet/codes/1.0" xmlns:rap-code1="http://www.nlets.org/rapsheet/proxy/codes/1.0" xmlns:rap1="http://nlets.org/niem2/rapsheet/1.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:scr="http://niem.gov/niem/domains/screening/2.0" xmlns:usps="http://niem.gov/niem/usps_states/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/FR.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>
+FR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>
+CN0000000</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>
+AZNLETS21</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>
+DGREEN2345</nh2:DocumentControlFieldText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSResponseData n2:key="FR">
+		<n2:ResponseText>
+** RESPONSE FROM CANADIAN SYSTEM  -  CRIMINAL HISTORY FILE **ATN/ARTHUR PEUTYFPS:423543A&amp;#xC;RE:  6258   Q CR LANG:E  LVL: 1       REM: N,FQ,AZNLETS21,*DGREEN2345,ARTHUR PEUTY  FPS: 423543A  NOT ON FILE - FILE STATUS CAN BE VERIFIED BY 'Q FPS'2006050317084820060503170848*** END OF CPIC RESPONSE ***OTTAWA, CANADA</n2:ResponseText>
+	</n2:NLETSResponseData>
+</n2:NLETS>

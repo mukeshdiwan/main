@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org " xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <n:NLETSUpdateMessage>
+    <n:NLETSUpdateHeader>
+       <n:DocumentUserID><j:ID>USER55</j:ID></n:DocumentUserID>
+       <n:DocumentPasswordText>123456</n:DocumentPasswordText>
+       <n:MessageKeyCode>TU</n:MessageKeyCode>
+       <j:DocumentSource.Organization>
+          <j:OrganizationORIID>
+              <j:ID>GA1234567</j:ID>
+          </j:OrganizationORIID>
+       </j:DocumentSource.Organization>
+       <n:DocumentDestinationID>
+           <j:ID>OD</j:ID>
+        </n:DocumentDestinationID>
+	</n:NLETSUpdateHeader>
+	<n:NLETSUpdateData Key="TU">
+		<n:Agency>
+			<j:OrganizationORIID>
+               <j:ID>VA1234567</j:ID>
+            </j:OrganizationORIID>
+			<j:OrganizationName>FAIRFAX CO PD</j:OrganizationName>
+			<n:OrganizationTypeCode>PD</n:OrganizationTypeCode>
+			<j:OrganizationLocation>
+			     <j:LocationName>VA</j:LocationName>
+				<j:LocationStreet>
+					<j:StreetFullText>123 NORTH STREET</j:StreetFullText>
+				</j:LocationStreet>
+				<j:LocationCityName>FAIRFAX</j:LocationCityName>
+				<j:LocationPostalCodeID>
+                    <j:ID>22222</j:ID>
+                </j:LocationPostalCodeID>
+               <j:LocationContactInformation>
+			      <j:ContactTelephoneNumber>
+			  	   <j:TelephoneAreaCodeID>703</j:TelephoneAreaCodeID>
+				   <j:TelephoneExchangeID>555</j:TelephoneExchangeID>
+				   <j:TelephoneSubscriberID>1234</j:TelephoneSubscriberID>
+                    <j:TelephoneNumberCommentText>Primary</j:TelephoneNumberCommentText>
+			       </j:ContactTelephoneNumber>
+				  <j:ContactTelephoneNumber>
+					<j:TelephoneAreaCodeID>703</j:TelephoneAreaCodeID>
+					<j:TelephoneExchangeID>555</j:TelephoneExchangeID>
+					<j:TelephoneSubscriberID>4567</j:TelephoneSubscriberID>
+                     <j:TelephoneNumberCommentText>Secondary</j:TelephoneNumberCommentText>
+				  </j:ContactTelephoneNumber>
+				  <j:ContactFacsimileNumber>
+					<j:TelephoneAreaCodeID>703</j:TelephoneAreaCodeID>
+					<j:TelephoneExchangeID>555</j:TelephoneExchangeID>
+					<j:TelephoneSubscriberID>5678</j:TelephoneSubscriberID>
+                     <j:TelephoneNumberCommentText>Primary</j:TelephoneNumberCommentText>
+				  </j:ContactFacsimileNumber>
+				  <j:ContactFacsimileNumber>
+					<j:TelephoneAreaCodeID>703</j:TelephoneAreaCodeID>
+					<j:TelephoneExchangeID>555</j:TelephoneExchangeID>
+					<j:TelephoneSubscriberID>6789</j:TelephoneSubscriberID>
+                     <j:TelephoneNumberCommentText>Secondary</j:TelephoneNumberCommentText>
+				  </j:ContactFacsimileNumber>
+                 </j:LocationContactInformation>
+				  <n:OrganizationOperatingHours>A</n:OrganizationOperatingHours>
+			</j:OrganizationLocation>
+            <n:OrganizationCHRIAuthorizationIndicator>N</n:OrganizationCHRIAuthorizationIndicator>
+				<n:OrganizationAuthorizationIndicators>
+					<!-- Can be more than one -->
+				<n:OrganizationAuthorizationIndicator>D</n:OrganizationAuthorizationIndicator>
+				</n:OrganizationAuthorizationIndicators>
+				<n:OrganizationBaselinePriority>11</n:OrganizationBaselinePriority>
+				<n:OrganizationControlTerminalIndicator>N</n:OrganizationControlTerminalIndicator>
+				<n:AddCancelIndicator>N</n:AddCancelIndicator>
+				<n:ActiveCode>A</n:ActiveCode>
+				<n:OrganizationCommentsText>THIS IS A TEST UPDATE</n:OrganizationCommentsText>
+		</n:Agency>
+		</n:NLETSUpdateData>
+	</n:NLETSUpdateMessage>
+</n:NLETS>

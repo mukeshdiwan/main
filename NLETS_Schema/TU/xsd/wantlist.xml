@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:WantList w:release="2.1" w:product="NIEM"
+  xmlns:nlets="http://niem.gov/niem/nlets/2.1"
+  xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+  xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+  xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:w="http://niem.gov/niem/wantlist/2">
+  <w:Element w:name="j:AgencyAddCancelIndicator" w:isReference="false"/>
+  <w:Element w:name="j:AgencyAuthorization" w:isReference="false"/>
+  <w:Element w:name="j:AgencyAuthorizationCode" w:isReference="false"/>
+  <w:Element w:name="j:AgencyBaselinePriorityValue" w:isReference="false"/>
+  <w:Element w:name="j:AgencyCHRIAuthorizedIndicator" w:isReference="false"/>
+  <w:Element w:name="j:AgencyControlTerminalIndicator" w:isReference="false"/>
+  <w:Element w:name="j:AgencyServiceHours" w:isReference="false"/>
+  <w:Element w:name="j:AgencyServiceHoursCode" w:isReference="false"/>
+  <w:Element w:name="j:OrganizationAugmentation" w:isReference="false"/>
+  <w:Element w:name="j:OrganizationCategoryNLETSCode" w:isReference="false"/>
+  <w:Element w:name="j:OrganizationORIIdentification" w:isReference="false"/>
+  <w:Element w:name="nc:AddressDeliveryPoint" w:isReference="false"/>
+  <w:Element w:name="nc:AddressRepresentation" w:isReference="false"/>
+  <w:Element w:name="nc:ContactFaxNumber" w:isReference="false"/>
+  <w:Element w:name="nc:ContactMeans" w:isReference="false"/>
+  <w:Element w:name="nc:ContactTelephoneNumber" w:isReference="false"/>
+  <w:Element w:name="nc:FullTelephoneNumber" w:isReference="false"/>
+  <w:Element w:name="nc:IdentificationID" w:isReference="false"/>
+  <w:Element w:name="nc:LocationAddress" w:isReference="false"/>
+  <w:Element w:name="nc:LocationCityName" w:isReference="false"/>
+  <w:Element w:name="nc:LocationName" w:isReference="false"/>
+  <w:Element w:name="nc:LocationPostalCode" w:isReference="false"/>
+  <w:Element w:name="nc:LocationStreet" w:isReference="false"/>
+  <w:Element w:name="nc:OrganizationCategory" w:isReference="false"/>
+  <w:Element w:name="nc:OrganizationLocation" w:isReference="false"/>
+  <w:Element w:name="nc:OrganizationName" w:isReference="false"/>
+  <w:Element w:name="nc:OrganizationPrimaryContactInformation" w:isReference="false"/>
+  <w:Element w:name="nc:StreetFullText" w:isReference="false"/>
+  <w:Element w:name="nc:StructuredAddress" w:isReference="false"/>
+  <w:Element w:name="nc:TelephoneNumberFullID" w:isReference="false"/>
+  <w:Element w:name="nc:TelephoneNumberRepresentation" w:isReference="false"/>
+  <w:Type w:name="j:OrganizationAugmentationType" w:isRequested="true">
+    <w:ElementInType w:name="j:AgencyAddCancelIndicator"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="j:AgencyAuthorization"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="j:AgencyBaselinePriorityValue"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="j:AgencyCHRIAuthorizedIndicator"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="j:AgencyControlTerminalIndicator"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="j:AgencyServiceHours" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="j:OrganizationORIIdentification"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="j:OrganizationType" w:isRequested="true">
+    <w:ElementInType w:name="j:OrganizationAugmentation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:AddressType" w:isRequested="true">
+    <w:ElementInType w:name="nc:AddressRepresentation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:ContactInformationType" w:isRequested="true">
+    <w:ElementInType w:name="nc:ContactMeans" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:DocumentType" w:isRequested="true"/>
+  <w:Type w:name="nc:FullTelephoneNumberType" w:isRequested="true">
+    <w:ElementInType w:name="nc:TelephoneNumberFullID"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:IdentificationType" w:isRequested="true">
+    <w:ElementInType w:name="nc:IdentificationID" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:LocationType" w:isRequested="true">
+    <w:ElementInType w:name="nc:LocationAddress" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:LocationName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:NumericType" w:isRequested="true"/>
+  <w:Type w:name="nc:OrganizationType" w:isRequested="true">
+    <w:ElementInType w:name="nc:OrganizationCategory"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:OrganizationLocation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:OrganizationName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:OrganizationPrimaryContactInformation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:ProperNameTextType" w:isRequested="true"/>
+  <w:Type w:name="nc:StreetType" w:isRequested="true">
+    <w:ElementInType w:name="nc:StreetFullText" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:StructuredAddressType" w:isRequested="true">
+    <w:ElementInType w:name="nc:AddressDeliveryPoint"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:LocationCityName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:LocationPostalCode"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:TelephoneNumberType" w:isRequested="true">
+    <w:ElementInType w:name="nc:TelephoneNumberRepresentation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:TextType" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:boolean" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:date" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:decimal" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:string" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:time" w:isRequested="true"/>
+  <w:Type w:name="nlets:AgencyAuthorizationCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="A"/>
+    <w:Facet w:facet="enumeration" w:value="C"/>
+    <w:Facet w:facet="enumeration" w:value="D"/>
+    <w:Facet w:facet="enumeration" w:value="Z"/>
+  </w:Type>
+  <w:Type w:name="nlets:AgencyAuthorizationCodeType" w:isRequested="true"/>
+  <w:Type w:name="nlets:AgencyServiceHoursCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="A"/>
+    <w:Facet w:facet="enumeration" w:value="B"/>
+    <w:Facet w:facet="enumeration" w:value="C"/>
+    <w:Facet w:facet="enumeration" w:value="D"/>
+  </w:Type>
+  <w:Type w:name="nlets:AgencyServiceHoursCodeType" w:isRequested="true"/>
+  <w:Type w:name="nlets:OrganizationCategoryCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="CJ"/>
+    <w:Facet w:facet="enumeration" w:value="FE"/>
+    <w:Facet w:facet="enumeration" w:value="JA"/>
+    <w:Facet w:facet="enumeration" w:value="JC"/>
+    <w:Facet w:facet="enumeration" w:value="JF"/>
+    <w:Facet w:facet="enumeration" w:value="JG"/>
+    <w:Facet w:facet="enumeration" w:value="JJ"/>
+    <w:Facet w:facet="enumeration" w:value="LE"/>
+    <w:Facet w:facet="enumeration" w:value="NJ"/>
+    <w:Facet w:facet="enumeration" w:value="PD"/>
+    <w:Facet w:facet="enumeration" w:value="SA"/>
+    <w:Facet w:facet="enumeration" w:value="SO"/>
+  </w:Type>
+  <w:Type w:name="nlets:OrganizationCategoryCodeType" w:isRequested="true"/>
+</w:WantList>

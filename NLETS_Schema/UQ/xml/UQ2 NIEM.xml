@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/niem/UQ/xsd/UQ.xsd" version="3.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>UQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS21</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>NX</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>DGREEN1237</nh2:DocumentControlFieldText>
+	</NLETSMessageHeader>
+	<NLETSInquiryData key="UQ">
+		<Person>
+			<nc:PersonBirthDate>
+				<nc:Date>1935-04-22</nc:Date>
+			</nc:PersonBirthDate>
+			<nc:PersonName>
+				<nc:PersonFullName>TUBBS, KATHLEEN</nc:PersonFullName>
+			</nc:PersonName>
+			<nc:PersonSexCode>F</nc:PersonSexCode>
+		</Person>
+		<j:PersonSightedIndicator>false</j:PersonSightedIndicator>
+		<ReasonCode>T</ReasonCode>
+	</NLETSInquiryData>
+</NLETS>

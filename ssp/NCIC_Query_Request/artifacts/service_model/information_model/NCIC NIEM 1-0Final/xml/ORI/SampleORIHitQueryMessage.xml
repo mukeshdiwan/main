@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key (type of entry) -->
+        <ncic:MessageTransactionCode>QO<!--/ZO--></ncic:MessageTransactionCode>
+        <ncic-ex:PrimaryHitData s:ref="d77e18-primaryHitData_hitDataSectionPrimary"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. (primary hit data section) -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="d77e18-primaryHitData_hitDataSectionPrimary">
+        <ncic:ORIRecord s:ref="d77e19-oriRecord_oriHitDataResponse"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ORIRecord. (hit data response) -->
+    <!-- ******************************************************************************** -->
+    <ncic:ORIRecord s:id="d77e19-oriRecord_oriHitDataResponse">
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>**TEST**THIS RESPONSE IS FROM NCIC TEST SYSTEM.</nc:CaveatText>
+        <nc:LastUpdatedDate>
+            <!-- DLU - Date Last Update -->
+            <nc:DateTime>2007-12-12T11:00:00-05:00</nc:DateTime>
+        </nc:LastUpdatedDate>
+        <!-- OWN - Owner -->
+        <nc:OrganizationDescriptionText>AB</nc:OrganizationDescriptionText>
+        <nc:ReportedDate>
+            <!-- DTE - Date of Entry -->
+            <nc:DateTime>2005-05-20T14:00:00-04:00</nc:DateTime>
+        </nc:ReportedDate>
+        <ncic:RecordStatus>
+            <nc:StatusDate>
+                <!-- VLD - Date of Last Validation -->
+                <nc:Date>2007-12-13</nc:Date>
+            </nc:StatusDate>
+            <!-- ??? - Literal Text doesn't have a MFC.  This is needed to clarify the purpose of the ncic:RecordStatus. -->
+            <nc:StatusText>VALIDATED</nc:StatusText>
+            <!-- VLN - Name of Validator -->
+            <nc:StatusIssuerText>FBI</nc:StatusIssuerText>
+        </ncic:RecordStatus>
+        <nc:ContactInformationAssociation>
+            <nc:ContactEntity s:ref="d77e48-entity_ori"/>
+            <nc:ContactInformation s:ref="d77e89-contactInformation_ori"/>
+        </nc:ContactInformationAssociation>
+    </ncic:ORIRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Address. (ori address) -->
+    <!-- ******************************************************************************** -->
+    <nc:Address s:id="d77e63-address_ori">
+        <nc:LocationStreet>
+            <!-- SNU - Street number -->
+            <nc:StreetNumberText>8001</nc:StreetNumberText>
+            <!-- SNA - Street name -->
+            <nc:StreetName>LINCOLN BOULEVARD</nc:StreetName>
+        </nc:LocationStreet>
+        <!-- CTY - City name -->
+        <nc:LocationCityName>BETHESDA</nc:LocationCityName>
+        <!-- COU - County -->
+        <nc:LocationCountyName>MONTGOMERY</nc:LocationCountyName>
+        <!-- STA - State name -->
+        <j:LocationStateNCICLSTACode>MD</j:LocationStateNCICLSTACode>
+        <!-- CRY - Country name -->
+        <nc:LocationCountryName>USA</nc:LocationCountryName>
+        <!-- FPC - Foreign Postal Code -->
+        <nc:LocationPostalCode>30001</nc:LocationPostalCode>
+        <!-- ZIP - Zip code -->
+        <nc:LocationPostalExtensionCode>45231</nc:LocationPostalExtensionCode>
+    </nc:Address>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:ContactInformation. (ori contact information) -->
+    <!-- ******************************************************************************** -->
+    <nc:ContactInformation s:id="d77e89-contactInformation_ori">
+        <!-- EML - E-mail address -->
+        <nc:ContactEmailID>JOHNDOE@GMAIL.COM</nc:ContactEmailID>
+        <nc:ContactTelephoneNumber>
+            <nc:FullTelephoneNumber>
+                <!-- CT1 - Contact telephone number -->
+                <nc:TelephoneNumberFullID>3045551211</nc:TelephoneNumberFullID>
+            </nc:FullTelephoneNumber>
+        </nc:ContactTelephoneNumber>
+        <nc:ContactTelephoneNumber>
+            <nc:FullTelephoneNumber>
+                <!-- CT2 - Contact telephone number -->
+                <nc:TelephoneNumberFullID>3045551211</nc:TelephoneNumberFullID>
+            </nc:FullTelephoneNumber>
+        </nc:ContactTelephoneNumber>
+        <nc:ContactTelephoneNumber>
+            <nc:FullTelephoneNumber>
+                <!-- CT3 - Contact telephone number -->
+                <nc:TelephoneNumberFullID>3045551211</nc:TelephoneNumberFullID>
+            </nc:FullTelephoneNumber>
+        </nc:ContactTelephoneNumber>
+        <nc:ContactMailingAddress s:ref="d77e63-address_ori"/>
+    </nc:ContactInformation>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Entity. (ori entity) -->
+    <!-- ******************************************************************************** -->
+    <nc:Entity s:id="d77e48-entity_ori">
+        <nc:EntityOrganization s:ref="d77e48-organization_ori"/>
+    </nc:Entity>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (ori organization) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e48-organization_ori">
+        <!-- TYP - Type -->
+        <nc:OrganizationCategoryText>A</nc:OrganizationCategoryText>
+        <!-- RAD - Resident agency description -->
+        <nc:OrganizationLocalIdentification>
+            <nc:IdentificationID>CDEF</nc:IdentificationID>
+        </nc:OrganizationLocalIdentification>
+        <!-- AN1 - Agency name (primary) -->
+        <nc:OrganizationName>LOS ANGELES POLICE DEPARTMENT</nc:OrganizationName>
+        <!-- ATR - Agency technical representative -->
+        <nc:OrganizationName>LAPD - SPECIAL INVESTIGATIONS</nc:OrganizationName>
+        <!-- AN3 - Agency name (tertiary) -->
+        <nc:OrganizationSubUnit>
+            <nc:OrganizationSubUnitName>BARRACK 56</nc:OrganizationSubUnitName>
+        </nc:OrganizationSubUnit>
+        <!-- AN2 - Agency name (secondary) -->
+        <nc:OrganizationUnitName>BETHESDA UNIT</nc:OrganizationUnitName>
+        <j:OrganizationAugmentation>
+            <!-- FOC - Field office code -->
+            <j:OrganizationFieldOfficeText>ABCD</j:OrganizationFieldOfficeText>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Orginating agency identifier -->
+                <nc:IdentificationID>MD1010000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+        <ncic:OrganizationAugmentation>
+            <ncic:OrganizationDocumentCount>
+                <!-- CDC - Code manual count -->
+                <ncic:CodeManualCount>1</ncic:CodeManualCount>
+                <!-- NLC - Newsletter count -->
+                <ncic:NewsletterCount>3</ncic:NewsletterCount>
+                <!-- OMC - Operating manual count -->
+                <ncic:OperatingManualCount>1</ncic:OperatingManualCount>
+                <!-- TUC - Technical and Operational Update Count -->
+                <ncic:TOUCount>1</ncic:TOUCount>
+            </ncic:OrganizationDocumentCount>
+        </ncic:OrganizationAugmentation>
+    </nc:Organization>
+</ncic-ex:Exchange>

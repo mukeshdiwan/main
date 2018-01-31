@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:rap-code="http://www.nlets.org/rapsheet/proxy/codes/1.0" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:rap="http://www.nlets.org/rapsheet/3.0" targetNamespace="http://www.nlets.org/rapsheet/3.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.it.ojp.gov/jxdm/3.0" schemaLocation="jxdm/3.0/jxdm.xsd"/>
+	<xsd:import namespace="http://www.nlets.org/rapsheet/proxy/codes/1.0" schemaLocation="RapSheetCodes-proxy.xsd"/>
+	<xsd:element name="RapSheet" type="rap:RapSheetType"/>
+	<xsd:element name="Attention" type="xsd:string"/>
+	<xsd:element name="ControlData" type="rap:StringWithType"/>
+	<xsd:element name="Cycle" type="rap:CycleType"/>
+	<xsd:element name="CycleEarliestDate" type="xsd:date"/>
+	<xsd:element name="CycleTrackingID" type="j:IDType"/>
+	<xsd:element name="Introduction" type="rap:IntroductionType"/>
+	<xsd:element name="Caveat" type="rap:CaveatType"/>
+	<xsd:element name="Prosecution" type="rap:ProsecutionType"/>
+	<xsd:element name="ProsecutionAgencyRecordID" type="j:IDType"/>
+	<xsd:element name="ProsecutionSubject" type="j:SubjectType"/>
+	<xsd:element name="ProsecutionAgency" type="j:OrganizationType"/>
+	<xsd:element name="CourtAction" type="rap:CourtActionType"/>
+	<xsd:element name="CourtRecordID" type="j:IDType"/>
+	<xsd:element name="CourtSubject" type="j:SubjectType"/>
+	<xsd:element name="Sentencing" type="rap:SentencingType"/>
+	<xsd:element name="Supervision" type="rap:SupervisionType"/>
+	<xsd:element name="SupervisionCharge" type="rap:SupervisionChargeType"/>
+	<xsd:element name="SupervisionAgencyRecordID" type="j:IDType"/>
+	<xsd:element name="PurposeCode" type="rap-code:PurposeCodeType"/>
+	<xsd:element name="RapSheetRequest" type="rap:RapSheetRequest"/>
+	<xsd:attribute name="typeText" type="xsd:string"/>
+	<!-- definition of complex types -->
+	<xsd:complexType name="RapSheetType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="rap:Introduction"/>
+					<xsd:element ref="j:Subject"/>
+					<xsd:element ref="rap:Cycle" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:Organization" maxOccurs="unbounded"/>
+				</xsd:sequence>
+				<xsd:attribute name="version" type="xsd:string" use="optional"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="IntroductionType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="rap:RapSheetRequest"/>
+					<xsd:element ref="rap:Caveat" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="rap:ControlData" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CycleType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="rap:CycleEarliestDate"/>
+					<xsd:element ref="rap:CycleTrackingID" minOccurs="0"/>
+					<xsd:element ref="j:Incident" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:Arrest" minOccurs="0"/>
+					<xsd:element ref="j:Booking" minOccurs="0"/>
+					<xsd:element ref="rap:Prosecution" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="rap:CourtAction" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="rap:Sentencing" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="rap:Supervision" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="RapSheetRequest">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonFBIID" minOccurs="0"/>
+					<xsd:element ref="j:PersonStateID" minOccurs="0"/>
+					<xsd:element ref="j:PersonSSNID" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonDriverLicenseID" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonOtherID" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonFullName" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonSexText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonRaceText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonBirthDate" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="rap:PurposeCode"/>
+					<xsd:element ref="rap:Attention"/>
+				</xsd:sequence>
+				<xsd:attribute name="id" type="xsd:string" use="optional"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CaveatType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:CaveatText"/>
+					<xsd:element ref="j:CaveatReferenceDate" minOccurs="0"/>
+					<xsd:element ref="j:CaveatIssuingAuthorityName"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ProsecutionType">
+		<xsd:complexContent>
+			<xsd:extension base="j:ActivityType">
+				<xsd:sequence>
+					<xsd:element ref="rap:ProsecutionAgencyRecordID" minOccurs="0"/>
+					<xsd:element ref="rap:ProsecutionSubject" minOccurs="0"/>
+					<xsd:element ref="j:ProsecutionCharge" maxOccurs="unbounded"/>
+					<xsd:element ref="rap:ProsecutionAgency"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CourtActionType">
+		<xsd:complexContent>
+			<xsd:extension base="j:ActivityType">
+				<xsd:sequence>
+					<xsd:element ref="rap:CourtRecordID" minOccurs="0"/>
+					<xsd:element ref="rap:CourtSubject" minOccurs="0"/>
+					<xsd:element ref="j:CourtCharge" maxOccurs="unbounded"/>
+					<xsd:element ref="j:Court"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SentencingType">
+		<xsd:complexContent>
+			<xsd:extension base="j:ActivityType">
+				<xsd:sequence>
+					<xsd:element ref="rap:CourtRecordID" minOccurs="0"/>
+					<xsd:element ref="j:Sentence" maxOccurs="unbounded"/>
+					<xsd:element ref="j:Court" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SupervisionType">
+		<xsd:complexContent>
+			<xsd:extension base="j:ActivityType">
+				<xsd:sequence>
+					<xsd:element ref="rap:SupervisionAgencyRecordID" minOccurs="0"/>
+					<xsd:element ref="rap:CourtRecordID" minOccurs="0"/>
+					<xsd:element ref="j:SupervisionSubject" minOccurs="0"/>
+					<xsd:element ref="rap:SupervisionCharge" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:SupervisionAgency"/>
+					<xsd:element ref="j:SupervisionCustodyStatus" maxOccurs="unbounded"/>
+					<xsd:element ref="j:SupervisionRelease" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SupervisionChargeType">
+		<xsd:complexContent>
+			<xsd:extension base="j:ChargeType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="StringWithType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute ref="rap:typeText"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+</xsd:schema>

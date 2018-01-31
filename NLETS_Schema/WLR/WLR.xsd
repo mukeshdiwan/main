@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--  Version 1.0		12/1/2014		Kate Silhol/Nlets		 -->
+<!-- 5/12/2017		Kate Silhol/Nlets		add inquiry structure-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:scr="http://niem.gov/niem/domains/screening/2.1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:n2-wlr="http://www.nlets.org/niem/nlets-wildlife-violation/1.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0"  xmlns:n2-50="http://www.nlets.org/niem/nlets-50-state-response/1.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" targetNamespace="http://www.nlets.org/niem/1.0">
+	<xs:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="./niem/proxy/xsd/2.0/xsd.xsd"/>
+	<xs:import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="nlets/nlets-hdr/1.0/nlets-hdr.xsd"/>
+	<xs:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="./niem/structures/2.0/structures.xsd"/>
+	<xs:import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation="./niem/domains/jxdm/4.1/jxdm.xsd"/>
+	<xs:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="./niem/niem-core/2.0/niem-core.xsd"/>
+	<xs:import namespace="http://www.nlets.org/niem/nlets-wildlife-violation/1.0" schemaLocation="nlets/wildlife-violation/1.0/wildlife-violation.xsd"/>
+	<xs:import namespace="http://www.nlets.org/niem/nlets-50-state-response/1.0" schemaLocation="nlets/50-state/1.0/50-state.xsd"/>
+	<xs:complexType name="NLETSInquiryDataType">
+		<xs:annotation>
+			<xs:documentation>A structure that contains the elements specific to this transaction.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="s:ComplexObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-wlr:WildlifeInquiry" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute ref="n2:key" use="required"/>
+				<xs:attribute ref="n2:type" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NLETSResponseDataType">
+		<xs:complexContent>
+			<xs:extension base="s:ComplexObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-wlr:WildlifeViolationRecord" minOccurs="0"/>
+					<xs:element ref="n2-wlr:WildlifeLicenseHolderRecord" minOccurs="0"/>
+					<xs:element ref="n2-50:FiftyStateResponse" minOccurs="0"/>
+					<xs:element ref="n2:ResponseText" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute ref="n2:key" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NLETSType">
+		<xs:annotation>
+			<xs:documentation>A structure that defines the root element of an NLETS message.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="s:ComplexObjectType">
+				<xs:sequence>
+					<xs:element ref="n2:NLETSMessageHeader"/>
+					<xs:element ref="n2:NLETSInquiryData" minOccurs="0"/>
+					<xs:element ref="n2:NLETSResponseData"/>
+				</xs:sequence>
+				<xs:attribute ref="n2:version" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:attribute name="key" type="xs:string"/>
+	<xs:attribute name="type" type="xs:string"/>
+	<xs:attribute name="version" type="xs:string"/>
+	<xs:element name="NLETS" type="n2:NLETSType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>The root element of a NLETS message</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NLETSInquiryData" type="n2:NLETSInquiryDataType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>This element will contain all elements specific to this transaction.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NLETSMessageHeader" type="nh2:NLETSMessageHeaderType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Metadata information about an NLETS message</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NLETSResponseData" type="n2:NLETSResponseDataType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ResponseText" type="nc:TextType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Textual response information. This element is intended to communicate no hit, not on file or other status information.</xs:documentation>
+		</xs:annotation>
+	</xs:element>	
+</xs:schema>

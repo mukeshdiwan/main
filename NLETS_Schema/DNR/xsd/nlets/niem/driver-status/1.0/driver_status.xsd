@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--  Version 2.0		12/20/2013		Kate Silhol/Nlets		Update namespace URIs to use ".org" and remove slash -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:nds2="http://www.nlets.org/niem/nlets-driver-status/1.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:n2c="http://www.nlets.org/niem/nlets-core/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.nlets.org/niem/nlets-driver-status/1.0">
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="../../../../niem/niem-core/2.0/niem-core.xsd"/>
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../../../niem/structures/2.0/structures.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-core/1.0" schemaLocation="../../../../nlets/niem/nlets-core/1.0/nlets-core.xsd"/>
+	<complexType name="DriverStatusType">
+		<annotation>
+			<documentation>The business data returned in response to a Driver Status Inquiry (when the inquirer is out of state).</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2c:AdditionalInformation" minOccurs="0"/>
+					<element ref="nds2:StandardResponse"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="StandardResponseType">
+		<annotation>
+			<documentation>The standardized elements for an intra-state reply. This data typically is held by the states motor vehicle agency.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2c:Driver"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="DriverStatus" type="nds2:DriverStatusType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The business data returned in response to a Driver Status Inquiry (when the inquirer is out of state).</documentation>
+		</annotation>
+	</element>
+	<element name="StandardResponse" type="nds2:StandardResponseType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The standardized elements for an intra-state reply. This data typically is held by the states motor vehicle agency.</documentation>
+		</annotation>
+	</element>
+</schema>

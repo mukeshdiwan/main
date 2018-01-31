@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:WantList w:release="2.1" w:product="NIEM" w:nillableDefault="true"
+  xmlns:w="http://niem.gov/niem/wantlist/2.2"
+  xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0">
+  <w:Element w:name="nc:BinaryBase64Object" w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="nc:DateTime" w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="nc:Image" w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="nc:PersonDigitalImage" w:isReference="false" w:nillable="true"/>
+  <w:Type w:name="nc:BinaryType" w:isRequested="true">
+    <w:ElementInType w:name="nc:BinaryObject" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:BinaryCaptureDate" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:BinaryDescriptionText"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:BinaryFormatID" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:BinarySizeValue" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:BinaryCategoryText"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
+  <w:Type w:name="nc:DateType" w:isRequested="false">
+    <w:ElementInType w:name="nc:DateRepresentation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
+  <w:Type w:name="nc:DocumentType" w:isRequested="true"/>
+  <w:Type w:name="nc:NumericType" w:isRequested="true"/>
+  <w:Type w:name="nc:TextType" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:date" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:decimal" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:string" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:time" w:isRequested="true"/>
+</w:WantList>

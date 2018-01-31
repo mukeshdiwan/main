@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key (type of entry) -->
+        <ncic:MessageTransactionCode>QS</ncic:MessageTransactionCode>
+        <ncic-ex:PrimaryHitData s:ref="d77e55-primaryHitData_hitDataSectionPrimary"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="d77e55-primaryHitData_hitDataSectionPrimary">
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>ATTENTION: THE SOC USED IN YOUR TRANSACTION HAS NOT BEEN ASSIGNED BY THE SOCIAL SECURITY ADMINISTRATION. PLEASE CHECK FOR A DATA ENTRY ERROR.</nc:CaveatText>
+        <ncic:SecuritiesRecord s:ref="d77e57-securitiesRecord_securitiesHitDataResponse"/>
+        <ncic:SecuritiesRecord s:ref="d77e201-securitiesRecord_securitiesHitDataResponse"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:SecuritiesRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:SecuritiesRecord s:id="d77e57-securitiesRecord_securitiesHitDataResponse">
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>**TEST**THIS RESPONSE IS FROM NCIC TEST SYSTEM.</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>IMMED CONFIRM RECORD WITH ORI</nc:CaveatText>
+        <nc:Incident s:ref="d77e74-incident_securities"/>
+        <nc:LastUpdatedDate>
+            <!-- DLU - Date of last update -->
+            <nc:DateTime>2007-12-12T11:00:00-05:00</nc:DateTime>
+        </nc:LastUpdatedDate>
+        <nc:ReportedDate>
+            <!-- DTE - Date and time of entry into NCIC files -->
+            <nc:DateTime>2005-05-20T14:00:00-04:00</nc:DateTime>
+        </nc:ReportedDate>
+        <ncic:InvestigativeInterest s:ref="d77e170-incident_investigativeInterest"/>
+        <!-- MKT - Message Key Translation -->
+        <ncic:MessageTransactionText>STOLEN SECURITY/<!--<RMI-Translation>-->COUNTERFEIT</ncic:MessageTransactionText>
+        <!-- NOA - Notify originating agency -->
+        <ncic:NotifyOriginatingAgencyIndicator>true</ncic:NotifyOriginatingAgencyIndicator>
+        <ncic:RecordExpirationDate>
+            <!-- Retirement-Timestamp - Retirement timestamp -->
+            <nc:Date>2007-12-12</nc:Date>
+        </ncic:RecordExpirationDate>
+        <ncic:RecordStatus>
+            <nc:StatusDate>
+                <!-- DOR - Date of recovery -->
+                <nc:Date>2005-10-27</nc:Date>
+            </nc:StatusDate>   
+            <nc:StatusText>CLEARED</nc:StatusText>
+            <ncic:StatusAugmentation>
+                <!-- RCA - Recovering Agency Case number -->
+                <j:CaseNumberText>A123</j:CaseNumberText>
+                <!-- RRI - Recovering Agency Identifier -->
+                <ncic:StatusIssuerOrganization s:ref="d77e134-organization_recovered"/>
+            </ncic:StatusAugmentation>
+        </ncic:RecordStatus>
+        <j:ItemNCICIdentification>
+            <!-- NIC - NCIC number (Record identifier) -->
+            <nc:IdentificationID>S875683021</nc:IdentificationID>
+        </j:ItemNCICIdentification>
+        <nc:Securities s:ref="d77e97-securities_securities"/>
+    </ncic:SecuritiesRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:SecuritiesRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:SecuritiesRecord s:id="d77e201-securitiesRecord_securitiesHitDataResponse">
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>**TEST**THIS RESPONSE IS FROM NCIC TEST SYSTEM.</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>IMMED CONFIRM RECORD WITH ORI</nc:CaveatText>
+        <nc:Incident s:ref="d77e218-incident_securities"/>
+        <nc:LastUpdatedDate>
+            <!-- DLU - Date of last update -->
+            <nc:DateTime>2007-12-12T11:00:00-05:00</nc:DateTime>
+        </nc:LastUpdatedDate>
+        <!-- ORI-Translation - Originating agency identifier -->
+        <nc:OrganizationDescriptionText>ORI IS CLARSKBURG POLICE DEPARTMENT TERMINAL 1</nc:OrganizationDescriptionText>
+        <nc:ReportedDate>
+            <!-- DTE - Date and time of entry into NCIC files -->
+            <nc:DateTime>2005-05-20T14:00:00-04:00</nc:DateTime>
+        </nc:ReportedDate>
+        <ncic:InvestigativeInterest s:ref="d77e350-incident_investigativeInterest"/>
+        <!-- MKT - Message key translation -->
+        <ncic:MessageTransactionText>STOLEN SECURITIES/<!--<RMI-Translation>-->COUNTERFEIT</ncic:MessageTransactionText>
+        <!-- NOA - Notify originating agency -->
+        <ncic:NotifyOriginatingAgencyIndicator>true</ncic:NotifyOriginatingAgencyIndicator>
+        <ncic:RecordExpirationDate>
+            <!-- Retirement-Timestamp - Retirement timestamp -->
+            <nc:Date>2007-12-12</nc:Date>
+        </ncic:RecordExpirationDate>
+        <ncic:RecordStatus>
+            <nc:StatusDate>
+                <!-- DOR - Date of recovery -->
+                <nc:Date>2005-10-27</nc:Date>
+            </nc:StatusDate>   
+            <nc:StatusDescriptionText>SER/C197782345610EE MKE/LOCATED SECURITIES</nc:StatusDescriptionText>
+            <nc:StatusDescriptionText>SER/C197782345611EE MKE/LOCATED SECURITIES</nc:StatusDescriptionText>
+            <nc:StatusDescriptionText>SER/C197782345612EE MKE/LOCATED SECURITIES</nc:StatusDescriptionText>
+            <nc:StatusDescriptionText>SER/C197782345613EE MKE/LOCATED SECURITIES</nc:StatusDescriptionText>
+            <ncic:StatusAugmentation>
+                <!-- RCA - Recovering Agency Case number -->
+                <j:CaseNumberText>A123</j:CaseNumberText>
+                <!-- RRI - Recovering Agency Identifier -->
+                <ncic:StatusIssuerOrganization s:ref="d77e134-organization_recovered"/>
+            </ncic:StatusAugmentation>
+        </ncic:RecordStatus>
+        <j:ItemNCICIdentification>
+            <!-- NIC - NCIC number (Record identifier) -->
+            <nc:IdentificationID>S875683021</nc:IdentificationID>
+        </j:ItemNCICIdentification>
+        <nc:Securities s:ref="d77e241-securities_securities"/>
+    </ncic:SecuritiesRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Entity. -->
+    <!-- ******************************************************************************** -->
+    <nc:Entity s:id="d77e97-entity_securities">
+        <nc:EntityPerson s:ref="d77e97-person_securities"/>
+    </nc:Entity>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Entity. -->
+    <!-- ******************************************************************************** -->
+    <nc:Entity s:id="d77e241-entity_securities">
+        <nc:EntityPerson s:ref="d77e241-person_securities"/>
+    </nc:Entity>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e74-incident_securities">
+        <nc:ActivityDate>
+            <!-- DOT - Date of theft -->
+            <nc:Date>2005-10-27</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS/FTD - Miscellaneous remarks/Free text data -->
+        <nc:ActivityDescriptionText>STOLEN DURING BURGLARY WITH OTHER ITEMS</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <j:CaseLinkage>
+                <!-- LKA - Linkage Case Number -->
+                <j:CaseLinkageNumberText>WV-123456</j:CaseLinkageNumberText>
+                <j:OrganizationORIIdentification>
+                    <!-- LKI - Linkage Agency Identifier -->
+                    <nc:IdentificationID>WV456123</nc:IdentificationID>
+                </j:OrganizationORIIdentification>
+            </j:CaseLinkage>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>234443333</j:CaseNumberText>
+            <j:ActivityDocumentValidator>
+                <nc:EntityOrganization s:ref="validator_organization"/>
+            </j:ActivityDocumentValidator>
+        </j:ActivityAugmentation>
+        <ncic:ActivityAugmentation>
+            <ncic:RecordValidationDate>
+                <!-- VLD - Date of Last Validation -->
+                <nc:Date>2005-10-27</nc:Date>
+            </ncic:RecordValidationDate>
+        </ncic:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e74-organization_securities"/>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e218-incident_securities">
+        <nc:ActivityDate>
+            <!-- DOT - Date of theft -->
+            <nc:Date>2005-10-27</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS/FTD - Miscellaneous remarks/Free text data -->
+        <nc:ActivityDescriptionText>STOLEN DURING BURGLARY WITH OTHER ITEMS</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <j:CaseLinkage>
+                <!-- LKA - Linkage Case Number -->
+                <j:CaseLinkageNumberText>WV-123456</j:CaseLinkageNumberText>
+                <j:OrganizationORIIdentification>
+                    <!-- LKI - Linkage Agency Identifier -->
+                    <nc:IdentificationID>WV456123</nc:IdentificationID>
+                </j:OrganizationORIIdentification>
+            </j:CaseLinkage>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>234443333</j:CaseNumberText>
+            <j:ActivityDocumentValidator>
+                <nc:EntityOrganization s:ref="validator_organization"/>
+            </j:ActivityDocumentValidator>
+        </j:ActivityAugmentation>
+        <ncic:ActivityAugmentation>
+            <ncic:RecordValidationDate>
+                <!-- VLD - Date of Last Validation -->
+                <nc:Date>2005-10-27</nc:Date>
+            </ncic:RecordValidationDate>
+        </ncic:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e218-organization_securities"/>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (validator) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="validator_organization">
+        <!-- VLN - Name of validator -->
+        <nc:OrganizationName>NATIONAL SECURITIES REGULATION</nc:OrganizationName>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (investigative interest) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e170-organization_investigativeInterest">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>VA POLICE</nc:OrganizationName>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation telephone numbers (primary) -->
+                    <nc:TelephoneNumberFullID>3045551212</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- IIA - Investigation interest agency identifier -->
+                <nc:IdentificationID>VA4300000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (recovered) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e134-organization_recovered">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- RRI - Recovery agency identifier -->
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (securities) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e74-organization_securities">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>CLARKSBURG POLICE</nc:OrganizationName>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation telephone numbers (primary) -->
+                    <nc:TelephoneNumberFullID>3045551212</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (investigative interest) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e350-organization_investigativeInterest">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>VA POLICE</nc:OrganizationName>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation telephone numbers (primary) -->
+                    <nc:TelephoneNumberFullID>3045551212</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- IIA - Investigation interest agency identifier -->
+                <nc:IdentificationID>VA4300000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (securities) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e218-organization_securities">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>CLARKSBURG POLICE</nc:OrganizationName>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation telephone numbers (primary) -->
+                    <nc:TelephoneNumberFullID>3045551212</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (securities) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e97-person_securities">
+        <nc:PersonName>
+            <!-- OWN - Owner  -->
+            <nc:PersonFullName>JOHN DOE</nc:PersonFullName>
+        </nc:PersonName>
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social security number  -->
+            <nc:IdentificationID>111003858</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (securities) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e241-person_securities">
+        <nc:PersonName>
+            <!-- OWN - Owner  -->
+            <nc:PersonFullName>JOHN DOE</nc:PersonFullName>
+        </nc:PersonName>
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social security number  -->
+            <nc:IdentificationID>111003858</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Securities. -->
+    <!-- ******************************************************************************** -->
+    <nc:Securities s:id="d77e97-securities_securities">
+        <nc:ItemOwner s:ref="d77e97-entity_securities"/>
+        <!-- SER - Serial number -->
+        <nc:ItemSerialIdentification>
+            <nc:IdentificationID>C197782345610EE</nc:IdentificationID>
+        </nc:ItemSerialIdentification>
+        <!-- SDT - Security date -->
+        <j:SecuritiesDateSeriesCode>1928</j:SecuritiesDateSeriesCode>
+        <!-- DEN - Denomination of security -->
+        <j:SecuritiesDenominationCode>1000</j:SecuritiesDenominationCode>
+        <!-- TYP - Type -->
+        <j:SecuritiesCategoryCode>SB</j:SecuritiesCategoryCode>
+        <nc:SecuritiesIssuer>
+            <nc:EntityOrganization>
+                <!-- ISS - Issuer -->
+                <nc:OrganizationName>US TREASURY</nc:OrganizationName>
+            </nc:EntityOrganization>
+        </nc:SecuritiesIssuer>
+        <j:SecuritiesAugmentation>
+            <!-- RMI - Ransom money indicator -->
+            <j:SecuritiesRansomMoneyText>C</j:SecuritiesRansomMoneyText>
+        </j:SecuritiesAugmentation>
+    </nc:Securities>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Securities. -->
+    <!-- ******************************************************************************** -->
+    <nc:Securities s:id="d77e241-securities_securities">
+        <nc:ItemOwner s:ref="d77e241-entity_securities"/>
+        <j:ItemAugmentation>
+            <!-- SER-SER - Consecutively Serialized Serials -->
+            <j:ItemSerialIdentificationRange>
+                <j:MaximumRangeIdentification>
+                    <nc:IdentificationID>C197782345610EE</nc:IdentificationID>
+                </j:MaximumRangeIdentification>
+                <j:MinimumRangeIdentification>
+                    <nc:IdentificationID>C197782345510EE</nc:IdentificationID>
+                </j:MinimumRangeIdentification>
+            </j:ItemSerialIdentificationRange>
+        </j:ItemAugmentation>
+        <!-- SDT - Security date -->
+        <j:SecuritiesDateSeriesCode>1928</j:SecuritiesDateSeriesCode>
+        <!-- DEN - Denomination of security -->
+        <j:SecuritiesDenominationCode>1000</j:SecuritiesDenominationCode>
+        <!-- TYP - Type -->
+        <j:SecuritiesCategoryCode>SB</j:SecuritiesCategoryCode>
+        <nc:SecuritiesIssuer>
+            <nc:EntityOrganization>
+                <!-- ISS - Issuer -->
+                <nc:OrganizationName>US TREASURY</nc:OrganizationName>
+            </nc:EntityOrganization>
+        </nc:SecuritiesIssuer>
+        <j:SecuritiesAugmentation>
+            <!-- RMI - Ransom money indicator -->
+            <j:SecuritiesRansomMoneyText>C</j:SecuritiesRansomMoneyText>
+        </j:SecuritiesAugmentation>
+    </nc:Securities>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:InvestigativeInterest. -->
+    <!-- ******************************************************************************** -->
+    <ncic:InvestigativeInterest s:id="d77e170-incident_investigativeInterest">
+        <nc:ActivityDate>
+            <!-- DII - Date of investigative interest -->
+            <nc:Date>2006-01-10</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS/FTD - Miscellaneous remarks/Free text data. -->
+        <nc:ActivityDescriptionText>THIS IS RESULTING FROM A SECURITIES QUERY</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <!-- ICA - Investigative Interest Case Number -->
+            <j:CaseNumberText>V789</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e170-organization_investigativeInterest"/>
+    </ncic:InvestigativeInterest>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:InvestigativeInterest. -->
+    <!-- ******************************************************************************** -->
+    <ncic:InvestigativeInterest s:id="d77e350-incident_investigativeInterest">
+        <nc:ActivityDate>
+            <!-- DII - Date of investigative interest -->
+            <nc:Date>2006-01-10</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS/FTD - Miscellaneous remarks/Free text data -->
+        <nc:ActivityDescriptionText>THIS IS RESULTING FROM A SECURITIES QUERY</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <!-- ICA - Investigative Interest Case Number -->
+            <j:CaseNumberText>V789</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e350-organization_investigativeInterest"/>
+    </ncic:InvestigativeInterest>
+</ncic-ex:Exchange>

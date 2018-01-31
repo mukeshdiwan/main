@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/niem/NEI/xsd/NEI.xsd" version="3.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>NEI</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>NA</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>GA1234567</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>000000089</nh2:DocumentControlFieldText>
+	</NLETSMessageHeader>
+	<NLETSUpdateData key="NEI">
+		<LawEnforcementAgency>
+			<nc:OrganizationPrimaryContactInformation>
+				<nc:ContactTelephoneNumber>
+					<nc:FullTelephoneNumber/>
+				</nc:ContactTelephoneNumber>
+			</nc:OrganizationPrimaryContactInformation>
+			<j:OrganizationAugmentation>
+				<j:OrganizationORIIdentification/>
+			</j:OrganizationAugmentation>
+		</LawEnforcementAgency>
+		<nc:Incident>
+			<nc:ActivityIdentification>
+				<nc:IdentificationID>456789-101112</nc:IdentificationID>
+			</nc:ActivityIdentification>
+		</nc:Incident>
+		<ImpoundActivity>
+			<nc:ActivityIdentification>
+				<nc:IdentificationID>9499</nc:IdentificationID>
+			</nc:ActivityIdentification>
+			<nc:ActivityDate>
+				<nc:Date>2003-01-01</nc:Date>
+			</nc:ActivityDate>
+		</ImpoundActivity>
+		<nc:Vehicle>
+			<nc:VehicleStyleCode>2D</nc:VehicleStyleCode>
+			<nc:ConveyanceRegistrationPlateIdentification>
+				<nc:IdentificationCategoryText>PC</nc:IdentificationCategoryText>
+			</nc:ConveyanceRegistrationPlateIdentification>
+			<nc:VehicleIdentification>
+				<nc:IdentificationID>1234567981324567</nc:IdentificationID>
+			</nc:VehicleIdentification>
+			<nc:VehicleMakeCode>PONT</nc:VehicleMakeCode>
+			<nc:VehicleModelCode>EUR</nc:VehicleModelCode>
+		</nc:Vehicle>
+		<NewYorkDerelictIndicator>false</NewYorkDerelictIndicator>
+		<MiscellaneousUpdateText>THIS IS A TEST</MiscellaneousUpdateText>
+	</NLETSUpdateData>
+</NLETS>

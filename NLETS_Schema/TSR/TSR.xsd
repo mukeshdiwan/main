@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--  Version 1.0		12/1/2014		Kate Silhol/Nlets		 -->
+<xs:schema xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:n2-tsr="http://www.nlets.org/niem/nlets-taser/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/" targetNamespace="http://www.nlets.org/niem/1.0">
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="nlets/taser/1.0/niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="nlets/taser/1.0/niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://www.nlets.org/niem/nlets-taser/1.0" schemaLocation="nlets/taser/1.0/taser.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="nlets/taser/1.0/niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="nlets/nlets-hdr/1.0/nlets-hdr.xsd"/>
+	<xs:complexType name="NLETSInquiryDataType">
+		<xs:annotation>
+			<xs:documentation>A structure that contains the elements specific to this transaction.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:ItemSerialIdentification" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute ref="n2:key" use="required"/>
+				<xs:attribute ref="n2:type" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NLETSResponseDataType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-tsr:TaserRecordOfSale" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute ref="n2:key" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NLETSType">
+		<xs:annotation>
+			<xs:documentation>A structure that defines the root element of an NLETS message.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2:NLETSMessageHeader"/>
+					<xs:element ref="n2:NLETSInquiryData" minOccurs="0"/>
+					<xs:element ref="n2:NLETSResponseData"/>
+				</xs:sequence>
+				<xs:attribute name="version" type="xsd:string" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:attribute name="key" type="xsd:string"/>
+	<xs:attribute name="type" type="xsd:string"/>
+	<xs:element name="NLETS" type="n2:NLETSType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>The root element of a NLETS message</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NLETSInquiryData" type="n2:NLETSInquiryDataType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>This element will contain all elements specific to this transaction.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NLETSMessageHeader" type="nh2:NLETSMessageHeaderType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Metadata information about an NLETS message</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NLETSResponseData" type="n2:NLETSResponseDataType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

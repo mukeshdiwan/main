@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nrs2="http://www.nlets.org/niem/nlets-registration-status/1.0" xmlns:n2="http://www.nlets.org/niem/nlets-core/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.nlets.org/niem/1.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:n2-50="http://www.nlets.org/niem/nlets-50-state-response/1.0" targetNamespace="http://www.nlets.org/niem/nlets-registration-status/1.0">
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../../../niem/structures/2.0/structures.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-core/1.0" schemaLocation="../../nlets-core/1.0/nlets-core.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-50-state-response/1.0" schemaLocation="../../../../nlets/50-state/1.0/50-state.xsd"/>
+	<complexType name="RegistrationStatusType">
+		<annotation>
+			<documentation>The business data returned in response to a Vehicle Registration Inquiry (for a short registration response). The inquiry can be made on a Vehicle (by VIN) a Registration (by Plate #) or on a Person (by name). The structure of the response data will be dictated by the data in the inquiry. </documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:AdditionalInformation" minOccurs="0"/>
+					<element ref="nrs2:StandardResponse"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="StandardResponseType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:Vehicle"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="RegistrationStatus" type="nrs2:RegistrationStatusType" abstract="false" substitutionGroup="n2-50:StateResponseData" nillable="true">
+		<annotation>
+			<documentation>The business data returned in response to a Vehicle Registration Inquiry (for a short registration response). The inquiry can be made on a Vehicle (by VIN) a Registration (by Plate #) or on a Person (by name). The structure of the response data will be dictated by the data in the inquiry. </documentation>
+		</annotation>
+	</element>
+	<element name="StandardResponse" type="nrs2:StandardResponseType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The standardized elements for an intra-state reply. This data typically is held by the states motor vehicle agency. </documentation>
+		</annotation>
+	</element>
+</schema>

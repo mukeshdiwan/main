@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.A.ORI.MO</ncic:MessageTransactionText>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+        <!-- Reference to record containing the changes -->
+        <ncic-ex:MaintenanceRecordData s:ref="ModifyData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:MaintenanceRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:MaintenanceRecordData s:id="ModifyData">
+        <!-- Only the <ORI>, <TYP>, and <ATR> are included in this sample through ORIRecord -->
+        <!-- Any other modified fields from the enter transaction should also be included 
+             through MaintenanceRecordData -->
+        <ncic:ORIRecord s:ref="ORIRecordInfo"/>
+    </ncic-ex:MaintenanceRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <j:OrganizationORIIdentification>
+            <!-- ORI - Originating agency identifier -->
+            <nc:IdentificationID>WV2000000</nc:IdentificationID>
+        </j:OrganizationORIIdentification>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>MO</ncic:MessageTransactionCode>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ORIRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:ORIRecord s:id="ORIRecordInfo">
+        <nc:ContactInformationAssociation>
+            <nc:ContactEntity s:ref="ORIOrganization"/>
+        </nc:ContactInformationAssociation>
+    </ncic:ORIRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Entity. -->
+    <!-- ******************************************************************************** -->
+    <nc:Entity s:id="ORIOrganization">
+        <nc:EntityOrganization s:ref="ORIOrganizationInfo"/>
+    </nc:Entity>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="ORIOrganizationInfo">
+        <!-- TYP - Type -->
+        <nc:OrganizationCategoryText>A</nc:OrganizationCategoryText>
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>LAPD - SPECIAL INVESTIGATIONS</nc:OrganizationName>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier  -->
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+</ncic-ex:Exchange>

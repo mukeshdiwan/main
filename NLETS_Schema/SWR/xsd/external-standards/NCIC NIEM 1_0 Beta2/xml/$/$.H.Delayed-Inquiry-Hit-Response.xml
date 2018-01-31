@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier (receiving this Message)  -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.H</ncic:MessageTransactionText>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+        <!-- Results of Queries go here -->
+        <ncic-ex:PrimaryHitData s:ref="PrimaryHitData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:NotificationRecordData. -->
+    <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            DELAYED INQUIRY HIT NOTIFICATION AT <!--<hhmm>-->1320 EST <!--<yyyymmdd>-->20040412
+            PLEASE ASSURE YOUR INQUIRY IS A REASONABLE MATCH
+            PRIOR TO CONTACTING ENTERING AGENCY
+            YOUR INQUIRY ON <!--<DTE>--> CONTAINING:
+            HIT ON THE FOLLOWING RECORD:
+            MFC/MFC
+        </nc:CaveatText>
+        <!-- DateTime of the Notification Triggering Event -->
+        <ncic:NotificationDateTime>2004-04-12T13:20:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:PrimaryHitData. -->
+    <!-- Results of Queries go here -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="PrimaryHitData">
+        <nc:CaveatText>HIT ON THE FOLLOWING RECORD</nc:CaveatText>
+        <ncic:Record s:ref="PrimaryHitRecord"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- Database-Record filled out here. This could refer to a number of different 
+         NCIC record types such as ncic:ArticleRecord, ncic:BoatRecord, ncic:GunRecord, etc. 
+         Using ncic:GunRecord in this sample XML file. -->
+    <!-- ******************************************************************************** -->
+    <!-- ncic:(Record). -->
+    <!-- ******************************************************************************** -->
+    <ncic:GunRecord s:id="PrimaryHitRecord">
+        <!-- filled out with data here -->
+    </ncic:GunRecord>
+</ncic-ex:Exchange>

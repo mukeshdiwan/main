@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/3.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:m="http://release.niem.gov/niem/domains/maritime/3.1/" xmlns:n2-sor="http://www.nlets.org/niem/nlets-sex-offender/1.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.1/" targetNamespace="http://www.nlets.org/niem/nlets-sex-offender/1.0">
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/jxdm/5.1/" schemaLocation="niem/domains/jxdm/5.1/jxdm.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/maritime/3.1/" schemaLocation="niem/domains/maritime/3.1/maritime.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:complexType name="AddressAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sor:AddressTypeText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ContactWebsiteType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:ContactWebsiteURI" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:ContactInternetServiceProviderText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ConvictionAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sor:ConvictionOffense" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:VictimInformation" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ImageAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sor:ImagePrimaryIndicator" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	<xs:complexType name="OffenseAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="j:CaseNumberText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PersonAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:FingerprintTakenIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:PalmPrintTakenIndicator" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RegisteredOffenderAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sor:RegisteredOffenderLevelText" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:RegisteredOffenderLevelDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:RegisteredOffenderRenewalDate" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:RegisteredOffenderUpdateDate" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:RegisteredOffenderRegisteringAgency" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:RegisteredOffenderAdditionalStateIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:RegisteredOffenderRiskAssessment" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RegisteredOffenderRecordType">
+		<xs:annotation>
+			<xs:documentation>The business data describing a sex offender record.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sor:RegisteredOffender" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:RegisteredOffenderRelocationDetails" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:ContactInformationAssociation" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:Vessel" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:Aircraft" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="j:Detention" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="j:Parole" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="j:Probation" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RegisteredOffenderRiskAssessmentType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sor:RiskAssessmentToolNameText" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:RiskAssessmentDate" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:RiskAssessmentScoreText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ReleaseAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sor:ReleaseTypeText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RelocationDetailsType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sor:PlannedRelocationDate" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:RelocationCommentText" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:RelocationAddress" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SupervisionAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sor:SupervisionInterstateCompactIndicator" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TelephoneNumberAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sor:TelephoneCarrierText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="VerdictAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sor:VerdictStateText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="VictimInformationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:PersonSexText" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:PersonAgeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:PersonRaceText" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-sor:VictimRelationshipText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="AddressAugmentation" type="n2-sor:AddressAugmentationType" abstract="false" substitutionGroup="nc:AddressAugmentationPoint" nillable="true"/>
+	<xs:element name="AddressTypeText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="ContactWebsite" type="n2-sor:ContactWebsiteType" abstract="false" substitutionGroup="nc:ContactMeans" nillable="true"/>
+	<xs:element name="ContactInternetServiceProviderText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="ConvictionAugmentation" type="n2-sor:ConvictionAugmentationType" abstract="false" substitutionGroup="j:ConvictionAugmentationPoint" nillable="true"/>
+	<xs:element name="ConvictionOffense" type="j:OffenseType" abstract="false" nillable="true"/>
+	<xs:element name="ImageAugmentation" type="n2-sor:ImageAugmentationType" abstract="false" substitutionGroup="nc:ImageAugmentationPoint" nillable="true"/>
+	<xs:element name="ImagePrimaryIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>	
+	<xs:element name="OffenseAugmentation" type="n2-sor:OffenseAugmentationType" abstract="false" substitutionGroup="j:OffenseAugmentationPoint" nillable="true"/>
+	<xs:element name="PalmPrintTakenIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="PersonAugmentation" type="n2-sor:PersonAugmentationType" abstract="false" substitutionGroup="nc:PersonAugmentationPoint" nillable="true"/>
+	<xs:element name="PlannedRelocationDate" type="nc:DateType" abstract="false" nillable="true"/>
+	<xs:element name="RegisteredOffender" type="j:RegisteredOffenderType" abstract="false" nillable="true"/>
+	<xs:element name="RegisteredOffenderAdditionalStateIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="RegisteredOffenderAugmentation" type="n2-sor:RegisteredOffenderAugmentationType" abstract="false" substitutionGroup="j:RegisteredOffenderAugmentationPoint" nillable="true"/>
+	<xs:element name="RegisteredOffenderLevelText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="RegisteredOffenderLevelDescriptionText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="RegisteredOffenderRecord" type="n2-sor:RegisteredOffenderRecordType" abstract="false" nillable="true"/>
+	<xs:element name="RegisteredOffenderRegisteringAgency" type="nc:OrganizationType" abstract="false" nillable="true"/>
+	<xs:element name="RegisteredOffenderRenewalDate" type="nc:DateType" abstract="false" nillable="true"/>
+	<xs:element name="RegisteredOffenderRelocationDetails" type="n2-sor:RelocationDetailsType" abstract="false" nillable="true"/>
+	<xs:element name="RegisteredOffenderRiskAssessment" type="n2-sor:RegisteredOffenderRiskAssessmentType" abstract="false" nillable="true"/>
+	<xs:element name="RegisteredOffenderUpdateDate" type="nc:DateType" abstract="false" nillable="true"/>
+	<xs:element name="ReleaseAugmentation" type="n2-sor:ReleaseAugmentationType" abstract="false" substitutionGroup="nc:ReleaseAugmentationPoint" nillable="true"/>
+	<xs:element name="ReleaseTypeText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="RelocationAddress" type="nc:AddressType" abstract="false" nillable="true"/>
+	<xs:element name="RelocationCommentText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="RiskAssessmentToolNameText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="RiskAssessmentDate" type="nc:DateType" abstract="false" nillable="true"/>
+	<xs:element name="RiskAssessmentScoreText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="TelephoneNumberAugmentation" type="n2-sor:TelephoneNumberAugmentationType" abstract="false" substitutionGroup="nc:TelephoneNumberAugmentationPoint" nillable="true"/>
+	<xs:element name="TelephoneCarrierText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="SupervisionAugmentation" type="n2-sor:SupervisionAugmentationType" abstract="false" substitutionGroup="nc:SupervisionAugmentationPoint" nillable="true"/>
+	<xs:element name="SupervisionInterstateCompactIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="VerdictAugmentation" type="n2-sor:VerdictAugmentationType" abstract="false" substitutionGroup="j:VerdictAugmentationPoint" nillable="true"/>
+	<xs:element name="VerdictStateText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="VictimInformation" type="n2-sor:VictimInformationType" abstract="false" nillable="true"/>
+	<xs:element name="VictimRelationshipText" type="nc:TextType" abstract="false" nillable="true"/>
+</xs:schema>

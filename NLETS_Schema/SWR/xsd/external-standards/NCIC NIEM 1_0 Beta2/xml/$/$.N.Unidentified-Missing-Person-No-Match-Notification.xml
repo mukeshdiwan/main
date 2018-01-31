@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI receiving this Message  -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.N.UNIDENTIFIED/MISSING COMPARE RESULTS</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            YOUR RECORD WITH NIC/<!--<NIC>-->U123456789 OCA/<!--<OCA>-->3456789 HAS BEEN SEARCHED.
+            THE SEARCH DID NOT PRODUCE ANY POSSIBLE MATCHES.
+        </nc:CaveatText>
+        <ncic:MissingPersonRecord s:ref="MissingPersonRecordDataSection"/>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:MissingPersonRecord (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic:MissingPersonRecord s:id="MissingPersonRecordDataSection">
+        <nc:Incident s:ref="MissingPersonIncident"/>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC Number -->
+            <nc:IdentificationID>U123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+    </ncic:MissingPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="MissingPersonIncident">
+        <j:ActivityAugmentation>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>3456789</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+</ncic-ex:Exchange>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key (type of entry) -->
+        <ncic:MessageTransactionCode>EP<!--/EP-P--></ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData
+            s:ref="d77e16-incomingRecordData_vehicleBoatPartIncomingEnterDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="d77e16-incomingRecordData_vehicleBoatPartIncomingEnterDataSection">
+        <ncic:VehicleBoatPartRecord s:ref="d77e16-vehicleBoatPartRecord_enterDataSection"/>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:VehicleBoatPartRecord (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic:VehicleBoatPartRecord s:id="d77e16-vehicleBoatPartRecord_enterDataSection">
+        <nc:Incident s:ref="d77e17-incident_vehicleBoatPart"/>
+        <!-- NOA - Notify originating agency -->
+        <ncic:NotifyOriginatingAgencyIndicator>true</ncic:NotifyOriginatingAgencyIndicator>
+        <j:ConveyancePart s:ref="d77e29-conveyancePart_vehicleBoatPart"/>
+    </ncic:VehicleBoatPartRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e17-incident_vehicleBoatPart">
+        <nc:ActivityDate>
+            <!-- DOT - Date of theft -->
+            <nc:Date>2005-10-27</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>REMOVABLE ENGINE MISSING - ASSUMED STOLEN WHILE DOCKED</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <j:CaseLinkage>
+                <!-- LKA - Linkage Case Number -->
+                <j:CaseLinkageNumberText>314-622</j:CaseLinkageNumberText>
+                <j:OrganizationORIIdentification>
+                    <!-- LKI - Linkage Agency Identifier -->
+                    <nc:IdentificationID>WV5438627</nc:IdentificationID>
+                </j:OrganizationORIIdentification>
+            </j:CaseLinkage>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>WVV988761</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyancePart. -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyancePart s:id="d77e29-conveyancePart_vehicleBoatPart">
+        <!-- OAN - Owner applied number -->
+        <nc:ItemOwnerAppliedID>LKDI1KJ35</nc:ItemOwnerAppliedID>       
+        <nc:ItemSerialIdentification>
+            <!-- SER - Serial number -->
+            <nc:IdentificationID>999900054912</nc:IdentificationID>
+        </nc:ItemSerialIdentification>
+        <!-- VYR - Vehicle year -->
+        <nc:ItemModelYearDate>1999</nc:ItemModelYearDate>
+        <!-- BRA - Brand name -->
+        <ncic:ConveyancePartBrandCodeText>AQUB</ncic:ConveyancePartBrandCodeText>
+        <!-- CAT - Category -->
+        <j:ConveyancePartCategoryCode>DK</j:ConveyancePartCategoryCode>
+        <ncic:ConveyancePartAugmentation>
+            <!-- EPD - Engine power or displacement -->
+            <j:EngineHorsepowerQuantity>500</j:EngineHorsepowerQuantity>
+        </ncic:ConveyancePartAugmentation>
+    </j:ConveyancePart>
+</ncic-ex:Exchange>

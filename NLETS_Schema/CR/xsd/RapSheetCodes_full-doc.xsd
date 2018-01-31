@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:rap="http://www.nlets.org/rapsheet/3.0" targetNamespace="http://www.nlets.org/rapsheet/codes/1.0" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<!--Define Types-->
+	<xsd:simpleType name="PurposeCodeType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="H"/>
+			<xsd:enumeration value="I"/>
+			<xsd:enumeration value="J"/>
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="V"/>
+			<xsd:enumeration value="X"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DNALocusType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Amelogenin"/>
+			<xsd:enumeration value="CSF1PO"/>
+			<xsd:enumeration value="D13S317"/>
+			<xsd:enumeration value="D16S539"/>
+			<xsd:enumeration value="D18S51"/>
+			<xsd:enumeration value="D21S11"/>
+			<xsd:enumeration value="D3S1358"/>
+			<xsd:enumeration value="D5S818"/>
+			<xsd:enumeration value="D7S820"/>
+			<xsd:enumeration value="D8S1179"/>
+			<xsd:enumeration value="FGA"/>
+			<xsd:enumeration value="TH01"/>
+			<xsd:enumeration value="TPOX"/>
+			<xsd:enumeration value="vWA"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FingerprintFingerType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Right Thumb"/>
+			<xsd:enumeration value="Right Index"/>
+			<xsd:enumeration value="Right Middle"/>
+			<xsd:enumeration value="Right Ring"/>
+			<xsd:enumeration value="Right Little"/>
+			<xsd:enumeration value="Right Hand Set"/>
+			<xsd:enumeration value="Ten Print Set"/>
+			<xsd:enumeration value="Left Thumb"/>
+			<xsd:enumeration value="Left Index"/>
+			<xsd:enumeration value="Left Middle"/>
+			<xsd:enumeration value="Left Ring"/>
+			<xsd:enumeration value="Left Little"/>
+			<xsd:enumeration value="Left Hand Set"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IDTypeType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Air Force Serial"/>
+			<xsd:enumeration value="Air Force Guard Serial"/>
+			<xsd:enumeration value="Alien Registration"/>
+			<xsd:enumeration value="Army Serial"/>
+			<xsd:enumeration value="Bureau Fugitive Index"/>
+			<xsd:enumeration value="Canadian Social Insurance"/>
+			<xsd:enumeration value="Correctional ID"/>
+			<xsd:enumeration value="Identification Order"/>
+			<xsd:enumeration value="Marine Corps Serial"/>
+			<xsd:enumeration value="Mariner's Document ID"/>
+			<xsd:enumeration value="National Agency Case"/>
+			<xsd:enumeration value="National Guard Serial"/>
+			<xsd:enumeration value="Navy Serial"/>
+			<xsd:enumeration value="Offender ID"/>
+			<xsd:enumeration value="Originating Agency Police ID"/>
+			<xsd:enumeration value="Passport"/>
+			<xsd:enumeration value="Personal Identification"/>
+			<xsd:enumeration value="Port Security Card"/>
+			<xsd:enumeration value="Royal Canadian Mounted Police ID"/>
+			<xsd:enumeration value="Selective Service"/>
+			<xsd:enumeration value="State ID Card"/>
+			<xsd:enumeration value="US Coast Guard Serial"/>
+			<xsd:enumeration value="Veterans Administration Claim"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BloodTypeType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="A Positive"/>
+			<xsd:enumeration value="A Negative"/>
+			<xsd:enumeration value="A Unknown"/>
+			<xsd:enumeration value="AB Positive"/>
+			<xsd:enumeration value="AB Negative"/>
+			<xsd:enumeration value="AB Unknown"/>
+			<xsd:enumeration value="B Positive"/>
+			<xsd:enumeration value="B Negative"/>
+			<xsd:enumeration value="B Unknown"/>
+			<xsd:enumeration value="O Positive"/>
+			<xsd:enumeration value="O Negative"/>
+			<xsd:enumeration value="O Unknown"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EthnicityType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="African"/>
+			<xsd:enumeration value="Alaska Native"/>
+			<xsd:enumeration value="American Indian"/>
+			<xsd:enumeration value="Asian Indian"/>
+			<xsd:enumeration value="Black Or African American"/>
+			<xsd:enumeration value="Cambodian"/>
+			<xsd:enumeration value="Central American"/>
+			<xsd:enumeration value="Chinese"/>
+			<xsd:enumeration value="European"/>
+			<xsd:enumeration value="Filipino"/>
+			<xsd:enumeration value="Great Britain"/>
+			<xsd:enumeration value="Haitian"/>
+			<xsd:enumeration value="Hispanic Or Latino"/>
+			<xsd:enumeration value="Indonesian"/>
+			<xsd:enumeration value="Japanese"/>
+			<xsd:enumeration value="Korean"/>
+			<xsd:enumeration value="Malaysian"/>
+			<xsd:enumeration value="Mexican"/>
+			<xsd:enumeration value="Middle Eastern"/>
+			<xsd:enumeration value="Mixed"/>
+			<xsd:enumeration value="Native Hawaiian"/>
+			<xsd:enumeration value="Not Hispanic Or Latino"/>
+			<xsd:enumeration value="Pacific Islander"/>
+			<xsd:enumeration value="Pakastani"/>
+			<xsd:enumeration value="Polynesian"/>
+			<xsd:enumeration value="Puerto Rican"/>
+			<xsd:enumeration value="Samoan"/>
+			<xsd:enumeration value="Slavic"/>
+			<xsd:enumeration value="South American"/>
+			<xsd:enumeration value="Spanish Origin"/>
+			<xsd:enumeration value="Thai"/>
+			<xsd:enumeration value="Unknown"/>
+			<xsd:enumeration value="Vietnamese"/>
+			<xsd:enumeration value="White American"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EyeColorType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Black"/>
+			<xsd:enumeration value="Blue"/>
+			<xsd:enumeration value="Brown"/>
+			<xsd:enumeration value="Gray"/>
+			<xsd:enumeration value="Green"/>
+			<xsd:enumeration value="Hazel"/>
+			<xsd:enumeration value="Maroon"/>
+			<xsd:enumeration value="Multicolored"/>
+			<xsd:enumeration value="Pink"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="HairColorType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Bald"/>
+			<xsd:enumeration value="Black"/>
+			<xsd:enumeration value="Blonde Or Strawberry"/>
+			<xsd:enumeration value="Blue"/>
+			<xsd:enumeration value="Brown"/>
+			<xsd:enumeration value="Gray Or Partially Gray"/>
+			<xsd:enumeration value="Green"/>
+			<xsd:enumeration value="Orange"/>
+			<xsd:enumeration value="Pink"/>
+			<xsd:enumeration value="Purple"/>
+			<xsd:enumeration value="Red Or Auburn"/>
+			<xsd:enumeration value="Sandy"/>
+			<xsd:enumeration value="White"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MaritalStatusType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Married"/>
+			<xsd:enumeration value="Widowed"/>
+			<xsd:enumeration value="Divorced"/>
+			<xsd:enumeration value="Separated"/>
+			<xsd:enumeration value="Never Married"/>
+			<xsd:enumeration value="Unmarried Partner"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RaceType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Asian"/>
+			<xsd:enumeration value="Black"/>
+			<xsd:enumeration value="Native American"/>
+			<xsd:enumeration value="Unknown"/>
+			<xsd:enumeration value="White"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SexType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Female"/>
+			<xsd:enumeration value="Male"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SkinToneType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Albino"/>
+			<xsd:enumeration value="Black"/>
+			<xsd:enumeration value="Dark"/>
+			<xsd:enumeration value="Dark Brown"/>
+			<xsd:enumeration value="Fair"/>
+			<xsd:enumeration value="Light"/>
+			<xsd:enumeration value="Light Brown"/>
+			<xsd:enumeration value="Medium"/>
+			<xsd:enumeration value="Medium Brown"/>
+			<xsd:enumeration value="Olive"/>
+			<xsd:enumeration value="Ruddy"/>
+			<xsd:enumeration value="Sallow"/>
+			<xsd:enumeration value="Yellow"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

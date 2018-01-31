@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org " xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <n:NLETSInquiryMessage>
+	<n:NLETSInquiryHeader>
+       <n:DocumentUserID><j:ID>USER55</j:ID></n:DocumentUserID>
+       <n:DocumentPasswordText>123456</n:DocumentPasswordText>
+       <n:MessageKeyCode>KQ</n:MessageKeyCode>
+       <j:DocumentSource.Organization>
+         <j:OrganizationORIID>
+           <j:ID>GA0250300</j:ID>
+         </j:OrganizationORIID>
+       </j:DocumentSource.Organization>
+       <n:DocumentDestinationID>
+         <j:ID>FL</j:ID>
+       </n:DocumentDestinationID>
+	</n:NLETSInquiryHeader>
+	<n:NLETSInquiryData Key="KQ">
+			<j:Person>
+				<j:PersonName>
+                     <j:PersonFullName>Scott, Anthony L</j:PersonFullName>
+					<j:PersonGivenName>Anthony</j:PersonGivenName>
+					<j:PersonMiddleName>L</j:PersonMiddleName>
+					<j:PersonSurName>Scott</j:PersonSurName>
+				</j:PersonName>
+				<j:PersonBirthDate>1953-12-12</j:PersonBirthDate>
+				<j:PersonPhysicalDetails>
+					<j:PersonSexCode>M</j:PersonSexCode>
+				</j:PersonPhysicalDetails>
+			</j:Person>
+			<n:PurposeCode>F</n:PurposeCode>
+			<n:Attention>SGT SMITH</n:Attention>
+		</n:NLETSInquiryData>
+	</n:NLETSInquiryMessage>
+</n:NLETS>
+

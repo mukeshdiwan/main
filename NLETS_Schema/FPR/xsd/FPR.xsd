@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:intel="http://niem.gov/niem/domains/intelligence/2.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:em="http://niem.gov/niem/domains/emergencyManagement/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" targetNamespace="http://www.nlets.org/niem/1.0">
+	<import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="./niem/proxy/xsd/2.0/xsd.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="./nlets-hdr/1.0/MessageHeader.xsd"/>
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="./niem/structures/2.0/structures.xsd"/>
+	<import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation="./niem/domains/jxdm/4.1/jxdm.xsd"/>
+	<import namespace="http://niem.gov/niem/domains/intelligence/2.1" schemaLocation="./niem/domains/intelligence/2.1/intelligence.xsd"/>
+	<import namespace="http://niem.gov/niem/domains/emergencyManagement/2.1" schemaLocation="./niem/domains/emergencyManagement/2.1/emergencyManagement.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="./niem/niem-core/2.0/niem-core.xsd"/>
+	<complexType name="ICISMetadataType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="nc:ActivityType"/>
+		</complexContent>
+	</complexType>
+	<complexType name="InterpolListResponseType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:Person" minOccurs="0"/>
+					<element ref="n2:StolenDocument" minOccurs="0"/>
+					<element ref="n2:Vehicle" minOccurs="0"/>
+					<element ref="n2:LinkedFile" minOccurs="0"/>
+					<element ref="n2:Investigation" minOccurs="0"/>
+					<element ref="n2:Theft" minOccurs="0"/>
+					<element ref="n2:ArrestWarrant" minOccurs="0"/>
+					<element ref="em:Notification" minOccurs="0"/>
+					<element ref="n2:ICISMetadata" minOccurs="0"/>
+					<element ref="intel:SubjectCautionInformationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nc:CaveatText" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSInquiryDataType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:ImageIndicatorText" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="j:Warrant" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="n2:QueryReasonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+				<attribute ref="n2:key" use="required"/>
+				<attribute ref="n2:type" use="optional"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSResponseDataType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:InterpolListResponse" minOccurs="0"/>
+				</sequence>
+				<attribute ref="n2:key" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSType">
+		<annotation>
+			<documentation>A structure that defines the root element of an NLETS message.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:NLETSMessageHeader"/>
+					<element ref="n2:NLETSInquiryData" minOccurs="0"/>
+					<element ref="n2:NLETSResponseData"/>
+				</sequence>
+				<attribute ref="n2:version" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ArrestWarrantType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="j:WarrantType">
+				<sequence>
+					<element ref="j:ChargeText" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="n2:IssuingCountryCode" minOccurs="0"/>
+					<element ref="n2:WarrantExpirationDate" minOccurs="0"/>
+					<element ref="n2:ExtraditionRequestIndicator" minOccurs="0"/>
+					<element ref="j:OffenseName" minOccurs="0" maxOccurs="unbounded"/>					
+					<element ref="j:SentenceDescriptionText" minOccurs="0"/>
+					<element ref="n2:SignatoryText" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PersonType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="j:PersonType">
+				<sequence>
+					<element ref="n2:IdentityConfirmedIndicator" minOccurs="0"/>
+					<element ref="j:SubjectStatus" minOccurs="0"/>
+					<element ref="n2:CriminalHistory" minOccurs="0"/>
+					<element ref="n2:PersonQualificationText" minOccurs="0"/>
+					<element ref="n2:PersonAlias" minOccurs="0"/>
+					<element ref="n2:PersonMother" minOccurs="0"/>
+					<element ref="n2:PersonFather" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="VehicleType">
+		<annotation>
+			<documentation>A motor-driven conveyance designed to carry its operator, and optionally passengers and cargo, over land.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:VehicleType">
+				<sequence>
+					<element ref="nc:Engine" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="n2:VehicleGearBoxID" minOccurs="0"/>
+					<element ref="n2:VehicleSecurityID" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<attribute name="key" type="xsd:string"/>
+	<attribute name="type" type="xsd:string"/>
+	<attribute name="version" type="xsd:string"/>
+	<element name="ArrestWarrant" type="n2:ArrestWarrantType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element encapsulates information about an investigation linked to the record.</documentation>
+		</annotation>
+	</element>
+	<element name="CriminalHistory" type="j:OffenseType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain the criminal history of the subject</documentation>
+		</annotation>
+	</element>
+	<element name="ExtraditionRequestIndicator" type="niem-xsd:boolean" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This optional element will contain the security ID of the vehicle. </documentation>
+		</annotation>
+	</element>
+	<element name="ICISMetadata" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="n2:ICISMetadataType">
+					<sequence>
+						<element ref="n2:SubmittingOrganization" minOccurs="0"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="IdentityConfirmedIndicator" type="niem-xsd:boolean" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain a true or false value indicating whether or not the subject?s identity has been confirmed</documentation>
+		</annotation>
+	</element>
+	<element name="ImageIndicatorText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="InterpolListResponse" type="n2:InterpolListResponseType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element denotes the match list response from Interpol and will contain all hits returned from the intial query</documentation>
+		</annotation>
+	</element>
+	<element name="Investigation" type="nc:ActivityType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element encapsulates information about an investigation linked to the record.</documentation>
+		</annotation>
+	</element>
+	<element name="IssuingCountryCode" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This optional element will contain the security ID of the vehicle. </documentation>
+		</annotation>
+	</element>
+	<element name="LinkedFile" type="nc:DocumentType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element encapsulates information about a file linked to the record.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETS" type="n2:NLETSType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The root element of a NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSInquiryData" type="n2:NLETSInquiryDataType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain all elements specific to this transaction.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSMessageHeader" type="nh2:NLETSMessageHeaderType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Metadata information about an NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSResponseData" type="n2:NLETSResponseDataType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="Person" type="n2:PersonType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="PersonAlias" type="nc:PersonType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will describe the person?s alias and can contain any of the person subelements.</documentation>
+		</annotation>
+	</element>
+	<element name="PersonFather" type="nc:PersonType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="PersonMother" type="nc:PersonType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="PersonQualificationText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain qualification information</documentation>
+		</annotation>
+	</element>
+	<element name="QueryReasonDescriptionText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="SignatoryText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This optional element will contain the security ID of the vehicle. </documentation>
+		</annotation>
+	</element>
+	<element name="StolenDocument" type="nc:DocumentType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element encapsulates query information about a stolen travel document. </documentation>
+		</annotation>
+	</element>
+	<element name="SubmittingOrganization" type="nc:OrganizationType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains information about the organization which submitted the record</documentation>
+		</annotation>
+	</element>
+	<element name="Theft" type="nc:IncidentType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element encapsulates information about a theft.</documentation>
+		</annotation>
+	</element>
+	<element name="Vehicle" type="n2:VehicleType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A motor-driven conveyance designed to carry its operator, and optionally passengers and cargo, over land.</documentation>
+		</annotation>
+	</element>
+	<element name="VehicleGearBoxID" type="niem-xsd:string" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This optional element will contain the ID of the gear box. </documentation>
+		</annotation>
+	</element>
+	<element name="VehicleSecurityID" type="niem-xsd:string" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This optional element will contain the security ID of the vehicle. </documentation>
+		</annotation>
+	</element>
+	<element name="WarrantExpirationDate" type="nc:DateType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This optional element will contain the security ID of the vehicle. </documentation>
+		</annotation>
+	</element>
+</schema>

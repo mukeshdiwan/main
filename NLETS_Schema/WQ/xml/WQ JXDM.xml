@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <n:NLETSInquiryMessage>
+		<n:NLETSInquiryHeader>
+            <n:MessageKeyCode>WQ</n:MessageKeyCode>
+			<n:DocumentControlFieldText><![CDATA[1234567890]]></n:DocumentControlFieldText>
+            <j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>VA1234567</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <n:DocumentDestinationID>
+              <j:ID>CN</j:ID>
+            </n:DocumentDestinationID>
+		</n:NLETSInquiryHeader>
+		<n:NLETSInquiryData Key="WQ">
+				<j:Person>
+					<j:PersonName>
+                           <j:PersonFullName>Scott, Anthony L</j:PersonFullName>
+                           <j:PersonGivenName>Anthony</j:PersonGivenName>
+						<j:PersonMiddleName>L</j:PersonMiddleName>
+						<j:PersonSurName>Scott</j:PersonSurName>
+					</j:PersonName>
+					<j:PersonBirthDate>1953-12-12</j:PersonBirthDate>
+					<j:PersonPhysicalDetails>
+						<j:PersonSexCode>M</j:PersonSexCode>
+					</j:PersonPhysicalDetails>
+				</j:Person>
+				<n:ReasonCode>F</n:ReasonCode>
+				<n:SightedIndicator>Y</n:SightedIndicator>
+			</n:NLETSInquiryData>
+		</n:NLETSInquiryMessage>
+</n:NLETS>

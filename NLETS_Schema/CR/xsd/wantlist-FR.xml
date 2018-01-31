@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:WantList w:release="2.1" w:product="NIEM"
+  xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+  xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+  xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:w="http://niem.gov/niem/wantlist/2">
+  <w:Element w:name="j:Person" w:isReference="false"/>
+  <w:Element w:name="j:PersonAugmentation" w:isReference="false"/>
+  <w:Element w:name="j:PersonStateFingerprintIdentification" w:isReference="false"/>
+  <w:Element w:name="nc:AddressBuildingText" w:isReference="false"/>
+  <w:Element w:name="nc:AddressDeliveryPoint" w:isReference="false"/>
+  <w:Element w:name="nc:AddressRepresentation" w:isReference="false"/>
+  <w:Element w:name="nc:AddressSecondaryUnitText" w:isReference="false"/>
+  <w:Element w:name="nc:IdentificationID" w:isReference="false"/>
+  <w:Element w:name="nc:Location" w:isReference="false"/>
+  <w:Element w:name="nc:LocationAddress" w:isReference="false"/>
+  <w:Element w:name="nc:LocationCityName" w:isReference="false"/>
+  <w:Element w:name="nc:LocationPostalCode" w:isReference="false"/>
+  <w:Element w:name="nc:LocationState" w:isReference="false"/>
+  <w:Element w:name="nc:LocationStateName" w:isReference="false"/>
+  <w:Element w:name="nc:LocationStreet" w:isReference="false"/>
+  <w:Element w:name="nc:StreetFullText" w:isReference="false"/>
+  <w:Element w:name="nc:StructuredAddress" w:isReference="false"/>
+  <w:Type w:name="j:PersonAugmentationType" w:isRequested="true">
+    <w:ElementInType w:name="j:PersonStateFingerprintIdentification"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="j:PersonType" w:isRequested="true">
+    <w:ElementInType w:name="j:PersonAugmentation" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:AddressType" w:isRequested="true">
+    <w:ElementInType w:name="nc:AddressRepresentation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:DocumentType" w:isRequested="true"/>
+  <w:Type w:name="nc:IdentificationType" w:isRequested="true">
+    <w:ElementInType w:name="nc:IdentificationID" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:LocationType" w:isRequested="true">
+    <w:ElementInType w:name="nc:LocationAddress" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:NumericType" w:isRequested="true"/>
+  <w:Type w:name="nc:PersonType" w:isRequested="true"/>
+  <w:Type w:name="nc:ProperNameTextType" w:isRequested="true"/>
+  <w:Type w:name="nc:StreetType" w:isRequested="true">
+    <w:ElementInType w:name="nc:StreetFullText" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:StructuredAddressType" w:isRequested="true">
+    <w:ElementInType w:name="nc:AddressDeliveryPoint"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:LocationCityName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:LocationPostalCode"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:LocationState" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:TextType" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:date" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:decimal" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:string" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:time" w:isRequested="true"/>
+</w:WantList>

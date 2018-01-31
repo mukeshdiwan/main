@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -->
+                <nc:IdentificationID>VA007019W</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.8.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            NCMEC UNIDENTIFIED PERSON NOTIFICATION AT <!--<hhmm>-->1400 EST <!--<yyyymmdd>-->20150520.
+            <!--<Modification-Action>-->ENTERING ORI IS <!--<ATR>-->US MARSHALS
+        </nc:CaveatText>    
+        
+        <!--<Unidentified-Person-Database-Record>-->
+        <ncic:UnidentifiedPersonRecord s:ref="UnidentifiedPersonDatabaseRecord"/>
+        
+        <nc:ContactInformationAssociation s:ref="InputOrganization" />
+                
+        <!--<Input-Transaction>-->
+        <ncic-ex:IncomingMessage />
+        
+        <!-- Current System Time -->
+        <ncic:NotificationDateTime>2015-05-20T14:00:00-04:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:UnidentifiedPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:UnidentifiedPersonRecord s:id="UnidentifiedPersonDatabaseRecord">
+        <!-- This would contain the Unidentified Person Enter response as defined in Part 3, 
+             Section 2 of the NCIC Message Book in actual implementation -->
+    </ncic:UnidentifiedPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="InputOrganization">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>US MARSHALS</nc:OrganizationName>
+    </nc:Organization>
+
+</ncic-ex:Exchange>

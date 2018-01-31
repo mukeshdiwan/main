@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 5/12/2017		Kate Silhol/Nlets		add inquiry structure-->
+<xs:schema xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/3.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/3.1/" xmlns:n2-yr="http://www.nlets.org/niem/nlets-hit-confirmation/1.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.1/" targetNamespace="http://www.nlets.org/niem/nlets-hit-confirmation/1.0">
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="./niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/jxdm/5.1/" schemaLocation="./niem/domains/jxdm/5.1/jxdm.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="./niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="./niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/screening/3.1/" schemaLocation="./niem/domains/screening/3.1/screening.xsd"/>
+	<xs:complexType name="ConfirmationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-yr:ConfirmingAgency"/>
+					<xs:element ref="n2-yr:Remarks"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="HitConfirmationInquiryType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Hit Confirmation Inquiry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-yr:QueryRequestActivity"/>
+					<xs:element ref="nc:Vehicle" minOccurs="0"/>
+					<xs:element ref="nc:Person" minOccurs="0"/>
+					<xs:element ref="j:ConveyanceRegistrationPlateIdentification" minOccurs="0"/>
+					<xs:element ref="j:Firearm" minOccurs="0"/>
+					<xs:element ref="nc:Item" minOccurs="0"/>
+					<xs:element ref="nc:Securities" minOccurs="0"/>
+					<xs:element ref="nc:Vessel" minOccurs="0"/>
+					<xs:element ref="j:ConveyancePart" minOccurs="0"/>
+					<xs:element ref="n2-yr:Confirmation" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	<xs:complexType name="HitConfirmationType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Hit Confirmation Inquiry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-yr:QueryRequestActivity"/>
+					<xs:element ref="nc:Vehicle" minOccurs="0"/>
+					<xs:element ref="nc:Person" minOccurs="0"/>
+					<xs:element ref="j:ConveyanceRegistrationPlateIdentification" minOccurs="0"/>
+					<xs:element ref="j:Firearm" minOccurs="0"/>
+					<xs:element ref="nc:Item" minOccurs="0"/>
+					<xs:element ref="nc:Securities" minOccurs="0"/>
+					<xs:element ref="nc:Vessel" minOccurs="0"/>
+					<xs:element ref="j:ConveyancePart" minOccurs="0"/>
+					<xs:element ref="n2-yr:Confirmation" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="QueryRequestActivityType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-yr:RequestActivityCode"/>
+					<xs:element ref="nc:StatusDescriptionText"/>
+					<xs:element ref="n2-yr:AdditionalHoursRequiredText"/>
+					<xs:element ref="nc:Incident"/>
+					<xs:element ref="scr:NCICRecordID"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="AdditionalHoursRequiredText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="Confirmation" type="n2-yr:ConfirmationType" abstract="false" nillable="true"/>
+	<xs:element name="ConfirmingAgency" type="nc:OrganizationType" abstract="false" nillable="true"/>
+	<xs:element name="HitConfirmation" type="n2-yr:HitConfirmationType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Hit Confirmation Inquiry.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="QueryRequestActivity" type="n2-yr:QueryRequestActivityType" abstract="false" nillable="true"/>
+	<xs:element name="Remarks" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="RequestActivityCode" type="nc:TextType" abstract="false" nillable="true"/>
+	<!-- query elements-->
+	<xs:element name="HitConfirmationInquiry" type="n2-yr:HitConfirmationInquiryType" abstract="false" nillable="true"/>	
+</xs:schema>

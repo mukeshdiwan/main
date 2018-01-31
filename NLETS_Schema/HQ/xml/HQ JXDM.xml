@@ -1,0 +1,22 @@
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org C:\DOCUME~1\AARONG~1\MYDOCU~1\WATERH~1\NLETS\jxdm\HQ\HQ.xsd">
+	<n:NLETSInquiryMessage>
+		<n:NLETSInquiryHeader>
+			<n:DocumentUserID>
+				<j:ID>USER55</j:ID>
+			</n:DocumentUserID>
+			<n:DocumentPasswordText>123456</n:DocumentPasswordText>
+			<n:MessageKeyCode>HQ</n:MessageKeyCode>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZNLETS11</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<n:DocumentDestinationID>
+				<j:ID>AZNLETS11</j:ID>
+			</n:DocumentDestinationID>
+			<n:DocumentControlFieldText>ATS000048</n:DocumentControlFieldText>
+		</n:NLETSInquiryHeader>
+		<n:NLETSInquiryData Key="HQ">
+		</n:NLETSInquiryData>
+	</n:NLETSInquiryMessage>
+</n:NLETS>

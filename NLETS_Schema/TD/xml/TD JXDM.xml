@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org " xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<n:NLETSUpdateMessage>
+		<n:NLETSUpdateHeader>
+			<n:DocumentUserID>
+				<j:ID>USER55</j:ID>
+			</n:DocumentUserID>
+			<n:DocumentPasswordText>123456</n:DocumentPasswordText>
+			<n:MessageKeyCode>TD</n:MessageKeyCode>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>GA1234567</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<n:DocumentDestinationID>
+				<j:ID>OD</j:ID>
+			</n:DocumentDestinationID>
+		</n:NLETSUpdateHeader>
+		<n:NLETSUpdateData Key="TD">
+			<j:Agency>
+				<j:OrganizationORIID>
+					<j:ID>VA1234567</j:ID>
+				</j:OrganizationORIID>
+				<j:OrganizationLocation>
+					<j:LocationName>VA</j:LocationName>
+				</j:OrganizationLocation>
+			</j:Agency>
+		</n:NLETSUpdateData>
+	</n:NLETSUpdateMessage>
+</n:NLETS>

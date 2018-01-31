@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -->
+                <nc:IdentificationID>VA007019W</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.8.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+        
+        <!--<Database_Record>-->
+        <!-- This would contain the Missing Person Hit response as defined in Section 3, Part 1 of 
+             the Message Book, excluding all alerts, ORI translations, all caveats, VLN text, and 
+             all image fields in actual implementation -->
+        <!-- Only needed elements for the example are included here -->
+        <ncic-ex:PrimaryHitData s:ref="HitDataRecord" />
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            <!--<Receiving-ORI>-->VA007019W
+            DISABILITY-JUVENILE NOTIFICATION AT <!--<hhmm tmz yyyymmdd>--> 1320 EST 20040412
+            <!--<Input-Transaction>-->
+            UPDATING ORI IS <!--<ATR>-->WV STATE POLICE
+            
+            MKE/<!--<MKE-Translation>-->MISSING PERSON DISABILITY 
+            <!--<Database-Record>-->
+            MIF/<!--<MIF>-->true                          
+        </nc:CaveatText>       
+        
+        <!-- This contact information is ONLY for the ORI that triggered the notification, not the record ORI. -->
+        <nc:ContactInformationAssociation>
+            <nc:ContactEntity s:ref="NotificationORI"/>
+        </nc:ContactInformationAssociation>
+        
+        <!--<Input-Transaction>-->
+        <!-- This would contain the Wanted Person Enter response as defined in Section 11 of 
+             the Message Book in actual implementation -->
+        <!-- Only needed elements for the example are included here -->
+        <ncic-ex:IncomingMessage />
+
+        <!-- Current System Time -->
+        <ncic:NotificationDateTime>2004-04-12T13:20:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="HitDataRecord">        
+        <ncic:MissingPersonRecord s:ref="PrimaryHitRecordMissingPerson"/>
+    </ncic-ex:PrimaryHitData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:MissingPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:MissingPersonRecord s:id="PrimaryHitRecordMissingPerson">
+        <j:MissingPerson s:ref="MissingPerson"/>
+    </ncic:MissingPersonRecord>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Entity. -->
+    <!-- ******************************************************************************** -->
+    <nc:Entity s:id="NotificationORI">
+        <nc:EntityOrganization s:ref="NotificationOrganization"/>
+    </nc:Entity>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="NotificationOrganization">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationDescriptionText>WV STATE POLICE</nc:OrganizationDescriptionText>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (database) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="MissingPersonInfo">
+        <!-- Additional information would needed to be filled out for this element during actual
+             implementation (see SampleMissingHitQuery for reference)-->
+        <nc:PersonAgeMeasure>
+            <!-- AGE - Approximate age -->
+            <nc:MeasureValueText>17</nc:MeasureValueText>
+        </nc:PersonAgeMeasure>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Missing-person. (database record) -->
+    <!-- ******************************************************************************** -->
+    <j:MissingPerson s:id="MissingPerson">
+        <nc:RoleOfPerson s:ref="MissingPersonInfo"/>
+        <!-- Additional information would needed to be filled out for this element during actual
+             implementation (see SampleMissingHitQuery for reference)-->
+        <!-- MIF - Missing person interest -->
+        <j:MissingPersonInterestIndicator>true</j:MissingPersonInterestIndicator>
+    </j:MissingPerson>
+</ncic-ex:Exchange>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/niem/PAR/xsd/PAR.xsd" version="3.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>PAR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS11</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS11</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>ATS000048</nh2:DocumentControlFieldText>
+		<nh2:UserID>USER55</nh2:UserID>
+		<nh2:UserPasswordText>123456</nh2:UserPasswordText>
+	</NLETSMessageHeader>
+	<NLETSInquiryData key="PPQ">
+		<PurposeCode>C</PurposeCode>
+		<ResponseAttentionDescriptionText>SGT JOHN DOE</ResponseAttentionDescriptionText>
+		<j:Person>
+			<nc:PersonBirthDate>
+				<nc:Date>1980-07-14</nc:Date>
+			</nc:PersonBirthDate>
+			<nc:PersonName>
+				<nc:PersonFullName>PUBLIC, JOHN Q</nc:PersonFullName>
+			</nc:PersonName>
+			<nc:PersonSexCode>M</nc:PersonSexCode>
+			<nc:PersonSSNIdentification/>
+			<j:PersonAugmentation>
+				<j:PersonFBIIdentification/>
+				<j:PersonStateFingerprintIdentification/>
+			</j:PersonAugmentation>
+		</j:Person>
+		<ImageIndicator>false</ImageIndicator>
+	</NLETSInquiryData>
+	<NLETSResponseData key="PAR">
+		<ResponseText>**** TEST (PAR) **** FBI/7868768
+				</ResponseText>
+	</NLETSResponseData>
+</NLETS>

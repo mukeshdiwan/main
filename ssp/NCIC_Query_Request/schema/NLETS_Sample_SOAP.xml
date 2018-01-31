@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/
+XMLSchema-instance">
+	<soapenv:Body>
+		<m:ProcessMessage xmlns:m="http://www.nlets.org/literalTypes">
+			<m:XMLMsgTrans>
+				<n:NLETS version="3.00" xmlns:n="http://www.nlets.org"
+					xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<n:NLETSInquiryMessage>
+						<n:NLETSInquiryHeader>
+							<n:MessageKeyCode>DQ</n:MessageKeyCode>
+							<j:DocumentSource.Organization>
+								<j:OrganizationORIID>
+									<j:ID>GA0250300</j:ID>
+								</j:OrganizationORIID>
+							</j:DocumentSource.Organization>
+							<n:DocumentDestinationID>
+								<j:ID>FL</j:ID>
+							</n:DocumentDestinationID>
+						</n:NLETSInquiryHeader>
+						<n:NLETSInquiryData Key="DQ">
+							<j:Person>
+								<j:PersonAssignedIDDetails>
+									<j:PersonDriverLicenseID>
+										<j:ID>VAOLN0000</j:ID>
+									</j:PersonDriverLicenseID>
+								</j:PersonAssignedIDDetails>
+							</j:Person>
+							<n:BinaryRequestIndicator>true</n:BinaryRequestIndicator>
+						</n:NLETSInquiryData>
+					</n:NLETSInquiryMessage>
+				</n:NLETS>
+			</m:XMLMsgTrans>
+		</m:ProcessMessage>
+	</soapenv:Body>
+</soapenv:Envelope>

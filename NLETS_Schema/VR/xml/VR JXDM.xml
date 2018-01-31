@@ -1,0 +1,39 @@
+<n:NLETS version="3.00" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:n="http://www.nlets.org">
+<n:NLETSResponseMessage>
+<n:NLETSResponseHeader>
+<j:DocumentSource.Organization>
+<j:OrganizationORIID>
+<j:ID>
+CN0000000</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSource.Organization>
+<j:DocumentSubject.Organization>
+<j:OrganizationORIID>
+<j:ID>
+AZNLETS24</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSubject.Organization>
+<n:MessageKeyCode>
+VR</n:MessageKeyCode>
+<n:DocumentControlFieldText>
+KATESILHOL</n:DocumentControlFieldText>
+<j:DocumentReceivedDate>
+05/05/2006</j:DocumentReceivedDate>
+<n:DocumentReceivedTime>
+10:19</n:DocumentReceivedTime>
+<n:DocumentReceivedCountQuantity>
+41298</n:DocumentReceivedCountQuantity>
+<j:DocumentFiledDate>
+05/05/2006</j:DocumentFiledDate>
+<j:DocumentFiledTime>
+10:33</j:DocumentFiledTime>
+<n:DocumentFiledCountQuantity>
+00007</n:DocumentFiledCountQuantity>
+</n:NLETSResponseHeader>
+<n:NLETSResponseData Key="VR">
+<n:ResponseText>
+<![CDATA[** RESPONSE FROM CANADIAN SYSTEM - STOLEN VEHICLE FILE **RE:  7356   QUERY VEHICLE REM: L,XQ,AZNLETS24,*KATESILHOL,    NOT ON FILE Q V LIC: ABC123 PROV: ONT           *************     RO/DL TRANSACTION BEING PROCESSED2006050513195120060505131951*** END OF CPIC RESPONSE ***OTTAWA, CANADA]]>
+</n:ResponseText>
+</n:NLETSResponseData>
+</n:NLETSResponseMessage>
+</n:NLETS>

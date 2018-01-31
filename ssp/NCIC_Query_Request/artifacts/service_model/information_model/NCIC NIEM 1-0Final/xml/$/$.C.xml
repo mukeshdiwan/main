@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -  
+                           (ORI being notified of the transaction) -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.C.</ncic:MessageTransactionText>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <!-- The following CaveatText elements(below) contain embedded bracketed comments (ex, <FLN>.
+             These comments should be removed in the real implementation according to NCIC CDRL 
+             Message Book Part 3 Section 4.Request-For-Validation ($.C.) -->
+        <!-- See Section 4.1 of NCIC CDRL Message Book Part 3 Section 2 for details on which 
+             caveat text block to use from the following 3 caveat text blocks -->
+        <nc:CaveatText>
+            NCIC VALIDATION REQUEST <!--<yyyymmdd>-->. YOU MUST VERIFY THE 
+            COMPLETENESS, ACCURACY, VALIDITY, AND WILLINGNESS TO 
+            EXTRADITE IF APPLICABLE, AND REAUTHORIZE RETENTION OF THE 
+            BELOW RECORD WITHIN 30 DAYS.
+            <!--<Database-Record>-->
+        </nc:CaveatText>
+        <nc:CaveatText>
+            OUT OF STATE VALIDATION REQUEST AT <!--<yyyymmdd>-->.
+            <!--<Database-Record>-->
+        </nc:CaveatText>
+        <nc:CaveatText>
+            NCIC VALIDATION REQUEST <!--<yyyymmdd>-->. YOU MUST VERIFY THE 
+            COMPLETENESS, ACCURACY, AND VALIDITY OF YOUR ORI RECORD.
+            <!--<Database-Record>-->
+        </nc:CaveatText>
+        <nc:CaveatText>
+            $.C.
+            ZZZZZZZZZ
+            END OF VALIDATION FILE
+        </nc:CaveatText>
+        <!--<Database-Record>-->
+        <ncic:Record s:ref="Database-Record"/>
+    </ncic-ex:NotificationRecordData>
+    
+    <!-- Database-Record filled out here. This could refer to a number of different 
+         NCIC record types such as ncic:ArticleRecord, ncic:BoatRecord, ncic:GunRecord, etc. 
+         Using ncic:GunRecord in this sample XML file. -->
+    <!-- ******************************************************************************** -->
+    <!-- ncic:(Record). -->
+    <!-- ******************************************************************************** -->
+    <ncic:GunRecord s:id="Database-Record">
+        <!-- filled out with data here -->
+    </ncic:GunRecord>
+</ncic-ex:Exchange>

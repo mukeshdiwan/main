@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 5/12/2017		Kate Silhol/Nlets		add inquiry structure-->
+<xs:schema xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/3.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:m="http://release.niem.gov/niem/domains/maritime/3.1/" xmlns:n2-wlr="http://www.nlets.org/niem/nlets-wildlife-violation/1.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:n2-50="http://www.nlets.org/niem/nlets-50-state-response/1.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.1/" targetNamespace="http://www.nlets.org/niem/nlets-wildlife-violation/1.0">
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="../../../common/niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/jxdm/5.1/" schemaLocation="../../../common/niem/domains/jxdm/5.1/jxdm.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="../../../common/niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="../../../common/niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/maritime/3.1/" schemaLocation="../../../common/niem/domains/maritime/3.1/maritime.xsd"/>
+	<xs:import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="../../../nlets/nlets-hdr/1.0/nlets-hdr.xsd"/>
+	<xs:import namespace="http://www.nlets.org/niem/nlets-50-state-response/1.0" schemaLocation="../../../nlets/50-state/1.0/50-state.xsd"/>
+	<xs:complexType name="ConveyanceAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="j:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IdentificationAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-wlr:IdentificationNonExpiringIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-wlr:IdentificationResidentIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-wlr:IdentificationValidLocationText" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-wlr:IdentificationValidSeasonText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ImageAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-wlr:ImagePrimaryIndicator" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OffenseAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-wlr:OffenseStateCodeText" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-wlr:OffenseNCICText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OrganizationAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-wlr:OrganizationResponsiblePartyNameText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WildlifeInquiryType">
+		<xs:annotation>
+			<xs:documentation>The business data describing an entity holding wildlife related licenses.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WildlifeLicenseHolderRecordType">
+		<xs:annotation>
+			<xs:documentation>The business data describing an entity holding wildlife related licenses.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:ContactInformationAssociation" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:Vessel" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WildlifeViolationRecordType">
+		<xs:annotation>
+			<xs:documentation>The business data describing a subject with wildlife violation offenses.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:ContactInformationAssociation" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:Vessel" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="j:Offense" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="j:OffenseArrestAssociation" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="j:OffenseChargeAssociation" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ConveyanceAugmentation" type="n2-wlr:ConveyanceAugmentationType" abstract="false" substitutionGroup="nc:ConveyanceAugmentationPoint" nillable="true"/>
+	<xs:element name="IdentificationAugmentation" type="n2-wlr:IdentificationAugmentationType" abstract="false" substitutionGroup="nc:IdentificationAugmentationPoint" nillable="true"/>
+	<xs:element name="IdentificationNonExpiringIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="IdentificationResidentIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="IdentificationValidLocationText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="IdentificationValidSeasonText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="ImageAugmentation" type="n2-wlr:ImageAugmentationType" abstract="false" substitutionGroup="nc:ImageAugmentationPoint" nillable="true"/>
+	<xs:element name="ImagePrimaryIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="OffenseAugmentation" type="n2-wlr:OffenseAugmentationType" abstract="false" substitutionGroup="j:OffenseAugmentationPoint" nillable="true"/>
+	<xs:element name="OffenseNCICText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="OffenseStateCodeText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="OrganizationResponsiblePartyNameText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="OrganizationAugmentation" type="n2-wlr:OrganizationAugmentationType" abstract="false" substitutionGroup="nc:OrganizationAugmentationPoint" nillable="true"/>
+	<xs:element name="WildlifeLicenseHolderRecord" type="n2-wlr:WildlifeLicenseHolderRecordType" abstract="false" nillable="true" substitutionGroup="n2-50:StateResponseData"/>
+	<xs:element name="WildlifeViolationRecord" type="n2-wlr:WildlifeViolationRecordType" abstract="false" nillable="true" substitutionGroup="n2-50:StateResponseData"/>
+	<!-- query elements-->
+	<xs:element name="WildlifeInquiry" type="n2-wlr:WildlifeInquiryType" abstract="false" nillable="true"/>
+	<xs:element name="ImageIndicator" type="xs:boolean" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>A value of true in this element indicates that an image is being requested if available.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PurposeCode" type="nh2:PurposeCodeType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>This element identifies the reason for query.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ResponseAttentionDescriptionText" type="nc:TextType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>This element contains identification of the person or entity to whose attention the driver history response will be directed. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

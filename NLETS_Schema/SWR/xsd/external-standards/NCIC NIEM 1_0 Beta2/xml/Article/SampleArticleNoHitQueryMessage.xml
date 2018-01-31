@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header. | /ncic:Message[1]/cjis:HeaderSection[1]/cjis:TransactionHeaderText[1] -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <!-- ORI (parent) - Originating agency identifier | (see descendants or children) -->
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier | /ncic:Message[1]/cjis:HeaderSection[1]/cjis:TransactionOrganization[1]/jxdm:OrganizationORIID/jxdm:ID -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key (type of entry) | /ncic:Message[1]/cjis:HeaderSection[1]/cjis:TransactionKeyText[1] -->
+        <ncic:MessageTransactionCode>QA<!--/ZA--></ncic:MessageTransactionCode>
+        <ncic-ex:NoHitData s:ref="d77e18-noHitData_propertyNoHitDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NoHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NoHitData s:id="d77e18-noHitData_propertyNoHitDataSection">
+        <!-- Caveat-Data - Caveat data | /ncic:Message[1]/ncic:ResponseDataSection[1]/ncic:NoHitDataSection[1]/ncic:PropertyNoHitResponse[1]/cjis:CaveatText[1][@cjis:type="NoHit"] -->
+        <nc:CaveatText>NO RECORD SER</nc:CaveatText>
+        <ncic:ArticleRecord s:ref="d77e18-articleRecord_propertyNoHitDataResponse"/>
+    </ncic-ex:NoHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ArticleRecord (noHit). -->
+    <!-- ******************************************************************************** -->
+    <ncic:ArticleRecord s:id="d77e18-articleRecord_propertyNoHitDataResponse">
+        <j:ItemNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>A0123456789</nc:IdentificationID>
+        </j:ItemNCICIdentification>
+        <nc:Item s:ref="d77e18-item_article"/>
+    </ncic:ArticleRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Item. -->
+    <!-- ******************************************************************************** -->
+    <nc:Item s:id="d77e18-item_article">
+        <!-- SER - Serial number | /ncic:Message[1]/ncic:ResponseDataSection[1]/ncic:NoHitDataSection[1]/ncic:PropertyNoHitResponse[1]/jxdm:PropertySerialID[1]/jxdm:ID -->
+        <nc:ItemSerialIdentification>
+            <nc:IdentificationID>1234567</nc:IdentificationID>
+        </nc:ItemSerialIdentification>
+        <!-- TYP - Type | /ncic:Message[1]/ncic:ResponseDataSection[1]/ncic:NoHitDataSection[1]/ncic:PropertyNoHitResponse[1]/jxdm:PropertyDetailText[1] -->
+        <j:ItemCategoryNCICTYPCode>C</j:ItemCategoryNCICTYPCode>
+    </nc:Item>
+</ncic-ex:Exchange>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <n:NLETSInquiryMessage>
+		<n:NLETSInquiryHeader>
+			<n:MessageKeyCode>BQ</n:MessageKeyCode>
+			<n:DocumentControlFieldText><![CDATA[1234567890]]></n:DocumentControlFieldText>
+            <j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>MA0450000</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <n:DocumentDestinationID>
+              <j:ID>GA</j:ID>
+            </n:DocumentDestinationID>
+		</n:NLETSInquiryHeader>
+		<n:NLETSInquiryData Key="BQ">
+				<j:Boat>
+					<j:BoatRegistrationID idExpirationDate="2004-01-05"><j:ID>SJD91232</j:ID></j:BoatRegistrationID>
+                      <j:PropertyOwner.Person>
+                       <j:PersonName>
+                         <j:PersonFullName>DOE, JOHN Q.</j:PersonFullName>
+                         <j:PersonGivenName>JOHN</j:PersonGivenName>
+                         <j:PersonMiddleName>Q.</j:PersonMiddleName>
+                         <j:PersonSurName>DOE</j:PersonSurName>
+                       </j:PersonName>
+                     </j:PropertyOwner.Person>
+				</j:Boat>
+			</n:NLETSInquiryData>
+		</n:NLETSInquiryMessage>
+</n:NLETS>

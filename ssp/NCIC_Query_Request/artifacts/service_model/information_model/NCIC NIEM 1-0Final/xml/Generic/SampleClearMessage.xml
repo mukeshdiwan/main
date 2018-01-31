@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE -->
+        <ncic:MessageTransactionCode>CW</ncic:MessageTransactionCode>
+        <ncic-ex:MaintenanceRecordData s:ref="ClearData"/>
+        <ncic-ex:RecordIdentificationData s:ref="d77e16-recordIdentificationData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:MaintenanceRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:MaintenanceRecordData s:id="ClearData">
+        <ncic:WantedPersonRecord s:ref="ClearData-WantedPerson"/>
+    </ncic-ex:MaintenanceRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:RecordIdentificationData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:RecordIdentificationData s:id="d77e16-recordIdentificationData">
+        <!-- Reference to OCA -->
+        <!-- <nc:Incident s:ref="RecordIdentificationIncident"/> -->
+
+        <!-- Reference to NAM -->
+        <nc:Person s:ref="RecordIdentificationPerson"/>
+        <!-- NIC (parent) - NCIC number -->
+        <j:PersonNCICIdentification>
+            <nc:IdentificationID>W012345678</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+    </ncic-ex:RecordIdentificationData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="ClearData-WantedPerson">
+        <ncic:RecordStatus>
+            <nc:StatusDate>
+                <!-- DOC - Date of Clear -->
+                <nc:Date>2005-11-16</nc:Date>
+            </nc:StatusDate>
+            <!-- FTD -->
+            <nc:StatusDescriptionText>Found hiding behind police department.</nc:StatusDescriptionText>
+            <!-- RPS -->
+            <ncic:RecordRemovalReasonCode>HIT LOCAL</ncic:RecordRemovalReasonCode>
+        </ncic:RecordStatus>
+        <ncic:RecoveredItemOffenseSummaryAssociation>
+            <nc:Item s:ref="d77e20-item"/>
+            <j:OffenseSummary s:ref="d77e20-offenseSummary"/>
+        </ncic:RecoveredItemOffenseSummaryAssociation>
+    </ncic:WantedPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Item. -->
+    <!-- ******************************************************************************** -->
+    <nc:Item s:id="d77e20-item">
+        <j:ItemAugmentation>
+            <!-- VNP -->
+            <nc:ItemRecoveredValue>
+                <nc:ItemValueAmount>
+                    <nc:Amount>10</nc:Amount>
+                </nc:ItemValueAmount>
+            </nc:ItemRecoveredValue>
+            <!-- VOR -->
+            <j:ItemRecoveredAdditionalValue>
+                <nc:ItemValueAmount>
+                    <nc:Amount>10</nc:Amount>
+                </nc:ItemValueAmount>
+            </j:ItemRecoveredAdditionalValue>
+            <!-- VRC -->
+            <j:ItemRecoveredContrabandValue>
+                <nc:ItemValueAmount>
+                    <nc:Amount>10.00</nc:Amount>
+                </nc:ItemValueAmount>
+            </j:ItemRecoveredContrabandValue>
+        </j:ItemAugmentation>
+    </nc:Item>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="RecordIdentificationPerson">
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JOHN</nc:PersonGivenName>
+            <nc:PersonMiddleName>JACOB</nc:PersonMiddleName>
+            <nc:PersonSurName>JONES</nc:PersonSurName>
+        </nc:PersonName>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:OffenseSummary. -->
+    <!-- ******************************************************************************** -->
+    <j:OffenseSummary s:id="d77e20-offenseSummary">
+        <!-- NPA -->
+        <j:OffenseSummaryArrestQuantity>1</j:OffenseSummaryArrestQuantity>
+        <ncic:OffenseSummaryAugmentation>
+            <!-- PAR -->
+            <nc:PersonArmedIndicator>true</nc:PersonArmedIndicator>
+            <!-- HIT -->
+            <j:PersonHitResultsText>10</j:PersonHitResultsText>
+            <!-- NPF -->
+            <ncic:OffenseSummaryPersonsFoundQuantity>1</ncic:OffenseSummaryPersonsFoundQuantity>
+        </ncic:OffenseSummaryAugmentation>
+    </j:OffenseSummary>
+</ncic-ex:Exchange>

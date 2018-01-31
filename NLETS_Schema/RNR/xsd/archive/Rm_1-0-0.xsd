@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Originally created for NLETS by AAMVA - 11/1/4 -->
+<!-- Schema reflects CANDLE Registration v 1.0.1 -->
+<xs:schema xmlns:n="http://www.nlets.org" xmlns:j2="http://www.it.ojp.gov/jxdm/3.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.nlets.org" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<!-- NOTE - The schema location should be modified to point to its source on your computer -->
+	<xs:import namespace="http://www.it.ojp.gov/jxdm/3.0.2" schemaLocation="JXDM 3.0.2/3.0.2/jxdm.xsd"/>
+	<xs:element name="RegistrationMatches">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Vehicle Registration Inquiry, when multiple matches are found. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="IndividualMatch" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>The details of a given Registration match.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:choice>
+							<xs:sequence>
+								<xs:element ref="j2:VehicleRegistrationPlateID" minOccurs="0"/>
+								<xs:element ref="j2:RegistrationExpirationDate" minOccurs="0"/>
+								<xs:element ref="j2:VehicleRegistrationPlateTypeText" minOccurs="0"/>
+								<xs:element name="RegistrationPrimaryParty" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>A person or organization who is the primary registrant.</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:sequence>
+											<xs:choice>
+												<xs:element ref="j2:RegistrationParty.Person"/>
+												<xs:element ref="j2:RegistrationParty.Organization"/>
+												<xs:element name="RegistrationPartyName" type="j2:TextType">
+													<xs:annotation>
+														<xs:documentation>A name of an entity to whom a registration is issued. Used when it is not known if the registrant is a person or an organization.</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:choice>
+											<xs:element name="MailingAddress">
+												<xs:annotation>
+													<xs:documentation>The mailing address of a person  or organization.</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element ref="j2:LocationAddress"/>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+							<xs:sequence>
+								<xs:element ref="j2:VehicleID"/>
+								<xs:element ref="j2:VehicleMakeCode" minOccurs="0"/>
+								<xs:element ref="j2:VehicleModelYearDate" minOccurs="0"/>
+							</xs:sequence>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

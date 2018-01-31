@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI receiving this Message  -->
+                <nc:IdentificationID>DCFBIWAZ0</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.U.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="WantedPersonEnterDataSection">
+        <ncic:WantedPersonRecord s:ref="WantedPersonRecordEnterDataSection"/>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            THE FOLLOWING TRANSACTION RESULTED IN A HIT ON AN
+            UNDERCOVER AGENT DATABASE RECORD
+            C O D E          T E L E T Y P E          N I T E L
+            SPECIAL INSTRUCTIONS
+            
+            TO SAC,          <!--<FOP-Translation>-->XAVIER INVESTIGATIVE SERVICES (<!--<FON>-->NY123456)          <!--<mm/dd/yyyy_1>-->04/12/2014
+            FROM DIRECTOR, FBI
+            
+            OO          <!--<FOP-Translation>-->XAVIER INVESTIGATIVE SERVICES
+            
+            RE          <!--<FOP-Translation>-->XAVIER INVESTIGATIVE SERVICES UNDERCOVER RECORD HIT
+            
+            AT <!--<hhmm>-->1310 EST ON <!--<mm/dd/yyyy_2>-->04/12/2014
+            
+            <!--<ATR-Of-Transaction>-->MAINE STATE POLICE <!--<CTY>-->PORTLAND <!--<STA>-->ME
+            <!--<SNU>-->897    <!--<SNA>-->MAIN STREET
+            
+            SENT THE FOLLOWING NCIC MESSAGE: 
+            
+            <!--<NCIC-Input-Transaction>-->
+            
+            SUBJECT OF ABOVE NCIC MESSAGE MATCHED THE FOLLOWING UNDERCOVER RECORD:
+            
+            
+            <!--<Database-Record>-->
+            
+            ABOVE INFORMATION FURNISHED PER FIELD OFFICE REQUEST. OFFICE OF ORIGIN WILL
+            DETERMINE IF ANY ADDITIONAL INVESTIGATION IS
+            NECESSARY. ADVISE BUREAU ONLY IF ABOVE INFORMATION RESULTS IN IT BEING AN
+            EFFECTIVE INVESTIGATIVE AID OR IS OF USEFUL INTELLIGENCE.
+        </nc:CaveatText>
+
+        <!--<Database-Record>-->
+        <nc:PersonOrganizationAssociation>
+            <nc:Person s:ref="UndercoverPerson"/>
+            <nc:Organization s:ref="UndercoverOrganization"/>
+        </nc:PersonOrganizationAssociation>
+
+        <!--<NCIC-Input-Transaction>-->
+        <ncic-ex:IncomingMessage s:ref="EntryTransaction"/>
+        <!-- DateTime of the Current System Time -->
+        <ncic:NotificationDateTime>2014-04-12T13:20:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingMessage. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingMessage s:id="EntryTransaction">
+        <!-- DateTime of when the Undercover record Hit occurred -->
+        <ncic:MessageDateTime>2014-04-12T13:10:00</ncic:MessageDateTime>
+        <ncic:MessageIdentification>
+            <!-- HDR - Header -->
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionCode>EW</ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData s:ref="WantedPersonEnterDataSection"/>
+    </ncic-ex:IncomingMessage>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="WantedPersonRecordEnterDataSection">
+        <nc:Incident s:ref="WantedPersonIncident"/>
+        <!-- Additional information needed for <NCIC-Input-Transaction> would go here in 
+             the Wanted Person Record -->
+    </ncic:WantedPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Address. -->
+    <!-- ******************************************************************************** -->
+    <nc:Address s:id="OrganizationAddress">
+        <nc:LocationStreet>
+            <!-- SNU - Street number -->
+            <nc:StreetNumberText>897</nc:StreetNumberText>
+            <!-- SNA - Street name -->
+            <nc:StreetName>MAIN STREET</nc:StreetName>
+        </nc:LocationStreet>
+        <!-- CTY - City name -->
+        <nc:LocationCityName>PORTLAND</nc:LocationCityName>
+        <!-- STA - State name -->
+        <j:LocationStateNCICLSTACode>ME</j:LocationStateNCICLSTACode>
+    </nc:Address>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Address. -->
+    <!-- ******************************************************************************** -->
+    <nc:Address s:id="UndercoverOrganizationAddress">
+        <nc:LocationStreet>
+            <!-- SNU - Street number -->
+            <nc:StreetNumberText>1407</nc:StreetNumberText>
+            <!-- SNA - Street name -->
+            <nc:StreetName>GRAYMALKIN LANE</nc:StreetName>
+        </nc:LocationStreet>
+        <!-- CTY - City name -->
+        <nc:LocationCityName>SALEM CENTER</nc:LocationCityName>
+        <!-- STA - State name -->
+        <j:LocationStateNCICLSTACode>NY</j:LocationStateNCICLSTACode>
+    </nc:Address>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="WantedPersonIncident">
+        <!-- MIS - Miscellaneous Remarks -->
+        <nc:ActivityDescriptionText>SUBJECT POSSIBLY IN NC</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>ABC123</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="WantedPersonOrganization"/>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="WantedPersonOrganization">
+        <nc:OrganizationLocation>
+            <nc:Address s:ref="OrganizationAddress"/>
+        </nc:OrganizationLocation>
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>MAINE STATE POLICE</nc:OrganizationName>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="UndercoverOrganization">
+        <nc:OrganizationIdentification>
+            <!-- FON - Field Office File Number -->
+            <nc:IdentificationID>NY123456</nc:IdentificationID>
+        </nc:OrganizationIdentification>
+        <nc:OrganizationLocation>
+            <nc:Address s:ref="UndercoverOrganizationAddress"/>
+        </nc:OrganizationLocation>
+        <j:OrganizationAugmentation>
+            <!-- <FOP-Translation> -->
+            <j:OrganizationFieldOfficeText>XAVIER INVESTIGATIVE SERVICES</j:OrganizationFieldOfficeText>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="UndercoverPerson">
+        <nc:PersonName>
+            <nc:PersonFullName>JAMES LOGAN HOWLETT</nc:PersonFullName>
+        </nc:PersonName>
+    </nc:Person>
+</ncic-ex:Exchange>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <n:NLETSUpdateMessage>
+		<n:NLETSUpdateHeader>
+            <n:MessageKeyCode>NEI</n:MessageKeyCode>
+ 			<n:DocumentControlFieldText>000000089</n:DocumentControlFieldText>
+           <j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>NA</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <j:DocumentSubject.Organization>
+              <j:OrganizationORIID>
+                <j:ID>GA1234567</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSubject.Organization>
+		</n:NLETSUpdateHeader>
+		<n:NLETSUpdateData Key="NEI">
+					<j:VehicleID>
+                       <j:ID>1234567981324567</j:ID>
+                     </j:VehicleID>
+					<n:CaseID><j:ID>456789-101112</j:ID></n:CaseID>
+					<n:PoundInventoryID><j:ID> 9499</j:ID> </n:PoundInventoryID>
+					<n:ImpoundDate>2003-01-01</n:ImpoundDate>
+					<j:VehicleMakeCode>PONT</j:VehicleMakeCode>
+					<j:VehicleModelCode>EUR</j:VehicleModelCode>
+					<j:VehicleModelYearText>1992</j:VehicleModelYearText>
+					<j:VehicleStyleCode>2D</j:VehicleStyleCode>					
+					<j:VehiclePlateID>
+                       <j:ID>XYZ321</j:ID>
+                       <j:IDIssuingAuthorityText>NY</j:IDIssuingAuthorityText>
+                     </j:VehiclePlateID>
+          			<j:VehicleRegistrationPlateTypeCode>PC</j:VehicleRegistrationPlateTypeCode>
+					<j:ContactInformation>
+						<j:ContactOrganzationName>ACME GARAGE</j:ContactOrganzationName>
+						<j:TelephoneNumber>
+							<j:TelephoneNumberFullID>6025559223</j:TelephoneNumberFullID>
+							<j:TelephoneAreaCodeID>602</j:TelephoneAreaCodeID>
+							<j:TelephoneExchangeID>
+                                   555
+                               </j:TelephoneExchangeID>
+							<j:TelephoneSubscriberID>
+                                   9223
+                               </j:TelephoneSubscriberID>
+						</j:TelephoneNumber>
+					</j:ContactInformation>
+				<n:NewYorkDerelict>Y</n:NewYorkDerelict>
+				<n:Miscellaneous>THIS IS A TEST</n:Miscellaneous>
+			</n:NLETSUpdateData>
+		</n:NLETSUpdateMessage>
+</n:NLETS>

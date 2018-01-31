@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -  
+                           (ORI being notified of the transaction) -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.B.</ncic:MessageTransactionText>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <!-- The following CaveatText elements(below) contain embedded bracketed comments (ex, <FLN>).
+             These comments should be removed in the real implementation according to NCIC CDRL 
+             Message Book Part 3 Section 2 -->
+        
+        <nc:CaveatText>
+            FILE CONTAINS <!--<File-Description>-->DATA ON SUSPECTS FOR TRANSACTION: 
+            <!--<Transaction>-->.
+            <!-- The above statement should be replaced with the following if this is a batch job for 
+                 data that is to be placed in a file destined for multiple ORIs: 
+            <nc:CaveatText>FILE CONTAINS <File-Description> </nc:CaveatText>-->
+            BATCH FILE SIZE: <!--<File-Size>-->80 BYTES, READY FOR DOWNLOAD.
+            PLEASE REQUEST FILE NAME <!--<FLN>-->A1234567
+            USE THE FT MKE TO RETRIEVE THE FILE OR FTP <!--<Transfer-Info>-->WITH THE BINARY OPTION
+        </nc:CaveatText>
+        <nc:Document s:ref="ReferencedDocument"/>
+        <!-- Transaction -->
+        <ncic-ex:IncomingMessage />
+    </ncic-ex:NotificationRecordData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Document. -->
+    <!-- ******************************************************************************** -->
+    <nc:Document s:id="ReferencedDocument">
+        <nc:DocumentBinary>
+            <!-- <Transfer-Info> -->
+            <nc:BinaryDescriptionText>WITH THE BINARY OPTION</nc:BinaryDescriptionText>
+            <!-- <File-Size> -->
+            <nc:BinarySizeValue>80</nc:BinarySizeValue>
+        </nc:DocumentBinary>
+        <!-- <File-Description> -->
+        <nc:DocumentDescriptionText>DATA ON SUSPECTS</nc:DocumentDescriptionText>
+        <!-- FLN - File Number -->
+        <nc:DocumentFileName>A1234567</nc:DocumentFileName>
+    </nc:Document>
+</ncic-ex:Exchange>

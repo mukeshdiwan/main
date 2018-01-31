@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 5/12/2017		Kate Silhol/Nlets		add inquiry structure-->
+<xs:schema xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/3.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/" xmlns:n2-sr="http://www.nlets.org/niem/nlets-snowmobile-registration/1.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.1/" targetNamespace="http://www.nlets.org/niem/nlets-snowmobile-registration/1.0">
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="./niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/jxdm/5.1/" schemaLocation="./niem/domains/jxdm/5.1/jxdm.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="./niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="./niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:complexType name="ImageAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sr:ImagePrimaryIndicator" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="VehicleAugmentationType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Boat Registration Inquiry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="j:ConveyanceRegistration" minOccurs="0"/>
+					<xs:element ref="j:EngineHorsepowerQuantity" minOccurs="0"/>
+					<xs:element ref="n2-sr:SnowmobileTreadTypeText" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SnowmobileInquiryType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Snowmobile Registration Inquiry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sr:Snowmobile" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	<xs:complexType name="SnowmobileRegistrationType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Snowmobile Registration Inquiry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-sr:Snowmobile" minOccurs="0"/>
+					<xs:element ref="nc:ContactInformationAssociation" minOccurs="0"/>
+					<xs:element ref="nc:ItemInsuranceAssociation" minOccurs="0"/>
+					<xs:element ref="j:ItemTitleAssociation" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ImageAugmentation" type="n2-sr:ImageAugmentationType" abstract="false" substitutionGroup="nc:ImageAugmentationPoint" nillable="true"/>
+	<xs:element name="ImagePrimaryIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="Snowmobile" type="nc:VehicleType" abstract="false" nillable="true"/>
+	<xs:element name="SnowmobileTreadTypeText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="SnowmobileRegistration" type="n2-sr:SnowmobileRegistrationType" abstract="false" nillable="true"/>
+	<xs:element name="StatusText" type="nc:TextType" abstract="false" substitutionGroup="j:TitleStatusAbstract" nillable="true"/>
+	<xs:element name="VehicleAugmentation" type="n2-sr:VehicleAugmentationType" abstract="false" substitutionGroup="nc:VehicleAugmentationPoint" nillable="true"/>
+	<!-- query elements-->
+	<xs:element name="SnowmobileInquiry" type="n2-sr:SnowmobileInquiryType" abstract="false" nillable="true"/>
+</xs:schema>

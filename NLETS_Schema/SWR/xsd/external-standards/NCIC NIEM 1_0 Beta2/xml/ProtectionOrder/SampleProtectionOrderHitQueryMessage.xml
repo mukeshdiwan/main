@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>QPO</ncic:MessageTransactionCode>
+        <ncic-ex:PrimaryHitData s:ref="d77e98-primaryHitData_hitDataSectionPrimary" />
+    </ncic-ex:Message>
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="d77e98-primaryHitData_hitDataSectionPrimary">
+        <ncic:ProtectionOrderRecord s:ref="d77e100-protectionOrderRecord_personHitDataResponse" />
+    </ncic-ex:PrimaryHitData>
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ProtectionOrderRecord. (person hit data response protection order record) -->
+    <!-- ******************************************************************************** -->
+    <ncic:ProtectionOrderRecord s:id="d77e100-protectionOrderRecord_personHitDataResponse">
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>**TEST**THIS RESPONSE IS FROM NCIC TEST SYSTEM.</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>*****WARNING - THE FOLLOWING IS AN NCIC PROTECTION ORDER RECORD. DO NOT SEARCH, DETAIN, OR ARREST BASED SOLELY ON THIS RECORD. CONTACT ENTERING AGENCY TO CONFIRM STATUS AND TERMS OF PROTECTION ORDER*****</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>****THE SUBJECT OF THIS RECORD IS PROHIBITED FROM RECEIVING OR POSSESSING A FIREARM UNDER FEDERAL LAW (TITLE 18, U.S.C., SECTION 922)****</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>WARNING - THE FOLLOWING RECORD CONTAINS EXPIRED LICENSE PLATE DATA. USE CAUTION, CONTACT ENTERING AGENCY TO CONFIRM STATUS</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>RECORD NIC/NIC32001 IS BASED ON PARTIAL VIN SEARCH - VERIFY ALL DATA BEFORE TAKING FURTHER ACTION BASED ON THIS RESPONSE</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>RECORD NIC/M123456789 IS BASED ON PARTIAL LIC SEARCH - VERIFY ALL DATA BEFORE TAKING FURTHER ACTION BASED ON THIS RESPONSE</nc:CaveatText>
+        <nc:Incident s:ref="d77e130-incident_protectionOrder" />
+        <nc:LastUpdatedDate>
+            <!-- DLU - Date of last update -->
+            <nc:DateTime>2007-12-12T11:00:00-05:00</nc:DateTime>
+        </nc:LastUpdatedDate>
+        <!-- ORI-Translation - Originating agency identifier -->
+        <nc:OrganizationDescriptionText>ORI IS <!--<ATR>-->BUREAU OF IMMIGRATION AND CUSTOMS ENFORCEMENT, LAW ENFORCEMENT SUPPORT CENTER<!--<CT1>--> 877 999-5372</nc:OrganizationDescriptionText>
+        <nc:ReportedDate>
+            <!-- DTE - Date and time of entry into NCIC -->
+            <nc:DateTime>2005-05-20T14:00:00-04:00</nc:DateTime>
+        </nc:ReportedDate>
+        <ncic:InvestigativeInterest s:ref="d77e498-incident_investigativeInterest" />
+        <!-- MKE - Message key translation -->
+        <ncic:MessageTransactionText>PROTECTION ORDER/PROTECTION ORDER - CAUTION/TEMPORARY PROTECTION ORDER/TEMPORARY PROTECTION ORDER - CAUTION</ncic:MessageTransactionText>
+        <!-- NOA - Notify originating agency -->
+        <ncic:NotifyOriginatingAgencyIndicator>true</ncic:NotifyOriginatingAgencyIndicator>
+        <ncic:RecordExpirationDate>
+            <!-- Retirement-Timestamp -->
+            <nc:Date>2007-12-12</nc:Date>
+        </ncic:RecordExpirationDate>
+        <!-- Conveyance Registration Association - (license information and protection order person) -->
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="d77e523-conveyanceRegistration_licenseInformation" />
+            <j:ItemRegistrationHolder s:ref="d77e196-person_protectionOrder" />
+        </j:ConveyanceRegistrationAssociation>
+        <!-- Conveyance Registration Association - (protection order item registration and protection order vehicle) -->
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="d77e310-conveyanceRegistration_protectionOrder" />
+            <nc:Item s:ref="d77e287-vehicle_protectionOrder" />
+        </j:ConveyanceRegistrationAssociation>
+        <!-- Conveyance Registration Association - (supplemental record indicator and supplemental item registration) -->
+        <j:ConveyanceRegistrationAssociation>
+            <ncic:AssociationAugmentation>
+                <ncic:SupplementalRecordIndicator>true</ncic:SupplementalRecordIndicator>
+            </ncic:AssociationAugmentation>
+            <j:ItemRegistration s:ref="d77e452-conveyanceRegistration_supplemental" />
+        </j:ConveyanceRegistrationAssociation>
+        <!-- Conveyance Registration Association - (supplemental record indicator and supplemental vehicle registration) -->
+        <j:ConveyanceRegistrationAssociation>
+            <ncic:AssociationAugmentation>
+                <ncic:SupplementalRecordIndicator>true</ncic:SupplementalRecordIndicator>
+            </ncic:AssociationAugmentation>
+            <nc:Item s:ref="d77e429-vehicle_supplemental" />
+        </j:ConveyanceRegistrationAssociation>
+        <!-- Driver License Association - (drive license and person) -->
+        <j:DriverLicenseAssociation>
+            <j:DriverLicense s:ref="d77e277-driverLicense_protectionOrder" />
+            <nc:Person s:ref="d77e196-person_protectionOrder" />
+        </j:DriverLicenseAssociation>
+        <!-- Driver License Association - (supplemental record indicator, drive license, and person) -->
+        <j:DriverLicenseAssociation>
+            <ncic:AssociationAugmentation>
+                <ncic:SupplementalRecordIndicator>true</ncic:SupplementalRecordIndicator>
+            </ncic:AssociationAugmentation>
+            <j:DriverLicense s:ref="d77e419-driverLicense_supplemental" />
+            <nc:Person s:ref="d77e196-person_protectionOrder" />
+        </j:DriverLicenseAssociation>
+        <!-- CMC-Translation - Caution and medical conditions -->
+        <j:PersonCautionInformationText>50 - HEART CONDITION</j:PersonCautionInformationText>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>H123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <ncic:ImagePerson s:ref="d77e538-person_photograph" />
+        <ncic:SupplementalPerson s:ref="d77e355-person_supplemental" />
+        <j:ProtectionOrder s:ref="d77e130-protectionOrder_protectionOrder" />
+        <j:Subject s:ref="d77e196-subject_protectionOrder" />
+        <ncic:RestrictedPerson s:ref="d77e163-person_restricted" />
+        <ncic:SupplementalProtectionOrder s:ref="d77e327-protectionOrder_supplemental" />
+        <ncic:SupplementalRestrictedPerson s:ref="d77e328-person_supplemental" />
+    </ncic:ProtectionOrderRecord>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. (protection order) -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e130-incident_protectionOrder">
+        <nc:ActivityDate>
+            <!-- DCL - Date of clear -->
+            <nc:Date>2000-01-12</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>PROTECTION ORDER FILED BY ESTRANGED WIFE</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <j:CaseLinkage>
+                <!-- LKA - Linkage Case Number -->
+                <j:CaseLinkageNumberText>WV-123456</j:CaseLinkageNumberText>
+                <j:OrganizationORIIdentification>
+                    <!-- LKI - Linkage Agency Identifier -->
+                    <nc:IdentificationID>WV456123</nc:IdentificationID>
+                </j:OrganizationORIIdentification>
+            </j:CaseLinkage>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>WVH007090</j:CaseNumberText>
+            <j:ActivityDocumentValidator>
+                <nc:EntityOrganization s:ref="validator_organization" />
+            </j:ActivityDocumentValidator>
+        </j:ActivityAugmentation>
+        <ncic:ActivityAugmentation>
+            <ncic:RecordValidationDate>
+                <!-- VLD - Validation date -->
+                <nc:Date>2000-01-12</nc:Date>
+            </ncic:RecordValidationDate>
+        </ncic:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e130-organization_protectionOrder" />
+    </nc:Incident>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (Validator) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="validator_organization">
+        <!-- VLN - Name of validator -->
+        <nc:OrganizationName>PHONEIX POLICE DEPARTMENT</nc:OrganizationName>
+    </nc:Organization>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (Investigative Interest) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e498-organization_investigativeInterest">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>AZ STATE POLICE</nc:OrganizationName>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation telephone numbers -->
+                    <nc:TelephoneNumberFullID>3045551234</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- IIA - Investigation interest agency identifier -->
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (protection order) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e130-organization_protectionOrder">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- CTI - Court identifier -->
+                <nc:IdentificationID>WV1000002</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (protection order) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e196-person_protectionOrder">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1977-07-07</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- CTZ - Citizenship -->
+        <nc:PersonCitizenshipText>US</nc:PersonCitizenshipText>
+        <!-- ETN - Ethnicity -->
+        <j:PersonEthnicityCode>N</j:PersonEthnicityCode>
+        <!-- EYE - Eye color -->
+        <j:PersonEyeColorCode>BRO</j:PersonEyeColorCode>
+        <!-- HAI - Hair color -->
+        <j:PersonHairColorCode>BLK</j:PersonHairColorCode>
+        <nc:PersonHeightMeasure>
+            <!-- HGT - Height -->
+            <nc:MeasureValueText>504</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JACKSON</nc:PersonGivenName>
+            <nc:PersonMiddleName>JAMES</nc:PersonMiddleName>
+            <nc:PersonSurName>JEFFERSON</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonOtherIdentification>
+            <!-- MNU - Miscellaneous number -->
+            <nc:IdentificationID>AS-9900789789</nc:IdentificationID>
+        </nc:PersonOtherIdentification>
+        <nc:PersonPhysicalFeature>
+            <!-- SMT - Scars/marks/tattoos -->
+            <nc:PhysicalFeatureCategoryText>TD HYPNOTI</nc:PhysicalFeatureCategoryText>
+        </nc:PersonPhysicalFeature>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>M</j:PersonSexCode>
+        <!-- SKN - Skin tone -->
+        <j:PersonSkinToneCode>DRK</j:PersonSkinToneCode>
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social security number -->
+            <nc:IdentificationID>456456456</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <nc:PersonWeightMeasure>
+            <!-- WGT - Weight -->
+            <nc:MeasureValueText>121</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+        <j:PersonAugmentation>
+            <!-- DNA - DNA availability -->
+            <j:DNACollectedIndicator>true</j:DNACollectedIndicator>
+            <!-- DLO - DNA location -->
+            <ncic:DNALocationText>NATIONAL DNA REPOSITORY</ncic:DNALocationText>
+            <!-- FPC - Fingerprint classification -->
+            <ncic:FingerprintClassificationText>1.0.2117113TT0916111</ncic:FingerprintClassificationText>
+            <j:PersonFBIIdentification>
+                <!-- FBI - FBI number -->
+                <nc:IdentificationID>123456B</nc:IdentificationID>
+            </j:PersonFBIIdentification>
+            <!-- POB - Place of birth -->
+            <j:PersonBirthplaceCode>TO</j:PersonBirthplaceCode>
+        </j:PersonAugmentation>
+    </nc:Person>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (image) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e538-person_photograph">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1988-08-13</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonDigitalImage>
+            <!-- Image-Data - Image data -->
+            <nc:Base64BinaryObject>mrHbPdrko3u1s7ahtgPBjtmO1s85tfG2U7pbofy9</nc:Base64BinaryObject>
+            <nc:BinaryCaptureDate>
+                <!-- DOI - Date of image -->
+                <nc:Date>2005-12-25</nc:Date>
+            </nc:BinaryCaptureDate>
+            <!-- MIS - Miscellaneous remarks -->
+            <nc:BinaryDescriptionText>MOST RECENT PHOTO PROVIDED BY FAMILY</nc:BinaryDescriptionText>
+            <j:ImageAugmentation>
+                <j:ImageNCICIdentification>
+                    <!-- IMN - Image NCIC number -->
+                    <nc:IdentificationID>I856563800</nc:IdentificationID>
+                </j:ImageNCICIdentification>
+                <!-- IMT - Image type -->
+                <j:ImageCategoryCode>M</j:ImageCategoryCode>
+            </j:ImageAugmentation>
+        </nc:PersonDigitalImage>
+        <nc:PersonHeightMeasure>
+            <!-- HGT - Height -->
+            <nc:MeasureValueText>504</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>PHOEBE</nc:PersonGivenName>
+            <nc:PersonMiddleName>PATRICIA</nc:PersonMiddleName>
+            <nc:PersonSurName>PALMER</nc:PersonSurName>
+            <nc:PersonNameCategoryText>Legal</nc:PersonNameCategoryText>
+        </nc:PersonName>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <nc:PersonWeightMeasure>
+            <!-- WGT - Weight -->
+            <nc:MeasureValueText>121</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+        <j:PersonAugmentation>
+            <j:PersonNCICIdentification>
+                <!-- NIC - NCIC number -->
+                <nc:IdentificationID>M123456780</nc:IdentificationID>
+            </j:PersonNCICIdentification>
+        </j:PersonAugmentation>
+    </nc:Person>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (restricted) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e163-person_restricted">
+        <nc:PersonBirthDate>
+            <!-- PPB - Protected person’s DOB -->
+            <nc:Date>1987-09-04</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- PPN - Protected person’s name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JANELLE</nc:PersonGivenName>
+            <nc:PersonMiddleName>JASMINE</nc:PersonMiddleName>
+            <nc:PersonSurName>JEFFERSON</nc:PersonSurName>
+            <nc:PersonNameCategoryText>Legal</nc:PersonNameCategoryText>
+        </nc:PersonName>
+        <!-- PPR - Protected person’s race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <!-- PSX - Protected person’s sex -->
+        <j:PersonSexCode>F</j:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <!-- PSN - Protected person's social security number -->
+            <nc:IdentificationID>245569878</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <j:PersonAugmentation />
+    </nc:Person>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (supplemental) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e355-person_supplemental">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1977-07-07</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- CTZ - Citizenship -->
+        <nc:PersonCitizenshipText>US</nc:PersonCitizenshipText>
+        <nc:PersonDigitalImage>
+            <j:ImageAugmentation>
+                <j:ImageNCICIdentification>
+                    <!-- IMN - Image NCIC number -->
+                    <nc:IdentificationID>I856563800</nc:IdentificationID>
+                </j:ImageNCICIdentification>
+                <!-- IMT - Image type -->
+                <j:ImageCategoryCode>M</j:ImageCategoryCode>
+            </j:ImageAugmentation>
+        </nc:PersonDigitalImage>
+        <!-- AKA - Also known as (Alias name) -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JACKIE</nc:PersonGivenName>
+            <nc:PersonMiddleName />
+            <nc:PersonSurName>JEFFERSON</nc:PersonSurName>
+            <nc:PersonNameCategoryText>Alternate</nc:PersonNameCategoryText>
+        </nc:PersonName>
+        <nc:PersonOtherIdentification>
+            <!-- MNU - Miscellaneous number -->
+            <nc:IdentificationID>AS-9900789789</nc:IdentificationID>
+        </nc:PersonOtherIdentification>
+        <nc:PersonPhysicalFeature>
+            <!-- SMT - Scars/marks/tattoos -->
+            <nc:PhysicalFeatureCategoryText>TD HYPNOTI</nc:PhysicalFeatureCategoryText>
+        </nc:PersonPhysicalFeature>
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social security number -->
+            <nc:IdentificationID>456456456</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <j:PersonAugmentation />
+    </nc:Person>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (supplemental) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e328-person_supplemental">
+        <nc:PersonBirthDate>
+            <!-- PPB - Protected person’s DOB -->
+            <nc:Date>1998-10-15</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- PPN - Protected person’s name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JACKSON</nc:PersonGivenName>
+            <nc:PersonMiddleName>JAMES</nc:PersonMiddleName>
+            <nc:PersonSurName>JEFFERSON</nc:PersonSurName>
+            <nc:PersonNameCategoryText>Legal</nc:PersonNameCategoryText>
+        </nc:PersonName>
+        <!-- PPR - Protected person’s race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <!-- PSX - Protected person’s sex -->
+        <j:PersonSexCode>M</j:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <!-- PSN - Protected person's social security number -->
+            <nc:IdentificationID>325875998</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <j:PersonAugmentation />
+    </nc:Person>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vehicle. (protection order) -->
+    <!-- ******************************************************************************** -->
+    <nc:Vehicle s:id="d77e287-vehicle_protectionOrder">
+        <!-- VCO - Vehicle color -->
+        <ncic:ConveyanceColorPrimaryCodeText>RED</ncic:ConveyanceColorPrimaryCodeText>
+        <ncic:ConveyanceColorSecondaryCodeText>YEL</ncic:ConveyanceColorSecondaryCodeText>
+        <!-- VYR - Vehicle year -->
+        <nc:ItemModelYearDate>1967</nc:ItemModelYearDate>
+        <!-- VST - Vehicle style -->
+        <j:VehicleStyleCode>VA</j:VehicleStyleCode>
+        <nc:VehicleIdentification>
+            <!-- VIN - Vehicle identification number -->
+            <nc:IdentificationID>VIN3456790</nc:IdentificationID>
+        </nc:VehicleIdentification>
+        <!-- VMA - Vehicle make -->
+        <ncic:VehicleMakeCodeText>TOHO</ncic:VehicleMakeCodeText>
+        <!-- VMO - Vehicle model -->
+        <ncic:VehicleModelCodeText>CAR</ncic:VehicleModelCodeText>
+    </nc:Vehicle>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vehicle. (supplemental) -->
+    <!-- ******************************************************************************** -->
+    <nc:Vehicle s:id="d77e429-vehicle_supplemental">
+        <!-- VCO - Vehicle color -->
+        <ncic:ConveyanceColorPrimaryCodeText>RED</ncic:ConveyanceColorPrimaryCodeText>
+        <ncic:ConveyanceColorSecondaryCodeText>YEL</ncic:ConveyanceColorSecondaryCodeText>
+        <!-- VYR - Vehicle year -->
+        <nc:ItemModelYearDate>1967</nc:ItemModelYearDate>
+        <!-- VST - Vehicle style -->
+        <j:VehicleStyleCode>VA</j:VehicleStyleCode>
+        <nc:VehicleIdentification>
+            <!-- VIN - Vehicle identification number -->
+            <nc:IdentificationID>VIN3456790</nc:IdentificationID>
+        </nc:VehicleIdentification>
+        <!-- VMA - Vehicle make -->
+        <ncic:VehicleMakeCodeText>TOHO</ncic:VehicleMakeCodeText>
+        <!-- VMO - Vehicle model -->
+        <ncic:VehicleModelCodeText>CAR</ncic:VehicleModelCodeText>
+    </nc:Vehicle>
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. (license information) -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="d77e523-conveyanceRegistration_licenseInformation">
+        <j:ConveyanceRegistrationDecal>
+            <!-- LIY - License plate year of expiration -->
+            <nc:DecalYearDate>1999</nc:DecalYearDate>
+        </j:ConveyanceRegistrationDecal>
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number -->
+            <nc:IdentificationID>WV345</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- LIS - License plate state -->
+                <j:JurisdictionNCICLSTACode>AZ</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+        <!-- LIT - License plate type -->
+        <j:ConveyanceRegistrationPlateCategoryCode>SC</j:ConveyanceRegistrationPlateCategoryCode>
+    </j:ConveyanceRegistration>
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. (protection order) -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="d77e310-conveyanceRegistration_protectionOrder">
+        <j:ConveyanceRegistrationDecal>
+            <!-- LIY - License plate year of expiration -->
+            <nc:DecalYearDate>1999</nc:DecalYearDate>
+        </j:ConveyanceRegistrationDecal>
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number -->
+            <nc:IdentificationID>WV345</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- LIS - License plate state -->
+                <j:JurisdictionNCICLSTACode>AZ</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+        <!-- LIT - License plate type -->
+        <j:ConveyanceRegistrationPlateCategoryCode>SC</j:ConveyanceRegistrationPlateCategoryCode>
+    </j:ConveyanceRegistration>
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. (supplemental) -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="d77e452-conveyanceRegistration_supplemental">
+        <j:ConveyanceRegistrationDecal>
+            <!-- LIY - License plate year of expiration -->
+            <nc:DecalYearDate>1999</nc:DecalYearDate>
+        </j:ConveyanceRegistrationDecal>
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number/Registration number -->
+            <nc:IdentificationID>WV345</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- LIS - License plate state -->
+                <j:JurisdictionNCICLSTACode>AZ</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+        <!-- LIT - License plate type -->
+        <j:ConveyanceRegistrationPlateCategoryCode>SC</j:ConveyanceRegistrationPlateCategoryCode>
+    </j:ConveyanceRegistration>
+    <!-- ******************************************************************************** -->
+    <!-- j:DriverLicense. (protection order) -->
+    <!-- ******************************************************************************** -->
+    <j:DriverLicense s:id="d77e277-driverLicense_protectionOrder">
+        <j:DriverLicenseExpirationDate>
+            <!-- OLY - Operator license year of expiration -->
+            <nc:YearDate>2006</nc:YearDate>
+        </j:DriverLicenseExpirationDate>
+        <j:DriverLicenseCardIdentification>
+            <!-- OLN - Operator license number -->
+            <nc:IdentificationID>WVE79038</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- OLS - Operator license state -->
+                <nc:JurisdictionText>AZ</nc:JurisdictionText>
+            </nc:IdentificationJurisdiction>
+        </j:DriverLicenseCardIdentification>
+    </j:DriverLicense>
+    <!-- ******************************************************************************** -->
+    <!-- j:DriverLicense. (supplemental) -->
+    <!-- ******************************************************************************** -->
+    <j:DriverLicense s:id="d77e419-driverLicense_supplemental">
+        <j:DriverLicenseExpirationDate>
+            <!-- OLY - Operator license year of expiration -->
+            <nc:YearDate>2007</nc:YearDate>
+        </j:DriverLicenseExpirationDate>
+        <j:DriverLicenseCardIdentification>
+            <!-- OLN - Operator license number -->
+            <nc:IdentificationID>MI 94569</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- OLS - Operator license state -->
+                <nc:JurisdictionText>MI</nc:JurisdictionText>
+            </nc:IdentificationJurisdiction>
+        </j:DriverLicenseCardIdentification>
+    </j:DriverLicense>
+    <!-- ******************************************************************************** -->
+    <!-- j:ProtectionOrder. (primary) -->
+    <!-- ******************************************************************************** -->
+    <j:ProtectionOrder s:id="d77e130-protectionOrder_protectionOrder">
+        <nc:ActivityIdentification>
+            <!-- PNO - Protection order number -->
+            <nc:IdentificationID>DC90235</nc:IdentificationID>
+        </nc:ActivityIdentification>
+        <nc:ActivityDate>
+            <!-- ISD - Issue date -->
+            <nc:Date>2000-01-12</nc:Date>
+        </nc:ActivityDate>
+        <j:CourtOrderServiceDate>
+            <!-- SVD - Service Date -->
+            <nc:Date>2001-01-13</nc:Date>
+        </j:CourtOrderServiceDate>
+        <ncic:CourtOrderAugmentation>
+            <!-- SVC - Service Information -->
+            <ncic:CourtOrderServiceCode>1</ncic:CourtOrderServiceCode>
+            <ncic:CourtOrderServiceText>Served</ncic:CourtOrderServiceText>
+        </ncic:CourtOrderAugmentation>
+        <!-- BRD - Brady indicator -->
+        <j:ProtectionOrderBradyIndicator>true</j:ProtectionOrderBradyIndicator>
+        <j:ProtectionOrderConditionText>THE SUBJECT IS RESTRAINED FROM MAKING ANY COMMUNICATION WITH THE PROTECTED PERSON INCLUDING BUT NOT LIMITED TO, PERSONAL, WRITTEN, OR TELEPHONE CONTACT, OR THEIR EMPLOYERS, EMPLOYEES OR FELLOW WORKERS, OR OTHERS WITH WHOM THE COMMUNICATION WOULD BE LIKELY TO CAUSE ANNOYANCE OR ALARM THE VICTIM.</j:ProtectionOrderConditionText>
+        <!-- PCO - Protection order conditions -->
+        <j:ProtectionOrderConditionCode>05</j:ProtectionOrderConditionCode>
+        <ncic:ProtectionOrderAugmentation>
+            <ncic:ProtectionOrderExpirationDate>
+                <!-- EXP - Expiration date -->
+                <nc:Date>2008-01-12</nc:Date>
+            </ncic:ProtectionOrderExpirationDate>
+        </ncic:ProtectionOrderAugmentation>
+    </j:ProtectionOrder>
+    <!-- ******************************************************************************** -->
+    <!-- ncic:SupplementalProtectionOrder. (supplemental) -->
+    <!-- ******************************************************************************** -->
+    <j:ProtectionOrder s:id="d77e327-protectionOrder_supplemental">
+        <!-- PCO - Protection order conditions -->
+        <j:ProtectionOrderConditionText>THE SUBJECT IS RESTRAINED FROM MAKING ANY COMMUNICATION WITH THE PROTECTED PERSON INCLUDING BUT NOT LIMITED TO, PERSONAL, WRITTEN, OR TELEPHONE CONTACT, OR THEIR EMPLOYERS, EMPLOYEES OR FELLOW WORKERS, OR OTHERS WITH WHOM THE COMMUNICATION WOULD BE LIKELY TO CAUSE ANNOYANCE OR ALARM THE VICTIM.</j:ProtectionOrderConditionText>
+    </j:ProtectionOrder>
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="d77e196-subject_protectionOrder">
+        <nc:RoleOfPerson s:ref="d77e196-person_protectionOrder" />
+    </j:Subject>
+    <!-- ******************************************************************************** -->
+    <!-- ncic:InvestigativeInterest. (investigative interest) -->
+    <!-- ******************************************************************************** -->
+    <ncic:InvestigativeInterest s:id="d77e498-incident_investigativeInterest">
+        <nc:ActivityDate>
+            <!-- DII - Date of investigative interest -->
+            <nc:Date>2006-05-10</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>MAY NOT ENTER HOUSE UNDER ANY CIRCUMSTANCES</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <!-- ICA - Investigative Interest Case Number -->
+            <j:CaseNumberText>WVH010083</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e498-organization_investigativeInterest" />
+    </ncic:InvestigativeInterest>
+</ncic-ex:Exchange>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NLETS xsi:schemaLocation="http://www.nlets.org C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/NLETSS~1/ACQ/ACQ.xsd" version="1.0" xmlns="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NLETSInquiryMessage>
+    <NLETSInquiryHeader>
+      <DocumentUserID>
+        <j:ID>KATESILHOL</j:ID>
+      </DocumentUserID>
+      <DocumentPasswordText>Password</DocumentPasswordText>
+      <MessageKeyCode>ACQ</MessageKeyCode>
+      <DocumentControlFieldText>KATESILHOL</DocumentControlFieldText>
+      <j:DocumentSource.Organization>
+        <j:OrganizationORIID>
+          <j:ID>CADMV0000</j:ID>
+        </j:OrganizationORIID>
+      </j:DocumentSource.Organization>
+      <j:DocumentSubject.Organization>
+        <j:OrganizationORIID>
+          <j:ID>AZNLETS19</j:ID>
+        </j:OrganizationORIID>
+      </j:DocumentSubject.Organization>
+    </NLETSInquiryHeader>
+    <NLETSInquiryData Key="ACQ">
+      <j:CommercialVehicle>
+        <j:PropertyAssignedIDDetails>
+          <j:PropertyFederalID>
+            <j:ID>U2LL LMLR 5107</j:ID>
+            <j:IDIssuingAuthorityText>DOT</j:IDIssuingAuthorityText>
+          </j:PropertyFederalID>
+        </j:PropertyAssignedIDDetails>
+      </j:CommercialVehicle>
+    </NLETSInquiryData>
+  </NLETSInquiryMessage>
+</NLETS>

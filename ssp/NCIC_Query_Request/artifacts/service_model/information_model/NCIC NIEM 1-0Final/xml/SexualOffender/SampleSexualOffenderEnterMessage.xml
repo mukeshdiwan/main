@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>EXS<!--/EXSC--></ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData s:ref="IncomingSexualOffenderEnterDataSection" />
+    </ncic-ex:Message>
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="IncomingSexualOffenderEnterDataSection">
+        <ncic:SexualOffenderRecord s:ref="SexualOffenderRecordEnterDataSection" />
+    </ncic-ex:IncomingRecordData>
+    <!-- ******************************************************************************** -->
+    <!-- ncic:SexualOffenderRecord (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic:SexualOffenderRecord s:id="SexualOffenderRecordEnterDataSection">
+        <nc:Incident s:ref="SexualOffenderIncident" />
+        <nc:ContactInformationAssociation>
+            <nc:ContactEntity>
+                <nc:EntityPerson s:ref="SexOffenderPerson" />
+            </nc:ContactEntity>
+            <nc:ContactInformation s:ref="SexOffenderContactInfo" />
+        </nc:ContactInformationAssociation>
+        <!-- Sex Offender's Vehicle Info and License Plate Info Association -->
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="SexualOffenderLicensePlateInfo" />
+            <nc:Item s:ref="SexualOffenderVehicleInfo" />
+        </j:ConveyanceRegistrationAssociation>
+        <!-- Sex Offender's Vessel Info and Registration Info Association -->
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="SexualOffenderBoatRegistrationInfo" />
+            <nc:Item s:ref="SexualOffenderVesselInfo" />
+        </j:ConveyanceRegistrationAssociation>
+        <!-- Sex Offender's Driver License Info -->
+        <j:DriverLicenseAssociation>
+            <j:DriverLicense s:ref="SexOffenderDriverLicenseInfo" />
+            <nc:Person s:ref="SexOffenderPerson" />
+        </j:DriverLicenseAssociation>
+        <!-- CMC - Caution and Medical Conditions -->
+        <j:PersonCautionInformationText>50</j:PersonCautionInformationText>
+        <scr:PersonAddressAssociation>
+            <nc:AssociationDateRange>
+                <!-- BDA - Address begin date -->
+                <nc:StartDate>
+                    <nc:Date>2000-01-01</nc:Date>
+                </nc:StartDate>
+                <!-- EDA - Address end date -->
+                <nc:EndDate>
+                    <nc:Date>2008-02-02</nc:Date>
+                </nc:EndDate>
+            </nc:AssociationDateRange>
+            <nc:Person s:ref="SexOffenderPerson" />
+            <nc:Address s:ref="SexOffenderAddressInfo" />
+            <ncic:PersonAddressAssociationAugmentation>
+                <!-- ADD - Address category -->
+                <ncic:PersonAddressCategory>01</ncic:PersonAddressCategory>
+            </ncic:PersonAddressAssociationAugmentation>
+        </scr:PersonAddressAssociation>
+        <!-- Sex Offender Employment Association -->
+        <nc:PersonEmploymentAssociation>
+            <nc:Employee s:ref="SexOffenderPerson" />
+            <nc:Employer s:ref="SexOffenderEmployer" />
+            <!-- OCP - Occupation -->
+            <nc:EmployeeOccupationText>BUS DRIVER</nc:EmployeeOccupationText>
+            <ncic:PersonEmploymentEducationAssociationAugmentation>
+                <!-- PLN - Professional License Number -->
+                <j:PersonProfessionalCertificateText>WVE79038</j:PersonProfessionalCertificateText>
+                <!-- PLT - Professional License Type -->
+                <ncic:PersonProfessionalCertificateTypeText>BUS</ncic:PersonProfessionalCertificateTypeText>
+                <!-- SHN - School Name -->
+                <ncic:SchoolName>YELLOW BRICK COMUNITY COLLEGE</ncic:SchoolName>
+            </ncic:PersonEmploymentEducationAssociationAugmentation>
+        </nc:PersonEmploymentAssociation>
+        <!-- Register Offender Offense and Charge Info Association -->
+        <j:OffenseChargeAssociation>
+            <j:Offense s:ref="SexOffenderOffense" />
+            <j:Charge s:ref="SexOffenderCharge" />
+        </j:OffenseChargeAssociation>
+        <j:RegisteredOffender s:ref="RegisteredSexualOffender" />
+        <!-- Register Offender and Offense Info Association -->
+        <j:RegisteredOffenderOffenseOfRegistrationAssociation>
+            <j:RegisteredOffender s:ref="RegisteredSexualOffender" />
+            <j:Offense s:ref="SexOffenderOffense" />
+        </j:RegisteredOffenderOffenseOfRegistrationAssociation>
+        <!-- Subject and Victim Relationship Association -->
+        <j:SubjectVictimAssociation>
+            <j:Subject s:ref="RoleOfSexOffenderSubject" />
+            <j:Victim s:ref="RoleOfVictim" />
+            <!-- ROV - Relationship of Victim -->
+            <j:VictimToSubjectRelationshipCode>Stranger</j:VictimToSubjectRelationshipCode>
+        </j:SubjectVictimAssociation>
+    </ncic:SexualOffenderRecord>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Address. (Sex Offender Address) -->
+    <!-- ******************************************************************************** -->
+    <nc:Address s:id="SexOffenderAddressInfo">
+        <nc:LocationStreet>
+            <!-- SNU - Street number -->
+            <nc:StreetNumberText>897</nc:StreetNumberText>
+            <!-- SNA - Street name -->
+            <nc:StreetName>MAIN STREET</nc:StreetName>
+        </nc:LocationStreet>
+        <!-- CTY - City name -->
+        <nc:LocationCityName>PORTLAND</nc:LocationCityName>
+        <!-- COU - County -->
+        <nc:LocationCountyName>MONVALIA</nc:LocationCountyName>
+        <!-- STA - State name -->
+        <j:LocationStateNCICLSTACode>ME</j:LocationStateNCICLSTACode>
+        <!-- ZIP - Zip code -->
+        <nc:LocationPostalCode>67354</nc:LocationPostalCode>
+    </nc:Address>
+    <!-- ******************************************************************************** -->
+    <!-- nc:ContactInformation. (Sex Offender COntact Information)-->
+    <!-- ******************************************************************************** -->
+    <nc:ContactInformation s:id="SexOffenderContactInfo">
+        <!-- EML - E-mail address -->
+        <nc:ContactEmailID>JOHNDOE@GMAIL.COM</nc:ContactEmailID>
+        <nc:ContactTelephoneNumber>
+            <nc:FullTelephoneNumber>
+                <!-- TNO - Telephone number -->
+                <nc:TelephoneNumberFullID>4125551234</nc:TelephoneNumberFullID>
+            </nc:FullTelephoneNumber>
+            <!-- TNT - Telephone number type -->
+            <nc:TelephoneNumberCategoryText>C</nc:TelephoneNumberCategoryText>
+        </nc:ContactTelephoneNumber>
+        <nc:ContactMailingAddress s:ref="SexOffenderAddressInfo" />
+        <ncic:ContactInformationAugmentation>
+            <!-- IID - Internet ID -->
+            <ncic:InternetID>289437845</ncic:InternetID>
+        </ncic:ContactInformationAugmentation>
+    </nc:ContactInformation>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. (Sexual Offender Incident) -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="SexualOffenderIncident">
+        <nc:ActivityDate>
+            <!-- CON - Date of Conviction -->
+            <nc:Date>1998-05-15</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>PREVIOUS CHARGES FILED IN 1978 BUT DROPPED BY VICTIM</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <j:CaseLinkage>
+                <!-- LKA - Linkage Case Number -->
+                <j:CaseLinkageNumberText>WV-123456</j:CaseLinkageNumberText>
+                <j:OrganizationORIIdentification>
+                    <!-- LKI - Linkage Agency Identifier -->
+                    <nc:IdentificationID>WV456123</nc:IdentificationID>
+                </j:OrganizationORIIdentification>
+            </j:CaseLinkage>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>WVX008743</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <nc:IncidentLocation>
+            <!-- PLC - Place of Crime -->
+            <nc:LocationName>Atlanta, GA</nc:LocationName>
+        </nc:IncidentLocation>
+    </nc:Incident>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (Employer of Sex Offender) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="SexOffenderEmployer">
+        <!-- EMP - Employer -->
+        <nc:OrganizationName>Grey Hound</nc:OrganizationName>
+    </nc:Organization>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (subject) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="SexOffenderPerson">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1967-08-13</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- CTZ - Citizenship -->
+        <nc:PersonCitizenshipText>US</nc:PersonCitizenshipText>
+        <!-- ETN - Ethnicity -->
+        <j:PersonEthnicityCode>N</j:PersonEthnicityCode>
+        <!-- EYE - Eye color -->
+        <ncic:PersonEyeColorCode>BR0</ncic:PersonEyeColorCode>
+        <!-- HAI - Hair color -->
+        <ncic:PersonHairColorCode>BLK</ncic:PersonHairColorCode>
+        <nc:PersonHeightMeasure>
+            <!-- HGT - Height -->
+            <nc:MeasureValueText>504</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>ROBERT</nc:PersonGivenName>
+            <nc:PersonMiddleName>ROLAND</nc:PersonMiddleName>
+            <nc:PersonSurName>RANDOLF</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonOtherIdentification>
+            <!-- MNU - Miscellaneous number -->
+            <nc:IdentificationID>AS-998877554466</nc:IdentificationID>
+        </nc:PersonOtherIdentification>
+        <nc:PersonPhysicalFeature>
+            <!-- SMT - Scars/marks/tattoos -->
+            <nc:PhysicalFeatureCategoryText>TD HYPNOTI</nc:PhysicalFeatureCategoryText>
+        </nc:PersonPhysicalFeature>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>M</j:PersonSexCode>
+        <!-- SKN - Skin tone -->
+        <ncic:PersonSkinToneCode>DRK</ncic:PersonSkinToneCode>
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social security number -->
+            <nc:IdentificationID>987654321</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <nc:PersonStateIdentification>
+            <!-- SID - State ID number -->
+            <nc:IdentificationID>WV234234</nc:IdentificationID>
+        </nc:PersonStateIdentification>
+        <nc:PersonWeightMeasure>
+            <!-- WGT - Weight -->
+            <nc:MeasureValueText>121</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+        <j:PersonAugmentation>
+            <!-- DNA - DNA availability -->
+            <j:DNACollectedIndicator>true</j:DNACollectedIndicator>
+            <!-- DLO - DNA location -->
+            <ncic:DNALocationText>NATIONAL DNA REPOSITORY</ncic:DNALocationText>
+            <!-- FPC - Fingerprint classification -->
+            <ncic:FingerprintClassificationText>1.0.2117113TT0916111</ncic:FingerprintClassificationText>
+            <j:PersonFBIIdentification>
+                <!-- FBI - FBI number -->
+                <nc:IdentificationID>123456B</nc:IdentificationID>
+            </j:PersonFBIIdentification>
+            <!-- SXP - Sexual predator indicator -->
+            <j:PersonRegisteredOffenderIndicator>true</j:PersonRegisteredOffenderIndicator>
+            <!-- POB - Place of birth -->
+            <j:PersonBirthplaceCode>0H</j:PersonBirthplaceCode>
+        </j:PersonAugmentation>
+    </nc:Person>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (victim) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="VictimPerson">
+        <!-- AOV - Age of victim -->
+        <nc:PersonAgeMeasure>
+            <nc:MeasureValueText>32</nc:MeasureValueText>
+        </nc:PersonAgeMeasure>
+        <!-- SOV - Sex of Victim -->
+        <j:PersonSexCode>F</j:PersonSexCode>
+    </nc:Person>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vehicle. -->
+    <!-- ******************************************************************************** -->
+    <nc:Vehicle s:id="SexualOffenderVehicleInfo">
+        <!-- VCO - Vehicle color -->
+        <ncic:ConveyanceColorPrimaryCodeText>RED</ncic:ConveyanceColorPrimaryCodeText>
+        <ncic:ConveyanceColorSecondaryCodeText>YEL</ncic:ConveyanceColorSecondaryCodeText>
+        <!-- VYR - Vehicle year -->
+        <nc:ItemModelYearDate>1976</nc:ItemModelYearDate>
+        <!-- VOW - Vehicle ownership -->
+        <nc:ItemOwnershipCategoryText>A</nc:ItemOwnershipCategoryText>
+        <!-- VST - Vehicle styl -->
+        <ncic:VehicleStyleCode>VA</ncic:VehicleStyleCode>
+        <nc:VehicleIdentification>
+            <!-- VIN - Vehicle identification number -->
+            <nc:IdentificationID>VIN3456790</nc:IdentificationID>
+        </nc:VehicleIdentification>
+        <!-- VMA - Vehicle make -->
+        <ncic:VehicleMakeCodeText>CHEV</ncic:VehicleMakeCodeText>
+        <!-- VMO - Vehicle model -->
+        <ncic:VehicleModelCodeText>EXP</ncic:VehicleModelCodeText>
+    </nc:Vehicle>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vessel. (Sexual Offender Boat Info)-->
+    <!-- ******************************************************************************** -->
+    <nc:Vessel s:id="SexualOffenderVesselInfo">
+        <!-- BCO - Boat color -->
+        <ncic:VesselColorPrimaryCodeText>RED</ncic:VesselColorPrimaryCodeText>
+        <ncic:VesselColorSecondaryCodeText>WHI</ncic:VesselColorSecondaryCodeText>
+        <nc:ItemLengthMeasure>
+            <!-- BLE - Overall Boat length -->
+            <nc:MeasureValueText>17</nc:MeasureValueText>
+        </nc:ItemLengthMeasure>
+        <!-- BMO - Boat model name -->
+        <nc:ItemModelName>CRUISER V</nc:ItemModelName>
+        <!-- BYR - Boat model year -->
+        <nc:ItemModelYearDate>1980</nc:ItemModelYearDate>
+        <!-- BMA - Boat make -->
+        <ncic:VesselMakeCodeText>LBC</ncic:VesselMakeCodeText>
+        <!-- BTY - Type - Boat -->
+        <ncic:VesselCategoryCode>RUN</ncic:VesselCategoryCode>
+        <nc:VesselHullIdentification>
+            <!-- BHN - Boat Hull Serial Number -->
+            <nc:IdentificationID>LBC035380880</nc:IdentificationID>
+        </nc:VesselHullIdentification>
+        <!-- HUL - Outer Hull Material -->
+        <nc:VesselHullMaterialText>WD</nc:VesselHullMaterialText>
+        <!-- HSP - Hull Shape -->
+        <nc:VesselHullShapeText>SV</nc:VesselHullShapeText>
+        <!-- PRO - Propulsion -->
+        <nc:VesselPropulsionText>OB</nc:VesselPropulsionText>
+        <j:VesselAugmentation>
+            <!-- HPT - Home port -->
+            <j:VesselHomePortText>ANNAPOLIS MD</j:VesselHomePortText>
+        </j:VesselAugmentation>
+        <m:VesselAugmentation>
+            <!-- BNM - Boat name -->
+            <m:VesselName>LADY LUCK</m:VesselName>
+            <!-- CGD - Coast Guard document number -->
+            <m:VesselOfficialCoastGuardNumberText>MD12344ZZ</m:VesselOfficialCoastGuardNumberText>
+        </m:VesselAugmentation>
+    </nc:Vessel>
+    <!-- ******************************************************************************** -->
+    <!-- j:Charge. -->
+    <!-- ******************************************************************************** -->
+    <j:Charge s:id="SexOffenderCharge">
+        <!-- CRR - Conviction Resulting in Registration -->
+        <j:ChargeNCICText>1004</j:ChargeNCICText>
+    </j:Charge>
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. (license plate) -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="SexualOffenderLicensePlateInfo">
+        <j:ConveyanceRegistrationDecal>
+            <!-- LIY - License plate year of expiration -->
+            <nc:DecalYearDate>2006</nc:DecalYearDate>
+        </j:ConveyanceRegistrationDecal>
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number -->
+            <nc:IdentificationID>OMY345</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- LIS - License plate state -->
+                <j:JurisdictionNCICLSTACode>AZ</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+        <!-- LIT - License plate type -->
+        <ncic:ConveyanceRegistrationPlateCategoryCode>SC</ncic:ConveyanceRegistrationPlateCategoryCode>
+    </j:ConveyanceRegistration>
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. (boat registration) -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="SexualOffenderBoatRegistrationInfo">
+        <j:ConveyanceRegistrationDecal>
+            <!-- REY - Registration year -->
+            <nc:DecalYearDate>2005</nc:DecalYearDate>
+        </j:ConveyanceRegistrationDecal>
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- REG - Registration number -->
+            <nc:IdentificationID>MD12344ZZ</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- RES - Registration state -->
+                <j:JurisdictionNCICLSTACode>MD</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+    </j:ConveyanceRegistration>
+    <!-- ******************************************************************************** -->
+    <!-- j:DriverLicense. (Sex Offender Driver License Info) -->
+    <!-- ******************************************************************************** -->
+    <j:DriverLicense s:id="SexOffenderDriverLicenseInfo">
+        <j:DriverLicenseExpirationDate>
+            <!-- OLY - Operator license year of expiration -->
+            <nc:YearDate>1990</nc:YearDate>
+        </j:DriverLicenseExpirationDate>
+        <j:DriverLicenseCardIdentification>
+            <!-- OLN - Operator license number -->
+            <nc:IdentificationID>WVE79038</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- OLS - Operator license state -->
+                <nc:JurisdictionText>AZ</nc:JurisdictionText>
+            </nc:IdentificationJurisdiction>
+        </j:DriverLicenseCardIdentification>
+    </j:DriverLicense>
+    <!-- ******************************************************************************** -->
+    <!-- j:Offense. -->
+    <!-- ******************************************************************************** -->
+    <j:Offense s:id="SexOffenderOffense">
+        <!-- JUV - Juvenile Offender Indicator -->
+        <j:JuvenileOffenderIndicator>false</j:JuvenileOffenderIndicator>
+        <!-- TIR - Tier Level -->
+        <j:OffenseLevelText>3</j:OffenseLevelText>
+    </j:Offense>
+    <!-- ******************************************************************************** -->
+    <!-- j:RegisteredOffender. -->
+    <!-- ******************************************************************************** -->
+    <j:RegisteredOffender s:id="RegisteredSexualOffender">
+        <nc:RoleOfPerson s:ref="RoleOfSexOffenderSubject" />
+        <!-- OFS - Offender status -->
+        <j:RegisteredOffenderDescriptionText>ABC</j:RegisteredOffenderDescriptionText>
+        <j:RegisteredOffenderEndDate>
+            <!-- ERD - Ending registration date -->
+            <nc:Date>2007-12-12</nc:Date>
+        </j:RegisteredOffenderEndDate>
+        <j:RegisteredOffenderStartDate>
+            <!-- ORD - Offender registration date -->
+            <nc:Date>1999-03-03</nc:Date>
+        </j:RegisteredOffenderStartDate>
+        <!-- SOS - Sexual Offender Status -->
+        <j:RegisteredOffenderStatusIndicator>true</j:RegisteredOffenderStatusIndicator>
+    </j:RegisteredOffender>
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="RoleOfSexOffenderSubject">
+        <nc:RoleOfPerson s:ref="SexOffenderPerson" />
+    </j:Subject>
+    <!-- ******************************************************************************** -->
+    <!-- j:Victim. -->
+    <!-- ******************************************************************************** -->
+    <j:Victim s:id="RoleOfVictim">
+        <nc:RoleOfPerson s:ref="VictimPerson" />
+    </j:Victim>
+</ncic-ex:Exchange>

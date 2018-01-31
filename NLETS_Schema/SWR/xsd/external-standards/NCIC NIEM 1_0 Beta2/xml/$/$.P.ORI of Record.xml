@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- ORI receiving this Message  -->
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.P.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>THE FOLLOWING RECORD HAS BEEN PURGED BY THE FBI COMPUTER DUE TO EXPIRATION OF THE RETENTION PERIOD</nc:CaveatText>
+        <nc:CaveatText>THE FOLLOWING RECORD WILL BE PLACED IN EXPIRED STATUS IN FIVE DAYS BY THE FBI COMPUTER BASED ON THE EXPIRATION DATE CONTAINED IN THE PROTECTION ORDER RECORD. UNLESS ACTION IS TAKEN TO INCREASE THE EXPIRATION DATE, MODIFICATION OR CLEARANCE OF THE RECORD WILL BE PROHIBITED AFTER THE FIFTH DAY.</nc:CaveatText>
+        <nc:CaveatText>THE FOLLOWING RECORD HAS BEEN PLACED IN EXPIRED STATUS  BY THE FBI NCIC BASED ON THE RETENTION PERIOD OF THE SEX OFFENDER RECORD. </nc:CaveatText>
+        <nc:CaveatText>SENTENCE EXPIRATION NOTIFICATION THE FOLLOWING RECORD WILL BE RETIRED IN FIVE DAYS BY THE FBI COMPUTER BASED ON THE SENTENCE EXPIRATION DATE CONTAINED IN THE DETAINED WANTED PERSON RECORD UNLESS ACTION IS TAKEN TO INCREASE THE SENTENCE EXPIRATION DATE.</nc:CaveatText>
+        <nc:CaveatText>THE FOLLOWING RECORD WILL BE PLACED IN EXPIRED STATUS IN THIRTY DAYS BY THE FBI COMPUTER BASED ON THE EXPIRATION DATE CONTAINED IN THE SUPERVISED RELEASE RECORD.  UNLESS ACTION IS TAKEN TO INCREASE THE EXPIRATION DATE, MODIFICATION OR CANCELLATION OF THE RECORD WILL BE PROHIBITED AFTER THE THIRTIETH DAY.</nc:CaveatText>
+
+        <!-- <Database-Record> -->
+        <ncic:Record s:ref="NotificationRecord"/>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:Record. -->
+    <!-- ******************************************************************************** -->
+    <ncic:Record s:id="NotificationRecord">
+    </ncic:Record>
+</ncic-ex:Exchange>

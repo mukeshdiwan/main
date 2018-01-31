@@ -1,0 +1,42 @@
+<n:NLETS version="3.00" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:n="http://www.nlets.org">
+<n:NLETSResponseMessage>
+<n:NLETSResponseHeader>
+<j:DocumentSource.Organization>
+<j:OrganizationORIID>
+<j:ID>
+CN0000000</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSource.Organization>
+<j:DocumentSubject.Organization>
+<j:OrganizationORIID>
+<j:ID>
+AZNLETS24</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSubject.Organization>
+<n:MessageKeyCode>
+WR</n:MessageKeyCode>
+<n:DocumentControlFieldText>
+KATESILHOL</n:DocumentControlFieldText>
+<j:DocumentReceivedDate>
+05/05/2006</j:DocumentReceivedDate>
+<n:DocumentReceivedTime>
+10:19</n:DocumentReceivedTime>
+<n:DocumentReceivedCountQuantity>
+41284</n:DocumentReceivedCountQuantity>
+<j:DocumentFiledDate>
+05/05/2006</j:DocumentFiledDate>
+<j:DocumentFiledTime>
+10:33</j:DocumentFiledTime>
+<n:DocumentFiledCountQuantity>
+00006</n:DocumentFiledCountQuantity>
+</n:NLETSResponseHeader>
+<n:NLETSResponseData Key="WR">
+<n:ResponseText>
+<![CDATA[ ** RESPONSE FROM CANADIAN SYSTEM  -  PERSONS FILE **RE:  1918   QUERY NOT ON FILE    TUBBS KATHLEEN PERSON  SEX: M DOB: 19350422 DRL: Y BEST: 3,1    >
+>
+>
+QUERY REMARKS: N,UQ,AZNLETS24,*KATESILHOL,MAN RO AVAILABLE ONLY FROM LIC OR VIN 2006050513191720060505131917*** END OF CPIC RESPONSE ***OTTAWA, CANADA]]>
+</n:ResponseText>
+</n:NLETSResponseData>
+</n:NLETSResponseMessage>
+</n:NLETS>

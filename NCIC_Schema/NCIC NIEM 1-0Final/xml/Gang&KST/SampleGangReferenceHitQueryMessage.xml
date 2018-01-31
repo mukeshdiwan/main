@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>QGG</ncic:MessageTransactionCode>
+        <ncic-ex:PrimaryHitData s:ref="PrimaryHitDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="PrimaryHitDataSection">
+        <ncic:GangReferenceRecord s:ref="GangReferenceRecord"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:GangReferenceRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:GangReferenceRecord s:id="GangReferenceRecord">
+        <!-- Caveat data -->
+        <nc:CaveatText>CONTACT AGENCIES LISTED FOR FURTHER INFORMATION ON THIS GANG.</nc:CaveatText>
+        <!-- Caveat data -->
+        <nc:CaveatText>**TEST**THIS RESPONSE IS FROM NCIC TEST SYSTEM.</nc:CaveatText>
+        <nc:Incident s:ref="GangIncident"/>
+        <nc:LastUpdatedDate>
+            <!-- DLU - Date Last Update -->
+            <nc:DateTime>2007-12-12T11:00:00-05:00</nc:DateTime>
+        </nc:LastUpdatedDate>
+        <nc:ReportedDate>
+            <!-- DTE - Date of Entry -->
+            <nc:DateTime>2005-05-20T14:00:00-04:00</nc:DateTime>
+        </nc:ReportedDate>
+        <!-- MKT - Message Key Translation -->
+        <ncic:MessageTransactionText>CRIMINAL GANG</ncic:MessageTransactionText>
+        <nc:ContactInformationAssociation>
+            <nc:ContactInformation>
+                <!-- POC - Point of Contact -->
+                <nc:ContactInformationDescriptionText>VIOLENT CRIMES UNIT - SGT. PATRICK O'RILEY</nc:ContactInformationDescriptionText>
+            </nc:ContactInformation>
+        </nc:ContactInformationAssociation>
+        <j:CriminalOrganization s:ref="GangOrganizationInfo"/>
+    </ncic:GangReferenceRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="GangIncident">
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>GROUP POSSIBLY IN NC</nc:ActivityDescriptionText>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="GangInfo">
+        <!-- SGP - Subgroup Name -->
+        <nc:OrganizationSubUnitName>LAS BARIQUAS</nc:OrganizationSubUnitName>
+        <!-- GNG - Group Name -->
+        <nc:OrganizationUnitName>LOS GAUCHOS</nc:OrganizationUnitName>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:CriminalOrgaization. -->
+    <!-- ******************************************************************************** -->
+    <j:CriminalOrganization s:id="GangOrganizationInfo">
+        <nc:RoleOfOrganization s:ref="GangInfo"/>
+        <j:CriminalOrganizationTraitDetails>
+            <!-- DRS - Identifying dress -->
+            <j:CriminalTraitDressText>BLACK BANDANA</j:CriminalTraitDressText>
+            <!-- GTI - Identifying graffiti -->
+            <j:CriminalTraitGraffitiDescriptionText>EL GAUCHO</j:CriminalTraitGraffitiDescriptionText>
+            <!-- HND - Identifying hand signals-->
+            <j:CriminalTraitHandSignalText>VULCANHAND SIGNAL</j:CriminalTraitHandSignalText>
+            <!-- TTO - Identifying tattoos -->
+            <j:CriminalTraitTattooDescriptionText>KING COBRA</j:CriminalTraitTattooDescriptionText>
+        </j:CriminalOrganizationTraitDetails>
+        <ncic:CriminalOrganizationAugmentation>
+            <j:ImageNCICIdentification>
+                <!-- IMN - Image NCIC number -->
+                <nc:IdentificationID>I856563800</nc:IdentificationID>
+            </j:ImageNCICIdentification>
+            <!-- IMT - Image type -->
+            <j:ImageCategoryCode>M</j:ImageCategoryCode>
+        </ncic:CriminalOrganizationAugmentation>
+    </j:CriminalOrganization>
+</ncic-ex:Exchange>

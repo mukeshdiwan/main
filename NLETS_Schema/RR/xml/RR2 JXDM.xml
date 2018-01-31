@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="1.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+			<n:MessageKeyCode>RR</n:MessageKeyCode>
+			<n:DocumentControlFieldText>KATESILHOL</n:DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>CADMV0000</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZNLETS19</j:ID>				
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSInquiryData Key="RQ">
+			<j:VehicleRegistrationPlateID>
+				<j:ID>DCD3195</j:ID>
+			</j:VehicleRegistrationPlateID>
+			<n:IDExpirationDateText>2005</n:IDExpirationDateText>
+			<j:VehicleRegistrationPlateTypeCode>PC</j:VehicleRegistrationPlateTypeCode>
+		</n:NLETSInquiryData>
+		<n:NLETSResponseData Key="RR">
+			<n:ResponseText>
+				<![CDATA[
+					DATE: 04/27/05 TIME: 23:56
+					REG VALID FROM: 02/02/05 TO 02/02/06
+					LIC#:5BAJ882 YRMD:03 MAKE:TOYT BTM :SD VIN :4T1BF30KX3U549059
+					R/O :MAGUIRE HARRY PHILIP, OR MAGUIRE JOHANNA R, PO BX 994465,
+					2706 CRYSTAL TREE DR CITY:REDDING C.C.:45 ZIP#:96099
+					SOLD:00/00/03 RCID:02/17/05 OCID:02/27/05 LOCD:5
+					
+					03/07/03 PREV LIC     W535210
+					
+					
+					01/29/2003-ODOMETER:         11 MILES  ACTUAL MILEAGE
+					
+					
+					END
+				]]>
+			</n:ResponseText>
+		</n:NLETSResponseData>
+	</n:NLETSResponseMessage>
+</n:NLETS>

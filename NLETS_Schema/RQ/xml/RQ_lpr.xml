@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS xmlns="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2" xmlns:n="http://www.nlets.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:srfers="http://www.nlets.org/srfers">
+   <n:NLETSInquiryMessage>
+	<n:NLETSInquiryHeader>
+       <n:MessageKeyCode>RQ</n:MessageKeyCode>
+		<n:DocumentControlFieldText><![CDATA[1234567890]]></n:DocumentControlFieldText>
+        <j:DocumentSource.Organization>
+          <j:OrganizationORIID>
+             <j:ID>GA0250300</j:ID>
+          </j:OrganizationORIID>
+        </j:DocumentSource.Organization> 
+        <n:DocumentDestinationID>
+          <j:ID>NA</j:ID>
+        </n:DocumentDestinationID>
+	</n:NLETSInquiryHeader>
+   <n:NLETSInquiryData Key="RQ">
+			<j:VehicleRegistrationPlateID>
+                 <j:ID>LIB934</j:ID>
+             </j:VehicleRegistrationPlateID>
+			 <j:VehicleRegistrationPlateTypeCode>PC</j:VehicleRegistrationPlateTypeCode >
+			 <n:IDExpirationDateText>1983-00-00</n:IDExpirationDateText>
+		</n:NLETSInquiryData>
+	</n:NLETSInquiryMessage>	
+</n:NLETS>

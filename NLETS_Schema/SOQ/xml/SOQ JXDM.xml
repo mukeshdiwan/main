@@ -1,0 +1,37 @@
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+     <n:NLETSInquiryMessage>
+		<n:NLETSInquiryHeader>
+            <n:DocumentUserID><j:ID>USER55</j:ID></n:DocumentUserID>
+            <n:DocumentPasswordText>123456</n:DocumentPasswordText>
+            <n:MessageKeyCode>SOQ</n:MessageKeyCode>
+            <j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>AZNLETS11</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <j:DocumentSubject.Organization>
+              <j:OrganizationORIID>
+                <j:ID>PY</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSubject.Organization>	     	
+			<n:DocumentControlFieldText>ATS000048</n:DocumentControlFieldText>
+		</n:NLETSInquiryHeader>
+		<n:NLETSInquiryData Key="SOQ">
+				<j:Person>
+					<j:PersonName>
+                           <j:PersonFullName>Scott, Anthony L</j:PersonFullName>
+                            <j:PersonMiddleName>L</j:PersonMiddleName>
+						<j:PersonSurName>Scott</j:PersonSurName>
+						<j:PersonGivenName>Anthony</j:PersonGivenName>
+					</j:PersonName>
+					<j:PersonBirthDate>19800714</j:PersonBirthDate>
+					<j:PersonPhysicalDetails>
+						<j:PersonSexCode>M</j:PersonSexCode>
+					</j:PersonPhysicalDetails>
+				</j:Person>
+				<n:Attention>SGT JOHN DOE</n:Attention>
+				<n:PurposeCode>C</n:PurposeCode>
+				<n:ImageIndicator>Y</n:ImageIndicator>
+			</n:NLETSInquiryData>	
+		</n:NLETSInquiryMessage>
+</n:NLETS>

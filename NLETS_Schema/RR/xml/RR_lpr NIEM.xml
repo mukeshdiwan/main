@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:ansi_d20="http://niem.gov/niem/ansi_d20/2.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nc2="http://www.nlets.org/niem/nlets-core/1.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:nrh2="http://www.nlets.gov/niem/nlets-registration-history/1.0/" xmlns:nrm2="http://www.nlets.gov/niem/nlets-registration-match/1.0/" xmlns:nrs2="http://www.nlets.gov/niem/nlets-registration-status/1.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:unece="http://niem.gov/niem/unece_rec20-misc/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/Candle/NIEM/RR/xsd/RR.xsd" version="3.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>RR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZ0000000</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>GA0250300</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>1234567890</nh2:DocumentControlFieldText>
+	</NLETSMessageHeader>
+	<NLETSResponseData key="RR">
+		<ResponseText>
+NICB RESPONSE FOR LIC/FT20688  MSG 001 OF 001
+CROSSING LOCATION: INBOUND
+ADDRESS: USCS-107 INTERSTATE SOUTH
+CITY: DERBY LINE:INTERSTATE     STATE: VT ZIP: 05830
+CROSSING DT/TIME: 09/30/2002 14.31.29
+LIC PLATE: FT20688    STATE: PQ COUNTRY: C
+
+** NOTICE **
+THE NICB PROVIDES THE INFORMATION CONTAINED HEREIN SOLELY
+AS AN INVESTIGATORY AID. SINCE THESE RECORDS ARE NOT
+VALIDATED, THE NICB DOES NOT GUARANTEE OR WARRANT THEIR
+LEGITIMACY. PLEASE USE SECONDARY VERIFICATION BEFORE YOU
+TAKE ANY ENFORCEMENT ACTION.
+</ResponseText>
+	</NLETSResponseData>
+</NLETS>

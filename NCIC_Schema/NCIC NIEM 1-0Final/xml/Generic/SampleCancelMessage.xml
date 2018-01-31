@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE -->
+        <ncic:MessageTransactionCode>XW</ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData s:ref="d77e16-incoming"/>
+        <ncic-ex:RecordIdentificationData s:ref="d77e16-recordIdentificationData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:MaintenanceRecordData. (incoming record) -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:MaintenanceRecordData s:id="d77e16-incoming">
+        <ncic:WantedPersonRecord s:ref="CancelData-WantedPerson"/>
+    </ncic-ex:MaintenanceRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:RecordIdentificationData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:RecordIdentificationData s:id="d77e16-recordIdentificationData">
+        <!-- Reference to OCA -->
+        <!-- <nc:Incident s:ref="RecordIdentificationIncident"/> -->
+
+        <!-- Reference to NAM -->
+        <nc:Person s:ref="RecordIdentificationPerson"/>
+        <!-- NIC (parent) - NCIC number -->
+        <j:PersonNCICIdentification>
+            <nc:IdentificationID>A012345678</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+    </ncic-ex:RecordIdentificationData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="CancelData-WantedPerson">
+        <ncic:RecordStatus>
+            <nc:StatusDate>
+                <!-- DOC - Date of Cancel -->
+                <nc:Date>2005-11-16</nc:Date>
+            </nc:StatusDate>
+            <!-- FTD -->
+            <nc:StatusDescriptionText>Nevermind</nc:StatusDescriptionText>
+            <!-- RPS -->
+            <ncic:RecordRemovalReasonCode>NOT WANTED</ncic:RecordRemovalReasonCode>
+        </ncic:RecordStatus>
+    </ncic:WantedPersonRecord>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="RecordIdentificationPerson">
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JOHN</nc:PersonGivenName>
+            <nc:PersonMiddleName>JACOB</nc:PersonMiddleName>
+            <nc:PersonSurName>JONES</nc:PersonSurName>
+        </nc:PersonName>
+    </nc:Person>
+</ncic-ex:Exchange>

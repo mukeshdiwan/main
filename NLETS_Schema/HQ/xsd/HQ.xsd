@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" targetNamespace="http://www.nlets.org/niem/1.0">
+	<import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="./niem/proxy/xsd/2.0/xsd.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="./nlets-hdr/1.0/MessageHeader.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="./niem/niem-core/2.0/niem-core.xsd"/>
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="./niem/structures/2.0/structures.xsd"/>
+	<complexType name="NLETSInquiryDataType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:InquiryDescriptionText" minOccurs="0"/>
+				</sequence>
+				<attribute ref="n2:key" use="required"/>
+				<attribute ref="n2:type" use="optional"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSType">
+		<annotation>
+			<documentation>A structure that defines the root element of an NLETS message.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:NLETSMessageHeader"/>
+					<element ref="n2:NLETSInquiryData"/>
+				</sequence>
+				<attribute ref="n2:version" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<attribute name="key" type="xsd:string"/>
+	<attribute name="type" type="xsd:string"/>
+	<attribute name="version" type="xsd:string"/>
+	<element name="InquiryDescriptionText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains free text . Include personal descriptors (name, sex) with other relevant data (case number, booking number, state ID, miscellaneous number) followed by any additional free text.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETS" type="n2:NLETSType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The root element of a NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSInquiryData" type="n2:NLETSInquiryDataType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain all elements specific to this transaction.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSMessageHeader" type="nh2:NLETSMessageHeaderType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Metadata information about an NLETS message</documentation>
+		</annotation>
+	</element>
+</schema>

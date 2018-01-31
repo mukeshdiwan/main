@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org " xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <n:NLETSInquiryMessage>
+    <n:NLETSInquiryHeader>
+       <n:DocumentUserID><j:ID>USER55</j:ID></n:DocumentUserID>
+       <n:DocumentPasswordText>123456</n:DocumentPasswordText>
+       <n:MessageKeyCode>TQ</n:MessageKeyCode>
+       <j:DocumentSource.Organization>
+          <j:OrganizationORIID>
+             <j:ID>GA0250300</j:ID>
+          </j:OrganizationORIID>
+       </j:DocumentSource.Organization>
+        <n:DocumentDestinationID>
+           <j:ID>VA</j:ID>
+        </n:DocumentDestinationID>
+	</n:NLETSInquiryHeader>
+	<n:NLETSInquiryData Key="TQ">
+			<n:Agency>
+				<j:OrganizationLocation>
+                     <j:LocationName>VA</j:LocationName>
+                 </j:OrganizationLocation>
+			</n:Agency>
+		</n:NLETSInquiryData>
+	</n:NLETSInquiryMessage>
+</n:NLETS>

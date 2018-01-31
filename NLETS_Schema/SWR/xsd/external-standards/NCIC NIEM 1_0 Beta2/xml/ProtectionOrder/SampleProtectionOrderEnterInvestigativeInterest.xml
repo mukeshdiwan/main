@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>EII</ncic:MessageTransactionCode>
+        <ncic-ex:MaintenanceRecordData s:ref="d77e16-maintenance"/>
+        <ncic-ex:RecordIdentificationData s:ref="d77e16-RecordData_protectiveInterestSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:MaintenanceRecordData (enter) -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:MaintenanceRecordData s:id="d77e16-maintenance">
+        <ncic:ProtectionOrderRecord s:ref="d77e100-protectionOrderRecord_personHitDataResponse"/>
+    </ncic-ex:MaintenanceRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:RecordIdentificationData (identification). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:RecordIdentificationData s:id="d77e16-RecordData_protectiveInterestSection">
+        <ncic:ProtectionOrderRecord s:ref="d77e101-protectionOrderRecord_personHitDataResponse"/>
+    </ncic-ex:RecordIdentificationData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ProtectionOrderRecord. (enter) -->
+    <!-- ******************************************************************************** -->
+    <ncic:ProtectionOrderRecord s:id="d77e100-protectionOrderRecord_personHitDataResponse">
+        <ncic:InvestigativeInterest s:ref="d77e498-case_investigativeInterest"/>
+        <!-- NIA - Notify investigative agency -->
+        <ncic:NotifyInvestigativeAgencyIndicator>true</ncic:NotifyInvestigativeAgencyIndicator>
+    </ncic:ProtectionOrderRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ProtectionOrderRecord. (identification) -->
+    <!-- ******************************************************************************** -->
+    <ncic:ProtectionOrderRecord s:id="d77e101-protectionOrderRecord_personHitDataResponse">
+        <nc:Incident s:ref="d77e17-case_protectionOrder"/>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>H123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <j:ProtectionOrder s:ref="d77e130-protectionOrder_protectionOrder"/>
+    </ncic:ProtectionOrderRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. (identification) -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e17-case_protectionOrder">
+        <j:ActivityAugmentation>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>WVM990425</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. (enter) -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e498-case_investigativeInterest">
+        <j:ActivityAugmentation>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>WVH010083</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+    
+    <!-- ******************************************************************************** -->
+    <!-- j:ProtectionOrder. -->
+    <!-- ******************************************************************************** -->
+    <j:ProtectionOrder s:id="d77e130-protectionOrder_protectionOrder">
+        <nc:ActivityIdentification>
+            <!-- PNO - Protection order number -->
+            <nc:IdentificationID>DC90235</nc:IdentificationID>
+        </nc:ActivityIdentification>
+    </j:ProtectionOrder>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:InvestigativeInterest. (enter) -->
+    <!-- ******************************************************************************** -->
+    <ncic:InvestigativeInterest s:id="d77e498-incident_investigativeInterest">
+        <nc:ActivityDate>
+            <!-- DII - Date of investigative interest -->
+            <nc:Date>2006-05-10</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>MAY NOT ENTER HOUSE UNDER ANY CIRCUMSTANCES</nc:ActivityDescriptionText>
+    </ncic:InvestigativeInterest>    
+</ncic-ex:Exchange>

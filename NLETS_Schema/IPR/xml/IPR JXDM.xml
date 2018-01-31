@@ -1,0 +1,95 @@
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<n:NLETSResponseMessage>
+<n:NLETSResponseHeader>
+<n:MessageKeyCode>
+IPR</n:MessageKeyCode>
+<n:DocumentControlFieldText>
+MRI0046463</n:DocumentControlFieldText>
+<j:DocumentSource.Organization>
+<j:OrganizationORIID>
+<j:ID>
+DCINTER00</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSource.Organization>
+<j:DocumentSubject.Organization>
+<j:OrganizationORIID>
+<j:ID>
+AZNLETS24</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSubject.Organization>
+<n:DocumentReceivedTime>
+13:19</n:DocumentReceivedTime>
+<j:DocumentReceivedDate xmlns:j="http://www.it.ojp.gov/jxdm/3.0">
+05/10/2006</j:DocumentReceivedDate>
+<n:DocumentReceivedCountQuantity>
+00048</n:DocumentReceivedCountQuantity>
+<j:DocumentFiledTime xmlns:j="http://www.it.ojp.gov/jxdm/3.0">
+13:19</j:DocumentFiledTime>
+<j:DocumentFiledDate xmlns:j="http://www.it.ojp.gov/jxdm/3.0">
+05/10/2006</j:DocumentFiledDate>
+<n:DocumentFiledCountQuantity>
+00226</n:DocumentFiledCountQuantity>
+</n:NLETSResponseHeader>
+<n:NLETSInquiryData Key="IPQ">
+<j:Warrant>
+<j:CourtOrderDesignatedSubject>
+<j:PersonName>
+<j:PersonFullName>
+DOE,JOHN</j:PersonFullName>
+<j:PersonGivenName>
+JOHN</j:PersonGivenName>
+<j:PersonSurName>
+DOE</j:PersonSurName>
+</j:PersonName>
+<j:PersonBirthDate>
+1950-01-01</j:PersonBirthDate>
+</j:CourtOrderDesignatedSubject>
+</j:Warrant>
+</n:NLETSInquiryData>
+<n:NLETSResponseData Key="IPR">
+<n:InterpolListResponse>
+<j:Warrant>
+<j:CourtOrderDesignatedSubject>
+<j:PersonName>
+<j:PersonGivenName>
+JOHN</j:PersonGivenName>
+<j:PersonSurName>
+DOE</j:PersonSurName>
+</j:PersonName>
+<j:PersonBirthDate>
+9999-99-99</j:PersonBirthDate>
+<j:SubjectID>
+2004/24666</j:SubjectID>
+</j:CourtOrderDesignatedSubject>
+</j:Warrant>
+<j:Warrant>
+<j:CourtOrderDesignatedSubject>
+<j:PersonName>
+<j:PersonGivenName>
+MATTHEW WALLACE</j:PersonGivenName>
+<j:PersonSurName>
+SCHACHTER</j:PersonSurName>
+</j:PersonName>
+<j:PersonBirthDate>
+1946-08-26</j:PersonBirthDate>
+<j:SubjectID>
+2004/40697</j:SubjectID>
+</j:CourtOrderDesignatedSubject>
+</j:Warrant>
+<j:Warrant>
+<j:CourtOrderDesignatedSubject>
+<j:PersonName>
+<j:PersonGivenName />
+<j:PersonSurName>
+UNKNOWN</j:PersonSurName>
+</j:PersonName>
+<j:PersonBirthDate>
+1960-09-21</j:PersonBirthDate>
+<j:SubjectID>
+2005/56337</j:SubjectID>
+</j:CourtOrderDesignatedSubject>
+</j:Warrant>
+</n:InterpolListResponse>
+</n:NLETSResponseData>
+</n:NLETSResponseMessage>
+</n:NLETS>

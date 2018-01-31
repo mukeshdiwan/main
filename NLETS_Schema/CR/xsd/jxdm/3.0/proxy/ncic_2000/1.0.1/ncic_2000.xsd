@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ncic_2000/1.0.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:ncic="http://www.it.ojp.gov/jxdm/ncic_2000/1.0.1">
+  <xsd:import namespace="http://www.it.ojp.gov/jxdm/ncic_2000/1.0.1" schemaLocation="../../../../ncic_2000/1.0.1/ncic_2000.xsd"/>
+  <xsd:import namespace="http://www.it.ojp.gov/jxdm/3.0" schemaLocation="../../../jxdm.xsd"/>
+  <xsd:complexType name="OFFType">
+    <xsd:simpleContent>
+      <xsd:extension base="ncic:OFFType">
+        <xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="SMTType">
+    <xsd:simpleContent>
+      <xsd:extension base="ncic:SMTType">
+        <xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

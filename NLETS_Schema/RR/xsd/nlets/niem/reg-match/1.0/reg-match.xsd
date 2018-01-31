@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:nrm2="http://www.nlets.org/niem/nlets-registration-match/1.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:n2-50="http://www.nlets.org/niem/nlets-50-state-response/1.0" targetNamespace="http://www.nlets.org/niem/nlets-registration-match/1.0">
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../../../niem/structures/2.0/structures.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="../../../../niem/niem-core/2.0/niem-core.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-50-state-response/1.0" schemaLocation="../../../../nlets/50-state/1.0/50-state.xsd"/>
+	<complexType name="IndividualMatchType">
+		<annotation>
+			<documentation>The details of a given Registration match.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="nc:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RegistrationMatchType">
+		<annotation>
+			<documentation>The business data returned in response to a Vehicle Registration Inquiry, when multiple matches are found.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="nrm2:IndividualMatch" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="IndividualMatch" type="nrm2:IndividualMatchType" abstract="false" substitutionGroup="n2-50:StateResponseData" nillable="true">
+		<annotation>
+			<documentation>The details of a given Registration match.</documentation>
+		</annotation>
+	</element>
+	<element name="RegistrationMatch" type="nrm2:RegistrationMatchType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The business data returned in response to a Vehicle Registration Inquiry, when multiple matches are found.</documentation>
+		</annotation>
+	</element>
+</schema>

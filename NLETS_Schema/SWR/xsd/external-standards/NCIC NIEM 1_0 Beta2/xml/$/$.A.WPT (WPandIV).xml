@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.A.WPT</ncic:MessageTransactionText>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="WPandIVNotificationRecord"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. (wanted person or immigration violator) -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="WPandIVNotificationRecord">
+        <ncic:WantedPersonRecord s:ref="NCICRecord"/>
+        <j:OrganizationORIIdentification>
+            <!-- ORI - Originating agency identifier -->
+            <nc:IdentificationID>WV2000000</nc:IdentificationID>
+        </j:OrganizationORIIdentification>
+        <!--  MKE - Message key -->
+        <ncic:MessageTransactionCode>EW<!--/EW-C--></ncic:MessageTransactionCode>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="NCICRecord">
+        <j:ActivityWarrantAssociation>
+            <j:Warrant s:ref="WarrantInfo"/>
+            <j:Subject s:ref="SubjectRole"/>
+        </j:ActivityWarrantAssociation>
+        <nc:Incident s:ref="ReportedIncident"/>
+        <nc:Person s:ref="WantedOrIVPerson"/>
+        <nc:ReportedDate>
+            <!-- DTE - Date of Entry -->
+            <nc:DateTime>2005-05-20T14:00:00-04:00</nc:DateTime>
+        </nc:ReportedDate>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>W123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <j:OffenseSubjectAssociation>
+            <j:Offense s:ref="OffenseInfo"/>
+            <j:Subject s:ref="SubjectRole"/>
+        </j:OffenseSubjectAssociation>
+    </ncic:WantedPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="ReportedIncident">
+        <j:ActivityAugmentation>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>ABC123</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="WantedOrIVPerson">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1957-08-13</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- MIS - Miscellaneous Text -->
+        <nc:PersonDescriptionText>YOUNG LOOKING</nc:PersonDescriptionText>
+        <!-- EYE - Eye color -->
+        <j:PersonEyeColorCode>BRO</j:PersonEyeColorCode>
+        <!-- HAI - Hair color -->
+        <j:PersonHairColorCode>BLK</j:PersonHairColorCode>
+        <nc:PersonHeightMeasure>
+            <!-- HGT - Height -->
+            <nc:MeasureValueText>504</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JOHN</nc:PersonGivenName>
+            <nc:PersonMiddleName>JACOB</nc:PersonMiddleName>
+            <nc:PersonSurName>JONES</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonOtherIdentification>
+            <!-- MNU - Miscellaneous number -->
+            <nc:IdentificationID>AS-01847592309</nc:IdentificationID>
+        </nc:PersonOtherIdentification>
+        <nc:PersonPhysicalFeature>
+            <!-- SMT - Scars/marks/tattoos -->
+            <nc:PhysicalFeatureCategoryText>TD HYPNOTI</nc:PhysicalFeatureCategoryText>
+        </nc:PersonPhysicalFeature>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>M</j:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social security number -->
+            <nc:IdentificationID>245987910</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <nc:PersonWeightMeasure>
+            <!-- WGT - Weight -->
+            <nc:MeasureValueText>121</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+        <j:PersonAugmentation>
+            <!-- FPC - Fingerprint classification -->
+            <ncic:FingerprintClassificationText>1.0.2117113TT0916111</ncic:FingerprintClassificationText>
+            <j:PersonFBIIdentification>
+                <!-- FBI - FBI number -->
+                <nc:IdentificationID>123456B</nc:IdentificationID>
+            </j:PersonFBIIdentification>
+            <!-- POB - Place of birth -->
+            <j:PersonBirthplaceCode>TO</j:PersonBirthplaceCode>
+        </j:PersonAugmentation>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Offense. -->
+    <!-- ******************************************************************************** -->
+    <j:Offense s:id="OffenseInfo">
+        <!-- OFF - Offense Code -->
+        <j:OffenseNCICCode>4102</j:OffenseNCICCode>
+    </j:Offense>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="SubjectRole">
+        <nc:RoleOfPerson s:ref="WantedOrIVPerson"/>
+    </j:Subject>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Warrant. -->
+    <!-- ******************************************************************************** -->
+    <j:Warrant s:id="WarrantInfo">
+        <nc:ActivityDate>
+            <!-- DOW - Date of Warrant -->
+            <nc:Date>2016-10-09</nc:Date>
+        </nc:ActivityDate>
+        <!-- EXL - Extradition Limitation -->
+        <j:WarrantExtraditionLimitationCode>2</j:WarrantExtraditionLimitationCode>
+    </j:Warrant>
+</ncic-ex:Exchange>

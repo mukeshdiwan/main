@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+			<n:MessageKeyCode>DRR</n:MessageKeyCode>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>VADEADX00</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>DCDEA0209</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSUpdateData Key="DRX">
+			<n:UserID>
+				<j:ID>agentx</j:ID>
+			</n:UserID>
+			<n:PasswordText>12345678</n:PasswordText>
+			<n:CaseID>
+				<j:ID>123456</j:ID>
+			</n:CaseID>
+			<n:NDPIXID>
+				<j:ID>7445</j:ID>
+			</n:NDPIXID>
+		</n:NLETSUpdateData>
+		<n:NLETSResponseData Type="ack" Key="DRR">
+			<n:ResponseText><![CDATA[!TXT!NDP/5203/DLR/19971110.NAM/ABILA, LISA LOUISE.
+MSG/20-RENEWAL ACCEPTED - NO MATCHES.
+]]></n:ResponseText>
+		</n:NLETSResponseData>
+	</n:NLETSResponseMessage>
+</n:NLETS>

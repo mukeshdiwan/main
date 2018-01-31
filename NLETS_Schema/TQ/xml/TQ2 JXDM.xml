@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:n="http://www.nlets.org">
+  <n:NLETSInquiryMessage>
+    <n:NLETSInquiryHeader>
+      <n:MessageKeyCode>TQ</n:MessageKeyCode>
+      <j:DocumentSource.Organization>
+        <j:OrganizationORIID>
+          <j:ID>PR0011700</j:ID>
+        </j:OrganizationORIID>
+      </j:DocumentSource.Organization>
+      <n:DocumentDestinationID>
+        <j:ID>AZ</j:ID>
+      </n:DocumentDestinationID>
+      <n:DocumentControlFieldText>
+        <![CDATA[11NGJDRLS0]]>
+      </n:DocumentControlFieldText>
+    </n:NLETSInquiryHeader>
+    <n:NLETSInquiryData Key="TQ">
+      <n:Agency>
+        <j:OrganizationLocation>
+          <j:LocationName>FEENIX</j:LocationName>
+        </j:OrganizationLocation>
+        <n:OrganizationTypeCode>PD</n:OrganizationTypeCode>
+      </n:Agency>
+    </n:NLETSInquiryData>
+  </n:NLETSInquiryMessage>
+</n:NLETS>

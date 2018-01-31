@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/niem/NLQ/xsd/NLQ.xsd" version="3.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>NLQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>GA0250300</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>VA</nh2:DestinationORIID>
+	</NLETSMessageHeader>
+	<NLETSInquiryData key="NLQ">
+		<RANDQuery>
+			<MessageSendDateTimeMinimumText>1986-11-06</MessageSendDateTimeMinimumText>
+			<MessageSendDateTimeMaximumText>1986-11-09</MessageSendDateTimeMaximumText>
+			<MessageSourceORIIdentification/>
+			<MessageDestinationORIIdentification/>
+			<RequestCategoryText></RequestCategoryText>
+			<nc:Person>
+				<nc:PersonName>
+					<nc:PersonFullName>KELLY, WILLIAM PHILIP</nc:PersonFullName>
+				</nc:PersonName>
+			</nc:Person>
+		</RANDQuery>
+	</NLETSInquiryData>
+</NLETS>

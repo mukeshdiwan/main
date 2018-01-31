@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/DUX.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>DUX</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>GA0250300</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>VADEA000X</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>1234567890</nh2:DocumentControlFieldText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSUpdateData n2:key="DUX">
+		<n2:NDPIXEntry>
+			<nc:DocumentSubmitter>
+				<nc:EntityOrganization>
+					<nc:OrganizationPrimaryContactInformation>
+						<nc:ContactTelephoneNumber>
+							<nc:FullTelephoneNumber/>
+						</nc:ContactTelephoneNumber>
+					</nc:OrganizationPrimaryContactInformation>
+				</nc:EntityOrganization>
+				<nc:EntityPerson>
+					<nc:PersonName/>
+				</nc:EntityPerson>
+			</nc:DocumentSubmitter>
+			<nc:Case>
+				<nc:ActivityIdentification>
+					<nc:IdentificationID>123456</nc:IdentificationID>
+				</nc:ActivityIdentification>
+			</nc:Case>
+			<n2:DocumentSubmitterPasswordText>12345678</n2:DocumentSubmitterPasswordText>
+			<n2:DocumentSubmitterUserIDText>agentx</n2:DocumentSubmitterUserIDText>
+			<n2:NDPIXID> 7445</n2:NDPIXID>
+		</n2:NDPIXEntry>
+		<n2:QueryPerson>
+			<nc:PersonAlternateName/>
+			<nc:PersonBirthDate>
+				<nc:Date>1970-06-23</nc:Date>
+			</nc:PersonBirthDate>
+			<nc:PersonHeightMeasure/>
+		</n2:QueryPerson>
+		<n2:DrugActivity>
+			<nc:Drug/>
+		</n2:DrugActivity>
+	</n2:NLETSUpdateData>
+</n2:NLETS>

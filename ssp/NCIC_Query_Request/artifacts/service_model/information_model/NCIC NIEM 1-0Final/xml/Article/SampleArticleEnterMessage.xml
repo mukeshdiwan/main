@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <!-- ORI (parent) - Originating agency identifier | (see descendants or children) -->
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key (type of entry) -->
+        <ncic:MessageTransactionCode>EA<!--/EA-P/ELA--></ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData
+            s:ref="d77e16-incomingRecordData_articleIncomingEnterDataSection" />
+    </ncic-ex:Message>
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="d77e16-incomingRecordData_articleIncomingEnterDataSection">
+        <ncic:ArticleRecord s:ref="d77e16-articleRecord_enterDataSection" />
+    </ncic-ex:IncomingRecordData>
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ArticleRecord (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic:ArticleRecord s:id="d77e16-articleRecord_enterDataSection">
+        <nc:Incident s:ref="d77e17-incident_article" />
+        <ncic:NotifyOriginatingAgencyIndicator>true</ncic:NotifyOriginatingAgencyIndicator>
+        <!-- NOA - Notify originating agency -->
+        <nc:Item s:ref="d77e29-item_article" />
+        <!-- OPT - Option type for public dissemination date/text -->
+        <ncic:PublicDisseminationDateText>IN</ncic:PublicDisseminationDateText>
+    </ncic:ArticleRecord>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e17-incident_article">
+        <nc:ActivityDate>
+            <!-- DOT - Date of theft -->
+            <nc:Date>2005-10-27</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>THIS IS A TEST INCIDENT</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <j:CaseLinkage>
+                <!-- LKA - Linkage Case Number -->
+                <j:CaseLinkageNumberText>WV-123456</j:CaseLinkageNumberText>
+                <j:OrganizationORIIdentification>
+                    <!-- LKI - Linkage Agency Identifier -->
+                    <nc:IdentificationID>WV456123</nc:IdentificationID>
+                </j:OrganizationORIIdentification>
+            </j:CaseLinkage>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>A123</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e17-organization_article" />
+    </nc:Incident>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Item. -->
+    <!-- ******************************************************************************** -->
+    <nc:Item s:id="d77e29-item_article">
+        <!-- OAN - Owner applied number -->
+        <nc:ItemOwnerAppliedID>MD6810</nc:ItemOwnerAppliedID>
+        <!-- SER - Serial number -->
+        <nc:ItemSerialIdentification>
+            <nc:IdentificationID>1234567</nc:IdentificationID>
+        </nc:ItemSerialIdentification>
+        <!-- BRA - Brand name -->
+        <nc:ItemBrandName>TREK</nc:ItemBrandName>
+        <!-- TYP - Type -->
+        <ncic:ItemCategoryNCICTYPCode>C</ncic:ItemCategoryNCICTYPCode>
+        <!-- MOD - Model -->
+        <nc:ItemModelName>EXTREME</nc:ItemModelName>
+        <j:ItemAugmentation>
+            <!-- LOT - Lot Number -->
+            <j:ItemLotNumberText>1</j:ItemLotNumberText>
+            <!-- HMC - Hazardous Materials Container -->
+            <j:ItemHazardousMaterialsContainerText>1</j:ItemHazardousMaterialsContainerText>
+            <!-- PLI - Partial Lot Indicator -->
+            <j:ItemPartialLotText>P</j:ItemPartialLotText>
+        </j:ItemAugmentation>
+        <ncic:ItemAugmentation>
+            <!-- UNN - United Nations Number -->
+            <it:CommodityUNDGIdentificationText>1</it:CommodityUNDGIdentificationText>
+        </ncic:ItemAugmentation>
+    </nc:Item>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e17-organization_article">
+        <j:OrganizationAugmentation>
+            <!-- ORI (parent) - Originating agency identifier | (see descendants or children) -->
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+</ncic-ex:Exchange>

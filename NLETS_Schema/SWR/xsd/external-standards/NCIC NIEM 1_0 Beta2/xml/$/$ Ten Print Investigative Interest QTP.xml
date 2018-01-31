@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageIdentification>
+            <!-- HDR - Header -->
+            <nc:IdentificationID>ML01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI receiving this Message  -->
+                <nc:IdentificationID>VAVSP0000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+        <!--<Database-Record>-->
+        <ncic-ex:PrimaryHitData s:ref="PrimaryHitRecord"/>
+    </ncic-ex:Message>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            AM.<!--<ORI-Of-Sender>-->.<!--<ORI-Of-Database-Record>-->VAVSP0000.TXT
+            <!--<HDR>-->ML01YZ08P2271000000
+            TEN-PRINT INQUIRY NOTIFICATION AT <!--<hhmm>-->1400 EST <!--<yyyymmdd>-->20150520  
+            
+            *****THIS NOTIFICATION IS BASED ON A NAME-BASED MATCH*****
+            PERSONAL INFORMATION OBTAINED FROM A FINGERPRINT SUBMISSION TO
+            THE FBI’S IAFIS HAS PRODUCED A NAME-BASED MATCH WITH YOUR 
+            <!--<Database-Record-Type>-->WANTED PERSON FILE RECORD. 
+            THE SUBJECT OF YOUR RECORD AND THE SUBJECT OF THE FINGERPRINT SUBMISSION, 
+            BOTH OF WHICH ARE LISTED BELOW, MAY NOT BE THE SAME.  PLEASE CONTACT THE
+            SUBMITTING AGENCY LISTED IN THE LRI FIELD TO VERIFY THE SUBJECT’S IDENTITY.
+            
+            IAFIS INFORMATION FOLLOWS:
+            
+            <!--<Input-Transaction>-->
+            
+            NCIC RECORD FOLLOWS:
+            
+            <!--<Database-Record>-->
+            MKE/WANTED PERSON
+            ORI/VAVSP0000 NAM/SMITH,WILLIAM SEX/M RAC/W POB/WV 
+            DOB/19561119 DOE/20030214 HGT/510 WGT/150 EYE/BRO HAI/BRO  
+            SMT/SC R LEG
+            OFF/DRIVING WHILE UNDER THE INFLUENCE
+            DOW/20030301 OCA/1234567890
+            NIC/W111111111 DTE/20030404 1400 EST DLU/20040102 1300 EST
+            
+            
+            *****IF THE LRI FIELD CONTAINS AN ORI ENDING WITH A “Z”, CONTACT INFORMATION
+            CAN BE OBTAINED THROUGH THE CJIS SUPPORT UNIT AT (304) 625-4543.
+            CONTACT INFORMATION FOR ALL OTHER ORI’S LISTED IN THE LRI FIELD IS
+            AVAILABLE VIA THE NCIC ORI FILE OR THE NLETS ORION FILE.*****
+        </nc:CaveatText>
+        
+        <!--<Input-Transaction>-->
+        <!-- This would point to the QTP Record input that caused the notification;
+             there is currently no defined QTP Record defined -->
+        <ncic-ex:IncomingMessage />        
+        
+        <!-- Current System Time -->
+        <ncic:NotificationDateTime>2015-05-20T14:00:00-04:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="PrimaryHitRecord">
+        <ncic:WantedPersonRecord s:ref="WantedPersonRecord"/>
+    </ncic-ex:PrimaryHitData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="WantedPersonRecord">
+    </ncic:WantedPersonRecord>
+</ncic-ex:Exchange>

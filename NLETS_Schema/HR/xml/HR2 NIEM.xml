@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/HR.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>HR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS11</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS11</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>ATS000048</nh2:DocumentControlFieldText>
+		<nh2:UserID>USER55</nh2:UserID>
+		<nh2:UserPasswordText>123456</nh2:UserPasswordText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="HQ"/>
+	<n2:NLETSResponseData n2:key="HR">
+		<n2:ResponseText>LIGHT RAINS IN NORTHERN PART OF STATE TO CONTINUE NEXT FEW DAYS.  REMAINDER OF STATE DRY.  ALLROADS IN GOOD CONDITION.FORECAST SOUTHERN AREAS HOT AND DRY THRUTOMORROW.  NO MAJOR HIGHWAY TRAFFIC DISRUPTIONS.AUTH ARIZONA DPS</n2:ResponseText>
+	</n2:NLETSResponseData>
+</n2:NLETS>

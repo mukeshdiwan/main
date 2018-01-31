@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/niem-core/2.0" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:import schemaLocation="../../proxy/xsd/2.0/xsd.xsd" namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
+  <xsd:complexType name="DateType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="nc:DateRepresentation" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DocumentType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NumericType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/proxy/xsd/2.0" i:name="decimal"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="niem-xsd:decimal"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonNameTextType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="ProperNameTextType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="nc:ProperNameTextType"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonNameType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="nc:PersonGivenName" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="nc:PersonMiddleName" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="nc:PersonSurName" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="nc:PersonFullName" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="nc:PersonAgeDescriptionText" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="nc:PersonBirthDate" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="nc:PersonName" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ProperNameTextType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="TextType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="nc:TextType"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="TextType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/proxy/xsd/2.0" i:name="string"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="niem-xsd:string"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element substitutionGroup="nc:DateRepresentation" name="Date" type="niem-xsd:date" nillable="true">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="DateRepresentation"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DateRepresentation" abstract="true"/>
+  <xsd:element name="Person" type="nc:PersonType" nillable="true"/>
+  <xsd:element name="PersonAgeDescriptionText" type="nc:TextType" nillable="true"/>
+  <xsd:element name="PersonBirthDate" type="nc:DateType" nillable="true"/>
+  <xsd:element name="PersonFullName" type="nc:PersonNameTextType" nillable="true"/>
+  <xsd:element name="PersonGivenName" type="nc:PersonNameTextType" nillable="true"/>
+  <xsd:element name="PersonMiddleName" type="nc:PersonNameTextType" nillable="true"/>
+  <xsd:element name="PersonName" type="nc:PersonNameType" nillable="true"/>
+  <xsd:element name="PersonSurName" type="nc:PersonNameTextType" nillable="true"/>
+</xsd:schema>

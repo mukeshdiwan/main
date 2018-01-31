@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>CND200000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key (type of entry) -->
+        <ncic:MessageTransactionCode>EPC</ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData s:ref="d77e16-incomingRecordData_vehicleBoatPartIncomingEnterDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="d77e16-incomingRecordData_vehicleBoatPartIncomingEnterDataSection">
+        <ncic:VehicleBoatPartRecord s:ref="d77e16-vehicleBoatPartRecord_enterDataSection"/>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:VehicleBoatPartRecord (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic:VehicleBoatPartRecord s:id="d77e16-vehicleBoatPartRecord_enterDataSection">
+        <nc:Incident s:ref="d77e17-incident_vehicleBoatPart"/>
+        <j:ConveyancePart s:ref="d77e29-conveyancePart_vehicleBoatPart"/>
+    </ncic:VehicleBoatPartRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e17-incident_vehicleBoatPart">
+        <nc:ActivityDate>
+            <!-- CDE - Canadian Date of Entry -->
+            <nc:Date>2005-10-27</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>REMOVABLE ENGINE MISSING - ASSUMED STOLEN WHILE DOCKED</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>CNDP012849</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyancePart. -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyancePart s:id="d77e29-conveyancePart_vehicleBoatPart">
+        <nc:ItemSerialIdentification>
+            <!-- SER - Serial number -->
+            <nc:IdentificationID>000055019873</nc:IdentificationID>
+        </nc:ItemSerialIdentification>
+        <!-- BRA - Brand name -->
+        <ncic:ConveyancePartBrandCodeText>AQUB</ncic:ConveyancePartBrandCodeText>
+        <!-- CAT - Category -->
+        <ncic:ConveyancePartCategoryCode>DK</ncic:ConveyancePartCategoryCode>
+    </j:ConveyancePart>
+</ncic-ex:Exchange>

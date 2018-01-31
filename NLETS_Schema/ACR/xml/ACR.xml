@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+            <n:MessageKeyCode>ACR</n:MessageKeyCode>
+ 			<n:DocumentControlFieldText>000000089</n:DocumentControlFieldText>
+           <j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>AV</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <j:DocumentSubject.Organization>
+              <j:OrganizationORIID>
+                <j:ID>ID0435300</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSInquiryData Key="ACQ">
+				<j:CommercialVehicle>
+					<j:PropertyAssignedIDDetails>
+						<j:PropertyFederalID IDIssuingAuthorityText="DOT"><j:ID> 1234567</j:ID> </j:PropertyFederalID>
+					</j:PropertyAssignedIDDetails>
+				</j:CommercialVehicle>
+			</n:NLETSInquiryData>
+			<n:NLETSResponseData Type="noHit" Key="ACR">
+			<n:ResponseText><![CDATA[NOT ON FILE  DOT/1234567
+]]></n:ResponseText>
+			</n:NLETSResponseData>
+		</n:NLETSResponseMessage>
+</n:NLETS>

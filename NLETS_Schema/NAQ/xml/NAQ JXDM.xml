@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <n:NLETSInquiryMessage>
+	<n:NLETSInquiryHeader>
+        <n:MessageKeyCode>NAQ</n:MessageKeyCode>
+ 	<n:DocumentControlFieldText>KATETEST04</n:DocumentControlFieldText>
+        <j:DocumentSource.Organization>
+         <j:OrganizationORIID>
+           <j:ID>AZNLETS23</j:ID>
+         </j:OrganizationORIID>
+         </j:DocumentSource.Organization>
+         <n:DocumentDestinationID>
+           <j:ID>NA</j:ID>
+         </n:DocumentDestinationID>
+	</n:NLETSInquiryHeader>
+	<n:NLETSInquiryData Key="NAQ">
+	<j:VehicleID>
+          <j:ID>1FABP10B7BF123456</j:ID>
+        </j:VehicleID>
+	</n:NLETSInquiryData>
+      </n:NLETSInquiryMessage>
+</n:NLETS>

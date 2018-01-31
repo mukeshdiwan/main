@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>QW<!--/ZW--></ncic:MessageTransactionCode>
+        <ncic-ex:PrimaryHitData s:ref="d77e103-primaryHitData_hitDataSectionPrimary"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="d77e103-primaryHitData_hitDataSectionPrimary">
+        <ncic:SentryRecord s:ref="d77e105-sentryRecord_personHitDataResponse"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:SentryRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:SentryRecord s:id="d77e105-sentryRecord_personHitDataResponse">
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>WARNING - DO NOT ARREST BASED ON THIS INFORMATION</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>REPEAT - FEDERAL BUREAU OF PRISONS SUPERVISION RECORD -  DO NOT ARREST BASED ON THIS INFORMATION -  IMMEDIATELY CONTACT SUPERVISING CORRECTIONAL FACILITY FOR CONFIRMATION OF HIT AND DETERMINATION OF VIOLATION OF HALF-WAY HOUSE OR WORK RELEASE OR ESCAPE</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>** TEST** THIS RESPONSE IS FROM THE NCIC TEST SYSTEM.</nc:CaveatText>
+        <nc:Incident s:ref="d77e141-incident_sentry"/>
+        <nc:LastUpdatedDate>
+            <!-- DLU - Date of last update -->
+            <nc:DateTime>2007-12-12T11:00:00-05:00</nc:DateTime>
+        </nc:LastUpdatedDate>
+        <!-- ORI-Translation - Originating agency identifier -->
+        <nc:OrganizationDescriptionText>ORI IS </nc:OrganizationDescriptionText>
+        <nc:ReportedDate>
+            <!-- DTE - Date and time of entry into NCIC -->
+            <nc:DateTime>2005-05-20T14:00:00-04:00</nc:DateTime>
+        </nc:ReportedDate>
+        <!-- MKT - Message key translation -->
+        <ncic:MessageTransactionText>FEDERAL BUREAU OF PRISONS SUPERVISION RECORD</ncic:MessageTransactionText>
+        <ncic:RecordExpirationDate>
+            <!-- Retirement-Timestamp - Retirement timestamp -->
+            <nc:Date>2006-03-01</nc:Date>
+        </ncic:RecordExpirationDate>
+        <ncic:RecordStatus>
+            <nc:StatusDate>
+                <!-- DOC - Date of Clear -->
+                <nc:Date>2005-11-16</nc:Date>
+            </nc:StatusDate>
+            <nc:StatusText>CANCELED</nc:StatusText>
+        </ncic:RecordStatus>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>L123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <scr:PersonAddressAssociation>
+            <nc:Person s:ref="d77e161-person_sentry"/>
+            <nc:Address s:ref="d77e147-address_sentry"/>
+        </scr:PersonAddressAssociation>
+        <ncic:SupplementalPerson s:ref="d77e302-person_supplemental"/>
+        <j:Offense s:ref="SubjectOffense"/>
+        <j:Subject s:ref="d77e161-subject_sentry"/>
+        <j:Sentence s:ref="SentenceCourtID"/>
+        <ncic:PersonIncarcerationAssociation>
+            <nc:Person s:ref="d77e161-person_sentry"/>
+            <j:Incarceration s:ref="d77e17-incarceration_sentry"/>
+        </ncic:PersonIncarcerationAssociation>
+    </ncic:SentryRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Address. -->
+    <!-- ******************************************************************************** -->
+    <nc:Address s:id="d77e147-address_sentry">
+        <!-- SLC - Secondary Location -->
+        <nc:LocationCityName>PORTLAND</nc:LocationCityName>
+        <j:LocationStateNCICLSTACode>ME</j:LocationStateNCICLSTACode>
+    </nc:Address>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e141-incident_sentry">
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>FREQUENTLY RESISTS ARREST</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>WVM990425</j:CaseNumberText>
+            <j:ActivityDocumentValidator>
+                <nc:EntityOrganization s:ref="validator_organization"/>
+            </j:ActivityDocumentValidator>
+        </j:ActivityAugmentation>
+        <ncic:ActivityAugmentation>
+            <ncic:RecordValidationDate>
+                <!-- VLD - Date of Last Validation -->
+                <nc:Date>1967-08-13</nc:Date>
+            </ncic:RecordValidationDate>
+        </ncic:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="AgencyOrganization"/>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (validator) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="validator_organization">
+        <!-- VLN - Name of validator -->
+        <nc:OrganizationName>POLICE</nc:OrganizationName>
+    </nc:Organization>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (Agency Organization) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="AgencyOrganization">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>WV STATE PEN</nc:OrganizationName>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation Telephone Number (Primary) -->
+                    <nc:TelephoneNumberFullID>3045551234</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (sentry) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e141-organization_sentry">
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- SOT - Supervising officers telephone number -->
+                    <nc:TelephoneNumberFullID>3045551234</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- PRI - ORI of prison -->
+                <nc:IdentificationID>WV0839370</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+    
+    <!-- ******************************************************************************** -->
+<<<<<<< HEAD
+    <!-- nc:Organization. (sentencing court) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="SentencingOrganization">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- SCI - Sentencing Court Identifier -->
+                <nc:IdentificationID>OH1000031</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+   
+=======
+    <!-- nc:Organization. (sentencing_court) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="organization_sentencing_court">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- SCI - Sentencing Court Identifier -->
+                <nc:IdentificationID>WV0839370</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+>>>>>>> NCIC_17.0.0
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (sentry) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e161-person_sentry">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1957-08-13</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- ETN - Ethnicity -->
+        <j:PersonEthnicityCode>N</j:PersonEthnicityCode>
+        <!-- EYE - Eye color -->
+        <j:PersonEyeColorCode>BRO</j:PersonEyeColorCode>
+        <!-- HAI - Hair color -->
+        <j:PersonHairColorCode>BRO</j:PersonHairColorCode>
+        <nc:PersonHeightMeasure>
+            <!-- HGT - Height -->
+            <nc:MeasureValueText>504</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JACK</nc:PersonGivenName>
+            <nc:PersonMiddleName>DANIEL</nc:PersonMiddleName>
+            <nc:PersonSurName>WEBBER</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonOtherIdentification>
+            <!-- MNU - Miscellaneous number -->
+            <nc:IdentificationID>AS-01847592309</nc:IdentificationID>
+        </nc:PersonOtherIdentification>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>M</j:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social security number -->
+            <nc:IdentificationID>245987910</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <nc:PersonWeightMeasure>
+            <!-- WGT - Weight -->
+            <nc:MeasureValueText>121</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+        <j:PersonAugmentation>
+            <!-- DNA - DNA availability -->
+            <j:DNACollectedIndicator>true</j:DNACollectedIndicator>
+            <!-- DLO - DNA location -->
+            <ncic:DNALocationText>NATIONAL DNA REPOSITORY</ncic:DNALocationText>
+            <!-- RGN - Registration Number -->
+            <j:PersonBOPRegisterNumberID>RGN987392</j:PersonBOPRegisterNumberID>
+            <j:PersonFBIIdentification>
+                <!-- FBI - FBI number -->
+                <nc:IdentificationID>123456B</nc:IdentificationID>
+            </j:PersonFBIIdentification>
+            <!-- POB - Place of birth -->
+            <j:PersonBirthplaceCode>TO</j:PersonBirthplaceCode>
+        </j:PersonAugmentation>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (supplemental) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e302-person_supplemental">
+        <!-- AKA - Also known as -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JACK</nc:PersonGivenName>
+            <nc:PersonMiddleName>ALLEN</nc:PersonMiddleName>
+            <nc:PersonSurName>DANIEL</nc:PersonSurName>
+        </nc:PersonName>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Incarceration. -->
+    <!-- ******************************************************************************** -->
+    <j:Incarceration s:id="d77e17-incarceration_sentry">
+        <nc:ActivityDateRange>
+            <nc:StartDate>
+                <!-- DIS - Date incarceration starts -->
+                <nc:Date>2004-01-01</nc:Date>
+            </nc:StartDate>
+        </nc:ActivityDateRange>
+        <nc:SupervisionSupervisor>
+            <nc:EntityOrganization s:ref="d77e141-organization_sentry"/>
+        </nc:SupervisionSupervisor>
+        <j:IncarcerationProjectedReleaseDate>
+            <!-- DRP - Date of release from prison -->
+            <nc:Date>2004-12-12</nc:Date>
+        </j:IncarcerationProjectedReleaseDate>
+    </j:Incarceration>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Offense. (subject's offense info) -->
+    <!-- ******************************************************************************** -->
+    <j:Offense s:id="SubjectOffense">
+        <!-- OFF - Offense Code -->
+        <j:OffenseNCICCode>0104</j:OffenseNCICCode>
+    </j:Offense>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Sentence. (SentenceCourtID) -->
+    <!-- ******************************************************************************** -->
+    <j:Sentence s:id="SentenceCourtID">
+        <nc:ActivityDate>
+            <!-- DSE - Date of Sentence Expiration -->
+            <nc:Date>2030-10-10</nc:Date>
+        </nc:ActivityDate>
+        <j:SentenceIssuerEntity>
+<<<<<<< HEAD
+            <nc:EntityOrganization s:ref="SentencingOrganization"/>
+=======
+            <nc:EntityOrganization s:ref="organization_sentencing_court"/>            
+>>>>>>> NCIC_17.0.0
+        </j:SentenceIssuerEntity>
+    </j:Sentence>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="d77e161-subject_sentry">
+        <nc:RoleOfPerson s:ref="d77e161-person_sentry"/>
+    </j:Subject>
+</ncic-ex:Exchange>

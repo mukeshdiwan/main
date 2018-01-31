@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+			<n:MessageKeyCode>RR</n:MessageKeyCode>
+			<n:DocumentControlFieldText><![CDATA[1234567890]]></n:DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZ0000000</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>GA0250300</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSResponseData Key="RR">
+			<n:ResponseText>
+NICB RESPONSE FOR LIC/FT20688  MSG 001 OF 001
+CROSSING LOCATION: INBOUND
+ADDRESS: USCS-107 INTERSTATE SOUTH
+CITY: DERBY LINE:INTERSTATE     STATE: VT ZIP: 05830
+CROSSING DT/TIME: 09/30/2002 14.31.29
+LIC PLATE: FT20688    STATE: PQ COUNTRY: C
+
+** NOTICE **
+THE NICB PROVIDES THE INFORMATION CONTAINED HEREIN SOLELY
+AS AN INVESTIGATORY AID. SINCE THESE RECORDS ARE NOT
+VALIDATED, THE NICB DOES NOT GUARANTEE OR WARRANT THEIR
+LEGITIMACY. PLEASE USE SECONDARY VERIFICATION BEFORE YOU
+TAKE ANY ENFORCEMENT ACTION.
+</n:ResponseText>
+		</n:NLETSResponseData>
+	</n:NLETSResponseMessage>
+</n:NLETS>

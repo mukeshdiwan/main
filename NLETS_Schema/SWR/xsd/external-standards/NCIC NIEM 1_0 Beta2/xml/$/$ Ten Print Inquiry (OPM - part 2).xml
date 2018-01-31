@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageIdentification>
+            <!-- HDR - Header -->
+            <nc:IdentificationID>ML01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI receiving this Message  -->
+                <nc:IdentificationID>VAVSP0000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+        
+        <!--<Database-Record>-->
+        <ncic-ex:PrimaryHitData s:ref="PrimaryHitRecord"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            AM.<!--<ORI-Of-Sender>-->DCFBIWA15.<!--<ORI-Of-Database-Record>-->PA0PM050R.TXT
+            <!--<HDR>-->ML01YZ08P2271000000
+            TEN-PRINT INQUIRY NOTIFICATION AT <!--<hhmm>-->1400 EST <!--<yyyymmdd>-->20150520  
+                        
+            *****THIS NOTIFICATION IS BASED ON A NAME-BASED MATCH*****
+            PERSONAL INFORMATION OBTAINED FROM A FINGERPRINT SUBMISSION TO THE FBI’S
+            IAFIS HAS PRODUCED A NAME-BASED MATCH WITH A GANG MEMBER RECORD. 
+            THE FOLLOWING INFORMATION IS BEING PROVIDED FOR FURTHER REVIEW.
+                     
+            ORI/<!--<ORI>-->VAVSP0000
+            NIC/<!--<NIC>-->T987654321
+                                    
+        </nc:CaveatText>
+
+        <!-- Current System Time -->
+        <ncic:NotificationDateTime>2015-05-20T14:00:00-04:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="PrimaryHitRecord">
+        <ncic:GangMemberRecord s:ref="GangPersonRecord"/>
+    </ncic-ex:PrimaryHitData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:GangMemberRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:GangMemberRecord s:id="GangPersonRecord">
+        <nc:Incident s:ref="d77e198-incident_wantedPerson"/>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>T987654321</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+    </ncic:GangMemberRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e198-incident_wantedPerson">
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e198-organization_wantedPerson"/>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e198-organization_wantedPerson">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -->
+                <nc:IdentificationID>VAVSP0000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+</ncic-ex:Exchange>

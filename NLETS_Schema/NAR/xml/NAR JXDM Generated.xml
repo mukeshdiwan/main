@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NLETS version="3.00" xmlns="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org C:\DOCUME~1\AARONG~1\MYDOCU~1\WATERH~1\NLETS\jxdm\NAR\NAR.xsd">
+	<NLETSResponseMessage>
+		<NLETSResponseHeader>
+			<DocumentUserID/>
+			<MessageKeyCode>NAR</MessageKeyCode>
+			<DocumentControlFieldText>000000089</DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>NA</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>GA1234567</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+			<DocumentDestinationID>
+				<j:ID>GA1234567</j:ID>
+			</DocumentDestinationID>
+		</NLETSResponseHeader>
+		<NLETSInquiryData Key="NAQ">
+			<j:VehicleID>
+				<j:ID>1FABP10B7BF123456</j:ID>
+			</j:VehicleID>
+		</NLETSInquiryData>
+		<NLETSResponseData Key="NAR">
+			<ResponseText>NICB RESPONSE FOR VIN/1FABP10B7BF123456    MSG 01 OF 01     
+*SHIPPING*    
+STATUS/ XXXXXXXXXXXXXXX             DATE/ XX/XX/XX     
+DEALER NAME/ XXXXXXXXXXXXXXXXXXXXX 
+DEALER CODE/ XXXXXXXXX  DEALER CITY, STATE/ XXXXXXXXXXXXX
+PHONE/ XXXXXXXXXX  
+</ResponseText>
+		</NLETSResponseData>
+	</NLETSResponseMessage>
+</NLETS>

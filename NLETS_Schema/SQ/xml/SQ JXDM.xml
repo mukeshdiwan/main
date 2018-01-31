@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<n:NLETSInquiryMessage>
+		<n:NLETSInquiryHeader>
+			<n:DocumentUserID>
+				<j:ID>USER55</j:ID>
+			</n:DocumentUserID>
+			<n:DocumentPasswordText>123456</n:DocumentPasswordText>
+			<n:MessageKeyCode>SQ</n:MessageKeyCode>
+			<n:DocumentControlFieldText><![CDATA[1234567890]]></n:DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>MA0450000</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<n:DocumentDestinationID>
+				<j:ID>CT</j:ID>
+			</n:DocumentDestinationID>
+		</n:NLETSInquiryHeader>
+		<n:NLETSInquiryData Key="SQ">
+			<j:VehicleRegistrationPlateID idExpirationDate="2004-01-05">
+				<j:ID>A5C4WE2DJS</j:ID>
+			</j:VehicleRegistrationPlateID>
+		</n:NLETSInquiryData>
+	</n:NLETSInquiryMessage>
+</n:NLETS>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier (receiving this Message)  -->
+                <nc:IdentificationID>WV3456789</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.O.MDW.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            <!--<IRI-Of-Database-Record>-->WV3456789
+            NOTIFICATION AT <!--<hhmm tmz yyyymmdd>-->
+            ORI/<!--<ORI-Of-Database-Record>-->WV3456987 HAS MODIFIED DETAINER INFORMATION ON 
+            NAM/<!--<NAM>-->JOHN JACOB JAMES NIC/<!--<NIC>-->W123894786.
+            PLEASE CONTACT ORI/<!--<ORI-Of-Database-Record>-->WV3456987 BEFORE SUBJECT IS RELEASED.
+        </nc:CaveatText>
+
+        <!--<Database-Record>-->
+        <!-- This would contain the WantedPerson with Detainer Enter response as defined in Part 1 of 
+             the NCIC Message Book in actual implementation -->
+        <!-- Only needed elements for the example are included here -->
+        <ncic:WantedPersonRecord s:ref="EnteredWantedPersonRecord"/>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="EnteredWantedPersonRecord">
+        <nc:Incident s:ref="d77e198-incident_wantedPerson"/>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC Number -->
+            <nc:IdentificationID>W123894786</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <j:Subject s:ref="d77e56-subject_wantedPerson"/>
+    </ncic:WantedPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e198-incident_wantedPerson">
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e198-organization_wantedPerson"/>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e794-organization_detainer">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- IRI - Incarcerating Agency Identifier -->
+                <nc:IdentificationID>WV3456789</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e198-organization_wantedPerson">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV3456987</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e56-person_wantedPerson">
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JOHN</nc:PersonGivenName>
+            <nc:PersonMiddleName>JACOB</nc:PersonMiddleName>
+            <nc:PersonSurName>JONES</nc:PersonSurName>
+        </nc:PersonName>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="d77e56-subject_wantedPerson">
+        <nc:RoleOfPerson s:ref="d77e56-person_wantedPerson"/>
+    </j:Subject>
+</ncic-ex:Exchange>

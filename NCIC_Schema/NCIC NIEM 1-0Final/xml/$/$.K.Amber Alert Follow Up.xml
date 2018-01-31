@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- ORI receiving this Message  -->
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.K.</ncic:MessageTransactionText>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            <!--<Time-Period-Singular>-->72 HOUR AMBER ALERT FOLLOW-UP
+            <!--<Receiving-ORI>-->VA007019W 
+            NOTIFICATION AT <!--<hhmm tmz yyyymmdd>--> 
+            MNP/AA HAS BEEN IN THE FOLLOWING RECORD FOR <!--<Time-Period-Plural>-->72 HOUR
+            VERIFY STATUS OF AMBER ALERT WITH ORI
+            
+            <!--<Message-Key-Translation>-->
+            MISSING PERSON JUVENILE
+            <!--<Database-Record>-->
+            <!--<NIC-Information>-->M123456789              
+        </nc:CaveatText>
+        
+        <!--<Database-Record>-->
+        <ncic:MissingPersonRecord s:ref="Database-Record"/>
+    </ncic-ex:NotificationRecordData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:MissingPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:MissingPersonRecord s:id="Database-Record">
+        <!-- This would contain the Missing Person Hit response as defined in Section 3, Part 1 of 
+             the NCIC Message Book in actual implementation -->
+        <!-- Only needed elements for the example are included here -->
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>M123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+    </ncic:MissingPersonRecord>
+</ncic-ex:Exchange>

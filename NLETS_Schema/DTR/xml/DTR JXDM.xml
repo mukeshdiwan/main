@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>	
+            <n:MessageKeyCode>DTR</n:MessageKeyCode>
+            <j:DocumentSource.Organization>
+             <j:OrganizationORIID>
+               <j:ID>DCDEA0209</j:ID>
+             </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <j:DocumentSubject.Organization>
+              <j:OrganizationORIID>
+                <j:ID>VADEADX00</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSResponseData Type="noHit" Key="DTR">
+			<n:ResponseText><![CDATA[MSG/80- FOR REPORT-NO RECORDS FOUND.
+]]></n:ResponseText>
+			</n:NLETSResponseData>
+		</n:NLETSResponseMessage>
+</n:NLETS>

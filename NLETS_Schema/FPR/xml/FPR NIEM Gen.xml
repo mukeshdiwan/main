@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:em="http://niem.gov/niem/domains/emergencyManagement/2.1" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:iso_3166="http://niem.gov/niem/iso_3166/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/FPR.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>FPR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>DCINTER00</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS23</nh2:DestinationORIID>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSResponseData n2:key="FPR">
+		<n2:InterpolListResponse>
+			<n2:Person>
+				<nc:PersonBirthDate/>
+				<nc:PersonName>
+					<nc:PersonFullName>JOHN DOE</nc:PersonFullName>
+				</nc:PersonName>
+				<nc:PersonSexCode>M</nc:PersonSexCode>
+				<j:PersonAugmentation/>
+				<j:SubjectStatus>
+					<nc:StatusText>SUSPECTED</nc:StatusText>
+				</j:SubjectStatus>
+				<n2:CriminalHistory>
+					<j:OffenseName>BANKING/FINANCIAL FRAUD</j:OffenseName>
+				</n2:CriminalHistory>
+				<n2:PersonQualificationText>CRIMINAL</n2:PersonQualificationText>
+			</n2:Person>
+			<n2:StolenDocument>
+				<nc:DocumentCategoryName>Passport</nc:DocumentCategoryName>
+				<nc:DocumentCreationDate/>
+				<nc:DocumentExpirationDate/>
+				<nc:DocumentIdentification>
+					<nc:IdentificationID xsi:nil="true"/>
+				</nc:DocumentIdentification>
+			</n2:StolenDocument>
+			<em:Notification>
+				<nc:ActivityDescriptionText>
+			Your query of the Interpol ASF database has resulted in a positive "hit" and an alarm message has been sent to the country that submitted the information and the Interpol-United States National Central Bureau (USNCB) at the U.S. Department of Justice in Washington, D.C. </nc:ActivityDescriptionText></em:Notification>
+		</n2:InterpolListResponse>
+	</n2:NLETSResponseData>
+</n2:NLETS>

@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:rap-code="http://www.nlets.org/rapsheet/proxy/codes/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0.2/proxy/xsd/1.0" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ncic_2000/1.0.1" targetNamespace="http://www.it.ojp.gov/jxdm/3.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ncic_2000/1.0.1" schemaLocation="proxy/ncic_2000/1.0.1/ncic_2000.xsd"/>
+	<xsd:import namespace="http://www.it.ojp.gov/jxdm/3.0.2/proxy/xsd/1.0" schemaLocation="proxy/xsd/1.0/xsd.xsd"/>
+	<xsd:import namespace="http://www.nlets.org/rapsheet/proxy/codes/1.0" schemaLocation="../../RapSheetCodes-proxy.xsd"/>
+	<xsd:attributeGroup name="SuperTypeMetadata">
+		<xsd:attribute ref="j:reportingOrganizationText" use="optional"/>
+		<xsd:attribute ref="j:reportedDate" use="optional"/>
+		<xsd:attribute ref="j:commentText" use="optional"/>
+	</xsd:attributeGroup>
+	<xsd:complexType name="ActivityType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:ActivityTypeText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:ActivityDate" minOccurs="0"/>
+					<xsd:element ref="j:ActivityCommentText" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="AddressType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:AddressFullText" minOccurs="0"/>
+					<xsd:element ref="j:LocationStreet" minOccurs="0"/>
+					<xsd:element ref="j:LocationSecondaryUnitText" minOccurs="0"/>
+					<xsd:element ref="j:AddressMailDeliveryUnitText" minOccurs="0"/>
+					<xsd:element ref="j:LocationCityName" minOccurs="0"/>
+					<xsd:element ref="j:LocationCountyName" minOccurs="0"/>
+					<xsd:element ref="j:LocationStateName" minOccurs="0"/>
+					<xsd:element ref="j:LocationPostalCodeID" minOccurs="0"/>
+					<xsd:element ref="j:LocationCountryName" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ArrestType">
+		<xsd:complexContent>
+			<xsd:extension base="j:ActivityType">
+				<xsd:sequence>
+					<xsd:element ref="j:ArrestAgencyRecordID" minOccurs="0"/>
+					<xsd:element ref="j:ArrestSubject" minOccurs="0"/>
+					<xsd:element ref="j:ArrestCharge" maxOccurs="unbounded"/>
+					<xsd:element ref="j:ArrestAgency"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="BinaryType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:BinaryObject.Base64" minOccurs="0"/>
+					<xsd:element ref="j:BinaryFormatText" minOccurs="0"/>
+					<xsd:element ref="j:BinarySizeValue" minOccurs="0"/>
+					<xsd:element ref="j:BinaryTypeText" minOccurs="0"/>
+					<xsd:element ref="j:BinaryDescriptionText" minOccurs="0"/>
+					<xsd:element ref="j:BinaryReferenceID" minOccurs="0"/>
+					<xsd:element ref="j:BinaryCaptureDate" minOccurs="0"/>
+					<xsd:element ref="j:BinaryCaptureOrganization"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="BiometricType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:BiometricValueText" minOccurs="0"/>
+					<xsd:element ref="j:BiometricEncodingMethodText" minOccurs="0"/>
+					<xsd:element ref="j:BiometricDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:BiometricImage" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:BiometricCaptureOrganization" minOccurs="0"/>
+					<xsd:element ref="j:BiometricCaptureDate" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="BookingType">
+		<xsd:complexContent>
+			<xsd:extension base="j:ActivityType">
+				<xsd:sequence>
+					<xsd:element ref="j:BookingAgencyRecordID" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:BookingAgency" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ChargeClassificationType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:ChargeApplicabilityText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:ChargeReducingFactorText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:ChargeSpecialAllegationText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:ChargeSeverityText"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ChargeDispositionType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:ChargeDispositionDate"/>
+					<xsd:element ref="j:ChargeDispositionDescriptionText"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ChargeReportingType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:ChargeNCICCode" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ChargeType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:ChargeID" minOccurs="0"/>
+					<xsd:element ref="j:ChargeText"/>
+					<xsd:element ref="j:ChargeSequenceID" minOccurs="0"/>
+					<xsd:element ref="j:ChargeTrackingID" minOccurs="0"/>
+					<xsd:element ref="j:ChargeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:ChargeClassification" minOccurs="0"/>
+					<xsd:element ref="j:ChargeCountQuantity" minOccurs="0"/>
+					<xsd:element ref="j:ChargeDisposition" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:ChargeReporting" minOccurs="0"/>
+					<xsd:element ref="j:ChargeStatute" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ContactInformationType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:ContactInformationDescriptionText" minOccurs="0"/>
+					<xsd:element ref="j:ContactTelephoneNumber" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:ContactFacsimileNumber" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:ContactEmailID" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CourtType">
+		<xsd:complexContent>
+			<xsd:extension base="j:OrganizationType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="DNALocusType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:DNALocusTypeText"/>
+					<xsd:element ref="j:DNALocusValue" maxOccurs="2"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="DNAType">
+		<xsd:complexContent>
+			<xsd:extension base="j:BiometricType">
+				<xsd:sequence>
+					<xsd:element ref="j:DNALocus" minOccurs="0" maxOccurs="14"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="DrivingJurisdictionAuthorityIDType">
+		<xsd:complexContent>
+			<xsd:extension base="j:IDType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="EmploymentType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:EmploymentEmployerName" minOccurs="0"/>
+					<xsd:element ref="j:EmploymentOccupationText" minOccurs="0"/>
+					<xsd:element ref="j:EmploymentContactInformation" minOccurs="0"/>
+					<xsd:element ref="j:EmploymentLocation" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="FingerprintSetType">
+		<xsd:complexContent>
+			<xsd:extension base="j:BiometricType">
+				<xsd:sequence>
+					<xsd:element ref="j:Fingerprint" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="FingerprintType">
+		<xsd:complexContent>
+			<xsd:extension base="j:BiometricType">
+				<xsd:sequence>
+					<xsd:element ref="j:FingerprintFingerText" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="IDType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:ID"/>
+					<xsd:element ref="j:IDTypeText" minOccurs="0"/>
+					<xsd:element ref="j:IDIssuingAuthorityText" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ImageType">
+		<xsd:complexContent>
+			<xsd:extension base="j:BinaryType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="IncidentType">
+		<xsd:complexContent>
+			<xsd:extension base="j:ActivityType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="JurisdictionType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:LocationStateName" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="LocationType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:LocationName" minOccurs="0"/>
+					<xsd:element ref="j:LocationAddress" minOccurs="0"/>
+					<xsd:element ref="j:LocationContactInformation" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MeasureType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MedicalConditionType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:OrganizationName" minOccurs="0"/>
+					<xsd:element ref="j:OrganizationORIID" minOccurs="0"/>
+					<xsd:element ref="j:OrganizationLocation" minOccurs="0"/>
+					<xsd:element ref="j:OrganizationAbbreviationText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:OrganizationUnitName" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonAssignedIDDetailsType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonSSNID" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonDriverLicenseID" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonFBIID" minOccurs="0"/>
+					<xsd:element ref="j:PersonStateID" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonOtherID" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonBiometricDetailsType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonDigitalImage" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonBloodTypeText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonFingerprintSet" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonDNA" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonPalmPrint" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonHeightMeasureType">
+		<xsd:simpleContent>
+			<xsd:extension base="j:MeasureType">
+				<xsd:attribute ref="j:personHeightUnitCode" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="PersonHeightUnitCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ncic"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="PersonMedicalConditionType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:MedicalConditionText"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonMedicalDetailsType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonMedicalCondition" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonNameTextType">
+		<xsd:simpleContent>
+			<xsd:extension base="j:TextType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonNameType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonPrefixName" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonGivenName" minOccurs="0"/>
+					<xsd:element ref="j:PersonMiddleName" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonSurName" minOccurs="0"/>
+					<xsd:element ref="j:PersonSuffixName" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonFullName" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonOtherIDType">
+		<xsd:complexContent>
+			<xsd:extension base="j:IDType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonPhysicalDetailsType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonHeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonEyeColorText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonHairColorText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonSexText" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonRaceText" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonSkinToneText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonPhysicalFeature" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonSocialDetailsType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonEthnicityText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonCitizenshipText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonMaritalStatusText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonReligionText" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonName" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonAlternateName" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:Residence" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:Employment" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonBirthDate" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonBirthLocation" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonDeathDate" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonLivingIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonRegisteredOffenderIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonFirearmSalesDisqualifiedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:PersonAssignedIDDetails" minOccurs="0"/>
+					<xsd:element ref="j:PersonPhysicalDetails" minOccurs="0"/>
+					<xsd:element ref="j:PersonSocialDetails" minOccurs="0"/>
+					<xsd:element ref="j:PersonBiometricDetails" minOccurs="0"/>
+					<xsd:element ref="j:PersonMedicalDetails" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonWeightMeasureType">
+		<xsd:simpleContent>
+			<xsd:extension base="j:MeasureType">
+				<xsd:attribute ref="j:personWeightUnitCode" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="PersonWeightUnitCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ncic"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="PhysicalFeatureType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PhysicalFeatureCategoryText" minOccurs="0"/>
+					<xsd:element ref="j:PhysicalFeatureTypeCode" minOccurs="0"/>
+					<xsd:element ref="j:PhysicalFeatureDescriptionText" minOccurs="0"/>
+					<xsd:element ref="j:PhysicalFeatureImage" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ReleaseType">
+		<xsd:complexContent>
+			<xsd:extension base="j:ActivityType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ResidenceType">
+		<xsd:complexContent>
+			<xsd:extension base="j:LocationType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SentenceType">
+		<xsd:complexContent>
+			<xsd:extension base="j:ActivityType">
+				<xsd:sequence>
+					<xsd:element ref="j:SentenceCharge" maxOccurs="unbounded"/>
+					<xsd:element ref="j:SentenceDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:SentenceIssuer.Organization" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="StatusType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:StatusText" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="StatuteType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:StatuteCodeID" minOccurs="0"/>
+					<xsd:element ref="j:StatuteOffenseID" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:StatuteText" maxOccurs="unbounded"/>
+					<xsd:element ref="j:StatuteJurisdiction" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="StreetType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:StreetFullText"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SubjectType">
+		<xsd:complexContent>
+			<xsd:extension base="j:PersonType">
+				<xsd:sequence>
+					<xsd:element ref="j:SubjectID" minOccurs="0"/>
+					<xsd:element ref="j:SubjectCautionInformationCaveat" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j:SubjectOffenderNoticeCaveat" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SuperType">
+		<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+	</xsd:complexType>
+	<xsd:complexType name="SupervisionType">
+		<xsd:complexContent>
+			<xsd:extension base="j:ActivityType">
+				<xsd:sequence>
+					<xsd:element ref="j:SupervisionSubject" minOccurs="0"/>
+					<xsd:element ref="j:SupervisionAgency"/>
+					<xsd:element ref="j:SupervisionCustodyStatus" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TelephoneNumberType">
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:TelephoneNumberFullID"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TextType">
+		<xsd:simpleContent>
+			<xsd:extension base="j-xsd:string"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:attribute name="commentText" type="xsd:string"/>
+	<xsd:attribute name="measureUnitText" type="xsd:string"/>
+	<xsd:attribute name="personHeightUnitCode" type="j:PersonHeightUnitCodeType"/>
+	<xsd:attribute name="personWeightUnitCode" type="j:PersonWeightUnitCodeType"/>
+	<xsd:attribute name="reportedDate" type="xsd:date"/>
+	<xsd:attribute name="reportingOrganizationText" type="xsd:string"/>
+	<xsd:element name="ActivityCommentText" type="j:TextType" nillable="true"/>
+	<xsd:element name="ActivityDate" type="j-xsd:date" nillable="true"/>
+	<xsd:element name="ActivityTypeText" type="j:TextType" nillable="true"/>
+	<xsd:element name="AddressFullText" type="j:TextType" nillable="true"/>
+	<xsd:element name="AddressMailDeliveryUnitText" type="j:TextType" nillable="true"/>
+	<xsd:element name="Agency" type="j:OrganizationType" nillable="true"/>
+	<xsd:element name="Arrest" type="j:ArrestType" nillable="true"/>
+	<xsd:element name="ArrestAgency" type="j:OrganizationType" nillable="true"/>
+	<xsd:element name="ArrestAgencyRecordID" type="j:IDType" nillable="true"/>
+	<xsd:element name="ArrestCharge" type="j:ChargeType" nillable="true"/>
+	<xsd:element name="ArrestSubject" type="j:SubjectType" nillable="true"/>
+	<xsd:element name="BinaryCaptureDate" type="j-xsd:date" nillable="true"/>
+	<xsd:element name="BinaryCaptureOrganization" type="j:OrganizationType" nillable="true"/>
+	<xsd:element name="BinaryDescriptionText" type="j:TextType" nillable="true"/>
+	<xsd:element name="BinaryFormatText" type="j:TextType" nillable="true"/>
+	<xsd:element name="BinaryObject.Base64" type="j-xsd:base64Binary" nillable="true"/>
+	<xsd:element name="BinaryReferenceID" type="j:IDType" nillable="true"/>
+	<xsd:element name="BinarySizeValue" type="j-xsd:integer" nillable="true"/>
+	<xsd:element name="BinaryTypeText" type="j:TextType" nillable="true"/>
+	<xsd:element name="BiometricCaptureDate" type="j-xsd:date" nillable="true"/>
+	<xsd:element name="BiometricCaptureOrganization" type="j:OrganizationType" nillable="true"/>
+	<xsd:element name="BiometricDescriptionText" type="j:TextType" nillable="true"/>
+	<xsd:element name="BiometricEncodingMethodText" type="j:TextType" nillable="true"/>
+	<xsd:element name="BiometricImage" type="j:ImageType" nillable="true"/>
+	<xsd:element name="BiometricValueText" type="j:TextType" nillable="true"/>
+	<xsd:element name="Booking" type="j:BookingType" nillable="true"/>
+	<xsd:element name="BookingAgency" type="j:OrganizationType" nillable="true"/>
+	<xsd:element name="BookingAgencyRecordID" type="j:IDType" nillable="true"/>
+	<xsd:element name="CaveatIssuingAuthorityName" type="j:TextType" nillable="true"/>
+	<xsd:element name="CaveatReferenceDate" type="j-xsd:date" nillable="true"/>
+	<xsd:element name="CaveatText" type="j:TextType" nillable="true"/>
+	<xsd:element name="ChargeApplicabilityText" type="j:TextType" nillable="true"/>
+	<xsd:element name="ChargeClassification" type="j:ChargeClassificationType" nillable="true"/>
+	<xsd:element name="ChargeCountQuantity" type="j-xsd:nonNegativeInteger" nillable="true"/>
+	<xsd:element name="ChargeDescriptionText" type="j:TextType" nillable="true"/>
+	<xsd:element name="ChargeDisposition" type="j:ChargeDispositionType" nillable="true"/>
+	<xsd:element name="ChargeDispositionDate" type="j-xsd:date" nillable="true"/>
+	<xsd:element name="ChargeDispositionDescriptionText" type="j:TextType" nillable="true"/>
+	<xsd:element name="ChargeDispositionOtherText" type="j:TextType" nillable="true"/>
+	<xsd:element name="ChargeID" type="j:IDType" nillable="true"/>
+	<xsd:element name="ChargeNCICCode" type="j-ncic:OFFType" nillable="true"/>
+	<xsd:element name="ChargeReducingFactorText" type="j:TextType" nillable="true"/>
+	<xsd:element name="ChargeReporting" type="j:ChargeReportingType" nillable="true"/>
+	<xsd:element name="ChargeSequenceID" type="j:IDType" nillable="true"/>
+	<xsd:element name="ChargeSeverityText" type="j:TextType" nillable="true"/>
+	<xsd:element name="ChargeSpecialAllegationText" type="j:TextType" nillable="true"/>
+	<xsd:element name="ChargeStatute" type="j:StatuteType" nillable="true"/>
+	<xsd:element name="ChargeText" type="j:TextType" nillable="true"/>
+	<xsd:element name="ChargeTrackingID" type="j:IDType" nillable="true"/>
+	<xsd:element name="ContactEmailID" type="j:IDType" nillable="true"/>
+	<xsd:element name="ContactFacsimileNumber" type="j:TelephoneNumberType" nillable="true"/>
+	<xsd:element name="ContactInformationDescriptionText" type="j:TextType" nillable="true"/>
+	<xsd:element name="ContactTelephoneNumber" type="j:TelephoneNumberType" nillable="true"/>
+	<xsd:element name="Court" type="j:CourtType" nillable="true"/>
+	<xsd:element name="CourtCharge" type="j:ChargeType" nillable="true"/>
+	<xsd:element name="DNALocus" type="j:DNALocusType" nillable="true"/>
+	<xsd:element name="DNALocusTypeText" type="rap-code:DNALocusType"/>
+	<xsd:element name="DNALocusValue" type="j:TextType" nillable="true"/>
+	<xsd:element name="DocumentSource.Organization" type="j:OrganizationType" nillable="true"/>
+	<xsd:element name="DocumentSubject.Organization" type="j:OrganizationType" nillable="true"/>
+	<xsd:element name="Employment" type="j:EmploymentType" nillable="true"/>
+	<xsd:element name="EmploymentContactInformation" type="j:ContactInformationType" nillable="true"/>
+	<xsd:element name="EmploymentEmployerName" type="j:TextType" nillable="true"/>
+	<xsd:element name="EmploymentLocation" type="j:LocationType" nillable="true"/>
+	<xsd:element name="EmploymentOccupationText" type="j:TextType" nillable="true"/>
+	<xsd:element name="Fingerprint" type="j:FingerprintType" nillable="true"/>
+	<xsd:element name="FingerprintFingerText" type="rap-code:FingerprintFingerType"/>
+	<xsd:element name="ID" type="j:TextType" nillable="true"/>
+	<xsd:element name="IDIssuingAuthorityText" type="j:TextType" nillable="true"/>
+	<xsd:element name="IDTypeText" type="rap-code:IDTypeType"/>
+	<xsd:element name="Incident" type="j:IncidentType" nillable="true"/>
+	<xsd:element name="Location" type="j:LocationType" nillable="true"/>
+	<xsd:element name="LocationAddress" type="j:AddressType" nillable="true"/>
+	<xsd:element name="LocationCityName" type="j:TextType" nillable="true"/>
+	<xsd:element name="LocationContactInformation" type="j:ContactInformationType" nillable="true"/>
+	<xsd:element name="LocationCountryName" type="j:TextType" nillable="true"/>
+	<xsd:element name="LocationCountyName" type="j:TextType" nillable="true"/>
+	<xsd:element name="LocationName" type="j:TextType" nillable="true"/>
+	<xsd:element name="LocationPostalCodeID" type="j:IDType" nillable="true"/>
+	<xsd:element name="LocationSecondaryUnitText" type="j:TextType" nillable="true"/>
+	<xsd:element name="LocationStateName" type="j:TextType" nillable="true"/>
+	<xsd:element name="LocationStreet" type="j:StreetType" nillable="true"/>
+	<xsd:element name="MedicalConditionText" type="j:TextType" nillable="true"/>
+	<xsd:element name="Organization" type="j:OrganizationType" nillable="true"/>
+	<xsd:element name="OrganizationAbbreviationText" type="j:TextType" nillable="true"/>
+	<xsd:element name="OrganizationLocation" type="j:LocationType" nillable="true"/>
+	<xsd:element name="OrganizationName" type="j:TextType" nillable="true"/>
+	<xsd:element name="OrganizationORIID" type="j:IDType" nillable="true"/>
+	<xsd:element name="OrganizationUnitName" type="j:TextType" nillable="true"/>
+	<xsd:element name="Person" type="j:PersonType" nillable="true"/>
+	<xsd:element name="PersonAlternateName" type="j:PersonNameType" nillable="true"/>
+	<xsd:element name="PersonAssignedIDDetails" type="j:PersonAssignedIDDetailsType" nillable="true"/>
+	<xsd:element name="PersonBiometricDetails" type="j:PersonBiometricDetailsType" nillable="true"/>
+	<xsd:element name="PersonBirthDate" type="j-xsd:date" nillable="true"/>
+	<xsd:element name="PersonBirthLocation" type="j:LocationType" nillable="true"/>
+	<xsd:element name="PersonBloodTypeText" type="rap-code:BloodTypeType"/>
+	<xsd:element name="PersonCitizenshipText" type="j:TextType" nillable="true"/>
+	<xsd:element name="PersonDNA" type="j:DNAType" nillable="true"/>
+	<xsd:element name="PersonDeathDate" type="j-xsd:date" nillable="true"/>
+	<xsd:element name="PersonDigitalImage" type="j:ImageType" nillable="true"/>
+	<xsd:element name="PersonDriverLicenseID" type="j:DrivingJurisdictionAuthorityIDType" nillable="true"/>
+	<xsd:element name="PersonEthnicityText" type="rap-code:EthnicityType"/>
+	<xsd:element name="PersonEyeColorText" type="rap-code:EyeColorType"/>
+	<xsd:element name="PersonFBIID" type="j:IDType" nillable="true"/>
+	<xsd:element name="PersonFingerprintSet" type="j:FingerprintSetType" nillable="true"/>
+	<xsd:element name="PersonFirearmSalesDisqualifiedIndicator" type="j-xsd:boolean" nillable="true"/>
+	<xsd:element name="PersonFullName" type="j:PersonNameTextType" nillable="true"/>
+	<xsd:element name="PersonGivenName" type="j:PersonNameTextType" nillable="true"/>
+	<xsd:element name="PersonHairColorText" type="rap-code:HairColorType"/>
+	<xsd:element name="PersonHeightMeasure" type="j:PersonHeightMeasureType" nillable="true"/>
+	<xsd:element name="PersonLivingIndicator" type="j-xsd:boolean" nillable="true"/>
+	<xsd:element name="PersonMaritalStatusText" type="rap-code:MaritalStatusType"/>
+	<xsd:element name="PersonMedicalCondition" type="j:PersonMedicalConditionType" nillable="true"/>
+	<xsd:element name="PersonMedicalDetails" type="j:PersonMedicalDetailsType" nillable="true"/>
+	<xsd:element name="PersonMiddleName" type="j:PersonNameTextType" nillable="true"/>
+	<xsd:element name="PersonName" type="j:PersonNameType" nillable="true"/>
+	<xsd:element name="PersonOtherID" type="j:PersonOtherIDType" nillable="true"/>
+	<xsd:element name="PersonPalmPrint" type="j:BiometricType" nillable="true"/>
+	<xsd:element name="PersonPhysicalDetails" type="j:PersonPhysicalDetailsType" nillable="true"/>
+	<xsd:element name="PersonPhysicalFeature" type="j:PhysicalFeatureType" nillable="true"/>
+	<xsd:element name="PersonPrefixName" type="j:TextType" nillable="true"/>
+	<xsd:element name="PersonRaceText" type="rap-code:RaceType"/>
+	<xsd:element name="PersonRegisteredOffenderIndicator" type="j-xsd:boolean" nillable="true"/>
+	<xsd:element name="PersonReligionText" type="j:TextType" nillable="true"/>
+	<xsd:element name="PersonResidentText" type="j:TextType" nillable="true"/>
+	<xsd:element name="PersonSSNID" type="j:IDType" nillable="true"/>
+	<xsd:element name="PersonSexText" type="rap-code:SexType"/>
+	<xsd:element name="PersonSkinToneText" type="rap-code:SkinToneType"/>
+	<xsd:element name="PersonSocialDetails" type="j:PersonSocialDetailsType" nillable="true"/>
+	<xsd:element name="PersonStateID" type="j:IDType" nillable="true"/>
+	<xsd:element name="PersonSuffixName" type="j:TextType" nillable="true"/>
+	<xsd:element name="PersonSurName" type="j:PersonNameTextType" nillable="true"/>
+	<xsd:element name="PersonWeightMeasure" type="j:PersonWeightMeasureType" nillable="true"/>
+	<xsd:element name="PhysicalFeatureCategoryText" type="j:TextType" nillable="true"/>
+	<xsd:element name="PhysicalFeatureDescriptionText" type="j:TextType" nillable="true"/>
+	<xsd:element name="PhysicalFeatureImage" type="j:ImageType" nillable="true"/>
+	<xsd:element name="PhysicalFeatureTypeCode" type="j-ncic:SMTType" nillable="true"/>
+	<xsd:element name="ProsecutionCharge" type="j:ChargeType" nillable="true"/>
+	<xsd:element name="Residence" type="j:ResidenceType" nillable="true"/>
+	<xsd:element name="Sentence" type="j:SentenceType" nillable="true"/>
+	<xsd:element name="SentenceCharge" type="j:ChargeType" nillable="true"/>
+	<xsd:element name="SentenceDescriptionText" type="j:TextType" nillable="true"/>
+	<xsd:element name="SentenceIssuer.Organization" type="j:OrganizationType" nillable="true"/>
+	<xsd:element name="StatusText" type="j:TextType" nillable="true"/>
+	<xsd:element name="StatuteCodeID" type="j:IDType" nillable="true"/>
+	<xsd:element name="StatuteJurisdiction" type="j:JurisdictionType" nillable="true"/>
+	<xsd:element name="StatuteOffenseID" type="j:IDType" nillable="true"/>
+	<xsd:element name="StatuteText" type="j:TextType" nillable="true"/>
+	<xsd:element name="StreetFullText" type="j:TextType" nillable="true"/>
+	<xsd:element name="StreetTypeText" type="j:TextType" nillable="true"/>
+	<xsd:element name="Subject" type="j:SubjectType" nillable="true"/>
+	<xsd:element name="SubjectCautionInformationCaveat" type="j:TextType" nillable="true"/>
+	<xsd:element name="SubjectID" type="j:IDType" nillable="true"/>
+	<xsd:element name="SubjectOffenderNoticeCaveat" type="j:TextType" nillable="true"/>
+	<xsd:element name="Supervision" type="j:SupervisionType" nillable="true"/>
+	<xsd:element name="SupervisionAgency" type="j:OrganizationType" nillable="true"/>
+	<xsd:element name="SupervisionCustodyStatus" type="j:StatusType" nillable="true"/>
+	<xsd:element name="SupervisionRelease" type="j:ReleaseType" nillable="true"/>
+	<xsd:element name="SupervisionSubject" type="j:SubjectType" nillable="true"/>
+	<xsd:element name="TelephoneNumberFullID" type="j-xsd:string" nillable="true"/>
+</xsd:schema>

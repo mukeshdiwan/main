@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:n2-tsr="http://www.nlets.org/niem/nlets-taser/1.0" xmlns:n2="http://www.nlets.org/niem/1.0" targetNamespace="http://www.nlets.org/niem/nlets-taser/1.0">
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:complexType name="TaserRecordOfSaleType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Taser Inquiry. The inquiry can be made on a Taser Serial ID.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-tsr:BillingAddress" minOccurs="0"/>
+					<xs:element ref="n2-tsr:BillingCompanyText" minOccurs="0"/>
+					<xs:element ref="n2-tsr:BillingNameText" minOccurs="0"/>
+					<xs:element ref="n2-tsr:RecordRedactedIndicator" minOccurs="0"/>
+					<xs:element ref="nc:ItemSerialIdentification" minOccurs="0"/>
+					<xs:element ref="n2-tsr:ShippingAddress" minOccurs="0"/>
+					<xs:element ref="n2-tsr:ShippingCompanyText" minOccurs="0"/>
+					<xs:element ref="n2-tsr:ShippingNameText" minOccurs="0"/>
+					<xs:element ref="n2-tsr:PurchaseDate" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BillingAddress" type="nc:AddressType" abstract="false" nillable="true"/>
+	<xs:element name="BillingCompanyText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="BillingNameText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="RecordRedactedIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="ShippingAddress" type="nc:AddressType" abstract="false" nillable="true"/>
+	<xs:element name="ShippingCompanyText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="ShippingNameText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="PurchaseDate" type="nc:DateType" abstract="false" nillable="true"/>
+	<xs:element name="TaserRecordOfSale" type="n2-tsr:TaserRecordOfSaleType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Taser Inquiry. The inquiry can be made on a Taser Serial ID.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

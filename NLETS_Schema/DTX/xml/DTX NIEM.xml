@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/DTX.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>DTX</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>GA0250300</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>VADEA000X</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>1234567890</nh2:DocumentControlFieldText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSUpdateData n2:key="DTX">
+		<n2:NDPIXEntry>
+			<n2:DocumentSubmitterPasswordText>12345678</n2:DocumentSubmitterPasswordText>
+			<n2:DocumentSubmitterUserIDText>agentx</n2:DocumentSubmitterUserIDText>
+		</n2:NDPIXEntry>
+	</n2:NLETSUpdateData>
+</n2:NLETS>

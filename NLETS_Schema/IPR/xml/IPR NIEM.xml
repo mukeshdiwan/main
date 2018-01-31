@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.00" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ..\xsd\IPR.xsd">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>IPR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>DCINTER00</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS24</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>MRI0046463</nh2:DocumentControlFieldText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="IPQ">
+		<n2:Warrant>
+			<n2:Subject>
+				<nc:PersonBirthDate>
+					<nc:Date>1950-01-01</nc:Date>
+				</nc:PersonBirthDate>
+				<nc:PersonName>
+					<nc:PersonFullName>DOE,JOHN</nc:PersonFullName>
+				</nc:PersonName>
+			</n2:Subject>
+		</n2:Warrant>
+	</n2:NLETSInquiryData>
+	<n2:NLETSResponseData n2:key="IPR">
+		<n2:Warrant>
+			<nc:ActivityIdentification>
+				<nc:IdentificationID>WAR123</nc:IdentificationID>
+			</nc:ActivityIdentification>
+			<n2:Subject>
+				<nc:PersonBirthDate>
+					<nc:Date>2011-01-01</nc:Date>
+				</nc:PersonBirthDate>
+				<nc:PersonName>
+					<nc:PersonFullName>JOHN DOE</nc:PersonFullName>
+				</nc:PersonName>
+				<j:SubjectIdentification>
+					<nc:IdentificationID>2004/40697</nc:IdentificationID>
+				</j:SubjectIdentification>
+			</n2:Subject>
+		</n2:Warrant>
+		<n2:Warrant>
+			<nc:ActivityIdentification>
+				<nc:IdentificationID>WAR123</nc:IdentificationID>
+			</nc:ActivityIdentification>
+			<n2:Subject>
+				<nc:PersonBirthDate>
+					<nc:Date>1946-08-26</nc:Date>
+				</nc:PersonBirthDate>
+				<nc:PersonName>
+					<nc:PersonFullName>MATTHEW WALLACE SCHACHTER</nc:PersonFullName>
+				</nc:PersonName>
+				<j:SubjectIdentification>
+					<nc:IdentificationID>2004/340543</nc:IdentificationID>
+				</j:SubjectIdentification>
+			</n2:Subject>
+		</n2:Warrant>
+	</n2:NLETSResponseData>
+</n2:NLETS>

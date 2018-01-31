@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- ORI receiving this Message  -->
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.K.</ncic:MessageTransactionText>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            $.K.SOR.  NSOR MISSING INFORMATION
+            <!--<ORI from record>-->WV1000000
+            NCIC INCOMPLETE NSOR NOTIFICATION AT <!--<hhmm>-->1320 EST ON <!--<mm/dd/yyyy>-->04/12/2004. THE FOLLOWING
+            NSOR RECORD IS MISSING THE FBI NUMBER. EVERY EFFORT SHOULD BE MADE
+            TO IDENTIFY THE OFFENDER’S FBI NUMBER AND INCLUDE IT IN THE RECORD. 
+            <!--<Database_Record>-->                        
+        </nc:CaveatText>
+        
+        <!--<Database-Record>-->
+        <!-- This would contain the Primary Hit response as defined in Section 3, Part 1 of 
+             the NCIC Message Book (excluding all alerts, ORI translations, all caveats, VLN 
+             text, and all image fields) in actual implementation -->
+        <!-- Only needed elements for the example are included here -->
+        <ncic:Record s:ref="NotificationRecord"/>
+        
+        <!-- Current System Time -->
+        <ncic:NotificationDateTime>2004-04-12T13:20:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+    
+    <ncic:Record s:id="NotificationRecord">        
+    </ncic:Record>
+</ncic-ex:Exchange>

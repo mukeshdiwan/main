@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:iso_3166="http://niem.gov/niem/iso_3166/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:niem-xs="http://niem.gov/niem/proxy/xsd/2.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" targetNamespace="http://www.nlets.org/niem/1.0">
+	<import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="./nlets-hdr/1.0/MessageHeader.xsd"/>
+	<import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="niem/proxy/xsd/2.0/xsd.xsd"/>
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="niem/structures/2.0/structures.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="niem/niem-core/2.0/niem-core.xsd"/>
+	<import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation="niem/domains/jxdm/4.1/jxdm.xsd"/>
+	<import namespace="http://niem.gov/niem/iso_3166/2.0" schemaLocation="niem/iso_3166/2.0/iso_3166.xsd"/>
+	<complexType name="AttachmentType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:BinaryType">
+				<sequence>
+					<element ref="n2:AttachmentFileName" minOccurs="0"/>
+					<element ref="n2:AttachmentMarkedForDeletionIndicator" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="FirearmType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:FirearmType">
+				<sequence>
+					<element ref="n2:FirearmActionCode" minOccurs="0"/>
+					<element ref="n2:FirearmActionText" minOccurs="0"/>
+					<element ref="n2:FirearmFirstHandIndicator" minOccurs="0"/>
+					<element ref="n2:FirearmManufacturerCode" minOccurs="0"/>
+					<element ref="n2:FirearmOriginCountryCode" minOccurs="0"/>
+					<element ref="n2:FirearmOriginCountryText" minOccurs="0"/>
+					<element ref="n2:FirearmLegalImportCountryCode" minOccurs="0"/>
+					<element ref="n2:FirearmLegalImportCountryText" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="FirearmRecordType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:DocumentType">
+				<sequence>
+					<element ref="n2:RecordOwnerCountryCode" minOccurs="0"/>
+					<element ref="n2:RecordOwnerCountryText" minOccurs="0"/>
+					<element ref="n2:PoliceRecord" minOccurs="0"/>
+					<element ref="n2:Firearm" minOccurs="0"/>
+					<element ref="nc:Incident" minOccurs="0"/>
+					<element ref="n2:PropertySeizure" minOccurs="0"/>
+					<element ref="n2:SeizureFirearmAssociation" minOccurs="0"/>
+					<element ref="n2:IncidentFirearmAssociation" minOccurs="0"/>
+					<element ref="n2:Attachment" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="IncidentFirearmAssociationType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:ActivityItemAssociationType">
+				<sequence>
+					<element ref="n2:FirearmStatusCode" minOccurs="0"/>
+					<element ref="n2:FirearmStatusText" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PropertySeizureType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="j:PropertySeizureType">
+				<sequence>
+					<element ref="n2:PropertySeizureLocation" minOccurs="0"/>
+					<element ref="n2:PropertySeizingAgencyText" minOccurs="0"/>
+					<element ref="n2:ItemSeizureCode" minOccurs="0"/>
+					<element ref="n2:ItemSeizureText" minOccurs="0"/>
+					<element ref="nc:DocumentCreationDate" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSInquiryDataType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:Firearm" minOccurs="0"/>
+				</sequence>
+				<attribute ref="n2:key" use="required"/>
+				<attribute ref="n2:type" use="optional"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSResponseDataType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:FirearmRecord" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+				<attribute name="key" type="xsd:string" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSType">
+		<annotation>
+			<documentation>A structure that defines the root element of an NLETS message.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:NLETSMessageHeader"/>
+					<element ref="n2:NLETSInquiryData" minOccurs="0"/>
+					<element ref="n2:NLETSResponseData"/>
+				</sequence>
+				<attribute ref="n2:version" use="optional"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SeizureFirearmAssociationType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:ActivityItemAssociationType">
+				<sequence>
+					<element ref="n2:ItemSeizedIndicator" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<attribute name="key" type="xsd:string"/>
+	<attribute name="type" type="xsd:string"/>
+	<attribute name="version" type="xsd:string"/>
+	<element name="NLETS" type="n2:NLETSType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The root element of a NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSInquiryData" type="n2:NLETSInquiryDataType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain all elements specific to this transaction.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSMessageHeader" type="nh2:NLETSMessageHeaderType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Metadata information about an NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSResponseData" type="n2:NLETSResponseDataType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="Attachment" type="n2:AttachmentType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains an attachment to the record. </documentation>
+		</annotation>
+	</element>
+	<element name="AttachmentFileName" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the fiilename of the attachment. </documentation>
+		</annotation>
+	</element>
+	<element name="AttachmentMarkedForDeletionIndicator" type="niem-xs:boolean" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element indicates whether or not an attachment is marked for deletion. </documentation>
+		</annotation>
+	</element>
+	<element name="Firearm" type="n2:FirearmType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element encapsulates query information about a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="FirearmActionCode" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the action of a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="FirearmActionText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the action of a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="FirearmFirstHandIndicator" type="niem-xs:boolean" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element indicates whether or not the firearm is first-hand. </documentation>
+		</annotation>
+	</element>
+	<element name="FirearmLegalImportCountryCode" type="iso_3166:CountryAlpha3CodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the country from which a firearm was legally imported. </documentation>
+		</annotation>
+	</element>
+	<element name="FirearmLegalImportCountryText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the country from which a firearm was legally imported. </documentation>
+		</annotation>
+	</element>
+	<element name="FirearmManufacturerCode" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the manufacturer of a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="FirearmOriginCountryCode" type="iso_3166:CountryAlpha3CodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the country from which a firearm originated. </documentation>
+		</annotation>
+	</element>
+	<element name="FirearmOriginCountryText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the country from which a firearm originated. </documentation>
+		</annotation>
+	</element>
+	<element name="FirearmRecord" type="n2:FirearmRecordType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the detailed record of a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="IncidentFirearmAssociation" type="n2:IncidentFirearmAssociationType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element associates incident data with a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="ItemSeizedIndicator" type="niem-xs:boolean" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element indicates whether or not an item has been seized. </documentation>
+		</annotation>
+	</element>
+	<element name="ItemSeizureCode" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the seizure code of a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="ItemSeizureText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the seizure code of a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="FirearmStatusCode" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the status of a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="FirearmStatusText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the status of a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="PoliceRecord" type="nc:DocumentType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the details of an official police record of a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="PropertySeizingAgencyText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the agency that seized of a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="PropertySeizure" type="n2:PropertySeizureType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the details of the seizure of a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="PropertySeizureLocation" type="nc:LocationType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the location of the seizure of a firearm. </documentation>
+		</annotation>
+	</element>
+	<element name="RecordOwnerCountryCode" type="iso_3166:CountryAlpha3CodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the country owning the firearm record. </documentation>
+		</annotation>
+	</element>
+	<element name="RecordOwnerCountryText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains the country owning the firearm record. </documentation>
+		</annotation>
+	</element>
+	<element name="SeizureFirearmAssociation" type="n2:SeizureFirearmAssociationType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element associates seizure data with a firearm. </documentation>
+		</annotation>
+	</element>
+</schema>

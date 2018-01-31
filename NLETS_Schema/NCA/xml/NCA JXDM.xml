@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+            <n:MessageKeyCode>NCA</n:MessageKeyCode>
+			<n:DocumentControlFieldText>000000089</n:DocumentControlFieldText>           
+            <j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>NA</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <j:DocumentSubject.Organization>
+              <j:OrganizationORIID>
+                <j:ID>GA1234567</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSUpdateData Key="NCA">
+					<j:VehicleID>
+                        <j:ID>1234567981324567</j:ID>
+                     </j:VehicleID>
+					<j:PropertyAssignedIDDetails>
+						<j:PropertyFederalID>
+                               <j:ID>239817692</j:ID>
+                               <j:IDIssuingAuthorityText>NICB</j:IDIssuingAuthorityText>
+                           </j:PropertyFederalID>
+					</j:PropertyAssignedIDDetails>
+			</n:NLETSUpdateData>
+			<n:NLETSResponseData Type="ack" Key="NCA">
+				<n:ResponseText><![CDATA[IMPOUND RECORD CANCELED
+VIN/1234567891234567.FIL/12345678912
+]]></n:ResponseText>
+			</n:NLETSResponseData>
+		</n:NLETSResponseMessage>
+</n:NLETS>

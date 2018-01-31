@@ -1,0 +1,87 @@
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+       <n:NLETSInquiryMessage>
+		<n:NLETSInquiryHeader>
+            <n:DocumentUserID><j:ID>USER55</j:ID></n:DocumentUserID>
+            <n:DocumentPasswordText>123456</n:DocumentPasswordText>
+            <n:MessageKeyCode>IAQ</n:MessageKeyCode>
+            <j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>AZNLETS11</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <j:DocumentSubject.Organization>
+              <j:OrganizationORIID>
+                <j:ID>PY</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSubject.Organization>
+			<n:DocumentControlFieldText>ATS000048</n:DocumentControlFieldText>
+		</n:NLETSInquiryHeader>
+		<n:NLETSInquiryData Key="IAQ">
+				<j:Subject>
+					<j:SubjectStatus>In Custody</j:SubjectStatus>
+					<j:SubjectWarrantTypeCode>4651</j:SubjectWarrantTypeCode>
+					<j:PersonName>
+                           <j:PersonFullName>Scott, Anthony L</j:PersonFullName>
+                           <j:PersonGivenName>Anthony</j:PersonGivenName>
+						<j:PersonMiddleName>L</j:PersonMiddleName>
+						<j:PersonSurName>Scott</j:PersonSurName>
+					</j:PersonName>
+					<j:PersonBirthDate>1980-07-14</j:PersonBirthDate>
+					        <j:PersonBirthLocation> 
+                             <j:PersonBirthPlaceCode>VA</j:PersonBirthPlaceCode>
+                      </j:PersonBirthLocation>
+					<j:PersonAssignedIDDetails>
+						<j:PersonOtherID PersonIDTypeCode="AS">
+                               <j:ID>111223333</j:ID>
+                           </j:PersonOtherID>
+						<j:PersonFBIID><j:ID>12456789</j:ID></j:PersonFBIID>
+						<j:PersonOtherID PersonIDTypeCode="PP">
+                               <j:ID>123456789</j:ID>
+                          </j:PersonOtherID>
+						<j:PersonOtherID IDTypeText ="Booking">
+                                <j:ID>987654321</j:ID>
+                           </j:PersonOtherID>
+						<j:PersonOtherID PersonIDTypeCode ="AR">
+                                 <j:ID>987654321</j:ID>
+                           </j:PersonOtherID>
+					</j:PersonAssignedIDDetails>
+					<j:PersonPhysicalDetails>
+						<j:PersonSexCode>M</j:PersonSexCode>
+						<j:PersonHeightMeasure>601</j:PersonHeightMeasure>
+						<j:PersonWeightMeasure>210</j:PersonWeightMeasure>
+						<j:PersonHairColorCode>BRO</j:PersonHairColorCode>
+					</j:PersonPhysicalDetails>
+					<j:Residence>
+						<j:ResidenceStartDate>2004-01-01</j:ResidenceStartDate>
+						<j:LocationAddress>
+							<j:LocationStreet>
+								<j:StreetFullText>123 MAIN STREET</j:StreetFullText>
+							</j:LocationStreet>
+							<j:LocationCountyName>Loudon</j:LocationCountyName>
+						</j:LocationAddress>
+					</j:Residence>
+					<j:PersonParent>
+						<j:PersonName>
+							<j:PersonGivenName>Susan</j:PersonGivenName>
+							<j:PersonMaidenName>Johnson</j:PersonMaidenName>
+						</j:PersonName>
+					</j:PersonParent>
+					<j:PersonParent>
+						<j:PersonName>
+							<j:PersonGivenName>Steve</j:PersonGivenName>
+							<j:PersonSurName>Scott</j:PersonSurName>
+						</j:PersonName>
+					</j:PersonParent>
+				</j:Subject>
+				<n:Attention>SGT JOHN DOE</n:Attention>
+				<n:PurposeCode>C</n:PurposeCode>
+				<j:ContactInformation>
+					<j:ContactTelephoneNumber>
+						<j:TelephoneAreaCodeID>571</j:TelephoneAreaCodeID>
+			<j:TelephoneExchangeID>555</j:TelephoneExchangeID>
+						<j:TelephoneSuffixID>6789</j:TelephoneSuffixID>
+					</j:ContactTelephoneNumber>
+				</j:ContactInformation>
+			</n:NLETSInquiryData>
+		</n:NLETSInquiryMessage>
+</n:NLETS>

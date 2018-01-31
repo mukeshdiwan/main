@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/3.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:n2-aa="http://www.nlets.org/niem/nlets-amber-alert/1.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.1/" targetNamespace="http://www.nlets.org/niem/nlets-amber-alert/1.0">
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="./niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/jxdm/5.1/" schemaLocation="./niem/domains/jxdm/5.1/jxdm.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="./niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="./niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:complexType name="AmberAlertType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-aa:AmberAlertID" minOccurs="0"/>
+					<xs:element ref="n2-aa:AmberAlertDateTime" minOccurs="0"/>
+					<xs:element ref="n2-aa:AmberAlertStatusText"/>
+					<xs:element ref="nc:ContactInformation" minOccurs="0"/>
+					<xs:element ref="n2-aa:AmberAlertDisseminationTarget" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-aa:AmberAlertShortMessage" minOccurs="0" maxOccurs="unbounded"/>
+					<!--<xs:element ref="nc:Incident" minOccurs="0" maxOccurs="unbounded"/>-->
+					<xs:element ref="nc:Aircraft" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:Vessel" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded"/>
+					<!--<xs:element ref="n2:Vehicle" minOccurs="0" maxOccurs="unbounded"/>-->
+					<xs:element ref="j:MissingPerson" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AmberAlertDisseminationTargetType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:LocationPostalCode" minOccurs="0"/>
+					<xs:element ref="nc:LocationCountyCode" minOccurs="0"/>
+					<xs:element ref="nc:LocationCountyName" minOccurs="0"/>
+					<xs:element ref="nc:LocationStateUSPostalServiceCode" minOccurs="0"/>
+					<xs:element ref="nc:LocationStateName" minOccurs="0"/>
+					<xs:element ref="nc:LocationStateFIPS10-4InternationalCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AmberAlertShortMessageType">
+		<xs:complexContent>
+			<xs:extension base="nc:MessageType">
+				<xs:sequence>
+					<xs:element ref="n2-aa:MessageIntendedDevice" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ContactInformationAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="j:ActivityOfficial" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="j:CaseNumberText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	<xs:complexType name="ConveyanceAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="j:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ImageAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-aa:ImagePrimaryIndicator" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MissingPersonAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-aa:TravelDirectionText" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NCICEntryType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-aa:NCICEntryMadeIndicator" minOccurs="0"/>
+					<xs:element ref="n2-aa:NCICMessageKeyUsedText" minOccurs="0"/>
+					<xs:element ref="j:PersonNCICIdentification" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PersonAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-aa:PersonJewelry" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-aa:NCICEntry" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PersonJewelryType">
+		<xs:complexContent>
+			<xs:extension base="j:JewelryType"/>
+			<!--<xs:sequence>
+					<xs:element ref="j:JewelryCategoryCode" minOccurs="0"/>
+					<xs:element ref="nc:ItemDescriptionText" minOccurs="0"/>
+				</xs:sequence>-->
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="AmberAlert" type="n2-aa:AmberAlertType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>The business data defining an Amber Alert.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AmberAlertID" type="niem-xs:string" abstract="false" nillable="true"/>
+	<xs:element name="AmberAlertDateTime" type="nc:DateType" abstract="false" nillable="true"/>
+	<xs:element name="AmberAlertStatusText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="AmberAlertShortMessage" type="n2-aa:AmberAlertShortMessageType" abstract="false" nillable="true"/>
+	<xs:element name="AmberAlertDisseminationTarget" type="n2-aa:AmberAlertDisseminationTargetType" abstract="false" nillable="true"/>
+	<xs:element name="ContactInformationAugmentation" type="n2-aa:ContactInformationAugmentationType" abstract="false" substitutionGroup="nc:ContactInformationAugmentationPoint" nillable="true"/>	
+	<xs:element name="ConveyanceAugmentation" type="n2-aa:ConveyanceAugmentationType" abstract="false" substitutionGroup="nc:ConveyanceAugmentationPoint" nillable="true"/>
+	<xs:element name="ConveyanceColorInteriorText" type="nc:TextType" abstract="false" substitutionGroup="nc:ItemColor" nillable="true"/>
+	<xs:element name="ImageAugmentation" type="n2-aa:ImageAugmentationType" abstract="false" substitutionGroup="nc:ImageAugmentationPoint" nillable="true"/>
+	<xs:element name="ImagePrimaryIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="MessageIntendedDevice" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="MissingPersonAugmentation" type="n2-aa:MissingPersonAugmentationType" abstract="false" substitutionGroup="j:MissingPersonAugmentationPoint" nillable="true"/>
+	<xs:element name="NCICEntry" type="n2-aa:NCICEntryType" abstract="false" nillable="true"/>
+	<xs:element name="NCICEntryMadeIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="NCICMessageKeyUsedText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="PersonAugmentation" type="n2-aa:PersonAugmentationType" abstract="false" substitutionGroup="nc:PersonAugmentationPoint" nillable="true"/>
+	<xs:element name="PersonJewelry" type="n2-aa:PersonJewelryType" abstract="false" nillable="true"/>
+	<xs:element name="TravelDirectionText" type="nc:TextType" abstract="false" nillable="true"/>
+</xs:schema>

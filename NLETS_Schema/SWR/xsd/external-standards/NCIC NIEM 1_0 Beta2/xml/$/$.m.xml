@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.m.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData" />
+        <!--<Hit-Response>-->
+        <!--<Hit_Response> SHALL contain up to two records as described in Person-Hit-Response (Missing) 
+            in section 1 of Message Book Part 3 Section 1.-->
+        <ncic-ex:PrimaryHitData s:ref="FirstHitResponse" />
+    </ncic-ex:Message>
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText> NCIC HAS <!--<Number-of-Possible-Hits>-->2 POSSIBLE MATCHES FOR YOUR INQUIRY ON: AGE/<!--<AGE>-->25 SEX/<!--<SEX>-->F RAC/<!--<RAC>-->W EYE/<!--<EYE>-->MAR HAI/<!--<HAI>-->RED HGT/<!--<HGT>-->504 WGT/<!--<WGT>-->121 NAM/<!--<NAM>-->PHOEBE PATRICIA PALMER ARE/<!--<ARE>-->WV ETN/<!--<ETN>-->N THE TWO HIGHEST SCORING RECORDS ARE LISTED FOLLOWED BY THE NIC NUMBERS OF UP TO 20 OF THE HIGH SCORE RECORDS. <!--<Hit-Response>-->
+   <!--<NIC> <Score-Value>  <NIC> <Score-Value>  <NIC> <Score-Value>  <NIC> <Score-Value>-->
+  </nc:CaveatText>
+        <ncic:MissingPersonRecord s:ref="MissingPersonQueryInfo" />
+    </ncic-ex:NotificationRecordData>
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. (first hit) -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="FirstHitResponse">
+        <ncic:MissingPersonRecord s:ref="FirstPersonHitDataResponse" />
+        <ncic:MissingPersonRecord s:ref="SecondPersonHitDataResponse" />
+    </ncic-ex:PrimaryHitData>
+    <!-- ******************************************************************************** -->
+    <!-- ncic:MissingPersonRecord. (first hit) -->
+    <!-- ******************************************************************************** -->
+    <ncic:MissingPersonRecord s:id="FirstPersonHitDataResponse">
+        <!-- This would contain the missing person hit response as defined in Part 3, Section 1 
+             of the NCIC Message Book in actual implementation -->
+    </ncic:MissingPersonRecord>
+    <!-- ******************************************************************************** -->
+    <!-- ncic:MissingPersonRecord. (second hit) -->
+    <!-- ******************************************************************************** -->
+    <ncic:MissingPersonRecord s:id="SecondPersonHitDataResponse">
+        <!-- This would contain the missing person hit response as defined in Part 3, Section 1 
+             of the NCIC Message Book in actual implementation -->
+    </ncic:MissingPersonRecord>
+    <!-- ******************************************************************************** -->
+    <!-- ncic:MissingPersonRecord (query). -->
+    <!-- ******************************************************************************** -->
+    <ncic:MissingPersonRecord s:id="MissingPersonQueryInfo">
+        <j:MissingPerson s:ref="MissingPerson" />
+    </ncic:MissingPersonRecord>
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (missing person) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="MissingPersonInfo">
+        <nc:PersonAgeMeasure>
+            <!-- AGE - Approximate age -->
+            <nc:MeasureValueText>25</nc:MeasureValueText>
+        </nc:PersonAgeMeasure>
+        <!-- ETN - Ethnicity -->
+        <j:PersonEthnicityCode>N</j:PersonEthnicityCode>
+        <!-- EYE - Eye color -->
+        <j:PersonEyeColorCode>MAR</j:PersonEyeColorCode>
+        <!-- HAI - Hair color -->
+        <j:PersonHairColorCode>RED</j:PersonHairColorCode>
+        <nc:PersonHeightMeasure>
+            <!-- HGT - Height -->
+            <nc:MeasureValueText>504</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>PHOEBE</nc:PersonGivenName>
+            <nc:PersonMiddleName>PATRICIA</nc:PersonMiddleName>
+            <nc:PersonSurName>PALMER</nc:PersonSurName>
+        </nc:PersonName>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>W</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>F</j:PersonSexCode>
+        <nc:PersonWeightMeasure>
+            <!-- WGT - Weight -->
+            <nc:MeasureValueText>121</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+    </nc:Person>
+    <!-- ******************************************************************************** -->
+    <!-- j:Missing-person. -->
+    <!-- ******************************************************************************** -->
+    <j:MissingPerson s:id="MissingPerson">
+        <nc:RoleOfPerson s:ref="MissingPersonInfo" />
+        <j:MissingPersonLastSeenLocation>
+            <!-- ARE - Area -->
+            <nc:LocationArea>
+                <nc:AreaDescriptionText>WV</nc:AreaDescriptionText>
+            </nc:LocationArea>
+        </j:MissingPersonLastSeenLocation>
+    </j:MissingPerson>
+</ncic-ex:Exchange>

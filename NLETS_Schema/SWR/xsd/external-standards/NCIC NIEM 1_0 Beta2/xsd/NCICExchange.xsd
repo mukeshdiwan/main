@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:niem-xsd="http://release.niem.gov/niem/proxy/xsd/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/3.0/"
+    xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.0/"
+    xmlns:intel="http://release.niem.gov/niem/domains/intelligence/3.0/"
+    targetNamespace="http://cjis.fbi.gov/ncic/NIEM/Exchange">
+
+    <xsd:import namespace="http://cjis.fbi.gov/ncic/NIEM" schemaLocation="NCICExtension.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NCIC elements to extend NIEM.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/structures/3.0/"
+        schemaLocation="../xsd/niem/structures/3.0/structures.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Defined structures for creating types.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/niem-core/3.0/"
+        schemaLocation="../xsd/niem/niem-core/3.0/niem-core.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Core Data Model.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/domains/maritime/3.0/"
+        schemaLocation="../xsd/niem/domains/maritime/3.0/maritime.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Maritime Data Model.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/domains/jxdm/5.0/"
+        schemaLocation="../xsd/niem/domains/jxdm/5.0/jxdm.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Domain Schema, Justice Exchange, containing The base Justice
+                information.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"
+        schemaLocation="../xsd/niem/proxy/xsd/3.0/xs.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM XML Proxy types.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/domains/screening/3.0/"
+        schemaLocation="../xsd/niem/domains/screening/3.0/screening.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Domain Schema, Screening Portfolio of DHS, containing The base
+                Screening information.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/domains/internationalTrade/3.0/"
+        schemaLocation="../xsd/niem/domains/internationalTrade/3.0/internationalTrade.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Domain Schema, International Trade.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/domains/cbrn/3.0/"
+        schemaLocation="niem/domains/cbrn/3.0/cbrn.xsd">
+        <xsd:annotation>
+            <xsd:documentation>Chemical, Biological, Radiological, and Nuclear
+                Domain</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/domains/intelligence/3.0/"
+        schemaLocation="niem/domains/intelligence/3.0/intelligence.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Intelligence.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:complexType name="ExchangeType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure all data in a NCIC
+                Message.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="ncic-ex:Message"/>
+                    <xsd:element ref="ncic-ex:IncomingRecordData" minOccurs="0"/>
+                    <xsd:element ref="ncic-ex:MaintenanceRecordData" minOccurs="0"/>
+                    <xsd:element ref="ncic-ex:NotificationRecordData" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic-ex:RecordIdentificationData" minOccurs="0"/>
+                    <xsd:element ref="ncic-ex:HitData" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic-ex:IncomingMessage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic-ex:NoHitData" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic-ex:AcknowledgeRecordData" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic-ex:RejectRecordData" minOccurs="0" maxOccurs="unbounded"/>
+                    
+                    <xsd:element ref="ncic:Record" minOccurs="0" maxOccurs="unbounded"/>
+                    
+                    <xsd:element ref="ncic:PersonWithInformation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:PersonMiscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:VictimMiscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+
+                    <xsd:element ref="nc:Activity" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Address" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Case" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Document" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Entity" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Facility" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Incident" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Item" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Location" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Securities" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:SupervisionSupervisor" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Vessel" minOccurs="0" maxOccurs="unbounded"/>
+
+                    <xsd:element ref="j:Arrest" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Charge" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:ConveyancePart" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:CriminalOrganization" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:DriverLicense" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Firearm" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Incarceration" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Jewelry" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:MissingPerson" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Offense" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:OffenseSummary" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Probation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:ProtectionOrder" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:RegisteredOffender" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Sentence" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Warrant" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Victim" minOccurs="0" maxOccurs="unbounded"/>
+
+                    <xsd:element ref="ncic:Detainment" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:InvestigativeInterest" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="IncomingRecordDataType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data in a NCIC incoming
+                message.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic-ex:MessageRecordDataType">
+                <xsd:sequence>
+                    <!-- Not sure if these next four elements should be here. -->
+                    <xsd:element ref="ncic:ExtendedBirthdaySearchCode" minOccurs="0"/>
+                    <xsd:element ref="ncic:ExtendedNameSearchIndicator" minOccurs="0"/>
+                    <xsd:element ref="ncic:ImageIndicator" minOccurs="0"/>
+                    <xsd:element ref="ncic:RelatedSearchHitIndicator" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="MessageRecordDataType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data in an NCIC message
+                records.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:CaveatText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:Record" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="MessageType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data in a NCIC Message.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="ncic:MessageDateTime" minOccurs="0"/>
+                    <xsd:element ref="ncic:MessageIdentification" minOccurs="0"/>
+                    <xsd:element ref="ncic:MessageInterfacingOrganization" minOccurs="0"/>
+                    <xsd:element ref="ncic:MessageTransaction" minOccurs="0"/>
+
+                    <xsd:element ref="ncic-ex:MessageRecordData" minOccurs="0" maxOccurs="unbounded"
+                    />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="NoHitDataType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure all data in a NCIC no hit
+                response.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic-ex:MessageRecordDataType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:Case" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded"
+                    />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="NotificationRecordDataType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for notification messages from NCIC.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic-ex:MessageRecordDataType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:Document" minOccurs="0"/>
+                    <xsd:element ref="nc:ContactInformationAssociation" minOccurs="0"/>
+                    <xsd:element ref="nc:PersonOrganizationAssociation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:OrganizationORIIdentification" minOccurs="0"/>
+                    <xsd:element ref="j:ActivityWarrantAssociation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:OffenseSubjectAssociation" minOccurs="0" maxOccurs="unbounded"/>
+                    <!--<xsd:element ref="j:RegisteredOffender" minOccurs="0" maxOccurs="unbounded"/>-->
+                    <xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic-ex:IncomingMessage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic-ex:PrimaryHitData" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:MessageTransaction" minOccurs="0"/>
+                    <xsd:element ref="ncic:NotificationDateTime" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="RecordIdentificationDataType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data that identifies a specific record in
+                NCIC.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic-ex:MessageRecordDataType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:Incident" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:ItemNCICIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:PersonNCICIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+
+    <!--NCIC Exchange Element Declarations-->
+
+    <xsd:element name="AcknowledgeRecordData" type="ncic-ex:MessageRecordDataType"
+        substitutionGroup="ncic-ex:MessageRecordData">
+        <xsd:annotation>
+            <xsd:documentation>Data about an acknowledge record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="DuplicateRecordData" type="ncic-ex:MessageRecordDataType"
+        substitutionGroup="ncic-ex:HitData">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a possible duplicate NCIC
+                record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="Exchange" type="ncic-ex:ExchangeType">
+        <xsd:annotation>
+            <xsd:documentation>A data structure that defines the entirety of a NCIC
+                message.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="HitData" abstract="true" substitutionGroup="ncic-ex:MessageRecordData">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a NCIC record that a query hit
+                on.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="IncomingMessage" type="ncic-ex:MessageType">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a given NCIC message.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="IncomingRecordData" type="ncic-ex:IncomingRecordDataType"
+        substitutionGroup="ncic-ex:MessageRecordData">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to an incoming transaction to
+                NCIC.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="MaintenanceRecordData" type="ncic-ex:MessageRecordDataType"
+        substitutionGroup="ncic-ex:MessageRecordData">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to maintenance on an NCIC record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="Message" type="ncic-ex:MessageType">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a given NCIC message.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="MessageRecordData" type="ncic-ex:MessageRecordDataType" abstract="true">
+        <xsd:annotation>
+            <xsd:documentation>An abstract data type for message record data.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="NoHitData" type="ncic-ex:NoHitDataType"
+        substitutionGroup="ncic-ex:MessageRecordData">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining from a query that did not hit on any NCIC
+                Records.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="NotificationRecordData" type="ncic-ex:NotificationRecordDataType"
+        substitutionGroup="ncic-ex:MessageRecordData">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a notification coming from
+                NCIC.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="PrimaryHitData" type="ncic-ex:MessageRecordDataType"
+        substitutionGroup="ncic-ex:HitData">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a NCIC record that a query hit on
+                directly.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="RecordIdentificationData" type="ncic-ex:RecordIdentificationDataType"
+        substitutionGroup="ncic-ex:MessageRecordData">
+        <xsd:annotation>
+            <xsd:documentation>Data that identifies a specific record in NCIC.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="RejectRecordData" type="ncic-ex:MessageRecordDataType"
+        substitutionGroup="ncic-ex:MessageRecordData">
+        <xsd:annotation>
+            <xsd:documentation>Data about a reject record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SecondaryHitData" type="ncic-ex:MessageRecordDataType"
+        substitutionGroup="ncic-ex:HitData">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a NCIC record that a query hit on based on its
+                direct hits.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+</xsd:schema>

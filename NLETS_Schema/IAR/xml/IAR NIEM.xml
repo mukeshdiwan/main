@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:im="http://niem.gov/niem/domains/immigration/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/IAR.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>IAR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS11</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS11</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>ATS000048</nh2:DocumentControlFieldText>
+		<nh2:UserID>USER55</nh2:UserID>
+		<nh2:UserPasswordText>123456</nh2:UserPasswordText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="IAQ">
+		<n2:PurposeCode>C</n2:PurposeCode>
+		<n2:ResponseAttentionDescriptionText>SGT JOHN DOE</n2:ResponseAttentionDescriptionText>
+		<nc:ContactInformation>
+			<nc:ContactTelephoneNumber/>
+		</nc:ContactInformation>
+		<n2:Person>
+			<nc:PersonBirthDate>
+				<nc:Date>1980-07-14</nc:Date>
+			</nc:PersonBirthDate>
+			<nc:PersonHeightMeasure>
+				<nc:MeasurePointValue>601</nc:MeasurePointValue>
+			</nc:PersonHeightMeasure>
+			<nc:PersonName>
+				<nc:PersonGivenName>Anthony</nc:PersonGivenName>
+				<nc:PersonMiddleName>L</nc:PersonMiddleName>
+				<nc:PersonSurName>Scott</nc:PersonSurName>
+				<nc:PersonFullName>Scott, Anthony L</nc:PersonFullName>
+			</nc:PersonName>
+			<nc:PersonOtherIdentification>
+				<nc:IdentificationID>111223333</nc:IdentificationID>
+			</nc:PersonOtherIdentification>
+			<nc:PersonOtherIdentification>
+				<nc:IdentificationID>123456789</nc:IdentificationID>
+			</nc:PersonOtherIdentification>
+			<nc:PersonOtherIdentification>
+				<nc:IdentificationID>987654321</nc:IdentificationID>
+			</nc:PersonOtherIdentification>
+			<nc:PersonOtherIdentification>
+				<nc:IdentificationID>987654321</nc:IdentificationID>
+			</nc:PersonOtherIdentification>
+			<nc:PersonSexCode>M</nc:PersonSexCode>
+			<nc:PersonSSNIdentification/>
+			<nc:PersonWeightMeasure>
+				<nc:MeasurePointValue>210</nc:MeasurePointValue>
+			</nc:PersonWeightMeasure>
+			<j:PersonAugmentation>
+				<j:PersonBirthPlaceCode>AZ</j:PersonBirthPlaceCode>
+				<j:PersonFBIIdentification>
+					<nc:IdentificationID>12456789</nc:IdentificationID>
+				</j:PersonFBIIdentification>
+				<j:PersonStateFingerprintIdentification/>
+			</j:PersonAugmentation>
+			<nc:Status>
+				<nc:StatusText xsi:nil="true"/>
+			</nc:Status>
+			<n2:PersonFather>
+				<nc:PersonName>
+					<nc:PersonGivenName>Susan</nc:PersonGivenName>
+					<nc:PersonMaidenName>Johnson</nc:PersonMaidenName>
+					<nc:PersonFullName>Johnson, Susan</nc:PersonFullName>
+				</nc:PersonName>
+			</n2:PersonFather>
+			<n2:PersonFather>
+				<nc:PersonName>
+					<nc:PersonGivenName>Steve</nc:PersonGivenName>
+					<nc:PersonSurName>Scott</nc:PersonSurName>
+					<nc:PersonFullName>Scott, Steve</nc:PersonFullName>
+				</nc:PersonName>
+			</n2:PersonFather>
+			<n2:PersonMother>
+				<nc:PersonName>
+					<nc:PersonGivenName>Susan</nc:PersonGivenName>
+					<nc:PersonMaidenName>Johnson</nc:PersonMaidenName>
+					<nc:PersonFullName>Johnson, Susan</nc:PersonFullName>
+				</nc:PersonName>
+			</n2:PersonMother>
+			<n2:PersonMother>
+				<nc:PersonName>
+					<nc:PersonGivenName>Steve</nc:PersonGivenName>
+					<nc:PersonSurName>Scott</nc:PersonSurName>
+					<nc:PersonFullName>Scott, Steve</nc:PersonFullName>
+				</nc:PersonName>
+			</n2:PersonMother>
+		</n2:Person>
+	</n2:NLETSInquiryData>
+	<n2:NLETSResponseData n2:key="IAR">
+		<n2:ResponseText>THIS IS NOT AN IMMIGRATION DETAINER!  THIS INFORMATION IS FOR LAW ENFORCEMENT USE AND IS BEING PROVIDED FOR INFORMATIONAL PURPOSES ONLY.  THIS RESPONSE IS NOT SUPPORTED BY 	FINGERPRINTS.
+					*********************************************************************************
+					SUBJECT APPEARS TO HAVE BEEN PREVIOUSLY DEPORTED
+					*********************************************************************************
+					BASED ON THE INFORMATION PROVIDED, THE FOLLOWING INS RECORD APPEARS TO RELATE:
+					NAME/			
+					DOB/
+					POB/
+					ARN/
+					FCO/
+					DOE/
+					FBI/ MAY RELATE TO SUBJECT
+					SID/ MAY RELATE TO SUBJECT
+					LKA/
+					SOC/
+					FFN/
+					MFN/
+					
+					INS RECORDS INDICATE THAT THIS SUBJECT WAS DEPORTED FROM THE UNITED STATES ON 00/00/00 AT 	(______).  	HE/SHE WAS DEPORTED FOR (REASON FOR DEPORTATION).  NO RECORD OF LEGAL RE-ENTRY	HAS BEEN FOUND.
+					*********************************************************************************
+					IMPORTANT NOTICE
+					*********************************************************************************
+					THIS PERSON MAY BE AMENABLE TO ARREST FOR VIOLATION OF THE FEDERAL CRIMINAL STATUTES 	AND/OR FOR IMMIGRATION ACT VIOLATIONS.
+					REM/.
+				</n2:ResponseText>
+	</n2:NLETSResponseData>
+</n2:NLETS>

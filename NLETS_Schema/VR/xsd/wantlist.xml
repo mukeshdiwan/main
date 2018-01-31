@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:WantList w:release="2.1" w:product="NIEM"
+  xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+  xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+  xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:w="http://niem.gov/niem/wantlist/2">
+  <w:Element w:name="j:PersonSightedIndicator" w:isReference="false"/>
+  <w:Element w:name="nc:ConveyanceRegistrationPlateIdentification" w:isReference="false"/>
+  <w:Element w:name="nc:IdentificationID" w:isReference="false"/>
+  <w:Element w:name="nc:Vehicle" w:isReference="false"/>
+  <w:Element w:name="nc:VehicleIdentification" w:isReference="false"/>
+  <w:Type w:name="nc:ConveyanceType" w:isRequested="true">
+    <w:ElementInType
+      w:name="nc:ConveyanceRegistrationPlateIdentification"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:DocumentType" w:isRequested="true"/>
+  <w:Type w:name="nc:IdentificationType" w:isRequested="true">
+    <w:ElementInType w:name="nc:IdentificationID" w:isReference="false"
+      w:minOccurs="1" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:ItemType" w:isRequested="true"/>
+  <w:Type w:name="nc:NumericType" w:isRequested="true"/>
+  <w:Type w:name="nc:TangibleItemType" w:isRequested="true"/>
+  <w:Type w:name="nc:TextType" w:isRequested="true"/>
+  <w:Type w:name="nc:VehicleType" w:isRequested="true">
+    <w:ElementInType w:name="nc:VehicleIdentification"
+      w:isReference="false" w:minOccurs="1" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="niem-xsd:boolean" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:date" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:decimal" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:string" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:time" w:isRequested="true"/>
+</w:WantList>

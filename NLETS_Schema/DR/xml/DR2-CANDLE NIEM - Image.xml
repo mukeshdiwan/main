@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:ansi_d20="http://niem.gov/niem/ansi_d20/2.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:n2c="http://www.nlets.org/niem/nlets-core/1.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:ndc2="http://www.nlets.gov/niem/nlets-driver-cert/1.0/" xmlns:nds2="http://www.nlets.gov/niem/nlets-driver-status/1.0/" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/DR.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>DR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID></nh2:OriginatingORIID>
+		<nh2:DocumentControlFieldText>KATESILHOL</nh2:DocumentControlFieldText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="DQ">
+		<n2c:Driver>
+			<nc:PersonBirthDate/>
+			<n2c:DriverLicense>
+				<nc:DriverLicenseIdentification/>
+			</n2c:DriverLicense>
+		</n2c:Driver>
+	</n2:NLETSInquiryData>
+	<n2:NLETSResponseData n2:key="DR">
+		<n2:ResponseText>
+					LOONEY, MARY V
+					107 WEST NO SHORE DR, LONGMONT, FLA
+					SEX/M.DOB/022351.HGT/502.WGT/115.HAI/BRN
+					EYE/BRN.SOC/472484139.OLN/472484139.
+					OLT/CHAUFR.
+					RSTR: CORRECTIVE LENSES
+					STATUS: REVOKED				
+				</n2:ResponseText>
+				<nc:PersonDigitalImage>
+					<nc:BinaryAvailableIndicator>true</nc:BinaryAvailableIndicator>
+					<nc:BinaryBase64Object>1234abcd</nc:BinaryBase64Object>
+					<nc:BinaryFormatID>image/jpeg</nc:BinaryFormatID>
+				</nc:PersonDigitalImage>
+	</n2:NLETSResponseData>
+</n2:NLETS>

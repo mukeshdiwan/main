@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/jxdm/5.1/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.1/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Justice</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../niem-core/3.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/3.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"/>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:complexType name="ConveyanceRegistrationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a registration of a conveyance with an authority.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="j:ItemRegistrationType">
+        <xs:sequence>
+          <xs:element ref="j:ConveyanceRegistrationDecal" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ConveyanceRegistrationPermanentIndicator" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DriverLicenseBaseType">
+    <xs:annotation>
+      <xs:documentation>A data type for an authorization issued to a driver granting driving privileges.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="j:DriverLicenseIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:DriverLicenseExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:DriverLicenseIssueDate" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DriverLicenseType">
+    <xs:annotation>
+      <xs:documentation>A data type for a license issued to a person granting driving privileges.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="j:DriverLicenseBaseType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EngineType">
+    <xs:annotation>
+      <xs:documentation>A data type for an engine of a vehicle.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:ItemType">
+        <xs:sequence>
+          <xs:element ref="j:EngineCylinderQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:EngineID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ConveyanceFuelCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:EngineDisplacementMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:EngineHorsepowerQuantity" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ItemRegistrationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a registration of a property item with an authority.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="j:RegistrationIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegistrationAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegistrationDuplicateQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegistrationEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegistrationExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:JurisdictionAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegistrationHolder" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegistrationStatus" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ItemTitleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a deed or other official document showing the legal ownership of a property item.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="j:TitleIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleIssueDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleIssuingAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleLienIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleHolder" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:Lien" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemTitlePurchaseDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemTitlePurchasePriceAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemTitleSalesTaxAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemTitleSalesTaxPercent" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemTitleTaxableValue" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LienType">
+    <xs:annotation>
+      <xs:documentation>A data type for a legal encumbrance placed on a property item.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="j:LienAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:LienDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:LienReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:LienReleaseReason" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a person.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="j:DriverLicense" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TitleStatusType">
+    <xs:annotation>
+      <xs:documentation>A data type for a state of a title.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:StatusType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConveyanceRegistration" type="j:ConveyanceRegistrationType">
+    <xs:annotation>
+      <xs:documentation>A registration of a conveyance with an authority.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceRegistrationDecal" type="nc:DecalType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A sticker attached to a permanent registration plate on a conveyance when it is renewed for the current year.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceRegistrationPermanentIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a registration for a conveyance is permanent; false if a registration is temporary.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DriverLicense" type="j:DriverLicenseType">
+    <xs:annotation>
+      <xs:documentation>A license issued to a person granting driving privileges.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DriverLicenseExpirationDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date after which a driver license or driver license permit is no longer valid.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DriverLicenseIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A driver license identification or driver license permit identification, including the number and state.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DriverLicenseIssueDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date when a driver license or driver license permit is issued or renewed.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Engine" type="j:EngineType">
+    <xs:annotation>
+      <xs:documentation>An engine.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EngineCylinderQuantity" type="niem-xs:nonNegativeInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of the cylinders contained in an engine.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EngineDisplacementMeasure" type="nc:MeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A measure of the displacement of a conveyance engine.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EngineHorsepowerQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A measure count of the horsepower of a conveyance engine.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EngineID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier stamped on an engine by a manufacturer.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemTitlePurchaseDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date a current owner purchased a vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemTitlePurchasePriceAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A price a current owner paid to purchase a vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemTitleSalesTaxAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A sales tax charged on a purchase of a vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemTitleSalesTaxPercent" type="nc:PercentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A tax rate used for computing sales tax on a vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemTitleTaxableValue" type="nc:ItemValueType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A dollar value used to compute the taxes on a vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Lien" type="j:LienType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A legal encumbrance placed on a property item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LienAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A monetary amount representing a legal encumbrance placed on a property.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LienDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date a lien was placed on a property item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LienReleaseDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date a legal encumbrance is removed from a property item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LienReleaseReason" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a reason a legal encumbrance is removed from a property item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LienReleaseReasonText" type="nc:TextType" substitutionGroup="j:LienReleaseReason">
+    <xs:annotation>
+      <xs:documentation>A reason a legal encumbrance is removed from a property item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonAugmentation" type="j:PersonAugmentationType" substitutionGroup="nc:PersonAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegistrationAuthorityName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of an authority, person, or organization which issued a property registration.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegistrationDuplicateQuantity" type="niem-xs:nonNegativeInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of times proof of property registration was issued with no change in information by the issuing authority.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegistrationEffectiveDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date the current registration takes effect.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegistrationExpirationDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date the current registration is no longer in effect.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegistrationHolder" type="nc:EntityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entity to whom a registration is issued.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegistrationIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of a registration certificate or document.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegistrationStatus" type="nc:StatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of a registration.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Title" type="j:ItemTitleType">
+    <xs:annotation>
+      <xs:documentation>A deed or other official document showing the legal ownership of a property item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TitleHolder" type="nc:EntityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entity to whom a title is issued.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TitleIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of a certificate of title to a property item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TitleIssueDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which a jurisdictional titling authority issued a title to the owner of a property item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TitleIssuingAuthorityName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of an authority which issued a title.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TitleLienIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a lien exists on the titled property; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TitleStatus" type="j:TitleStatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of a property title.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

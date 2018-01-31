@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:ansi_d20="http://niem.gov/niem/ansi_d20/2.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:n2c="http://www.nlets.org/niem/nlets-core/1.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:ndm2="http://www.nlets.gov/niem/nlets-driver-match/1.0/" xmlns:nds2="http://www.nlets.gov/niem/nlets-driver-status/1.0/" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/DNR.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>DNR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS11</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS20</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>KATESILHOL</nh2:DocumentControlFieldText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="DQ">
+		<n2c:Driver/>
+	</n2:NLETSInquiryData>
+	<n2:NLETSResponseData n2:key="DNR">
+		<ndm2:DriverMatch>
+			<ndm2:IndividualMatch>
+				<n2c:Driver>
+					<nc:PersonBirthDate>
+						<nc:Date>1967-08-13</nc:Date>
+					</nc:PersonBirthDate>
+					<nc:PersonEyeColorText>String</nc:PersonEyeColorText>
+					<nc:PersonHairColorText>String</nc:PersonHairColorText>
+					<nc:PersonHeightMeasure>
+						<nc:MeasurePointValue>0</nc:MeasurePointValue>
+					</nc:PersonHeightMeasure>
+					<nc:PersonName>
+						<nc:PersonGivenName>String</nc:PersonGivenName>
+						<nc:PersonMiddleName>String</nc:PersonMiddleName>
+						<nc:PersonSurName>String</nc:PersonSurName>
+					</nc:PersonName>
+					<nc:PersonRaceText>String</nc:PersonRaceText>
+					<nc:PersonSexText>String</nc:PersonSexText>
+					<nc:PersonSSNIdentification>
+						<nc:IdentificationID>String</nc:IdentificationID>
+					</nc:PersonSSNIdentification>
+					<nc:PersonWeightMeasure>
+						<nc:MeasurePointValue>0</nc:MeasurePointValue>
+					</nc:PersonWeightMeasure>
+					<n2c:DriverLicense>
+						<nc:DriverLicenseIdentification>
+							<nc:IdentificationID>String</nc:IdentificationID>
+							<j:IdentificationJurisdictionNCICLSTACode>AB</j:IdentificationJurisdictionNCICLSTACode>
+						</nc:DriverLicenseIdentification>
+						<nc:DriverLicenseEndorsementText>String</nc:DriverLicenseEndorsementText>
+						<nc:DriverLicenseExpirationDate>
+							<nc:Date>1967-08-13</nc:Date>
+						</nc:DriverLicenseExpirationDate>
+						<nc:DriverLicenseRestriction>
+							<nc:DrivingRestrictionText>String</nc:DrivingRestrictionText>
+						</nc:DriverLicenseRestriction>
+						<nc:DriverLicenseCommercialClassText>A</nc:DriverLicenseCommercialClassText>
+						<nc:DriverLicenseCommercialStatusText>String</nc:DriverLicenseCommercialStatusText>
+						<nc:DriverLicenseNonCommercialClassText>String</nc:DriverLicenseNonCommercialClassText>
+						<nc:DriverLicenseNonCommercialStatusText>String</nc:DriverLicenseNonCommercialStatusText>
+						<n2c:DriverLicenseCommercialLicensedIndicator>true</n2c:DriverLicenseCommercialLicensedIndicator>
+						<n2c:DriverLicenseNonCommercialLicensedIndicator>true</n2c:DriverLicenseNonCommercialLicensedIndicator>
+					</n2c:DriverLicense>
+					<n2c:PersonContactInformation>
+						<nc:ContactMailingAddress>
+							<nc:StructuredAddress>
+								<nc:LocationStreet>
+									<nc:StreetFullText>String</nc:StreetFullText>
+								</nc:LocationStreet>
+								<nc:LocationCityName>String</nc:LocationCityName>
+								<nc:LocationCountyName>String</nc:LocationCountyName>
+								<nc:LocationStateName>String</nc:LocationStateName>
+								<nc:LocationCountryName>String</nc:LocationCountryName>
+								<nc:LocationPostalCode>String</nc:LocationPostalCode>
+							</nc:StructuredAddress>
+						</nc:ContactMailingAddress>
+					</n2c:PersonContactInformation>
+					<n2c:PersonResidentialAddress>
+						<nc:LocationStreet>
+							<nc:StreetFullText>String</nc:StreetFullText>
+						</nc:LocationStreet>
+						<nc:LocationCityName>String</nc:LocationCityName>
+						<nc:LocationCountyName>String</nc:LocationCountyName>
+						<nc:LocationStateName>String</nc:LocationStateName>
+						<nc:LocationCountryName>String</nc:LocationCountryName>
+						<nc:LocationPostalCode>String</nc:LocationPostalCode>
+						<n2c:ResidenceDateRange>
+							<nc:EndDate>
+								<nc:Date>1967-08-13</nc:Date>
+							</nc:EndDate>
+						</n2c:ResidenceDateRange>
+					</n2c:PersonResidentialAddress>
+				</n2c:Driver>
+			</ndm2:IndividualMatch>
+		</ndm2:DriverMatch>
+		<n2:ResponseText>TUBBS, KATHLEEN D
+227 WASHINGTON, THREE RIVERS, MICHIGAN
+SEX/F.DOB/042251.HGT/505.WGT/117.HAI/BRN.
+EYE/BRN.SOC/472484139.OLN/472484139.
+OLD/CHAFER.
+STR.: CORRECTIVE LENSES
+STATUS: REVOKED
+</n2:ResponseText>
+	</n2:NLETSResponseData>
+</n2:NLETS>

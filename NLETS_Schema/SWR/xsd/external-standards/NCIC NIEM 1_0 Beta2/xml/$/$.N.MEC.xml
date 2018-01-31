@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- ORI receiving this Message  -->
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.N.MEC.</ncic:MessageTransactionText>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            NCMEC MODIFY NOTIFICATION
+            <!--<ORI-Of-Database-Record>-->
+            NOTIFICATION AT <!--<hhmm tmz yyyymmdd>-->
+            
+            YOUR RECORD NIC/<!--<NIC>-->G875683021 WAS UPDATED BY NCMEC.  EITHER THE MNP FIELD WAS
+            MODIFIED OR IMAGE DATA WAS ENTERED, MODIFIED, OR CANCELED.
+            <!--<Database-Record>-->                         
+        </nc:CaveatText>
+        
+        <!--<Database-Record>-->
+        <ncic:GunRecord s:ref="Database-Record"/>
+    </ncic-ex:NotificationRecordData>
+    
+    <!-- Database-Record filled out here. This could refer to a number of different 
+         NCIC record types such as ncic:ArticleRecord, ncic:BoatRecord, ncic:GunRecord, etc. 
+         Using ncic:GunRecord in this sample XML file. -->
+    <!-- ******************************************************************************** -->
+    <!-- ncic:(Record). -->
+    <!-- ******************************************************************************** -->
+    <ncic:GunRecord s:id="Database-Record">
+        <!-- filled out with data here -->
+        <j:ItemNCICIdentification>
+            <!-- NIC - NCIC number (Record identifier) -->
+            <nc:IdentificationID>G875683021</nc:IdentificationID>
+        </j:ItemNCICIdentification>
+    </ncic:GunRecord>
+</ncic-ex:Exchange>

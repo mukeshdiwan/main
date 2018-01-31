@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 5/12/2017		Kate Silhol/Nlets		add inquiry structure-->
+<xs:schema xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/3.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:m="http://release.niem.gov/niem/domains/maritime/3.1/" xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/" xmlns:n2-br="http://www.nlets.org/niem/nlets-boat-registration/1.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.1/" targetNamespace="http://www.nlets.org/niem/nlets-boat-registration/1.0">
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="./niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/jxdm/5.1/" schemaLocation="./niem/domains/jxdm/5.1/jxdm.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/maritime/3.1/" schemaLocation="./niem/domains/maritime/3.1/maritime.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="./niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="./niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:complexType name="PersonAugmentationType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Boat Registration Inquiry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-br:BoatEducationCertificateIdentification" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BoatInquiryType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Boat Registration Inquiry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:Vessel" minOccurs="0"/>
+					<xs:element ref="nc:Person" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	<xs:complexType name="BoatRegistrationType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Boat Registration Inquiry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:Vessel" minOccurs="0"/>
+					<xs:element ref="nc:Organization" minOccurs="0"/>
+					<xs:element ref="nc:Person" minOccurs="0"/>
+					<xs:element ref="nc:ContactInformationAssociation" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ConveyanceAugmentationType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Boat Registration Inquiry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="j:Engine" minOccurs="0"/>
+					<xs:element ref="j:ConveyanceRegistration" minOccurs="0"/>
+					<xs:element ref="j:Title" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BoatEducationCertificateIdentification" type="nc:IdentificationType" abstract="false" nillable="true"/>
+	<xs:element name="BoatRegistration" type="n2-br:BoatRegistrationType" abstract="false" nillable="true"/>
+	<xs:element name="PersonAugmentation" type="n2-br:PersonAugmentationType" abstract="false" substitutionGroup="nc:PersonAugmentationPoint" nillable="true"/>
+	<xs:element name="ConveyanceAugmentation" type="n2-br:ConveyanceAugmentationType" abstract="false" substitutionGroup="nc:ConveyanceAugmentationPoint" nillable="true"/>
+	<!-- Inquiry elements -->
+	<xs:element name="BoatInquiry" type="n2-br:BoatInquiryType" abstract="false" nillable="true"/>
+</xs:schema>

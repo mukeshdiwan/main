@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -->
+                <nc:IdentificationID>DCFBIWAZ0</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.8.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            CHILD-ABDUCTION NOTIFICATION AT <!--<hhmm tmz yyyymmdd>--> 
+            <!--<INPUT_TRANSACTION>-->
+            UPDATING ORI IS <!--<ATR>-->
+
+            MKE/<!--<MKE_TRANSLATION>-->Enter Missing Person Juvenile
+            <!--<Database_Record>-->
+            MIF/<!--<MIF>-->true                        
+        </nc:CaveatText>
+
+        <!--<Database_Record>-->
+        <ncic:MissingPersonRecord s:ref="MissingPerson"/>
+
+        <!--<INPUT_TRANSACTION>-->
+        <ncic-ex:IncomingMessage />
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (missing person) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="MissingPersonInfo">
+        <!-- Additional information would needed to be filled out for this element during actual
+             implementation (see SampleMissingHitQuery for reference)-->
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Missing-person. -->
+    <!-- ******************************************************************************** -->
+    <j:MissingPerson s:id="MissingPerson">
+        <nc:RoleOfPerson s:ref="MissingPersonInfo"/>
+        <!-- Additional information would needed to be filled out for this element during actual
+             implementation (see SampleMissingHitQuery for reference)-->
+        <!-- MIF - Missing person interest -->
+        <j:MissingPersonInterestIndicator>true</j:MissingPersonInterestIndicator>
+    </j:MissingPerson>
+ </ncic-ex:Exchange>

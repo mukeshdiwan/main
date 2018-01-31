@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:em="http://niem.gov/niem/domains/emergencyManagement/2.1" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:iso_3166="http://niem.gov/niem/iso_3166/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/FTR.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>FTR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>IP0000000</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS23</nh2:DestinationORIID>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSResponseData n2:key="FTR">
+		<n2:InterpolListResponse>
+			<n2:StolenDocument>
+				<nc:DocumentCategoryName>Passport</nc:DocumentCategoryName>
+				<nc:DocumentIdentification>
+					<nc:IdentificationID>PR789665</nc:IdentificationID>
+				</nc:DocumentIdentification>
+			</n2:StolenDocument>
+			<n2:Theft>
+				<nc:ActivityCategoryText>Stolen Blank</nc:ActivityCategoryText>
+				<nc:IncidentLocation>
+					<nc:LocationAddress>
+						<nc:StructuredAddress>
+							<nc:LocationCountryName>UNITED STATES</nc:LocationCountryName>
+						</nc:StructuredAddress>
+					</nc:LocationAddress>
+				</nc:IncidentLocation>
+			</n2:Theft>
+			<em:Notification>
+				<nc:ActivityDescriptionText>Your query of the Interpol ASF database has resulted in a positive "hit" and an alarm message has been sent to the country that submitted the information and the Interpol-United States National Central Bureau (USNCB) at the U.S. Department of Justice in Washington, D.C. Before taking any further action on this matter, you must contact the USNCB immediately at (202) 616-3900 to confirm the validity of the information obtained and coordinate any follow-up action on the information.</nc:ActivityDescriptionText>
+			</em:Notification>
+		</n2:InterpolListResponse>
+	</n2:NLETSResponseData>
+</n2:NLETS>

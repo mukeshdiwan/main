@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -->
+                <nc:IdentificationID>CA2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.H.TTP.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+        
+        <!--<Database-Record>-->
+        <!-- This would contain the ProtectiveInterest Hit response as defined in Section 3, Part 1 of 
+             the NCIC Message Book in actual implementation -->
+        <!-- Only needed elements for the example are included here -->
+        <ncic-ex:PrimaryHitData s:ref="HitDataRecord"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            THREAT TO PROTECTEE NOTIFICATION
+            <!--<ORI-Of-Database-Record>-->CA2000000
+            HIT NOTIFICATION ON NCIC PROTECTIVE INTEREST FILE RECORD AT
+            <!--<hhmm>-->1320 EST <!--<yyyymmdd>-->20040412
+            <!--<Input-Transaction>-->
+            
+            RESULTED IN HIT ON THE FOLLOWING RECORD:
+            <!--<Database-Record>-->
+        </nc:CaveatText>
+
+        <!--<Input-Transaction>-->
+        <!-- This would contain the ProtectiveInterest Enter response as defined in Part 1 of 
+             the NCIC Message Book in actual implementation -->
+        <!-- Only needed elements for the example are included here -->
+        <ncic-ex:IncomingMessage />
+        <!-- Current System Time -->
+        <ncic:NotificationDateTime>2004-04-12T13:20:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="HitDataRecord">
+        <ncic:ProtectiveInterestRecord s:ref="ProtectiveInterestDatabaseRecord"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ProtectiveInterestRecord (database record). -->
+    <!-- ******************************************************************************** -->
+    <ncic:ProtectiveInterestRecord s:id="ProtectiveInterestDatabaseRecord">
+    </ncic:ProtectiveInterestRecord>
+</ncic-ex:Exchange>

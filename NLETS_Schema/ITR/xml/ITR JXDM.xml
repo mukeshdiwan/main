@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org" xmlns:fips_10-4="http://www.it.ojp.gov/jxdm/fips_10-4/1.0" xmlns:j="http://www.it.ojp.gov/jxdm/3.0.3" xmlns:j-fips_10-4="http://www.it.ojp.gov/jxdm/3.0.3/proxy/fips_10-4/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0.3/proxy/xsd/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/Non-Candle/jxdm/ITR/ITR.xsd" version="3.00">
+	<NLETSResponseMessage>
+		<NLETSResponseHeader>
+			<DocumentUserID/>
+			<MessageKeyCode>ITR</MessageKeyCode>
+			<DocumentControlFieldText>MRI0046472</DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>DCINTER00</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZNLETS24</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+			<DocumentDestinationID>
+				<j:ID>AZNLETS24</j:ID>
+			</DocumentDestinationID>
+		</NLETSResponseHeader>
+		<NLETSInquiryData Key="ITQ">
+			<j:Document>
+				<j:DocumentDescriptiveMetadata>
+					<j:DocumentID>
+						<j:ID>6980536</j:ID>
+					</j:DocumentID>
+					<j:DocumentTypeText>CZP</j:DocumentTypeText>
+				</j:DocumentDescriptiveMetadata>
+				<j:DocumentSource.Organization>
+					<j:OrganizationLocation>
+						<j:LocationAddress/>
+					</j:OrganizationLocation>
+				</j:DocumentSource.Organization>
+			</j:Document>
+			<InquiryMetadata/>
+		</NLETSInquiryData>
+		<NLETSResponseData Key="ITR">
+			<j:Document j:sourceIDText="A578126">
+				<j:DocumentDescriptiveMetadata>
+					<j:DocumentID></j:DocumentID>
+					<j:DocumentTypeText>Passport</j:DocumentTypeText>
+				</j:DocumentDescriptiveMetadata>
+				<j:DocumentSource.Organization>
+					<j:OrganizationLocation>
+						<j:LocationAddress>
+							<j:LocationCountryName>CROATIA</j:LocationCountryName>
+							<j:LocationCountryCode.fips10-4>CROATIA</j:LocationCountryCode.fips10-4>
+						</j:LocationAddress>
+					</j:OrganizationLocation>
+				</j:DocumentSource.Organization>
+			</j:Document>
+		</NLETSResponseData>
+	</NLETSResponseMessage>
+</NLETS>

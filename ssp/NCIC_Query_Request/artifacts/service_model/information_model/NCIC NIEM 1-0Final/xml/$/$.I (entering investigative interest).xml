@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -->
+                <nc:IdentificationID>WV3000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.I.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>    
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            ENTERING AGENCY INVESTIGATIVE INTEREST NOTIFICATION AT <!--<hhmm>-->1400 EST <!--<yyyymmdd>-->20150520
+            <!--<ORI>-->WV2000000 <!--<ATR>-->US MARSHALS
+            <!--<CT1>-->3045551234
+            NIC/<!--<NIC>-->B875683021 OCA/<!--<OCA>-->234443333
+            <!--<Input-Transaction>-->
+        </nc:CaveatText>
+        
+        <ncic:BoatRecord s:ref="d77e5706-boatRecord_boatHitDataResponse"/>        
+        
+        <nc:ContactInformationAssociation>
+            <nc:ContactEntity>
+                <nc:EntityOrganization s:ref="InvestigativeInterestOrganization" />
+            </nc:ContactEntity>
+        </nc:ContactInformationAssociation>
+        
+        <!--<Input-Transaction>-->
+        <!-- This would contain the Boat Enter response as defined in Part 1 of 
+             the NCIC Message Book in actual implementation -->
+        <!-- Only needed elements for the example are included here -->
+        <ncic-ex:IncomingMessage />
+        
+        <!-- Current System Time -->
+        <ncic:NotificationDateTime>2015-05-20T14:00:00-04:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:BoatRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:BoatRecord s:id="d77e5706-boatRecord_boatHitDataResponse">
+        <j:ItemNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>B875683021</nc:IdentificationID>
+        </j:ItemNCICIdentification>
+    </ncic:BoatRecord>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (investigative interest) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="InvestigativeInterestOrganization">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>US MARSHALS</nc:OrganizationName>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation Telephone Number (Primary) -->
+                    <nc:TelephoneNumberFullID>3045551234</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+    </nc:Organization>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:InvestigativeInterest. -->
+    <!-- ******************************************************************************** -->
+    <ncic:InvestigativeInterest s:id="InvestigativeInterestAgency">
+        <nc:IncidentJurisdictionalOrganization s:ref="InvestigativeInterestOrganization"/>
+    </ncic:InvestigativeInterest>
+</ncic-ex:Exchange>

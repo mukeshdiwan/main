@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <n:NLETSInquiryMessage>
+		<n:NLETSInquiryHeader>
+            <n:MessageKeyCode>GQ</n:MessageKeyCode>
+			<n:DocumentControlFieldText>000000089</n:DocumentControlFieldText>
+            <j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>GA1234567</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <n:DocumentDestinationID>
+              <j:ID>FA</j:ID>
+            </n:DocumentDestinationID>
+		</n:NLETSInquiryHeader>
+		<n:NLETSInquiryData Key="GQ">
+			   <n:Attention>SGT PAUL JOSEPH</n:Attention>
+               <j:Aircraft>
+				<j:PropertyRegistration>
+                    <j:RegistrationParty.Organization>
+					<j:OrganizationName>WORLD AIRWAYS INC</j:OrganizationName>
+                    </j:RegistrationParty.Organization>
+				</j:PropertyRegistration>
+               </j:Aircraft>
+			   <n:SightedIndicator>Y</n:SightedIndicator>
+			   <j:SightedDate>1995-03-15</j:SightedDate>
+			</n:NLETSInquiryData>
+		</n:NLETSInquiryMessage>
+</n:NLETS>

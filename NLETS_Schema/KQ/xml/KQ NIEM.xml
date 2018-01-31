@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:ansi_d20="http://niem.gov/niem/ansi_d20/2.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:n2c="http://www.nlets.org/niem/nlets-core/1.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/KQ.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>KQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>GA0250300</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>FL</nh2:DestinationORIID>
+		<nh2:UserID>USER55</nh2:UserID>
+		<nh2:UserPasswordText>123456</nh2:UserPasswordText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="KQ">
+		<n2c:Driver>
+			<nc:PersonBirthDate>
+				<nc:Date>1953-12-12</nc:Date>
+			</nc:PersonBirthDate>
+			<nc:PersonName>
+				<nc:PersonGivenName>Anthony</nc:PersonGivenName>
+				<nc:PersonMiddleName>L</nc:PersonMiddleName>
+				<nc:PersonSurName>Scott</nc:PersonSurName>
+				<nc:PersonFullName>Scott, Anthony L</nc:PersonFullName>
+			</nc:PersonName>
+			<nc:PersonSexCode>M</nc:PersonSexCode>
+			<nc:DriverLicense>
+				<nc:DriverLicenseIdentification/>
+			</nc:DriverLicense>
+		</n2c:Driver>
+		<n2:PurposeCode>F</n2:PurposeCode>
+		<n2:ResponseAttentionDescriptionText>SGT SMITH</n2:ResponseAttentionDescriptionText>
+	</n2:NLETSInquiryData>
+</n2:NLETS>

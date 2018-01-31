@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/ITQ.xsd">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>ITQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS11</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>IP</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>1234567890</nh2:DocumentControlFieldText>
+		<nh2:UserID>String</nh2:UserID>
+		<nh2:UserPasswordText>String</nh2:UserPasswordText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="ITQ">
+		<n2:QueryReasonDescriptionText>Test</n2:QueryReasonDescriptionText>
+		<n2:StolenDocument>
+			<nc:DocumentIdentification>
+				<nc:IdentificationID>123456789</nc:IdentificationID>
+				<nc:IdentificationCategoryDescriptionText>IDC</nc:IdentificationCategoryDescriptionText>
+			</nc:DocumentIdentification>
+			<nc:DocumentSourceText>US</nc:DocumentSourceText>
+			<nc:DocumentSourceText>US</nc:DocumentSourceText>
+		</n2:StolenDocument>
+	</n2:NLETSInquiryData>
+</n2:NLETS>

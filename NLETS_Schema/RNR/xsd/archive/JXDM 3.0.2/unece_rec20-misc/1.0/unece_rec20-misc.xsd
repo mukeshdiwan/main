@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.it.ojp.gov/jxdm/unece_rec20-misc/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.it.ojp.gov/jxdm/appinfo/1">
+  <xsd:annotation>
+    <xsd:documentation>Miscellaneous unit of measurement code from the United Nations Economic Commission for Europe Recommendation No. 20, "Codes for Units of Measure used in International Trade".</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.it.ojp.gov/jxdm/appinfo/1" schemaLocation="../../appinfo/1/appinfo.xsd">
+    <xsd:annotation>
+      <xsd:documentation>The appinfo for the schemas</xsd:documentation>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:simpleType name="LengthType">
+    <xsd:annotation>
+      <xsd:documentation>A code list that enumerates units of measurements for a length value.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="dm">
+        <xsd:annotation>
+          <xsd:documentation>decimetre</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ft">
+        <xsd:annotation>
+          <xsd:documentation>foot</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MassType">
+    <xsd:annotation>
+      <xsd:documentation>A code list that enumerates units of measurement for a weight value.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="kg">
+        <xsd:annotation>
+          <xsd:documentation>kilogram</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="lb">
+        <xsd:annotation>
+          <xsd:documentation>pound</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

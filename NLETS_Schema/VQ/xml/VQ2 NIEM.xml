@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/niem/VQ/xsd/VQ.xsd" version="3.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>VQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS21</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>NX</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>DGREEN1235</nh2:DocumentControlFieldText>
+	</NLETSMessageHeader>
+	<NLETSInquiryData key="VQ">
+		<nc:Vehicle>
+			<nc:VehicleIdentification>
+				<nc:IdentificationID>TEST5555555555555</nc:IdentificationID>
+			</nc:VehicleIdentification>
+		</nc:Vehicle>
+		<ReasonCode>T</ReasonCode>
+		<j:PersonSightedIndicator>false</j:PersonSightedIndicator>
+	</NLETSInquiryData>
+</NLETS>

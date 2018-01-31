@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>EB<!--/EB-A/EB-F/EB-P--></ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData s:ref="d77e16-incomingRecordData_boatIncomingEnterDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="d77e16-incomingRecordData_boatIncomingEnterDataSection">
+        <ncic:BoatRecord s:ref="d77e16-boatRecord_enterDataSection"/>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:BoatRecord (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic:BoatRecord s:id="d77e16-boatRecord_enterDataSection">
+        <nc:Incident s:ref="d77e17-incident_boat"/>
+        <!-- NOA - Notify originating agency -->
+        <ncic:NotifyOriginatingAgencyIndicator>true</ncic:NotifyOriginatingAgencyIndicator>
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="d77e57-conveyanceRegistration_boat"/>
+            <nc:Item s:ref="d77e29-vessel_boat"/>
+        </j:ConveyanceRegistrationAssociation>
+    </ncic:BoatRecord>
+
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e17-incident_boat">
+        <nc:ActivityDate>
+            <!-- DOT - Date of theft -->
+            <nc:Date>2005-10-27</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>BOAT HAS PICTURE OF MERMAID ON BOTH SIDES</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>            
+            <j:CaseLinkage>
+                <!-- LKA - Linkage Case Number -->
+                <j:CaseLinkageNumberText>OTHRCASE</j:CaseLinkageNumberText>
+                <!-- LKI - Linkage Agency Identifier -->
+                <j:OrganizationORIIdentification>
+                    <nc:IdentificationID>WA3456789</nc:IdentificationID>
+                </j:OrganizationORIIdentification>
+            </j:CaseLinkage>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>234443333</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vessel. -->
+    <!-- ******************************************************************************** -->
+    <nc:Vessel s:id="d77e29-vessel_boat">
+        <!-- OAN - Owner applied number -->
+        <nc:ItemOwnerAppliedID>LKDI1KJ35</nc:ItemOwnerAppliedID>
+        <!-- BCO - Boat color -->
+        <ncic:VesselColorPrimaryCodeText>RED</ncic:VesselColorPrimaryCodeText>
+        <!-- BCO - Boat color -->
+        <ncic:VesselColorSecondaryCodeText>WHI</ncic:VesselColorSecondaryCodeText>
+        <nc:ItemImage>
+            <j:ImageAugmentation>
+                <j:ImageNCICIdentification>
+                    <!-- IMN - Image NCIC number -->
+                    <nc:IdentificationID>I123456789</nc:IdentificationID>
+                </j:ImageNCICIdentification>
+                <!-- IMT - Image type -->
+                <j:ImageCategoryCode>B</j:ImageCategoryCode>
+            </j:ImageAugmentation>
+        </nc:ItemImage>
+        <nc:ItemLengthMeasure>
+            <!-- BLE - Boat length -->
+            <nc:MeasureValueText>17</nc:MeasureValueText>
+        </nc:ItemLengthMeasure>
+        <!-- BMO - Boat model name -->
+        <nc:ItemModelName>CRUISER V</nc:ItemModelName>
+        <!-- BYR - Boat model year -->
+        <nc:ItemModelYearDate>1980</nc:ItemModelYearDate>
+        <!-- BMA - Boat make -->
+        <ncic:VesselMakeCodeText>LBC</ncic:VesselMakeCodeText>
+        <!-- BTY - Boat type -->
+        <j:VesselCategoryCode>RUN</j:VesselCategoryCode>
+        <nc:VesselHullIdentification>
+            <!-- BHN - Boat hull number -->
+            <nc:IdentificationID>LBC035380880</nc:IdentificationID>
+        </nc:VesselHullIdentification>
+        <!-- HUL - Hull material -->
+        <nc:VesselHullMaterialText>WD</nc:VesselHullMaterialText>
+        <!-- HSP - Hull shape -->
+        <nc:VesselHullShapeText>SV</nc:VesselHullShapeText>
+        <!-- PRO - Propulsion -->
+        <nc:VesselPropulsionText>OB</nc:VesselPropulsionText>
+        <j:VesselAugmentation>
+            <!-- HPT - Home port -->
+            <j:VesselHomePortText>ANNAPOLIS MD</j:VesselHomePortText>
+        </j:VesselAugmentation>
+        <m:VesselAugmentation>
+            <!-- BNM - Boat name -->
+            <m:VesselName>LADY LUCK</m:VesselName>
+            <!-- CGD - Coast Guard document number -->
+            <m:VesselOfficialCoastGuardNumberText>MD12344ZZ</m:VesselOfficialCoastGuardNumberText>
+        </m:VesselAugmentation>
+    </nc:Vessel>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="d77e57-conveyanceRegistration_boat">
+        <j:ConveyanceRegistrationDecal>
+            <!-- REY - Registration year -->
+            <nc:DecalYearDate>2005</nc:DecalYearDate>
+        </j:ConveyanceRegistrationDecal>
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- REG - Registration number -->
+            <nc:IdentificationID>MD12344ZZ</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- RES - Registration state -->
+                <j:JurisdictionNCICLSTACode>MD</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+    </j:ConveyanceRegistration>
+</ncic-ex:Exchange>

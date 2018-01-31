@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.00" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:\NJINWork\NJIN\xsd\nlets2\AM\xsd\AM.xsd">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>AM</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS23</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS23</nh2:DestinationORIID>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSMailData n2:key="AM">
+		<n2:MailMessageText> THIS IS THE FIRST PART OF THE ADDITION.
+				</n2:MailMessageText>
+	</n2:NLETSMailData>
+</n2:NLETS>

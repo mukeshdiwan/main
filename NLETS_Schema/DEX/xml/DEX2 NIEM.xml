@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/DEX.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>DEX</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>GA0250300</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>VADEA000X</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>1234567890</nh2:DocumentControlFieldText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSUpdateData n2:key="DEX">
+		<n2:NDPIXEntry>
+			<nc:DocumentSubmitter>
+				<nc:EntityOrganization>
+					<nc:OrganizationName>Omaha Police Department</nc:OrganizationName>
+					<nc:OrganizationPrimaryContactInformation>
+						<nc:ContactTelephoneNumber>
+							<nc:FullTelephoneNumber>
+								<nc:TelephoneNumberFullID>6120121293</nc:TelephoneNumberFullID>
+							</nc:FullTelephoneNumber>
+						</nc:ContactTelephoneNumber>
+					</nc:OrganizationPrimaryContactInformation>
+				</nc:EntityOrganization>
+				<nc:EntityPerson>
+					<nc:PersonName>
+						<nc:PersonFullName>Johnson, Cecil D</nc:PersonFullName>
+					</nc:PersonName>
+				</nc:EntityPerson>
+			</nc:DocumentSubmitter>
+			<nc:Case>
+				<nc:ActivityIdentification>
+					<nc:IdentificationID>123456</nc:IdentificationID>
+				</nc:ActivityIdentification>
+			</nc:Case>
+			<n2:DocumentSubmitterPasswordText>12345678</n2:DocumentSubmitterPasswordText>
+			<n2:DocumentSubmitterUserIDText>agentx</n2:DocumentSubmitterUserIDText>
+			<n2:RequestorDescriptionText>PB</n2:RequestorDescriptionText>
+			<n2:RouterFieldText>GA</n2:RouterFieldText>
+		</n2:NDPIXEntry>
+		<n2:QueryPerson>
+			<nc:PersonAgeMeasure/>
+			<nc:PersonAlternateName>
+				<nc:PersonFullName>The Jackal</nc:PersonFullName>
+			</nc:PersonAlternateName>
+			<nc:PersonBirthDate>
+				<nc:Date>1970-06-23</nc:Date>
+			</nc:PersonBirthDate>
+			<nc:PersonEyeColorText>GRY</nc:PersonEyeColorText>
+			<nc:PersonHairColorText>GRY</nc:PersonHairColorText>
+			<nc:PersonHeightMeasure>
+				<nc:MeasurePointValue>506</nc:MeasurePointValue>
+			</nc:PersonHeightMeasure>
+			<nc:PersonRaceText>W</nc:PersonRaceText>
+			<nc:PersonSexText>M</nc:PersonSexText>
+			<nc:PersonSSNIdentification>
+				<nc:IdentificationID>336942871</nc:IdentificationID>
+			</nc:PersonSSNIdentification>
+			<nc:PersonWeightMeasure>
+				<nc:MeasurePointValue>160</nc:MeasurePointValue>
+			</nc:PersonWeightMeasure>
+			<j:PersonAugmentation>
+				<j:PersonFBIIdentification>
+					<nc:IdentificationID>123456789</nc:IdentificationID>
+				</j:PersonFBIIdentification>
+			</j:PersonAugmentation>
+			<n2:PersonCautionIndicator>true</n2:PersonCautionIndicator>
+			<n2:PersonContactInformation>
+				<nc:ContactMobileTelephoneNumber>
+					<nc:FullTelephoneNumber>
+						<nc:TelephoneNumberFullID>123-555-9876</nc:TelephoneNumberFullID>
+					</nc:FullTelephoneNumber>
+				</nc:ContactMobileTelephoneNumber>
+				<nc:ContactPagerNumber>
+					<nc:FullTelephoneNumber>
+						<nc:TelephoneNumberFullID>123-555-9876</nc:TelephoneNumberFullID>
+					</nc:FullTelephoneNumber>
+				</nc:ContactPagerNumber>
+				<nc:ContactTelephoneNumber>
+					<nc:FullTelephoneNumber>
+						<nc:TelephoneNumberFullID>123-555-9876</nc:TelephoneNumberFullID>
+					</nc:FullTelephoneNumber>
+				</nc:ContactTelephoneNumber>
+			</n2:PersonContactInformation>
+			<n2:PersonResidentialAddress>
+				<nc:LocationStreet>
+					<nc:StreetFullText>9854 Willowwood Lane</nc:StreetFullText>
+				</nc:LocationStreet>
+				<nc:LocationCityName>Westchester</nc:LocationCityName>
+				<nc:LocationStateName>NY</nc:LocationStateName>
+				<nc:LocationPostalCode>88751</nc:LocationPostalCode>
+			</n2:PersonResidentialAddress>
+		</n2:QueryPerson>
+		<n2:DrugActivity>
+			<nc:LocationDescriptionText>Loudoun County</nc:LocationDescriptionText>
+			<nc:Drug>
+				<nc:ItemCategoryText>Heroin</nc:ItemCategoryText>
+			</nc:Drug>
+		</n2:DrugActivity>
+		<nc:Vessel>
+			<nc:VesselHullIdentification>
+				<nc:IdentificationID>192039452</nc:IdentificationID>
+			</nc:VesselHullIdentification>
+		</nc:Vessel>
+	</n2:NLETSUpdateData>
+</n2:NLETS>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <n:NLETSInquiryMessage>
+		<n:NLETSInquiryHeader>
+            <n:MessageKeyCode>NLQ</n:MessageKeyCode>
+			<j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>GA0250300</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <n:DocumentDestinationID>
+              <j:ID>VA</j:ID>
+            </n:DocumentDestinationID>
+		</n:NLETSInquiryHeader>
+		<n:NLETSInquiryData Key="NLQ">
+				<n:BeginDateTime>1986-11-06</n:BeginDateTime>
+				<n:EndDateTime>1986-11-09</n:EndDateTime>
+				<j:Person>
+					<j:PersonName>
+                           <j:PersonFullName>KELLY, WILLIAM PHILIP</j:PersonFullName>
+                           <j:PersonGivenName>WILLIAM</j:PersonGivenName>
+						<j:PersonMiddleName>PHILIP</j:PersonMiddleName>
+						<j:PersonSurName>KELLY</j:PersonSurName>
+					</j:PersonName>
+				</j:Person>
+			</n:NLETSInquiryData>
+		</n:NLETSInquiryMessage>
+</n:NLETS>

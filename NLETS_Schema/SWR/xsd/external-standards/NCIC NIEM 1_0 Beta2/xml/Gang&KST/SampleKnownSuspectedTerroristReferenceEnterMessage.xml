@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>EGGT</ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData s:ref="KSTGroupEnterIncomingRecord"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="KSTGroupEnterIncomingRecord">
+        <ncic:KnownSuspectedTerroristReferenceRecord s:ref="KSTGroupKSTReferenceRecord"/>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:KnownSuspectedTerroristReferenceRecord (enterGroup). -->
+    <!-- ******************************************************************************** -->
+    <ncic:KnownSuspectedTerroristReferenceRecord s:id="KSTGroupKSTReferenceRecord">
+        <nc:Incident s:ref="KSTGroupIncident"/>
+        <nc:ContactInformationAssociation>
+            <nc:ContactInformation>
+                <!-- POC - Point of Contact -->
+                <nc:ContactInformationDescriptionText>VIOLENT CRIMES UNIT - SGT. PATRICK O'RILEY</nc:ContactInformationDescriptionText>
+            </nc:ContactInformation>
+        </nc:ContactInformationAssociation>
+        <j:CriminalOrganization s:ref="KSTGroupInfo"/>
+    </ncic:KnownSuspectedTerroristReferenceRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="KSTGroupIncident">
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>GROUP POSSIBLY IN NC</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation/>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="KSTGroup">
+        <!-- SGP - Subgroup -->
+        <nc:OrganizationSubUnitName>LAS BARIQUAS</nc:OrganizationSubUnitName>
+        <!-- GNG - Group name -->
+        <nc:OrganizationUnitName>LOS GAUCHOS</nc:OrganizationUnitName>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:CriminalOrgaization. -->
+    <!-- ******************************************************************************** -->
+    <j:CriminalOrganization s:id="KSTGroupInfo">
+        <nc:RoleOfOrganization s:ref="KSTGroup"/>
+        <j:CriminalOrganizationTraitDetails>
+            <!-- DRS - Identifying dress -->
+            <j:CriminalTraitDressText>BLACK BANDANA</j:CriminalTraitDressText>
+            <!-- GTI - Identifying graffiti -->
+            <j:CriminalTraitGraffitiDescriptionText>EL GAUCHO</j:CriminalTraitGraffitiDescriptionText>
+            <!-- HND - Identifying hand signals-->
+            <j:CriminalTraitHandSignalText>VULCANHAND SIGNAL</j:CriminalTraitHandSignalText>
+            <!-- TTO - Identifying tattoos -->
+            <j:CriminalTraitTattooDescriptionText>KING COBRA</j:CriminalTraitTattooDescriptionText>
+        </j:CriminalOrganizationTraitDetails>
+    </j:CriminalOrganization>
+</ncic-ex:Exchange>

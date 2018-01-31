@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../xslt/NIEMToCSV.xsl" type="text/xsl"?>
+
+<n2:NLETS version="" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/NLQ.xsd" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>NLQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>OrigORI</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>DestORI</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>String</nh2:DocumentControlFieldText>
+		<nh2:ExtendedControlFieldText>String</nh2:ExtendedControlFieldText>
+		<nh2:MessageReceiveDate>1967-08-13</nh2:MessageReceiveDate>
+		<nh2:MessageReceiveTime>14:20:00.0Z</nh2:MessageReceiveTime>
+		<nh2:MessageSendDate>1967-08-13</nh2:MessageSendDate>
+		<nh2:MessageSendTime>14:20:00.0Z</nh2:MessageSendTime>
+		<nh2:ReceiveMessageNumeric>0.0</nh2:ReceiveMessageNumeric>
+		<nh2:SendMessageNumeric>0.0</nh2:SendMessageNumeric>
+		<nh2:UserID>String</nh2:UserID>
+		<nh2:UserPasswordText>String</nh2:UserPasswordText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData key="">
+		<n2:RANDQuery>
+			<n2:MessageSendDateTimeMinimumText>19980402</n2:MessageSendDateTimeMinimumText>
+			<n2:MessageSendDateTimeMaximumText>19980526@1200</n2:MessageSendDateTimeMaximumText>
+			<n2:InquiryDescriptionText>ABC*123.AND/ALBUQUERQUE.AND/BUICK</n2:InquiryDescriptionText>
+			<n2:MessageSourceORIIdentification>
+				<nc:IdentificationID>SourceORI</nc:IdentificationID>
+			</n2:MessageSourceORIIdentification>
+			<n2:MessageDestinationORIIdentification>
+				<nc:IdentificationID>DestORI</nc:IdentificationID>
+			</n2:MessageDestinationORIIdentification>
+			<n2:RequestCategoryText>RQ,RR</n2:RequestCategoryText>
+			<nc:Person>
+				<nc:PersonName>
+					<nc:PersonFullName>String</nc:PersonFullName>
+				</nc:PersonName>
+			</nc:Person>
+		</n2:RANDQuery>
+	</n2:NLETSInquiryData>
+</n2:NLETS>

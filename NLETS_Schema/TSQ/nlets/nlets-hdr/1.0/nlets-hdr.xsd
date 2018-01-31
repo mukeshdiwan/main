@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.nlets.org/niem/nlets-hdr/1.0">
+	<import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../niem/proxy/xsd/2.0/xsd.xsd"/>
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../niem/structures/2.0/structures.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="../niem/niem-core/2.0/niem-core.xsd"/>
+	<complexType name="NLETSMessageHeaderType">
+		<annotation>
+			<documentation>A structure containing information about an NLETS message</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:DocumentType">
+				<sequence>
+					<element ref="nh2:MessageKeyCodeText"/>
+					<element ref="nh2:OriginatingORIID"/>
+					<element ref="nh2:DestinationORIID" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nh2:DocumentControlFieldText" minOccurs="0"/>
+					<element ref="nh2:ExtendedControlFieldText" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nh2:MessageReceiveDate" minOccurs="0"/>
+					<element ref="nh2:MessageReceiveTime" minOccurs="0"/>
+					<element ref="nh2:MessageSendDate" minOccurs="0"/>
+					<element ref="nh2:MessageSendTime" minOccurs="0"/>
+					<element ref="nh2:ReceiveMessageNumeric" minOccurs="0"/>
+					<element ref="nh2:SendMessageNumeric" minOccurs="0"/>
+					<element ref="nh2:UserID" minOccurs="0"/>
+					<element ref="nh2:UserPasswordText" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PurposeCodeType">
+		<annotation>
+			<documentation>Indicates the reason for the query</documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<simpleContent>
+			<extension base="nh2:PurposeCodeSimpleType">
+				<attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="ReasonCodeType">
+		<annotation>
+			<documentation>Indicates the reason for the query</documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<simpleContent>
+			<extension base="nh2:ReasonCodeSimpleType">
+				<attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<simpleType name="PurposeCodeSimpleType">
+		<annotation>
+			<documentation>Indicates the reason for the query</documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<restriction base="xsd:token">
+			<enumeration value="J">
+				<annotation>
+					<documentation>J</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="D">
+				<annotation>
+					<documentation>D</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="E">
+				<annotation>
+					<documentation>E</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="C">
+				<annotation>
+					<documentation>C</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="S">
+				<annotation>
+					<documentation>S</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="I">
+				<annotation>
+					<documentation>I</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="F">
+				<annotation>
+					<documentation>F</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<simpleType name="ReasonCodeSimpleType">
+		<annotation>
+			<documentation>Indicates the reason for the query</documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<restriction base="xsd:token">
+			<enumeration value="V">
+				<annotation>
+					<documentation>Violent Crime</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="S">
+				<annotation>
+					<documentation>Theft</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="H">
+				<annotation>
+					<documentation>Humanitarian</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="N">
+				<annotation>
+					<documentation>Narcotics</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="F">
+				<annotation>
+					<documentation>Fraud</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="T">
+				<annotation>
+					<documentation>Traffic Violations</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<element name="DestinationORIID" type="niem-xsd:string" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Element containing the 9-character destination agency ORI or 2 character state or region code.</documentation>
+		</annotation>
+	</element>
+	<element name="DocumentControlFieldText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A 10 character special field provided to convey special routing or identification data that the sending agency must have returned in order to match a response to an earlier message.  </documentation>
+		</annotation>
+	</element>
+	<element name="ExtendedControlFieldText" type="nc:TextType">
+		<annotation>
+			<documentation>Optional element containing additional special routing or identification data that may be returned when supported by the responding agency.</documentation>
+		</annotation>
+	</element>
+	<element name="MessageKeyCodeText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Element containing the message key. </documentation>
+		</annotation>
+	</element>
+	<element name="MessageReceiveDate" type="niem-xsd:date" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Contains date the message was received by NLETS</documentation>
+		</annotation>
+	</element>
+	<element name="MessageReceiveTime" type="niem-xsd:time" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Contains the time the message was received by NLETS on 24-hour clock in the form hh:mm.</documentation>
+		</annotation>
+	</element>
+	<element name="MessageSendDate" type="niem-xsd:date" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Date the message was delivered by NLETS</documentation>
+		</annotation>
+	</element>
+	<element name="MessageSendTime" type="niem-xsd:time" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Time the message was delivered by NLETS on a 24 hour clock in the form hh:mm.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSMessageHeader" type="nh2:NLETSMessageHeaderType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Header element that indicates the beginning of the NLETS message header.</documentation>
+		</annotation>
+	</element>
+	<element name="OriginatingORIID" type="niem-xsd:string" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Element containing the 9 character sender ORI.</documentation>
+		</annotation>
+	</element>
+	<element name="ReceiveMessageNumeric" type="nc:NumericType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Contains the number of messages received today.</documentation>
+		</annotation>
+	</element>
+	<element name="SendMessageNumeric" type="nc:NumericType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The number of messages delivered to this line today. </documentation>
+		</annotation>
+	</element>
+	<element name="UserID" type="niem-xsd:string" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Optional User ID number.</documentation>
+		</annotation>
+	</element>
+	<element name="UserPasswordText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Optional Password.</documentation>
+		</annotation>
+	</element>
+</schema>

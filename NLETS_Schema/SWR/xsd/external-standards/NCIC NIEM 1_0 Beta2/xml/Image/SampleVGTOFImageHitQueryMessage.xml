@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key (type of entry) -->
+        <ncic:MessageTransactionCode>QII</ncic:MessageTransactionCode>
+        <ncic-ex:PrimaryHitData s:ref="d77e18-primaryHitData_hitDataSectionPrimary"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="d77e18-primaryHitData_hitDataSectionPrimary">
+        <ncic:ImageRecord s:ref="d77e20-imageRecord_vgtofImageHitDataResponse"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ImageRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:ImageRecord s:id="d77e20-imageRecord_vgtofImageHitDataResponse">
+        <!-- MKT - Message Key Translation -->
+        <ncic:MessageTransactionText>IMAGE</ncic:MessageTransactionText>
+        <j:CriminalOrganization s:ref="d77e25-subject_image"/>
+        <nc:ItemImage>
+            <!-- Image-Data - Image-Data -->
+            <nc:Base64BinaryObject>mrHbPdrko3u1s7ahtgPBjtmO1s85tfG2U7pbofy9</nc:Base64BinaryObject>
+            <nc:BinaryCaptureDate>
+                <!-- DOI - Date of image -->
+                <nc:Date>2000-01-30</nc:Date>
+            </nc:BinaryCaptureDate>
+            <!-- MIS - Miscellaneous remarks -->
+            <nc:BinaryDescriptionText>IMAGE OF STOLEN VEHICLE</nc:BinaryDescriptionText>
+            <j:ImageAugmentation>
+                <j:ImageNCICIdentification>
+                    <!-- IMN - Image NCIC number -->
+                    <nc:IdentificationID>IMN1234</nc:IdentificationID>
+                </j:ImageNCICIdentification>
+                <!-- IMT - Image type -->
+                <j:ImageCategoryCode>I</j:ImageCategoryCode>
+            </j:ImageAugmentation>
+        </nc:ItemImage>
+    </ncic:ImageRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e20-organization_image">
+        <!-- SGP - Subgroup -->
+        <nc:OrganizationSubUnitName>LAS BARIQUAS</nc:OrganizationSubUnitName>
+        <!-- GNG - Group name -->
+        <nc:OrganizationUnitName>LOS GAUCHOS</nc:OrganizationUnitName>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:CriminalOrganization. -->
+    <!-- ******************************************************************************** -->
+    <j:CriminalOrganization s:id="d77e25-subject_image">
+        <nc:RoleOfOrganization s:ref="d77e20-organization_image"/>
+    </j:CriminalOrganization>
+</ncic-ex:Exchange>

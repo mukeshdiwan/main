@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionCode>QW<!--/ZW--></ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData
+            s:ref="d77e16-incomingRecordData_wantedPersonIncomingQueryDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:IncomingRecordData (query). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData
+        s:id="d77e16-incomingRecordData_wantedPersonIncomingQueryDataSection">
+        <ncic:WantedPersonRecord s:ref="d77e17-wantedPersonRecord_queryDataSection"/>
+        <!-- EBS - Expanded DOB search -->
+        <ncic:ExtendedBirthdaySearchCode>1</ncic:ExtendedBirthdaySearchCode>
+        <!-- ENS - Expanded name search -->
+        <ncic:ExtendedNameSearchIndicator>false</ncic:ExtendedNameSearchIndicator>
+        <!-- IND - Image indicator -->
+        <ncic:ImageIndicator>false</ncic:ImageIndicator>
+        <!-- RSH - Related search hit -->
+        <ncic:RelatedSearchHitIndicator>true</ncic:RelatedSearchHitIndicator>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord (query). -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="d77e17-wantedPersonRecord_queryDataSection">
+        <nc:Incident s:ref="d77e17-case_wantedPerson"/>
+        <j:ConveyanceRegistrationAssociation>
+            <j:ItemRegistration s:ref="d77e17-conveyanceRegistration_wantedPerson"/>
+            <nc:Item s:ref="d77e17-vehicle_wantedPerson"/>
+        </j:ConveyanceRegistrationAssociation>
+        <j:DriverLicenseAssociation>
+            <j:DriverLicense s:ref="d77e53-driverLicense_wantedPerson"/>
+            <nc:Person s:ref="d77e17-person_wantedPerson"/>
+        </j:DriverLicenseAssociation>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>W123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <j:Subject s:ref="d77e17-subject_wantedPerson"/>
+    </ncic:WantedPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Case. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e17-case_wantedPerson">
+        <j:ActivityAugmentation>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>ABC123</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e17-person_wantedPerson">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1975-01-18</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JACK</nc:PersonGivenName>
+            <nc:PersonMiddleName>DANIEL</nc:PersonMiddleName>
+            <nc:PersonSurName>WEBBER</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonOtherIdentification>
+            <!-- MNU - Miscellaneous number -->
+            <nc:IdentificationID>AS-01847592309</nc:IdentificationID>
+        </nc:PersonOtherIdentification>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>W</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>M</j:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social security number -->
+            <nc:IdentificationID>245987910</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <j:PersonAugmentation>
+            <j:PersonFBIIdentification>
+                <!-- FBI - FBI number -->
+                <nc:IdentificationID>123456B</nc:IdentificationID>
+            </j:PersonFBIIdentification>
+        </j:PersonAugmentation>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vehicle. -->
+    <!-- ******************************************************************************** -->
+    <nc:Vehicle s:id="d77e17-vehicle_wantedPerson">
+        <nc:VehicleIdentification>
+            <!-- VIN - Vehicle identification number -->
+            <nc:IdentificationID>JN1FU21P2NX881274</nc:IdentificationID>
+        </nc:VehicleIdentification>
+        <!-- VMA - Vehicle make -->
+        <j:VehicleMakeCode>DODG</j:VehicleMakeCode>
+    </nc:Vehicle>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="d77e17-conveyanceRegistration_wantedPerson">
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number -->
+            <nc:IdentificationID>5RJ345</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- LIS - License plate state -->
+                <j:JurisdictionNCICLSTACode>AZ</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+    </j:ConveyanceRegistration>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:DriverLicense. -->
+    <!-- ******************************************************************************** -->
+    <j:DriverLicense s:id="d77e53-driverLicense_wantedPerson">
+        <j:DriverLicenseCardIdentification>
+            <!-- OLN - Operator license number -->
+            <nc:IdentificationID>AZE79038</nc:IdentificationID>
+        </j:DriverLicenseCardIdentification>
+    </j:DriverLicense>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="d77e17-subject_wantedPerson">
+        <nc:RoleOfPerson s:ref="d77e17-person_wantedPerson"/>
+    </j:Subject>
+</ncic-ex:Exchange>

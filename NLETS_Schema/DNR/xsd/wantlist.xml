@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:WantList w:release="2.1" w:product="NIEM"
+  xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+  xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+  xmlns:j="http://niem.gov/niem/domains/jxdm/4.1"
+  xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+  xmlns:ansi_d20="http://niem.gov/niem/ansi_d20/2.0" xmlns:w="http://niem.gov/niem/wantlist/2">
+  <w:Element w:name="j:DriverLicenseEndorsement" w:isReference="false"/>
+  <w:Element w:name="j:DriverLicenseHMEThreatDate" w:isReference="false"/>
+  <w:Element w:name="j:DriverLicenseHMEThreatText" w:isReference="false"/>
+  <w:Element w:name="j:IdentificationJurisdictionNCICLSTACode" w:isReference="false"/>
+  <w:Element w:name="nc:AddressDeliveryPoint" w:isReference="false"/>
+  <w:Element w:name="nc:AddressRepresentation" w:isReference="false"/>
+  <w:Element w:name="nc:BinaryAvailableIndicator" w:isReference="false"/>
+  <w:Element w:name="nc:BinaryBase64Object" w:isReference="false"/>
+  <w:Element w:name="nc:BinaryCaptureDate" w:isReference="false"/>
+  <w:Element w:name="nc:BinaryCategoryText" w:isReference="false"/>
+  <w:Element w:name="nc:BinaryFormatID" w:isReference="false"/>
+  <w:Element w:name="nc:BinaryObject" w:isReference="false"/>
+  <w:Element w:name="nc:ContactInformation" w:isReference="false"/>
+  <w:Element w:name="nc:ContactMailingAddress" w:isReference="false"/>
+  <w:Element w:name="nc:ContactMeans" w:isReference="false"/>
+  <w:Element w:name="nc:ContactTelephoneNumber" w:isReference="false"/>
+  <w:Element w:name="nc:Date" w:isReference="false"/>
+  <w:Element w:name="nc:DateRepresentation" w:isReference="false"/>
+  <w:Element w:name="nc:DocumentCreationDate" w:isReference="false"/>
+  <w:Element w:name="nc:DocumentExpirationDate" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicense" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseCommercialClass" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseCommercialClassText" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseCommercialStatus" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseCommercialStatusText" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseEndorsement" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseEndorsementCode" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseEndorsementText" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseExpirationDate" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseIdentification" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseIssueDate" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseNonCommercialClassText" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseNonCommercialStatus" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseNonCommercialStatusText" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicensePermit" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicensePermitClassificationText" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicensePermitQuantity" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicensePermitStatus" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicensePermitStatusText" w:isReference="false"/>
+  <w:Element w:name="nc:DriverLicenseRestriction" w:isReference="false"/>
+  <w:Element w:name="nc:DrivingRestrictionCode" w:isReference="false"/>
+  <w:Element w:name="nc:DrivingRestrictionDescriptionText" w:isReference="false"/>
+  <w:Element w:name="nc:DrivingRestrictionEndDate" w:isReference="false"/>
+  <w:Element w:name="nc:DrivingRestrictionText" w:isReference="false"/>
+  <w:Element w:name="nc:DrivingRestrictionValue" w:isReference="false"/>
+  <w:Element w:name="nc:EndDate" w:isReference="false"/>
+  <w:Element w:name="nc:FullTelephoneNumber" w:isReference="false"/>
+  <w:Element w:name="nc:IdentificationID" w:isReference="false"/>
+  <w:Element w:name="nc:IdentificationJurisdiction" w:isReference="false"/>
+  <w:Element w:name="nc:IdentificationJurisdictionText" w:isReference="false"/>
+  <w:Element w:name="nc:LocationCityName" w:isReference="false"/>
+  <w:Element w:name="nc:LocationCountry" w:isReference="false"/>
+  <w:Element w:name="nc:LocationCountryName" w:isReference="false"/>
+  <w:Element w:name="nc:LocationCounty" w:isReference="false"/>
+  <w:Element w:name="nc:LocationCountyName" w:isReference="false"/>
+  <w:Element w:name="nc:LocationPostalCode" w:isReference="false"/>
+  <w:Element w:name="nc:LocationState" w:isReference="false"/>
+  <w:Element w:name="nc:LocationStateName" w:isReference="false"/>
+  <w:Element w:name="nc:LocationStreet" w:isReference="false"/>
+  <w:Element w:name="nc:MeasurePointValue" w:isReference="false"/>
+  <w:Element w:name="nc:MeasureValue" w:isReference="false"/>
+  <w:Element w:name="nc:Metadata" w:isReference="false"/>
+  <w:Element w:name="nc:PersonBirthDate" w:isReference="false"/>
+  <w:Element w:name="nc:PersonDigitalImage" w:isReference="false"/>
+  <w:Element w:name="nc:PersonEyeColor" w:isReference="false"/>
+  <w:Element w:name="nc:PersonEyeColorText" w:isReference="false"/>
+  <w:Element w:name="nc:PersonFullName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonGivenName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonHairColor" w:isReference="false"/>
+  <w:Element w:name="nc:PersonHairColorText" w:isReference="false"/>
+  <w:Element w:name="nc:PersonHeightMeasure" w:isReference="false"/>
+  <w:Element w:name="nc:PersonMedicalFileIndicator" w:isReference="false"/>
+  <w:Element w:name="nc:PersonMiddleName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonNameSuffixText" w:isReference="false"/>
+  <w:Element w:name="nc:PersonOrganDonatorIndicator" w:isReference="false"/>
+  <w:Element w:name="nc:PersonOtherIdentification" w:isReference="false"/>
+  <w:Element w:name="nc:PersonRace" w:isReference="false"/>
+  <w:Element w:name="nc:PersonRaceText" w:isReference="false"/>
+  <w:Element w:name="nc:PersonSSNIdentification" w:isReference="false"/>
+  <w:Element w:name="nc:PersonSex" w:isReference="false"/>
+  <w:Element w:name="nc:PersonSexCode" w:isReference="false"/>
+  <w:Element w:name="nc:PersonSexText" w:isReference="false"/>
+  <w:Element w:name="nc:PersonSurName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonWeightMeasure" w:isReference="false"/>
+  <w:Element w:name="nc:StreetFullText" w:isReference="false"/>
+  <w:Element w:name="nc:StructuredAddress" w:isReference="false"/>
+  <w:Element w:name="nc:TelephoneNumberFullID" w:isReference="false"/>
+  <w:Element w:name="nc:TelephoneNumberRepresentation" w:isReference="false"/>
+  <w:Type w:name="ansi_d20:DrivingEndorsementCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="L"/>
+    <w:Facet w:facet="enumeration" w:value="N"/>
+    <w:Facet w:facet="enumeration" w:value="H"/>
+    <w:Facet w:facet="enumeration" w:value="T"/>
+    <w:Facet w:facet="enumeration" w:value="P"/>
+    <w:Facet w:facet="enumeration" w:value="S"/>
+    <w:Facet w:facet="enumeration" w:value="O"/>
+    <w:Facet w:facet="enumeration" w:value="X"/>
+  </w:Type>
+  <w:Type w:name="ansi_d20:DrivingEndorsementCodeType" w:isRequested="true"/>
+  <w:Type w:name="ansi_d20:DrivingRestrictionCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="C"/>
+    <w:Facet w:facet="enumeration" w:value="B"/>
+    <w:Facet w:facet="enumeration" w:value="W"/>
+    <w:Facet w:facet="enumeration" w:value="I"/>
+    <w:Facet w:facet="enumeration" w:value="G"/>
+    <w:Facet w:facet="enumeration" w:value="J"/>
+    <w:Facet w:facet="enumeration" w:value="F"/>
+    <w:Facet w:facet="enumeration" w:value="E"/>
+    <w:Facet w:facet="enumeration" w:value="L"/>
+    <w:Facet w:facet="enumeration" w:value="O"/>
+    <w:Facet w:facet="enumeration" w:value="D"/>
+    <w:Facet w:facet="enumeration" w:value="K"/>
+  </w:Type>
+  <w:Type w:name="ansi_d20:DrivingRestrictionCodeType" w:isRequested="true"/>
+  <w:Type w:name="fbi:LSTACodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="KS"/>
+    <w:Facet w:facet="enumeration" w:value="CA"/>
+    <w:Facet w:facet="enumeration" w:value="MO"/>
+    <w:Facet w:facet="enumeration" w:value="VI"/>
+    <w:Facet w:facet="enumeration" w:value="NF"/>
+    <w:Facet w:facet="enumeration" w:value="ND"/>
+    <w:Facet w:facet="enumeration" w:value="PR"/>
+    <w:Facet w:facet="enumeration" w:value="AB"/>
+    <w:Facet w:facet="enumeration" w:value="VT"/>
+    <w:Facet w:facet="enumeration" w:value="FL"/>
+    <w:Facet w:facet="enumeration" w:value="BC"/>
+    <w:Facet w:facet="enumeration" w:value="PA"/>
+    <w:Facet w:facet="enumeration" w:value="YT"/>
+    <w:Facet w:facet="enumeration" w:value="NS"/>
+    <w:Facet w:facet="enumeration" w:value="IT"/>
+    <w:Facet w:facet="enumeration" w:value="MS"/>
+    <w:Facet w:facet="enumeration" w:value="RI"/>
+    <w:Facet w:facet="enumeration" w:value="EN"/>
+    <w:Facet w:facet="enumeration" w:value="IL"/>
+    <w:Facet w:facet="enumeration" w:value="NT"/>
+    <w:Facet w:facet="enumeration" w:value="NH"/>
+    <w:Facet w:facet="enumeration" w:value="SC"/>
+    <w:Facet w:facet="enumeration" w:value="DE"/>
+    <w:Facet w:facet="enumeration" w:value="ON"/>
+    <w:Facet w:facet="enumeration" w:value="ID"/>
+    <w:Facet w:facet="enumeration" w:value="KY"/>
+    <w:Facet w:facet="enumeration" w:value="OR"/>
+    <w:Facet w:facet="enumeration" w:value="IC"/>
+    <w:Facet w:facet="enumeration" w:value="NM"/>
+    <w:Facet w:facet="enumeration" w:value="LA"/>
+    <w:Facet w:facet="enumeration" w:value="CO"/>
+    <w:Facet w:facet="enumeration" w:value="SD"/>
+    <w:Facet w:facet="enumeration" w:value="NJ"/>
+    <w:Facet w:facet="enumeration" w:value="VA"/>
+    <w:Facet w:facet="enumeration" w:value="CD"/>
+    <w:Facet w:facet="enumeration" w:value="NK"/>
+    <w:Facet w:facet="enumeration" w:value="TX"/>
+    <w:Facet w:facet="enumeration" w:value="AZ"/>
+    <w:Facet w:facet="enumeration" w:value="MN"/>
+    <w:Facet w:facet="enumeration" w:value="GM"/>
+    <w:Facet w:facet="enumeration" w:value="CT"/>
+    <w:Facet w:facet="enumeration" w:value="OH"/>
+    <w:Facet w:facet="enumeration" w:value="MA"/>
+    <w:Facet w:facet="enumeration" w:value="HI"/>
+    <w:Facet w:facet="enumeration" w:value="NY"/>
+    <w:Facet w:facet="enumeration" w:value="UT"/>
+    <w:Facet w:facet="enumeration" w:value="DC"/>
+    <w:Facet w:facet="enumeration" w:value="NB"/>
+    <w:Facet w:facet="enumeration" w:value="ME"/>
+    <w:Facet w:facet="enumeration" w:value="IA"/>
+    <w:Facet w:facet="enumeration" w:value="NV"/>
+    <w:Facet w:facet="enumeration" w:value="US"/>
+    <w:Facet w:facet="enumeration" w:value="MD"/>
+    <w:Facet w:facet="enumeration" w:value="MI"/>
+    <w:Facet w:facet="enumeration" w:value="GA"/>
+    <w:Facet w:facet="enumeration" w:value="OK"/>
+    <w:Facet w:facet="enumeration" w:value="AR"/>
+    <w:Facet w:facet="enumeration" w:value="PE"/>
+    <w:Facet w:facet="enumeration" w:value="MT"/>
+    <w:Facet w:facet="enumeration" w:value="MB"/>
+    <w:Facet w:facet="enumeration" w:value="WV"/>
+    <w:Facet w:facet="enumeration" w:value="AK"/>
+    <w:Facet w:facet="enumeration" w:value="WI"/>
+    <w:Facet w:facet="enumeration" w:value="MX"/>
+    <w:Facet w:facet="enumeration" w:value="TN"/>
+    <w:Facet w:facet="enumeration" w:value="IN"/>
+    <w:Facet w:facet="enumeration" w:value="WY"/>
+    <w:Facet w:facet="enumeration" w:value="SN"/>
+    <w:Facet w:facet="enumeration" w:value="AL"/>
+    <w:Facet w:facet="enumeration" w:value="PQ"/>
+    <w:Facet w:facet="enumeration" w:value="WA"/>
+    <w:Facet w:facet="enumeration" w:value="NC"/>
+  </w:Type>
+  <w:Type w:name="fbi:LSTACodeType" w:isRequested="true"/>
+  <w:Type w:name="fbi:SEXCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="F"/>
+    <w:Facet w:facet="enumeration" w:value="M"/>
+    <w:Facet w:facet="enumeration" w:value="U"/>
+  </w:Type>
+  <w:Type w:name="fbi:SEXCodeType" w:isRequested="true"/>
+  <w:Type w:name="j:DriverLicenseEndorsementType" w:isRequested="true">
+    <w:ElementInType w:name="j:DriverLicenseHMEThreatDate"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="j:DriverLicenseHMEThreatText"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="j:PersonType" w:isRequested="true"/>
+  <w:Type w:name="nc:AddressType" w:isRequested="true">
+    <w:ElementInType w:name="nc:AddressRepresentation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:BinaryType" w:isRequested="true">
+    <w:ElementInType w:name="nc:BinaryAvailableIndicator"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:BinaryCaptureDate" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:BinaryCategoryText"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:BinaryFormatID" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:BinaryObject" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:ContactInformationType" w:isRequested="true">
+    <w:ElementInType w:name="nc:ContactMeans" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:DateRangeType" w:isRequested="true">
+    <w:ElementInType w:name="nc:EndDate" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:DateType" w:isRequested="true">
+    <w:ElementInType w:name="nc:DateRepresentation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:DocumentType" w:isRequested="true">
+    <w:ElementInType w:name="nc:DocumentCreationDate"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DocumentExpirationDate"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:DriverLicenseBaseType" w:isRequested="true">
+    <w:ElementInType w:name="nc:DriverLicenseEndorsement"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DriverLicenseExpirationDate"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DriverLicenseIdentification"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DriverLicenseIssueDate"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DriverLicenseRestriction"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:DriverLicensePermitType" w:isRequested="true">
+    <w:ElementInType w:name="nc:DriverLicensePermitClassificationText"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DriverLicensePermitStatus"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:DriverLicenseType" w:isRequested="true">
+    <w:ElementInType w:name="nc:DriverLicenseCommercialClass"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DriverLicenseCommercialStatus"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DriverLicenseNonCommercialClassText"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DriverLicenseNonCommercialStatus"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DriverLicensePermit"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DriverLicensePermitQuantity"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:DrivingRestrictionType" w:isRequested="true">
+    <w:ElementInType w:name="nc:DrivingRestrictionDescriptionText"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DrivingRestrictionEndDate"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:DrivingRestrictionValue"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:FullTelephoneNumberType" w:isRequested="true">
+    <w:ElementInType w:name="nc:TelephoneNumberFullID"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:IdentificationType" w:isRequested="true">
+    <w:ElementInType w:name="nc:IdentificationID" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:IdentificationJurisdiction"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:ImageType" w:isRequested="true"/>
+  <w:Type w:name="nc:LengthMeasureType" w:isRequested="true"/>
+  <w:Type w:name="nc:MeasurePointValueType" w:isRequested="true"/>
+  <w:Type w:name="nc:MeasureType" w:isRequested="true">
+    <w:ElementInType w:name="nc:MeasureUnitText" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:MeasureValue" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:MetadataType" w:isRequested="false">
+    <w:ElementInType w:name="nc:CommentText" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
+  <w:Type w:name="nc:NumericType" w:isRequested="true"/>
+  <w:Type w:name="nc:PersonNameTextType" w:isRequested="true">
+    <w:AttributeInType w:name="nc:personNameInitialIndicator"/>
+  </w:Type>
+  <w:Type w:name="nc:PersonNameType" w:isRequested="true">
+    <w:ElementInType w:name="nc:PersonFullName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonGivenName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonMiddleName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonNameSuffixText"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonSurName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:PersonType" w:isRequested="true">
+    <w:ElementInType w:name="nc:PersonBirthDate" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonDigitalImage"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonEyeColor" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonHairColor" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonHeightMeasure"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonMedicalFileIndicator"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonOrganDonatorIndicator"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonOtherIdentification"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonRace" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonSSNIdentification"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonSex" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonWeightMeasure"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:ProperNameTextType" w:isRequested="true"/>
+  <w:Type w:name="nc:StreetType" w:isRequested="true">
+    <w:ElementInType w:name="nc:StreetFullText" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:StructuredAddressType" w:isRequested="true">
+    <w:ElementInType w:name="nc:AddressDeliveryPoint"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:LocationCityName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:LocationCountry" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:LocationCounty" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:LocationPostalCode"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:LocationState" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:TelephoneNumberType" w:isRequested="true">
+    <w:ElementInType w:name="nc:TelephoneNumberRepresentation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:TextType" w:isRequested="true"/>
+  <w:Type w:name="nc:WeightMeasureType" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:base64Binary" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:boolean" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:date" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:decimal" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:integer" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:string" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:time" w:isRequested="true"/>
+</w:WantList>

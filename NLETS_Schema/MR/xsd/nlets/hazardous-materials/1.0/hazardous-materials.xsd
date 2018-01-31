@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/3.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:m="http://release.niem.gov/niem/domains/maritime/3.1/" xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/" xmlns:n2-mr="http://www.nlets.org/niem/nlets-hazardous-materials/1.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/" targetNamespace="http://www.nlets.org/niem/nlets-hazardous-materials/1.0">
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="./niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="./niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="./niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/jxdm/5.2/" schemaLocation="./niem/domains/jxdm/5.2/jxdm.xsd"/>
+	<xs:complexType name="SubstanceAugmentationType">
+		<xs:annotation>
+			<xs:documentation>The text from the DOT Guide specific to the chemical.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-mr:ChemicalGuideText" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ChemicalInformationType">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Chemical Inquiry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:Chemical" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ChemicalInquiryType">
+		<xs:annotation>
+			<xs:documentation>The business data being queried.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:Chemical" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	<xs:element name="ChemicalGuideText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="ChemicalInformation" type="n2-mr:ChemicalInformationType" abstract="false" nillable="true"/>
+	<xs:element name="ChemicalInquiry" type="n2-mr:ChemicalInquiryType" abstract="false" nillable="true"/>
+	<xs:element name="SubstanceAugmentation" type="n2-mr:SubstanceAugmentationType" abstract="false" substitutionGroup="nc:SubstanceAugmentationPoint" nillable="true"/>
+	<xs:element name="ChemicalNameText" type="nc:TextType" abstract="false" substitutionGroup="nc:SubstanceDesignator" nillable="true"/>
+</xs:schema>

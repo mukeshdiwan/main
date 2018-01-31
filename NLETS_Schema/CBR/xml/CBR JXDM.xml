@@ -1,0 +1,39 @@
+<n:NLETS version="3.00" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:n="http://www.nlets.org">
+<n:NLETSResponseMessage>
+<n:NLETSResponseHeader>
+<j:DocumentSource.Organization>
+<j:OrganizationORIID>
+<j:ID>
+CN0000000</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSource.Organization>
+<j:DocumentSubject.Organization>
+<j:OrganizationORIID>
+<j:ID>
+AZNLETS24</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSubject.Organization>
+<n:MessageKeyCode>
+CBR</n:MessageKeyCode>
+<n:DocumentControlFieldText>
+KATESILHOL</n:DocumentControlFieldText>
+<j:DocumentReceivedDate>
+05/05/2006</j:DocumentReceivedDate>
+<n:DocumentReceivedTime>
+10:22</n:DocumentReceivedTime>
+<n:DocumentReceivedCountQuantity>
+41342</n:DocumentReceivedCountQuantity>
+<j:DocumentFiledDate>
+05/05/2006</j:DocumentFiledDate>
+<j:DocumentFiledTime>
+10:34</j:DocumentFiledTime>
+<n:DocumentFiledCountQuantity>
+00012</n:DocumentFiledCountQuantity>
+</n:NLETSResponseHeader>
+<n:NLETSResponseData Key="CBR">
+<n:ResponseText>
+<![CDATA[** RESPONSE FROM CANADIAN SYSTEM - BOAT/MOTOR FILE **********************************************************************************        -  POSSIBLE CPIC 'BOAT/MOTOR' FILE HIT.  -   YOUR INQUIRY MAY HAVE RESULTED IN MULTIPLE RECORDS BEING RETURNED.   CONFIRMATION ON THE SELECTED 'BOAT/MOTOR' MUST BE ACCOMPLISHED USING   A 'YQ' MESSAGE ADDRESSED TO THE CANADIAN LAW ENFORCEMENT AGENCY  IDENTIFIED AS THE ORIGINATOR OF THE RECORD.   YOU MUST ADD '00' TO THE END OF THE 7-DIGIT CANADIAN AGENCY ORI   IN THE RECORD.     (EXAMPLE: 'TORONTO PD ON30570 1991-01-01 12:00'         DESTINATION ORI FOR CONFIRMATION WOULD BE ON3057000)********************************************************************************RE:  1966   QUERY BOAT HIN: JRNTEST       REM: N,CBQ,AZNLETS24,*KATESILHOL,    CPI CENTRE AUDIT IC10061 2000-02-18 07:52    BOAT POWERBOAT BLUE WHITE 6 M ( 20 FT )    1990 STARCRAF SHARK INBOARD EXP: 2009-10-12   STATUS:STOLEN      LIC: 53JNTEST HIN: JRNTEST NAME: MANSPLEASURE REG: 53NTEST    REM: TEST RECORD FOR ACUPIES INTERFACE CASE: ACUPIES TEST-02    CONFIRM WITH ORIGINATING AGENCY 2006050513220220060505132203*** END OF CPIC RESPONSE ***OTTAWA, CANADA]]>
+</n:ResponseText>
+</n:NLETSResponseData>
+</n:NLETSResponseMessage>
+</n:NLETS>

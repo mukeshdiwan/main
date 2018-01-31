@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/domains/jxdm/4.1" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0">
+  <xsd:annotation>
+    <xsd:documentation>Justice</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../../proxy/xsd/2.0/xsd.xsd" namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
+  <xsd:import schemaLocation="../../../niem-core/2.0/niem-core.xsd" namespace="http://niem.gov/niem/niem-core/2.0"/>
+  <xsd:import schemaLocation="../../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:import schemaLocation="../../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../../fbi/2.0/fbi.xsd" namespace="http://niem.gov/niem/fbi/2.0"/>
+  <xsd:complexType name="ChargeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a formal allegation that a specific person has committed a specific offense.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="j:ChargeStatute" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ConvictionType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a judgement that a defendant is guilty.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="ActivityType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:ActivityType">
+        <xsd:sequence>
+          <xsd:element ref="j:ConvictionCharge" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:ConvictionCourt" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CourtType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a court or a unit of a court responsible for trying justice proceedings.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="OrganizationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:OrganizationType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CrashType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a traffic accident.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="DrivingIncidentType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="j:DrivingIncidentType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DriverConvictionType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a judge or jury finding a person guilty or a person pleading guilty in relation to a traffic offense.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="ConvictionType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="j:ConvictionType">
+        <xsd:sequence>
+          <xsd:element ref="j:DriverConvictionCMV" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:DriverConvictionHazMat" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:DriverConvictionOffense" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:DriverConvictionOffenseDescriptionText" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DriverHistorySummaryType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a summary of a driver's history.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="j:DriverHistoryAccidentQuantity" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:DriverHistoryConvictionQuantity" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:DriverHistoryWithdrawalQuantity" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DriverLicenseEndorsementType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for an endorsement on a driver license or driver license permit which authorizes the operation of specified types of vehicles carrying specified loads.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="j:DriverLicenseHMEThreatText" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:DriverLicenseHMEThreatDate" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DrivingIncidentType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for details of an incident involving a vehicle.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="IncidentType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:IncidentType">
+        <xsd:sequence>
+          <xsd:element ref="j:DrivingAccidentSeverity" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:DrivingIncidentCMV" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:DrivingIncidentHazMat" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:DrivingIncidentJurisdiction" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for an applied augmentation for type nc:PersonType</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="PersonType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:PersonType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="StatuteType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a law, rule, or ordinance within a jurisdiction.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="j:StatuteCodeIdentification" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ChargeStatute" type="j:StatuteType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A unique identifier of a law, rule, or ordinance within a jurisdiction that a person is accused of violating.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ConvictionCharge" type="j:ChargeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A charge for which a person was convicted.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ConvictionCourt" type="j:CourtType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A court in which a conviction was issued.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Crash" type="j:CrashType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A traffic accident.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverConviction" type="j:DriverConvictionType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Details about a judge or jury finding a person guilty or a person pleading guilty in relation to a traffic offense.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverConvictionCMV" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>An indication of whether a person was driving a commercial motor vehicle (CMV) in an incident that resulted in a conviction.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverConvictionCMVText" type="nc:TextType" substitutionGroup="j:DriverConvictionCMV" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An indication of whether a person was driving a commercial motor vehicle (CMV) in an incident that resulted in a conviction.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="DriverConvictionCMV"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverConvictionHazMat" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>An indication of whether a person was carrying hazardous materials (HazMat) in a vehicle that was involved in an incident, resulting in a conviction.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverConvictionHazMatText" type="nc:TextType" substitutionGroup="j:DriverConvictionHazMat" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An indication of whether a person was carrying hazardous materials (HazMat) in a vehicle that was involved in an incident, resulting in a conviction.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="DriverConvictionHazMat"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverConvictionOffense" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A specific offense or charge for which the party has been found guilty.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverConvictionOffenseDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Additional details about an ACD defined offense.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverConvictionOffenseText" type="nc:TextType" substitutionGroup="j:DriverConvictionOffense" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A specific offense or charge for which the party has been found guilty.  </xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="DriverConvictionOffense"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverHistoryAccidentQuantity" type="niem-xsd:nonNegativeInteger" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number of accidents in which a driver has been involved.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverHistoryConvictionQuantity" type="niem-xsd:nonNegativeInteger" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number of times that a driver has been convicted.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverHistorySummary" type="j:DriverHistorySummaryType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Summary details about a driver's history</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverHistoryWithdrawalQuantity" type="niem-xsd:nonNegativeInteger" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A count of the number of withdrawals recorded on a drivers license record.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverLicenseEndorsement" type="j:DriverLicenseEndorsementType" substitutionGroup="nc:DriverLicenseEndorsement" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An endorsement on a driver license or driver license permit which authorizes the operation of specified types of vehicles carrying specified loads.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="DriverLicenseEndorsement"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverLicenseHMEThreatDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A date on which an adjudication by the TSA was made, of a driver's suitability to hold a Hazardous Material Endorsement.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DriverLicenseHMEThreatText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A determination if a driver should be issued a HAZMAT Endorsement, as determined by the TSA adjudication process. 
+</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DrivingAccidentSeverity" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A severity level of an accident, based on the most intense injury to any person or, if none were injured, so designating.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DrivingAccidentSeverityText" type="nc:TextType" substitutionGroup="j:DrivingAccidentSeverity" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A severity level of an accident, based on the most intense injury to any person or, if none were injured, so designating.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="DrivingAccidentSeverity"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DrivingIncidentCMV" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A determination of whether the incident occurred while the driver was operating a commercial vehicle.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DrivingIncidentCMVText" type="nc:TextType" substitutionGroup="j:DrivingIncidentCMV" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A determination of whether the incident occurred while the driver was operating a commercial vehicle.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="DrivingIncidentCMV"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DrivingIncidentHazMat" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A determination of whether the incident occurred while the driver was operating a commercial vehicle that was carrying hazardous materials (that required a placard).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DrivingIncidentHazMatText" type="nc:TextType" substitutionGroup="j:DrivingIncidentHazMat" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A determination of whether the incident occurred while the driver was operating a commercial vehicle that was carrying hazardous materials (that required a placard).</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="DrivingIncidentHazMat"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DrivingIncidentJurisdiction" type="nc:JurisdictionType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A jurisdiction in which an incident occurred.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DrivingJurisdictionAuthorityNCICLSTACode" type="fbi:LSTACodeType" substitutionGroup="nc:IdentificationJurisdiction" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A federal or state organization with jurisdiction over a person's driving privileges.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="IdentificationJurisdiction"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="IdentificationJurisdictionNCICLSTACode" type="fbi:LSTACodeType" substitutionGroup="nc:IdentificationJurisdiction" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An area, region, or unit in which a unique identification is issued.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="IdentificationJurisdiction"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StatuteCodeIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An identifier of a set of laws for a particular jurisdiction.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

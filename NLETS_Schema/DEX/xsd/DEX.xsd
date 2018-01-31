@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" targetNamespace="http://www.nlets.org/niem/1.0">
+	<import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="./niem/proxy/xsd/2.0/xsd.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="./nlets-hdr/1.0/MessageHeader.xsd"/>
+	<import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation="./niem/domains/jxdm/4.1/jxdm.xsd"/>
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="./niem/structures/2.0/structures.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="./niem/niem-core/2.0/niem-core.xsd"/>
+	<!-- NDPIX Entry.  DEA is response -->
+	<complexType name="DrugActivityType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="nc:ActivityType">
+				<sequence>
+					<element ref="nc:LocationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nc:Drug" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NDPIXEntryType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="nc:DocumentType">
+				<sequence>
+					<element ref="nc:Case" minOccurs="0"/>
+					<element ref="n2:DocumentSubmitterPasswordText" minOccurs="0"/>
+					<element ref="n2:DocumentSubmitterUserIDText" minOccurs="0"/>
+					<element ref="n2:RequestorDescriptionText" minOccurs="0"/>
+					<element ref="n2:RouterFieldText" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSType">
+		<annotation>
+			<documentation>A structure that defines the root element of an NLETS message.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:NLETSMessageHeader"/>
+					<element ref="n2:NLETSUpdateData"/>
+				</sequence>
+				<attribute ref="n2:version" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSUpdateDataType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:NDPIXEntry"/>
+					<element ref="n2:QueryPerson"/>
+					<element ref="nc:Aircraft" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="n2:DrugActivity" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nc:Vessel" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+				<attribute ref="n2:key" use="required"/>
+				<attribute ref="n2:type" use="optional"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PersonNameType">
+		<complexContent>
+			<extension base="nc:PersonNameType">
+				<sequence>
+					<element ref="n2:PersonMonikerName" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="QueryPersonType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="j:PersonType">
+				<sequence>
+					<element ref="n2:PersonCautionIndicator" minOccurs="0"/>
+					<element ref="n2:PersonContactInformation" minOccurs="0"/>
+					<element ref="n2:PersonResidentialAddress" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<attribute name="key" type="xsd:string"/>
+	<attribute name="type" type="xsd:string"/>
+	<attribute name="version" type="xsd:string"/>
+	<element name="DocumentSubmitterPasswordText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="DocumentSubmitterUserIDText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="DrugActivity" type="n2:DrugActivityType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Describes illicit drug activity.</documentation>
+		</annotation>
+	</element>
+	<element name="NDPIXEntry" type="n2:NDPIXEntryType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Encapsulates the information about a NDPIX entry</documentation>
+		</annotation>
+	</element>
+	<element name="NLETS" type="n2:NLETSType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The root element of a NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSMessageHeader" type="nh2:NLETSMessageHeaderType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Metadata information about an NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSUpdateData" type="n2:NLETSUpdateDataType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="QueryPerson" type="n2:QueryPersonType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element encapsulates the information about the person being queried.</documentation>
+		</annotation>
+	</element>
+	<element name="PersonCautionIndicator" type="niem-xsd:boolean" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This optional element will contain caution field.  True indicates armed or dangerous</documentation>
+		</annotation>
+	</element>
+	<element name="PersonContactInformation" type="nc:ContactInformationType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element contains contact information.</documentation>
+		</annotation>
+	</element>
+	<element name="PersonMonikerName" type="nc:PersonNameTextType">
+		<annotation>
+			<documentation>This optional element will contain the target_s moniker. May occur multiple times.</documentation>
+		</annotation>
+	</element>
+	<element name="PersonName" type="n2:PersonNameType" substitutionGroup="nc:PersonName">
+		<annotation>
+			<documentation>This element encloses subelements containing name data for query</documentation>
+		</annotation>
+	</element>
+	<element name="PersonResidentialAddress" type="nc:StructuredAddressType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This optional element contains the street address.  Actual value should go in the subelement nc:StreetFullText</documentation>
+		</annotation>
+	</element>
+	<element name="RequestorDescriptionText" type="nc:TextType">
+		<annotation>
+			<documentation>This optional element contains the person who authorized or requested transaction entry.</documentation>
+		</annotation>
+	</element>
+	<element name="RouterFieldText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Optional element will contain router Field.  Secondary address (used by state agency if state is using a common ORI for its law enforcement agencies).</documentation>
+		</annotation>
+	</element>
+</schema>

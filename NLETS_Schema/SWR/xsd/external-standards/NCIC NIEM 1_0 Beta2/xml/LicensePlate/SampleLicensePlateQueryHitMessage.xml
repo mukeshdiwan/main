@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header. -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key (type of entry) -->
+        <ncic:MessageTransactionCode>QV</ncic:MessageTransactionCode>
+        <ncic-ex:PrimaryHitData s:ref="d77e16-incomingRecordData_licensePlateHitDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData (hit). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="d77e16-incomingRecordData_licensePlateHitDataSection">
+        <ncic:LicensePlateRecord s:ref="d77e16-licensePlateRecord_hitDataSection"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:LicensePlateRecord (hit). -->
+    <!-- ******************************************************************************** -->
+    <ncic:LicensePlateRecord s:id="d77e16-licensePlateRecord_hitDataSection">
+        <!-- Expired-License-Alert -->
+        <nc:CaveatText>WARNING – THE FOLLOWING RECORD CONTAINS EXPIRED LICENSE PLATE DATA.  USE CAUTION, CONTACT ENTERING AGENCY TO CONFIRM STATUS.</nc:CaveatText>
+        <!-- Partial-LIC-Alert -->
+        <nc:CaveatText>RECORD NIC/<!--<NIC>-->L875683021 IS BASED ON PARTIAL LIC SEARCH – VERIFY ALL DATA BEFORE TAKING FURTHER ACTION BASED ON THIS RESPONSE</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>**TEST**THIS RESPONSE IS FROM NCIC TEST SYSTEM.</nc:CaveatText>
+        <!-- Caveat - Caveat data -->
+        <nc:CaveatText>IMMED CONFIRM RECORD WITH ORI</nc:CaveatText>
+        <nc:Incident s:ref="d77e5526-incident_theft"/>
+        <nc:LastUpdatedDate>
+            <!-- DLU - Date of last update -->
+            <nc:DateTime>2007-12-12T11:00:00-05:00</nc:DateTime>
+        </nc:LastUpdatedDate>
+        <!-- ORI-Translation - Originating agency identifier -->
+        <nc:OrganizationDescriptionText>ORI IS <!--<ATR>-->WV STATE PEN <!--<CT1>-->3045551234</nc:OrganizationDescriptionText>
+        <nc:ReportedDate>
+            <!-- DTE - Date and time of entry into NCIC files -->
+            <nc:DateTime>2005-05-20T14:00:00-04:00</nc:DateTime>
+        </nc:ReportedDate>
+        <ncic:InvestigativeInterest s:ref="d77e5655-incident_investigativeInterest"/>
+        <!-- MKT - Message key translation -->
+        <ncic:MessageTransactionText>STOLEN LICENSE PLATE</ncic:MessageTransactionText>
+        <!-- NOA - Notify originating agency -->
+        <ncic:NotifyOriginatingAgencyIndicator>true</ncic:NotifyOriginatingAgencyIndicator>
+        <ncic:RecordExpirationDate>
+            <!-- Retirement-Timestamp - Retirement timestamp -->
+            <nc:Date>2006-03-01</nc:Date>
+        </ncic:RecordExpirationDate>
+        <ncic:RecordStatus>
+            <nc:StatusDate>
+                <!-- DOR - Date of recovery -->
+                <nc:Date>2005-10-27</nc:Date>
+            </nc:StatusDate>
+            <nc:StatusText>CLEARED</nc:StatusText>
+            <ncic:StatusAugmentation>
+                <!-- RCA - Recovering Agency Case number -->
+                <j:CaseNumberText>WVV998169</j:CaseNumberText>
+                <!-- RRI - Recovering Agency Identifier -->
+                <ncic:StatusIssuerOrganization s:ref="d77e5620-organization_recovered"/>
+            </ncic:StatusAugmentation>
+        </ncic:RecordStatus>
+        <j:ItemNCICIdentification>
+            <!-- NIC - NCIC number (Record identifier) -->
+            <nc:IdentificationID>L875683021</nc:IdentificationID>
+        </j:ItemNCICIdentification>
+        <j:ConveyanceRegistration s:ref="d77e29-conveyanceRegistration_licensePlate"/>
+    </ncic:LicensePlateRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. (theft) -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e5526-incident_theft">
+        <nc:ActivityDate>
+            <!-- DOT - Date of theft -->
+            <nc:Date>2005-10-27</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>VEHICLE STOLEN FROM MAIN STREET</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <j:CaseLinkage>
+                <!-- LKA - Linkage Case Number -->
+                <j:CaseLinkageNumberText>WV-123456</j:CaseLinkageNumberText>
+                <j:OrganizationORIIdentification>
+                    <!-- LKI - Linkage Agency Identifier -->
+                    <nc:IdentificationID>WV456123</nc:IdentificationID>
+                </j:OrganizationORIIdentification>
+            </j:CaseLinkage>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>WVV990167</j:CaseNumberText>
+            <j:ActivityDocumentValidator>
+                <nc:EntityOrganization s:ref="validator_organization"/>
+            </j:ActivityDocumentValidator>
+        </j:ActivityAugmentation>
+        <ncic:ActivityAugmentation>
+            <ncic:RecordValidationDate>
+                <!-- VLD - Validation date -->
+                <nc:Date>2005-10-27</nc:Date>
+            </ncic:RecordValidationDate>
+        </ncic:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e5526-organization_theft"/>
+    </nc:Incident>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (name of validator organization) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="validator_organization">
+        <!-- VLN - Name of validator -->
+        <nc:OrganizationName>WV DMV</nc:OrganizationName>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (investigative interest) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e5655-organization_investigativeInterest">
+        <!-- ATR - Agency translation -->
+        <nc:OrganizationName>WV STATE PRISON</nc:OrganizationName>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation telephone numbers -->
+                    <nc:TelephoneNumberFullID>3045551234</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- IIA - Investigation interest agency identifier -->
+                <nc:IdentificationID>WV1000001</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (recovered) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e5620-organization_recovered">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- RRI - Recovery agency identifier -->
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (theft) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e5526-organization_theft">
+        <!-- ATR - Agency translation -->
+        <nc:OrganizationName>WV STATE PEN</nc:OrganizationName>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation telephone numbers -->
+                    <nc:TelephoneNumberFullID>3045551234</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>ORI987650</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:ConveyanceRegistration. (license plate) -->
+    <!-- ******************************************************************************** -->
+    <j:ConveyanceRegistration s:id="d77e29-conveyanceRegistration_licensePlate">
+        <j:ConveyanceRegistrationDecal>
+            <!-- LIY - License plate year of expiration -->
+            <nc:DecalYearDate>2007</nc:DecalYearDate>
+        </j:ConveyanceRegistrationDecal>
+        <j:ConveyanceRegistrationPlateIdentification>
+            <!-- LIC - License plate number -->
+            <nc:IdentificationID>DER250</nc:IdentificationID>
+            <nc:IdentificationJurisdiction>
+                <!-- LIS - License plate state -->
+                <j:JurisdictionNCICLSTACode>WV</j:JurisdictionNCICLSTACode>
+            </nc:IdentificationJurisdiction>
+        </j:ConveyanceRegistrationPlateIdentification>
+        <!-- LIT - License plate type -->
+        <j:ConveyanceRegistrationPlateCategoryCode>TR</j:ConveyanceRegistrationPlateCategoryCode>
+    </j:ConveyanceRegistration>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:InvestigativeInterest -->
+    <!-- ******************************************************************************** -->
+    <ncic:InvestigativeInterest s:id="d77e5655-incident_investigativeInterest">
+        <nc:ActivityDate>
+            <!-- DII - Date of investigative interest -->
+            <nc:Date>2000-03-12</nc:Date>
+        </nc:ActivityDate>
+        <!-- MIS - Miscellaneous remarks -->
+        <nc:ActivityDescriptionText>UNLOCATED</nc:ActivityDescriptionText>
+        <j:ActivityAugmentation>
+            <!-- ICA - Investigative Interest Case Number -->
+            <j:CaseNumberText>VA-V002948</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e5655-organization_investigativeInterest"/>
+    </ncic:InvestigativeInterest>
+</ncic-ex:Exchange>

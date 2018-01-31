@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -->
+                <nc:IdentificationID>WV200000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.P.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            $.P. PURGE FOR FAILURE TO VALIDATE
+            <!--<ORI>-->WV1000000
+            NCIC VALIDATION PURGE <!--<yyyymmdd>-->20040412.  THE FOLLOWING RECORD HAS BEEN PURGED
+            BY THE FBI DUE TO YOUR FAILURE TO VALIDATE.  YOU MAY REENTER IF YOU
+            DETERMINE THE INFORMATION IS VALID, ACCURATE AND COMPLETE.
+            <!--<Database-Record>-->
+                                        
+        </nc:CaveatText>
+    
+    <!--Other additional record types can be used for this notification. VehicleRecord is used in 
+        this sample XML file.-->
+    <!--The order and fields reported SHALL be as defined in the Primary Hit Response in Part 3-1 
+        of the Message Book, excluding all alerts, all warnings, ORI translations, all caveats, TYP 
+        translations, UNN message, all image fields, BRD text, and End of Record text-->
+    <!-- Only needed elements for the example are included here -->
+    <ncic:Record s:ref="PurgedRecord"/>
+    
+    <!-- DateTime of the Notification Triggering Event -->
+    <ncic:NotificationDateTime>2004-04-12T13:20:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:VehicleRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:Record s:id="PurgedRecord">
+    </ncic:Record>
+</ncic-ex:Exchange>

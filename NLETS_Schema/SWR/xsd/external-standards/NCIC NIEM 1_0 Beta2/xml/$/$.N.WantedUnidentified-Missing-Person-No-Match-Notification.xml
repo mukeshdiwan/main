@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI receiving this Message  -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.N.UNIDENTIFIED/WANTED COMPARE RESULTS</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            YOUR RECORD WITH NIC/<!--<NIC>-->W123456789 OCA/<!--<OCA>-->3456789 HAS BEEN SEARCHED.
+            THE DENTAL SEARCH DID NOT PRODUCE ANY POSSIBLE MATCHES.
+        </nc:CaveatText>
+        <ncic:Record s:ref="WantedPersonRecordDataSection"/>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="WantedPersonRecordDataSection">
+        <nc:Incident s:ref="WantedPersonIncident"/>        
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC Number -->
+            <nc:IdentificationID>W123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+    </ncic:WantedPersonRecord>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="WantedPersonIncident">
+        <j:ActivityAugmentation>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>3456789</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+</ncic-ex:Exchange>

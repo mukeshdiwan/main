@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:ncic="http://www.it.ojp.gov/jxdm/ncic_2000/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/jxdm/CGQ/CGQ.xsd" version="">
+	<NLETSInquiryMessage>
+		<NLETSInquiryHeader>
+			<DocumentUserID>
+				<j:ID>String</j:ID>
+			</DocumentUserID>
+			<DocumentPasswordText>String</DocumentPasswordText>
+			<MessageKeyCode>CGQ</MessageKeyCode>
+			<DocumentControlFieldText>String</DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>OrigORI</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>DestORI</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+			<DocumentDestinationID>
+				<j:ID>DestORI</j:ID>
+			</DocumentDestinationID>
+		</NLETSInquiryHeader>
+		<NLETSInquiryData Key="">
+			<j:Firearm>
+				<j:PropertyAssignedIDDetails>
+					<j:PropertySerialID>
+						<j:ID>Serial123</j:ID>
+					</j:PropertySerialID>
+				</j:PropertyAssignedIDDetails>
+				<j:FirearmTypeCode>SG</j:FirearmTypeCode>
+			</j:Firearm>
+			<ReasonCode>V</ReasonCode>
+			<SightedIndicator>Y</SightedIndicator>
+		</NLETSInquiryData>
+	</NLETSInquiryMessage>
+</NLETS>

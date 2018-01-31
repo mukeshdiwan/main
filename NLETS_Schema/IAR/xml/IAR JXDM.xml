@@ -1,0 +1,122 @@
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+     <n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+            <n:DocumentUserID><j:ID>USER55</j:ID></n:DocumentUserID>
+            <n:DocumentPasswordText>123456</n:DocumentPasswordText>
+            <n:MessageKeyCode>IAR</n:MessageKeyCode>
+            <j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>AZNLETS11</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <j:DocumentSubject.Organization>
+              <j:OrganizationORIID>
+                <j:ID>AZNLETS11</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSubject.Organization>
+			<n:DocumentControlFieldText>ATS000048</n:DocumentControlFieldText>
+			<n:DocumentReceivedTime>12:03</n:DocumentReceivedTime>
+			<j:DocumentReceivedDate>1990-11-01</j:DocumentReceivedDate>
+			<n:DocumentReceivedCountQuantity>00003</n:DocumentReceivedCountQuantity>
+			<j:DocumentFiledTime>12:03</j:DocumentFiledTime>
+			<j:DocumentFiledDate>1990-11-01</j:DocumentFiledDate>
+			<n:DocumentFiledCountQuantity>00008</n:DocumentFiledCountQuantity>			
+		</n:NLETSResponseHeader>
+		<n:NLETSInquiryData Key="IAQ">
+				<j:Subject>
+					<j:SubjectStatus>In Custody</j:SubjectStatus>
+					<j:SubjectWarrantTypeCode>4651</j:SubjectWarrantTypeCode>
+					<j:PersonName>	
+                           <j:PersonFullName>Scott, Anthony L</j:PersonFullName>
+                           <j:PersonGivenName>Anthony</j:PersonGivenName>
+						<j:PersonMiddleName>L</j:PersonMiddleName>
+						<j:PersonSurName>Scott</j:PersonSurName>
+					</j:PersonName>
+					<j:PersonBirthDate>1980-07-14</j:PersonBirthDate>
+					<j:PersonBirthPlaceCode>AZ</j:PersonBirthPlaceCode>
+					<j:PersonAssignedIDDetails>
+						<j:PersonOtherID type="AS">
+                               <j:ID>111223333</j:ID>
+                          </j:PersonOtherID>
+						<j:PersonFBIID><j:ID>12456789</j:ID></j:PersonFBIID>
+						<j:PersonOtherID IDTypeText="PassportNumber">
+                              <j:ID>123456789</j:ID>
+                          </j:PersonOtherID>
+						<j:PersonOtherID IDTypeText="BookingNumber">
+                                 <j:ID>987654321</j:ID>
+                          </j:PersonOtherID>
+						<j:PersonOtherID IDTypeText="AlienRegistration">
+                                 <j:ID>987654321</j:ID>
+                          </j:PersonOtherID>
+					</j:PersonAssignedIDDetails>
+					<j:PersonPhysicalDetails>
+						<j:PersonSexCode>M</j:PersonSexCode>
+						<j:PersonHeightMeasure>601</j:PersonHeightMeasure>
+						<j:PersonWeightMeasure>210</j:PersonWeightMeasure>
+						<j:PersonHairColorCode>BRO</j:PersonHairColorCode>
+					</j:PersonPhysicalDetails>
+					<j:Residence>
+						<j:ResidenceStartDate>2004-01-01</j:ResidenceStartDate>
+						<j:LocationAddress>
+							<j:LocationStreet>
+								<j:StreetFullText>123 MAIN STREET</j:StreetFullText>
+							</j:LocationStreet>
+							<j:LocationCountyName>Loudon</j:LocationCountyName>
+						</j:LocationAddress>
+					</j:Residence>
+					<j:PersonParent>
+						<j:PersonName>
+                                <j:PersonFullName>Johnson, Susan</j:PersonFullName>
+							<j:PersonGivenName>Susan</j:PersonGivenName>
+							<j:PersonMaidenName>Johnson</j:PersonMaidenName>
+						</j:PersonName>
+					</j:PersonParent>
+					<j:PersonParent>
+						<j:PersonName>
+                                <j:PersonFullName>Scott, Steve</j:PersonFullName>
+                                <j:PersonGivenName>Steve</j:PersonGivenName>				
+                                <j:PersonSurName>Scott</j:PersonSurName>
+						</j:PersonName>
+					</j:PersonParent>
+				</j:Subject>
+				<n:Attention>SGT JOHN DOE</n:Attention>
+				<n:PurposeCode>C</n:PurposeCode>
+				<j:ContactInformation>
+					<j:ContactTelephoneNumber>
+						<j:TelephoneAreaCodeID>571</j:TelephoneAreaCodeID>
+						<j:TelephoneExchangeID>
+                               555
+                           </j:TelephoneExchangeID>
+						<j:TelephoneSuffixID>6789</j:TelephoneSuffixID>
+					</j:ContactTelephoneNumber>
+				</j:ContactInformation>
+			</n:NLETSInquiryData>
+			<n:NLETSResponseData Type="hit" Key="IAR">
+			      <n:ResponseText><![CDATA[THIS IS NOT AN IMMIGRATION DETAINER!  THIS INFORMATION IS FOR LAW ENFORCEMENT USE AND IS BEING PROVIDED FOR INFORMATIONAL PURPOSES ONLY.  THIS RESPONSE IS NOT SUPPORTED BY 	FINGERPRINTS.
+					*********************************************************************************
+					SUBJECT APPEARS TO HAVE BEEN PREVIOUSLY DEPORTED
+					*********************************************************************************
+					BASED ON THE INFORMATION PROVIDED, THE FOLLOWING INS RECORD APPEARS TO RELATE:
+					NAME/			
+					DOB/
+					POB/
+					ARN/
+					FCO/
+					DOE/
+					FBI/ MAY RELATE TO SUBJECT
+					SID/ MAY RELATE TO SUBJECT
+					LKA/
+					SOC/
+					FFN/
+					MFN/
+					
+					INS RECORDS INDICATE THAT THIS SUBJECT WAS DEPORTED FROM THE UNITED STATES ON 00/00/00 AT 	(______).  	HE/SHE WAS DEPORTED FOR (REASON FOR DEPORTATION).  NO RECORD OF LEGAL RE-ENTRY	HAS BEEN FOUND.
+					*********************************************************************************
+					IMPORTANT NOTICE
+					*********************************************************************************
+					THIS PERSON MAY BE AMENABLE TO ARREST FOR VIOLATION OF THE FEDERAL CRIMINAL STATUTES 	AND/OR FOR IMMIGRATION ACT VIOLATIONS.
+					REM/.
+				]]></n:ResponseText>
+			</n:NLETSResponseData>
+		</n:NLETSResponseMessage>
+</n:NLETS>

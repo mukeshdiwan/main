@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.3.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>RESEND DATA ERROR</nc:CaveatText>
+        <nc:CaveatText>RESEND TIMEOUT</nc:CaveatText>
+        <nc:CaveatText>RESEND MSG TOO LONG</nc:CaveatText>
+        <nc:CaveatText>REJECT: FRAMING ERROR - INVALID START FLAG</nc:CaveatText>
+        <nc:CaveatText>REJECT: FRAMING ERROR - INVALID SIZE FIELD</nc:CaveatText>
+        <nc:CaveatText>REJECT: FRAMING ERROR - INVALID END FLAG</nc:CaveatText>
+        <nc:CaveatText>REJECT: RESYNC NOT ACHIEVABLE - CONNECTION CLOSED</nc:CaveatText>
+        <nc:CaveatText>RESEND NCIC 2000 ERROR</nc:CaveatText>
+        <nc:CaveatText>REJECT INVALID LINE</nc:CaveatText>
+        <nc:CaveatText>REJECT: PROTOCOL VIOLATION <!--first 100 bytes of the rejected transaction--></nc:CaveatText>
+        <nc:CaveatText>REJECT: Attempted to Exceed permitted TCP connection limit for line</nc:CaveatText>
+        <nc:CaveatText>REJECT: LINE COMMANDED DOWN AT NCIC 2000</nc:CaveatText>
+        <nc:CaveatText>REJECT: DUPLICATE OF TRANSACTION CURRENTLY BEING PROCESSED</nc:CaveatText>
+    </ncic-ex:NotificationRecordData>
+</ncic-ex:Exchange>

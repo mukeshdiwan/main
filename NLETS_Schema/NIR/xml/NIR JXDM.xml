@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+			<n:MessageKeyCode>NAR</n:MessageKeyCode>
+ 			<n:DocumentControlFieldText>000000089</n:DocumentControlFieldText>
+         <j:DocumentSource.Organization>
+          <j:OrganizationORIID>
+            <j:ID>NA</j:ID>
+          </j:OrganizationORIID>
+        </j:DocumentSource.Organization>
+        <j:DocumentSubject.Organization>
+          <j:OrganizationORIID>
+            <j:ID>GA1234567</j:ID>
+          </j:OrganizationORIID>
+        </j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSInquiryData Key="NAQ">
+			<j:VehicleID>
+              <j:ID>1FABP10B7BF123456</j:ID>
+            </j:VehicleID>	
+			</n:NLETSInquiryData>
+			<n:NLETSResponseData Key="NAR">
+				<n:ResponseText><![CDATA[NICB RESPONSE FOR VIN/1FABP10B7BF123456    MSG 01 OF 01     
+*SHIPPING*    
+STATUS/ XXXXXXXXXXXXXXX             DATE/ XX/XX/XX     
+DEALER NAME/ XXXXXXXXXXXXXXXXXXXXX 
+DEALER CODE/ XXXXXXXXX  DEALER CITY, STATE/ XXXXXXXXXXXXX
+PHONE/ XXXXXXXXXX  
+]]></n:ResponseText>
+			</n:NLETSResponseData>
+		</n:NLETSResponseMessage>
+</n:NLETS>

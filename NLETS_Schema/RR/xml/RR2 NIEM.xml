@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:ansi_d20="http://niem.gov/niem/ansi_d20/2.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nc2="http://www.nlets.org/niem/nlets-core/1.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:nrh2="http://www.nlets.gov/niem/nlets-registration-history/1.0/" xmlns:nrm2="http://www.nlets.gov/niem/nlets-registration-match/1.0/" xmlns:nrs2="http://www.nlets.gov/niem/nlets-registration-status/1.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:unece="http://niem.gov/niem/unece_rec20-misc/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/Candle/NIEM/RR/xsd/RR.xsd" version="1.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>RR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS11</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS20</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>KATESILHOL</nh2:DocumentControlFieldText>
+	</NLETSMessageHeader>
+	<NLETSInquiryData key="RQ">
+		<nc2:Vehicle>
+			<nc:VehicleIdentification/>
+			<nc:ConveyanceRegistration>
+				<nc:ConveyanceRegistrationPlateIdentification/>
+			</nc:ConveyanceRegistration>
+		</nc2:Vehicle>
+	</NLETSInquiryData>
+	<NLETSResponseData key="RR">
+		<ResponseText>
+					DATE: 04/27/05 TIME: 23:56
+					REG VALID FROM: 02/02/05 TO 02/02/06
+					LIC#:5BAJ882 YRMD:03 MAKE:TOYT BTM :SD VIN :4T1BF30KX3U549059
+					R/O :MAGUIRE HARRY PHILIP, OR MAGUIRE JOHANNA R, PO BX 994465,
+					2706 CRYSTAL TREE DR CITY:REDDING C.C.:45 ZIP#:96099
+					SOLD:00/00/03 RCID:02/17/05 OCID:02/27/05 LOCD:5
+					
+					03/07/03 PREV LIC     W535210
+					
+					
+					01/29/2003-ODOMETER:         11 MILES  ACTUAL MILEAGE
+					
+					
+					END
+				</ResponseText>
+	</NLETSResponseData>
+</NLETS>

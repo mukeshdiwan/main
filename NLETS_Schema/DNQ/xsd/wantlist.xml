@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:WantList w:release="2.1" w:product="NIEM"
+  xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+  xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+  xmlns:j="http://niem.gov/niem/domains/jxdm/4.1"
+  xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:w="http://niem.gov/niem/wantlist/2">
+  <w:Element w:name="nc:LocationCityName" w:isReference="false"/>
+  <w:Element w:name="nc:LocationCountyName" w:isReference="false"/>
+  <w:Element w:name="nc:LocationState" w:isReference="false"/>
+  <w:Element w:name="nc:LocationStateName" w:isReference="false"/>
+  <w:Element w:name="nc:MeasurePointValue" w:isReference="false"/>
+  <w:Element w:name="nc:MeasureValue" w:isReference="false"/>
+  <w:Element w:name="nc:PersonAgeMeasure" w:isReference="false"/>
+  <w:Element w:name="nc:PersonFullName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonGivenName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonMiddleName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonSex" w:isReference="false"/>
+  <w:Element w:name="nc:PersonSexCode" w:isReference="false"/>
+  <w:Element w:name="nc:PersonSurName" w:isReference="false"/>
+  <w:Type w:name="fbi:SEXCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="F"/>
+    <w:Facet w:facet="enumeration" w:value="M"/>
+    <w:Facet w:facet="enumeration" w:value="U"/>
+  </w:Type>
+  <w:Type w:name="fbi:SEXCodeType" w:isRequested="true"/>
+  <w:Type w:name="j:PersonType" w:isRequested="true"/>
+  <w:Type w:name="nc:DocumentType" w:isRequested="true"/>
+  <w:Type w:name="nc:MeasurePointValueType" w:isRequested="true"/>
+  <w:Type w:name="nc:MeasureType" w:isRequested="true">
+    <w:ElementInType w:name="nc:MeasureValue" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:NumericType" w:isRequested="true"/>
+  <w:Type w:name="nc:PersonNameTextType" w:isRequested="true"/>
+  <w:Type w:name="nc:PersonNameType" w:isRequested="true">
+    <w:ElementInType w:name="nc:PersonFullName" w:isReference="false"
+      w:minOccurs="1" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonGivenName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonMiddleName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonSurName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:PersonType" w:isRequested="true">
+    <w:ElementInType w:name="nc:PersonAgeMeasure" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonName" w:isReference="false"
+      w:minOccurs="1" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonSex" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:ProperNameTextType" w:isRequested="true"/>
+  <w:Type w:name="nc:StructuredAddressType" w:isRequested="true">
+    <w:ElementInType w:name="nc:LocationCityName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:LocationCounty" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:LocationState" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:TextType" w:isRequested="true"/>
+  <w:Type w:name="nc:TimeMeasureType" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:boolean" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:date" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:decimal" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:string" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:time" w:isRequested="true"/>
+</w:WantList>

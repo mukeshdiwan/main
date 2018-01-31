@@ -1,0 +1,62 @@
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+   <n:NLETSInquiryMessage>
+	<n:NLETSInquiryHeader>
+        <n:DocumentUserID><j:ID>USER55</j:ID></n:DocumentUserID>
+        <n:DocumentPasswordText>123456</n:DocumentPasswordText>
+        <n:MessageKeyCode>YQ</n:MessageKeyCode>
+        <j:DocumentSource.Organization>
+          <j:OrganizationORIID>
+            <j:ID>AZNLETS11</j:ID>
+          </j:OrganizationORIID>
+        </j:DocumentSource.Organization>
+        <n:DocumentDestinationID>
+          <j:ID>AZNLETS11</j:ID>
+        </n:DocumentDestinationID>
+		<n:DocumentControlFieldText>ATS000047</n:DocumentControlFieldText>
+	</n:NLETSInquiryHeader>
+	<n:NLETSInquiryData Key="YQ">
+			<j:ContactInformation>
+				<j:ContactPerson>
+                     <j:PersonName>
+                         <j:PersonFullName>SGT JONES</j:PersonFullName>
+                     </j:PersonName>
+                 </j:ContactPerson>
+				<j:ContactOrganization>
+                     <j:OrganizationName>ATLANTA GA PD</j:OrganizationName>
+                 </j:ContactOrganization>
+				<j:ContactTelephoneNumber>
+					<j:TelephoneAreaCodeText>555</j:TelephoneAreaCodeText>
+					<j:TelephoneExchangeID>555</j:TelephoneExchangeID>
+					<j:TelephoneSubscriberID>
+                          5555
+                     </j:TelephoneSubscriberID>
+					<j:TelephoneSuffixID>4444</j:TelephoneSuffixID>
+				</j:ContactTelephoneNumber>
+				<j:ContactFacsimileNumber>
+					<j:TelephoneAreaCodeText>555</j:TelephoneAreaCodeText>
+					<j:TelephoneExchangeID>
+                          555
+                  </j:TelephoneExchangeID>
+					<j:TelephoneSubscriberID>
+                        6666                     </j:TelephoneSubscriberID>
+				</j:ContactFacsimileNumber>
+			</j:ContactInformation>
+			<n:OrganizationCommentsText>THIS IS A TEST</n:OrganizationCommentsText>
+			<j:RequestNumber>3</j:RequestNumber>
+			<n:RequestTypeCode>SA</n:RequestTypeCode>
+			<n:PriorityDestination>U</n:PriorityDestination>
+			<j:Property>
+				<j:PropertyTypeCode>AA</j:PropertyTypeCode>
+				<j:PropertyTypeText>JACKET</j:PropertyTypeText>
+				<j:PropertyPhysicalDetails>
+					<j:PropertyBrandText>LEVI</j:PropertyBrandText>
+				</j:PropertyPhysicalDetails>
+				<j:PropertyAssignedIDDetails>
+					<n:CaseID><j:ID>456789-101112</j:ID></n:CaseID>
+					<j:PropertyNCICID><j:ID>987654321</j:ID></j:PropertyNCICID>
+					<j:PropertySerialID><j:ID>44XB</j:ID></j:PropertySerialID>
+				</j:PropertyAssignedIDDetails>
+			</j:Property>
+		</n:NLETSInquiryData>
+	</n:NLETSInquiryMessage>
+</n:NLETS>

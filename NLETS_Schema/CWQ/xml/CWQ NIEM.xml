@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/CWQ.xsd" version="3.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>CWQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>TQ0000000</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZ</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>1234567890</nh2:DocumentControlFieldText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="CWQ">
+		<n2:Person>
+			<nc:PersonBirthDate>
+				<nc:Date>1953-12-12</nc:Date>
+			</nc:PersonBirthDate>
+			<nc:PersonName>
+				<nc:PersonGivenName>Anthony</nc:PersonGivenName>
+				<nc:PersonMiddleName>L</nc:PersonMiddleName>
+				<nc:PersonSurName>Scott</nc:PersonSurName>
+				<nc:PersonFullName>Scott, Anthony L</nc:PersonFullName>
+			</nc:PersonName>
+			<nc:PersonSSNIdentification>
+				<nc:IdentificationID>123456789</nc:IdentificationID>
+			</nc:PersonSSNIdentification>
+			<n2:PersonConcealedCarryPermit>
+				<nc:DocumentIdentification>
+					<nc:IdentificationID>PERM123</nc:IdentificationID>
+				</nc:DocumentIdentification>
+			</n2:PersonConcealedCarryPermit>
+		</n2:Person>
+	</n2:NLETSInquiryData>
+</n2:NLETS>

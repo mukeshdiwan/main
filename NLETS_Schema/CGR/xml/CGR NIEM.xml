@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/CGR.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>CGR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>CN0000000</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS24</nh2:DestinationORIID>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSResponseData n2:key="CGR">
+		<n2:ResponseText>********************************************************************************   THE FOLLOWING RESPONSE IS FROM THE CANADIAN FIREARMS    *   REGISTRATION SYSTEM********************************************************************************TEXT:RE:  1953UN IC70002IC80900Q GUN ID:B/LANG:E/REM: L,CGQ,8760F5A4DC5B11DA99B1AC1E020B0000/S1: TESTGUN123/CFRO: YES/QUERY POSSIBLE HITS FOR CFRSSER: TESTGUN123 REM: L,CGQ,8760F5A4DC5B11DA99B1AC1E020B0000 NO CFRS RECORDS MEET SELECTION CRITERIA.Fri May  5 13:21:31 2006AN OFFLINE SEARCH CAN BE OBTAINED FROM THE CANADIAN FIREARMS REGISTRY(CFR) VIA MAIL TO ORI ON80190 OR THROUGH THE CENTRAL HELP DESKOTTAWA, CANADA</n2:ResponseText>
+	</n2:NLETSResponseData>
+</n2:NLETS>

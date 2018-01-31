@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/niem-core/2.0" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0">
+  <xsd:annotation>
+    <xsd:documentation>NIEM Core includes both Universal (U) and Common (C) components.  The identities for U and C components in Core are maintained with metadata.</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:import schemaLocation="../../proxy/xsd/2.0/xsd.xsd" namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
+  <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:complexType name="BinaryType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a digital representation of an object encoded in a binary format.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="nc:BinaryObject" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="nc:BinaryCaptureDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="nc:BinaryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="nc:BinaryFormatID" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="nc:BinarySizeValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="nc:BinaryCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DateType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a calendar date.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="nc:DateRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DocumentType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a paper or electronic document.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ImageType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a picture or visual representation of something.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="BinaryType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:BinaryType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="NonNegativeDecimalSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a decimal value with a minimum value of 0.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="NonNegativeDecimalType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a decimal value with a minimum value of 0.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="nc:NonNegativeDecimalSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="NumericType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a number value.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/proxy/xsd/2.0" i:name="decimal"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="niem-xsd:decimal"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="TextType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a character string.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/proxy/xsd/2.0" i:name="string"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="niem-xsd:string"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element name="BinaryBase64Object" type="niem-xsd:base64Binary" substitutionGroup="nc:BinaryObject">
+    <xsd:annotation>
+      <xsd:documentation>A binary encoding of data.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="BinaryObject"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BinaryCaptureDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A date on which a binary object is captured or created.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BinaryCategoryText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A kind of object that has been encoded.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BinaryDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A description of a binary object.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BinaryFormatID" type="niem-xsd:string" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An identifier for a file format or content type of a binary object.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BinaryObject" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A binary encoding of data.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BinarySizeValue" type="nc:NonNegativeDecimalType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A size of a binary object in kilobytes.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DateRepresentation" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A representation of a date.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DateTime" type="niem-xsd:dateTime" substitutionGroup="nc:DateRepresentation">
+    <xsd:annotation>
+      <xsd:documentation>A full date and time.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="DateRepresentation"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Image" type="nc:ImageType">
+    <xsd:annotation>
+      <xsd:documentation>A picture or visual representation of something.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonDigitalImage" type="nc:ImageType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A photograph or image of a person in a digital format.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0.2/proxy/xsd/1.0" xmlns:j-xsd0="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:jxdm="http://www.it.ojp.gov/jxdm/3.0.2" xmlns:unid="http://www.oreis.org/UNID" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/jxdm/MR/MR.xsd" version="">
+	<NLETSMailMessage>
+		<NLETSMailHeader>
+		
+			<MessageKeyCode>MR</MessageKeyCode>
+			<DocumentControlFieldText>1234567890</DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>MA0450000</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>GA</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+			<DocumentDestinationID>
+				<j:ID>GA</j:ID>
+			</DocumentDestinationID>
+		</NLETSMailHeader>
+		<NLETSMailData Key="MR">
+			<unid:Property>
+				<jxdm:PropertyDescriptionText>String</jxdm:PropertyDescriptionText>
+				<unid:PropertyUNCode>1233</unid:PropertyUNCode>
+				<unid:NAERGPageText>130</unid:NAERGPageText>
+				<jxdm:PropertyStatus>
+					<jxdm:StatusText>FOUND</jxdm:StatusText>
+				</jxdm:PropertyStatus>
+				<unid:PropertyPotentialHazards>
+					<unid:Hazard>
+						<unid:HazardTypeText>Fire or Explosion</unid:HazardTypeText>
+						<unid:HazardDescriptionText>HIGHLY FLAMMABLE: Will be easily ignited by heat, sparks or flames.</unid:HazardDescriptionText>
+						<unid:HazardDescriptionText>Vapors may form explosive mixtures with air.</unid:HazardDescriptionText>
+						<unid:HazardDescriptionText>Vapors may travel to source of ignition and flash back.</unid:HazardDescriptionText>
+						<unid:HazardDescriptionText>Most vapors are heavier than air. They will spread along ground and collect in low or confined areas (sewers, basements, tanks).</unid:HazardDescriptionText>
+						<unid:HazardDescriptionText>Vapor explosion hazard indoors, outdoors or in sewers.</unid:HazardDescriptionText>
+						<unid:HazardDescriptionText>Those substances designated with a "P" may polymerize explosively when heated or involved in a fire.</unid:HazardDescriptionText>
+						<unid:HazardDescriptionText>Runoff to sewer may create fire or explosion hazard.</unid:HazardDescriptionText>
+						<unid:HazardDescriptionText>Containers may explode when heated.</unid:HazardDescriptionText>
+					</unid:Hazard>
+					<unid:Hazard>
+						<unid:HazardTypeText>Health</unid:HazardTypeText>
+						<unid:HazardDescriptionText>May cause toxic effects if inhaled or absorbed through skin.</unid:HazardDescriptionText>
+						<unid:HazardDescriptionText>Inhalation or contact with material may irritate or burn skin and eyes.</unid:HazardDescriptionText>
+						<unid:HazardDescriptionText>Fire will produce irritating, corrosive and/or toxic gases.</unid:HazardDescriptionText>
+						<unid:HazardDescriptionText>Vapors may cause dizziness or suffocation.</unid:HazardDescriptionText>
+					</unid:Hazard>
+				</unid:PropertyPotentialHazards>
+				<PropertyPublicSafetyInformation xmlns="">
+					<unid:PublicSafetyInformation>
+						<unid:InformationTypeText>General</unid:InformationTypeText>
+						<unid:InformationText>CALL Emergency Response Telephone Number on Shipping Paper first. If Shipping Paper not available or no answer, refer to appropriate telephone number listed on the inside back cover.</unid:InformationText>
+					</unid:PublicSafetyInformation>
+					<unid:PublicSafetyInformation>
+						<unid:InformationTypeText>Evacuation</unid:InformationTypeText>
+						<unid:InformationText>Large Spill - Consider initial downwind evacuation for at least 300 meters (1000 feet).</unid:InformationText>
+						<unid:InformationText>Fire - If tank, rail car or tank truck is involved in a fire, ISOLATE for 800 meters (1/2 mile) in all directions; also, consider initial evacuation for 800 meters (1/2 mile) in all directions.</unid:InformationText>
+					</unid:PublicSafetyInformation>
+				</PropertyPublicSafetyInformation>
+				<PropertyEmergencyResponse xmlns="">
+					<unid:EmergencyResponse>
+						<unid:ResponseTypeText>Fire</unid:ResponseTypeText>
+						<unid:ResponseInstructionText>Small Fires - Dry chemical, CO2, water spray or regular foam.</unid:ResponseInstructionText>
+						<unid:ResponseInstructionText>Large Fires - Water spray, fog or regular foam.</unid:ResponseInstructionText>
+					</unid:EmergencyResponse>
+				</PropertyEmergencyResponse>
+			</unid:Property>
+		</NLETSMailData>
+	</NLETSMailMessage>
+</NLETS>

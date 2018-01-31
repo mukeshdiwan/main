@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/niem/SM/xsd/SM.xsd" version="3.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>SM</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>NL0000000</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS20</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>1234567890</nh2:DocumentControlFieldText>
+		<nh2:UserID>Kate</nh2:UserID>
+	</NLETSMessageHeader>
+	<NLETSMailData key="SM">
+		<StatusMessageText> STATUS MESSAGE TEXT</StatusMessageText>
+	</NLETSMailData>
+</NLETS>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <!-- ORI -->
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key (type of entry) | /ncic:Message[1]/cjis:HeaderSection[1]/cjis:TransactionKeyText[1] -->
+        <ncic:MessageTransactionCode>QND</ncic:MessageTransactionCode>
+        <ncic-ex:NoHitData s:ref="d77e26-noHitData_personNoHitDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:NoHitData. (data section) -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NoHitData s:id="d77e26-noHitData_personNoHitDataSection">
+        <ncic:NICSDeniedRecord s:ref="d77e59-nicsDeniedRecord_queryDataSection"/>
+    </ncic-ex:NoHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:NICSDeniedRecord (query). -->
+    <!-- ******************************************************************************** -->
+    <ncic:NICSDeniedRecord s:id="d77e59-nicsDeniedRecord_queryDataSection">
+        <!-- Caveat - Caveat data | /ncic:Message[1]/ncic:ResponseDataSection[1]/cjis:CaveatText[3][@cjis:type="Verify"] -->
+        <nc:CaveatText>ATTENTION: THE SOC USED IN YOUR TRANSACTION HAS NOT BEEN ASSIGNED BY THE SOCIAL SECURITY ADMINISTRATION. PLEASE CHECK FOR A DATA ENTRY ERROR.</nc:CaveatText>
+        <!-- Caveat-Data - Caveat data | /ncic:Message[1]/ncic:ResponseDataSection[1]/ncic:NoHitDataSection[1]/ncic:PersonNoHitResponse[1]/cjis:CaveatText[1][@cjis:type="NoHit"] -->
+        <nc:CaveatText>NO NCIC NICS DENIED TRANSACTION FILE RECORD</nc:CaveatText>
+        <nc:Incident s:ref="d77e17-case_NICSDenied"/>
+        <!-- NIC - NCIC number -->
+        <j:PersonNCICIdentification>
+            <nc:IdentificationID>M123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <j:Subject s:ref="d77e59-subject_nicsDenied"/>
+    </ncic:NICSDeniedRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident (query). -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e17-case_NICSDenied">
+        <j:ActivityAugmentation>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>WV123456</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (NICS denied organization) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e59-organization_nicsDenied">
+        <j:OrganizationAugmentation>
+            <!-- RRI -->
+            <j:OrganizationORIIdentification>
+                <nc:IdentificationID>OH1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (NICS denied person) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e59-person_nicsDenied">
+        <!-- DOB Date of birth -->
+        <nc:PersonBirthDate>
+            <nc:Date>1975-01-18</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JACK</nc:PersonGivenName>
+            <nc:PersonMiddleName>DANIEL</nc:PersonMiddleName>
+            <nc:PersonSurName>WEBBER</nc:PersonSurName>
+        </nc:PersonName>
+        <!-- MNU - Miscellaneous number -->
+        <nc:PersonOtherIdentification>
+            <nc:IdentificationID>AS-01847592309</nc:IdentificationID>
+        </nc:PersonOtherIdentification>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>W</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>M</j:PersonSexCode>
+        <!-- SOC - Social security number -->
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>245987910</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. (NICS denied subject) -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="d77e59-subject_nicsDenied">
+        <nc:RoleOfPerson s:ref="d77e59-person_nicsDenied"/>
+        <j:SubjectInvolvementCriminalOrganization>
+            <nc:RoleOfOrganization s:ref="d77e59-organization_nicsDenied"/>
+        </j:SubjectInvolvementCriminalOrganization>
+    </j:Subject>
+</ncic-ex:Exchange>

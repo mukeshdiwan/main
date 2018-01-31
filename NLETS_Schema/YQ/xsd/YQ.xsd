@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:scr="http://niem.gov/niem/domains/screening/2.1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" targetNamespace="http://www.nlets.org/niem/1.0">
+	<import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="./niem/proxy/xsd/2.0/xsd.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="./nlets-hdr/1.0/MessageHeader.xsd"/>
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="./niem/structures/2.0/structures.xsd"/>
+	<import namespace="http://niem.gov/niem/domains/screening/2.1" schemaLocation="./niem/domains/screening/2.1/screening.xsd"/>
+	<import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation="./niem/domains/jxdm/4.1/jxdm.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="./niem/niem-core/2.0/niem-core.xsd"/>
+	<complexType name="ActivityType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:ActivityType">
+				<sequence>
+					<element ref="n2:QueryRequestSequenceNumber" minOccurs="0"/>
+					<element ref="nc:Incident"/>
+					<element ref="n2:RequestingAgency"/>
+					<element ref="n2:RequestCategoryCode" minOccurs="0"/>
+					<element ref="scr:NCICRecordID"/>
+					<element ref="n2:RequestPriorityCode"/>
+					<element ref="n2:Remarks" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSInquiryDataType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:QueryRequestActivity"/>
+					<element ref="nc:ConveyancePart" minOccurs="0"/>
+					<element ref="nc:Firearm" minOccurs="0"/>
+					<element ref="nc:Person" minOccurs="0"/>
+					<element ref="n2:Securities" minOccurs="0"/>
+					<element ref="nc:TangibleItem" minOccurs="0"/>
+					<element ref="nc:Vehicle" minOccurs="0"/>
+					<element ref="nc:Vessel" minOccurs="0"/>
+					<element ref="j:Warrant" minOccurs="0"/>
+				</sequence>
+				<attribute ref="n2:key" use="required"/>
+				<attribute ref="n2:type" use="optional"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSType">
+		<annotation>
+			<documentation>A structure that defines the root element of an NLETS message.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:NLETSMessageHeader"/>
+					<element ref="n2:NLETSInquiryData"/>
+				</sequence>
+				<attribute ref="n2:version" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SecuritiesType">
+		<annotation>
+			<documentation>A complex type with details about a financial instrument showing ownership or credit.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:SecuritiesType">
+				<sequence>
+					<element ref="nc:ItemCategory" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<simpleType name="RequestCategoryCodeType">
+		<restriction base="xsd:string">
+			<enumeration value="SV"/>
+			<enumeration value="WP"/>
+			<enumeration value="PO"/>
+			<enumeration value="MP"/>
+			<enumeration value="SL"/>
+			<enumeration value="SG"/>
+			<enumeration value="SA"/>
+			<enumeration value="SS"/>
+			<enumeration value="SB"/>
+			<enumeration value="SP"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="RequestPriorityCodeType">
+		<restriction base="xsd:string">
+			<enumeration value="U"/>
+			<enumeration value="R"/>
+		</restriction>
+	</simpleType>
+	<attribute name="key" type="xsd:string"/>
+	<attribute name="type" type="xsd:string"/>
+	<attribute name="version" type="xsd:string"/>
+	<element name="RequestingAgency" type="j:OrganizationType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="NLETS" type="n2:NLETSType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The root element of a NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSInquiryData" type="n2:NLETSInquiryDataType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain all elements specific to this transaction.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSMessageHeader" type="nh2:NLETSMessageHeaderType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Metadata information about an NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="QueryRequestActivity" type="n2:ActivityType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Request Number. </documentation>
+		</annotation>
+	</element>
+	<element name="QueryRequestSequenceNumber" type="nonNegativeInteger"/>
+	<element name="Remarks" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Free form remarks about the query.</documentation>
+		</annotation>
+	</element>
+	<element name="RequestCategoryCode" type="n2:RequestCategoryCodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Describes the specific type of request.</documentation>
+		</annotation>
+	</element>
+	<element name="RequestPriorityCode" type="n2:RequestPriorityCodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Priority designation. Value must be U (urgent) or R (routine).</documentation>
+		</annotation>
+	</element>
+	<element name="Securities" type="n2:SecuritiesType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A financial instrument showing ownership or credit.</documentation>
+		</annotation>
+	</element>
+</schema>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier (ORI receiving this message)  -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.G.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            AGENCY <!--<canceling_ORI>-->WV2000001 HAS REMOVED ITS INTEREST IN
+            GNG/<!--<GNG>-->LOS GAUCHOS  SGP/<!--<SGP>-->LAS BARIQUAS  NIC/<!--<NIC>-->Z123456789
+            ORI <!--<new_Primary ORI>-->WV300000 IS NOW PRIMARY ORI FOR PURPOSES OF MODIFICATION
+            AND SUPPLEMENTATION.
+        </nc:CaveatText>
+        <ncic:GangReferenceRecord s:ref="GangReferenceInfo"/>
+        <!-- Contact Information on the new owner of this record -->
+        <nc:ContactInformationAssociation>
+            <nc:ContactEntity>
+                <nc:EntityOrganization s:ref="NewORIOwner"/>
+            </nc:ContactEntity>
+        </nc:ContactInformationAssociation>
+        <j:OrganizationORIIdentification>
+            <!-- ORI - Originating Agency Identifier(Canceling ORI) -->
+            <nc:IdentificationID>WV2000001</nc:IdentificationID>
+        </j:OrganizationORIIdentification>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:GangReferenceRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:GangReferenceRecord s:id="GangReferenceInfo">
+        <j:CriminalOrganization s:ref="GangOrganizationInfo"/>
+        <j:CriminalOrganizationNCICIdentification>
+            <!-- NIC - NCIC Number -->
+            <nc:IdentificationID>Z123456789</nc:IdentificationID>
+        </j:CriminalOrganizationNCICIdentification>
+    </ncic:GangReferenceRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="NewORIOwner">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier (new Primary ORI) -->
+                <nc:IdentificationID>WV300000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="GangInfo">
+        <!-- SGP - Subgroup -->
+        <nc:OrganizationSubUnitName>LAS BARIQUAS</nc:OrganizationSubUnitName>
+        <!-- GNG - Group name -->
+        <nc:OrganizationUnitName>LOS GAUCHOS</nc:OrganizationUnitName>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:CriminalOrganization. -->
+    <!-- ******************************************************************************** -->
+    <j:CriminalOrganization s:id="GangOrganizationInfo">
+        <nc:RoleOfOrganization s:ref="GangInfo"/>
+    </j:CriminalOrganization>
+</ncic-ex:Exchange>

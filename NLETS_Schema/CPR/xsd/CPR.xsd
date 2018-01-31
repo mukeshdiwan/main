@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:ncien="http://www.nlets.org/ncien" targetNamespace="http://www.nlets.org/niem/1.0">
+	<import namespace="http://www.nlets.org/ncien" schemaLocation="./Corrections.xsd"/>
+	<import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="./niem/proxy/xsd/2.0/xsd.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="./nlets-hdr/1.0/MessageHeader.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="./niem/niem-core/2.0/niem-core.xsd"/>
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="./niem/structures/2.0/structures.xsd"/>
+	<import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation="./niem/domains/jxdm/4.1/jxdm.xsd"/>
+	<complexType name="NLETSInquiryDataType">
+		<annotation>
+			<documentation>A structure that contains the elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:Person"/>
+					<element ref="n2:BinaryRequestIndicator"/>
+				</sequence>
+				<attribute ref="n2:key" use="required"/>
+				<attribute ref="n2:type" use="optional"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSResponseDataType">
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:ResponseText" minOccurs="0"/>
+					<element ref="ncien:CorrectionsReport" minOccurs="0"/>
+					<element ref="ncien:CorrectionsMatchlist" minOccurs="0"/>
+				</sequence>
+				<attribute ref="n2:key" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSType">
+		<annotation>
+			<documentation>A structure that defines the root element of an NLETS message.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:NLETSMessageHeader"/>
+					<element ref="n2:NLETSInquiryData" minOccurs="0"/>
+					<element ref="n2:NLETSResponseData"/>
+				</sequence>
+				<attribute name="version" type="xsd:string" use="optional"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PersonType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="j:PersonType">
+				<sequence>
+					<element ref="j:DriverLicense" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ncien:PersonCorrectionsIdentification" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<attribute name="key" type="xsd:string"/>
+	<attribute name="type" type="xsd:string"/>	
+	<element name="BinaryRequestIndicator" type="niem-xsd:boolean" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A value of 'true' in this element indicates that an image is being requested if available.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETS" type="n2:NLETSType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The root element of a NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSInquiryData" type="n2:NLETSInquiryDataType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain all elements specific to this transaction.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSMessageHeader" type="nh2:NLETSMessageHeaderType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Metadata information about an NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSResponseData" type="n2:NLETSResponseDataType" abstract="false" nillable="true"/>
+	<element name="Person" type="n2:PersonType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="ResponseText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain the free text response. Nlets recommends the user of &lt;![CDATA[]]&gt; tags to ensure that the response does not contain any characters illegal in XML.</documentation>
+		</annotation>
+	</element>
+</schema>

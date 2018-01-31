@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.00" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ..\xsd\CBQ.xsd">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>CBQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS21</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>CN</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>DGREEN2346</nh2:DocumentControlFieldText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="CBQ">
+		<nc:Vessel>
+			<nc:ItemSerialIdentification>
+				<nc:IdentificationID>SER123</nc:IdentificationID>
+			</nc:ItemSerialIdentification>
+			<nc:ItemCategoryText>B</nc:ItemCategoryText>
+			<nc:VesselHullIdentification>
+				<nc:IdentificationID>HULL123</nc:IdentificationID>
+			</nc:VesselHullIdentification>
+		</nc:Vessel>
+		<n2:ReasonCode>N</n2:ReasonCode>
+		<j:PersonSightedIndicator>false</j:PersonSightedIndicator>
+	</n2:NLETSInquiryData>
+</n2:NLETS>

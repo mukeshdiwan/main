@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/3.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/3.1/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:n2-par="http://www.nlets.org/niem/nlets-parole-probation-corrections/1.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.1/" targetNamespace="http://www.nlets.org/niem/nlets-parole-probation-corrections/1.0">
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/jxdm/5.1/" schemaLocation="niem/domains/jxdm/5.1/jxdm.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/immigration/3.1/" schemaLocation="niem/domains/immigration/3.1/immigration.xsd"/>
+	<xs:import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="../../../nlets/nlets-hdr/1.0/nlets-hdr.xsd"/>
+	<xs:complexType name="AddressAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-par:AddressTypeText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ImageAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-par:ImagePrimaryIndicator" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PersonAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-par:PersonGlassesIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-par:PersonHandicapIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-par:PalmPrintTakenIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:FingerprintTakenIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="im:AlienNumberIdentification" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ReleaseAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-par:ReleaseTypeText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SubjectAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="j:AbscondIndicator" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SupervisionAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-par:SupervisionOffense" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ParoleProbationCorrectionsInquiryType">
+		<xs:annotation>
+			<xs:documentation>The business data describing a concealed weapon permit holder.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-par:PurposeCode" minOccurs="0"/>
+					<xs:element ref="n2-par:ResponseAttentionDescriptionText" minOccurs="0"/>
+					<xs:element ref="j:Subject" minOccurs="0"/>
+					<xs:element ref="n2-par:ImageIndicator" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	<xs:complexType name="ParoleProbationCorrectionsRecordType">
+		<xs:annotation>
+			<xs:documentation>The business data describing a concealed weapon permit holder.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:ContactInformationAssociation" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="j:Detention" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="j:Parole" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="j:Probation" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="AddressAugmentation" type="n2-par:AddressAugmentationType" abstract="false" substitutionGroup="nc:AddressAugmentationPoint" nillable="true"/>
+	<xs:element name="AddressTypeText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="ImageAugmentation" type="n2-par:ImageAugmentationType" abstract="false" substitutionGroup="nc:ImageAugmentationPoint" nillable="true"/>
+	<xs:element name="ImagePrimaryIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="ParoleProbationCorrectionsRecord" type="n2-par:ParoleProbationCorrectionsRecordType" abstract="false" nillable="true"/>
+	<xs:element name="PalmPrintTakenIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="PersonGlassesIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="PersonHandicapIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="PersonAugmentation" type="n2-par:PersonAugmentationType" abstract="false" substitutionGroup="nc:PersonAugmentationPoint" nillable="true"/>
+	<xs:element name="ReleaseAugmentation" type="n2-par:ReleaseAugmentationType" abstract="false" substitutionGroup="nc:ReleaseAugmentationPoint" nillable="true"/>
+	<xs:element name="ReleaseTypeText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="SubjectAugmentation" type="n2-par:SubjectAugmentationType" abstract="false" substitutionGroup="j:SubjectAugmentationPoint" nillable="true"/>
+	<xs:element name="SupervisionAugmentation" type="n2-par:SupervisionAugmentationType" abstract="false" substitutionGroup="nc:SupervisionAugmentationPoint" nillable="true"/>
+	<xs:element name="SupervisionOffense" type="j:OffenseType" abstract="false" nillable="true"/>
+	<!-- query elements-->
+	<xs:element name="ParoleProbationCorrectionsInquiry" type="n2-par:ParoleProbationCorrectionsInquiryType" abstract="false" nillable="true"/>
+	<xs:element name="ImageIndicator" type="xs:boolean" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>A value of true in this element indicates that an image is being requested if available.</xs:documentation>
+		</xs:annotation>
+	</xs:element>		
+	<xs:element name="PurposeCode" type="nh2:PurposeCodeType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>This element identifies the reason for query.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ResponseAttentionDescriptionText" type="nc:TextType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>This element contains identification of the person or entity to whose attention the driver history response will be directed. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

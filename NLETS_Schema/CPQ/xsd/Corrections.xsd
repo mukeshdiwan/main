@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.1" xmlns:ncien="http://www.nlets.org/ncien" targetNamespace="http://www.nlets.org/ncien" version="1">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<i:ConformantIndicator>true</i:ConformantIndicator>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="niem/structures/2.0/structures.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="niem/niem-core/2.0/niem-core.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation="niem/domains/jxdm/4.1/jxdm.xsd"/>
+	<xsd:complexType name="CorrectionsPersonType">
+		<xsd:annotation>
+			<xsd:documentation>The person of interest, whose corrections information is being returned.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="nc:PersonType">
+				<xsd:sequence>
+					<xsd:element ref="ncien:PersonCorrectionsIdentification" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="nc:CaveatText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j4:PersonAugmentation" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CorrectionsMatchlistType">
+		<xsd:annotation>
+			<xsd:documentation>A list of potential subjects.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="ncien:CorrectionsMatch" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CorrectionsMatchType">
+		<xsd:annotation>
+			<xsd:documentation>The information about a particular match</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="ncien:CorrectionsPerson" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="ncien:Identity" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="nc:IdentityAssociation" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="nc:Location" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="nc:ResidenceAssociation" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CorrectionsReportType">
+		<xsd:annotation>
+			<xsd:documentation>The report of corrections information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="ncien:CorrectionsPerson" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="ncien:Identity" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="nc:IdentityAssociation" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="nc:Location" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="nc:ResidenceAssociation" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="ncien:Incarceration" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="j4:Parole" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="IncarcerationType">
+		<xsd:annotation>
+			<xsd:documentation>A mandatory confined supervision of a person</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="nc:SupervisionType">
+				<xsd:sequence>
+					<xsd:element ref="nc:ActivityDateRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationType">
+		<xsd:annotation>
+			<xsd:documentation>An organization - either parole or incarceration</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="nc:OrganizationType">
+				<xsd:sequence>
+					<xsd:element ref="j4:OrganizationAugmentation" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:element name="CorrectionsMatch" type="ncien:CorrectionsMatchType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>The information about a particular match</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CorrectionsMatchlist" type="ncien:CorrectionsMatchlistType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A list of potential subjects</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CorrectionsPerson" type="ncien:CorrectionsPersonType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>The person of interest, whose corrections information is being returned.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CorrectionsReport" type="ncien:CorrectionsReportType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>This document, the root element.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Identity" type="nc:IdentityType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>An identity that the person has been known to use.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Incarceration" type="ncien:IncarcerationType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A mandatory confined supervision of a person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Organization" type="ncien:OrganizationType" substitutionGroup="nc:EntityOrganization" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>An organization; the probation or corrections agency</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonCorrectionsIdentification" type="nc:IdentificationType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>An identification of a person based the department of corrections.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

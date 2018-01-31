@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.00" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ..\xsd\RNQ.xsd">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>RQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>GA0250300</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZ</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>1234567890</nh2:DocumentControlFieldText>
+		<nh2:UserID>USER55</nh2:UserID>
+		<nh2:UserPasswordText>123456</nh2:UserPasswordText>
+	</NLETSMessageHeader>
+	<NLETSInquiryData key="RQ">
+		<nc:Person>
+			<nc:PersonAgeDescriptionText>34</nc:PersonAgeDescriptionText>
+			<nc:PersonBirthDate>
+				<nc:Date>1964-10-12</nc:Date>
+			</nc:PersonBirthDate>
+			<nc:PersonName>
+				<nc:PersonFullName>BOB SMITH</nc:PersonFullName>
+			</nc:PersonName>
+		</nc:Person>
+	</NLETSInquiryData>
+</NLETS>

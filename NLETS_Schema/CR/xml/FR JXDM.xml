@@ -1,0 +1,848 @@
+<n:NLETS version="3.0" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:rap="http://www.nlets.org/rapsheet/3.0" xmlns:rap-code="http://www.nlets.org/rapsheet/codes/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org
+C:\NLETSU~1\APPEND~1\CRIMIN~1\XMLSCH~1\FR\FR.xsd">
+	<n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+			<n:MessageKeyCode>FR</n:MessageKeyCode>
+			<n:DocumentControlFieldText>T0INSPXS00</n:DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZSIR0000</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZINSPXS0</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSResponseData Key="FR">
+			<rap:RapSheet j:reportedDate="2005-09-06" xmlns:rap="http://www.nlets.org/rapsheet/3.0" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" version="3.0">
+				<rap:Introduction>
+					<rap:RapSheetRequest id="T0INSPXS00">
+						<j:PersonFBIID>
+							<j:ID>403889JA5</j:ID>
+						</j:PersonFBIID>
+						<rap:PurposeCode>C</rap:PurposeCode>
+						<rap:Attention>LESC</rap:Attention>
+					</rap:RapSheetRequest>
+					<rap:Caveat>
+						<j:CaveatText>This record is based only on the FBI number in your request-012884JB5.  Because additions or deletions may be made at any time, a new copy should be requested when needed for subsequent use.</j:CaveatText>
+						<j:CaveatReferenceDate>2005-09-06</j:CaveatReferenceDate>
+						<j:CaveatIssuingAuthorityName>US</j:CaveatIssuingAuthorityName>
+					</rap:Caveat>
+					<rap:Caveat>
+						<j:CaveatText> All arrest entries contained in this FBI record are based on fingerprint comparisons and pertain to the same individual. </j:CaveatText>
+						<j:CaveatReferenceDate>2005-09-06</j:CaveatReferenceDate>
+						<j:CaveatIssuingAuthorityName>US</j:CaveatIssuingAuthorityName>
+					</rap:Caveat>
+					<rap:Caveat>
+						<j:CaveatText>The use of this record is regulated by law.  It is provided for official use only and may be used only for the purpose requested. </j:CaveatText>
+						<j:CaveatReferenceDate>2005-09-06</j:CaveatReferenceDate>
+						<j:CaveatIssuingAuthorityName>US</j:CaveatIssuingAuthorityName>
+					</rap:Caveat>
+				</rap:Introduction>
+				<j:Subject>
+					<j:PersonName>
+						<j:PersonGivenName>TEST</j:PersonGivenName>
+						<j:PersonSurName>RECORD</j:PersonSurName>
+					</j:PersonName>
+					<j:PersonAlternateName>
+						<j:PersonGivenName>TEST</j:PersonGivenName>
+						<j:PersonSurName>RECORD-AKA</j:PersonSurName>
+					</j:PersonAlternateName>
+					<j:PersonAlternateName>
+						<j:PersonGivenName>FAKE</j:PersonGivenName>
+						<j:PersonSurName>NAME</j:PersonSurName>
+					</j:PersonAlternateName>
+					<j:PersonAlternateName>
+						<j:PersonGivenName>NAME</j:PersonGivenName>
+						<j:PersonMiddleName>A</j:PersonMiddleName>
+						<j:PersonSurName>TEST</j:PersonSurName>
+					</j:PersonAlternateName>
+					<j:PersonBirthDate>1965-04-04</j:PersonBirthDate>
+					<j:PersonBirthDate>1964-05-03</j:PersonBirthDate>
+					<j:PersonBirthLocation>
+						<j:LocationName>MM</j:LocationName>
+					</j:PersonBirthLocation>
+					<j:PersonAssignedIDDetails>
+						<j:PersonSSNID>
+							<j:ID>123291077</j:ID>
+						</j:PersonSSNID>
+						<j:PersonSSNID>
+							<j:ID>123748083</j:ID>
+						</j:PersonSSNID>
+						<j:PersonFBIID>
+							<j:ID>123889JB5</j:ID>
+						</j:PersonFBIID>
+						<j:PersonStateID>
+							<j:ID>Unknown</j:ID>
+							<j:IDIssuingAuthorityText>XX</j:IDIssuingAuthorityText>
+						</j:PersonStateID>
+					</j:PersonAssignedIDDetails>
+					<j:PersonPhysicalDetails>
+						<j:PersonHeightMeasure j:personHeightUnitCode="ncic">602</j:PersonHeightMeasure>
+						<j:PersonWeightMeasure j:personWeightUnitCode="ncic">185</j:PersonWeightMeasure>
+						<j:PersonEyeColorText>Brown</j:PersonEyeColorText>
+						<j:PersonHairColorText>Brown</j:PersonHairColorText>
+						<j:PersonSexText>Male</j:PersonSexText>
+						<j:PersonRaceText>White</j:PersonRaceText>
+					</j:PersonPhysicalDetails>
+					<j:PersonSocialDetails>
+						<j:PersonCitizenshipText>MM</j:PersonCitizenshipText>
+					</j:PersonSocialDetails>
+					<j:PersonBiometricDetails>
+						<j:PersonDigitalImage>
+							<j:BinaryTypeText>Other</j:BinaryTypeText>
+							<j:BinaryDescriptionText>Arresting agency has photo associated with arrest date of 2002/08/12</j:BinaryDescriptionText>
+							<j:BinaryCaptureOrganization>
+								<j:OrganizationName>USINS DIST INVEST PHOENIX</j:OrganizationName>
+								<j:OrganizationORIID>
+									<j:ID>AZINSPX00</j:ID>
+								</j:OrganizationORIID>
+							</j:BinaryCaptureOrganization>
+						</j:PersonDigitalImage>
+						<j:PersonDigitalImage>
+							<j:BinaryTypeText>Other</j:BinaryTypeText>
+							<j:BinaryDescriptionText>Arresting agency has photo associated with arrest date of 1995/11/12</j:BinaryDescriptionText>
+							<j:BinaryCaptureOrganization>
+								<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+								<j:OrganizationORIID>
+									<j:ID>AZ0072300</j:ID>
+								</j:OrganizationORIID>
+							</j:BinaryCaptureOrganization>
+						</j:PersonDigitalImage>
+						<j:PersonDigitalImage>
+							<j:BinaryTypeText>Other</j:BinaryTypeText>
+							<j:BinaryDescriptionText>Arresting agency has photo associated with arrest date of 1995/07/02</j:BinaryDescriptionText>
+							<j:BinaryCaptureOrganization>
+								<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+								<j:OrganizationORIID>
+									<j:ID>AZ0072300</j:ID>
+								</j:OrganizationORIID>
+							</j:BinaryCaptureOrganization>
+						</j:PersonDigitalImage>
+						<j:PersonDigitalImage>
+							<j:BinaryTypeText>Other</j:BinaryTypeText>
+							<j:BinaryDescriptionText>Arresting agency has photo associated with arrest date of 1993/05/26</j:BinaryDescriptionText>
+							<j:BinaryCaptureOrganization>
+								<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+								<j:OrganizationORIID>
+									<j:ID>AZ0072300</j:ID>
+								</j:OrganizationORIID>
+							</j:BinaryCaptureOrganization>
+						</j:PersonDigitalImage>
+						<j:PersonDigitalImage>
+							<j:BinaryTypeText>Other</j:BinaryTypeText>
+							<j:BinaryDescriptionText>Arresting agency has photo associated with arrest date of 1988/04/03</j:BinaryDescriptionText>
+							<j:BinaryCaptureOrganization>
+								<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+								<j:OrganizationORIID>
+									<j:ID>AZ0072300</j:ID>
+								</j:OrganizationORIID>
+							</j:BinaryCaptureOrganization>
+						</j:PersonDigitalImage>
+						<j:PersonFingerprintSet>
+							<j:BiometricValueText>22BB0520051202BB1615</j:BiometricValueText>
+							<j:BiometricEncodingMethodText>FPC</j:BiometricEncodingMethodText>
+						</j:PersonFingerprintSet>
+						<j:PersonFingerprintSet>
+							<j:BiometricValueText>RS RS RS RS RS RS RS RS RS RS</j:BiometricValueText>
+							<j:BiometricEncodingMethodText>Other</j:BiometricEncodingMethodText>
+						</j:PersonFingerprintSet>
+					</j:PersonBiometricDetails>
+				</j:Subject>
+				<rap:Cycle>
+					<rap:CycleEarliestDate>1988-04-03</rap:CycleEarliestDate>
+					<j:Arrest>
+						<j:ActivityDate>1988-04-03</j:ActivityDate>
+						<j:ArrestAgencyRecordID>
+							<j:ID>1294035</j:ID>
+						</j:ArrestAgencyRecordID>
+						<j:ArrestCharge>
+							<j:ChargeText>1399 AGGRAVATED ASSAULT F</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestCharge>
+							<j:ChargeText>5299 MISC0NDUCT INV0LVING WEAP0N M</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>02</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestCharge>
+							<j:ChargeText>2303 SH0PLIFTING M</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>03</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestAgency>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:ArrestAgency>
+					</j:Arrest>
+					<rap:CourtAction>
+						<j:ActivityDate j:commentText="Date reflects date of last update in IAFIS">1993-02-24</j:ActivityDate>
+						<j:CourtCharge>
+							<j:ChargeText>1399 AGGRAVATED ASSAULT F</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">1993-02-24</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>04-04-88 NO COMPLAINT FILED</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:CourtCharge>
+							<j:ChargeText>CARRYING A CONCEALED WEAPON</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>02</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">1993-02-24</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>04-04-88 NO COMPLAINT FILED</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:CourtCharge>
+							<j:ChargeText>2303 SH0PLIFTING M</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>03</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">1993-02-24</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>04-14-88 GG,JL 7 DAYS</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:Court>
+							<j:OrganizationName>Unknown</j:OrganizationName>
+						</j:Court>
+					</rap:CourtAction>
+				</rap:Cycle>
+				<rap:Cycle>
+					<rap:CycleEarliestDate>1993-05-26</rap:CycleEarliestDate>
+					<j:Arrest>
+						<j:ActivityDate>1993-05-26</j:ActivityDate>
+						<j:ArrestAgencyRecordID>
+							<j:ID>93146008</j:ID>
+						</j:ArrestAgencyRecordID>
+						<j:ArrestCharge>
+							<j:ChargeText>1399 ASSAULT M</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestAgency>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:ArrestAgency>
+					</j:Arrest>
+					<rap:CourtAction>
+						<j:ActivityDate j:commentText="Date reflects date of last update in IAFIS">1993-09-10</j:ActivityDate>
+						<j:CourtCharge>
+							<j:ChargeText>ASSAULT</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">1993-09-10</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>GUILTY FINE 25 JAIL 10 DAYS PROBATION MARICOPA  1 YEAR</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:Court>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:Court>
+					</rap:CourtAction>
+				</rap:Cycle>
+				<rap:Cycle>
+					<rap:CycleEarliestDate>1995-07-02</rap:CycleEarliestDate>
+					<j:Arrest>
+						<j:ActivityDate>1995-07-02</j:ActivityDate>
+						<j:ArrestAgencyRecordID>
+							<j:ID>95183029</j:ID>
+						</j:ArrestAgencyRecordID>
+						<j:ArrestCharge>
+							<j:ChargeText>ASLT M</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestAgency>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:ArrestAgency>
+					</j:Arrest>
+					<rap:CourtAction>
+						<j:ActivityDate j:commentText="Date reflects date of last update in IAFIS">1996-02-27</j:ActivityDate>
+						<j:CourtCharge>
+							<j:ChargeText>ASSAULT</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">1996-02-27</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>GUILTY PROBATION MARICOPA  3 YEARS</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:Court>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:Court>
+					</rap:CourtAction>
+				</rap:Cycle>
+				<rap:Cycle>
+					<rap:CycleEarliestDate>1995-11-12</rap:CycleEarliestDate>
+					<j:Arrest>
+						<j:ActivityDate>1995-11-12</j:ActivityDate>
+						<j:ArrestAgencyRecordID>
+							<j:ID>95316017</j:ID>
+						</j:ArrestAgencyRecordID>
+						<j:ArrestCharge>
+							<j:ChargeText>5404 AGG DUI F 2 CTS</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestAgency>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:ArrestAgency>
+					</j:Arrest>
+					<rap:CourtAction>
+						<j:ActivityDate j:commentText="Date reflects date of last update in IAFIS">2002-11-12</j:ActivityDate>
+						<j:CourtCharge>
+							<j:ChargeText>DRIVE UNDER INFLUENCE LIQUOR</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">2002-11-12</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>GUILTY JAIL 4 MOS PROBATION MARICOPA  2 YRS 090302 PROB DISCHARGE</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:CourtCharge>
+							<j:ChargeText>DRIVE UNDER INFLUENCE LIQUOR</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>02</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">2002-11-12</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>COURT DISMISSAL</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:Court>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:Court>
+					</rap:CourtAction>
+				</rap:Cycle>
+				<rap:Cycle>
+					<rap:CycleEarliestDate>1997-05-06</rap:CycleEarliestDate>
+					<j:Arrest>
+						<j:ActivityDate>1997-05-06</j:ActivityDate>
+						<j:ArrestAgencyRecordID>
+							<j:ID>HX97126130</j:ID>
+						</j:ArrestAgencyRecordID>
+						<j:ArrestSubject>
+							<j:PersonName>
+								<j:PersonFullName>ASTRADA,BENJAMIN SALDIVAR</j:PersonFullName>
+							</j:PersonName>
+						</j:ArrestSubject>
+						<j:ArrestCharge>
+							<j:ChargeText>5015 FAILURE TO APPEAR 001 F</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestAgency>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:ArrestAgency>
+					</j:Arrest>
+					<rap:CourtAction>
+						<j:ActivityDate j:commentText="Date reflects date of last update in IAFIS">1998-04-14</j:ActivityDate>
+						<j:CourtCharge>
+							<j:ChargeText>FAILURE TO APPEAR</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">1998-04-14</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>NOT REFRD FOR PROSECUTION</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:CourtCharge>
+							<j:ChargeText>FAILURE TO APPEAR</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>02</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">1998-04-14</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>NOT REFRD FOR PROSECUTION</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:Court>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:Court>
+					</rap:CourtAction>
+				</rap:Cycle>
+				<rap:Cycle>
+					<rap:CycleEarliestDate>2001-08-13</rap:CycleEarliestDate>
+					<j:Arrest>
+						<j:ActivityDate>2001-08-13</j:ActivityDate>
+						<j:ArrestAgencyRecordID>
+							<j:ID>PHX01225033</j:ID>
+						</j:ArrestAgencyRecordID>
+						<j:ArrestSubject>
+							<j:PersonName>
+								<j:PersonFullName>SALDIVAR,MANUEL ACOSTA</j:PersonFullName>
+							</j:PersonName>
+						</j:ArrestSubject>
+						<j:ArrestCharge>
+							<j:ChargeText>VIOLATION OF PROMISE TO APPEAR</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestCharge>
+							<j:ChargeText>DUI-LIQUOR/DRUGS/VAPORS/COMBO</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>02</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestCharge>
+							<j:ChargeText>DUI W/BAC OF .10 OR MORE</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>03</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestCharge>
+							<j:ChargeText>FAIL TO SHOW DRIV LIC OR ID</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>04</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestCharge>
+							<j:ChargeText>DRIVE W/LIC SUSP/REVOKE/CANC</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>05</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestCharge>
+							<j:ChargeText>DRIVE W/LIC SUSPENDED FTA/FTP</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>06</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestCharge>
+							<j:ChargeText>LEAVE ACCID/DAMAGE ATTEND VEH</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>07</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestAgency>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:ArrestAgency>
+					</j:Arrest>
+					<rap:CourtAction>
+						<j:ActivityDate j:commentText="Date reflects date of last update in IAFIS">2001-10-13</j:ActivityDate>
+						<j:CourtCharge>
+							<j:ChargeText>VIOLATION OF PROMISE TO APPEAR</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">2001-10-13</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>COURT DISMISSAL</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:CourtCharge>
+							<j:ChargeText>DUI-LIQUOR/DRUGS/VAPORS/COMBO</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>02</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">2001-10-13</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>COURT DISMISSAL</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:CourtCharge>
+							<j:ChargeText>DUI W/BAC OF  PT 1O  OR MORE</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>03</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">2001-10-13</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>COURT DISMISSAL</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:CourtCharge>
+							<j:ChargeText>FAIL TO SHOW DRIV LIC OR ID</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>04</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">2001-10-13</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>GUILTY JAIL 3 DAYS</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:CourtCharge>
+							<j:ChargeText>DRIVE W/LIC SUSP/REVOKE/CANC</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>05</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">2001-10-13</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>COURT DISMISSAL</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:CourtCharge>
+							<j:ChargeText>DRIVE W/LIC SUSPENDED FTA/FTP</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>06</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">2001-10-13</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>COURT DISMISSAL</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:CourtCharge>
+							<j:ChargeText>LEAVE ACCID/DAMAGE ATTEND VEH</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>07</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">2001-10-13</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>COURT DISMISSAL</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:Court>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:Court>
+					</rap:CourtAction>
+				</rap:Cycle>
+				<rap:Cycle>
+					<rap:CycleEarliestDate>2002-05-04</rap:CycleEarliestDate>
+					<j:Arrest>
+						<j:ActivityDate>2002-05-04</j:ActivityDate>
+						<j:ArrestAgencyRecordID>
+							<j:ID>PHX02124015</j:ID>
+						</j:ArrestAgencyRecordID>
+						<j:ArrestCharge>
+							<j:ChargeText>AGG DUI-LIC SUSP/REV FOR DUI</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestCharge>
+							<j:ChargeText>AGG DUI-LIC SUSP/REV FOR DUI</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>02</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestAgency>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:ArrestAgency>
+					</j:Arrest>
+					<rap:CourtAction>
+						<j:ActivityDate j:commentText="Date reflects date of last update in IAFIS">2005-08-09</j:ActivityDate>
+						<j:CourtCharge>
+							<j:ChargeText>AGG DUI-LIC SUSP/REV FOR DUI</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">2005-08-09</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>GUILTY PRISON 4 MOS PROBATION MARICOPA  7 YRS PUBLIC SERVICE</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:CourtCharge>
+							<j:ChargeText>AGG DUI-LIC SUSP/REV FOR DUI</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>02</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+							<j:ChargeDisposition j:commentText="Unknown">
+								<j:ChargeDispositionDate j:commentText="Date reflects date of last update in IAFIS">2005-08-09</j:ChargeDispositionDate>
+								<j:ChargeDispositionDescriptionText>COURT DISMISSAL</j:ChargeDispositionDescriptionText>
+							</j:ChargeDisposition>
+						</j:CourtCharge>
+						<j:Court>
+							<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072300</j:ID>
+							</j:OrganizationORIID>
+						</j:Court>
+					</rap:CourtAction>
+				</rap:Cycle>
+				<rap:Cycle>
+					<rap:CycleEarliestDate>2002-08-12</rap:CycleEarliestDate>
+					<j:Arrest>
+						<j:ActivityDate>2002-08-12</j:ActivityDate>
+						<j:ArrestAgencyRecordID>
+							<j:ID>A91684206</j:ID>
+						</j:ArrestAgencyRecordID>
+						<j:ArrestCharge>
+							<j:ChargeText>REMOVAL PROC</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestAgency>
+							<j:OrganizationName>USINS DIST INVEST PHOENIX</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZINSPX00</j:ID>
+							</j:OrganizationORIID>
+						</j:ArrestAgency>
+					</j:Arrest>
+				</rap:Cycle>
+				<rap:Cycle>
+					<rap:CycleEarliestDate>2005-05-04</rap:CycleEarliestDate>
+					<j:Arrest>
+						<j:ActivityDate>2005-05-04</j:ActivityDate>
+						<j:ArrestAgencyRecordID>
+							<j:ID>SCT0511839</j:ID>
+						</j:ArrestAgencyRecordID>
+						<j:ArrestCharge>
+							<j:ChargeText>DRIVE W/ LIC SUSP DUE TO DUI</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>01</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestCharge>
+							<j:ChargeText>DRIVE W/LIC SUSPENDED FTA/FTP</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>02</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestCharge>
+							<j:ChargeText>REFUSE STOP/SUBMIT TO WEIGHING</j:ChargeText>
+							<j:ChargeSequenceID>
+								<j:ID>03</j:ID>
+							</j:ChargeSequenceID>
+							<j:ChargeClassification>
+								<j:ChargeSeverityText>Unknown</j:ChargeSeverityText>
+							</j:ChargeClassification>
+						</j:ArrestCharge>
+						<j:ArrestAgency>
+							<j:OrganizationName>POLICE DEPARTMENT SCOTTSDALE</j:OrganizationName>
+							<j:OrganizationORIID>
+								<j:ID>AZ0072500</j:ID>
+							</j:OrganizationORIID>
+						</j:ArrestAgency>
+					</j:Arrest>
+				</rap:Cycle>
+				<j:Organization>
+					<j:OrganizationName>FBI-CJIS DIV-CLRKSBG CLARKSBURG</j:OrganizationName>
+					<j:OrganizationORIID>
+						<j:ID>WVFBINF00</j:ID>
+					</j:OrganizationORIID>
+					<j:OrganizationLocation>
+						<j:LocationAddress>
+							<j:LocationStreet>
+								<j:StreetFullText> 1000 CUSTER HOLLOW RD</j:StreetFullText>
+							</j:LocationStreet>
+							<j:LocationCityName>CLARKSBURG</j:LocationCityName>
+							<j:LocationStateName>WV</j:LocationStateName>
+							<j:LocationPostalCodeID>
+								<j:ID>26306</j:ID>
+							</j:LocationPostalCodeID>
+						</j:LocationAddress>
+					</j:OrganizationLocation>
+				</j:Organization>
+				<j:Organization>
+					<j:OrganizationName>POLICE DEPARTMENT PHOENIX</j:OrganizationName>
+					<j:OrganizationORIID>
+						<j:ID>AZ0072300</j:ID>
+					</j:OrganizationORIID>
+					<j:OrganizationLocation>
+						<j:LocationAddress>
+							<j:LocationStreet>
+								<j:StreetFullText> 620 W WASHINGTON ST</j:StreetFullText>
+							</j:LocationStreet>
+							<j:LocationCityName>PHOENIX</j:LocationCityName>
+							<j:LocationStateName>AZ</j:LocationStateName>
+							<j:LocationPostalCodeID>
+								<j:ID>850032186</j:ID>
+							</j:LocationPostalCodeID>
+						</j:LocationAddress>
+					</j:OrganizationLocation>
+				</j:Organization>
+				<j:Organization>
+					<j:OrganizationName>USINS DIST INVEST PHOENIX</j:OrganizationName>
+					<j:OrganizationORIID>
+						<j:ID>AZINSPX00</j:ID>
+					</j:OrganizationORIID>
+					<j:OrganizationLocation>
+						<j:LocationAddress>
+							<j:LocationStreet>
+								<j:StreetFullText> 2035 N CENTRAL AVE</j:StreetFullText>
+							</j:LocationStreet>
+							<j:LocationCityName>PHOENIX</j:LocationCityName>
+							<j:LocationStateName>AZ</j:LocationStateName>
+							<j:LocationPostalCodeID>
+								<j:ID>850041548</j:ID>
+							</j:LocationPostalCodeID>
+						</j:LocationAddress>
+					</j:OrganizationLocation>
+				</j:Organization>
+				<j:Organization>
+					<j:OrganizationName>POLICE DEPARTMENT SCOTTSDALE</j:OrganizationName>
+					<j:OrganizationORIID>
+						<j:ID>AZ0072500</j:ID>
+					</j:OrganizationORIID>
+					<j:OrganizationLocation>
+						<j:LocationAddress>
+							<j:LocationStreet>
+								<j:StreetFullText> 9065 E VIA LINDA</j:StreetFullText>
+							</j:LocationStreet>
+							<j:LocationCityName>SCOTTSDALE</j:LocationCityName>
+							<j:LocationStateName>AZ</j:LocationStateName>
+							<j:LocationPostalCodeID>
+								<j:ID>852585449</j:ID>
+							</j:LocationPostalCodeID>
+						</j:LocationAddress>
+					</j:OrganizationLocation>
+				</j:Organization>
+			</rap:RapSheet>
+		</n:NLETSResponseData>
+	</n:NLETSResponseMessage>
+</n:NLETS>

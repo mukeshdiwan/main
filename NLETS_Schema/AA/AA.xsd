@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 2/18/2015	Kate Silhol/Nlets	Added image-related elements -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:n2-aa="http://www.nlets.org/niem/nlets-amber-alert/1.0" targetNamespace="http://www.nlets.org/niem/1.0">
+	<import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="niem/proxy/xsd/2.0/xsd.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="nlets/nlets-hdr/1.0/MessageHeader.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="niem/niem-core/2.0/niem-core.xsd"/>
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="niem/structures/2.0/structures.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-amber-alert/1.0" schemaLocation="nlets/amber-alert/1.0/amber-alert.xsd"/>
+	<complexType name="NLETSMailDataType">
+		<annotation>
+			<documentation>This element will contain all elements specific to this transaction.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:AmberAlertCategoryText" minOccurs="0"/>
+					<element ref="n2:MailMessageText" minOccurs="0"/>
+					<element ref="nc:PersonDigitalImage" minOccurs="0"/>
+					<element ref="nc:Image" minOccurs="0"/>
+					<element ref="n2-aa:AmberAlert" minOccurs="0"/>
+				</sequence>
+				<attribute ref="n2:key" use="required"/>
+				<attribute ref="n2:type" use="optional"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="NLETSType">
+		<annotation>
+			<documentation>A structure that defines the root element of an NLETS message.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:NLETSMessageHeader"/>
+					<element ref="n2:NLETSMailData"/>
+				</sequence>
+				<attribute ref="n2:version" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<attribute name="key" type="xsd:string"/>
+	<attribute name="type" type="xsd:string"/>
+	<attribute name="version" type="xsd:string"/>
+	<element name="AmberAlertCategoryText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="MailMessageText" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain the free text administrative message. Nlets recommends the user of &lt;![CDATA[]]&gt; tags to ensure that the response does not contain any characters illegal in XML.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETS" type="n2:NLETSType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The root element of a NLETS message</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSMailData" type="n2:NLETSMailDataType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>This element will contain all elements specific to this transaction.</documentation>
+		</annotation>
+	</element>
+	<element name="NLETSMessageHeader" type="nh2:NLETSMessageHeaderType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Metadata information about an NLETS message</documentation>
+		</annotation>
+	</element>
+</schema>

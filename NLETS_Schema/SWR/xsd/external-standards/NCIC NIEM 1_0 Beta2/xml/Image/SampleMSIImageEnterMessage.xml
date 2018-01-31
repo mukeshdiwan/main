@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key (type of entry) -->
+        <ncic:MessageTransactionCode>EIM</ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData s:ref="d77e15-incomingRecordData_imageIncomingEnterDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="d77e15-incomingRecordData_imageIncomingEnterDataSection">
+        <ncic:ImageRecord s:ref="d77e15-imageRecord_enterDataSection"/>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ImageRecord (enter). -->
+    <!-- ******************************************************************************** -->
+    <ncic:ImageRecord s:id="d77e15-imageRecord_enterDataSection">
+        <nc:ItemImage>
+            <!-- IMG - Image -->
+            <nc:Base64BinaryObject>SW1hZ2U=</nc:Base64BinaryObject>
+            <nc:BinaryCaptureDate>
+                <!-- DOI - Date of image -->
+                <nc:Date>2004-09-15</nc:Date>
+            </nc:BinaryCaptureDate>
+            <!-- MIS - Miscellaneous remarks -->
+            <nc:BinaryDescriptionText>WANTED PERSON VIDEO CAPTURE</nc:BinaryDescriptionText>
+            <j:ImageAugmentation>
+                <j:ImageNCICIdentification>
+                    <!-- NIC - NCIC number (Record identifier) -->
+                    <nc:IdentificationID>V123456789</nc:IdentificationID>
+                </j:ImageNCICIdentification>
+                <!-- IMT - Image type -->
+                <j:ImageCategoryCode>M</j:ImageCategoryCode>
+            </j:ImageAugmentation>
+        </nc:ItemImage>
+    </ncic:ImageRecord>
+</ncic-ex:Exchange>

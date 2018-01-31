@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- ORI receiving this Message  -->
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.K.</ncic:MessageTransactionText>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            NCIC INCOMPLETE MISSING/UNIDENTIFIED PERSON NOTIFICATION AT
+            <!--<hhmm>-->1320 EST <!--<yyyymmdd>-->20040412.  YOUR ENTRY NIC/<!--<NIC>-->M123456789, OCA/<!--<OCA>-->A00001 HAS
+            INFORMATION MISSING FROM THE FOLLOWING KEY DATA
+            FIELDS:  <!--Missing-Data-Fields-->.
+            IF ANY SUPPLEMENTAL INFORMATION IS AVAILABLE, THAT DATA SHOULD BE
+            ENTERED IMMEDIATELY.  THIS WILL BE YOUR ONLY NCIC NOTIFICATION.
+        </nc:CaveatText>
+        <!-- Database-Record -->
+        <ncic:Record s:ref="NotificationRecord"/>
+        <!-- DateTime of the Notification Triggering Event -->
+        <ncic:NotificationDateTime>2004-04-12T13:20:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>    
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:Record. -->
+    <!-- ******************************************************************************** -->
+    <ncic:Record s:id="NotificationRecord">        
+        <nc:Incident s:ref="NotificationCase" />
+        <nc:Person s:ref="NotificationPerson" />
+    </ncic:Record>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="NotificationCase">
+        <j:ActivityAugmentation>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>A00001</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="NotificationPerson">
+        <!-- filled out with additional data here -->
+        <j:PersonAugmentation>
+            <j:PersonNCICIdentification>
+                <!-- NIC - NCIC Number -->
+                <nc:IdentificationID>M123456789</nc:IdentificationID>
+            </j:PersonNCICIdentification>
+        </j:PersonAugmentation>
+    </nc:Person>
+</ncic-ex:Exchange>

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:ndc2="http://www.nlets.gov/niem/nlets-driver-cert/1.0/" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.nlets.gov/niem/nlets-driver-cert/1.0/">
+	<import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../../../niem/proxy/xsd/2.0/xsd.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="../../../../niem/niem-core/2.0/niem-core.xsd"/>
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../../../niem/structures/2.0/structures.xsd"/>
+	<simpleType name="CertificateStatusCodeSimpleType">
+		<annotation>
+			<documentation>An indication of the status of a driver's medical certification.</documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<restriction base="xsd:token">
+			<enumeration value="C">
+				<annotation>
+					<documentation>The driver is certified</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="N">
+				<annotation>
+					<documentation>The driver is not certified</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<complexType name="CertificateStatusCodeType">
+		<annotation>
+			<documentation>An indication of the status of a driver's medical certification.   </documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<simpleContent>
+			<extension base="ndc2:CertificateStatusCodeSimpleType">
+				<attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<simpleType name="DriverRestrictionCodeSimpleType">
+		<annotation>
+			<documentation>A restriction imposed on a driver by a medical examiner.       </documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<restriction base="xsd:token">
+			<enumeration value="1">
+				<annotation>
+					<documentation>Wearing corrective lenses</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="2">
+				<annotation>
+					<documentation>Wearing hearing aid</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="3">
+				<annotation>
+					<documentation>Accompanied by a waiver/exemption</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="4">
+				<annotation>
+					<documentation>Driving within an exempt intra city zone</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<complexType name="DriverRestrictionCodeType">
+		<annotation>
+			<documentation>A restriction imposed on a driver by a medical examiner.</documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<simpleContent>
+			<extension base="ndc2:DriverRestrictionCodeSimpleType">
+				<attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<simpleType name="DriverSelfCertificationCodeSimpleType">
+		<annotation>
+			<documentation>A driver's self certification of the driver's status regarding 49 CFR 390.3 and the type of driving.
+            </documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<restriction base="xsd:token">
+			<enumeration value="EA">
+				<annotation>
+					<documentation>Excepted Intrastate</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="EI">
+				<annotation>
+					<documentation>Excepted Interstate</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="NA">
+				<annotation>
+					<documentation>Non-excepted Intrastate</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="NI">
+				<annotation>
+					<documentation>Non-excepted Interstate</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<complexType name="DriverSelfCertificationCodeType">
+		<annotation>
+			<documentation>A driver's self certification of the driver's status regarding 49 CFR 390.3 and the type of driving.
+            </documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<simpleContent>
+			<extension base="ndc2:DriverSelfCertificationCodeSimpleType">
+				<attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="DriverType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="nc:PersonType">
+				<sequence>
+					<element ref="ndc2:MotorVehicleOperatorRestrictionCode" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:MotorVehicleOperatorSelfCertificationCode" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="MedicalCertificateType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="nc:DocumentType">
+				<sequence>
+					<element ref="ndc2:MedicalExaminer" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:MotorVehicleOperator" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:MedicalCertificateStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:VarianceEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:VarianceExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:WaiverEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:WaiverExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<simpleType name="MedicalExaminerSpecialtyCodeSimpleType">
+		<annotation>
+			<documentation>A code indicating the specialty of the medical practitioner.</documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<restriction base="xsd:token">
+			<enumeration value="AN">
+				<annotation>
+					<documentation>Advanced Practice Nurse</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="CH">
+				<annotation>
+					<documentation>Chiropractor</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="DO">
+				<annotation>
+					<documentation>Osteopathic Doctor</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="MD">
+				<annotation>
+					<documentation>Medical Doctor</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="PA">
+				<annotation>
+					<documentation>Physician Assistant</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<complexType name="MedicalExaminerSpecialtyCodeType">
+		<annotation>
+			<documentation>A code indicating the specialty of the medical practitioner.</documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<simpleContent>
+			<extension base="ndc2:MedicalExaminerSpecialtyCodeSimpleType">
+				<attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="MedicalExaminerType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="nc:PersonType">
+				<sequence>
+					<element ref="nc:ContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:MedicalExaminerLicenseIdentification" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:MedicalExaminerRegistryIdentification" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:MedicalExaminerSpecialtyCode" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<simpleType name="PersonNameTransliteratedCodeSimpleType">
+		<annotation>
+			<documentation>An indication of the status of a driver's medical certification.
+            </documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<restriction base="xsd:token">
+			<enumeration value="N">
+				<annotation>
+					<documentation>Name not transliterated</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="T">
+				<annotation>
+					<documentation>Name transliterated</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="U">
+				<annotation>
+					<documentation>Unknown if name transliterated</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<complexType name="PersonNameTransliteratedCodeType">
+		<annotation>
+			<documentation>A code describing if a name has been transliterated. Transliteration refers to the practice of replacing non-English letters with comparable letters from the English alphabet.</documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<simpleContent>
+			<extension base="ndc2:PersonNameTransliteratedCodeSimpleType">
+				<attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<simpleType name="PersonNameTruncatedCodeSimpleType">
+		<annotation>
+			<documentation>A code if a person's name has been truncated
+            </documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<restriction base="xsd:token">
+			<enumeration value="N">
+				<annotation>
+					<documentation>Name not truncated</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="T">
+				<annotation>
+					<documentation>Name truncated</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="U">
+				<annotation>
+					<documentation>Unknown if name truncated</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<complexType name="PersonNameTruncatedCodeType">
+		<annotation>
+			<documentation>A code if a person's name has been truncated</documentation>
+			<appinfo>
+				<s:Base s:namespace="http://niem.gov/niem/structures/2.0" s:name="Object"/>
+			</appinfo>
+		</annotation>
+		<simpleContent>
+			<extension base="ndc2:PersonNameTruncatedCodeSimpleType">
+				<attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="PersonNameType">
+		<annotation>
+			<documentation>A combination of names and/or titles by which a person is known.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:PersonNameType">
+				<sequence>
+					<element ref="ndc2:PersonGivenNameTransliterationCode" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:PersonMiddleNameTransliterationCode" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:PersonSurNameTransliterationCode" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:PersonGivenNameTruncatedCode" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:PersonMiddleNameTruncatedCode" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="ndc2:PersonSurNameTruncatedCode" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="MotorVehicleOperator" type="ndc2:DriverType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>An operator of a motor vehicle</documentation>
+		</annotation>
+	</element>
+	<element name="MotorVehicleOperatorRestrictionCode" type="ndc2:DriverRestrictionCodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A restriction imposed on a driver by a medical examiner.   </documentation>
+		</annotation>
+	</element>
+	<element name="MotorVehicleOperatorSelfCertificationCode" type="ndc2:DriverSelfCertificationCodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A driver's self certification of the driver's status regarding 49 CFR 390.3 and the type of driving.</documentation>
+		</annotation>
+	</element>
+	<element name="MedicalCertificate" type="ndc2:MedicalCertificateType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A document indicating the medical status of a motor vehicle operator</documentation>
+		</annotation>
+	</element>
+	<element name="MedicalCertificateStatusCode" type="ndc2:CertificateStatusCodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>An indication of the status of a driver's medical certification.</documentation>
+		</annotation>
+	</element>
+	<element name="MedicalExaminer" type="ndc2:MedicalExaminerType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A medical practitioner who acts as a medical examiner.</documentation>
+		</annotation>
+	</element>
+	<element name="MedicalExaminerLicenseIdentification" type="nc:IdentificationType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A jurisdiction assigned number used to identify the license of medical practitioner who acts as a medical examiner.</documentation>
+		</annotation>
+	</element>
+	<element name="MedicalExaminerRegistryIdentification" type="nc:IdentificationType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A number used as the identifier in a National Registry of Medical Examiners who issue Medical Certificates.</documentation>
+		</annotation>
+	</element>
+	<element name="MedicalExaminerSpecialtyCode" type="ndc2:MedicalExaminerSpecialtyCodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A code indicating the specialty of the medical practitioner.</documentation>
+		</annotation>
+	</element>
+	<element name="PersonGivenNameTransliterationCode" type="ndc2:PersonNameTransliteratedCodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A code describing if a medical examiner's first name has been transliterated. Transliteration refers to the practice of replacing non-English letters with comparable letters from the English alphabet.</documentation>
+		</annotation>
+	</element>
+	<element name="PersonGivenNameTruncatedCode" type="ndc2:PersonNameTruncatedCodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A code of whether the person's given name has been truncated</documentation>
+		</annotation>
+	</element>
+	<element name="PersonMiddleNameTransliterationCode" type="ndc2:PersonNameTransliteratedCodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>An indication if a medical examiner's middle name has been transliterated. Transliteration refers to the practice of replacing non-English letters with comparable letters from the English alphabet.</documentation>
+		</annotation>
+	</element>
+	<element name="PersonMiddleNameTruncatedCode" type="ndc2:PersonNameTruncatedCodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A code of whether the person's middle name has been truncated.</documentation>
+		</annotation>
+	</element>
+	<element name="PersonName" type="ndc2:PersonNameType" abstract="false" substitutionGroup="nc:PersonName" nillable="true">
+		<annotation>
+			<documentation>A combination of names and/or titles by which a person is known.</documentation>
+		</annotation>
+	</element>
+	<element name="PersonSurNameTransliterationCode" type="ndc2:PersonNameTransliteratedCodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>An indication if a person's last name has been transliterated. Transliteration refers to the practice of replacing non-English letters with comparable letters from the English alphabet.
+                </documentation>
+		</annotation>
+	</element>
+	<element name="PersonSurNameTruncatedCode" type="ndc2:PersonNameTruncatedCodeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A code of whether the person's last name has been truncated.</documentation>
+		</annotation>
+	</element>
+	<element name="VarianceEffectiveDate" type="niem-xsd:date" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The start date of the most recent variance of a medical certificate, due to a Skills Performance Evaluation. </documentation>
+		</annotation>
+	</element>
+	<element name="VarianceExpirationDate" type="niem-xsd:date" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The expiration date of the most recent variance of a medical certificate, due to a Skills Performance Evaluation.</documentation>
+		</annotation>
+	</element>
+	<element name="WaiverEffectiveDate" type="niem-xsd:date" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The start date of the most recent variance of a medical certificate, due to a waiver or exemption. </documentation>
+		</annotation>
+	</element>
+	<element name="WaiverExpirationDate" type="niem-xsd:date" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The expiration date of the most recent variance of a medical certificate, due to a waiver or exemption.</documentation>
+		</annotation>
+	</element>
+</schema>

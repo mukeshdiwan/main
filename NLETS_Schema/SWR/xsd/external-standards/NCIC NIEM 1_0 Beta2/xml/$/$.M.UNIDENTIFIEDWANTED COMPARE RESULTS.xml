@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI receiving this Message  -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key -->
+        <ncic:MessageTransactionText>$.M.UNIDENTIFIED/WANTED COMPARE RESULTS</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+        <ncic-ex:PrimaryHitData s:ref="PrimaryHitData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            YOUR RECORD WITH NIC/<!--<NIC>-->W123456789 OCA/<!--<OCA>-->3456789 IS A POSSIBLE MATCH
+            WITH THE FOLLOWING RECORD(S).
+            
+            THIS SEARCH WAS INITIATED BY THE ENTRY/UPDATE OF DENTAL DATA FOR
+            NIC/<!--<NIC>-->W123456798.
+            
+                          SEX/ EYB/
+            NIC        ST RAC  YOB  DBF/DOW  HGT WGT EYE HAI M  P  N
+            <!--<Field-Data>-->
+            
+            MAKE INQUIRY ON NCIC (NIC) NUMBER TO OBTAIN COMPLETE RECORD(S).
+            <!--<Additional-Hits-Available>-->
+        </nc:CaveatText>
+        <ncic:Record s:ref="PrimaryHitRecord"/>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- Results of Queries go here -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="PrimaryHitData">
+        <ncic:Record s:ref="PrimaryHitMatchRecord"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="PrimaryHitRecord">
+        <nc:Incident s:ref="WantedPersonIncident"/>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC Number -->
+            <nc:IdentificationID>U123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+    </ncic:WantedPersonRecord>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:WantedPersonRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:WantedPersonRecord s:id="PrimaryHitMatchRecord">
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC Number -->
+            <nc:IdentificationID>W545454545</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <scr:PersonAddressAssociation>
+            <nc:Person s:ref="WantedPersonInfo"/>
+            <nc:Address s:ref="WantedPersonAddress"/>
+        </scr:PersonAddressAssociation>
+        <j:Subject s:ref="SubjectPerson"/>
+        <ncic:PersonMatchData>
+            <!-- <Match-Fields> -->
+            <ncic:MatchFieldData>ALL FIELDS</ncic:MatchFieldData>
+            <!-- <Dental-Match> -->
+            <ncic:TotalNumberOfDentalMatches>30</ncic:TotalNumberOfDentalMatches>
+            <!-- <Dental-Mismatch> -->
+            <ncic:TotalNumberOfDentalMismatches>2</ncic:TotalNumberOfDentalMismatches>
+            <!-- <Dental-Possible-Match> -->
+            <ncic:TotalNumberOfPossibleDentalMatches>3</ncic:TotalNumberOfPossibleDentalMatches>
+        </ncic:PersonMatchData>
+    </ncic:WantedPersonRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Address. -->
+    <!-- ******************************************************************************** -->
+    <nc:Address s:id="WantedPersonAddress">
+        <!-- STA - State name -->
+        <j:LocationStateNCICLSTACode>MD</j:LocationStateNCICLSTACode>
+    </nc:Address>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="WantedPersonIncident">
+        <j:ActivityAugmentation>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>3456789</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="WantedPersonInfo">
+        <nc:PersonBirthDate>
+            <!-- EYB or YOB - Estimated Year of Birth or Year of Birth -->
+            <nc:YearDate>1990</nc:YearDate>
+        </nc:PersonBirthDate>
+        <!-- ETN - Ethnicity -->
+        <j:PersonEthnicityCode>N</j:PersonEthnicityCode>
+        <!-- EYE - Eye color -->
+        <j:PersonEyeColorCode>BRO</j:PersonEyeColorCode>
+        <!-- HAI - Hair color -->
+        <j:PersonHairColorCode>BLK</j:PersonHairColorCode>
+        <nc:PersonHeightMeasure>
+            <!-- HGT - Height -->
+            <nc:MeasureValueText>UNK</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>F</j:PersonSexCode>
+        <nc:PersonWeightMeasure>
+            <!-- WGT - Weight -->
+            <nc:MeasureValueText>UNK</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="SubjectPerson">
+        <nc:RoleOfPerson s:ref="WantedPersonInfo"/>
+    </j:Subject>
+</ncic-ex:Exchange>

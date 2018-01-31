@@ -1,0 +1,45 @@
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+       <n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+          <n:DocumentUserID><j:ID>USER55</j:ID></n:DocumentUserID>
+          <n:DocumentPasswordText>123456</n:DocumentPasswordText>
+            <n:MessageKeyCode>PAR</n:MessageKeyCode>
+            <j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>AZNLETS11</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <j:DocumentSubject.Organization>
+              <j:OrganizationORIID>
+                <j:ID>AZNLETS11</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSubject.Organization>
+			<n:DocumentReceivedTime>04:25</n:DocumentReceivedTime>
+			<j:DocumentReceivedDate>1994-06-10</j:DocumentReceivedDate>
+			<n:DocumentReceivedCountQuantity>13423</n:DocumentReceivedCountQuantity>
+			<j:DocumentFiledTime>04:25</j:DocumentFiledTime>
+			<j:DocumentFiledDate>1994-06-10</j:DocumentFiledDate>
+			<n:DocumentFiledCountQuantity>21902</n:DocumentFiledCountQuantity>	
+			<n:DocumentControlFieldText>ATS000048</n:DocumentControlFieldText>
+		</n:NLETSResponseHeader>
+		<n:NLETSInquiryData Key="PPQ">
+				<j:Person>
+					<j:PersonName>
+						<j:PersonFullName>PUBLIC, JOHN Q</j:PersonFullName>
+					</j:PersonName>
+					<j:PersonBirthDate>1980-07-14</j:PersonBirthDate>
+					<j:PersonPhysicalDetails>
+						<j:PersonSexCode>M</j:PersonSexCode>
+					</j:PersonPhysicalDetails>
+				</j:Person>
+				<n:Attention>SGT JOHN DOE</n:Attention>
+				<n:PurposeCode>C</n:PurposeCode>
+				<n:ImageIndicator>Y</n:ImageIndicator>
+			</n:NLETSInquiryData>
+			<n:NLETSResponseData Type="hit" Key="PAR">
+				<n:ResponseText><![CDATA[**** TEST (PAR) ****
+								FBI/7868768
+				]]></n:ResponseText>
+			</n:NLETSResponseData>
+		</n:NLETSResponseMessage>
+</n:NLETS>

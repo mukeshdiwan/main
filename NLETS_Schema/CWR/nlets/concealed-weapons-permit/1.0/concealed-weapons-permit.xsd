@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 5/12/2017		Kate Silhol/Nlets		add inquiry structure-->
+<xs:schema xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/3.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:n2-cwr="http://www.nlets.org/niem/nlets-concealed-weapon-permit/1.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.1/" targetNamespace="http://www.nlets.org/niem/nlets-concealed-weapon-permit/1.0">
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/jxdm/5.1/" schemaLocation="niem/domains/jxdm/5.1/jxdm.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:complexType name="IdentificationApplicationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-cwr:ApplicationPendingIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-cwr:ApplicationDate" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IdentificationAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-cwr:IdentificationApplication" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-cwr:ResidentIdentificationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-cwr:IdentificationCommentText" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="n2-cwr:PermitedWeapon" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ItemAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="j:FirearmBoreSizeText" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ImageAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-cwr:ImagePrimaryIndicator" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PersonAugmentationType">
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-cwr:PersonDeceasedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ConcealedWeaponPermitInquiryType">
+		<xs:annotation>
+			<xs:documentation>The business data describing a concealed weapon permit holder.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	<xs:complexType name="ConcealedWeaponPermitRecordType">
+		<xs:annotation>
+			<xs:documentation>The business data describing a concealed weapon permit holder.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="nc:ContactInformationAssociation" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ApplicationPendingIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="ApplicationDate" type="niem-xs:date" abstract="false" nillable="true"/>
+	<xs:element name="ConcealedWeaponPermitRecord" type="n2-cwr:ConcealedWeaponPermitRecordType" abstract="false" nillable="true"/>
+	<xs:element name="IdentificationAugmentation" type="n2-cwr:IdentificationAugmentationType" abstract="false" substitutionGroup="nc:IdentificationAugmentationPoint" nillable="true"/>
+	<xs:element name="IdentificationApplication" type="n2-cwr:IdentificationApplicationType" abstract="false" nillable="true"/>
+	<xs:element name="IdentificationCommentText" type="nc:TextType" abstract="false" nillable="true"/>
+	<xs:element name="ItemAugmentation" type="n2-cwr:ItemAugmentationType" abstract="false" substitutionGroup="nc:ItemAugmentationPoint" nillable="true"/>
+	<xs:element name="ImageAugmentation" type="n2-cwr:ImageAugmentationType" abstract="false" substitutionGroup="nc:ImageAugmentationPoint" nillable="true"/>
+	<xs:element name="ImagePrimaryIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="PermitedWeapon" type="nc:WeaponType" abstract="false" nillable="true"/>
+	<xs:element name="PersonDeceasedIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<xs:element name="PersonAugmentation" type="n2-cwr:PersonAugmentationType" abstract="false" substitutionGroup="nc:PersonAugmentationPoint" nillable="true"/>
+	<xs:element name="ResidentIdentificationIndicator" type="niem-xs:boolean" abstract="false" nillable="true"/>
+	<!-- query elements-->
+	<xs:element name="ConcealedWeaponPermitInquiry" type="n2-cwr:ConcealedWeaponPermitInquiryType" abstract="false" nillable="true"/>
+	<xs:element name="ImageIndicator" type="xs:boolean" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>A value of true in this element indicates that an image is being requested if available.</xs:documentation>
+		</xs:annotation>
+	</xs:element>	
+</xs:schema>

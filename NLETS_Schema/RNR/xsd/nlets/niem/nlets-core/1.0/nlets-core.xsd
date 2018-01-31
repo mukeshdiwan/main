@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:n2="http://www.nlets.org/niem/nlets-core/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" targetNamespace="http://www.nlets.org/niem/nlets-core/1.0">
+	<import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../../../niem/proxy/xsd/2.0/xsd.xsd"/>
+	<import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="../../nlets-hdr/1.0/nlets-hdr.xsd"/>
+	<import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation="../../../../niem/domains/jxdm/4.1/jxdm.xsd"/>
+	<import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../../../niem/structures/2.0/structures.xsd"/>
+	<import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="../../../../niem/niem-core/2.0/niem-core.xsd"/>
+	<complexType name="AdditionalInformationType">
+		<annotation>
+			<documentation>Additional state specific data, added by the responding state.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:StateElement" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LesseeType">
+		<annotation>
+			<documentation>An entity which has a contract or lease to use a vehicle.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:LesseeType">
+				<sequence>
+					<element ref="nc:Organization" minOccurs="0"/>
+					<element ref="n2:Person" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LessorType">
+		<annotation>
+			<documentation>An entity which conveys vehicles by way of a lease.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:LessorType">
+				<sequence>
+					<element ref="nc:Organization" minOccurs="0"/>
+					<element ref="n2:Person" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LienHolderType">
+		<annotation>
+			<documentation>An entity that has a security interest on a property item.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:LienHolderType">
+				<sequence>
+					<element ref="nc:Organization" minOccurs="0"/>
+					<element ref="n2:Person" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="VehicleOdometerReadingMeasureType">
+		<annotation>
+			<documentation>A reading of a vehicle odometer to the nearest mile or kilometer. </documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:OdometerReadingMeasureType">
+				<sequence>
+					<element ref="nc:ActivityDate" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PersonType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="nc:PersonType">
+				<sequence>
+					<element ref="nc:DriverLicense" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="n2:PersonResidentialAddress" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RegistrationHolderType">
+		<annotation>
+			<documentation>A person or organization to whom a registration is issued.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:EntityType">
+				<sequence>
+					<element ref="nc:ContactMailingAddress" minOccurs="0"/>
+					<element ref="n2:RegistrationHolderName" minOccurs="0"/>
+					<element ref="n2:Person" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="StateElementType">
+		<annotation>
+			<documentation>An element provided by a state, which is not defined in the StandardResponse. Use this to dynamically incorporate elements not explicitly defined in this schema. Do not add elements that have no meaning or use outside of your state. </documentation>
+		</annotation>
+		<complexContent>
+			<extension base="s:ComplexObjectType">
+				<sequence>
+					<element ref="n2:ElementFieldName"/>
+					<element ref="n2:ElementFieldValue"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="StructuredAddressType">
+		<annotation>
+			<documentation/>
+		</annotation>
+		<complexContent>
+			<extension base="nc:StructuredAddressType">
+				<sequence>
+					<element ref="n2:ResidenceDateRange" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="TitleHolderType">
+		<annotation>
+			<documentation>An entity which has a contract or lease to use a vehicle.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:EntityType">
+				<sequence>
+					<element ref="n2:Person" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="VehicleType">
+		<annotation>
+			<documentation>A motor-driven conveyance designed to carry its operator, and optionally passengers and cargo, over land.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="nc:VehicleType">
+				<sequence>
+					<element ref="nc:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nc:CommercialVehicle" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nc:Insurance" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nc:Engine" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nc:VehicleInspection" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="nc:LienHolder" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="AdditionalInformation" type="n2:AdditionalInformationType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>Additional state specific data, added by the responding state.</documentation>
+		</annotation>
+	</element>
+	<element name="ElementFieldName" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The name, identifier or tag of the element.</documentation>
+		</annotation>
+	</element>
+	<element name="ElementFieldValue" type="nc:TextType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The content of the element.</documentation>
+		</annotation>
+	</element>
+	<element name="Lessee" type="n2:LesseeType" abstract="false" substitutionGroup="nc:Lessee" nillable="true">
+		<annotation>
+			<documentation>An entity which has a contract or lease to use a vehicle.</documentation>
+		</annotation>
+	</element>
+	<element name="Lessor" type="n2:LessorType" abstract="false" substitutionGroup="nc:Lessor" nillable="true">
+		<annotation>
+			<documentation>An entity which conveys vehicles by way of a lease.</documentation>
+		</annotation>
+	</element>
+	<element name="LienHolder" type="n2:LienHolderType" abstract="false" substitutionGroup="nc:LienHolder" nillable="true">
+		<annotation>
+			<documentation>An entity that has a security interest on a property item.</documentation>
+		</annotation>
+	</element>
+	<element name="Person" type="n2:PersonType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+
+	<element name="PersonResidentialAddress" type="n2:StructuredAddressType" abstract="false" nillable="true">
+		<annotation>
+			<documentation/>
+		</annotation>
+	</element>
+	<element name="RegistrationHolder" type="n2:RegistrationHolderType" abstract="false" substitutionGroup="nc:RegistrationHolder" nillable="true">
+		<annotation>
+			<documentation>A person or organization to whom a registration is issued.</documentation>
+		</annotation>
+	</element>
+	<element name="RegistrationHolderName" type="niem-xsd:string" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A name of an entity to whom a registration is issued. Used when it is not known if the registrant is a person or an organization.</documentation>
+		</annotation>
+	</element>
+	<element name="ResidenceDateRange" type="nc:DateRangeType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>The beginning and ending dates for the use of a residence.</documentation>
+		</annotation>
+	</element>
+	<element name="StateElement" type="n2:StateElementType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>An element provided by a state, which is not defined in the StandardResponse. Use this to dynamically incorporate elements not explicitly defined in this schema. Do not add elements that have no meaning or use outside of your state. </documentation>
+		</annotation>
+	</element>
+	<element name="TitleHolder" type="n2:TitleHolderType" abstract="false" substitutionGroup="nc:TitleHolder" nillable="true">
+		<annotation>
+			<documentation>An entity to whom a title is issued</documentation>
+		</annotation>
+	</element>
+	<element name="Vehicle" type="n2:VehicleType" abstract="false" nillable="true">
+		<annotation>
+			<documentation>A motor-driven conveyance designed to carry its operator, and optionally passengers and cargo, over land.</documentation>
+		</annotation>
+	</element>
+	<element name="VehicleOdometerReadingMeasure" type="n2:VehicleOdometerReadingMeasureType" abstract="false" substitutionGroup="nc:VehicleOdometerReadingMeasure" nillable="true">
+		<annotation>
+			<documentation>A reading of a vehicle odometer to the nearest mile or kilometer. </documentation>
+		</annotation>
+	</element>
+</schema>

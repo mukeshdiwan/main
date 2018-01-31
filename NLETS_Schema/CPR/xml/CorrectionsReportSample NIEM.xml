@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:ncien="http://www.nlets.org/ncien" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/CPR.xsd">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>CPR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS23</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS24</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>1234567890</nh2:DocumentControlFieldText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSResponseData n2:key="CPR">
+		<ncien:CorrectionsReport>
+			<ncien:CorrectionsPerson s:id="person1">
+				<nc:PersonBirthDate>
+					<nc:Date xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">1978-12-17</nc:Date>
+				</nc:PersonBirthDate>
+				<nc:PersonBirthLocation>
+					<nc:LocationName xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">US</nc:LocationName>
+				</nc:PersonBirthLocation>
+				<nc:PersonDigitalImage>
+					<nc:BinaryAvailableIndicator xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">true</nc:BinaryAvailableIndicator>
+					<nc:BinaryBase64Object xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">abcd</nc:BinaryBase64Object>
+					<nc:BinaryCaptureDate xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">
+						<nc:DateTime>2001-12-17T09:30:47.0Z</nc:DateTime>
+					</nc:BinaryCaptureDate>
+					<nc:BinaryFormatID xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">String</nc:BinaryFormatID>
+					<nc:BinaryCategoryText xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">String</nc:BinaryCategoryText>
+				</nc:PersonDigitalImage>
+				<nc:PersonEthnicityCode>N</nc:PersonEthnicityCode>
+				<nc:PersonEyeColorCode>BRO</nc:PersonEyeColorCode>
+				<nc:PersonHairColorCode>BRO</nc:PersonHairColorCode>
+				<nc:PersonHeightMeasure>
+					<nc:MeasureText>602</nc:MeasureText>
+				</nc:PersonHeightMeasure>
+				<nc:PersonName>
+					<nc:PersonGivenName>JOHN</nc:PersonGivenName>
+					<nc:PersonMiddleName>L</nc:PersonMiddleName>
+					<nc:PersonSurName>DOE</nc:PersonSurName>
+				</nc:PersonName>
+				<nc:PersonPhysicalFeature>
+					<nc:PhysicalFeatureCategoryCode>TAT R ARM</nc:PhysicalFeatureCategoryCode>
+					<nc:PhysicalFeatureDescriptionText>Dragon tattoo on upper right arm</nc:PhysicalFeatureDescriptionText>
+				</nc:PersonPhysicalFeature>
+				<nc:PersonRaceCode>W</nc:PersonRaceCode>
+				<nc:PersonSexCode>M</nc:PersonSexCode>
+				<nc:PersonSSNIdentification>
+					<nc:IdentificationID xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">123-45-6789</nc:IdentificationID>
+				</nc:PersonSSNIdentification>
+				<nc:PersonWeightMeasure>
+					<nc:MeasureText>150</nc:MeasureText>
+				</nc:PersonWeightMeasure>
+				<ncien:PersonCorrectionsIdentification>
+					<nc:IdentificationID xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">1111111111</nc:IdentificationID>
+				</ncien:PersonCorrectionsIdentification>
+				<nc:CaveatText>ARMED AND DANGEROUS</nc:CaveatText>
+				<j:PersonAugmentation>
+					<nc:DriverLicense>
+						<nc:DriverLicenseIdentification xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">
+							<nc:IdentificationID>22222222222</nc:IdentificationID>
+						</nc:DriverLicenseIdentification>
+					</nc:DriverLicense>
+					<j:PersonBirthPlaceCode>US</j:PersonBirthPlaceCode>
+					<j:PersonFBIIdentification>
+						<nc:IdentificationID xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">9999999999</nc:IdentificationID>
+					</j:PersonFBIIdentification>
+					<j:PersonRegisteredOffenderIndicator>true</j:PersonRegisteredOffenderIndicator>
+					<j:PersonStateFingerprintIdentification>
+						<nc:IdentificationID xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">AZ1234567</nc:IdentificationID>
+					</j:PersonStateFingerprintIdentification>
+				</j:PersonAugmentation>
+			</ncien:CorrectionsPerson>
+			<ncien:Identity s:id="identity1">
+				<nc:Person>
+					<nc:PersonBirthDate>
+						<nc:Date xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">1980-12-17</nc:Date>
+					</nc:PersonBirthDate>
+					<nc:PersonName>
+						<nc:PersonGivenName>JACK</nc:PersonGivenName>
+						<nc:PersonSurName>DOE</nc:PersonSurName>
+					</nc:PersonName>
+					<nc:PersonSSNIdentification>
+						<nc:IdentificationID xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">223-45-6789</nc:IdentificationID>
+					</nc:PersonSSNIdentification>
+				</nc:Person>
+			</ncien:Identity>
+			<nc:IdentityAssociation>
+				<nc:PersonReference xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org" s:ref="person1"/>
+				<nc:IdentityReference xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org" s:ref="identity1"/>
+			</nc:IdentityAssociation>
+			<nc:Location s:id="location1">
+				<nc:LocationAddress xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">
+					<nc:AddressFullText>123 Main Street</nc:AddressFullText>
+				</nc:LocationAddress>
+			</nc:Location>
+			<nc:ResidenceAssociation>
+				<nc:PersonReference xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org" s:ref="person1"/>
+				<nc:LocationReference xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org" s:ref="location1"/>
+			</nc:ResidenceAssociation>
+			<ncien:Incarceration>
+				<nc:SupervisionRelease>
+					<nc:ActivityDate xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">
+						<nc:Date>2006-02-08</nc:Date>
+					</nc:ActivityDate>
+				</nc:SupervisionRelease>
+				<nc:SupervisionSupervisor>
+					<nc:EntityOrganization>
+						<nc:OrganizationName xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">STATE PRISON</nc:OrganizationName>
+						<nc:OrganizationPrimaryContactInformation xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">
+							<nc:ContactTelephoneNumber>
+								<nc:FullTelephoneNumber>
+									<nc:TelephoneNumberFullID>6233083500</nc:TelephoneNumberFullID>
+								</nc:FullTelephoneNumber>
+							</nc:ContactTelephoneNumber>
+						</nc:OrganizationPrimaryContactInformation>
+					</nc:EntityOrganization>
+				</nc:SupervisionSupervisor>
+				<nc:ActivityDate>
+					<nc:Date xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">2006-01-01</nc:Date>
+				</nc:ActivityDate>
+			</ncien:Incarceration>
+			<j:Parole>
+				<nc:SupervisionRelease>
+					<nc:ActivityDate xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">
+						<nc:Date>2008-02-08</nc:Date>
+					</nc:ActivityDate>
+				</nc:SupervisionRelease>
+				<nc:SupervisionPersonStatus>
+					<nc:StatusDescriptionText xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">ON PAROLE</nc:StatusDescriptionText>
+				</nc:SupervisionPersonStatus>
+				<nc:SupervisionSupervisor>
+					<nc:EntityOrganization>
+						<nc:OrganizationName xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">PAROLE ORGANIZATION</nc:OrganizationName>
+						<nc:OrganizationPrimaryContactInformation xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:j4="http://niem.gov/niem/domains/jxdm/4.0" xmlns:n="http://www.nlets.org">
+							<nc:ContactTelephoneNumber>
+								<nc:FullTelephoneNumber>
+									<nc:TelephoneNumberFullID>6233083500</nc:TelephoneNumberFullID>
+								</nc:FullTelephoneNumber>
+							</nc:ContactTelephoneNumber>
+						</nc:OrganizationPrimaryContactInformation>
+					</nc:EntityOrganization>
+				</nc:SupervisionSupervisor>
+			</j:Parole>
+		</ncien:CorrectionsReport>
+	</n2:NLETSResponseData>
+</n2:NLETS>

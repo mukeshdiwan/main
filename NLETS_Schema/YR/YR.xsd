@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--  Version 1.0		12/1/2014		Kate Silhol/Nlets		 -->
+<!-- 5/12/2017		Kate Silhol/Nlets		make inquiry structure consistent with other message types-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:scr="http://release.niem.gov/niem/domains/screening/3.1/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:n2-yr="http://www.nlets.org/niem/nlets-hit-confirmation/1.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" targetNamespace="http://www.nlets.org/niem/1.0">
+	<xs:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="./niem/proxy/xsd/2.0/xsd.xsd"/>
+	<xs:import namespace="http://www.nlets.org/niem/nlets-hdr/1.0" schemaLocation="nlets/nlets-hdr/1.0/nlets-hdr.xsd"/>
+	<xs:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="./niem/structures/2.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/screening/3.1/" schemaLocation="nlets/hit-confirmation/1.0/niem/domains/screening/3.1/screening.xsd"/>
+	<xs:import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation="./niem/domains/jxdm/4.1/jxdm.xsd"/>
+	<xs:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="./niem/niem-core/2.0/niem-core.xsd"/>
+	<xs:import namespace="http://www.nlets.org/niem/nlets-hit-confirmation/1.0" schemaLocation="nlets/hit-confirmation/1.0/hit-confirmation.xsd"/>
+	<xs:complexType name="ActivityType">
+		<xs:annotation>
+			<xs:documentation>A structure that contains the elements specific to this transaction.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="nc:ActivityType">
+				<xs:sequence>
+					<xs:element ref="n2:QueryRequestSequenceNumber" minOccurs="0"/>
+					<xs:element ref="nc:Incident"/>
+					<xs:element ref="n2:RequestingAgency"/>
+					<xs:element ref="n2:RequestCategoryCode" minOccurs="0"/>
+					<xs:element ref="scr:NCICRecordID"/>
+					<xs:element ref="n2:RequestPriorityCode"/>
+					<xs:element ref="n2:Remarks" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NLETSInquiryDataType">
+		<xs:annotation>
+			<xs:documentation>A structure that contains the elements specific to this transaction.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="s:ComplexObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-yr:HitConfirmationInquiry"/>
+				</xs:sequence>
+				<xs:attribute ref="n2:key" use="required"/>
+				<xs:attribute ref="n2:type" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NLETSResponseDataType">
+		<xs:complexContent>
+			<xs:extension base="s:ComplexObjectType">
+				<xs:sequence>
+					<xs:element ref="n2-yr:HitConfirmation" minOccurs="0"/>
+					<xs:element ref="n2:ResponseText" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute ref="n2:key" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NLETSType">
+		<xs:annotation>
+			<xs:documentation>A structure that defines the root element of an NLETS message.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="s:ComplexObjectType">
+				<xs:sequence>
+					<xs:element ref="n2:NLETSMessageHeader"/>
+					<xs:element ref="n2:NLETSInquiryData" minOccurs="0"/>
+					<xs:element ref="n2:NLETSResponseData"/>
+				</xs:sequence>
+				<xs:attribute ref="n2:version" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SecuritiesType">
+		<xs:annotation>
+			<xs:documentation>A complex type with details about a financial instrument showing ownership or credit.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="nc:SecuritiesType">
+				<xs:sequence>
+					<xs:element ref="nc:ItemCategory" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="RequestCategoryCodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SV"/>
+			<xs:enumeration value="WP"/>
+			<xs:enumeration value="PO"/>
+			<xs:enumeration value="MP"/>
+			<xs:enumeration value="SL"/>
+			<xs:enumeration value="SG"/>
+			<xs:enumeration value="SA"/>
+			<xs:enumeration value="SS"/>
+			<xs:enumeration value="SB"/>
+			<xs:enumeration value="SP"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RequestPriorityCodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="U"/>
+			<xs:enumeration value="R"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attribute name="key" type="xs:string"/>
+	<xs:attribute name="type" type="xs:string"/>
+	<xs:attribute name="version" type="xs:string"/>
+	<xs:element name="NLETS" type="n2:NLETSType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>The root element of a NLETS message</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NLETSInquiryData" type="n2:NLETSInquiryDataType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>This element will contain all elements specific to this transaction.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NLETSMessageHeader" type="nh2:NLETSMessageHeaderType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Metadata information about an NLETS message</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="QueryRequestActivity" type="n2:ActivityType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Request Number. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="QueryRequestSequenceNumber" type="xs:nonNegativeInteger"/>
+	<xs:element name="Remarks" type="nc:TextType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Free form remarks about the query.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RequestCategoryCode" type="n2:RequestCategoryCodeType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Describes the specific type of request.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RequestPriorityCode" type="n2:RequestPriorityCodeType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Priority designation. Value must be U (urgent) or R (routine).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RequestingAgency" type="j:OrganizationType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Securities" type="n2:SecuritiesType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>A financial instrument showing ownership or credit.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NLETSResponseData" type="n2:NLETSResponseDataType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ResponseText" type="nc:TextType" abstract="false" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Textual response information. This element is intended to communicate no hit, not on file or other status information.</xs:documentation>
+		</xs:annotation>
+	</xs:element>		
+</xs:schema>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/DEA.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>DEA</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>VADEADX00</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>DCDEA0209</nh2:DestinationORIID>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSUpdateData n2:key="DEA">
+		<n2:NDPIXEntry>
+			<nc:DocumentSubmitter>
+				<nc:EntityOrganization>
+					<nc:OrganizationName>Omaha Police Department</nc:OrganizationName>
+					<nc:OrganizationPrimaryContactInformation>
+						<nc:ContactTelephoneNumber>
+							<nc:FullTelephoneNumber>
+								<nc:TelephoneNumberFullID>6120121293</nc:TelephoneNumberFullID>
+							</nc:FullTelephoneNumber>
+						</nc:ContactTelephoneNumber>
+					</nc:OrganizationPrimaryContactInformation>
+				</nc:EntityOrganization>
+				<nc:EntityPerson>
+					<nc:PersonName>
+						<nc:PersonFullName>Johnson, Cecil D.</nc:PersonFullName>
+					</nc:PersonName>
+				</nc:EntityPerson>
+			</nc:DocumentSubmitter>
+			<nc:Case>
+				<nc:ActivityIdentification>
+					<nc:IdentificationID>123456</nc:IdentificationID>
+				</nc:ActivityIdentification>
+			</nc:Case>
+			<n2:DocumentSubmitterPasswordText>12345678</n2:DocumentSubmitterPasswordText>
+			<n2:DocumentSubmitterUserIDText>agentx</n2:DocumentSubmitterUserIDText>
+		</n2:NDPIXEntry>
+		<n2:QueryPerson>
+			<nc:PersonName>
+				<nc:PersonFullName>Edwards, Paul</nc:PersonFullName>
+			</nc:PersonName>
+		</n2:QueryPerson>
+		<n2:DrugActivity>
+			<nc:Drug/>
+		</n2:DrugActivity>
+	</n2:NLETSUpdateData>
+	<n2:NLETSResponseData n2:key="DEA">
+		<n2:ResponseText>NDP/5204.OCA/DR961058.DLR/07152001.NAM/WILSON, JAMES. POC/MICHAEL KEY.PTL/CENTRAL CITY POLICE.PPN/2025552323.
+MSG/20-ENTRY ACCEPTED ? MATCHED RECORD (1 of 15).
+</n2:ResponseText>
+	</n2:NLETSResponseData>
+</n2:NLETS>

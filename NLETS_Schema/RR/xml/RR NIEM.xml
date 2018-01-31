@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:ansi_d20="http://niem.gov/niem/ansi_d20/2.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nc2="http://www.nlets.org/niem/nlets-core/1.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:nrh2="http://www.nlets.gov/niem/nlets-registration-history/1.0/" xmlns:nrm2="http://www.nlets.gov/niem/nlets-registration-match/1.0/" xmlns:nrs2="http://www.nlets.gov/niem/nlets-registration-status/1.0/" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:unece="http://niem.gov/niem/unece_rec20-misc/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/Candle/NIEM/RR/xsd/RR.xsd" version="3.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>RR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS11</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS20</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>KATESILHOL</nh2:DocumentControlFieldText>
+	</NLETSMessageHeader>
+	<NLETSInquiryData key="RQ">
+		<nc2:Vehicle>
+			<nc:VehicleIdentification/>
+			<nc:ConveyanceRegistration>
+				<nc:ConveyanceRegistrationPlateIdentification>
+					<nc:IdentificationID>DCD3195</nc:IdentificationID>
+				</nc:ConveyanceRegistrationPlateIdentification>
+				<nc:ConveyanceRegistrationPlateCategoryText>PC</nc:ConveyanceRegistrationPlateCategoryText>
+			</nc:ConveyanceRegistration>
+		</nc2:Vehicle>
+	</NLETSInquiryData>
+	<NLETSResponseData key="RR">
+		<CaveatText>Powered by Nlets</CaveatText>
+		<nrs2:RegistrationStatus>
+			<nc2:AdditionalInformation>
+				<nc2:StateElement>
+					<nc2:ElementFieldName>UC Number</nc2:ElementFieldName>
+					<nc2:ElementFieldValue>12345</nc2:ElementFieldValue>
+				</nc2:StateElement>
+			</nc2:AdditionalInformation>
+			<nrs2:StandardResponse>
+				<nc2:Vehicle>
+					<nc:ConveyanceColorPrimaryText>BLACK</nc:ConveyanceColorPrimaryText>
+					<nc:ItemModelName>LANCER</nc:ItemModelName>
+					<nc:ItemModelYearDate>2005</nc:ItemModelYearDate>
+					<nc:PropertyStyleText>4D</nc:PropertyStyleText>
+					<nc:VehicleIdentification>
+						<nc:IdentificationID>JA3AH86D45U010227</nc:IdentificationID>
+					</nc:VehicleIdentification>
+					<nc:VehicleMakeCode>MITS</nc:VehicleMakeCode>
+					<nc:VehicleModelCode>A10</nc:VehicleModelCode>
+					<nc:ConveyanceRegistration>
+						<nc:RegistrationIdentification>
+							<nc:IdentificationID>G016365588532278841</nc:IdentificationID>
+						</nc:RegistrationIdentification>
+						<nc:RegistrationEffectiveDate>
+							<nc:Date>2004-12-28</nc:Date>
+						</nc:RegistrationEffectiveDate>
+						<nc:RegistrationExpirationDate>
+							<nc:Date>2006-12-27</nc:Date>
+						</nc:RegistrationExpirationDate>
+						<nc:RegistrationJurisdictionNCICLISCode>AZ</nc:RegistrationJurisdictionNCICLISCode>
+						<nc2:RegistrationHolder>
+							<nc:ContactMailingAddress>
+								<nc:StructuredAddress>
+									<nc:LocationStreet>
+										<nc:StreetFullText>123 N. MAIN ST</nc:StreetFullText>
+									</nc:LocationStreet>
+									<nc:LocationCityName>SPRINGFIELD</nc:LocationCityName>
+									<nc:LocationStateName>MO</nc:LocationStateName>
+									<nc:LocationPostalCode>12345</nc:LocationPostalCode>
+								</nc:StructuredAddress>
+							</nc:ContactMailingAddress>
+							<nc2:Person>
+								<nc:PersonBirthDate>
+									<nc:Date>1941-04-13</nc:Date>
+								</nc:PersonBirthDate>
+								<nc:PersonName>
+									<nc:PersonGivenName>AURELIO</nc:PersonGivenName>
+									<nc:PersonMiddleName nc:personNameInitialIndicator="true">A</nc:PersonMiddleName>
+									<nc:PersonSurName>GARCIA</nc:PersonSurName>
+									<nc:PersonNameSuffixText></nc:PersonNameSuffixText>
+								</nc:PersonName>
+								<nc:PersonSexText>MALE</nc:PersonSexText>
+								<nc2:PersonResidentialAddress>
+									<nc:LocationStreet>
+										<nc:StreetFullText>210 MONROE BLVD</nc:StreetFullText>
+									</nc:LocationStreet>
+									<nc:LocationCityName>LONG BEACH</nc:LocationCityName>
+									<nc:LocationStateName>NY</nc:LocationStateName>
+									<nc:LocationPostalCode>11561</nc:LocationPostalCode>
+								</nc2:PersonResidentialAddress>
+							</nc2:Person>
+						</nc2:RegistrationHolder>
+						<nc:ConveyanceRegistrationGrossWeightMeasure/>
+						<nc:ConveyanceRegistrationPlateIdentification>
+							<nc:IdentificationID>DCD3195</nc:IdentificationID>
+						</nc:ConveyanceRegistrationPlateIdentification>
+						<nc:ConveyanceRegistrationPlateCategoryText>PASSENGER</nc:ConveyanceRegistrationPlateCategoryText>
+					</nc:ConveyanceRegistration>
+					<nc:CommercialVehicle>
+						<nc:VehicleCurrentWeightMeasure/>
+						<nc:VehicleGrossLadenSumWeightMeasure/>
+						<nc:VehicleMaximumLoadWeightMeasure/>
+						<nc:VehicleUnladenWeightMeasure>
+							<nc:MeasurePointValue>3263</nc:MeasurePointValue>
+							<nc:WeightUnitCode>LBR</nc:WeightUnitCode>
+						</nc:VehicleUnladenWeightMeasure>
+					</nc:CommercialVehicle>
+					<nc:Insurance>
+						<nc:InsuranceCarrierName>GEICO GEN INS CO</nc:InsuranceCarrierName>
+					</nc:Insurance>
+				</nc2:Vehicle>
+			</nrs2:StandardResponse>
+		</nrs2:RegistrationStatus>
+	</NLETSResponseData>
+</NLETS>

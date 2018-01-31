@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key (type of entry) -->
+        <ncic:MessageTransactionCode>QO<!--/ZO--></ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData s:ref="d77e16-incomingRecordData_oriIncomingQueryDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (ori incoming data section query). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="d77e16-incomingRecordData_oriIncomingQueryDataSection">
+        <ncic:ORIRecord s:ref="d77e17-oriRecord_queryDataSection"/>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ORIRecord (ori queried data section record). -->
+    <!-- ******************************************************************************** -->
+    <ncic:ORIRecord s:id="d77e17-oriRecord_queryDataSection">
+        <nc:ContactInformationAssociation>
+            <nc:ContactEntity s:ref="d77e17-entity_ori"/>
+        </nc:ContactInformationAssociation>
+    </ncic:ORIRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Entity. (ori organization) -->
+    <!-- ******************************************************************************** -->
+    <nc:Entity s:id="d77e17-entity_ori">
+        <nc:EntityOrganization s:ref="d77e17-organization_ori"/>
+    </nc:Entity>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (ori organization) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e17-organization_ori">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>MD1010600</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+</ncic-ex:Exchange>

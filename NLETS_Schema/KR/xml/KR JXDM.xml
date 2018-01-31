@@ -1,0 +1,377 @@
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j2="http://www.it.ojp.gov/jxdm/3.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org ..\..\..\jxdm\KR-CANDLE\KR.xsd">
+	<n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+			<n:MessageKeyCode>KR</n:MessageKeyCode>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZNLETS11</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZNLETS20</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSInquiryData Key="KQ">
+			<j:Person xmlns:j="http://www.it.ojp.gov/jxdm/3.0">
+				<j:PersonName>
+					<j:PersonFullName>RUTLEDGE,DEWAYNE</j:PersonFullName>
+				</j:PersonName>
+				<j:PersonBirthDate>1983-12-12</j:PersonBirthDate>
+				<j:PersonPhysicalDetails>
+					<j:PersonSexCode>M</j:PersonSexCode>
+				</j:PersonPhysicalDetails>
+			</j:Person>
+		</n:NLETSInquiryData>
+		<n:NLETSResponseData Key="KR">
+			<n:DriverHistory>
+				<n:StandardResponse>
+					<j:Person xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+						<j:PersonName>
+							<j:PersonGivenName>DEWAYNE</j:PersonGivenName>
+							<j:PersonMiddleName/>
+							<j:PersonSurName>RUTLEDGE</j:PersonSurName>
+							<j:PersonSuffixName/>
+						</j:PersonName>
+						<j:PrimaryContactInformation>
+							<j:ContactMailingAddress>
+								<j:LocationStreet>
+									<j:StreetFullText>53 FAIRVIEW AVE DOWN</j:StreetFullText>
+								</j:LocationStreet>
+								<j:LocationCityName>ROCHESTER</j:LocationCityName>
+								<j:LocationCountyName>MONROE</j:LocationCountyName>
+								<j:LocationStateName>NY</j:LocationStateName>
+								<j:LocationPostalCodeID>
+									<j:ID>14619</j:ID>
+								</j:LocationPostalCodeID>
+							</j:ContactMailingAddress>
+						</j:PrimaryContactInformation>
+						<j:PersonBirthDate>1983-12-12</j:PersonBirthDate>
+						<j:PersonAssignedIDDetails>
+							<j:PersonOtherID>
+								<j:ID>629523610</j:ID>
+							</j:PersonOtherID>
+						</j:PersonAssignedIDDetails>
+						<j:PersonPhysicalDetails>
+							<j:PersonHeightMeasure>64</j:PersonHeightMeasure>
+							<j:PersonEyeColorText>BROWN</j:PersonEyeColorText>
+							<j:PersonSexText>MALE</j:PersonSexText>
+						</j:PersonPhysicalDetails>
+					</j:Person>
+					<n:DriverLicenseDetails>
+						<j:DriverHistoryConvictionQuantity xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">7</j:DriverHistoryConvictionQuantity>
+						<j:DriverHistoryAccidentQuantity xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">7</j:DriverHistoryAccidentQuantity>
+						<j:DriverHistoryWithdrawalQuantity xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">21</j:DriverHistoryWithdrawalQuantity>
+						<n:DriverAuthorizationDetails>
+							<j:DriverAuthorizationID.Detailed xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+								<j:ID>R217585854160780683</j:ID>
+							</j:DriverAuthorizationID.Detailed>
+							<j:DriverAuthorizationExpirationDate xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">2006-12-12</j:DriverAuthorizationExpirationDate>
+						</n:DriverAuthorizationDetails>
+						<j:DriverLicenseNonCommercialClassCode xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">ID</j:DriverLicenseNonCommercialClassCode>
+						<j:DriverLicenseNonCommercialClassText xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">** NON-DRIVER ID ONLY **</j:DriverLicenseNonCommercialClassText>
+						<j:DriverLicenseNonCommercialStatusText xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">NONE</j:DriverLicenseNonCommercialStatusText>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2004-02-07</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityDate>2004-02-07</j:DriverLicenseWithdrawalEligibilityDate>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>OPERATING WITHOUT INSURANCE - INFRACTION</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>REVOCATION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>A0401090000</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2004-06-15</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>00</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO PAY FINE (SCOFFLAW)</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>K092024</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2004-05-14</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>22</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReinstatementDate>2004-06-15</j:DriverLicenseWithdrawalReinstatementDate>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO ANSWER A SUMMONS</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>J092024</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2004-01-08</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>00</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO PAY FINE (SCOFFLAW)</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>K639264</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2004-01-02</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>00</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO PAY FINE (SCOFFLAW)</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>K639231</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2004-01-02</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>00</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO PAY FINE (SCOFFLAW)</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>K639242</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2004-01-02</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>00</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO PAY FINE (SCOFFLAW)</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>K639253</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2003-12-06</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>22</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReinstatementDate>2004-01-08</j:DriverLicenseWithdrawalReinstatementDate>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO ANSWER A SUMMONS</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>J639264</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2003-11-29</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>22</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReinstatementDate>2004-01-02</j:DriverLicenseWithdrawalReinstatementDate>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO ANSWER A SUMMONS</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>J639231</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2003-11-29</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>22</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReinstatementDate>2004-01-02</j:DriverLicenseWithdrawalReinstatementDate>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO ANSWER A SUMMONS</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>J639242</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2003-11-29</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>22</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReinstatementDate>2004-01-02</j:DriverLicenseWithdrawalReinstatementDate>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO ANSWER A SUMMONS</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>J639253</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2003-06-20</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>00</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO PAY FINE (SCOFFLAW)</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>K139431</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2003-06-20</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>00</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO PAY FINE (SCOFFLAW)</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>K139571</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2003-06-20</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>00</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO PAY FINE (SCOFFLAW)</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>K139582</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2003-06-20</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>00</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO PAY FINE (SCOFFLAW)</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>K139593</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2003-05-20</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>22</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReinstatementDate>2003-06-20</j:DriverLicenseWithdrawalReinstatementDate>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO ANSWER A SUMMONS</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>J139431</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2003-05-20</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>22</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReinstatementDate>2003-06-20</j:DriverLicenseWithdrawalReinstatementDate>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO ANSWER A SUMMONS</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>J139571</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2003-05-20</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>22</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReinstatementDate>2003-06-20</j:DriverLicenseWithdrawalReinstatementDate>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO ANSWER A SUMMONS</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>J139582</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2003-05-20</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>22</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReinstatementDate>2003-06-20</j:DriverLicenseWithdrawalReinstatementDate>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO ANSWER A SUMMONS</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>J139593</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2001-05-02</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>08</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReinstatementDate>2002-06-24</j:DriverLicenseWithdrawalReinstatementDate>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO ANSWER A SUMMONS</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>T109214</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverLicenseWithdrawal xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:DriverLicenseWithdrawalEffectiveDate>2001-05-02</j:DriverLicenseWithdrawalEffectiveDate>
+							<j:DriverLicenseWithdrawalEligibilityCode>08</j:DriverLicenseWithdrawalEligibilityCode>
+							<j:DriverLicenseWithdrawalReinstatementDate>2002-06-24</j:DriverLicenseWithdrawalReinstatementDate>
+							<j:DriverLicenseWithdrawalReasonReferenceCodeText>FAILURE TO ANSWER A SUMMONS</j:DriverLicenseWithdrawalReasonReferenceCodeText>
+							<j:DriverLicenseWithdrawalActionText>SUSPENSION</j:DriverLicenseWithdrawalActionText>
+							<j:DriverLicenseWithdrawalLocatorReferenceID>T107221</j:DriverLicenseWithdrawalLocatorReferenceID>
+						</j:DriverLicenseWithdrawal>
+						<j:DriverConviction xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:ConvictionLocatorReferenceID>
+								<j:ID>4061500001</j:ID>
+							</j:ConvictionLocatorReferenceID>
+							<j:ConvictionOffense>
+								<j:ActivityDate>2004-03-08</j:ActivityDate>
+								<j:IncidentViolatedStatute>
+									<j:StatuteOffenseID>
+										<j:ID>OPERATING WITHOUT A LICENSE</j:ID>
+									</j:StatuteOffenseID>
+								</j:IncidentViolatedStatute>
+							</j:ConvictionOffense>
+							<j:DriverConvictionCitation>
+								<j:ActivityDate>2004-06-15</j:ActivityDate>
+							</j:DriverConvictionCitation>
+							<j:DriverConvictionCMVText>9</j:DriverConvictionCMVText>
+							<j:DriverConvictionHazMatText>9</j:DriverConvictionHazMatText>
+							<j:DriverConvictionOffenseDescriptionText>O</j:DriverConvictionOffenseDescriptionText>
+						</j:DriverConviction>
+						<j:DriverConviction xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:ConvictionLocatorReferenceID>
+								<j:ID>4010800001</j:ID>
+							</j:ConvictionLocatorReferenceID>
+							<j:ConvictionOffense>
+								<j:ActivityDate>2003-09-30</j:ActivityDate>
+								<j:IncidentViolatedStatute>
+									<j:StatuteOffenseID>
+										<j:ID>OPERATING WITHOUT INSURANCE - INFRACTION</j:ID>
+									</j:StatuteOffenseID>
+								</j:IncidentViolatedStatute>
+							</j:ConvictionOffense>
+							<j:DriverConvictionCitation>
+								<j:ActivityDate>2004-01-08</j:ActivityDate>
+							</j:DriverConvictionCitation>
+							<j:DriverConvictionCMVText>9</j:DriverConvictionCMVText>
+							<j:DriverConvictionHazMatText>9</j:DriverConvictionHazMatText>
+							<j:DriverConvictionOffenseDescriptionText>O</j:DriverConvictionOffenseDescriptionText>
+						</j:DriverConviction>
+						<j:DriverConviction xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:ConvictionLocatorReferenceID>
+								<j:ID>4010200001</j:ID>
+							</j:ConvictionLocatorReferenceID>
+							<j:ConvictionOffense>
+								<j:ActivityDate>2003-09-23</j:ActivityDate>
+								<j:IncidentViolatedStatute>
+									<j:StatuteOffenseID>
+										<j:ID>UNREGISTERED MOTOR VEHICLE - INFRACTION</j:ID>
+									</j:StatuteOffenseID>
+								</j:IncidentViolatedStatute>
+							</j:ConvictionOffense>
+							<j:DriverConvictionCitation>
+								<j:ActivityDate>2004-01-02</j:ActivityDate>
+							</j:DriverConvictionCitation>
+							<j:DriverConvictionCMVText>9</j:DriverConvictionCMVText>
+							<j:DriverConvictionHazMatText>9</j:DriverConvictionHazMatText>
+							<j:DriverConvictionOffenseDescriptionText>O</j:DriverConvictionOffenseDescriptionText>
+						</j:DriverConviction>
+						<j:DriverConviction xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:ConvictionLocatorReferenceID>
+								<j:ID>4010200001</j:ID>
+							</j:ConvictionLocatorReferenceID>
+							<j:ConvictionOffense>
+								<j:ActivityDate>2003-09-23</j:ActivityDate>
+								<j:IncidentViolatedStatute>
+									<j:StatuteOffenseID>
+										<j:ID>OPERATING WITHOUT A LICENSE</j:ID>
+									</j:StatuteOffenseID>
+								</j:IncidentViolatedStatute>
+							</j:ConvictionOffense>
+							<j:DriverConvictionCitation>
+								<j:ActivityDate>2004-01-02</j:ActivityDate>
+							</j:DriverConvictionCitation>
+							<j:DriverConvictionCMVText>9</j:DriverConvictionCMVText>
+							<j:DriverConvictionHazMatText>9</j:DriverConvictionHazMatText>
+							<j:DriverConvictionOffenseDescriptionText>O</j:DriverConvictionOffenseDescriptionText>
+						</j:DriverConviction>
+						<j:DriverConviction xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:ConvictionLocatorReferenceID>
+								<j:ID>3062000001</j:ID>
+							</j:ConvictionLocatorReferenceID>
+							<j:ConvictionOffense>
+								<j:ActivityDate>2003-03-14</j:ActivityDate>
+								<j:IncidentViolatedStatute>
+									<j:StatuteOffenseID>
+										<j:ID>NO SEAT BELT DRIVER</j:ID>
+									</j:StatuteOffenseID>
+								</j:IncidentViolatedStatute>
+							</j:ConvictionOffense>
+							<j:DriverConvictionCitation>
+								<j:ActivityDate>2003-06-20</j:ActivityDate>
+							</j:DriverConvictionCitation>
+							<j:DriverConvictionCMVText>9</j:DriverConvictionCMVText>
+							<j:DriverConvictionHazMatText>9</j:DriverConvictionHazMatText>
+							<j:DriverConvictionOffenseDescriptionText>O</j:DriverConvictionOffenseDescriptionText>
+						</j:DriverConviction>
+						<j:DriverConviction xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:ConvictionLocatorReferenceID>
+								<j:ID>3062000001</j:ID>
+							</j:ConvictionLocatorReferenceID>
+							<j:ConvictionOffense>
+								<j:ActivityDate>2003-03-14</j:ActivityDate>
+								<j:IncidentViolatedStatute>
+									<j:StatuteOffenseID>
+										<j:ID>INSUFFICIENT TURN SIGNAL - LESS THAN 100 FEET</j:ID>
+									</j:StatuteOffenseID>
+								</j:IncidentViolatedStatute>
+							</j:ConvictionOffense>
+							<j:DriverConvictionCitation>
+								<j:ActivityDate>2003-06-20</j:ActivityDate>
+							</j:DriverConvictionCitation>
+							<j:DriverConvictionCMVText>9</j:DriverConvictionCMVText>
+							<j:DriverConvictionHazMatText>9</j:DriverConvictionHazMatText>
+							<j:DriverConvictionOffenseDescriptionText>O</j:DriverConvictionOffenseDescriptionText>
+						</j:DriverConviction>
+						<j:DriverConviction xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">
+							<j:ConvictionLocatorReferenceID>
+								<j:ID>3062000001</j:ID>
+							</j:ConvictionLocatorReferenceID>
+							<j:ConvictionOffense>
+								<j:ActivityDate>2003-03-14</j:ActivityDate>
+								<j:IncidentViolatedStatute>
+									<j:StatuteOffenseID>
+										<j:ID>OPERATING WITHOUT A LICENSE</j:ID>
+									</j:StatuteOffenseID>
+								</j:IncidentViolatedStatute>
+							</j:ConvictionOffense>
+							<j:DriverConvictionCitation>
+								<j:ActivityDate>2003-06-20</j:ActivityDate>
+							</j:DriverConvictionCitation>
+							<j:DriverConvictionCMVText>9</j:DriverConvictionCMVText>
+							<j:DriverConvictionHazMatText>9</j:DriverConvictionHazMatText>
+							<j:DriverConvictionOffenseDescriptionText>O</j:DriverConvictionOffenseDescriptionText>
+						</j:DriverConviction>
+					</n:DriverLicenseDetails>
+				</n:StandardResponse>
+				<n:AdditionalInformation>
+					<n:StateElement>
+						<j:MetadataFieldName xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">SubTransactionCode</j:MetadataFieldName>
+						<j:MetadataFieldValueText xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2">EAL</j:MetadataFieldValueText>
+					</n:StateElement>
+				</n:AdditionalInformation>
+			</n:DriverHistory>
+		</n:NLETSResponseData>
+	</n:NLETSResponseMessage>
+</n:NLETS>

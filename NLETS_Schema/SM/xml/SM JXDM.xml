@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <n:NLETSMailMessage>
+    <n:NLETSMailHeader>
+      <n:MessageKeyCode>SM</n:MessageKeyCode>
+      <j:DocumentSource.Organization>
+          <j:OrganizationORIID>
+              <j:ID>NL0000000</j:ID>
+           </j:OrganizationORIID>
+       </j:DocumentSource.Organization>
+       <j:DocumentSubject.Organization>
+	    <j:OrganizationORIID>
+		<j:ID>AZNLETS20</j:ID>
+	    </j:OrganizationORIID>
+       </j:DocumentSubject.Organization>
+       <n:DocumentControlFieldText><![CDATA[1234567890]]></n:DocumentControlFieldText>
+       </n:NLETSMailHeader>
+		<n:NLETSMailData Key="SM">
+			<n:MailText><![CDATA[ STATUS MESSAGE TEXT]]></n:MailText>
+		</n:NLETSMailData>
+	</n:NLETSMailMessage>
+</n:NLETS>

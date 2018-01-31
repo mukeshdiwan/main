@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/FQ.xsd" version="3.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>FQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>GA0250300</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>FL</nh2:DestinationORIID>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="FQ">
+		<n2:PurposeCode>C</n2:PurposeCode>
+		<n2:ImageIndicator>false</n2:ImageIndicator>
+		<n2:ResponseAttentionDescriptionText>SGT JOHN DOE</n2:ResponseAttentionDescriptionText>
+		<n2:Person>
+			<j:PersonAugmentation>
+				<j:PersonStateFingerprintIdentification/>
+			</j:PersonAugmentation>
+			<n2:PersonFPSIdentification/>
+		</n2:Person>
+		<nc:Location>
+			<nc:LocationAddress>
+				<nc:StructuredAddress>
+					<nc:AddressBuildingText>BDLG 2</nc:AddressBuildingText>
+					<nc:AddressSecondaryUnitText>CENTER FOR INFORMATION</nc:AddressSecondaryUnitText>
+					<nc:LocationStreet>
+						<nc:StreetFullText>123 X STREET</nc:StreetFullText>
+					</nc:LocationStreet>
+					<nc:LocationCityName>FAIRFAX</nc:LocationCityName>
+					<nc:LocationStateName>VIRGINIA</nc:LocationStateName>
+					<nc:LocationPostalCode xsi:nil="true"/>
+				</nc:StructuredAddress>
+			</nc:LocationAddress>
+		</nc:Location>
+	</n2:NLETSInquiryData>
+</n2:NLETS>

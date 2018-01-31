@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/domains/jxdm/4.1" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nlets="http://niem.gov/niem/nlets/2.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:i="http://niem.gov/niem/appinfo/2.0">
+  <xsd:annotation>
+    <xsd:documentation>Justice</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:import schemaLocation="../../../appinfo/2.1/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.1"/>
+  <xsd:import schemaLocation="../../../niem-core/2.0/niem-core.xsd" namespace="http://niem.gov/niem/niem-core/2.0"/>
+  <xsd:import schemaLocation="../../../nlets/2.1/nlets.xsd" namespace="http://niem.gov/niem/nlets/2.1"/>
+  <xsd:import schemaLocation="../../../proxy/xsd/2.0/xsd.xsd" namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
+  <xsd:import schemaLocation="../../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:complexType name="OrganizationAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for additional information about an organization.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="AugmentationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="j:OrganizationORIIdentification" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:AgencyAddCancelIndicator" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:AgencyBaselinePriorityValue" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:AgencyCHRIAuthorizedIndicator" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:AgencyControlTerminalIndicator" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:AgencyServiceHours" minOccurs="0" maxOccurs="1"/>
+          <xsd:element ref="j:AgencyAuthorization" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="OrganizationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for an applied augmentation for type nc:OrganizationType</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="OrganizationType"/>
+        <i2:AugmentedTypeIndicator>true</i2:AugmentedTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:OrganizationType">
+        <xsd:sequence>
+          <xsd:element ref="j:OrganizationAugmentation" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AgencyAddCancelIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if an agency is authorized to add or cancel a record; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencyAuthorization" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>An agency's access category to data.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencyAuthorizationCode" type="nlets:AgencyAuthorizationCodeType" substitutionGroup="j:AgencyAuthorization" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An agency's access category to data.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AgencyAuthorization"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencyBaselinePriorityValue" type="nc:NumericType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Values must be 0-12.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencyCHRIAuthorizedIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if an agency is authorized to access criminal history information; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencyControlTerminalIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if an agency is a control terminal; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencyServiceHours" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>The availability of an agency.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencyServiceHoursCode" type="nlets:AgencyServiceHoursCodeType" substitutionGroup="j:AgencyServiceHours" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A availability of an agency.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AgencyServiceHours"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="OrganizationAugmentation" type="j:OrganizationAugmentationType" substitutionGroup="s:Augmentation" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Additional information about an organization.</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="OrganizationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="OrganizationCategoryNLETSCode" type="nlets:OrganizationCategoryCodeType" substitutionGroup="nc:OrganizationCategory" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A functional kind of an organization.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="OrganizationCategory"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="OrganizationORIIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A unique identifier assigned to a justice-related organization by the federal government.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,1828 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:ansi_d20="http://www.it.ojp.gov/jxdm/ansi_d20/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0.2/proxy/xsd/1.0" xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2" xmlns:j-ansi_d20="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ansi_d20/1.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ncic_2000/1.0.1" xmlns:i="http://www.it.ojp.gov/jxdm/appinfo/1" xmlns:unece="http://www.it.ojp.gov/jxdm/unece_rec20-misc/1.0" targetNamespace="http://www.it.ojp.gov/jxdm/3.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:annotation>
+		<xsd:documentation>The Global Justice XML Data Model.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.it.ojp.gov/jxdm/ansi_d20/1.0" schemaLocation="../ansi_d20/1.0/ansi_d20.xsd">
+		<xsd:annotation>
+			<xsd:documentation>Motor vehicle administration codes from ANSI D20, the Data Dictionary for Traffic Record Systems, maintained by AAMVA, the American Association of Motor Vehicle Administrators.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ncic_2000/1.0.1" schemaLocation="proxy/ncic_2000/1.0.1/ncic_2000.xsd">
+		<xsd:annotation>
+			<xsd:documentation>Proxy types that carry dictionary metadata and extend codes from the National Crime and Information Center (NCIC) 2000 standard.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://www.it.ojp.gov/jxdm/unece_rec20-misc/1.0" schemaLocation="../unece_rec20-misc/1.0/unece_rec20-misc.xsd">
+		<xsd:annotation>
+			<xsd:documentation>Miscellaneous unit of measurement code from the United Nations Economic Commission for Europe Recommendation No. 20, "Codes for Units of Measure used in International Trade".</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://www.it.ojp.gov/jxdm/3.0.2/proxy/xsd/1.0" schemaLocation="proxy/xsd/1.0/xsd.xsd">
+		<xsd:annotation>
+			<xsd:documentation>Proxy types that carry dictionary metadata and have XML data type simple contents.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ansi_d20/1.0" schemaLocation="proxy/ansi_d20/1.0/ansi_d20.xsd">
+		<xsd:annotation>
+			<xsd:documentation>Proxy types that carry dictionary metadata and extend the ANSI D20 codes sets.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://www.it.ojp.gov/jxdm/appinfo/1" schemaLocation="../appinfo/1/appinfo.xsd">
+		<xsd:annotation>
+			<xsd:documentation>The appinfo for the schemas</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:attributeGroup name="SuperTypeMetadata"/>
+	<xsd:complexType name="ActivityType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes details about an activity or process that occurs.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:ActivityDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A date of an activity that occurs at a singular point in time or a start date of an activity that occurs over a period of time.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="AddressType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a postal location to which paper mail can be directed.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:LocationStreet" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Details about a street.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:LocationCityName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A name of a city or town.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:LocationCountyName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A name of a county, parish, or vicinage.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:LocationStateName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A name of a state, commonwealth, province, or other subregion of a country.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:LocationPostalCodeID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A zip code or postal code.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:LocationCountryName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A name of a country.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="AmountType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes an amount of money.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2/proxy/xsd/1.0" i:name="decimal"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="j-xsd:decimal">
+				<xsd:attribute ref="j:currencyText" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CommercialVehicleType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes details about a class of vehicle that includes motor vehicles with a gross vehicle weight rating of 26,001 pounds or more.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="VehicleType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:VehicleType">
+				<xsd:sequence>
+					<xsd:element ref="j:VehicleAxleQuantity" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A count of common axles of rotation of one or more wheels of a vehicle, whether power driven or freely rotating.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleCurrentWeightMeasure" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>An observed, estimated, or measured weight of the conveyance.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleGrossLadenUnitWeightMeasure" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A value specified by the manufacturer for a single unit truck, truck tractor, or trailer. In the absence of a value specified by the manufacturer, an estimate of the gross vehicle weight of a fully loaded unit may be submitted.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleGrossLadenSumWeightMeasure" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A sum of values specified by the manufacturer(s) for a truck tractor or trailer for the units that make up a combination. In the absence of a value specified by the manufacturer, an estimate of the gross vehicle weight of a fully loaded unit may be submitted.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleUnladenWeightMeasure" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A weight of the vehicle fully equipped for service, not including the weight of the payload (e.g., empty weight). The unladen weight is sometimes referred to as the scale weight.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleMaximumLoadWeightMeasure" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A maximum load weight intended for the vehicle to transport, assigned at the point of manufacture. It is normally known as the Gross Vehicle Weight Rating (GVWR). It is applied to pickups, single unit trucks and trailers. </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="DecalType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes details about a sticker attached to a permanent registration plate.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:DecalID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>An identifier assigned to a registration decal sticker in a given year. Sometimes referred to as a decal number.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:DecalColorText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A color of a vehicle registration decal.  Sometimes referred to as the sticker color.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:DecalPeriodText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A lifespan of a decal on a vehicle license plate.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:DecalYearDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A year as shown on the registration decal issued, e.g., 1995, 1996, 1997, etc.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:DecalMonthDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A month that is shown on a registration decal issued.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="DrivingJurisdictionAuthorityIDType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes an identifier that may have an issuing authority from the ANSI D20 standard.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="IDType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:IDType">
+				<xsd:sequence>
+					<xsd:element ref="j:DrivingJurisdictionAuthorityCode.ncicLSTA" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A federal or state organization, such as a department of motor vehicles (DMV), with jurisdiction over a person's driving privileges.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="IDType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes an identifier of an entity.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:ID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A value that identifies an entity within the identifier domain.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="InsuranceType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a coverage by a contract whereby one party agrees to indemnify or guarantee another against loss by a specified contingent event or peril.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:InsuranceCarrierName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A business name of the company maintaining insurance on a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:InsurancePolicyID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>An identifier assigned to the insurance policy by the insurance carrier. Sometimes referred to as the Policy Number.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:InsuranceEndDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A date the insured party's policy coverage ends</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:InsuranceEffectiveDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A date the insured party's policy coverage starts.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="LengthMeasureType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a measurement of length.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="MeasureType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="j:MeasureType">
+				<xsd:attribute ref="j:lengthUnitCode" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LesseeType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a party which has a contract to use a vehicle.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:LesseeParty.Organization" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A person or a business which has a contact (lease) to use a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:LesseeParty.Person" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A person or a business which has a contact (lease) to use a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:LocationCountyName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A name of a county, parish, or vicinage.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="LienType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a legal encumbrance placed on a property.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:LienHolder.Organization" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A person or organization who holds a lien on (has a security interest in) a property item.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:LienHolder.Person" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A person or organization who holds a lien on (has a security interest in) a property item.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:LienDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A date a lien was placed on property.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:LienReleaseDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A date a legal encumbrance is removed from property.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="LocationType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a physical location.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:LocationAddress" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Details about an address for a location, e.g., a postal address.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MeasureType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a representation of a measurement.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+				<xsd:attribute ref="j:measureDate" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OdometerReadingMeasureType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a reading of a vehicle odometer.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="MeasureType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="j:MeasureType">
+				<xsd:attribute ref="j:vehicleOdometerReadingUnitCode" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a unit which conducts some sort of business or operations.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:OrganizationName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A name of an organization.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:OrganizationLocation" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A location of an organization.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonNameTextType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a name of a person.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="TextType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="j:TextType">
+				<xsd:attribute ref="j:personNameInitialIndicator" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonNameType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a name of a person.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonGivenName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A first name of a person.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:PersonMiddleName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A middle name of a person.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:PersonSurName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A last name or family name of a person.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:PersonSuffixName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A component that is appended after the family name that distinguishes members of a family with the same given, middle, and last name, (e.g., Jr, Sr, III), or otherwise qualifies the name (e.g., MD, LLD, PhD).</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonPhysicalDetailsType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes the physical appearance of a person.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonSexText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>The gender or sex of a person.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes the inherent and frequently associated characteristics of a  person.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A name by which a person is known. </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:Residence" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Details about the place in which a person lives.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:PersonBirthDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A date a person was born.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:PersonPhysicalDetails" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A set of details about the physical appearance of a person.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PropertyAssignedIDDetailsType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a set of identifiers assigned to a property item.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PropertyOwnerAppliedID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Information about a name or number applied to a property item by the owner. This may be an engraving on the property item or may be used to identify a fleets equipment number.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PropertyPhysicalDetailsType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes physical characteristics of a property item.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PropertyMakeName" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A name of the manufacturer that produced a property item.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PropertyRegistrationType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes the registration of a property item with an authority.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PropertyTitleType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes information about the ownership and purchase of a property item.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:Lien" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Details about a legal encumbrance placed on property, such as a vehicle. Historically, liens have been reflected on title documents. Thus, title documents are used to record liens in a way that is visible across jurisdictions.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:TitleID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A number used to uniquely identify a certificate of title to a property item. Assigned by a titling jurisdiction authority.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:TitleIssueDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A date on which a jurisdictions titling authority issued a title to the owner of the property item.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:TitleStatusText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A most recent known status recorded for a title.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:TitleProperty" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A property item such as a vehicle for which a title is issued.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PropertyType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a tangible or intangible item that can be owned or used.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:PropertyPhysicalDetails" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Details about a property items physical structures such as make, model, length, and color.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:PropertyOwner.Organization" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Details about a person or organization which own a property item.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:PropertyOwner.Person" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Details about a person or organization which own a property item.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ResidenceType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a place in which a person lives.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="LocationType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:LocationType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="StatusType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes the conditions or status of a person, activity, or object.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:StatusText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A condition or state of something or someone.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:StatusDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A date a status was set, effected, or reported.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="StreetType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a street.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:StreetFullText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A complete street reference, e.g., "123 Main Street NW".</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SuperType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes metadata common to most other structures.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+	</xsd:complexType>
+	<xsd:complexType name="TextType">
+		<xsd:annotation>
+			<xsd:documentation>A proxy structure that represents a character string, generally in the form of words of a language, and includes language metadata.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2/proxy/xsd/1.0" i:name="string"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="j-xsd:string"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleBasicsType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes details about a vehicle, boat, aircraft, or other object used to provide a physical mode of transportation.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="PropertyType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:PropertyType">
+				<xsd:sequence>
+					<xsd:element ref="j:VehicleEngine" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>An engine of a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleEngineID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>An identifier stamped on an engine by a manufacturer.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleEngineQuantity" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A number of engines on a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleEngineDisplacementMeasure" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>The engine displacement of a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleEngineHorsepowerQuantity" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>The engine horsepower of a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleFuelTypeText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A type of fuel or motive power used to propel a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleTitle" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Details about the ownership and purchase of a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleOwnershipTypeText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A type of ownership of a vehicle, e.g., owned, rented, financed.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleLeaseIndicator" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>True if a vehicle is leased; false otherwise.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleBrandType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a brand issued to a vehicle.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:VehicleBrandText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A brand applied to the vehicle title or odometer.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleBrandCode" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A code providing information about the brand applied to the title or odometer.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleBrandDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A date a brand was applied or obtained. If the brander applying the brand is a titling jurisdiction, this field represents the date the brand was applied. Otherwise (the brander is either an insurance carrier, junk yard, or salvage yard), this field represents the date obtained.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleBrander" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>An organization that brands a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleBranderType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes an organization that brands vehicles.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="OrganizationType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:OrganizationType">
+				<xsd:sequence>
+					<xsd:element ref="j:BranderID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A code to uniquely identify a brander (i.e., an entity applying a brand to a vehicle), which could be a state, insurance carrier, junk yard, or salvage yard. States use the US Postal State Codes. Insurance Carriers use the NAIC codes (the NAIC codes are the same as the NICB codes). </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleEngineDisplacementMeasureType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes the engine displacement of a vehicle.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="MeasureType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="j:MeasureType">
+				<xsd:attribute ref="j:vehicleEngineDisplacementUnitCode" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleEngineType">
+		<xsd:annotation>
+			<xsd:documentation>Details about a vehicle engine.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SuperType">
+				<xsd:sequence>
+					<xsd:element ref="j:VehicleEngineID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>An identifier stamped on an engine by a manufacturer.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleEngineCylinderQuantity" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A count of the cylinders contained in the engine of a vehicle. If the vehicle has a rotary engine, a value of '99' is used.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleEngineHorsepowerQuantity" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>The engine horsepower of a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleEngineDisplacementMeasure" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>The engine displacement of a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleFuelTypeText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A type of fuel or motive power used to propel a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleInspectionType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes an inspection of a vehicle.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="ActivityType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:ActivityType">
+				<xsd:sequence>
+					<xsd:element ref="j:VehicleInspectionStationID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A station number performing the inspection.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleInspectionInspectorID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A jurisdiction-assigned code identifying the person or station that performed the emissions inspection.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleInspectionAddress" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Address details for an inspection facility.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleRegistrationStatusType">
+		<xsd:annotation>
+			<xsd:documentation>Status details about a vehicle registration.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="StatusType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:StatusType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleRegistrationType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes the registration of a vehicle.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="PropertyRegistrationType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:PropertyRegistrationType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleTitleType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes the ownership and purchase of a vehicle.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="PropertyTitleType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:PropertyTitleType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a motor-driven conveyance designed to carry its operator, passengers, and cargo, including trailers and excepting boats.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="VehicleBasicsType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:VehicleBasicsType">
+				<xsd:sequence>
+					<xsd:element ref="j:VehicleID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A unique combination of alphanumeric characters that identifies a specific vehicle. A vehicle identification number is normally imprinted by the manufacturer and attached to the vehicle in specific locations, but is occasionally assigned by titling or registration agencies. Sometimes referred to as a VIN, VIN number.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleVINAText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A combination of vehicle make and model, derived from Polk's VINA software.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleMakeCode" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A code identifying the manufacturer of a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleModelCode" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A code identifying the specific design or type of vehicle made by a manufacturer.  Sometimes referred to as the series model.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleModelYearDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A year which is assigned to a vehicle by the manufacturer.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleModelCodeText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A code denoting a family of vehicles within a vehicle make which has a degree of similarity in construction, such as body, chassis, etc. The field does not necessarily contain a standard code; it may contain a value provided by the originator (the manufacturer) of the field.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleStyleCode" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A code identifying the style of a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleColorPrimaryText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A single, upper-most, front-most, or majority color of a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleColorSecondaryText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A lower-most or rear-most color of a two-tone vehicle or a lesser color of a multi-colored vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleDoorQuantity" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A number of doors of a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleOdometerReadingMeasure" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A reading of a vehicle odometer to the nearest mile or kilometer. </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleSeatingQuantity" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A number of seats available for passengers (including the operator) in a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehiclePassengerSafeQuantity" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>The total safe passenger capacity in a vehicle, accounting for both number of seats and standing room.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleTransmissionTypeText" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A type of transmission unit in a vehicle</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleTransmissionTypeCode" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A code identifying a type of transmission unit in a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleMSRPAmount" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A manufacturer's suggested retail price of a vehicle. Includes the manufacturer-installed standard equipment and suggested delivery and handling, excluding transportation, state, and local taxes.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleInvoiceID" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A manufacturer-assigned number affixed to the paperwork when the manufacturer ships the vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleInvoiceDate" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A date on which the vehicle was invoiced by the manufacturer to the purchaser.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleBrand" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>A brand issued to a vehicle.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element ref="j:VehicleCMVIndicator" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>True if a vehicle is a commercial motor vehicle (CMV). Federal rules specify the criteria for defining a CMV.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="WeightMeasureType">
+		<xsd:annotation>
+			<xsd:documentation>A structure that describes a representation of the measurement of a weight.</xsd:documentation>
+			<xsd:appinfo>
+				<i:info>
+					<i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="MeasureType"/>
+				</i:info>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="j:MeasureType">
+				<xsd:attribute ref="j:weightUnitCode" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:attribute name="currencyText" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>A currency that qualifies the monetary amount. </xsd:documentation>
+		</xsd:annotation>
+	</xsd:attribute>
+	<xsd:attribute name="lengthUnitCode" type="unece:LengthType">
+		<xsd:annotation>
+			<xsd:documentation>A code that identifies the unit of measure of the length value.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:attribute>
+	<xsd:attribute name="measureDate" type="xsd:date">
+		<xsd:annotation>
+			<xsd:documentation>A date a measurement was made.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:attribute>
+	<xsd:attribute name="personNameInitialIndicator" type="xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if value represents the first letter or initials of a persons name; false otherwise.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:attribute>
+	<xsd:attribute name="vehicleEngineDisplacementUnitCode" type="ansi_d20:VehicleEngineDisplacementUnitCodeType">
+		<xsd:annotation>
+			<xsd:documentation>The unit of measure for the displacement of a vehicle engine.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:attribute>
+	<xsd:attribute name="vehicleOdometerReadingUnitCode" type="ansi_d20:VehicleOdometerReadingUnitCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code identifying the units associated with the odometer reading.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:attribute>
+	<xsd:attribute name="weightUnitCode" type="unece:MassType">
+		<xsd:annotation>
+			<xsd:documentation>A code that identifies the unit of measure of the weight value.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:attribute>
+	<xsd:element name="Activity" type="j:ActivityType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about an activity or process that occurs. An activity may encompass a period of time and multiple occurrences.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ActivityDate" type="j-xsd:date" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date of an activity that occurs at a singular point in time or a start date of an activity that occurs over a period of time.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Address" type="j:AddressType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A postal location to which paper mail can be directed.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddressFullText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A complete address.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="BranderID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A code to uniquely identify a brander (i.e., an entity applying a brand to a vehicle), which could be a state, insurance carrier, junk yard, or salvage yard. States use the US Postal State Codes. Insurance Carriers use the NAIC codes (the NAIC codes are the same as the NICB codes). </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CommercialVehicle" type="j:CommercialVehicleType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about a class of vehicle that includes motor vehicles with a gross vehicle weight rating of 26,001 pounds or more.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DecalColorText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A color of a vehicle registration decal.  Sometimes referred to as the sticker color.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DecalID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>An identifier assigned to a registration decal sticker in a given year. Sometimes referred to as a decal number.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DecalMonthDate" type="j-xsd:gMonth" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A month that is shown on a registration decal issued.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DecalPeriodText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A lifespan of a decal on a vehicle license plate.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DecalYearDate" type="j-xsd:gYear" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A year as shown on the registration decal issued, e.g., 1995, 1996, 1997, etc.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DrivingJurisdictionAuthorityCode.ncicLSTA" type="j-ncic:LSTAType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A federal or state organization, such as a department of motor vehicles (DMV), with jurisdiction over a person's driving privileges.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ID" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A value that identifies an entity within the identifier domain.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Insurance" type="j:InsuranceType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about a coverage by contract whereby one party agrees to indemnify or guarantee another against loss by a specified contingent event or peril. </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="InsuranceCarrierName" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A business name of the company maintaining insurance on a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="InsuranceEffectiveDate" type="j-xsd:date" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date the insured party's policy coverage starts.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="InsuranceEndDate" type="j-xsd:date" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date the insured party's policy coverage ends</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="InsurancePolicyID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>An identifier assigned to the insurance policy by the insurance carrier. Sometimes referred to as the Policy Number.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Lessee" type="j:LesseeType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about a party (individual or business) which has a contract (lease) to use a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LesseeParty.Organization" type="j:OrganizationType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A person or a business which has a contact (lease) to use a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LesseeParty.Person" type="j:PersonType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A person or a business which has a contact (lease) to use a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Lessor.Organization" type="j:OrganizationType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>One who conveys vehicles by way of a lease.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Lessor.Person" type="j:PersonType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>One who conveys vehicles by way of a lease.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Lien" type="j:LienType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about a legal encumbrance placed on property, such as a vehicle. Historically, liens have been reflected on title documents. Thus, title documents are used to record liens in a way that is visible across jurisdictions.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LienDate" type="j-xsd:date" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date a lien was placed on property.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LienHolder.Organization" type="j:OrganizationType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A person or organization who holds a lien on (has a security interest in) a property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LienHolder.Person" type="j:PersonType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A person or organization who holds a lien on (has a security interest in) a property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LienReleaseDate" type="j-xsd:date" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date a legal encumbrance is removed from property.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LocationAddress" type="j:AddressType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about an address for a location, e.g., a postal address.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LocationCityName" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A name of a city or town.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LocationCountryName" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A name of a country.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LocationCountyName" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A name of a county, parish, or vicinage.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LocationPostalCodeID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A zip code or postal code.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LocationStateName" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A name of a state, commonwealth, province, or other subregion of a country.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LocationStreet" type="j:StreetType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about a street.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Measure" type="j:MeasureType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A representation of a measurement.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MetadataFieldName" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A name of a user-defined document metadata field.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MetadataFieldValueText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A value of a user-defined document metadata field.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OrganizationLocation" type="j:LocationType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A location of an organization.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OrganizationName" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A name of an organization.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Person" type="j:PersonType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Describes inherent and frequently associated characteristics of a person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonBirthDate" type="j-xsd:date" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date a person was born.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonGivenName" type="j:PersonNameTextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A first name of a person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonMiddleName" type="j:PersonNameTextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A middle name of a person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonName" type="j:PersonNameType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A name by which a person is known. </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonPhysicalDetails" type="j:PersonPhysicalDetailsType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A set of details about the physical appearance of a person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonSexText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>The gender or sex of a person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonSuffixName" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A component that is appended after the family name that distinguishes members of a family with the same given, middle, and last name, (e.g., Jr, Sr, III), or otherwise qualifies the name (e.g., MD, LLD, PhD).</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonSurName" type="j:PersonNameTextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A last name or family name of a person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Property" type="j:PropertyType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A tangible or intangible item that can be owned or used.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyAssignedIDDetails" type="j:PropertyAssignedIDDetailsType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Information about a set of identifiers assigned to a property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyLengthMeasure" type="j:LengthMeasureType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>An overall length of a property item as measured from the front to the rear.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyMakeName" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A name of the manufacturer that produced a property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyOwner.Organization" type="j:OrganizationType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about a person or organization which own a property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyOwner.Person" type="j:PersonType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about a person or organization which own a property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyOwnerAppliedID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Information about a name or number applied to a property item by the owner. This may be an engraving on the property item or may be used to identify a fleets equipment number.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyPhysicalDetails" type="j:PropertyPhysicalDetailsType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about a property items physical structures such as make, model, length, and color.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyTitle" type="j:PropertyTitleType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about property ownership and purchase.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RegistrationAuthorityName" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A name of an authority, person, or organization which issued a property registration.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RegistrationDuplicateQuantity" type="j-xsd:nonNegativeInteger" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A number of times proof of property registration was issued with no change in information by the issuing authority. This number may be more than one because a proof may have been lost. This can be used to track duplicates or replacements.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RegistrationEffectiveDate" type="j-xsd:date" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date the current registration became effective. This may or may not be the original registration date.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RegistrationExpirationDate" type="j-xsd:date" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date the current registration expires.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RegistrationID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A number or text used to uniquely identify a registration certificate or document. Sometimes referred to as a Registration Serial Number.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RegistrationJurisdictionCode.ncicLIS" type="j-ncic:LISType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A code identifying a state or other jurisdictional unit where a property registration was issued.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RegistrationParty.Organization" type="j:OrganizationType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A person or organization to whom a registration is issued.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RegistrationParty.Person" type="j:PersonType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A person or organization to whom a registration is issued.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RegistrationStatus" type="j:StatusType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A status of a registration.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Residence" type="j:ResidenceType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about the place in which a person lives.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StatusDate" type="j-xsd:date" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date a status was set, effected, or reported.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StatusText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A condition or state of something or someone.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StreetFullText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A complete street reference, e.g., "123 Main Street NW".</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TitleID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A number used to uniquely identify a certificate of title to a property item. Assigned by a titling jurisdiction authority.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TitleIssueDate" type="j-xsd:date" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date on which a jurisdictions titling authority issued a title to the owner of the property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TitleProperty" type="j:PropertyType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A property item such as a vehicle for which a title is issued.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TitleStatusText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A most recent known status recorded for a title.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleAxleQuantity" type="j-xsd:nonNegativeInteger" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A count of common axles of rotation of one or more wheels of a vehicle, whether power driven or freely rotating.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleBasics" type="j:VehicleBasicsType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about a vehicle, boat, aircraft, or other object used to provide a physical mode of transportation</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleBrand" type="j:VehicleBrandType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A brand issued to a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleBrandCode" type="j-ansi_d20:BrandCodeType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A code providing information about the brand applied to the title or odometer.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleBrandDate" type="j-xsd:date" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date a brand was applied or obtained. If the brander applying the brand is a titling jurisdiction, this field represents the date the brand was applied. Otherwise (the brander is either an insurance carrier, junk yard, or salvage yard), this field represents the date obtained.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleBrandText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A brand applied to the vehicle title or odometer.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleBrander" type="j:VehicleBranderType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>An organization that brands a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleCMVIndicator" type="j-xsd:boolean" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>True if a vehicle is a commercial motor vehicle (CMV). Federal rules specify the criteria for defining a CMV.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleColorPrimaryText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A single, upper-most, front-most, or majority color of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleColorSecondaryText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A lower-most or rear-most color of a two-tone vehicle or a lesser color of a multi-colored vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleCurrentWeightMeasure" type="j:WeightMeasureType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>An observed, estimated, or measured weight of the conveyance.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleDoorQuantity" type="j-xsd:nonNegativeInteger" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A number of doors of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleEngine" type="j:VehicleEngineType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>An engine of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleEngineCylinderQuantity" type="j-xsd:nonNegativeInteger" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A count of the cylinders contained in the engine of a vehicle. If the vehicle has a rotary engine, a value of '99' is used.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleEngineDisplacementMeasure" type="j:VehicleEngineDisplacementMeasureType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>The engine displacement of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleEngineHorsepowerQuantity" type="j-xsd:integer" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>The engine horsepower of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleEngineID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>An identifier stamped on an engine by a manufacturer.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleEngineQuantity" type="j-xsd:nonNegativeInteger" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A number of engines on a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleFirstSoldYearDate" type="j-xsd:gYear" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A calendar year in which a vehicle was first sold.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleFuelTypeText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A type of fuel or motive power used to propel a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleGrossLadenSumWeightMeasure" type="j:WeightMeasureType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A sum of values specified by the manufacturer(s) for a truck tractor or trailer for the units that make up a combination. In the absence of a value specified by the manufacturer, an estimate of the gross vehicle weight of a fully loaded unit may be submitted.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleGrossLadenUnitWeightMeasure" type="j:WeightMeasureType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A value specified by the manufacturer for a single unit truck, truck tractor, or trailer. In the absence of a value specified by the manufacturer, an estimate of the gross vehicle weight of a fully loaded unit may be submitted.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleID" type="j:DrivingJurisdictionAuthorityIDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A unique combination of alphanumeric characters that identifies a specific vehicle. A vehicle identification number is normally imprinted by the manufacturer and attached to the vehicle in specific locations, but is occasionally assigned by titling or registration agencies. Sometimes referred to as a VIN, VIN number.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleInspection" type="j:VehicleInspectionType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about an Inspection refers to a safety, emissions, or type of inspection which may be required by a DMV prerequisite to vehicle registration. Inspection data is recorded by a DMV.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleInspectionAddress" type="j:AddressType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Address details for an inspection facility.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleInspectionInspectorID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A jurisdiction-assigned code identifying the person or station that performed the emissions inspection.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleInspectionStationID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A station number performing the inspection.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleInvoiceDate" type="j-xsd:date" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date on which the vehicle was invoiced by the manufacturer to the purchaser.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleInvoiceID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A manufacturer-assigned number affixed to the paperwork when the manufacturer ships the vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleLeaseIndicator" type="j-xsd:boolean" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>True if a vehicle is leased; false otherwise.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleLicensePlateID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>License plate associated with a vehicle</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleMSRPAmount" type="j:AmountType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A manufacturer's suggested retail price of a vehicle. Includes the manufacturer-installed standard equipment and suggested delivery and handling, excluding transportation, state, and local taxes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleMakeCode" type="j-ncic:VMAType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A code identifying the manufacturer of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleMaximumLoadWeightMeasure" type="j:WeightMeasureType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A maximum load weight intended for the vehicle to transport, assigned at the point of manufacture. It is normally known as the Gross Vehicle Weight Rating (GVWR). It is applied to pickups, single unit trucks and trailers. </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleModelCode" type="j-ncic:VMOType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A code identifying the specific design or type of vehicle made by a manufacturer.  Sometimes referred to as the series model.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleModelCodeText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A code denoting a family of vehicles within a vehicle make which has a degree of similarity in construction, such as body, chassis, etc. The field does not necessarily contain a standard code; it may contain a value provided by the originator (the manufacturer) of the field.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleModelYearDate" type="j-xsd:gYear" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A year which is assigned to a vehicle by the manufacturer.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleOdometerReadingMeasure" type="j:OdometerReadingMeasureType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A reading of a vehicle odometer to the nearest mile or kilometer. </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleOwnershipTypeText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A type of ownership of a vehicle, e.g., owned, rented, financed.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehiclePassengerSafeQuantity" type="j-xsd:integer" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>The total safe passenger capacity in a vehicle, accounting for both number of seats and standing room.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRegistration" type="j:VehicleRegistrationType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about a registration of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRegistrationDecal" type="j:DecalType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about a sticker attached to a permanent registration plate on a vehicle when it is renewed for the current year. </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRegistrationGrossWeightMeasure" type="j:WeightMeasureType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>An unladen weight of a vehicle (e.g., single-unit truck, truck combination) plus the weight of the maximum load for which vehicle registration fees have been paid within a particular jurisdiction.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRegistrationPermenantIndicator" type="j-xsd:boolean" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>True if a registration for a vehicle is permanent; false if a registration is temporary.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRegistrationPlateBackgroundText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A background image and/or colors of a vehicle license plate.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRegistrationPlateID" type="j:IDType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A number on a metal plate fixed to a vehicle. The purpose of a license plate number is to identify uniquely each vehicle in a state.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRegistrationPlateTypeCode" type="j-ncic:LITType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A code identifying a type of registration plate or license plate of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRegistrationPlateTypeText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A type of registration plate or license plate of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRegistrationStatus" type="j:StatusType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A status of a vehicle registration.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRegistrationStatusDetailText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Additional details about a registration status.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleSeatingQuantity" type="j-xsd:nonNegativeInteger" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A number of seats available for passengers (including the operator) in a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleStyleCode" type="j-ncic:VSTType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A code identifying the style of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleTitle" type="j:VehicleTitleType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Details about the ownership and purchase of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleTransmissionTypeCode" type="j-ansi_d20:VehicleTransmissionTypeCodeType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A code identifying a type of transmission unit in a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleTransmissionTypeText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A type of transmission unit in a vehicle</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleUnladenWeightMeasure" type="j:WeightMeasureType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A weight of the vehicle fully equipped for service, not including the weight of the payload (e.g., empty weight). The unladen weight is sometimes referred to as the scale weight.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleVINAText" type="j:TextType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A combination of vehicle make and model, derived from Polk's VINA software.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageIdentification>
+            <!-- HDR - Header -->
+            <nc:IdentificationID>ML01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI receiving this Message  -->
+                <nc:IdentificationID>ALAST0047</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+        
+        <!--<Database-Record>-->
+        <ncic-ex:PrimaryHitData s:ref="PrimaryHitRecord"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            AM.<!--<ORI-Of-Sender>-->DCFBIWA15.<!--<ORI-Of-Database-Record>-->ALAST0047.TXT
+            <!--<HDR>-->ML01YZ08P2271000000
+            TEN-PRINT INQUIRY NOTIFICATION AT <!--<hhmm>-->1400 EST <!--<yyyymmdd>-->20150520  
+                        
+            *****THIS NOTIFICATION IS BASED ON A NAME-BASED MATCH*****
+            PERSONAL INFORMATION OBTAINED FROM A FINGERPRINT SUBMISSION TO THE FBI’S 
+            IAFIS HAS PRODUCED A NAME-BASED MATCH WITH YOUR GANG MEMBER  
+            RECORD. THE SUBJECT OF YOUR RECORD AND THE SUBJECT 
+            OF THE FINGERPRINT SUBMISSION, BOTH OF WHICH ARE LISTED BELOW, MAY NOT
+            BE THE SAME.  PLEASE CONTACT THE SUBMITTING AGENCY LISTED IN THE LRI
+            FIELD TO VERIFY THE SUBJECT’S IDENTITY.
+            
+            IAFIS INFORMATION FOLLOWS:
+            
+            <!--<Input-Transaction>-->
+        
+            NCIC RECORD FOLLOWS:
+       
+            <!--<Database-Record>-->
+            MKE/VIOLENT GANG MEMBER - CAUTION
+            ORI/VAVSP0000 NAM/SMITH,WILLIAM SEX/M RAC/W POB/WV 
+            DOB/19561119 HGT/510 WGT/150 EYE/BRO HAI/BRO  
+            SMT/SC R LEG
+            SOC/123456789
+            GNG/CRIPS 42 ST*CHIL SGP/NONE KNOWN
+            ECR/BD DOP/20201010 OCA/123456
+            MIS/TTO IS DAGGER
+            ORI IS VIRGINIA STATE POLICE 555-555-1234
+            AKA/J BOY
+            NIC/T987654321 DTE/20030404 1400 EST
+            
+            *****IF THE LRI FIELD CONTAINS AN ORI ENDING WITH A “Z”, CONTACT
+            INFORMATION CAN BE OBTAINED THROUGH THE CJIS SUPPORT UNIT AT 
+            (304) 625-4543. CONTACT INFORMATION FOR ALL OTHER ORI’S LISTED IN THE
+            LRI FIELD IS AVAILABLE VIA THE NCIC ORI FILE OR THE NLETS ORION
+            FILE.*****
+        </nc:CaveatText>
+
+        <!--<Input-Transaction>-->
+        <!-- This would point to the QTP Record input that caused the notification;
+             there is currently no defined QTP Record element-->
+        <ncic-ex:IncomingMessage />
+
+        <!-- Current System Time -->
+        <ncic:NotificationDateTime>2015-05-20T14:00:00-04:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="PrimaryHitRecord">
+        <ncic:GangMemberRecord s:ref="GangPersonRecord"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:GangMemberRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:GangMemberRecord s:id="GangPersonRecord">
+        <nc:Incident s:ref="d77e198-incident_wantedPerson"/>
+        <!-- ORI-Translation - Originating Agency Identifier -->
+        <nc:OrganizationDescriptionText>ORI IS <!--<ATR>-->NY DEA <!--<CT1>-->6025551234</nc:OrganizationDescriptionText>
+        <nc:ReportedDate>
+            <!-- DTE - Date of Entry -->
+            <nc:DateTime>2003-02-14T14:00:00-04:00</nc:DateTime>
+        </nc:ReportedDate>
+        <ncic:InvestigativeInterest s:ref="InvestigativeInterestOfGangMember"/>
+        <!-- MKT - Message Key Translation -->
+        <ncic:MessageTransactionText>VIOLENT GANG MEMBER - CAUTION</ncic:MessageTransactionText>
+        <ncic:RecordPurgeDate>
+            <!-- DOP - Date of Purge -->
+            <nc:Date>2020-10-10</nc:Date>
+        </ncic:RecordPurgeDate>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>T987654321</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <ncic:SupplementalPerson s:ref="SupplementalInformation"/>
+        <j:CriminalOrganization s:ref="GangMemberGangAffiliation"/>
+        <j:Subject s:ref="GangMemberSubject"/>
+    </ncic:GangMemberRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e198-incident_wantedPerson">
+        <j:ActivityAugmentation>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>123456</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e198-organization_wantedPerson"/>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e198-organization_wantedPerson">
+        <j:OrganizationAugmentation>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating Agency Identifier -->
+                <nc:IdentificationID>ALAST0047</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (Gang Member's Affliated Gang Name) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="GangName">
+        <!-- SGP - Subgroup Name -->
+        <nc:OrganizationSubUnitName>NONE KNOWN</nc:OrganizationSubUnitName>
+        <!-- GNG - Group Name -->
+        <nc:OrganizationUnitName>CRIPS 42 ST*CHIL</nc:OrganizationUnitName>
+    </nc:Organization>
+    
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="InvestigativeInterestOrganizationInfo">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationName>VIRGINIA STATE POLICE</nc:OrganizationName>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation Telephone Number (Primary) -->
+                    <nc:TelephoneNumberFullID>5555551234</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="GangMemberPerson">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1956-11-19</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- MIS - Miscellaneous Remarks -->
+        <nc:PersonDescriptionText>TTO IS DAGGER</nc:PersonDescriptionText>
+        <!-- EYE - Eye color -->
+        <ncic:PersonEyeColorCode>BR0</ncic:PersonEyeColorCode>
+        <!-- HAI - Hair color -->
+        <ncic:PersonHairColorCode>BR0</ncic:PersonHairColorCode>
+        <nc:PersonHeightMeasure>
+            <!-- HGT - Height -->
+            <nc:MeasureValueText>510</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>WILLIAM</nc:PersonGivenName>
+            <nc:PersonMiddleName>JACOB</nc:PersonMiddleName>
+            <nc:PersonSurName>SMITH</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonPhysicalFeature>
+            <!-- SMT - Scars/marks/tattoos -->
+            <nc:PhysicalFeatureCategoryText>SC R LEG</nc:PhysicalFeatureCategoryText>
+        </nc:PersonPhysicalFeature>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>W</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>M</j:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <!-- SOC - Social Security Number -->
+            <nc:IdentificationID>123456789</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <nc:PersonWeightMeasure>
+            <!-- WGT - Weight -->
+            <nc:MeasureValueText>150</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+        <j:PersonAugmentation>
+            <!-- POB - Place of birth -->
+            <j:PersonBirthplaceCode>WV</j:PersonBirthplaceCode>
+        </j:PersonAugmentation>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (supplemental) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="SupplementalInformation">
+        <!-- AKA - Also known as (Alias name) -->
+        <nc:PersonName>
+            <nc:PersonGivenName>J</nc:PersonGivenName>
+            <nc:PersonMiddleName/>
+            <nc:PersonSurName>BOY</nc:PersonSurName>
+        </nc:PersonName>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:CriminalOrgaization. -->
+    <!-- ******************************************************************************** -->
+    <j:CriminalOrganization s:id="GangMemberGangAffiliation">
+        <nc:RoleOfOrganization s:ref="GangName"/>
+    </j:CriminalOrganization>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="GangMemberSubject">
+        <nc:RoleOfPerson s:ref="GangMemberPerson"/>
+        <!-- ECR - Criteria for Entry -->
+        <ncic:SubjectCriminalOrganizationInvolvementCode>B</ncic:SubjectCriminalOrganizationInvolvementCode>
+        <ncic:SubjectCriminalOrganizationInvolvementCode>D</ncic:SubjectCriminalOrganizationInvolvementCode>
+    </j:Subject>
+    
+    <!-- ******************************************************************************** -->
+    <!-- ncic:InvestigativeInterest. -->
+    <!-- ******************************************************************************** -->
+    <ncic:InvestigativeInterest s:id="InvestigativeInterestOfGangMember">
+        <nc:IncidentJurisdictionalOrganization s:ref="InvestigativeInterestOrganizationInfo"/>
+    </ncic:InvestigativeInterest>
+</ncic-ex:Exchange>

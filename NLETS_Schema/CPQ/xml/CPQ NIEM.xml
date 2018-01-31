@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:ncien="http://www.nlets.org/ncien" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/CPQ.xsd">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>CPQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>AZNLETS23</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>P2</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>1234567890</nh2:DocumentControlFieldText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="CPQ">
+		<n2:Person>
+			<nc:PersonBirthDate>
+				<nc:Date>1967-08-13</nc:Date>
+			</nc:PersonBirthDate>
+			<nc:PersonEyeColorCode>BLK</nc:PersonEyeColorCode>
+			<nc:PersonName>
+				<nc:PersonGivenName>String</nc:PersonGivenName>
+				<nc:PersonMiddleName>String</nc:PersonMiddleName>
+				<nc:PersonSurName>String</nc:PersonSurName>
+			</nc:PersonName>
+			<nc:PersonRaceCode>A</nc:PersonRaceCode>
+			<nc:PersonSexCode>F</nc:PersonSexCode>
+			<nc:PersonSSNIdentification>
+				<nc:IdentificationID>String</nc:IdentificationID>
+			</nc:PersonSSNIdentification>
+			<j:PersonAugmentation>
+				<j:PersonFBIIdentification>
+					<nc:IdentificationID>String</nc:IdentificationID>
+				</j:PersonFBIIdentification>
+				<j:PersonStateFingerprintIdentification>
+					<nc:IdentificationID>String</nc:IdentificationID>
+				</j:PersonStateFingerprintIdentification>
+			</j:PersonAugmentation>
+			<j:DriverLicense>
+				<nc:DriverLicenseIdentification>
+					<nc:IdentificationID>String</nc:IdentificationID>
+				</nc:DriverLicenseIdentification>
+			</j:DriverLicense>
+			<ncien:PersonCorrectionsIdentification>
+				<nc:IdentificationID>String</nc:IdentificationID>
+			</ncien:PersonCorrectionsIdentification>
+		</n2:Person>
+		<n2:BinaryRequestIndicator>true</n2:BinaryRequestIndicator>
+	</n2:NLETSInquiryData>
+</n2:NLETS>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ncic_2000/1.0.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2" xmlns:i="http://www.it.ojp.gov/jxdm/appinfo/1" xmlns:ncic="http://www.it.ojp.gov/jxdm/ncic_2000/1.0.1">
+  <xsd:annotation>
+    <xsd:documentation>Proxy types that carry dictionary metadata and extend codes from the National Crime and Information Center (NCIC) 2000 standard.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.it.ojp.gov/jxdm/3.0.2" schemaLocation="../../../jxdm.xsd">
+    <xsd:annotation>
+      <xsd:documentation>The Global Justice XML Data Model.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:import namespace="http://www.it.ojp.gov/jxdm/ncic_2000/1.0.1" schemaLocation="../../../../ncic_2000/1.0.1/ncic_2000.xsd">
+    <xsd:annotation>
+      <xsd:documentation>Codes from the National Crime and Information Center (NCIC) 2000 standard.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:import namespace="http://www.it.ojp.gov/jxdm/appinfo/1" schemaLocation="../../../../appinfo/1/appinfo.xsd">
+    <xsd:annotation>
+      <xsd:documentation>The appinfo for the schemas</xsd:documentation>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:complexType name="LISType">
+    <xsd:annotation>
+      <xsd:documentation>License State</xsd:documentation>
+      <xsd:appinfo>
+        <i:info>
+          <i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+        </i:info>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="ncic:LISType">
+        <xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="LITType">
+    <xsd:annotation>
+      <xsd:documentation>License Type</xsd:documentation>
+      <xsd:appinfo>
+        <i:info>
+          <i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+        </i:info>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="ncic:LITType">
+        <xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="LSTAType">
+    <xsd:annotation>
+      <xsd:documentation>State/Country Index</xsd:documentation>
+      <xsd:appinfo>
+        <i:info>
+          <i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+        </i:info>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="ncic:LSTAType">
+        <xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="VMAType">
+    <xsd:annotation>
+      <xsd:documentation>Vehicle Make</xsd:documentation>
+      <xsd:appinfo>
+        <i:info>
+          <i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+        </i:info>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="ncic:VMAType">
+        <xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="VMOType">
+    <xsd:annotation>
+      <xsd:documentation>Vehicle Model</xsd:documentation>
+      <xsd:appinfo>
+        <i:info>
+          <i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+        </i:info>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="ncic:VMOType">
+        <xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="VSTType">
+    <xsd:annotation>
+      <xsd:documentation>Vehicle Style</xsd:documentation>
+      <xsd:appinfo>
+        <i:info>
+          <i:base i:namespace="http://www.it.ojp.gov/jxdm/3.0.2" i:name="SuperType"/>
+        </i:info>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="ncic:VSTType">
+        <xsd:attributeGroup ref="j:SuperTypeMetadata"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.A.WPT</ncic:MessageTransactionText>
+        <!-- Record(s)/Transaction/ORI that triggered the Notification -->
+        <ncic-ex:NotificationRecordData s:ref="SexOffenderNotificationRecord"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. (sex offender and foreign sex offender) -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="SexOffenderNotificationRecord">
+        <ncic:SexualOffenderRecord s:ref="NCICRecord"/>
+        <j:OrganizationORIIdentification>
+            <!-- ORI - Originating agency identifier -->
+            <nc:IdentificationID>WV2000000</nc:IdentificationID>
+        </j:OrganizationORIIdentification>
+        <!--  MKE - Message key -->
+        <ncic:MessageTransactionCode>EXS<!--/EXSC--></ncic:MessageTransactionCode>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:SexualOffenderRecord -->
+    <!-- ******************************************************************************** -->
+    <ncic:SexualOffenderRecord s:id="NCICRecord">
+        <nc:Incident s:ref="ReportedIncident"/>
+        <nc:Person s:ref="SexOffenderPerson"/>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC number -->
+            <nc:IdentificationID>W123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <j:RegisteredOffender s:ref="RegisteredSexualOffender" />
+    </ncic:SexualOffenderRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="ReportedIncident">
+        <j:ActivityAugmentation>
+            <!-- OCA - Originating Agency Case Number -->
+            <j:CaseNumberText>ABC123</j:CaseNumberText>
+        </j:ActivityAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="SexOffenderPerson">
+        <nc:PersonBirthDate>
+            <!-- DOB - Date of birth -->
+            <nc:Date>1957-08-13</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- NAM - Name -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JOHN</nc:PersonGivenName>
+            <nc:PersonMiddleName>JACOB</nc:PersonMiddleName>
+            <nc:PersonSurName>JONES</nc:PersonSurName>
+        </nc:PersonName>
+        <!-- RAC - Race -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <!-- SEX - Sex -->
+        <j:PersonSexCode>M</j:PersonSexCode>
+        <j:PersonAugmentation>
+            <j:PersonFBIIdentification>
+                <!-- FBI - FBI number -->
+                <nc:IdentificationID>123456B</nc:IdentificationID>
+            </j:PersonFBIIdentification>
+        </j:PersonAugmentation>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:RegisteredOffender. -->
+    <!-- ******************************************************************************** -->
+    <j:RegisteredOffender s:id="RegisteredSexualOffender">
+        <nc:RoleOfPerson s:ref="SexOffenderPerson"/>
+        <j:RegisteredOffenderEndDate>
+            <!-- ERD - Ending registration date -->
+            <nc:Date>2007-12-12</nc:Date>
+        </j:RegisteredOffenderEndDate>
+        <j:RegisteredOffenderStartDate>
+            <!-- ORD - Offender registration date -->
+            <nc:Date>1999-03-03</nc:Date>
+        </j:RegisteredOffenderStartDate>
+    </j:RegisteredOffender>
+</ncic-ex:Exchange>

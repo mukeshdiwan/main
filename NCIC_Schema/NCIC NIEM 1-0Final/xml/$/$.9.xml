@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI receiving this Message  -->
+                <nc:IdentificationID>DCFBIWAZ0</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.9.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            DCFBIWAD6
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            *** FORWARD THIS MESSAGE TO FBI INTERPOL LIAISON AGENT.
+            
+            FOREIGN FUGITIVE FILE ENTRY AT <!--<hhmm>-->1320 EST <!--<yyyymmdd>-->20140412.
+            <!--<Input-Transaction>-->
+            
+            $.9.
+            
+            $.9.
+            
+            WARNING - DO NOT ARREST BASED UPON THIS FOREIGN FUGITIVE RECORD.
+            
+            <!--<Database-Record>-->
+            
+            REPEAT - DO NOT ARREST BASED UPON NCIC RECORD WITH NIC/<!--<NIC>-->W123456789.
+            FUGITIVE FROM A FOREIGN COUNTRY - IMMEDIATELY CONTACT INTERPOL,
+            U.S. DOJ, NLETS ORI/DCINTER00, OR TEL NO.  (202)  272-8383.
+            ALSO, IF SUBJECT IS NOT A U.S. CITIZEN, CONTACT THE NEAREST
+            OFFICE OF THE U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT.
+        </nc:CaveatText>
+        
+        <!--<Database-Record>-->
+        <ncic:WantedPersonRecord />
+        
+        <!--<Input-Transaction>-->
+        <ncic-ex:IncomingMessage />
+        
+        <!-- DateTime of the Current System Time -->
+        <ncic:NotificationDateTime>2014-04-12T13:20:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+</ncic-ex:Exchange>

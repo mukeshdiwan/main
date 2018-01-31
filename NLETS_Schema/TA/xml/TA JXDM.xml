@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <n:NLETSUpdateMessage>
+		<n:NLETSUpdateHeader>
+            <n:MessageKeyCode>TA</n:MessageKeyCode>
+			<j:DocumentSource.Organization>
+              <j:OrganizationORIID>
+                <j:ID>AZNLETS24</j:ID>
+              </j:OrganizationORIID>
+            </j:DocumentSource.Organization>
+            <n:DocumentDestinationID>
+              <j:ID>OD</j:ID>
+            </n:DocumentDestinationID>
+  		</n:NLETSUpdateHeader>
+		<n:NLETSUpdateData Key="TA">
+			<n:Agency>
+				<j:OrganizationORIID>
+                   <j:ID>VA1234567</j:ID>	
+                 </j:OrganizationORIID>
+				<j:OrganizationName>FAIRFAX CO PD</j:OrganizationName>
+				<n:OrganizationTypeCode>PD</n:OrganizationTypeCode>
+				<n:OrganizationLocation>
+  				    <j:LocationName>VA</j:LocationName>
+					<j:LocationStreet>
+						<j:StreetFullText>123 NORTH STREET</j:StreetFullText>
+					</j:LocationStreet>
+					<j:LocationCityName>FAIRFAX</j:LocationCityName>
+					<j:LocationPostalCodeID>
+                        <j:ID>22222</j:ID>
+                     </j:LocationPostalCodeID>
+                    <j:LocationContactInformation>
+				       <j:ContactTelephoneNumber>
+					     <j:TelephoneNumberFullID>1231231234</j:TelephoneNumberFullID>
+                          <j:TelephoneNumberCommentText>Primary</j:TelephoneNumberCommentText>
+				       </j:ContactTelephoneNumber>
+			        </j:LocationContactInformation>
+                  <n:OrganizationOperatingHours>A</n:OrganizationOperatingHours>
+			</n:OrganizationLocation>
+			</n:Agency>
+		</n:NLETSUpdateData>
+	</n:NLETSUpdateMessage>
+</n:NLETS>

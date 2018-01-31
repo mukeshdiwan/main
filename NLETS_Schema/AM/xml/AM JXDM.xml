@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org " xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org ..\..\..\jxdm\AM\AM.xsd">
+	<n:NLETSMailMessage>
+		<n:NLETSMailHeader>
+			<n:DocumentUserID>
+				<j:ID>USER55</j:ID>
+			</n:DocumentUserID>
+			<n:DocumentPasswordText>123456</n:DocumentPasswordText>
+			<n:MessageKeyCode>AM</n:MessageKeyCode>
+			<n:DocumentControlFieldText><![CDATA[123(567&90]]></n:DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>FL130000</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<n:DocumentDestinationID>
+				<j:ID>AZ</j:ID>
+			</n:DocumentDestinationID>
+		</n:NLETSMailHeader>
+		<n:NLETSMailData Key="AM">
+			<n:MailText><![CDATA[ 15 DPS DADE COUNTY FL 6/10/88
+					DPS STATE OF AZ
+					REF 482 11/1/90 ELDON MOORE
+					SUBJECT MOORE CHECKED OUT OF MOTEL
+					ON 10/29/90 WHEREABOUTS UNKONWN
+					DPS DADE COUNTY FL ARCH 0945 EST
+				]]></n:MailText>
+		</n:NLETSMailData>
+	</n:NLETSMailMessage>
+</n:NLETS>

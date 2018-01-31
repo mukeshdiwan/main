@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org C:\DOCUME~1\AARONG~1\MYDOCU~1\WATERH~1\NLETS\NLETSS~1\DEX\DEX.xsd">
+	<n:NLETSUpdateMessage>
+		<n:NLETSUpdateHeader>
+			<n:MessageKeyCode>DEX</n:MessageKeyCode>
+			<n:DocumentControlFieldText><![CDATA[1234567890]]></n:DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>GA0250300</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>VADEA000X</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+		</n:NLETSUpdateHeader>
+		<n:NLETSUpdateData Key="DEX">
+			<n:UserID>
+				<j:ID>agentx</j:ID>
+			</n:UserID>
+			<n:PasswordText>12345678</n:PasswordText>
+			<n:CaseID>
+				<j:ID>123456</j:ID>
+			</n:CaseID>
+			<j:ContactInformation>
+				<j:ContactPerson>
+					<j:PersonName>
+						<j:PersonFullName>Johnson, Cecil D.</j:PersonFullName>
+					</j:PersonName>
+				</j:ContactPerson>
+				<j:ContactTelephoneNumber>
+					<j:TelephoneNumberFullID>6120121293</j:TelephoneNumberFullID>
+				</j:ContactTelephoneNumber>
+				<j:ContactOrganization>
+					<j:OrganizationName>Omaha Police Department</j:OrganizationName>
+				</j:ContactOrganization>
+			</j:ContactInformation>
+			<n:Person>
+				<j:PersonAlternateName>
+					<j:PersonFullName>The Jackal</j:PersonFullName>
+				</j:PersonAlternateName>
+				<j:Residence>
+					<j:LocationAddress>
+						<j:LocationStreet>
+							<j:StreetFullText>9854 Willowwood Lane</j:StreetFullText>
+						</j:LocationStreet>
+						<j:LocationCityName>Westchester</j:LocationCityName>
+						<j:LocationStateCode.USPostalService>NY</j:LocationStateCode.USPostalService>
+						<j:LocationPostalCodeID>
+							<j:ID>88751</j:ID>
+						</j:LocationPostalCodeID>
+					</j:LocationAddress>
+				</j:Residence>
+				<j:PrimaryContactInformation>
+					<j:ContactTelephoneNumber>
+						<j:TelephoneNumberFullID>123-555-9876</j:TelephoneNumberFullID>
+					</j:ContactTelephoneNumber>
+					<j:ContactPagerNumber>
+						<j:TelephoneNumberFullID>123-555-9876</j:TelephoneNumberFullID>
+					</j:ContactPagerNumber>
+					<j:ContactMobileTelephoneNumber>
+						<j:TelephoneNumberFullID>123-555-9876</j:TelephoneNumberFullID>
+					</j:ContactMobileTelephoneNumber>
+				</j:PrimaryContactInformation>
+				<j:PersonBirthDate>1970-06-23</j:PersonBirthDate>
+				<j:PersonAssignedIDDetails>
+					<j:PersonSSNID>
+						<j:ID>336942871</j:ID>
+					</j:PersonSSNID>
+					<j:PersonFBIID>
+						<j:ID>123456789</j:ID>
+					</j:PersonFBIID>
+				</j:PersonAssignedIDDetails>
+				<j:PersonPhysicalDetails>
+					<j:PersonHeightMeasure>506</j:PersonHeightMeasure>
+					<j:PersonWeightMeasure>160</j:PersonWeightMeasure>
+					<j:PersonEyeColorCode>GRY</j:PersonEyeColorCode>
+					<j:PersonHairColorCode>GRY</j:PersonHairColorCode>
+					<j:PersonSexCode>M</j:PersonSexCode>
+					<j:PersonRaceCode>W</j:PersonRaceCode>
+				</j:PersonPhysicalDetails>
+				<n:PersonName>
+					<j:PersonFullName>Edwards, Paul</j:PersonFullName>
+					<n:PersonMonikerName>Paully Boy</n:PersonMonikerName>
+				</n:PersonName>
+			</n:Person>
+			<j:DrugTypeCode>Heroin</j:DrugTypeCode>
+			<n:DrugActivityLocationText>Loudoun County</n:DrugActivityLocationText>
+			<j:Boat>
+				<j:BoatHullID>
+					<j:ID>192039452</j:ID>
+					<j:IDIssuingAuthorityText>NY</j:IDIssuingAuthorityText>
+				</j:BoatHullID>
+			</j:Boat>
+			<n:CautionIndicator>true</n:CautionIndicator>
+			<n:CaseTypeText>B</n:CaseTypeText>
+			<n:RouterField>GA</n:RouterField>
+			<n:Requestor>PB</n:Requestor>
+		</n:NLETSUpdateData>
+	</n:NLETSUpdateMessage>
+</n:NLETS>

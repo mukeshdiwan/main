@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org C:\DOCUME~1\AARONG~1\MYDOCU~1\WATERH~1\NLETS\NLETSS~1\DRX\DRX.xsd">
+	<n:NLETSUpdateMessage>
+		<n:NLETSUpdateHeader>
+			<n:MessageKeyCode>DRX</n:MessageKeyCode>
+			<n:DocumentControlFieldText><![CDATA[1234567890]]></n:DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>GA0250300</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>VADEA000X</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+		</n:NLETSUpdateHeader>
+		<n:NLETSUpdateData Key="DRX">
+			<n:UserID>
+				<j:ID>agentx</j:ID>
+			</n:UserID>
+			<n:PasswordText>12345678</n:PasswordText>
+			<n:NDPIXID>
+				<j:ID>7445</j:ID>
+			</n:NDPIXID>
+			<j:Person>
+				<j:PersonName>
+					<j:PersonFullName>Fuller, John T</j:PersonFullName>
+				</j:PersonName>
+			</j:Person>
+		</n:NLETSUpdateData>
+	</n:NLETSUpdateMessage>
+</n:NLETS>

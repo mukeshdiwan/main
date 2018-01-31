@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>VAUSM4400</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionText>$.Q.</ncic:MessageTransactionText>
+        <ncic-ex:NotificationRecordData s:ref="NotificationRecordData"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:NotificationRecordData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:NotificationRecordData s:id="NotificationRecordData">
+        <nc:CaveatText>
+            NSOR INTERNATIONAL TRAVEL
+            <!--<Receiving_ORI>-->VAUSM4400
+            NCIC NSOR INTERNATIONAL TRAVEL NOTIFICATION AT <!--<hhmm>-->1400 EST <!--<yyyymmdd>-->20150520.
+            A CHANGE OF THE OFFENDER STATUS IN THE NSOR RECORD FOR
+            NAM/<!--<NAM>-->JOHN JAMES JACOB NIC/<!--<NIC>-->X012345678
+            INDICATES THE SUBJECT OF RECORD MAY BE TRAVELING INTERNATIONALLY.
+            PLEASE CONTACT <!--<ATR>-->TSA AT <!--<CT1>-->6025551234 FOR
+            ADDITIONAL INFORMATION.
+            MKE/<!--<MKE-Translation>-->SEXUAL OFFENDER - CAUTION
+            <!--<Database-Record>-->                                
+        </nc:CaveatText>
+
+        <!--<Database-Record>-->
+        <!-- This would contain the SexualOffenderRecord Primary Hit Response message format as 
+             defined in Part 3 Section 1 of the NCIC Message Book (excluding all alerts, ORI 
+             translations, all caveats, VLN text, and all image fields) in actual implementation -->
+        <ncic:SexualOffenderRecord s:ref="SexOffenderRecord"/>
+
+        <!--<Input-Transaction>-->
+        <!-- This would contain the SexualOffenderRecord Enter Response message format as 
+             defined in Part 1 of the NCIC Message Book in actual implementation -->
+        <!-- Only needed elements for the example are included here -->
+        <ncic-ex:IncomingMessage />
+
+        <!-- Current System Time -->
+        <ncic:NotificationDateTime>2015-05-20T14:00:00-04:00</ncic:NotificationDateTime>
+    </ncic-ex:NotificationRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:SexualOffenderRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:SexualOffenderRecord s:id="SexOffenderRecord">
+        <nc:Incident s:ref="SexualOffenderIncident"/>
+        <!-- MKT - Message key translation -->
+        <ncic:MessageTransactionText>SEXUAL OFFENDER - CAUTION</ncic:MessageTransactionText>
+        <j:PersonNCICIdentification>
+            <!-- NIC - NCIC Number -->
+            <nc:IdentificationID>X012345678</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <j:RegisteredOffender s:ref="EnteredRegisteredOffender"/>
+    </ncic:SexualOffenderRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="SexualOffenderIncident">
+        <nc:IncidentJurisdictionalOrganization s:ref="JurisdictionalOrganizationInfo"/>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="JurisdictionalOrganizationInfo">
+        <!-- ATR - Agency Translation -->
+        <nc:OrganizationDescriptionText>TSA</nc:OrganizationDescriptionText>
+        <nc:OrganizationPrimaryContactInformation>
+            <nc:ContactTelephoneNumber>
+                <nc:FullTelephoneNumber>
+                    <!-- CT1 - Confirmation Telephone Number (Primary) -->
+                    <nc:TelephoneNumberFullID>6025551234</nc:TelephoneNumberFullID>
+                </nc:FullTelephoneNumber>
+            </nc:ContactTelephoneNumber>
+        </nc:OrganizationPrimaryContactInformation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (subject) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="EnteredSexOffenderPerson">
+        <nc:PersonName>
+            <nc:PersonGivenName>JOHN</nc:PersonGivenName>
+            <nc:PersonMiddleName>JAMES</nc:PersonMiddleName>
+            <nc:PersonSurName>JACOB</nc:PersonSurName>
+        </nc:PersonName>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:RegisteredOffender. -->
+    <!-- ******************************************************************************** -->
+    <j:RegisteredOffender s:id="EnteredRegisteredOffender">
+        <nc:RoleOfPerson s:ref="EnteredRoleOfSexOffenderSubject"/>
+        <!-- OFS - Offender status -->
+        <j:RegisteredOffenderDescriptionText>C5</j:RegisteredOffenderDescriptionText>
+    </j:RegisteredOffender>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="EnteredRoleOfSexOffenderSubject">
+        <nc:RoleOfPerson s:ref="EnteredSexOffenderPerson"/>
+    </j:Subject>
+</ncic-ex:Exchange>

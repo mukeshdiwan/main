@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:WantList w:release="2.1" w:product="NIEM"
+  xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+  xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:w="http://niem.gov/niem/wantlist/2">
+  <w:Element w:name="nc:Date" w:isReference="false"/>
+  <w:Element w:name="nc:DateRepresentation" w:isReference="false"/>
+  <w:Element w:name="nc:EntityPerson" w:isReference="false"/>
+  <w:Element w:name="nc:EntityRepresentation" w:isReference="false"/>
+  <w:Element w:name="nc:IdentificationCategoryText" w:isReference="false"/>
+  <w:Element w:name="nc:IdentificationID" w:isReference="false"/>
+  <w:Element w:name="nc:ItemOwner" w:isReference="false"/>
+  <w:Element w:name="nc:PersonBirthDate" w:isReference="false"/>
+  <w:Element w:name="nc:PersonFullName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonGivenName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonMiddleName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonName" w:isReference="false"/>
+  <w:Element w:name="nc:PersonSurName" w:isReference="false"/>
+  <w:Element w:name="nc:Vessel" w:isReference="false"/>
+  <w:Element w:name="nc:VesselHullIdentification" w:isReference="false"/>
+  <w:Element w:name="nc:VesselRegistrationIdentification" w:isReference="false"/>
+  <w:Type w:name="nc:ConveyanceType" w:isRequested="true"/>
+  <w:Type w:name="nc:DateType" w:isRequested="true">
+    <w:ElementInType w:name="nc:DateRepresentation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:DocumentType" w:isRequested="true"/>
+  <w:Type w:name="nc:EntityType" w:isRequested="true">
+    <w:ElementInType w:name="nc:EntityRepresentation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:IdentificationType" w:isRequested="true">
+    <w:ElementInType w:name="nc:IdentificationCategory"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:IdentificationID" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:ItemType" w:isRequested="true">
+    <w:ElementInType w:name="nc:ItemOtherIdentification"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:ItemOwner" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:ItemOwnerAppliedID"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
+  <w:Type w:name="nc:NumericType" w:isRequested="true"/>
+  <w:Type w:name="nc:PersonNameTextType" w:isRequested="true"/>
+  <w:Type w:name="nc:PersonNameType" w:isRequested="true">
+    <w:ElementInType w:name="nc:PersonFullName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonGivenName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonMiddleName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonSurName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:PersonType" w:isRequested="true">
+    <w:ElementInType w:name="nc:PersonBirthDate" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:PersonName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="nc:ProperNameTextType" w:isRequested="true"/>
+  <w:Type w:name="nc:TangibleItemType" w:isRequested="true"/>
+  <w:Type w:name="nc:TextType" w:isRequested="true"/>
+  <w:Type w:name="nc:VesselType" w:isRequested="true">
+    <w:ElementInType w:name="nc:VesselHullIdentification"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:VesselRegistrationIdentification"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
+  <w:Type w:name="niem-xsd:date" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:decimal" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:string" w:isRequested="true"/>
+  <w:Type w:name="niem-xsd:time" w:isRequested="true"/>
+</w:WantList>

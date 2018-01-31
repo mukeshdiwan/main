@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header. | /ncic:Message[1]/cjis:HeaderSection[1]/cjis:TransactionHeaderText[1] -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <!-- ORI (parent) - Originating agency identifier | (see descendants or children) -->
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message Key -->
+        <ncic:MessageTransactionCode>QND</ncic:MessageTransactionCode>
+        <ncic-ex:PrimaryHitData s:ref="d77e31-primaryHitData_hitDataSectionPrimary"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:PrimaryHitData. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:PrimaryHitData s:id="d77e31-primaryHitData_hitDataSectionPrimary">
+        <ncic:NICSDeniedRecord s:ref="d77e33-nicsDeniedRecord_personHitDataResponse"/>
+    </ncic-ex:PrimaryHitData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:NICSDeniedRecord. -->
+    <!-- ******************************************************************************** -->
+    <ncic:NICSDeniedRecord s:id="d77e33-nicsDeniedRecord_personHitDataResponse">
+        <!-- Caveat -->
+        <nc:CaveatText>***** NOTICE: DO NOT DETAIN OR ARREST BASED ON THIS HIT. THE DATE OF NICS DENIAL (DND) PROVIDED IN THIS RECORD IS THE DATE THE SUBJECT WAS DENIED BY THE NICS FROM THE PURCHASE/POSSESSION OF A FIREARM PURSUANT TO STATE AND/OR FEDERAL LAW. HOWEVER, IT IS POSSIBLE THIS SUBJECT MAY NO LONGER BE PROHIBITED FROM PURCHASING/POSSESSING FIREARMS.</nc:CaveatText>
+        <!-- Caveat -->
+        <nc:CaveatText>*** THE INFORMATION DISPLAYED IN THIS RECORD IS A POSSIBLE MATCH TO THE INDIVIDUAL QUERIED. THIS MATCH IS BASED ON NAME AND DESCRIPTIVE DATA ONLY. NO LAW ENFORCEMENT ACTION SHOULD BE INITIATED BASED SOLELY ON THIS INFORMATION.</nc:CaveatText>
+        <nc:Incident s:ref="d77e46-incident_nicsDenied"/>
+        <!-- DLU - Date Last Update -->
+        <nc:LastUpdatedDate>
+            <nc:DateTime>2007-12-12T11:00:00-05:00</nc:DateTime>
+        </nc:LastUpdatedDate>
+        <nc:ReportedDate>
+            <!-- DTE - Date of Entry -->
+            <nc:DateTime>2005-05-20T14:00:00-04:00</nc:DateTime>
+        </nc:ReportedDate>
+        <!-- MKT - Message Key Translation -->
+        <ncic:MessageTransactionText>NICS DENIED TRANSACTION FILE</ncic:MessageTransactionText>
+        <!-- NIC - NCIC Number -->
+        <j:PersonNCICIdentification>
+            <nc:IdentificationID>E123456789</nc:IdentificationID>
+        </j:PersonNCICIdentification>
+        <nc:PersonResidenceAssociation>
+            <nc:Person s:ref="d77e63-person_nicsDenied"/>
+            <nc:Location>
+                <nc:Address s:ref="PersonResidence"/>
+            </nc:Location>
+        </nc:PersonResidenceAssociation>
+        <j:Subject s:ref="d77e63-subject_nicsDenied"/>
+    </ncic:NICSDeniedRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Address. (NICS denied)-->
+    <!-- ******************************************************************************** -->
+    <!-- SOP - State of Purchase -->
+    <nc:Address s:id="d77e63-address_nicsDenied">
+        <j:LocationStateNCICLISCode>SC</j:LocationStateNCICLISCode>
+    </nc:Address>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Address. (State of Residence)-->
+    <!-- ******************************************************************************** -->
+    <!-- SOR - State of Residence -->
+    <nc:Address s:id="PersonResidence">
+        <j:LocationStateNCICLISCode>SC</j:LocationStateNCICLISCode>
+    </nc:Address>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Incident. (NICS denied) -->
+    <!-- ******************************************************************************** -->
+    <nc:Incident s:id="d77e46-incident_nicsDenied">
+        <nc:ActivityDate>
+            <!-- DND - Date of NICS Denial -->
+            <nc:Date>1967-08-13</nc:Date>
+        </nc:ActivityDate>       
+        <j:ActivityAugmentation>
+            <!-- OCA - ORI case number -->
+            <j:CaseNumberText>WV123456</j:CaseNumberText>
+        </j:ActivityAugmentation>
+        <nc:IncidentLocation s:ref="d77e63-address_nicsDenied"/>
+        <nc:IncidentJurisdictionalOrganization s:ref="d77e46-organization_nicsDenied"/>
+        <ncic:IncidentAugmentation>
+            <!-- NTN - NICS Transaction Number – NICS Denied Transaction File -->
+            <ncic:NICSTransactionID>WV123456</ncic:NICSTransactionID>
+        </ncic:IncidentAugmentation>
+    </nc:Incident>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Organization. (NICS denied) -->
+    <!-- ******************************************************************************** -->
+    <nc:Organization s:id="d77e46-organization_nicsDenied">
+        <j:OrganizationAugmentation>
+            <!-- ORI -->
+            <j:OrganizationORIIdentification>
+                <nc:IdentificationID>WV1000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </j:OrganizationAugmentation>
+    </nc:Organization>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Person. (NICS denied) -->
+    <!-- ******************************************************************************** -->
+    <nc:Person s:id="d77e63-person_nicsDenied">
+        <!-- DOB -->
+        <nc:PersonBirthDate>
+            <nc:Date>1957-08-13</nc:Date>
+        </nc:PersonBirthDate>
+        <!-- CTZ -->
+        <nc:PersonCitizenshipText>US</nc:PersonCitizenshipText>
+        <!-- HGT -->
+        <nc:PersonHeightMeasure>
+            <nc:MeasureValueText>511</nc:MeasureValueText>
+        </nc:PersonHeightMeasure>
+        <!-- NAM -->
+        <nc:PersonName>
+            <nc:PersonGivenName>JACK</nc:PersonGivenName>
+            <nc:PersonMiddleName>DANIEL</nc:PersonMiddleName>
+            <nc:PersonSurName>WEBBER</nc:PersonSurName>
+        </nc:PersonName>
+        <!-- MNU (parent) - Miscellaneous number -->
+        <nc:PersonOtherIdentification>
+            <nc:IdentificationID>AS-01847592309</nc:IdentificationID>
+        </nc:PersonOtherIdentification>
+        <!-- RAC -->
+        <j:PersonRaceCode>B</j:PersonRaceCode>
+        <!-- SEX -->
+        <j:PersonSexCode>M</j:PersonSexCode>
+        <!-- SOC -->
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>245987910</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <!-- WGT -->
+        <nc:PersonWeightMeasure>
+            <nc:MeasureValueText>215</nc:MeasureValueText>
+        </nc:PersonWeightMeasure>
+        <j:PersonAugmentation>
+            <!-- POB (parent) - Place of birth  -->
+            <j:PersonBirthplaceCode>TO</j:PersonBirthplaceCode>
+        </j:PersonAugmentation>
+    </nc:Person>
+
+    <!-- ******************************************************************************** -->
+    <!-- j:Subject. (NICS denied) -->
+    <!-- ******************************************************************************** -->
+    <j:Subject s:id="d77e63-subject_nicsDenied">
+        <nc:RoleOfPerson s:ref="d77e63-person_nicsDenied"/>
+    </j:Subject>
+</ncic-ex:Exchange>

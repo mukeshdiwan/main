@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Originally created for NLETS by AAMVA - 11/1/4 -->
+<!-- Schema reflects CANDLE Registration v 1.0.1 -->
+<xs:schema xmlns:n="http://www.nlets.org" xmlns:j2="http://www.it.ojp.gov/jxdm/3.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.nlets.org" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<!-- NOTE - The schema location should be modified to point to its source on your computer -->
+	<xs:import namespace="http://www.it.ojp.gov/jxdm/3.0.2" schemaLocation="JXDM 3.0.2/3.0.2/jxdm.xsd"/>
+	<xs:element name="RegistrationStatus">
+		<xs:annotation>
+			<xs:documentation>The business data returned in response to a Vehicle Registration Inquiry (for a short registration response). The inquiry can be made on a Vehicle (by VIN) a Registration (by Plate #) or on a Person (by name). The structure of the response data will be dictated by the data in the inquiry. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="StandardResponse">
+					<xs:annotation>
+						<xs:documentation>The standardized elements for an intra-state reply. This data typically is held by the states motor vehicle agency. </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="RegistrationDetails" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>A description of the registration of a vehicle.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="j2:RegistrationID" minOccurs="0"/>
+										<xs:element ref="j2:RegistrationAuthorityName" minOccurs="0"/>
+										<xs:element ref="j2:RegistrationEffectiveDate" minOccurs="0"/>
+										<xs:element ref="j2:RegistrationExpirationDate"/>
+										<xs:element ref="j2:RegistrationJurisdictionCode.ncicLIS"/>
+										<xs:element ref="j2:RegistrationStatus" minOccurs="0"/>
+										<xs:element ref="j2:RegistrationDuplicateQuantity" minOccurs="0"/>
+										<xs:element name="RegistrationParty" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>A person or organization to whom a registration is issued.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:choice>
+														<xs:element ref="j2:RegistrationParty.Person"/>
+														<xs:element ref="j2:RegistrationParty.Organization"/>
+														<xs:element name="RegistrationPartyName" type="j2:TextType">
+															<xs:annotation>
+																<xs:documentation>A name of an entity to whom a registration is issued. Used when it is not known if the registrant is a person or an organization.</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:element name="MailingAddress">
+														<xs:annotation>
+															<xs:documentation>The mailing address of a person  or organization.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="j2:LocationAddress"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element ref="j2:VehicleRegistrationPlateID">
+											<xs:annotation>
+												<xs:documentation>A property item that is registered, such as a vehicle.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element ref="j2:VehicleRegistrationPlateTypeText" minOccurs="0"/>
+										<xs:element ref="j2:VehicleRegistrationPermenantIndicator" minOccurs="0"/>
+										<xs:element ref="j2:VehicleRegistrationStatusDetailText" minOccurs="0"/>
+										<xs:element ref="j2:VehicleRegistrationGrossWeightMeasure" minOccurs="0"/>
+										<xs:element ref="j2:VehicleRegistrationDecal" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="VehicleDetails">
+								<xs:annotation>
+									<xs:documentation>Details about a motor-driven conveyance.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="j2:VehicleID"/>
+										<xs:element ref="j2:VehicleVINAText" minOccurs="0"/>
+										<xs:element ref="j2:VehicleMakeCode" minOccurs="0"/>
+										<xs:element ref="j2:PropertyMakeName" minOccurs="0"/>
+										<xs:element ref="j2:VehicleModelCode" minOccurs="0"/>
+										<xs:element ref="j2:VehicleModelYearDate"/>
+										<xs:element ref="j2:VehicleModelCodeText" minOccurs="0"/>
+										<xs:element ref="j2:VehicleStyleCode" minOccurs="0"/>
+										<xs:element ref="j2:VehicleColorPrimaryText" minOccurs="0"/>
+										<xs:element ref="j2:VehicleColorSecondaryText" minOccurs="0"/>
+										<xs:element ref="j2:VehicleDoorQuantity" minOccurs="0"/>
+										<xs:element ref="j2:VehicleCMVIndicator" minOccurs="0"/>
+										<xs:element name="VehicleBasicsDetail" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>A structure that describes details about a vehicle, boat, aircraft, or other object used to provide a physical mode of transportation.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="j2:PropertyAssignedIDDetails" minOccurs="0"/>
+													<xs:element ref="j2:VehicleEngineQuantity" minOccurs="0"/>
+													<xs:element name="VehicleTitleDetails" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Details about the ownership and purchase of a vehicle.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="j2:TitleID" minOccurs="0"/>
+																<xs:element ref="j2:TitleIssueDate" minOccurs="0"/>
+																<xs:element ref="j2:TitleStatusText" minOccurs="0"/>
+																<xs:element ref="j2:StatusDate" minOccurs="0"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="CommercialVehicleDetails" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Details about a class of vehicle that includes motor vehicles with a gross vehicle weight rating of 26,001 pounds or more.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="j2:VehicleAxleQuantity" minOccurs="0"/>
+													<xs:element ref="j2:VehicleCurrentWeightMeasure" minOccurs="0"/>
+													<xs:element ref="j2:VehicleGrossLadenSumWeightMeasure" minOccurs="0"/>
+													<xs:element ref="j2:VehicleUnladenWeightMeasure" minOccurs="0"/>
+													<xs:element ref="j2:VehicleMaximumLoadWeightMeasure" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="InsuranceDetails" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Details about a coverage by contract whereby one party agrees to indemnify or guarantee another against loss by a specified contingent event or peril. </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="j2:InsuranceCarrierName" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AdditionalInformation" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Additional state specific data, added by the responding state.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="StateElement" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>An element provided by a state, which is not defined in the StandardResponse. Use this to dynamically incorporate elements not explicitly defined in this schema. Do not add elements that have no meaning or use outside of your state. </xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="j2:MetadataFieldName">
+											<xs:annotation>
+												<xs:documentation>The name, identifier or tag of the element.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element ref="j2:MetadataFieldValueText">
+											<xs:annotation>
+												<xs:documentation>The content of the element.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

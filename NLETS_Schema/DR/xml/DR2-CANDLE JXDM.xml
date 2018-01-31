@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+			<n:MessageKeyCode>DR</n:MessageKeyCode>
+			<n:DocumentControlFieldText>KATESILHOL</n:DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZNLETS11</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZNLETS20</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSInquiryData Key="DQ">
+			<j:Person>
+				<j:PersonAssignedIDDetails>
+					<j:PersonDriverLicenseID>
+                         <j:ID>VAOLN0000</j:ID>
+                     </j:PersonDriverLicenseID>
+				</j:PersonAssignedIDDetails>
+			</j:Person>
+		</n:NLETSInquiryData>
+		<n:NLETSResponseData Key="DR">
+			<n:ResponseText>
+				<![CDATA[
+					LOONEY, MARY V
+					107 WEST NO SHORE DR, LONGMONT, FLA
+					SEX/M.DOB/022351.HGT/502.WGT/115.HAI/BRN
+					EYE/BRN.SOC/472484139.OLN/472484139.
+					OLT/CHAUFR.
+					RSTR: CORRECTIVE LENSES
+					STATUS: REVOKED				
+				]]>
+			</n:ResponseText>
+		</n:NLETSResponseData>
+	</n:NLETSResponseMessage>
+</n:NLETS>

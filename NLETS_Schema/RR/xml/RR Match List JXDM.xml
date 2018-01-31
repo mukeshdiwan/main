@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j2="http://www.it.ojp.gov/jxdm/3.0.2" xmlns:j-ansi_d20="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ansi_d20/1.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ncic_2000/1.0.1" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0.2/proxy/xsd/1.0" xmlns:n1="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:n2="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:ansi_d20="http://www.it.ojp.gov/jxdm/ansi_d20/1.0" xmlns:i="http://www.it.ojp.gov/jxdm/appinfo/1" xmlns:ncic="http://www.it.ojp.gov/jxdm/ncic_2000/1.0" xmlns:n3="http://www.it.ojp.gov/jxdm/ncic_2000/1.0.1" xmlns:unece="http://www.it.ojp.gov/jxdm/unece_rec20-misc/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org ..\..\..\jxdm\RR-CANDLE\RR.xsd">
+	<n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+			<n:MessageKeyCode>RR</n:MessageKeyCode>
+			<n:DocumentControlFieldText>KATESILHOL</n:DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZNLETS11</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZNLETS20</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSInquiryData Key="RQ">
+			<j:VehicleRegistrationPlateID>
+				<j:ID>DCD3195</j:ID>
+			</j:VehicleRegistrationPlateID>
+			<n:IDExpirationDateText>2005-12-21</n:IDExpirationDateText>
+			<j:VehicleRegistrationPlateTypeCode>PC</j:VehicleRegistrationPlateTypeCode>
+		</n:NLETSInquiryData>
+		<n:NLETSResponseData Key="RR">
+			<n:RegistrationMatches>
+				<n:IndividualMatch>
+					<j2:VehicleRegistrationPlateID>
+						<j2:ID>String</j2:ID>
+					</j2:VehicleRegistrationPlateID>
+					<j2:RegistrationExpirationDate>1997-08-13</j2:RegistrationExpirationDate>
+					<j2:VehicleRegistrationPlateTypeText>String</j2:VehicleRegistrationPlateTypeText>
+					<n:RegistrationPrimaryParty>
+						<j2:RegistrationParty.Person>
+							<j2:PersonName>
+								<j2:PersonGivenName>String</j2:PersonGivenName>
+								<j2:PersonMiddleName>String</j2:PersonMiddleName>
+								<j2:PersonSurName>String</j2:PersonSurName>
+								<j2:PersonSuffixName>String</j2:PersonSuffixName>
+							</j2:PersonName>
+							<j2:PersonBirthDate>1967-08-13</j2:PersonBirthDate>
+							<j2:PersonPhysicalDetails>
+								<j2:PersonSexText>String</j2:PersonSexText>
+							</j2:PersonPhysicalDetails>
+						</j2:RegistrationParty.Person>
+						<n:MailingAddress>
+							<j2:LocationAddress>
+								<j2:LocationStreet>
+									<j2:StreetFullText>String</j2:StreetFullText>
+								</j2:LocationStreet>
+								<j2:LocationCityName>String</j2:LocationCityName>
+								<j2:LocationCountyName>String</j2:LocationCountyName>
+								<j2:LocationStateName>String</j2:LocationStateName>
+								<j2:LocationPostalCodeID>
+									<j2:ID>String</j2:ID>
+								</j2:LocationPostalCodeID>
+								<j2:LocationCountryName>String</j2:LocationCountryName>
+							</j2:LocationAddress>
+						</n:MailingAddress>
+					</n:RegistrationPrimaryParty>
+				</n:IndividualMatch>
+			</n:RegistrationMatches>
+			<j:CaveatText>Powered by Nlets</j:CaveatText>
+		</n:NLETSResponseData>
+	</n:NLETSResponseMessage>
+</n:NLETS>

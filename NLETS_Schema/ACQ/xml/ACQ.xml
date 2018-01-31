@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xml" href="../xslt/JXDM to NIEM.xsd" ?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<n:NLETSInquiryMessage>
+		<n:NLETSInquiryHeader>
+			<n:MessageKeyCode>ACQ</n:MessageKeyCode>
+			<n:DocumentControlFieldText><![CDATA[123(567&90]]></n:DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>ID0435300</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<n:DocumentDestinationID>
+				<j:ID>AV</j:ID>
+			</n:DocumentDestinationID>
+		</n:NLETSInquiryHeader>
+		<n:NLETSInquiryData Key="ACQ">
+			<j:CommercialVehicle>
+				<j:PropertyAssignedIDDetails>
+					<j:PropertyFederalID IDIssuingAuthorityText="DOT">
+						<j:ID> 64987635153</j:ID>
+					</j:PropertyFederalID>
+				</j:PropertyAssignedIDDetails>
+			</j:CommercialVehicle>
+		</n:NLETSInquiryData>
+	</n:NLETSInquiryMessage>
+</n:NLETS>

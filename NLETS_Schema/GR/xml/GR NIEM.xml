@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ../xsd/GR.xsd" version="4.00">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>GR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>FA</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>GA1234567</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>000000089</nh2:DocumentControlFieldText>
+		<nh2:UserID>USER55</nh2:UserID>
+		<nh2:UserPasswordText>123456</nh2:UserPasswordText>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="GQ">
+		<nc:Aircraft>
+			<nc:ItemSerialIdentification>
+				<nc:IdentificationID>64987635153</nc:IdentificationID>
+			</nc:ItemSerialIdentification>
+		</nc:Aircraft>
+	</n2:NLETSInquiryData>
+	<n2:NLETSResponseData n2:key="GR">
+		<n2:ResponseText>4 MATCHES ON SER/216
+1	N411SP	LEAR JET	24
+2	N60FJ	DEHAVILLAND	DHC-1B-2
+3	N921RM	MITSUBISHI	MU-2B-20
+4	N49BP	GIERTZ LARS M	AVID FLYER
+</n2:ResponseText>
+	</n2:NLETSResponseData>
+</n2:NLETS>

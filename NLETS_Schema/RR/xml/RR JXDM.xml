@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:j2="http://www.it.ojp.gov/jxdm/3.0.2" xmlns:j-ansi_d20="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ansi_d20/1.0" xmlns:j-ncic="http://www.it.ojp.gov/jxdm/3.0.2/proxy/ncic_2000/1.0.1" xmlns:j-xsd="http://www.it.ojp.gov/jxdm/3.0.2/proxy/xsd/1.0" xmlns:n1="http://www.it.ojp.gov/jxdm/3.0/proxy/ncic_2000/1.0" xmlns:n2="http://www.it.ojp.gov/jxdm/3.0/proxy/xsd/1.0" xmlns:ansi_d20="http://www.it.ojp.gov/jxdm/ansi_d20/1.0" xmlns:i="http://www.it.ojp.gov/jxdm/appinfo/1" xmlns:ncic="http://www.it.ojp.gov/jxdm/ncic_2000/1.0" xmlns:n3="http://www.it.ojp.gov/jxdm/ncic_2000/1.0.1" xmlns:unece="http://www.it.ojp.gov/jxdm/unece_rec20-misc/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org ..\..\..\jxdm\RR-CANDLE\RR.xsd">
+	<n:NLETSResponseMessage>
+		<n:NLETSResponseHeader>
+			<n:MessageKeyCode>RR</n:MessageKeyCode>
+			<n:DocumentControlFieldText>KATESILHOL</n:DocumentControlFieldText>
+			<j:DocumentSource.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZNLETS11</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSource.Organization>
+			<j:DocumentSubject.Organization>
+				<j:OrganizationORIID>
+					<j:ID>AZNLETS20</j:ID>
+				</j:OrganizationORIID>
+			</j:DocumentSubject.Organization>
+		</n:NLETSResponseHeader>
+		<n:NLETSInquiryData Key="RQ">
+			<j:VehicleRegistrationPlateID>
+				<j:ID>DCD3195</j:ID>
+			</j:VehicleRegistrationPlateID>
+			<n:IDExpirationDateText>2005-12-21</n:IDExpirationDateText>
+			<j:VehicleRegistrationPlateTypeCode>PC</j:VehicleRegistrationPlateTypeCode>
+		</n:NLETSInquiryData>
+		<n:NLETSResponseData Key="RR">
+			<n:RegistrationStatus>
+				<n:StandardResponse>
+					<n:RegistrationDetails>
+						<j2:RegistrationID>
+							<j2:ID>G016365588532278841</j2:ID>
+						</j2:RegistrationID>
+						<j2:RegistrationEffectiveDate>2004-12-28</j2:RegistrationEffectiveDate>
+						<j2:RegistrationExpirationDate>2006-12-27</j2:RegistrationExpirationDate>
+						<j2:RegistrationJurisdictionCode.ncicLIS>AZ</j2:RegistrationJurisdictionCode.ncicLIS>
+						<n:RegistrationParty>
+							<j2:RegistrationParty.Person>
+								<j2:PersonName>
+									<j2:PersonGivenName>AURELIO</j2:PersonGivenName>
+									<j2:PersonMiddleName j2:personNameInitialIndicator="1">A</j2:PersonMiddleName>
+									<j2:PersonSurName>GARCIA</j2:PersonSurName>
+									<j2:PersonSuffixName/>
+								</j2:PersonName>
+								<j2:Residence>
+									<j2:LocationAddress>
+										<j2:LocationStreet>
+											<j2:StreetFullText>210 MONROE BLVD</j2:StreetFullText>
+										</j2:LocationStreet>
+										<j2:LocationCityName>LONG BEACH</j2:LocationCityName>
+										<j2:LocationStateName>NY</j2:LocationStateName>
+										<j2:LocationPostalCodeID>
+											<j2:ID>11561</j2:ID>
+										</j2:LocationPostalCodeID>
+									</j2:LocationAddress>
+								</j2:Residence>
+								<j2:PersonBirthDate>1941-04-13</j2:PersonBirthDate>
+								<j2:PersonPhysicalDetails>
+									<j2:PersonSexText>MALE</j2:PersonSexText>
+								</j2:PersonPhysicalDetails>
+							</j2:RegistrationParty.Person>
+							<n:MailingAddress>
+								<j2:LocationAddress>
+									<j2:LocationStreet>
+										<j2:StreetFullText>123 N. MAIN ST</j2:StreetFullText>
+									</j2:LocationStreet>
+									<j2:LocationCityName>SPRINGFIELD</j2:LocationCityName>
+									<j2:LocationStateName>MO</j2:LocationStateName>
+									<j2:LocationPostalCodeID>
+										<j2:ID>12345</j2:ID>
+									</j2:LocationPostalCodeID>
+								</j2:LocationAddress>
+							</n:MailingAddress>
+						</n:RegistrationParty>
+						<j2:VehicleRegistrationPlateID>
+							<j2:ID>DCD3195</j2:ID>
+						</j2:VehicleRegistrationPlateID>
+						<j2:VehicleRegistrationPlateTypeText>PASSENGER</j2:VehicleRegistrationPlateTypeText>
+					</n:RegistrationDetails>
+					<n:VehicleDetails>
+						<j2:VehicleID>
+							<j2:ID>JA3AH86D45U010227</j2:ID>
+						</j2:VehicleID>
+						<j2:VehicleMakeCode>MITS</j2:VehicleMakeCode>
+						<j2:VehicleModelCode>ACAD-INV</j2:VehicleModelCode>
+						<j2:VehicleModelYearDate>2005</j2:VehicleModelYearDate>
+						<j2:VehicleModelCodeText>LANCER</j2:VehicleModelCodeText>
+						<j2:VehicleStyleCode>4D</j2:VehicleStyleCode>
+						<j2:VehicleColorPrimaryText>BLACK</j2:VehicleColorPrimaryText>
+						<n:CommercialVehicleDetails>
+							<j2:VehicleUnladenWeightMeasure j2:weightUnitCode="lb">3263</j2:VehicleUnladenWeightMeasure>
+						</n:CommercialVehicleDetails>
+						<n:InsuranceDetails>
+							<j2:InsuranceCarrierName>GEICO GEN INS CO</j2:InsuranceCarrierName>
+						</n:InsuranceDetails>
+					</n:VehicleDetails>
+				</n:StandardResponse>
+				<n:AdditionalInformation>
+					<n:StateElement>
+						<j2:MetadataFieldName>UC Number</j2:MetadataFieldName>
+						<j2:MetadataFieldValueText>12345</j2:MetadataFieldValueText>
+					</n:StateElement>
+				</n:AdditionalInformation>
+			</n:RegistrationStatus>
+			<j:CaveatText>Powered by Nlets</j:CaveatText>
+		</n:NLETSResponseData>
+	</n:NLETSResponseMessage>
+</n:NLETS>

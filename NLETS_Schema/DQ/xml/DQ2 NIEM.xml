@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n2:NLETS xmlns:n2="http://www.nlets.org/niem/1.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.00" xsi:schemaLocation="http://www.nlets.org/niem/1.0 ..\xsd\DQ.xsd">
+	<n2:NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>DQ</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>GA0250300</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>FL</nh2:DestinationORIID>
+	</n2:NLETSMessageHeader>
+	<n2:NLETSInquiryData n2:key="DQ">
+		<n2:Person>
+			<nc:PersonBirthDate/>
+			<nc:PersonSexCode>F</nc:PersonSexCode>
+			<nc:DriverLicense>
+				<nc:DriverLicenseIdentification>
+					<nc:IdentificationID>VAOLN0000</nc:IdentificationID>
+				</nc:DriverLicenseIdentification>
+			</nc:DriverLicense>
+		</n2:Person>
+		<n2:ImageIndicator>true</n2:ImageIndicator>
+	</n2:NLETSInquiryData>
+</n2:NLETS>

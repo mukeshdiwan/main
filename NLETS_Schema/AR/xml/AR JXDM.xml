@@ -1,0 +1,33 @@
+<n:NLETS version="3.00" xmlns:n="http://www.nlets.org" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <n:NLETSResponseMessage>
+	<n:NLETSResponseHeader>
+       <n:DocumentUserID><j:ID>USER55</j:ID></n:DocumentUserID>
+       <n:DocumentPasswordText>123456</n:DocumentPasswordText>
+       <n:MessageKeyCode>AR</n:MessageKeyCode>
+       <j:DocumentSource.Organization>
+         <j:OrganizationORIID>
+           <j:ID>AZNLETS11</j:ID>
+         </j:OrganizationORIID>
+       </j:DocumentSource.Organization>
+       <j:DocumentSubject.Organization>
+         <j:OrganizationORIID>
+           <j:ID>AZNLETS11</j:ID>
+         </j:OrganizationORIID>
+       </j:DocumentSubject.Organization>
+		<n:DocumentControlFieldText>ATS000047</n:DocumentControlFieldText>
+	</n:NLETSResponseHeader>
+	<n:NLETSInquiryData Key="AQ">
+			<n:PurposeCode>C</n:PurposeCode>
+			<n:Attention>SGT JOHN DOE</n:Attention>
+			<j:Person>
+				<j:PersonName>
+					<j:PersonFullName>JOHN Q. PUBLIC</j:PersonFullName>
+				</j:PersonName>
+			</j:Person>
+		</n:NLETSInquiryData>
+	<n:NLETSResponseData Type="hit" Key="AR">
+		<n:ResponseText><![CDATA[***** TEST ---- TEST *********
+							ATTENTION: ESCAPED PRISONER REPORTEDLY ROAMING THE SOUTHERN NEVADA AREA. REQUIRE ADDITIONAL INFORMATION ON 				SUSPECT.]]></n:ResponseText>
+	</n:NLETSResponseData>
+  </n:NLETSResponseMessage>
+</n:NLETS>

@@ -1,0 +1,39 @@
+<n:NLETS version="3.00" xmlns:j="http://www.it.ojp.gov/jxdm/3.0" xmlns:n="http://www.nlets.org">
+<n:NLETSResponseMessage>
+<n:NLETSResponseHeader>
+<j:DocumentSource.Organization>
+<j:OrganizationORIID>
+<j:ID>
+CN0000000</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSource.Organization>
+<j:DocumentSubject.Organization>
+<j:OrganizationORIID>
+<j:ID>
+AZNLETS24</j:ID>
+</j:OrganizationORIID>
+</j:DocumentSubject.Organization>
+<n:MessageKeyCode>
+XR</n:MessageKeyCode>
+<n:DocumentControlFieldText>
+KATESILHOL</n:DocumentControlFieldText>
+<j:DocumentReceivedDate>
+05/05/2006</j:DocumentReceivedDate>
+<n:DocumentReceivedTime>
+10:19</n:DocumentReceivedTime>
+<n:DocumentReceivedCountQuantity>
+41299</n:DocumentReceivedCountQuantity>
+<j:DocumentFiledDate>
+05/05/2006</j:DocumentFiledDate>
+<j:DocumentFiledTime>
+10:34</j:DocumentFiledTime>
+<n:DocumentFiledCountQuantity>
+00008</n:DocumentFiledCountQuantity>
+</n:NLETSResponseHeader>
+<n:NLETSResponseData Key="XR">
+<n:ResponseText>
+<![CDATA[** FROM CANADA - ONTARIO R.O. SYSTEM **HC ON41028IC80344 RE:LIC:ABC123         PG: 01RIN:025090773  TYPE:CNAME:LEASE-RITE AUTO LEASING LTDM6A 2T6 ADDR: 3309 DUFFERIN ST,TORONTO VIN:2U87U8N117616 CLASS:PAS 78 PONT FBD 2D BLU NO.CYL:8 STATUS:OUT.OF.PROV. POWER:GAS BRAND:NONELIC:ABC123     STATUS:ATTACHED TAG:3640623 EXPIRES:31DEC80 PERMIT:00000351 ISSUED:10FEB78 ENQUIRY RESPONSE COMPLETE##  OTTAWA, CANADA]]>
+</n:ResponseText>
+</n:NLETSResponseData>
+</n:NLETSResponseMessage>
+</n:NLETS>

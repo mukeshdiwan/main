@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncic-ex:Exchange xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.0/"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.0/"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xsi:schemaLocation="http://cjis.fbi.gov/ncic/NIEM/Exchange ../../xsd/NCICExchange.xsd">
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:Message. -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:Message>
+        <!-- HDR - Header -->
+        <ncic:MessageIdentification>
+            <nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+        </ncic:MessageIdentification>
+        <ncic:MessageDestination>
+            <j:OrganizationORIIdentification>
+                <!-- ORI - Originating agency identifier -->
+                <nc:IdentificationID>WV2000000</nc:IdentificationID>
+            </j:OrganizationORIIdentification>
+        </ncic:MessageDestination>
+        <!-- MKE - Message key (type of entry) -->
+        <ncic:MessageTransactionCode>QII</ncic:MessageTransactionCode>
+        <ncic-ex:IncomingRecordData s:ref="d77e16-incomingRecordData_imageIncomingQueryDataSection"/>
+    </ncic-ex:Message>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic-ex:IncomingRecordData (query). -->
+    <!-- ******************************************************************************** -->
+    <ncic-ex:IncomingRecordData s:id="d77e16-incomingRecordData_imageIncomingQueryDataSection">
+        <ncic:ImageRecord s:ref="d77e17-imageRecord_queryDataSection"/>
+        <!-- IND - Image indicator -->
+        <ncic:ImageIndicator>true</ncic:ImageIndicator>
+    </ncic-ex:IncomingRecordData>
+
+    <!-- ******************************************************************************** -->
+    <!-- ncic:ImageRecord (query). -->
+    <!-- ******************************************************************************** -->
+    <ncic:ImageRecord s:id="d77e17-imageRecord_queryDataSection">
+        <nc:Vessel s:ref="d77e17-vessel_image"/>
+    </ncic:ImageRecord>
+
+    <!-- ******************************************************************************** -->
+    <!-- nc:Vessel. -->
+    <!-- ******************************************************************************** -->
+    <nc:Vessel s:id="d77e17-vessel_image">
+        <nc:ItemLengthMeasure>
+            <!-- BLE - Boat length -->
+            <nc:MeasureValueText>22</nc:MeasureValueText>
+        </nc:ItemLengthMeasure>
+        <!-- BYR - Boat model year -->
+        <nc:ItemModelYearDate>1971</nc:ItemModelYearDate>
+        <!-- BMA - Boat make -->
+        <ncic:VesselMakeCodeText>LBC</ncic:VesselMakeCodeText>
+        <!-- BTY - Boat type -->
+        <j:VesselCategoryCode>CRU</j:VesselCategoryCode>
+    </nc:Vessel>
+</ncic-ex:Exchange>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NLETS xmlns="http://www.nlets.org/niem/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:nh2="http://www.nlets.org/niem/nlets-hdr/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nlets.org/niem/1.0 C:/DOCUME~1/AARONG~1/MYDOCU~1/WATERH~1/NLETS/niem/VR/xsd/VR.xsd" version="3.00">
+	<NLETSMessageHeader>
+		<nh2:MessageKeyCodeText>VR</nh2:MessageKeyCodeText>
+		<nh2:OriginatingORIID>CN0000000</nh2:OriginatingORIID>
+		<nh2:DestinationORIID>AZNLETS24</nh2:DestinationORIID>
+		<nh2:DocumentControlFieldText>KATESILHOL</nh2:DocumentControlFieldText>
+	</NLETSMessageHeader>
+	<NLETSResponseData key="VR">
+		<ResponseText>** RESPONSE FROM CANADIAN SYSTEM - STOLEN VEHICLE FILE **RE:  7356   QUERY VEHICLE REM: L,XQ,AZNLETS24,*KATESILHOL,    NOT ON FILE Q V LIC: ABC123 PROV: ONT           *************     RO/DL TRANSACTION BEING PROCESSED2006050513195120060505131951*** END OF CPIC RESPONSE ***OTTAWA, CANADA</ResponseText>
+	</NLETSResponseData>
+</NLETS>
