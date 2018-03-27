@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:vq-results="http://osms.org/Exchange/VehicleQueryResults/1.0"
+	xmlns:tns="http://osms.org/Services/WSDL/Vehicle_Query_Results_Service/1.0" targetNamespace="http://osms.org/Services/WSDL/Vehicle_Query_Results_Service/1.0"
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl">
+	<wsdl:import namespace="http://osms.org/PolicyAssertions/WSDL/GFIPM_SAML_Token_SecurityPolicy/1.0/" location="./GFIPMUserSystemToSystem.wsdl" />
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://osms.org/Exchange/VehicleQueryResults/1.0" schemaLocation="../../artifacts/service_model/information_model/IEPD/xsd/VehicleQueryResults.xsd" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="Vehicle-Query-Results">
+		<wsdl:part name="Vehicle-Query-Results" element="vq-results:Exchange" />
+	</wsdl:message>
+	<wsdl:portType name="Vehicle-Query-Results-Service">
+		<wsdl:operation name="SubmitVehicleQueryResults">
+			<wsdl:input name="Vehicle-Query-Results" message="tns:Vehicle-Query-Results" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="Vehicle-Query-Results-Service_SecureSOAPBinding" type="tns:Vehicle-Query-Results-Service">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsp:PolicyReference URI="#GFIPMUserSystemToSystem" />
+		<wsdl:operation name="SubmitVehicleQueryResults">
+			<soap:operation soapAction="SubmitVehicleQueryResults" style="document" />
+			<wsdl:input name="Vehicle-Query-Results">
+				<soap:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="Vehicle-Query-Results-ServiceSOAPBinding" type="tns:Vehicle-Query-Results-Service">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsaw:UsingAddressing wsdl:required="true" />
+		<wsdl:operation name="SubmitVehicleQueryResults">
+			<soap:operation soapAction="SubmitVehicleQueryResults" style="document" />
+			<wsdl:input name="Vehicle-Query-Results">
+				<soap:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Vehicle-Query-Results-ServiceService">
+		<wsdl:port name="Vehicle-Query-Results-Service" binding="tns:Vehicle-Query-Results-ServiceSOAPBinding">
+			<soap:address location="localhost" />
+		</wsdl:port>
+		<wsdl:port name="Vehicle-Query-Results-Secure-Service" binding="tns:Vehicle-Query-Results-Service_SecureSOAPBinding">
+			<soap:address location="http://localhost/secure" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

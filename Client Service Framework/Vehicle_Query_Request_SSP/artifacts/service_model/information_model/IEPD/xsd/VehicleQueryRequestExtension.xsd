@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vq-request-ext="http://osms.org/Extensions/VehicleQueryRequest/1.0" xmlns:vq-request="http://osms.org/osms/NIEM/Exchange/1.0"
+	xmlns:s="http://release.niem.gov/niem/structures/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:niem-xsd="http://release.niem.gov/niem/proxy/xsd/3.0/"
+	xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/" targetNamespace="http://osms.org/Extensions/VehicleQueryRequest/1.0">
+	<xsd:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="../xsd/niem/structures/3.0/structures.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Defined structures for creating types.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="../xsd/niem/niem-core/3.0/niem-core.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Core Data Model.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/domains/jxdm/5.2/" schemaLocation="../xsd/niem/domains/jxdm/5.2/jxdm.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Domain Schema, Justice Exchange, containing The base Justice information.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="../xsd/niem/proxy/xsd/3.0/xs.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM XML Proxy types.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:complexType name="VehicleRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for a NCIC vehicle record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-request-ext:ConveyanceRecordType">
+				<xsd:sequence>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ConveyanceRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data that identifies a specific record in NCIC.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-request-ext:RecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:ItemNCICIdentification" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ConveyanceRegistrationAssociation" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="RecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data that identifies a specific record in NCIC.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MessageInterfacingOrganizationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data in a NCIC Message.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:OrganizationORIIdentification" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:element name="MessageDateTime" type="niem-xsd:dateTime">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a given NCIC message.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageIdentification" type="nc:IdentificationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to represent the user provided message id.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageInterfacingOrganization" type="vq-request-ext:MessageInterfacingOrganizationType" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>A data type to represent the user provided message id.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageOrigin" type="vq-request-ext:MessageInterfacingOrganizationType" substitutionGroup="vq-request-ext:MessageInterfacingOrganization">
+		<xsd:annotation>
+			<xsd:documentation>A data type to represent the user provided message id.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageDestination" type="vq-request-ext:MessageInterfacingOrganizationType" substitutionGroup="vq-request-ext:MessageInterfacingOrganization">
+		<xsd:annotation>
+			<xsd:documentation>A data type to represent the user provided message id.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageTransaction" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>An abstract data type for message transaction.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRecord" type="vq-request-ext:VehicleRecordType" substitutionGroup="vq-request-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>data pertaining to a NCIC vehicle record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleMakeCodeText" type="nc:TextType" substitutionGroup="nc:VehicleMake">
+		<xsd:annotation>
+			<xsd:documentation>A manufacturer of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ImageIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if the requesting agency wishes to have images returned; false otherwise.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Record" type="vq-request-ext:RecordType" abstract="false">
+		<xsd:annotation>
+			<xsd:documentation>Abstract data pertaining to an NCIC record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- ********************************************************* -->
+</xsd:schema>

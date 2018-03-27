@@ -1,0 +1,2929 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vq-results-ext="http://osms.org/Extensions/VehicleQueryResults/1.0"
+	xmlns:s="http://release.niem.gov/niem/structures/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+	xmlns:niem-xsd="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+	xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/3.2/"
+	xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/" targetNamespace="http://osms.org/Extensions/VehicleQueryResults/1.0">
+	<xsd:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="../xsd/niem/structures/3.0/structures.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Defined structures for creating types.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="../xsd/niem/niem-core/3.0/niem-core.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Core Data Model.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/domains/maritime/3.2/" schemaLocation="../xsd/niem/domains/maritime/3.2/maritime.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Maritime Data Model.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/domains/jxdm/5.2/" schemaLocation="../xsd/niem/domains/jxdm/5.2/jxdm.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Domain Schema, Justice Exchange, containing The base Justice information.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="../xsd/niem/proxy/xsd/3.0/xs.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM XML Proxy types.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/domains/screening/3.2/" schemaLocation="../xsd/niem/domains/screening/3.2/screening.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Domain Schema, Screening Portfolio of DHS, containing The base Screening information.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/domains/internationalTrade/3.2/" schemaLocation="../xsd/niem/domains/internationalTrade/3.2/internationalTrade.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Domain Schema, International Trade.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/domains/cbrn/3.2/" schemaLocation="niem/domains/cbrn/3.2/cbrn.xsd">
+		<xsd:annotation>
+			<xsd:documentation>Chemical, Biological, Radiological, and Nuclear Domain
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<!-- ********************************************************* -->
+	<!--A -->
+	<xsd:complexType name="ActivityAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional data about an activity.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:CaseNumberText" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:ControlNumberID" minOccurs="0" />
+					<!-- Truncated for vq-results-ext:RecordValidationDate <xsd:element ref="vq-results-ext:DocumentValidationDate" minOccurs="0"/> -->
+					<xsd:element ref="vq-results-ext:RecordValidationDate" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:StopPlacedDate" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ActivityCaseOrganizationAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for an association between an Activity, Case, and Organization.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:Activity" minOccurs="0" />
+					<xsd:element ref="nc:Case" minOccurs="0" />
+					<xsd:element ref="nc:Incident" minOccurs="0" />
+					<xsd:element ref="nc:Organization" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="AddressAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional data about an address.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<!-- Truncated. Moved to scr:PersonAddressAugmentation <xsd:element ref="vq-results-ext:AddressCategoryCodeText" minOccurs="0"/> 
+						<xsd:element ref="vq-results-ext:AddressStartDate" minOccurs="0"/> <xsd:element ref="vq-results-ext:AddressEndDate" minOccurs="0"/> -->
+					<xsd:element ref="vq-results-ext:DocumentedAddressDate" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:ForiegnPostalCodeText" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ArticleRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure the data in an article record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:ItemRecordType">
+				<xsd:sequence>
+					<xsd:element ref="nc:Item" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:ImageItem" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:PublicDisseminationDateText" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- B -->
+	<xsd:complexType name="BenefitsItemOffenseSummaryAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure the data in a benefits item and offense summary association.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:Item" />
+					<xsd:element ref="j:OffenseSummary" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="BoatRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure the data in a boat record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:ConveyanceRecordType">
+				<xsd:sequence>
+					<xsd:element ref="vq-results-ext:VesselRegistrationImageAssociation" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- C -->
+	<xsd:complexType name="CaseAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional data about a case.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:LocationStateNCICLSTACode" minOccurs="0" />
+					<xsd:element ref="j:SentenceDate" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:NICSTransactionID" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CaseRemovalIncidentAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for an association between a removal activity, case and incident.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:Activity" minOccurs="0" />
+					<xsd:element ref="nc:Case" minOccurs="0" />
+					<xsd:element ref="nc:Incident" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ContactInformationAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional contact information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="vq-results-ext:InternetID" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ConveyancePartAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional conveyance part information.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:EngineHorsepowerQuantity" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ConveyanceRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data that identifies a specific record in NCIC.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:RecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:ItemNCICIdentification" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ConveyanceRegistrationAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:PublicDisseminationDateText" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:RecoveredItemOffenseSummaryAssociation" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:RelatedSearchHitIndicator" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:VehicleRegistrationImageAssociation" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CourtOrderAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional court order information.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="vq-results-ext:CourtOrderServiceStatus" minOccurs="0" maxOccurs="2" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CriminalOrganizationAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional criminal organization information.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:ImageNCICIdentification" />
+					<xsd:element ref="j:ImageCategoryCode" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CommonRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure common record data that identifies a specific record in NCIC.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:RecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:OffenseSubjectAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:OffenseSummary" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:PersonNCICIdentification" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ProtectionOrder" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:RegisteredOffender" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- D -->
+	<xsd:complexType name="DetainmentType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for the detainment of a wanted person.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="nc:ActivityType">
+				<xsd:sequence>
+					<xsd:element ref="j:Incarceration" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Sentence" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--E -->
+	<xsd:complexType name="EntityAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional data about an entity.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<!-- Truncated for vq-results-ext:RecordValidationDate <xsd:element ref="vq-results-ext:DocumentValidationDate" minOccurs="0" 
+						maxOccurs="unbounded"/> -->
+					<xsd:element ref="vq-results-ext:RecordValidationDate" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- G -->
+	<xsd:complexType name="GangKSTMemberRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for gang and known or appropiately suspected terrorist records.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:CriminalOrganization" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:CriminalOrganizationNCICIdentification" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="GunRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data in a gun record.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:ItemRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:Firearm" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--H -->
+	<!--I -->
+	<xsd:complexType name="IdentityTheftRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data in a identity theft record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ImageRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for an image record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:RecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:ImageNCICIdentification" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ItemNCICIdentification" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:PersonNCICIdentification" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ConveyanceRegistrationAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:CriminalOrganization" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Item" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:ItemImage" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Vessel" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ConveyancePart" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:BinaryDescriptionText" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:ImagePerson" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="InvestigativeInterestType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for to contain investigative interests.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="nc:IncidentType">
+				<xsd:sequence>
+					<xsd:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="IncidentAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional data about an incident.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonPasswordText" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:NICSTransactionID" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:PurgeDate" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:ReleaseDate" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:ViolationDate" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ItemAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional data about an item.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="it:CommodityUNDGIdentificationText" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- J -->
+	<!-- L -->
+	<xsd:complexType name="LicensePlateRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure license plate record data.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:ItemRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="LITCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for License Type.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="vq-results-ext:LITCodeSimpleType">
+				<xsd:attributeGroup ref="s:SimpleObjectAttributeGroup" />
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!--M -->
+	<xsd:complexType name="MessageInterfacingOrganizationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data in a NCIC Message.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:OrganizationORIIdentification" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MissingPersonRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure the data pertaining to a NCIC missing person record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="nc:ItemEntityAssociation" minOccurs="0" />
+					<!-- <xsd:element ref="nc:RoleOfPerson" minOccurs="0"/> -->
+					<xsd:element ref="j:MissingPerson" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:PersonMatchData" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:PersonWithInformation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:PublicDisseminationDateText" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:RecoveredItemOffenseSummaryAssociation" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--N -->
+	<xsd:complexType name="NICSDeniedRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure the NICS Denied record.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="nc:PersonResidenceAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--O -->
+	<xsd:complexType name="OffenseAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional information about an Offense.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="vq-results-ext:AdditionalOffenseIndictator" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="OffenseSummaryAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for addConveyanceRegistrationAssociationitional information about an offense summary.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:PersonArmedIndicator" minOccurs="0" maxOccurs="1" />
+					<xsd:element ref="j:SubjectArmedIndicator" minOccurs="0" maxOccurs="1" />
+					<xsd:element ref="j:PersonHitResultsText" minOccurs="0" maxOccurs="1" />
+					<xsd:element ref="vq-results-ext:OffenseSummaryPersonsFoundQuantity" minOccurs="0" maxOccurs="1" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional information about an organization.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="vq-results-ext:OrganizationDocumentCount" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationDocumentCountType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for organization document counts.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="vq-results-ext:CodeManualCount" />
+					<xsd:element ref="vq-results-ext:NewsletterCount" />
+					<xsd:element ref="vq-results-ext:OperatingManualCount" />
+					<xsd:element ref="vq-results-ext:TOUCount" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ORIRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for information about an ORI record.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:RecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:OffenseSubjectAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:ContactEntity" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:ContactInformationAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:UserCodeID" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--P -->
+	<xsd:complexType name="PersonAddressAssociationAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional information about a person address association.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="vq-results-ext:PersonAddressCategory" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonEmploymentEducationAssociationAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional information about a person's employment association.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:PersonProfessionalCertificateText" />
+					<xsd:element ref="vq-results-ext:PersonProfessionalCertificateTypeText" />
+					<xsd:element ref="vq-results-ext:SchoolName" minOccurs="0" maxOccurs="1" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonIncarcerationAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type structure for a person incarceration association.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:Person" />
+					<xsd:element ref="j:Incarceration" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonMatchDataType">
+		<xsd:annotation>
+			<xsd:documentation>A data type structure for the match field data and dental match for an unidentified or missing person
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="vq-results-ext:MatchFieldData" minOccurs="0" maxOccurs="1" />
+					<xsd:element ref="vq-results-ext:TotalNumberOfDentalMatches" minOccurs="0" maxOccurs="1" />
+					<xsd:element ref="vq-results-ext:TotalNumberOfDentalMismatches" minOccurs="0" maxOccurs="1" />
+					<xsd:element ref="vq-results-ext:TotalNumberOfPossibleDentalMatches" minOccurs="0" maxOccurs="1" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonMiscellaneousType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for information about a miscellaneous person.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:EmployeeOccupationText" />
+					<xsd:element ref="nc:OrganizationName" />
+					<xsd:element ref="j:PersonCautionInformationText" />
+					<xsd:element ref="j:PersonProfessionalCertificateText" />
+					<xsd:element ref="vq-results-ext:PersonProfessionalCertificateTypeText" />
+					<xsd:element ref="vq-results-ext:SchoolName" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonWithInformationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for a NCIC person with information.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:RoleOfPerson" minOccurs="0" />
+					<xsd:element ref="nc:StatusDescriptionText" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:SupplementalPersonWithInformation" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ProtectionOrderAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional data about a protection order.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="vq-results-ext:ProtectionOrderExpirationDate" minOccurs="0" />
+					<!-- Truncated for j:ProtectionOrder/vq-results-ext:CourtOrderAugmentation/vq-results-ext:CourtOrderServiceStatus <xsd:element 
+						ref="vq-results-ext:ProtectionOrderServiceInformationCode" minOccurs="0"/> <xsd:element ref="vq-results-ext:ProtectionOrderServiceInformationCodeText" 
+						minOccurs="0"/> -->
+					<!-- Truncated for j:ProtectionOrder/j:CourtOrderServiceDate/nc:Date <xsd:element ref="vq-results-ext:ProtectionOrderServiceDate" 
+						minOccurs="0"/> -->
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ProtectionOrderRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure protection order data.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:ProtectionOrder" minOccurs="0" />
+					<xsd:element ref="j:Subject" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:RestrictedPerson" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:SupplementalProtectionOrder" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:SupplementalRestrictedPerson" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ProtectiveInterestRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure protective interest data.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:Subject" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--R -->
+	<!--R -->
+	<xsd:complexType name="RecordStatusType">
+		<xsd:annotation>
+			<xsd:documentation>A status of an NCIC record.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="nc:StatusType">
+				<xsd:sequence>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="RecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data that identifies a specific record in NCIC.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:ActivityWarrantAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:CaveatText" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Incident" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:LastUpdatedDate" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:OrganizationDescriptionText" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:ReportedDate" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:InvestigativeInterest" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:MessageTransaction" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:NotifyInvestigativeAgencyIndicator" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:NotifyOriginatingAgencyIndicator" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:RecordExpirationDate" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:RecordPurgeDate" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:RecordRemovalReasonText" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:RecordStatus" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data that identifies a specific record in NCIC.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:RecordType">
+				<xsd:sequence>
+					<xsd:element ref="nc:ContactInformationAssociation" minOccurs="0" />
+					<xsd:element ref="j:ConveyanceRegistrationAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:DriverLicenseAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:PersonCautionInformationText" minOccurs="0" />
+					<xsd:element ref="j:PersonNCICIdentification" minOccurs="0" />
+					<xsd:element ref="scr:PersonAddressAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:ExtendedNameSearchIndicator" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:FraudulentPerson" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:ImagePerson" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:SupplementalContactInformation" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:SupplementalPerson" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ItemRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data that identifies a specific record in NCIC.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:RecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:ItemNCICIdentification" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ItemRegistrationAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:RecoveredItemOffenseSummaryAssociation" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="RecoveredItemOffenseSummaryAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure the data for a recovered item and offense summary association.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:Item" minOccurs="0" />
+					<xsd:element ref="j:OffenseSummary" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- S -->
+	<xsd:complexType name="SecuritiesRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure the data for a securities record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:ItemRecordType">
+				<xsd:sequence>
+					<xsd:element ref="nc:Securities" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SentryRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure the data for a sentry record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:Offense" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Sentence" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:PersonIncarcerationAssociation" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SexualOffenderRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure the data for a sexual offender.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="nc:FacilityPersonAssociation" minOccurs="0" />
+					<xsd:element ref="nc:PersonEmploymentAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:PersonResidenceAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:OffenseChargeAssociation" minOccurs="0" />
+					<xsd:element ref="j:RegisteredOffender" minOccurs="0" />
+					<xsd:element ref="j:RegisteredOffenderOffenseOfRegistrationAssociation" minOccurs="0" />
+					<xsd:element ref="j:SubjectVictimAssociation" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:SupplementalPersonEmploymentAssociation" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:SupplementalPersonMiscellaneous" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:SupplementalSubjectVictimAssociation" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:SupplementalVictim" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:SupplementalVictimMiscellaneous" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="StatusAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>An data type to extend status type.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:CaseNumberText" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:StatusIssuerOrganization" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SupervisedReleaseRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure the data for a supervised release record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:ActivitySubjectAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Probation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Sentence" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:SupervisedRelease" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Warrant" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:OffenseArrestAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:SupervisorContactInformationAssociation" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SupervisorContactInformationAssociationType">
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:ContactEntity" />
+					<xsd:element ref="nc:ContactInformation" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SupplementalRecordAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional information about an item registration association.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="vq-results-ext:FraudulentRecordIndicator" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:SupplementalRecordIndicator" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SupplementalSubjectVictimAssociationType">
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Victim" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:VictimToSubjectRelationshipCode" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:VictimToSubjectRelationshipCodeText" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- T -->
+	<!-- U -->
+	<xsd:complexType name="UnidentifiedPersonRecordType">
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="nc:ItemEntityAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:PersonCurrentLocationAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:JurisdictionText" minOccurs="0" maxOccurs="unbounded" />
+					<!-- <xsd:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded" /> -->
+					<xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--V -->
+	<xsd:complexType name="VSTCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for Vehicle Style.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="vq-results-ext:VSTCodeSimpleType">
+				<xsd:attributeGroup ref="s:SimpleObjectAttributeGroup" />
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for a NCIC vehicle record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:ConveyanceRecordType">
+				<xsd:sequence>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VictimMiscellaneousType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for a miscellaneous victim.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:VictimToSubjectRelationshipCode" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ViolentPersonRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for a violent person record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:ViolentPersonCriteriaCodeText" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--W -->
+	<xsd:complexType name="WantedPersonRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for a NCIC wanted person record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="vq-results-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:OffenseSubjectAssociation" minOccurs="0" />
+					<xsd:element ref="j:Subject" minOccurs="0" />
+					<xsd:element ref="j:Warrant" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:Detainment" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:LocateCancellationIndicator" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:PersonMatchData" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="vq-results-ext:PublicDisseminationDateText" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:RecoveredItemOffenseSummaryAssociation" minOccurs="0" />
+					<xsd:element ref="vq-results-ext:RelatedSearchHitIndicator" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- ***********Simple Types************* -->
+	<!-- L -->
+	<xsd:simpleType name="LITCodeSimpleType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for License Type.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="0B">
+				<xsd:annotation>
+					<xsd:documentation>OMNIBUSOMNIBUS MUST APPEAR ON THE PLATE.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="0R">
+				<xsd:annotation>
+					<xsd:documentation>ORGANIZATION INCLUDES GIRL SCOUTS,KIWANIS,KNIGHTS OF COLUMBUS,LADIES AUXILIARY AND MASONS
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AM">
+				<xsd:annotation>
+					<xsd:documentation>AMBULANCE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AP">
+				<xsd:annotation>
+					<xsd:documentation>APPORTIONED THE WORD APPORTIONED MUST APPEAR ON THE PLATE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AQ">
+				<xsd:annotation>
+					<xsd:documentation>ANTIQUE INCLUDES CLASSIC,HISTORIC,STREETROD,PIONEER,HORSELESS CARRIAGE,VINTAGE OR COLLECTOR SERIES
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AR">
+				<xsd:annotation>
+					<xsd:documentation>AMATEUR RADIO OR CITIZEN'S BAND RADIO OPERATOR ALSO CALLED HAMRADIO OPERATOR</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AT">
+				<xsd:annotation>
+					<xsd:documentation>ALL-TERRAIN VEHICLES IN INSTANCES WHERE A LICENSE PLATE HAS BEEN ISSUED</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BU">
+				<xsd:annotation>
+					<xsd:documentation>BUS CHURCH SCOUTING FRANCHISE, SCHOOL,PUBLIC/PRIVATE CARRIER, ETC.SEE SCHOOL VEHICLE FOR SCHOOL BUS
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="C0">
+				<xsd:annotation>
+					<xsd:documentation>COMMERCIAL</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CC">
+				<xsd:annotation>
+					<xsd:documentation>CONSULAR CORPS</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CI">
+				<xsd:annotation>
+					<xsd:documentation>CITY-OWNED OR MUNICIPAL VEHICLE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CL">
+				<xsd:annotation>
+					<xsd:documentation>COLLEGIATE INCLUDES COLLEGES AND UNIVERSITIES</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CM">
+				<xsd:annotation>
+					<xsd:documentation>COMMEMORATIVE INCLUDES BICENTENNIALS, CENTENNIALS,PEARL HARBORSURVIVOR AND STATEHOOD ANNIVERSARIES
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CN">
+				<xsd:annotation>
+					<xsd:documentation>CONSERVATION TO INCLUDE HIGHWAY BEAUTIFICATION,SOIL CONSERVATION WILD LIFE-WILDLIFE INCLUDEDS BIRDS AND
+						WATERFOWL</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CU">
+				<xsd:annotation>
+					<xsd:documentation>COUNTY-OWNED VEHICLE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DA">
+				<xsd:annotation>
+					<xsd:documentation>DRIVE-AWAY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DB">
+				<xsd:annotation>
+					<xsd:documentation>DUNE BUGGY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DD">
+				<xsd:annotation>
+					<xsd:documentation>DENTIST</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DL">
+				<xsd:annotation>
+					<xsd:documentation>DEALER DOES NOT APPLY TO MOTORCYCLE DEALER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DP">
+				<xsd:annotation>
+					<xsd:documentation>DIPLOMATIC INCLUDES DIPLOMAT AND DIPLOMATIC STAFF</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DU">
+				<xsd:annotation>
+					<xsd:documentation>DUPLICATE,REISSUE,OR REPLACEMENT ONLY IF THIS IS SO INDICATED ON THE PLATE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DV">
+				<xsd:annotation>
+					<xsd:documentation>DISABLED VETERAN</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DX">
+				<xsd:annotation>
+					<xsd:documentation>DISABLED PERSON ENTITLES PERSON TO CERTAIN PARKING PRIVLIGES ALSO SEE HANDICAPPED PERSON
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EX">
+				<xsd:annotation>
+					<xsd:documentation>EXEMPT ALL TYPES OF VEHICLES CAN DISPLAY AND EXEMPT PLATE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FD">
+				<xsd:annotation>
+					<xsd:documentation>FIRE DEPARTMENT FOR VOLUNTEER FIRE DEPT. AND PRIVATELY OPERATED FIRE DEPT. SEE CITY-OWNED FOR CITY FIRE
+						DEPT PLATES</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FG">
+				<xsd:annotation>
+					<xsd:documentation>FOREIGN GOVERNMENT</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FM">
+				<xsd:annotation>
+					<xsd:documentation>FARM VEHICLE INCLUDES FARM AND AGRICULTURE PLATES</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HI">
+				<xsd:annotation>
+					<xsd:documentation>HEARING IMPAIRED</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IP">
+				<xsd:annotation>
+					<xsd:documentation>INTERNATIONAL PLATE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IT">
+				<xsd:annotation>
+					<xsd:documentation>IN-TRANSIT TYPE OF TEMPORARY PLATE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JJ">
+				<xsd:annotation>
+					<xsd:documentation>JUDGE OR JUSTICE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LE">
+				<xsd:annotation>
+					<xsd:documentation>LEGISLATIVE,U.S.MEMBER OF U.S. CONGRESS.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LF">
+				<xsd:annotation>
+					<xsd:documentation>LAW ENFORCEMENT POLICE SEPARTMENT,STATE POLICE, SHERIFF ETC</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LS">
+				<xsd:annotation>
+					<xsd:documentation>LEGISLATIVE, STATE SENATOR,REPRESENTATIVE,ASSEMBLY-MAN, DELEGATE, ETC</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MC">
+				<xsd:annotation>
+					<xsd:documentation>MOTORCYCLE MOTORIZED BIKES AND MOTOR SCOOTERS ARE REGISTERED AS MOTORCYCLES IN SOME STATES
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MD">
+				<xsd:annotation>
+					<xsd:documentation>MOTORCYCLE DEALER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MF">
+				<xsd:annotation>
+					<xsd:documentation>MANUFACTURER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ML">
+				<xsd:annotation>
+					<xsd:documentation>MILITARY VEHICLE, CANADIAN</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MP">
+				<xsd:annotation>
+					<xsd:documentation>MOPED</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MR">
+				<xsd:annotation>
+					<xsd:documentation>ARMED FORCES RESERVIST PERSONALLY OWNED VEHICLE PLATES</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MV">
+				<xsd:annotation>
+					<xsd:documentation>MILITARY VEHICLE, U. S.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MY">
+				<xsd:annotation>
+					<xsd:documentation>MILITARY ANY TYPE OF MILITARY AIRCRAFT REGARDLESS OF DESIGN ORPRIMARY USE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NG">
+				<xsd:annotation>
+					<xsd:documentation>NATIONAL GUARD MEMBER PERSONALLY OWNED VEHICLE PLATES</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NP">
+				<xsd:annotation>
+					<xsd:documentation>CIVILIAN, NONPASSENGER INCLUDES ALL CIVILIAN AIRCRAFT DESIGNEDAND OR USED FOR PURPOSE OTHER THAN
+						TRANSPORTING PASSENGERS</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PC">
+				<xsd:annotation>
+					<xsd:documentation>REGULAR PASSENGER AUTOMOBILE PLATES</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PE">
+				<xsd:annotation>
+					<xsd:documentation>PERSONALIZED/CUSTOMIZED ALL TYPES OF VEHICLES</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PF">
+				<xsd:annotation>
+					<xsd:documentation>PROFESSIONS INCLUDED ARCHITECTS,CHIROPRACTORS,EDUCATORS, ENGINEERS,NURSES,VISITING NURSES DO NOT USE FOR
+						DENTIST,JUFGES,LAW ENFORCEMENT PHARMACIST AND PHYSICIAN</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PH">
+				<xsd:annotation>
+					<xsd:documentation>DOCTOR</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PP">
+				<xsd:annotation>
+					<xsd:documentation>CIVILIAN,PASSENGER INCLUDES ALL CIVILIAN AIRCRAFT DESIGNED ANDOR USED PRIMARILY FOR TRANSPORTING
+						PASSENGERS WHETHER COMMERCIALLY OR PRIVATELY OPERATED</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PR">
+				<xsd:annotation>
+					<xsd:documentation>PRESS INCLUDES NEWS MEDIA/TELEVISION AND NEWS PHOTOGREAPHERS</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PS">
+				<xsd:annotation>
+					<xsd:documentation>PROFESSIONAL SPORTS TEAM</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PX">
+				<xsd:annotation>
+					<xsd:documentation>PHARMACIST</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RE">
+				<xsd:annotation>
+					<xsd:documentation>RECIPROCAL OR RECIPROCITY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RV">
+				<xsd:annotation>
+					<xsd:documentation>RENTED VEHICLE OR TRAILER INCLUDES LIVERY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SC">
+				<xsd:annotation>
+					<xsd:documentation>SPECIAL PURPOSE COMMERCIAL VEHICLE STREET CLEANERS,WELDING TRUCKS,ETC</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SN">
+				<xsd:annotation>
+					<xsd:documentation>SNOWMOLILE IN INSTANCES WHERE A LICENCE PLATE HAS BEEN ISSUED</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ST">
+				<xsd:annotation>
+					<xsd:documentation>STATE-OWNED VEHICLE INCLUDED HIGHWAY DEPARTMENT, DEPARTMENT OFPUBLIC SAFETY,ETC</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SV">
+				<xsd:annotation>
+					<xsd:documentation>SCHOOL VEHICLE INCLUDES SCHOOL BUS AND DRIVER EDUCATION CAR</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TK">
+				<xsd:annotation>
+					<xsd:documentation>TRUCK</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TL">
+				<xsd:annotation>
+					<xsd:documentation>TRAILER;BOAT,CAMPER,CARGO,TRAVEL,HOUSE,MOBILE HOME,SEMI, UTILITY ETC.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TM">
+				<xsd:annotation>
+					<xsd:documentation>TEMPORARY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TP">
+				<xsd:annotation>
+					<xsd:documentation>TRANSPORTER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TR">
+				<xsd:annotation>
+					<xsd:documentation>SEMITRUCK</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TX">
+				<xsd:annotation>
+					<xsd:documentation>CAB</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="US">
+				<xsd:annotation>
+					<xsd:documentation>U.S. GOVERNMENT VEHICLES</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VF">
+				<xsd:annotation>
+					<xsd:documentation>MEDAL OF HONOR</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ZZ">
+				<xsd:annotation>
+					<xsd:documentation>ALL-TERRAIN VEHICLES AND SNOWMOBILES FOR ALL-TERRAIN VEHICLES AND SNOWMOBILES DISPLAYING A REGISTRATION
+						NUMBER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VSTCodeSimpleType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for Vehicle Style.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="0P">
+				<xsd:annotation>
+					<xsd:documentation>OPEN BODY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="1J">
+				<xsd:annotation>
+					<xsd:documentation>SINGLE-ENGINE, JET</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="1P">
+				<xsd:annotation>
+					<xsd:documentation>SINGLE-ENGINE, PROPELLER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="2D">
+				<xsd:annotation>
+					<xsd:documentation>2 DOOR SEDAN</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="2J">
+				<xsd:annotation>
+					<xsd:documentation>TWIN-ENGINE, JET</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="2P">
+				<xsd:annotation>
+					<xsd:documentation>TWIN-ENGINE, PROPELLER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="3D">
+				<xsd:annotation>
+					<xsd:documentation>3-DOOR SOME TRUCK MAKES WILL HAVE TWO DOORS ON THE DRIVERS SIDE AND ONE ON THE PASSENGER SIDE. OTHER
+						MAKES WILL HAVE ONE DOOR ON THE PASSENGER SIDE
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="3J">
+				<xsd:annotation>
+					<xsd:documentation>TRI-ENGINE, JET</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="3P">
+				<xsd:annotation>
+					<xsd:documentation>TRI-ENGINE, PROPELLER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="4D">
+				<xsd:annotation>
+					<xsd:documentation>4 DOOR SEDAN; TRUCK/PICK-UP 4 DOOR</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AC">
+				<xsd:annotation>
+					<xsd:documentation>AUTO CARRIER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AD">
+				<xsd:annotation>
+					<xsd:documentation>ASPHALT DISTRIBUTOR</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AE">
+				<xsd:annotation>
+					<xsd:documentation>AERIAL PLATFORM</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AI">
+				<xsd:annotation>
+					<xsd:documentation>AIR COMPRESSOR SHOULD BE ENTERED AS AS A PART IF NOT PERMANENTLY MOUNTED</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AM">
+				<xsd:annotation>
+					<xsd:documentation>AMBULANCE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AR">
+				<xsd:annotation>
+					<xsd:documentation>ARMORED TRUCK</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BA">
+				<xsd:annotation>
+					<xsd:documentation>BULK AGRICULTURE BULK TRANSPORT OF RAW VEGETABLES.MAY HAVE LIVE FLOOR,BELT OR TIPHEAD
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BC">
+				<xsd:annotation>
+					<xsd:documentation>BRUSH CHIPPER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BD">
+				<xsd:annotation>
+					<xsd:documentation>BULLDOZER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BG">
+				<xsd:annotation>
+					<xsd:documentation>BUGGY,CONCRETE ALSO KNOWN AS POWER CARTT.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BH">
+				<xsd:annotation>
+					<xsd:documentation>BACKHOE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BK">
+				<xsd:annotation>
+					<xsd:documentation>BACKHOE/LOADER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BP">
+				<xsd:annotation>
+					<xsd:documentation>BLIMP</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BR">
+				<xsd:annotation>
+					<xsd:documentation>BEVERAGE TRUCK</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BT">
+				<xsd:annotation>
+					<xsd:documentation>BOAT</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BU">
+				<xsd:annotation>
+					<xsd:documentation>BUS</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BZ">
+				<xsd:annotation>
+					<xsd:documentation>BI0-HAZZARD VEHICLE; (DEC0NTAMINATI0N ETC.) FIRST RESP0NDER VEHICLES</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="C0">
+				<xsd:annotation>
+					<xsd:documentation>COMBINE ALSO KNOWN AS GRAIN HARVESTERR</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CB">
+				<xsd:annotation>
+					<xsd:documentation>CHASSIS AND CAB</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CE">
+				<xsd:annotation>
+					<xsd:documentation>UNPUBLISHED STYLE OF CONSTRUCTION EQUIPMENT EXPLAIN STYLE IN THE MIS FIELD</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CG">
+				<xsd:annotation>
+					<xsd:documentation>CONVERTER GEAR</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CI">
+				<xsd:annotation>
+					<xsd:documentation>CORN PICKER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CK">
+				<xsd:annotation>
+					<xsd:documentation>COTTON PICKER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CM">
+				<xsd:annotation>
+					<xsd:documentation>CONCRETE MIXER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CR">
+				<xsd:annotation>
+					<xsd:documentation>CRANE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CS">
+				<xsd:annotation>
+					<xsd:documentation>C0NSTRUCTI0N SIGNAL; WARNING MESSAGE LIGHTS, AND MESSAGE B0ARDUSUALLY SEEN AT 0R AR0UND R0ADWAY
+						C0NSTRUCTI0N SITES
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CT">
+				<xsd:annotation>
+					<xsd:documentation>CAMPING ALSO KNOWN AS CAMPER OR TRAVEL TRAILER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CV">
+				<xsd:annotation>
+					<xsd:documentation>CONVERTIBLE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CZ">
+				<xsd:annotation>
+					<xsd:documentation>COTTON STRIPPER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DE">
+				<xsd:annotation>
+					<xsd:documentation>DETASSELING EQUIPMENT</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DI">
+				<xsd:annotation>
+					<xsd:documentation>POTATO DIGGER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DN">
+				<xsd:annotation>
+					<xsd:documentation>DRONE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DP">
+				<xsd:annotation>
+					<xsd:documentation>DUMP</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DR">
+				<xsd:annotation>
+					<xsd:documentation>DRILL, ROCK ALSO KNOWN AS DRIFTER DRILL</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DS">
+				<xsd:annotation>
+					<xsd:documentation>TRACTOR TRUCK, DIESEL</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DT">
+				<xsd:annotation>
+					<xsd:documentation>DUMP TRAILER; TRAILER BED THAT TILTS 0R RISES T0 RELEASE 0R REMOVE ITS CARGO</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DY">
+				<xsd:annotation>
+					<xsd:documentation>AUXILIARY DOLLY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EB">
+				<xsd:annotation>
+					<xsd:documentation>ENCLOSED BODY, REMOVABLE ENCLOSURE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EN">
+				<xsd:annotation>
+					<xsd:documentation>ENCLOSED BODY, NON REMOVEABLE ENCLOSURE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EX">
+				<xsd:annotation>
+					<xsd:documentation>EXCAVATOR ALSO KNOWN AS DIGGERR.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FB">
+				<xsd:annotation>
+					<xsd:documentation>FLATBED OR PLATFORM</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FC">
+				<xsd:annotation>
+					<xsd:documentation>FLOTATION CHASSIS ALSO KNOWN AS IMPLEMENT CARRIER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FD">
+				<xsd:annotation>
+					<xsd:documentation>FIELD CHOPPER ALSO KNOWN AS SILEAGE CUTTER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FL">
+				<xsd:annotation>
+					<xsd:documentation>FORK LIFT ALSO KNOWN AS LIFT TRUCKK.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FR">
+				<xsd:annotation>
+					<xsd:documentation>FLATRACK</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FS">
+				<xsd:annotation>
+					<xsd:documentation>FERTILIZER SPREADER ENTER AS PART IF NOT PERMANENTLY MOUNTED</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FT">
+				<xsd:annotation>
+					<xsd:documentation>FIRE TRUCK</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GA">
+				<xsd:annotation>
+					<xsd:documentation>WAGON ALSO KNOWN AS GONDOLA, CART OR CONTAINER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GD">
+				<xsd:annotation>
+					<xsd:documentation>GRADER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GE">
+				<xsd:annotation>
+					<xsd:documentation>GENERATOR ENTER AS PART IF NOT PERMANENTLY MOUNTED</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GG">
+				<xsd:annotation>
+					<xsd:documentation>GARBAGE OR REFUSE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GN">
+				<xsd:annotation>
+					<xsd:documentation>GRAIN</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GR">
+				<xsd:annotation>
+					<xsd:documentation>GLASS RACK</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="H0">
+				<xsd:annotation>
+					<xsd:documentation>HOPPER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HA">
+				<xsd:annotation>
+					<xsd:documentation>HOT AIR BALLON</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HD">
+				<xsd:annotation>
+					<xsd:documentation>HYDRAULIC DUMP</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HE">
+				<xsd:annotation>
+					<xsd:documentation>HORSE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HL">
+				<xsd:annotation>
+					<xsd:documentation>HAY BALE LOADER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HM">
+				<xsd:annotation>
+					<xsd:documentation>HAMMER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HP">
+				<xsd:annotation>
+					<xsd:documentation>HELICOPTER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HR">
+				<xsd:annotation>
+					<xsd:documentation>HEARSE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HS">
+				<xsd:annotation>
+					<xsd:documentation>HOUSE MOBILE HOME</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HV">
+				<xsd:annotation>
+					<xsd:documentation>HARVESTER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HY">
+				<xsd:annotation>
+					<xsd:documentation>HAY BALER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LB">
+				<xsd:annotation>
+					<xsd:documentation>LOWBOY OR LOWBED</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LD">
+				<xsd:annotation>
+					<xsd:documentation>LOADER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LF">
+				<xsd:annotation>
+					<xsd:documentation>LIFT BOOM (PERSONNEL)ALSO KNOWN AS AN ORCHARD OR CHERRYPICKER.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LG">
+				<xsd:annotation>
+					<xsd:documentation>LOG USE TO TRANSPORT LOGS, POLES, OR PIPE. MAY BE SELF LOADINGOR MAY HAVE A GRAPPLING ARM OR JAMMER
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LK">
+				<xsd:annotation>
+					<xsd:documentation>LOG SKIDDER ALSO KNOWN AS GRAPPLER SKIDDER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LL">
+				<xsd:annotation>
+					<xsd:documentation>CARRY-ALL RUGGED TRAILE AND PLEASURE VEH'S (E.G., BLAZAER, BRONCO, JEEP, ETC)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LM">
+				<xsd:annotation>
+					<xsd:documentation>LIMOUSINE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LP">
+				<xsd:annotation>
+					<xsd:documentation>POLE ALSO KNOWN AS LOGGING TRAILER USED TO TRANSPORT LOGS AND POLES</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LS">
+				<xsd:annotation>
+					<xsd:documentation>LIVESTOCK RACK</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LT">
+				<xsd:annotation>
+					<xsd:documentation>LIGHT TOWER; TYPICALLY USED AROUND OR NEAR CONSTRUCTION SITES AND POWERED BY A GENERATOR
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LV">
+				<xsd:annotation>
+					<xsd:documentation>LAW ENF0RCEMENT VEHICLE (P0LICE,SHERIFF,ETC.) FIRST RESP0NDER VEHICLE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LW">
+				<xsd:annotation>
+					<xsd:documentation>LUNCH WAGON</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="M0">
+				<xsd:annotation>
+					<xsd:documentation>MOWER, RIDING OR GARDEN TRACTOR</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MB">
+				<xsd:annotation>
+					<xsd:documentation>MOTORBIKE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MC">
+				<xsd:annotation>
+					<xsd:documentation>MOTORCYCLE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MD">
+				<xsd:annotation>
+					<xsd:documentation>MOPED</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MF">
+				<xsd:annotation>
+					<xsd:documentation>UNPUBLISHED STYLE OF FARM EQUIPMENT</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MH">
+				<xsd:annotation>
+					<xsd:documentation>MOTORIZED HOME</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MJ">
+				<xsd:annotation>
+					<xsd:documentation>MULTI-ENGINE, JET</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MK">
+				<xsd:annotation>
+					<xsd:documentation>MINIBIKE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MP">
+				<xsd:annotation>
+					<xsd:documentation>MULTI-ENGINE, PROPELLER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MR">
+				<xsd:annotation>
+					<xsd:documentation>MOWER-CONDITIONER FOR GRASS OR HAY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MS">
+				<xsd:annotation>
+					<xsd:documentation>MOTORSCOOTER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MT">
+				<xsd:annotation>
+					<xsd:documentation>MOTORCYCLE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MV">
+				<xsd:annotation>
+					<xsd:documentation>MULTI-WHEELED VEHICLE MANUFACTURED FOR OFF-ROAD USEBUT LICENSED AS STREET LEGAL, EG. 3 WHEEL MOTORCYCLE
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MY">
+				<xsd:annotation>
+					<xsd:documentation>MINICYCLE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PK">
+				<xsd:annotation>
+					<xsd:documentation>PICKUP</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PL">
+				<xsd:annotation>
+					<xsd:documentation>PALLET</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PM">
+				<xsd:annotation>
+					<xsd:documentation>PICKUP WITH MOUNTED CAMPER ENTER AS A PART OR ADD-ON PART</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PR">
+				<xsd:annotation>
+					<xsd:documentation>PRIME MOVER ALSO KNOWN AS ROAD PACKERR.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PT">
+				<xsd:annotation>
+					<xsd:documentation>PASSENGER OR PEOPLE TRAM/CARRIER (USUALLY USED TO MOVE GROUPS OF PEOPLE OR PATRONS) AS IN AMUSEMENT PARK
+						PARKING LOTS
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PV">
+				<xsd:annotation>
+					<xsd:documentation>PAVER ALSO KNOWN AS FINISHER OR ROAD SURFACER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="R0">
+				<xsd:annotation>
+					<xsd:documentation>ROLLER ALSO KNOWN AS COMPACTOR</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RF">
+				<xsd:annotation>
+					<xsd:documentation>REFRIGERATED VAN ALSO KNOWN AS REEFER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="S0">
+				<xsd:annotation>
+					<xsd:documentation>SNOWBLOWER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SA">
+				<xsd:annotation>
+					<xsd:documentation>SAILPLANE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SB">
+				<xsd:annotation>
+					<xsd:documentation>SMOKER, BAR-B-Q, ROTISSERIE, ETC TYP COOKING DEVICE. OFTEN USED FOR COOKING OUTDOORS, USUALLY IN TRAILER
+						FORM USED FOR LARGE GATHERINGS OR COMMERCIAL USE. CATERING ETC.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SC">
+				<xsd:annotation>
+					<xsd:documentation>SCRAPER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SD">
+				<xsd:annotation>
+					<xsd:documentation>SEDAN USE THIS CODE ONLY IF THE NUMBER OF DOORS IS UNKNOWN</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SE">
+				<xsd:annotation>
+					<xsd:documentation>SEMI USE ONLY WHEN THE SPECIFIC BODY STYLE OF THE SEMI-TRAILERIS UNKNOWN</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SG">
+				<xsd:annotation>
+					<xsd:documentation>STUMP GRINDER; PRIMARILY USED T0 REM0VE REMAINDER 0F TREES 0R EXTREMELY HEAVY ROOTED SHRUBBERY OR BRUSH
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SH">
+				<xsd:annotation>
+					<xsd:documentation>SHOVEL ALSO KNOWN AS A POWER OR STEAMSHOVEL</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SI">
+				<xsd:annotation>
+					<xsd:documentation>STRIPER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SM">
+				<xsd:annotation>
+					<xsd:documentation>SNOWMOBILE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SQ">
+				<xsd:annotation>
+					<xsd:documentation>SEARCH &amp; RESCUE VEHICLE; FIRST RESP0NDER VEHICLES</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SS">
+				<xsd:annotation>
+					<xsd:documentation>SWEEPER ALSO KNOWN AS POWER BROOM USED TO CLEAN STREETS AND PARKING LOTS</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ST">
+				<xsd:annotation>
+					<xsd:documentation>STAKE OR RACK</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SW">
+				<xsd:annotation>
+					<xsd:documentation>STATION WAGON</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SY">
+				<xsd:annotation>
+					<xsd:documentation>SPRAYER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SZ">
+				<xsd:annotation>
+					<xsd:documentation>SAW USED IN CUTTING ASPHALT,CONCRETE OR MASONRY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TA">
+				<xsd:annotation>
+					<xsd:documentation>TREE HARVESTER ALSO KNOWN AS A FELLER-BUNCHER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TC">
+				<xsd:annotation>
+					<xsd:documentation>TRACTOR, TRACK TYPE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TD">
+				<xsd:annotation>
+					<xsd:documentation>AUTO TOW DOLLY TWO=WHEELED TOWING EQUIPMENT</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TE">
+				<xsd:annotation>
+					<xsd:documentation>TENT TRAILER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TF">
+				<xsd:annotation>
+					<xsd:documentation>TRACTOR, WHEEL TYPE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TH">
+				<xsd:annotation>
+					<xsd:documentation>TRENCHER ALSO KNOWN AS A DITCHER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TN">
+				<xsd:annotation>
+					<xsd:documentation>TANKER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TR">
+				<xsd:annotation>
+					<xsd:documentation>TRACTOR TRUCK, GASOLINE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TT">
+				<xsd:annotation>
+					<xsd:documentation>TOW TRUCK/WRECKER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UL">
+				<xsd:annotation>
+					<xsd:documentation>ULTRALIGHT (INCLUDING HANG GLIDERS)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UT">
+				<xsd:annotation>
+					<xsd:documentation>UTILITY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UV">
+				<xsd:annotation>
+					<xsd:documentation>UTILITY VEHICLE; USUALLY USED FOR FARM &amp; GARDEN, OUTDOOR RECREATION OR INDUSTRIAL USE. CONTAINS A
+						FLAT OR CONVERTABLE BED. SOME MODELS CONTAIN A DUMPING OR TILTING MECHANISM
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VA">
+				<xsd:annotation>
+					<xsd:documentation>VACUUM CLEANER HEAVY-DUTY RIDE-ON TYPE ENTER AS PART IF NOT PERMANENTLY MOUNTED</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VC">
+				<xsd:annotation>
+					<xsd:documentation>VAN CAMPER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VN">
+				<xsd:annotation>
+					<xsd:documentation>VAN INCLUDES OPEN OR CLOSED TOP BOX TRAILERS</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VT">
+				<xsd:annotation>
+					<xsd:documentation>VANETTE</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WD">
+				<xsd:annotation>
+					<xsd:documentation>WELL DRILLER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WE">
+				<xsd:annotation>
+					<xsd:documentation>WELDER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WN">
+				<xsd:annotation>
+					<xsd:documentation>WINDROWER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WS">
+				<xsd:annotation>
+					<xsd:documentation>WOOD SPLITTER</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--**************************************** -->
+	<!--**************************************** -->
+	<!--**************************************** -->
+	<!--NCIC Element Declarations -->
+	<!--**************************************** -->
+	<!--**************************************** -->
+	<!--**************************************** -->
+	<!-- A -->
+	<xsd:element name="ActivityAugmentation" type="vq-results-ext:ActivityAugmentationType" substitutionGroup="nc:ActivityAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about an activity.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AdditionalOffenseIndictator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if an additional offense is being entered; false otherwise.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddressAugmentation" type="vq-results-ext:AddressAugmentationType" substitutionGroup="nc:AddressAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about an address.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddressCategoryCodeText" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>A description of an address category.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Truncated for scr:PersonAddressAssociation/nc:AssociationDateRange/nc:EndDate <xsd:element name="AddressEndDate" type="nc:DateType"> 
+		<xsd:annotation> <xsd:documentation>A date ending the term in which an address was used.</xsd:documentation> </xsd:annotation> </xsd:element> -->
+	<!-- Truncated for scr:PersonAddressAssociation/nc:AssociationDateRange/nc:StartDate <xsd:element name="AddressStartDate" type="nc:DateType"> 
+		<xsd:annotation> <xsd:documentation>A date beginning the term in which an address was used.</xsd:documentation> </xsd:annotation> 
+		</xsd:element> -->
+	<xsd:element name="AgencyNotificationIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if notification should be sent to the investigative agency; false otherwise.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ArticleRecord" type="vq-results-ext:ArticleRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data about an article record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AssociationAugmentation" type="vq-results-ext:SupplementalRecordAugmentationType"
+		substitutionGroup="nc:AssociationAugmentationPoint ">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about an association.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- B -->
+	<xsd:element name="BenefitsActivity" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Data about benefits activity.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="BenefitsItemOffenseSummaryAssociation" type="vq-results-ext:BenefitsItemOffenseSummaryAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>An association between a benefits item and an offense summary.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- C -->
+	<xsd:element name="CaseAugmentation" type="vq-results-ext:CaseAugmentationType" substitutionGroup="nc:CaseAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a case.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CaseInvestigativeInterestIncidentAssociation" type="vq-results-ext:ActivityCaseOrganizationAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>An association between a case, incident, and organization.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CaseRecoveryIncidentAssociation" type="vq-results-ext:ActivityCaseOrganizationAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>An association between a case, incident, activity, and organization.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CaseRemovalIncidentAssociation" type="vq-results-ext:CaseRemovalIncidentAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>An association between a removal case, incident and activity.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CodeManualCount" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A count of code manuals.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CommonRecord" type="vq-results-ext:CommonRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data a common NCIC record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ContactInformationAugmentation" type="vq-results-ext:ContactInformationAugmentationType"
+		substitutionGroup="nc:ContactInformationAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a contact.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ControlNumberID" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>SPRQ control number.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConveyanceColorPrimaryCodeText" type="nc:TextType" substitutionGroup="nc:ItemColor">
+		<xsd:annotation>
+			<xsd:documentation>A single, upper-most, front-most, or majority color of a vehicle.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConveyanceColorSecondaryCodeText" type="nc:TextType" substitutionGroup="nc:ItemColor">
+		<xsd:annotation>
+			<xsd:documentation>A lower-most or rear-most color of a two-tone vehicle or a lesser color of a multi-colored vehicle.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConveyancePartAugmentation" type="vq-results-ext:ConveyancePartAugmentationType"
+		substitutionGroup="j:ConveyancePartAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a conveyance part.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConveyancePartBrandCodeText" type="nc:TextType" substitutionGroup="j:ConveyancePartBrand">
+		<xsd:annotation>
+			<xsd:documentation>A brand name or manufacturer name of a conveyance part.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConveyanceRegistrationPlateCategoryCode" type="vq-results-ext:LITCodeType" substitutionGroup="j:ConveyanceRegistrationPlateCategory">
+		<xsd:annotation>
+			<xsd:documentation>A kind of registration plate or license plate of a conveyance.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CourtOrderAugmentation" type="vq-results-ext:CourtOrderAugmentationType" substitutionGroup="j:CourtOrderAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a court order</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CourtOrderServiceStatus" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a court order</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CourtOrderServiceText" type="nc:TextType" substitutionGroup="vq-results-ext:CourtOrderServiceStatus">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a court order</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CriminalOrganizationAugmentation" type="vq-results-ext:CriminalOrganizationAugmentationType"
+		substitutionGroup="j:CriminalOrganizationAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a criminal organization.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- D -->
+	<xsd:element name="Detainment" type="vq-results-ext:DetainmentType">
+		<xsd:annotation>
+			<xsd:documentation>A data pertaining to the detainment of a wanted person.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DNALocationText" type="xsd:string" substitutionGroup="j:DNACollectionStatus">
+		<xsd:annotation>
+			<xsd:documentation>A descritpion of the location of DNA attached to the NCIC record.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DocumentedAddressDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>A date an address was documented.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Truncated for RecordValidationDate <xsd:element name="DocumentValidationDate" type="nc:DateType" substitutionGroup="nc:ActivityDateRepresentation"> 
+		<xsd:annotation> <xsd:documentation>A date a document was validated.</xsd:documentation> </xsd:annotation> </xsd:element> -->
+	<!-- E -->
+	<xsd:element name="EntityAugmentation" type="vq-results-ext:EntityAugmentationType" substitutionGroup="nc:OrganizationAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about an entity.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ExtendedNameSearchIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if the requesting agency wishes to search additional patterns of a submitted name; false otherwise.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- F -->
+	<xsd:element name="FingerprintClassificationText" type="nc:TextType" substitutionGroup="j:PhysicalFeatureClassText">
+		<xsd:annotation>
+			<xsd:documentation>A description of a person's fingerprints.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FirearmMakeCodeText" type="nc:TextType" substitutionGroup="j:FirearmMake">
+		<xsd:annotation>
+			<xsd:documentation>A manufacturer of a firearm.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ForiegnPostalCodeText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A foriegn postal code.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FraudulentDriverLicense" type="j:DriverLicenseType">
+		<xsd:annotation>
+			<xsd:documentation>A fraudulent driver license.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FraudulentDriverLicenseIdentification" type="j:DriverLicenseType">
+		<xsd:annotation>
+			<xsd:documentation>A Fradulent license possessed by a person granting driving privileges.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FraudulentPerson" type="nc:PersonType">
+		<xsd:annotation>
+			<xsd:documentation>Fradulent data about a person</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FraudulentRecordIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>An boolean value to indicate if the records is fraudulent information.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- G -->
+	<xsd:element name="GangMemberRecord" type="vq-results-ext:GangKSTMemberRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to Gang Members record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GangReferenceRecord" type="vq-results-ext:GangKSTMemberRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to Gang Organization record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GunRecord" type="vq-results-ext:GunRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data about a gun record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- H -->
+	<!-- I -->
+	<xsd:element name="IdentityTheftCategoryText" type="nc:TextType" substitutionGroup="nc:ActivityCategoryText">
+		<xsd:annotation>
+			<xsd:documentation>Data about a type of identity theft.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IdentityTheftRecord" type="vq-results-ext:IdentityTheftRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data about an identity theft record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ImageConveyancePart" type="j:ConveyancePartType">
+		<xsd:annotation>
+			<xsd:documentation>Image data for a conveyance part.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ImageIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if the requesting agency wishes to have images returned; false otherwise.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ImagePerson" type="nc:PersonType">
+		<xsd:annotation>
+			<xsd:documentation>Data about a person in an image.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ImageRecord" type="vq-results-ext:ImageRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data about an image record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IncidentAugmentation" type="vq-results-ext:IncidentAugmentationType" substitutionGroup="nc:IncidentAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about an incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="InvestigativeInterest" type="vq-results-ext:InvestigativeInterestType">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to an investigative interest.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="InternetID" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to internet identification.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ImageItem" type="nc:ItemType">
+		<xsd:annotation>
+			<xsd:documentation>An image of an item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ItemAugmentation" type="vq-results-ext:ItemAugmentationType" substitutionGroup="nc:ItemAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about an item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ItemRegistrationAssociationAugmentation" type="vq-results-ext:SupplementalRecordAugmentationType"
+		substitutionGroup="j:ItemRegistrationAssociationAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about an item registration association.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- J -->
+	<!-- K -->
+	<xsd:element name="KnownSuspectedTerroristMemberRecord" type="vq-results-ext:GangKSTMemberRecordType"
+		substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to Known and Suspected Terrorists record.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="KnownSuspectedTerroristReferenceRecord" type="vq-results-ext:GangKSTMemberRecordType"
+		substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to Known and Suspected Terrorists Organization record.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- L -->
+	<xsd:element name="LicensePlateRecord" type="vq-results-ext:LicensePlateRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data about a license plate.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LocateCancellationIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if the flag for locate cancellation is 'Y'; false otherwise.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Depricated element, replaced by nc:LocationArea, used by ARE <xsd:element name="LocationAugmentationPoint" type="vq-results-ext:LocationAugmentationPointType" 
+		substitutionGroup="nc:LocationAugmentationPoint"> <xsd:annotation> <xsd:documentation>Additional information about a location.</xsd:documentation> 
+		</xsd:annotation> </xsd:element> -->
+	<!-- M -->
+	<xsd:element name="MatchFieldData" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A data type that contains up to 3 matching MFC codes (in text format) for an unknown or missing person
+				match search; if more than 3 MFC codes match, the value of this element should be 'ALL FIELDS'.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageDateTime" type="niem-xsd:dateTime">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a given NCIC message.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageIdentification" type="nc:IdentificationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to represent the user provided message id.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageInterfacingOrganization" type="vq-results-ext:MessageInterfacingOrganizationType"
+		abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>A data type to represent the user provided message id.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageOrigin" type="vq-results-ext:MessageInterfacingOrganizationType" substitutionGroup="vq-results-ext:MessageInterfacingOrganization">
+		<xsd:annotation>
+			<xsd:documentation>A data type to represent the user provided message id.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageDestination" type="vq-results-ext:MessageInterfacingOrganizationType" substitutionGroup="vq-results-ext:MessageInterfacingOrganization">
+		<xsd:annotation>
+			<xsd:documentation>A data type to represent the user provided message id.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageTransaction" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>An abstract data type for message transaction.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageTransactionText" type="nc:TextType" substitutionGroup="vq-results-ext:MessageTransaction">
+		<xsd:annotation>
+			<xsd:documentation>A data type for message transaction.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Deprecated element, replaced by nc:AreaDescriptionText, used by ARE <xsd:element name="MissingPersonAreaText" type="nc:TextType"> 
+		<xsd:annotation> <xsd:documentation>Text to describe the area of a missing person.</xsd:documentation> </xsd:annotation> </xsd:element> -->
+	<xsd:element name="MissingPersonRecord" type="vq-results-ext:MissingPersonRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a NCIC missing person record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- N -->
+	<xsd:element name="NewsletterCount" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A count of newsletters.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NICSDeniedRecord" type="vq-results-ext:NICSDeniedRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a NICS Denied record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NICSTransactionID" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>NICS transaction number</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NonExpiringDateText" substitutionGroup="nc:DateAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>A field that contains a NONEXP if the date is non expiring.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NotificationDateTime" type="niem-xsd:dateTime">
+		<xsd:annotation>
+			<xsd:documentation>A date and time of an NCIC notification.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NotifyInvestigativeAgencyIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if the investigative agency wishes to be notified is their record is hit on; false otherwise.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NotifyOriginatingAgencyIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if the original agency wishes to be notified if their record is hit on; false otherwise.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- O -->
+	<xsd:element name="OffenseAugmentation" type="vq-results-ext:OffenseAugmentationType" substitutionGroup="j:OffenseAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about an offense.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OffenseNCICCodeTranslationText" type="nc:TextType" substitutionGroup="j:OffenseDesignation">
+		<xsd:annotation>
+			<xsd:documentation>A description of an NCIC offense code.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OffenseSummaryAugmentation" type="vq-results-ext:OffenseSummaryAugmentationType"
+		substitutionGroup="j:OffenseSummaryAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about an offense summary.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OffenseSummaryPersonsFoundQuantity" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A quantity of offense summary persons found.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OperatingManualCount" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A count of operating manuals.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OrganizationAugmentation" type="vq-results-ext:OrganizationAugmentationType" substitutionGroup="nc:OrganizationAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about an organization.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OrganizationDocumentCount" type="vq-results-ext:OrganizationDocumentCountType">
+		<xsd:annotation>
+			<xsd:documentation>A count of organization documents.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ORIRecord" type="vq-results-ext:ORIRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to an ORI record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- P -->
+	<xsd:element name="PersonAddressCategory" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for an address category</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonAddressAssociationAugmentation" type="vq-results-ext:PersonAddressAssociationAugmentationType"
+		substitutionGroup="scr:PersonAddressAssociationAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a person's address.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonIncarcerationAssociation" type="vq-results-ext:PersonIncarcerationAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>An association between person information and incarceration information.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonWithInformation" type="vq-results-ext:PersonWithInformationType">
+		<xsd:annotation>
+			<xsd:documentation>data pertaining to a NCIC person with information.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonEmploymentEducationAssociationAugmentation" type="vq-results-ext:PersonEmploymentEducationAssociationAugmentationType"
+		substitutionGroup="nc:PersonEmploymentAssociationAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a person's employment association.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonEstimatedBirthYearDateRange" substitutionGroup="nc:DateAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Estimated Year of Birth, SHALL have a value of 4 numerics followed by a '-' (hyphen) followed by 4
+				numerics in the format 'AAAA-BBBB'.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonMatchData" type="vq-results-ext:PersonMatchDataType">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a match field data and dental match for an unidentified or missing person.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonMiscellaneous" type="vq-results-ext:PersonMiscellaneousType">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a miscellaneous person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonProfessionalCertificateTypeText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of a person's professional certificate type.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ProtectionOrderAugmentation" type="vq-results-ext:ProtectionOrderAugmentationType"
+		substitutionGroup="j:ProtectionOrderAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a protection order.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ProtectionOrderServiceInformationCodeText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the protection order service inforamation code.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ProtectionOrderExpirationDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>A date of expiration for a protection order.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ProtectionOrderRecord" type="vq-results-ext:ProtectionOrderRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a protection order record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Truncated for j:ProtectionOrder/j:CourtOrderServiceDate <xsd:element name="ProtectionOrderServiceDate" type="nc:DateType"> 
+		<xsd:annotation> <xsd:documentation>A date of protection order service.</xsd:documentation> </xsd:annotation> </xsd:element> -->
+	<xsd:element name="ProtectiveInterestRecord" type="vq-results-ext:ProtectiveInterestRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a protective interest.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PublicDisseminationDateText" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>A description of if and when a submitting agency wishes to have the record published.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PurgeDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>A date of purging.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- R -->
+	<xsd:element name="Record" type="vq-results-ext:RecordType" abstract="false">
+		<xsd:annotation>
+			<xsd:documentation>Abstract data pertaining to an NCIC record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RecordExpirationDate" type="nc:DateType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date when NCIC will automatically remove the record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RecordValidationDate" type="nc:DateType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date a document was validated.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RecordPurgeDate" type="nc:DateType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date when the user selects for the record to be removed.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RecordRemovalReasonText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A data element that holds the reason data is being removed from a system.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RecordStatus" type="vq-results-ext:RecordStatusType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A status of an NCIC record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RecoveredItemOffenseSummaryAssociation" type="vq-results-ext:RecoveredItemOffenseSummaryAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>An association between a recovered item and an offense summary.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RelatedSearchHitIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if the submitting agency wishes to recieve related hits; false otherwise.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReleaseDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>A date of release.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RestrictedPerson" type="nc:PersonType">
+		<xsd:annotation>
+			<xsd:documentation>Data about a restricted person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- S -->
+	<xsd:element name="SecuritiesRecord" type="vq-results-ext:SecuritiesRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a securities record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SentryRecord" type="vq-results-ext:SentryRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a sentry record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SchoolName" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A name of a school.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SexualOffenderRecord" type="vq-results-ext:SexualOffenderRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a sexual offender record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StatusAugmentation" type="vq-results-ext:StatusAugmentationType" substitutionGroup="nc:StatusAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a status.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StatusIssuerOrganization" type="nc:OrganizationType">
+		<xsd:annotation>
+			<xsd:documentation>An organization which assigns a status.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StopPlacedDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>A date that a stop was placed.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupervisedReleaseRecord" type="vq-results-ext:SupervisedReleaseRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a supervised release record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupervisorContactInformationAssociation" type="vq-results-ext:SupervisorContactInformationAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>An association between the supervisor contact and the supervisor contact's information.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupplementalContactInformation" type="nc:ContactInformationType">
+		<xsd:annotation>
+			<xsd:documentation>Additional contact information.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupplementalPerson" type="nc:PersonType">
+		<xsd:annotation>
+			<xsd:documentation>Addition Data about a person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupplementalPersonEmploymentAssociation" type="nc:PersonEmploymentAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a person with employment.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupplementalPersonMiscellaneous" type="vq-results-ext:PersonMiscellaneousType">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a miscellaneous person.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupplementalPersonWithInformation" type="nc:PersonType">
+		<xsd:annotation>
+			<xsd:documentation>Additional data about a person with information.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupplementalProtectionOrder" type="j:ProtectionOrderType">
+		<xsd:annotation>
+			<xsd:documentation>Additaional data about a protection order.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupplementalRestrictedPerson" type="nc:PersonType">
+		<xsd:annotation>
+			<xsd:documentation>Additional data about a restricted person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupplementalRecordIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>An boolean value to indicate if the records is supplemental information.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupplementalSubjectVictimAssociation" type="vq-results-ext:SupplementalSubjectVictimAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>Additional data about a subject victim association.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupplementalVictim" type="j:VictimType">
+		<xsd:annotation>
+			<xsd:documentation>Additional data about a victim.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupplementalVictimMiscellaneous" type="vq-results-ext:VictimMiscellaneousType">
+		<xsd:annotation>
+			<xsd:documentation>Additional data about a miscellaneous victim.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- T -->
+	<xsd:element name="TotalNumberOfDentalMatches" type="nc:NumericType">
+		<xsd:annotation>
+			<xsd:documentation>A count of the total amount of matches from a dental data compare.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TotalNumberOfPossibleDentalMatches" type="nc:NumericType">
+		<xsd:annotation>
+			<xsd:documentation>A count of the total amount of possible matches from a dental data compare.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TotalNumberOfDentalMismatches" type="nc:NumericType">
+		<xsd:annotation>
+			<xsd:documentation>A count of the total amount of mismatches from a dental data compare.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TOUCount">
+		<xsd:annotation>
+			<xsd:documentation>A count of TOUs.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- U -->
+	<xsd:element name="UnidentifiedPersonRecord" type="vq-results-ext:UnidentifiedPersonRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to an unidentified person record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UserCodeID" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>User code number.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- V -->
+	<xsd:element name="VehicleRecord" type="vq-results-ext:VehicleRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>data pertaining to a NCIC vehicle record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleMakeCodeText" type="nc:TextType" substitutionGroup="nc:VehicleMake">
+		<xsd:annotation>
+			<xsd:documentation>A manufacturer of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleModelCodeText" type="nc:TextType" substitutionGroup="nc:VehicleModel">
+		<xsd:annotation>
+			<xsd:documentation>A specific design or class of vehicle made by a manufacturer.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRegistrationImageAssociation" type="j:ItemRegistrationAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>An associaiton between a vehicle and registration that are the subject of a picture.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleStyleCode" type="vq-results-ext:VSTCodeType" substitutionGroup="nc:ItemStyle">
+		<xsd:annotation>
+			<xsd:documentation>A style of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VesselMakeCodeText" type="nc:TextType" substitutionGroup="nc:VesselMake">
+		<xsd:annotation>
+			<xsd:documentation>A manufacturer of a vessel.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VesselColorPrimaryCodeText" type="nc:TextType" substitutionGroup="nc:ItemColor">
+		<xsd:annotation>
+			<xsd:documentation>A color of the majority of a vessel.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VesselColorSecondaryCodeText" type="nc:TextType" substitutionGroup="nc:ItemColor">
+		<xsd:annotation>
+			<xsd:documentation>A minor color of a vessel.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VesselRegistrationImageAssociation" type="j:ItemRegistrationAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>An association between a vessel and registration that are the subject of a picture.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VictimMiscellaneous" type="vq-results-ext:VictimMiscellaneousType">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a miscellaneous victim.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VictimToSubjectRelationshipCodeText" type="nc:TextType" substitutionGroup="j:VictimToSubjectRelationship">
+		<xsd:annotation>
+			<xsd:documentation>Text to describe the victim to subject relationship code.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ViolationDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>A date describing the date of violation.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ViolentPersonCriteriaCodeText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Text to describe the violent person criteria code.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ViolentPersonRecord" type="vq-results-ext:ViolentPersonRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a violent person record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- W -->
+	<xsd:element name="WantedPersonRecord" type="vq-results-ext:WantedPersonRecordType" substitutionGroup="vq-results-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>data pertaining to a NCIC wanted person record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

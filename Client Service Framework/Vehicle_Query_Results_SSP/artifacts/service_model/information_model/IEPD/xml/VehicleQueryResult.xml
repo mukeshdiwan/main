@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vq-results:Exchange xmlns:osms="http://osms.org/osms/NIEM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/" xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+	xmlns:vq-results="http://osms.org/Exchange/VehicleQueryResults/1.0" xmlns:vq-results-ext="http://osms.org/Extensions/VehicleQueryResults/1.0"
+	xsi:schemaLocation="http://osms.org/Exchange/VehicleQueryResults/1.0 ../xsd/VehicleQueryResults.xsd">
+	<!-- ******************************************************************************** -->
+	<!-- vq-results:Message. -->
+	<!-- ******************************************************************************** -->
+	<vq-results:Message>
+		<!-- HDR - Header -->
+		<vq-results-ext:MessageIdentification>
+			<nc:IdentificationID>1N01YZ08P2271000000</nc:IdentificationID>
+		</vq-results-ext:MessageIdentification>
+		<vq-results-ext:MessageDestination>
+			<j:OrganizationORIIdentification>
+				<!-- ORI - Originating agency identifier -->
+				<nc:IdentificationID>WV2000000</nc:IdentificationID>
+			</j:OrganizationORIIdentification>
+		</vq-results-ext:MessageDestination>
+		<vq-results:PrimaryHitData s:ref="PrimaryHitDataSection" />
+		<vq-results:IncomingRecordData s:ref="IncomingStolenVehicleEnterDataSection" />
+		<!--  vq-results:NoHitData s:ref="d77e28-NoHit_vehicleIncomingQueryDataSection" /-->
+	</vq-results:Message>
+	<!-- ******************************************************************************** -->
+	<!-- ncic-ex:NoHitData. -->
+	<!-- ******************************************************************************** -->
+	<!-- vq-results:NoHitData s:id="d77e28-NoHit_vehicleIncomingQueryDataSection">
+		<nc:CaveatText>**TEST**THIS RESPONSE IS FROM NCIC TEST SYSTEM.</nc:CaveatText>
+		<nc:CaveatText>VERIFY VIN/WDBBA48D1GA051451; IT DOES NOT CONFORM TO VIN STANDARDS FOR 1981 AND LATER VEHICLES</nc:CaveatText>
+		<nc:CaveatText>NO RECORD VIN-SER-OAN</nc:CaveatText>
+		<vq-results-ext:VehicleRecord s:ref="VehicleRecordData" />
+	</vq-results:NoHitData -->
+	<!-- ******************************************************************************** -->
+	<!-- vq-results:IncomingRecordData (enter). -->
+	<!-- ******************************************************************************** -->
+	<vq-results:IncomingRecordData s:id="IncomingStolenVehicleEnterDataSection">
+		<vq-results-ext:VehicleRecord s:ref="VehicleRecordData" />
+	</vq-results:IncomingRecordData>
+	<!-- ******************************************************************************** -->
+	<!-- vq-results:PrimaryHitData. -->
+	<!-- ******************************************************************************** -->
+	<vq-results:PrimaryHitData s:id="PrimaryHitDataSection">
+		<!-- Caveat data -->
+		<nc:CaveatText>*** VERIFY VIN/WDBBA48D1GA051451; IT DOES NOT CONFORM TO VIN STANDARDS FOR 1981 AND LATER VEHICLES</nc:CaveatText>
+		<!-- Caveat data -->
+		<nc:CaveatText>ATTENTION: THE SOC USED IN YOUR TRANSACTION HAS NOT BEEN ASSIGNED BY THE SOCIAL SECURITY ADMINISTRATION. PLEASE CHECK FOR A DATA ENTRY ERROR.</nc:CaveatText>
+		<vq-results-ext:VehicleRecord s:ref="VehicleRecordData" />
+	</vq-results:PrimaryHitData>
+	<!-- ******************************************************************************** -->
+	<!-- vq-results-ext:VehicleRecord. -->
+	<!-- ******************************************************************************** -->
+	<vq-results-ext:VehicleRecord s:id="VehicleRecordData">
+		<!-- Caveat data -->
+		<nc:CaveatText>**TEST**THIS RESPONSE IS FROM NCIC TEST SYSTEM.</nc:CaveatText>
+		<!-- Caveat data -->
+		<nc:CaveatText>IMMED CONFIRM RECORD WITH ORI</nc:CaveatText>
+		<!-- Caveat data -->
+		<nc:CaveatText>WARNING - THE FOLLOWING STOLEN VEHICLE RECORD CONTAINS EXPIRED LICENSE PLATE DATA. USE CAUTION, CONTACT
+			ENTERING AGENCY TO CONFIRM STATUS.
+		</nc:CaveatText>
+		<!-- Caveat data -->
+		<nc:CaveatText>WARNING – THE FOLLOWING VEHICLE RECORD CONTAINS EXPIRED LICENSE PLATE DATA. USE CAUTION, CONTACT ENTERING
+			AGENCY TO CONFIRM STATUS.
+		</nc:CaveatText>
+		<!-- Caveat data -->
+		<nc:CaveatText>RECORD NIC/NIC32001 IS BASED ON PARTIAL VIN SEARCH - VERIFY ALL DATA BEFORE TAKING FURTHER ACTION BASED ON THIS
+			RESPONSE
+		</nc:CaveatText>
+		<!-- Caveat data -->
+		<nc:CaveatText>RECORD NIC/NIC32001 IS BASED ON LIC SEARCH ONLY (LIS NOT SEARCHED) - VERIFY ALL DATA BEFORE TAKING FURTHER
+			ACTION BASED ON THIS RESPONSE
+		</nc:CaveatText>
+		<nc:Incident s:ref="VehicleIncident" />
+		<nc:LastUpdatedDate>
+			<!-- DLU - Date of last update -->
+			<nc:DateTime>2007-12-12T11:00:00-05:00</nc:DateTime>
+		</nc:LastUpdatedDate>
+		<!-- ORI-Translation - Originating agency identifier -->
+		<nc:OrganizationDescriptionText>
+			ORI IS <!--<ATR> -->
+			WV STATE PRISON <!--<CT1> -->
+			3045551234
+		</nc:OrganizationDescriptionText>
+		<nc:ReportedDate>
+			<!-- DTE - Date of Entry -->
+			<nc:DateTime>2005-05-20T14:00:00-04:00</nc:DateTime>
+		</nc:ReportedDate>
+		<vq-results-ext:InvestigativeInterest s:ref="InvestigativeInterestIncident" />
+		<!-- MKT - Message Key Translation -->
+		<vq-results-ext:MessageTransactionText>STOLEN VEHICLE - OCCUPANT(S) ARMED</vq-results-ext:MessageTransactionText>
+		<!-- NOA - Notify originating agency -->
+		<vq-results-ext:NotifyOriginatingAgencyIndicator>true</vq-results-ext:NotifyOriginatingAgencyIndicator>
+		<vq-results-ext:RecordExpirationDate>
+			<!-- Retirement-Timestamp -->
+			<nc:Date>2006-03-01</nc:Date>
+		</vq-results-ext:RecordExpirationDate>
+		<vq-results-ext:RecordStatus>
+			<nc:StatusDate>
+				<!-- DOR - Date of recovery -->
+				<nc:Date>2005-10-27</nc:Date>
+			</nc:StatusDate>
+			<nc:StatusText>CLEARED</nc:StatusText>
+			<vq-results-ext:StatusAugmentation>
+				<!-- RCA - Recovering Agency Case number -->
+				<j:CaseNumberText>WVV998169</j:CaseNumberText>
+				<vq-results-ext:StatusIssuerOrganization s:ref="RecoveryOrganization" />
+			</vq-results-ext:StatusAugmentation>
+		</vq-results-ext:RecordStatus>
+		<j:ItemNCICIdentification>
+			<!-- NIC - NCIC number -->
+			<nc:IdentificationID>V0123456789</nc:IdentificationID>
+		</j:ItemNCICIdentification>
+		<!-- Vehicle and Vehicle Registration Info Association -->
+		<j:ConveyanceRegistrationAssociation>
+			<j:ItemRegistration s:ref="VehicleLicensePlateInfo" />
+			<nc:Item s:ref="PrimaryVehicleInfo" />
+			<j:ItemRegistrationHolder s:ref="person_registrantPerson" />
+		</j:ConveyanceRegistrationAssociation>
+		<!-- OPT - Opt Type – Vehicle -->
+		<vq-results-ext:PublicDisseminationDateText>IN AS OF 2011-11-11</vq-results-ext:PublicDisseminationDateText>
+		<!-- Vehicle Image and Registration Info Association -->
+		<vq-results-ext:VehicleRegistrationImageAssociation>
+			<j:ItemRegistration s:ref="VehicleImageRegistration" />
+			<nc:Item s:ref="VehicleImageInfo" />
+		</vq-results-ext:VehicleRegistrationImageAssociation>
+	</vq-results-ext:VehicleRecord>
+	<!-- ******************************************************************************** -->
+	<!-- nc:Address. (Vehicle Registrant Residence) -->
+	<!-- ******************************************************************************** -->
+	<nc:Address s:id="PersonResidence">
+		<nc:LocationStreet>
+			<!-- SNU - Street number -->
+			<nc:StreetNumberText>8001</nc:StreetNumberText>
+			<!-- SNA - Street name -->
+			<nc:StreetName>LINCOLN BOULEVARD</nc:StreetName>
+		</nc:LocationStreet>
+		<!-- CTY - City name -->
+		<nc:LocationCityName>BETHESDA</nc:LocationCityName>
+		<!-- STA - State name -->
+		<j:LocationStateNCICLSTACode>MD</j:LocationStateNCICLSTACode>
+		<!-- ZIP - Zip code -->
+		<nc:LocationPostalCode>30001</nc:LocationPostalCode>
+	</nc:Address>
+	<!-- ******************************************************************************** -->
+	<!-- nc:Address. (Vehicle Registrant Mailing) -->
+	<!-- ******************************************************************************** -->
+	<nc:Address s:id="PersonMailingAddress">
+		<nc:LocationStreet>
+			<!-- ADD StreetFullText -->
+			<!-- SNU - Street number -->
+			<nc:StreetNumberText>8001</nc:StreetNumberText>
+			<!-- SNA - Street name -->
+			<nc:StreetName>LINCOLN BOULEVARD</nc:StreetName>
+		</nc:LocationStreet>
+		<!-- CTY - City name -->
+		<nc:LocationCityName>BETHESDA</nc:LocationCityName>
+		<!-- STA - State name -->
+		<j:LocationStateNCICLSTACode>MD</j:LocationStateNCICLSTACode>
+		<!-- ZIP - Zip code -->
+		<nc:LocationPostalCode>30001</nc:LocationPostalCode>
+	</nc:Address>
+	<!-- ******************************************************************************** -->
+	<!-- nc:ContactInformation. (RegistrantPerson) -->
+	<!-- ******************************************************************************** -->
+	<nc:ContactInformation s:id="PersonContactInfo">
+		<nc:ContactMailingAddress s:ref="PersonMailingAddress" />
+	</nc:ContactInformation>
+	<!-- ******************************************************************************** -->
+	<!-- nc:Incident. (vehicle) -->
+	<!-- ******************************************************************************** -->
+	<nc:Incident s:id="VehicleIncident">
+		<nc:ActivityDate>
+			<!-- DOT - Date of theft -->
+			<nc:Date>2005-10-27</nc:Date>
+		</nc:ActivityDate>
+		<nc:ActivityDate>
+			<!--CDE - Canadian Date of Entry -->
+			<nc:Date>2005-10-27</nc:Date>
+		</nc:ActivityDate>
+		<!-- MIS - Miscellaneous remarks -->
+		<nc:ActivityDescriptionText>VEHICLE STOLEN FROM MAIN STREET</nc:ActivityDescriptionText>
+		<j:ActivityAugmentation>
+			<j:CaseLinkage>
+				<!-- LKA - Linkage Case Number -->
+				<j:CaseLinkageNumberText>WV-123456</j:CaseLinkageNumberText>
+				<j:OrganizationORIIdentification>
+					<!-- LKI - Linkage Agency Identifier -->
+					<nc:IdentificationID>WV456123</nc:IdentificationID>
+				</j:OrganizationORIIdentification>
+			</j:CaseLinkage>
+			<!-- OCA - Originating Agency Case Number -->
+			<j:CaseNumberText>WVV990167</j:CaseNumberText>
+			<j:ActivityDocumentValidator>
+				<nc:EntityOrganization s:ref="ValidationOrganization" />
+			</j:ActivityDocumentValidator>
+		</j:ActivityAugmentation>
+		<vq-results-ext:ActivityAugmentation>
+			<vq-results-ext:RecordValidationDate>
+				<!-- VLD - Date of Last Validation -->
+				<nc:Date>2005-10-27</nc:Date>
+			</vq-results-ext:RecordValidationDate>
+		</vq-results-ext:ActivityAugmentation>
+	</nc:Incident>
+	<!-- ******************************************************************************** -->
+	<!-- nc:Organization. (validator) -->
+	<!-- ******************************************************************************** -->
+	<nc:Organization s:id="ValidationOrganization">
+		<!-- VLN - Name of validator -->
+		<nc:OrganizationName>WV DMV</nc:OrganizationName>
+	</nc:Organization>
+	<!-- ******************************************************************************** -->
+	<!-- nc:Organization. (investigative interest) -->
+	<!-- ******************************************************************************** -->
+	<nc:Organization s:id="InvestigativeInterestOrganization">
+		<!-- ATR - Agency translation -->
+		<nc:OrganizationName>WV STATE PRISON</nc:OrganizationName>
+		<nc:OrganizationPrimaryContactInformation>
+			<nc:ContactTelephoneNumber>
+				<nc:FullTelephoneNumber>
+					<!-- CT1 - Confirmation Telephone Number (Primary) -->
+					<nc:TelephoneNumberFullID>3045551234</nc:TelephoneNumberFullID>
+				</nc:FullTelephoneNumber>
+			</nc:ContactTelephoneNumber>
+		</nc:OrganizationPrimaryContactInformation>
+		<j:OrganizationAugmentation>
+			<j:OrganizationORIIdentification>
+				<!-- IIA - Investigative Interest Agency Identifier -->
+				<nc:IdentificationID>WV1000001</nc:IdentificationID>
+			</j:OrganizationORIIdentification>
+		</j:OrganizationAugmentation>
+	</nc:Organization>
+	<!-- ******************************************************************************** -->
+	<!-- nc:Organization. (recovery) -->
+	<!-- ******************************************************************************** -->
+	<nc:Organization s:id="RecoveryOrganization">
+		<j:OrganizationAugmentation>
+			<j:OrganizationORIIdentification>
+				<!-- RRI - Recovery agency identifier -->
+				<nc:IdentificationID>WV1000000</nc:IdentificationID>
+			</j:OrganizationORIIdentification>
+		</j:OrganizationAugmentation>
+	</nc:Organization>
+	<!-- ******************************************************************************** -->
+	<!-- nc:Person. -->
+	<!-- ******************************************************************************** -->
+	<nc:Person s:id="person_registrantPerson">
+		<nc:PersonBirthDate>
+			<!-- DOB - Date of birth -->
+			<nc:Date>1957-08-13</nc:Date>
+		</nc:PersonBirthDate>
+		<!-- NAM - Name -->
+		<nc:PersonName>
+			<nc:PersonGivenName>JOHN</nc:PersonGivenName>
+			<nc:PersonMiddleName>JACOB</nc:PersonMiddleName>
+			<nc:PersonSurName>JONES</nc:PersonSurName>
+			<!-- ADD Suffix -->
+		</nc:PersonName>
+		<!-- SEX - Sex -->
+		<j:PersonSexCode>M</j:PersonSexCode>
+	</nc:Person>
+	<!-- ******************************************************************************** -->
+	<!-- nc:Person Residence Association. -->
+	<!-- ******************************************************************************** -->
+	<nc:PersonResidenceAssociation>
+		<nc:Person s:ref="person_registrantPerson" />
+		<nc:Location>
+			<nc:Address s:ref="PersonResidence" />
+		</nc:Location>
+	</nc:PersonResidenceAssociation>
+	<!-- ******************************************************************************** -->
+	<!-- nc:Vehicle. (image) -->
+	<!-- ******************************************************************************** -->
+	<nc:Vehicle s:id="VehicleImageInfo">
+		<nc:ItemImage>
+			<!-- Image-Data - Image-Data -->
+			<nc:Base64BinaryObject>mrHbPdrko3u1s7ahtgPBjtmO1s85tfG2U7pbofy9</nc:Base64BinaryObject>
+			<!-- MIS - Miscellaneous remarks -->
+			<nc:BinaryDescriptionText>IMAGE OF STOLEN VEHICLE</nc:BinaryDescriptionText>
+			<j:ImageAugmentation>
+				<j:ImageNCICIdentification>
+					<!-- IMN - Image NCIC number -->
+					<nc:IdentificationID>I856563800</nc:IdentificationID>
+				</j:ImageNCICIdentification>
+				<!-- IMT - Image type -->
+				<j:ImageCategoryCode>I</j:ImageCategoryCode>
+			</j:ImageAugmentation>
+		</nc:ItemImage>
+		<!-- VYR - Vehicle year -->
+		<nc:ItemModelYearDate>2006</nc:ItemModelYearDate>
+		<!-- VST - Vehicle style -->
+		<vq-results-ext:VehicleStyleCode>4D</vq-results-ext:VehicleStyleCode>
+		<j:ItemAugmentation>
+			<j:ItemNCICIdentification>
+				<!-- NIC - NCIC number -->
+				<nc:IdentificationID>V0123456789</nc:IdentificationID>
+			</j:ItemNCICIdentification>
+		</j:ItemAugmentation>
+		<nc:VehicleIdentification>
+			<!-- VIN - Vehicle identification number -->
+			<nc:IdentificationID>WDBBA48D1GA051451</nc:IdentificationID>
+		</nc:VehicleIdentification>
+		<!-- VMA - Vehicle make -->
+		<vq-results-ext:VehicleMakeCodeText>MERZ</vq-results-ext:VehicleMakeCodeText>
+		<!-- VMO - Vehicle model -->
+		<vq-results-ext:VehicleModelCodeText>560</vq-results-ext:VehicleModelCodeText>
+	</nc:Vehicle>
+	<!-- ******************************************************************************** -->
+	<!-- nc:Vehicle. (primary) -->
+	<!-- ******************************************************************************** -->
+	<nc:Vehicle s:id="PrimaryVehicleInfo">
+		<!-- OAN - Owner applied number -->
+		<nc:ItemOwnerAppliedID>THE MERRY MERZ</nc:ItemOwnerAppliedID>
+		<!-- VCO - Vehicle color -->
+		<vq-results-ext:ConveyanceColorPrimaryCodeText>BLK</vq-results-ext:ConveyanceColorPrimaryCodeText>
+		<j:ConveyanceColorSecondaryCode>BRZ</j:ConveyanceColorSecondaryCode>
+		<nc:ItemImage>
+			<j:ImageAugmentation>
+				<j:ImageNCICIdentification>
+					<!-- IMN - Image NCIC number -->
+					<nc:IdentificationID>I856563800</nc:IdentificationID>
+				</j:ImageNCICIdentification>
+				<!-- IMT - Image type -->
+				<j:ImageCategoryCode>V</j:ImageCategoryCode>
+			</j:ImageAugmentation>
+		</nc:ItemImage>
+		<!-- VYR - Vehicle year -->
+		<nc:ItemModelYearDate>2006</nc:ItemModelYearDate>
+		<!-- VST - Vehicle style -->
+		<vq-results-ext:VehicleStyleCode>4D</vq-results-ext:VehicleStyleCode>
+		<nc:VehicleIdentification>
+			<!-- VIN - Vehicle identification number -->
+			<nc:IdentificationID>WDBBA48D1GA051451</nc:IdentificationID>
+		</nc:VehicleIdentification>
+		<!-- VMA - Vehicle make -->
+		<vq-results-ext:VehicleMakeCodeText>MERZ</vq-results-ext:VehicleMakeCodeText>
+		<!-- VMO - Vehicle model -->
+		<vq-results-ext:VehicleModelCodeText>560</vq-results-ext:VehicleModelCodeText>
+		<j:VehicleAugmentation>
+			<!-- VOD - Vehicle ownership data -->
+			<j:VehicleOwnershipNICBText>A</j:VehicleOwnershipNICBText>
+		</j:VehicleAugmentation>
+	</nc:Vehicle>
+	<!-- ******************************************************************************** -->
+	<!-- j:ConveyanceRegistration. (image) -->
+	<!-- ******************************************************************************** -->
+	<j:ConveyanceRegistration s:id="VehicleImageRegistration">
+		<j:ConveyanceRegistrationPlateIdentification>
+			<!-- LIC - License plate number -->
+			<nc:IdentificationID>1GH890</nc:IdentificationID>
+			<nc:IdentificationJurisdiction>
+				<!-- LIS - License plate state -->
+				<j:JurisdictionNCICLSTACode>WV</j:JurisdictionNCICLSTACode>
+			</nc:IdentificationJurisdiction>
+		</j:ConveyanceRegistrationPlateIdentification>
+	</j:ConveyanceRegistration>
+	<!-- ******************************************************************************** -->
+	<!-- j:ConveyanceRegistration. -->
+	<!-- ******************************************************************************** -->
+	<j:ConveyanceRegistration s:id="VehicleLicensePlateInfo">
+		<j:ConveyanceRegistrationDecal>
+			<!-- LIY - License plate year of expiration -->
+			<nc:DecalYearDate>1999</nc:DecalYearDate>
+		</j:ConveyanceRegistrationDecal>
+		<j:ConveyanceRegistrationPlateIdentification>
+			<!-- LIC - License plate number -->
+			<nc:IdentificationID>DOE345</nc:IdentificationID>
+			<nc:IdentificationJurisdiction>
+				<!-- LIS - License plate state -->
+				<j:JurisdictionNCICLSTACode>AZ</j:JurisdictionNCICLSTACode>
+			</nc:IdentificationJurisdiction>
+		</j:ConveyanceRegistrationPlateIdentification>
+		<!-- LIT - License plate type -->
+		<vq-results-ext:ConveyanceRegistrationPlateCategoryCode>SC</vq-results-ext:ConveyanceRegistrationPlateCategoryCode>
+	</j:ConveyanceRegistration>
+	<!-- ******************************************************************************** -->
+	<!-- vq-results-ext:InvestigativeInterest. -->
+	<!-- ******************************************************************************** -->
+	<vq-results-ext:InvestigativeInterest s:id="InvestigativeInterestIncident">
+		<nc:ActivityDate>
+			<!-- DII - Date of investigative interest -->
+			<nc:Date>2000-03-12</nc:Date>
+		</nc:ActivityDate>
+		<!-- MIS - Miscellaneous remarks -->
+		<nc:ActivityDescriptionText>UNLOCATED</nc:ActivityDescriptionText>
+		<j:ActivityAugmentation>
+			<!-- ICA - Investigative Interest Case Number -->
+			<j:CaseNumberText>VA-V002948</j:CaseNumberText>
+		</j:ActivityAugmentation>
+		<nc:IncidentJurisdictionalOrganization s:ref="InvestigativeInterestOrganization" />
+	</vq-results-ext:InvestigativeInterest>
+</vq-results:Exchange>
