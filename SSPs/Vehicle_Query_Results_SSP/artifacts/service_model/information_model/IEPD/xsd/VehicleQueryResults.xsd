@@ -48,6 +48,7 @@
 					<xsd:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded" />
 					<xsd:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded" />
 					<xsd:element ref="nc:PersonResidenceAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:ContactInformationAssociation" minOccurs="0" maxOccurs="unbounded" />
 					<xsd:element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded" />
 					<xsd:element ref="j:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded" />
 					<xsd:element ref="vq-results-ext:InvestigativeInterest" minOccurs="0" maxOccurs="unbounded" />

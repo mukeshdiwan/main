@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pq-request-ext="http://osms.org/Extensions/PersonQueryRequest/1.0"
+	xmlns:s="http://release.niem.gov/niem/structures/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:niem-xsd="http://release.niem.gov/niem/proxy/xsd/3.0/"
+	xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/" targetNamespace="http://osms.org/Extensions/PersonQueryRequest/1.0">
+	<xsd:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="../xsd/niem/structures/3.0/structures.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Defined structures for creating types.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="../xsd/niem/niem-core/3.0/niem-core.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Core Data Model.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/domains/jxdm/5.2/" schemaLocation="../xsd/niem/domains/jxdm/5.2/jxdm.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Domain Schema, Justice Exchange, containing The base Justice information.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="../xsd/niem/proxy/xsd/3.0/xs.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM XML Proxy types.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<!-- ********************************************************* -->
+	<!--A -->
+	<xsd:complexType name="ConveyanceRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data that identifies a specific record in OSMS.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pq-request-ext:RecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:ItemNCICIdentification" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ConveyanceRegistrationAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:VehicleRegistrationImageAssociation" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ImageRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for an image record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pq-request-ext:RecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:ImageNCICIdentification" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ItemNCICIdentification" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:PersonNCICIdentification" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ConveyanceRegistrationAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:CriminalOrganization" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Item" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:ItemImage" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Vessel" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ConveyancePart" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:BinaryDescriptionText" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:ImagePerson" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="InvestigativeInterestType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for to contain investigative interests.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="nc:IncidentType">
+				<xsd:sequence>
+					<xsd:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- J -->
+	<!-- L -->
+	<!--M -->
+	<xsd:complexType name="MessageInterfacingOrganizationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data in a OSMS Message.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:OrganizationORIIdentification" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MissingPersonRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure the data pertaining to a OSMS missing person record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pq-request-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="nc:ItemEntityAssociation" minOccurs="0" />
+					<!-- <xsd:element ref="nc:RoleOfPerson" minOccurs="0"/> -->
+					<xsd:element ref="j:MissingPerson" minOccurs="0" />
+					<!-- xsd:element ref="pq-request-ext:PersonMatchData" minOccurs="0" maxOccurs="unbounded"/> <xsd:element ref="pq-request-ext:PersonWithInformation" 
+						minOccurs="0" maxOccurs="unbounded"/> <xsd:element ref="pq-request-ext:PublicDisseminationDateText" minOccurs="0"/> <xsd:element 
+						ref="pq-request-ext:RecoveredItemOffenseSummaryAssociation" minOccurs="0"/ -->
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--N -->
+	<!--P -->
+	<xsd:complexType name="PersonAddressAssociationAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional information about a person address association.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="pq-request-ext:PersonAddressCategory" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonAddressAugmentationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for additional information about a person's address.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:ReportedDate" minOccurs="0" />
+					<!-- xsd:element ref="pq-request-ext:PersonAddressAssociationTypeCode" minOccurs="0"/ -->
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--R -->
+	<xsd:complexType name="RecordStatusType">
+		<xsd:annotation>
+			<xsd:documentation>A status of an OSMS record.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="nc:StatusType">
+				<xsd:sequence>
+					<!-- xsd:element ref="pq-request-ext:RecordRemovalReasonCode" minOccurs="0"/ -->
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="RecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data that identifies a specific record in OSMS.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:ActivityWarrantAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:CaveatText" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Incident" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:LastUpdatedDate" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:OrganizationDescriptionText" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:ReportedDate" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:InvestigativeInterest" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:MessageTransaction" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:RecordExpirationDate" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:RecordPurgeDate" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:RecordRemovalReasonText" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:RecordStatus" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data that identifies a specific record in OSMS.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pq-request-ext:RecordType">
+				<xsd:sequence>
+					<xsd:element ref="nc:ContactInformationAssociation" minOccurs="0" />
+					<xsd:element ref="j:ConveyanceRegistrationAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:DriverLicenseAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:PersonCautionInformationText" minOccurs="0" />
+					<xsd:element ref="j:PersonNCICIdentification" minOccurs="0" />
+					<xsd:element ref="pq-request-ext:FraudulentPerson" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:ImagePerson" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for a OSMS vehicle record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pq-request-ext:ConveyanceRecordType">
+				<xsd:sequence>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ViolentPersonRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for a violent person record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pq-request-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded" />
+					<!-- xsd:element ref="pq-request-ext:ViolentPersonCriteriaCode" minOccurs="0" maxOccurs="unbounded"/ -->
+					<xsd:element ref="pq-request-ext:ViolentPersonCriteriaCodeText" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--W -->
+	<xsd:complexType name="WantedPersonRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for a OSMS wanted person record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pq-request-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:Subject" minOccurs="0" />
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleRegistrantRecordType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data for a OSMS wanted person record.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pq-request-ext:PersonRecordType">
+				<xsd:sequence>
+					<xsd:element ref="j:Subject" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+	<!-- ***********Simple Types************* -->
+	<!--**************************************** -->
+	<!--**************************************** -->
+	<!--**************************************** -->
+	<!--OSMS Element Declarations -->
+	<!--**************************************** -->
+	<!--**************************************** -->
+	<!--**************************************** -->
+	<!-- A -->
+	<xsd:element name="AdditionalOffenseIndictator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if an additional offense is being entered; false otherwise.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddressCategoryCodeText" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>A description of an address category.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Truncated for scr:PersonAddressAssociation/nc:AssociationDateRange/nc:EndDate <xsd:element name="AddressEndDate" type="nc:DateType"> 
+		<xsd:annotation> <xsd:documentation>A date ending the term in which an address was used.</xsd:documentation> </xsd:annotation> </xsd:element> -->
+	<!-- Truncated for scr:PersonAddressAssociation/nc:AssociationDateRange/nc:StartDate <xsd:element name="AddressStartDate" type="nc:DateType"> 
+		<xsd:annotation> <xsd:documentation>A date beginning the term in which an address was used.</xsd:documentation> </xsd:annotation> 
+		</xsd:element> -->
+	<xsd:element name="AgencyNotificationIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if notification should be sent to the investigative agency; false otherwise.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- B -->
+	<xsd:element name="BenefitsActivity" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Data about benefits activity.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConveyanceColorPrimaryCodeText" type="nc:TextType" substitutionGroup="nc:ItemColor">
+		<xsd:annotation>
+			<xsd:documentation>A single, upper-most, front-most, or majority color of a vehicle.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConveyanceColorSecondaryCodeText" type="nc:TextType" substitutionGroup="nc:ItemColor">
+		<xsd:annotation>
+			<xsd:documentation>A lower-most or rear-most color of a two-tone vehicle or a lesser color of a multi-colored vehicle.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConveyancePartBrandCodeText" type="nc:TextType" substitutionGroup="j:ConveyancePartBrand">
+		<xsd:annotation>
+			<xsd:documentation>A brand name or manufacturer name of a conveyance part.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FraudulentDriverLicense" type="j:DriverLicenseType">
+		<xsd:annotation>
+			<xsd:documentation>A fraudulent driver license.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FraudulentDriverLicenseIdentification" type="j:DriverLicenseType">
+		<xsd:annotation>
+			<xsd:documentation>A Fradulent license possessed by a person granting driving privileges.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FraudulentPerson" type="nc:PersonType">
+		<xsd:annotation>
+			<xsd:documentation>Fradulent data about a person</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FraudulentRecordIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>An boolean value to indicate if the records is fraudulent information.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- G -->
+	<xsd:element name="ImageIndicator" type="niem-xsd:boolean">
+		<xsd:annotation>
+			<xsd:documentation>True if the requesting agency wishes to have images returned; false otherwise.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ImagePerson" type="nc:PersonType">
+		<xsd:annotation>
+			<xsd:documentation>Data about a person in an image.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ImageRecord" type="pq-request-ext:ImageRecordType" substitutionGroup="pq-request-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data about an image record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="InvestigativeInterest" type="pq-request-ext:InvestigativeInterestType">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to an investigative interest.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- J -->
+	<!-- K -->
+	<xsd:element name="MessageDateTime" type="niem-xsd:dateTime">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a given OSMS message.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageIdentification" type="nc:IdentificationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to represent the user provided message id.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageInterfacingOrganization" type="pq-request-ext:MessageInterfacingOrganizationType"
+		abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>A data type to represent the user provided message id.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageOrigin" type="pq-request-ext:MessageInterfacingOrganizationType" substitutionGroup="pq-request-ext:MessageInterfacingOrganization">
+		<xsd:annotation>
+			<xsd:documentation>A data type to represent the user provided message id.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageDestination" type="pq-request-ext:MessageInterfacingOrganizationType" substitutionGroup="pq-request-ext:MessageInterfacingOrganization">
+		<xsd:annotation>
+			<xsd:documentation>A data type to represent the user provided message id.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageTransaction" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>An abstract data type for message transaction.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageTransactionText" type="nc:TextType" substitutionGroup="pq-request-ext:MessageTransaction">
+		<xsd:annotation>
+			<xsd:documentation>A data type for message transaction.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MissingPersonRecord" type="pq-request-ext:MissingPersonRecordType" substitutionGroup="pq-request-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a OSMS missing person record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- N -->
+	<xsd:element name="NewsletterCount" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A count of newsletters.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- P -->
+	<xsd:element name="PersonAddressCategory" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for an address category</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- R -->
+	<xsd:element name="Record" type="pq-request-ext:RecordType" abstract="false">
+		<xsd:annotation>
+			<xsd:documentation>Abstract data pertaining to an OSMS record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RecordExpirationDate" type="nc:DateType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date when OSMS will automatically remove the record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RecordValidationDate" type="nc:DateType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date a document was validated.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RecordPurgeDate" type="nc:DateType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date when the user selects for the record to be removed.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RecordRemovalReasonText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A data element that holds the reason data is being removed from a system.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RecordStatus" type="pq-request-ext:RecordStatusType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A status of an OSMS record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- V -->
+	<xsd:element name="VehicleRecord" type="pq-request-ext:VehicleRecordType" substitutionGroup="pq-request-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>data pertaining to a OSMS vehicle record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleMakeCodeText" type="nc:TextType" substitutionGroup="nc:VehicleMake">
+		<xsd:annotation>
+			<xsd:documentation>A manufacturer of a vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleModelCodeText" type="nc:TextType" substitutionGroup="nc:VehicleModel">
+		<xsd:annotation>
+			<xsd:documentation>A specific design or class of vehicle made by a manufacturer.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRegistrationImageAssociation" type="j:ItemRegistrationAssociationType">
+		<xsd:annotation>
+			<xsd:documentation>An associaiton between a vehicle and registration that are the subject of a picture.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VesselColorPrimaryCodeText" type="nc:TextType" substitutionGroup="nc:ItemColor">
+		<xsd:annotation>
+			<xsd:documentation>A color of the majority of a vessel.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ViolentPersonCriteriaCodeText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Text to describe the violent person criteria code.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ViolentPersonRecord" type="pq-request-ext:ViolentPersonRecordType" substitutionGroup="pq-request-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a violent person record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- W -->
+	<xsd:element name="WantedPersonRecord" type="pq-request-ext:WantedPersonRecordType" substitutionGroup="pq-request-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>data pertaining to a OSMS wanted person record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+		<xsd:element name="VehicleRegistrantRecord" type="pq-request-ext:VehicleRegistrantRecordType" substitutionGroup="pq-request-ext:Record">
+		<xsd:annotation>
+			<xsd:documentation>data pertaining to a OSMS vehicle registrant record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

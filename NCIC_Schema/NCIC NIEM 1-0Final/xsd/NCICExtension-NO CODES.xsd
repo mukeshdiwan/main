@@ -1,0 +1,2304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ncic="http://cjis.fbi.gov/ncic/NIEM"
+    xmlns:ncic-ex="http://cjis.fbi.gov/ncic/NIEM/Exchange"
+    xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+    xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
+    xmlns:niem-xsd="http://release.niem.gov/niem/proxy/xsd/3.0/"
+    xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+    xmlns:scr="http://release.niem.gov/niem/domains/screening/3.2/"
+    xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/3.2/"
+    xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/"
+    targetNamespace="http://cjis.fbi.gov/ncic/NIEM">
+
+
+    <xsd:import namespace="http://release.niem.gov/niem/structures/3.0/"
+        schemaLocation="../xsd/niem/structures/3.0/structures.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Defined structures for creating types.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/niem-core/3.0/"
+        schemaLocation="../xsd/niem/niem-core/3.0/niem-core.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Core Data Model.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/domains/maritime/3.2/"
+        schemaLocation="../xsd/niem/domains/maritime/3.2/maritime.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Maritime Data Model.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/domains/jxdm/5.2/"
+        schemaLocation="../xsd/niem/domains/jxdm/5.2/jxdm.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Domain Schema, Justice Exchange, containing The base Justice
+                information.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"
+        schemaLocation="../xsd/niem/proxy/xsd/3.0/xs.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM XML Proxy types.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/domains/screening/3.2/"
+        schemaLocation="../xsd/niem/domains/screening/3.2/screening.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Domain Schema, Screening Portfolio of DHS, containing The base
+                Screening information.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/domains/internationalTrade/3.2/"
+        schemaLocation="../xsd/niem/domains/internationalTrade/3.2/internationalTrade.xsd">
+        <xsd:annotation>
+            <xsd:documentation>NIEM Domain Schema, International Trade.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <xsd:import namespace="http://release.niem.gov/niem/domains/cbrn/3.2/"
+        schemaLocation="niem/domains/cbrn/3.2/cbrn.xsd">
+        <xsd:annotation>
+            <xsd:documentation>Chemical, Biological, Radiological, and Nuclear
+                Domain</xsd:documentation>
+        </xsd:annotation>
+    </xsd:import>
+
+    <!-- ********************************************************* -->
+    <!--A-->
+    <xsd:complexType name="ActivityAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional data about an
+                activity.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="j:CaseNumberText" minOccurs="0"/>
+                    <xsd:element ref="ncic:ControlNumberID" minOccurs="0"/>
+                    <!-- Truncated for ncic:RecordValidationDate
+                    <xsd:element ref="ncic:DocumentValidationDate" minOccurs="0"/>
+                    -->
+					<xsd:element ref="ncic:RecordValidationDate" minOccurs="0"/>
+                    <xsd:element ref="ncic:StopPlacedDate" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="ActivityCaseOrganizationAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for an association between an Activity, Case, and
+                Organization.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:Activity" minOccurs="0"/>
+                    <xsd:element ref="nc:Case" minOccurs="0"/>
+                    <xsd:element ref="nc:Incident" minOccurs="0"/>
+                    <xsd:element ref="nc:Organization" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="AddressAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional data about an address.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <!-- Truncated. Moved to scr:PersonAddressAugmentation
+                    <xsd:element ref="ncic:AddressCategoryCodeText" minOccurs="0"/>                   
+                    <xsd:element ref="ncic:AddressStartDate" minOccurs="0"/>
+                    <xsd:element ref="ncic:AddressEndDate" minOccurs="0"/>
+                    -->
+                    <xsd:element ref="ncic:DocumentedAddressDate" minOccurs="0"/>
+                    <xsd:element ref="ncic:ForiegnPostalCodeText" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="ArticleRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure the data in an article
+                record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:ItemRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:Item" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:ImageItem" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:PublicDisseminationDateText" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- B -->
+    <xsd:complexType name="BenefitsItemOffenseSummaryAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure the data in a benefits item and offense
+                summary association.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:Item"/>
+                    <xsd:element ref="j:OffenseSummary"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="BoatRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure the data in a boat
+                record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:ConveyanceRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="ncic:VesselRegistrationImageAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <!-- C -->
+    <xsd:complexType name="CaseAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional data about a case.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="j:LocationStateNCICLSTACode" minOccurs="0"/>
+                    <xsd:element ref="j:SentenceDate" minOccurs="0"/>
+                    <xsd:element ref="ncic:NICSTransactionID" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+   
+    <xsd:complexType name="CaseRemovalIncidentAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for an association between a removal activity, case and
+                incident.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:Activity" minOccurs="0"/>
+                    <xsd:element ref="nc:Case" minOccurs="0"/>
+                    <xsd:element ref="nc:Incident" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+   
+    <xsd:complexType name="ContactInformationAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional contact information</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="ncic:InternetID"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="ConveyancePartAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional conveyance part
+                information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="j:EngineHorsepowerQuantity"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="ConveyanceRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data that identifies a specific record in
+                NCIC.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:RecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:ItemNCICIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:ConveyanceRegistrationAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    
+                    <xsd:element ref="ncic:PublicDisseminationDateText" minOccurs="0"/>
+                    <xsd:element ref="ncic:RecoveredItemOffenseSummaryAssociation" minOccurs="0"/>
+                    <xsd:element ref="ncic:RelatedSearchHitIndicator" minOccurs="0"/>
+                    <xsd:element ref="ncic:VehicleRegistrationImageAssociation" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+     
+    <xsd:complexType name="CourtOrderAugmentationType">
+     <xsd:annotation>
+      <xsd:documentation>A data type for additional court order
+       information.</xsd:documentation>
+     </xsd:annotation>
+     <xsd:complexContent>
+      <xsd:extension base="s:ObjectType">
+       <xsd:sequence>
+        <xsd:element ref="ncic:CourtOrderServiceStatus" minOccurs="0" maxOccurs="2"/>
+       </xsd:sequence>
+      </xsd:extension>
+     </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CriminalOrganizationAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional criminal organization
+                information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="j:ImageNCICIdentification"/>
+                    <xsd:element ref="j:ImageCategoryCode"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CommonRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure common record data that identifies a
+                specific record in NCIC.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:RecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:OffenseSubjectAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="j:OffenseSummary" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:PersonNCICIdentification" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="j:ProtectionOrder" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:RegisteredOffender" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- D -->
+
+    <xsd:complexType name="DetainmentType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for the detainment of a wanted
+                person.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="nc:ActivityType">
+                <xsd:sequence>
+                    <xsd:element ref="j:Incarceration" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Sentence" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!--E-->
+    
+    <xsd:complexType name="EntityAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional data about an entity.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <!-- Truncated for ncic:RecordValidationDate
+                    <xsd:element ref="ncic:DocumentValidationDate" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    -->
+                    <xsd:element ref="ncic:RecordValidationDate" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- G -->
+    <xsd:complexType name="GangKSTMemberRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data for gang and known or appropiately
+                suspected terrorist records.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:PersonRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:CriminalOrganization" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:CriminalOrganizationNCICIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="GunRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data in a gun record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:ItemRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:Firearm" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!--H-->
+
+    <!--I-->
+    <xsd:complexType name="IdentityTheftRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data in a identity theft
+                record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:PersonRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="ImageRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data for an image
+                record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:RecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:ImageNCICIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:ItemNCICIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:PersonNCICIdentification" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="j:ConveyanceRegistrationAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="j:CriminalOrganization" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+
+                    <xsd:element ref="nc:Item" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemImage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Vessel" minOccurs="0" maxOccurs="unbounded"/>
+
+                    <xsd:element ref="j:ConveyancePart" minOccurs="0" maxOccurs="unbounded"/>
+
+
+                    <xsd:element ref="nc:BinaryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:ImagePerson" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="InvestigativeInterestType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for to contain investigative
+                interests.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="nc:IncidentType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="IncidentAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional data about an
+                incident.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="j:PersonPasswordText" minOccurs="0"/>
+                    <xsd:element ref="ncic:NICSTransactionID" minOccurs="0"/>
+                    <xsd:element ref="ncic:PurgeDate" minOccurs="0"/>
+                    <xsd:element ref="ncic:ReleaseDate" minOccurs="0"/>
+                    <xsd:element ref="ncic:ViolationDate" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="ItemAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional data about an item.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="it:CommodityUNDGIdentificationText"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- J -->
+    
+    <!-- L -->
+    <xsd:complexType name="LicensePlateRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure license plate record
+                data.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:ItemRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded"
+                    />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+<!-- Deprecated element, was used by ARE
+    <xsd:complexType name="LocationAugmentationPointType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure additional location
+                information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="ncic:MissingPersonAreaText"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+-->
+
+    <!--M-->
+    <xsd:complexType name="MessageInterfacingOrganizationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data in a NCIC Message.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="j:OrganizationORIIdentification" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="MissingPersonRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure the data pertaining to a NCIC missing person
+                record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:PersonRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ItemEntityAssociation" minOccurs="0"/>
+                    <!-- <xsd:element ref="nc:RoleOfPerson" minOccurs="0"/> -->
+                    <xsd:element ref="j:MissingPerson" minOccurs="0"/>
+                    <xsd:element ref="ncic:PersonMatchData" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:PersonWithInformation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:PublicDisseminationDateText" minOccurs="0"/>
+                    <xsd:element ref="ncic:RecoveredItemOffenseSummaryAssociation" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!--N-->
+    <xsd:complexType name="NICSDeniedRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure the NICS Denied record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:PersonRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonResidenceAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!--O-->
+    
+    <xsd:complexType name="OffenseAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional information about an
+                Offense.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="ncic:AdditionalOffenseIndictator" minOccurs="0"/>
+                    <xsd:element ref="ncic:OriginalOffense" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="OffenseSummaryAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for addConveyanceRegistrationAssociationitional
+                information about an offense summary.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonArmedIndicator" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element ref="j:SubjectArmedIndicator" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element ref="j:PersonHitResultsText" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element ref="ncic:OffenseSummaryPersonsFoundQuantity" minOccurs="0"
+                        maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="OrganizationAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional information about an
+                organization.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="ncic:OrganizationDocumentCount"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="OrganizationDocumentCountType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for organization document counts.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="ncic:CodeManualCount"/>
+                    <xsd:element ref="ncic:NewsletterCount"/>
+                    <xsd:element ref="ncic:OperatingManualCount"/>
+                    <xsd:element ref="ncic:TOUCount"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="ORIRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for information about an ORI record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:RecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:OffenseSubjectAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactEntity" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:UserCodeID" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="OriginalOffenseType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for information about a record's original
+                offense.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <!--  xsd:element ref="ncic:OffenseNCICCode" minOccurs="0"/-->
+                    <xsd:element ref="ncic:OffenseNCICCodeTranslationText" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!--P-->
+ <xsd:complexType name="PersonAddressAssociationAugmentationType">
+  <xsd:annotation>
+   <xsd:documentation>A data type for additional information about a person address association.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexContent>
+   <xsd:extension base="s:ObjectType">
+    <xsd:sequence>
+     <xsd:element ref="ncic:PersonAddressCategory"/>
+    </xsd:sequence>
+   </xsd:extension>
+  </xsd:complexContent>
+ </xsd:complexType>
+
+    <xsd:complexType name="PersonDentalCharacteristicType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for a person's dental
+                characteristics.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <!--  xsd:element ref="ncic:PersonDentalCharacteristicNCICCode"/-->
+                    <xsd:element ref="j:ToothPositionIDCode"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="PersonAddressAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional information about a person's
+                address.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ReportedDate" minOccurs="0"/>
+                    <!--  xsd:element ref="ncic:PersonAddressAssociationTypeCode" minOccurs="0"/-->
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="PersonEmploymentEducationAssociationAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional information about a person's employment
+                association.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="j:PersonProfessionalCertificateText"/>
+                    <xsd:element ref="ncic:PersonProfessionalCertificateTypeText"/>
+                    <xsd:element ref="ncic:SchoolName" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="PersonIncarcerationAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type structure for a person incarceration
+                association.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:Person"/>
+                    <xsd:element ref="j:Incarceration"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="PersonMatchDataType">
+        <xsd:annotation>
+            <xsd:documentation>A data type structure for the match field data and dental match for
+                an unidentified or missing person</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="ncic:MatchFieldData" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element ref="ncic:TotalNumberOfDentalMatches" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element ref="ncic:TotalNumberOfDentalMismatches" minOccurs="0"
+                        maxOccurs="1"/>
+                    <xsd:element ref="ncic:TotalNumberOfPossibleDentalMatches" minOccurs="0"
+                        maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="PersonMiscellaneousType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for information about a miscellaneous
+                person.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:EmployeeOccupationText"/>
+                    <xsd:element ref="nc:OrganizationName"/>
+                    <xsd:element ref="j:PersonCautionInformationText"/>
+                    <xsd:element ref="j:PersonProfessionalCertificateText"/>
+                    <xsd:element ref="ncic:PersonProfessionalCertificateTypeText"/>
+                    <xsd:element ref="ncic:SchoolName"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="PersonWithInformationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data for a NCIC person with
+                information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:RoleOfPerson" minOccurs="0"/>
+                    <xsd:element ref="nc:StatusDescriptionText" minOccurs="0"/>
+                    <xsd:element ref="ncic:SupplementalPersonWithInformation" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="ProtectionOrderAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional data about a protection
+                order.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="ncic:ProtectionOrderExpirationDate" minOccurs="0"/>
+                    <!-- Truncated for j:ProtectionOrder/ncic:CourtOrderAugmentation/ncic:CourtOrderServiceStatus
+                    <xsd:element ref="ncic:ProtectionOrderServiceInformationCode" minOccurs="0"/>
+                    <xsd:element ref="ncic:ProtectionOrderServiceInformationCodeText" minOccurs="0"/>
+                    -->
+                    <!-- Truncated for j:ProtectionOrder/j:CourtOrderServiceDate/nc:Date
+                    <xsd:element ref="ncic:ProtectionOrderServiceDate" minOccurs="0"/>
+                    -->
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="ProtectionOrderRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure protection order data.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:PersonRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:ProtectionOrder" minOccurs="0"/>
+                    <xsd:element ref="j:Subject" minOccurs="0"/>
+                    <xsd:element ref="ncic:RestrictedPerson" minOccurs="0"/>
+
+                    <xsd:element ref="ncic:SupplementalProtectionOrder" minOccurs="0"/>
+                    <xsd:element ref="ncic:SupplementalRestrictedPerson" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="ProtectiveInterestRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure protective interest
+                data.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:PersonRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:Subject" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!--R-->
+    <xsd:complexType name="RecordStatusType">
+        <xsd:annotation>
+            <xsd:documentation>A status of an NCIC record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="nc:StatusType">
+                <xsd:sequence>
+                    <!-- xsd:element ref="ncic:RecordRemovalReasonCode" minOccurs="0"/-->
+                </xsd:sequence>
+        </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="RecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data that identifies a specific record in
+                NCIC.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="j:ActivityWarrantAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+
+                    <xsd:element ref="nc:CaveatText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Incident" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LastUpdatedDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationDescriptionText" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ReportedDate" minOccurs="0" maxOccurs="unbounded"/>
+
+                    <xsd:element ref="ncic:InvestigativeInterest" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:MessageTransaction" minOccurs="0" maxOccurs="unbounded"/>
+
+                    <xsd:element ref="ncic:NotifyInvestigativeAgencyIndicator" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:NotifyOriginatingAgencyIndicator" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:RecordExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:RecordPurgeDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:RecordRemovalReasonText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:RecordStatus" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="PersonRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data that identifies a specific record in
+                NCIC.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:RecordType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ContactInformationAssociation" minOccurs="0"/>
+
+                    <xsd:element ref="j:ConveyanceRegistrationAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="j:DriverLicenseAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="j:PersonCautionInformationText" minOccurs="0"/>
+                    <xsd:element ref="j:PersonNCICIdentification" minOccurs="0"/>
+
+                    <xsd:element ref="scr:PersonAddressAssociation" minOccurs="0" maxOccurs="unbounded"/>
+
+                    <xsd:element ref="ncic:ExtendedNameSearchIndicator" minOccurs="0"/>
+
+                    <xsd:element ref="ncic:FraudulentPerson" minOccurs="0" maxOccurs="unbounded"/>
+
+                    <xsd:element ref="ncic:ImagePerson" minOccurs="0" maxOccurs="unbounded"/>
+
+                    <xsd:element ref="ncic:SupplementalContactInformation" minOccurs="0"/>
+                    <xsd:element ref="ncic:SupplementalPerson" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="ItemRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data that identifies a specific record in
+                NCIC.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:RecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:ItemNCICIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:ItemRegistrationAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:RecoveredItemOffenseSummaryAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="RecoveredItemOffenseSummaryAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure the data for a recovered item and offense
+                summary association.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:Item" minOccurs="0"/>
+                    <xsd:element ref="j:OffenseSummary" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- S -->
+    <xsd:complexType name="SecuritiesRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure the data for a securities
+                record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:ItemRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:Securities" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="SentryRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure the data for a sentry
+                record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:PersonRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:Offense" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Sentence" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:PersonIncarcerationAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="SexualOffenderRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure the data for a sexual
+                offender.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:PersonRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:FacilityPersonAssociation" minOccurs="0"/>
+                    <xsd:element ref="nc:PersonEmploymentAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+					<xsd:element ref="nc:PersonResidenceAssociation" minOccurs="0"
+						maxOccurs="unbounded"/>
+                    <xsd:element ref="j:OffenseChargeAssociation" minOccurs="0"/>
+                    <xsd:element ref="j:RegisteredOffender" minOccurs="0"/>
+                    <xsd:element ref="j:RegisteredOffenderOffenseOfRegistrationAssociation"
+                        minOccurs="0"/>
+                    <xsd:element ref="j:SubjectVictimAssociation" minOccurs="0"/>
+                    <xsd:element ref="ncic:SupplementalPersonEmploymentAssociation" minOccurs="0"/>
+                    <xsd:element ref="ncic:SupplementalPersonMiscellaneous" minOccurs="0"/>
+                    <xsd:element ref="ncic:SupplementalSubjectVictimAssociation" minOccurs="0"/>
+					
+                    <xsd:element ref="ncic:SupplementalVictim" minOccurs="0"/>
+                    <xsd:element ref="ncic:SupplementalVictimMiscellaneous" minOccurs="0"/>
+
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="StatusAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>An data type to extend status type.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="j:CaseNumberText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:StatusIssuerOrganization" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="SupervisedReleaseRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure the data for a supervised release
+                record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:PersonRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:ActivitySubjectAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Probation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Sentence" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:SupervisedRelease" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Warrant" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:OffenseArrestAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:SupervisorContactInformationAssociation" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="SupervisorContactInformationAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ContactEntity"/>
+                    <xsd:element ref="nc:ContactInformation"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="SupplementalRecordAugmentationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type for additional information about an item registration
+                association.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="ncic:FraudulentRecordIndicator" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:SupplementalRecordIndicator" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="SupplementalSubjectVictimAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:Victim" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="j:VictimToSubjectRelationshipCode" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:VictimToSubjectRelationshipCodeText" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- T -->
+    
+    <!-- U -->
+    <xsd:complexType name="UnidentifiedPersonRecordType">
+        <xsd:complexContent>
+            <xsd:extension base="ncic:PersonRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ItemEntityAssociation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonCurrentLocationAssociation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:JurisdictionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <!--                    <xsd:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded" />-->
+                    <xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!--V-->
+    <xsd:complexType name="VehicleBoatPartRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure the data for a vehicle boat part
+                record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:ItemRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:ConveyancePart" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:ImageConveyancePart" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="VehicleRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data for a NCIC vehicle
+                record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:ConveyanceRecordType">
+                <xsd:sequence> </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="VictimMiscellaneousType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data for a miscellaneous
+                victim.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="s:ObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="j:VictimToSubjectRelationshipCode"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="ViolentPersonRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data for a violent person
+                record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:PersonRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
+
+                    <!--  xsd:element ref="ncic:ViolentPersonCriteriaCode" minOccurs="0"
+                        maxOccurs="unbounded"/-->
+                    <xsd:element ref="ncic:ViolentPersonCriteriaCodeText" minOccurs="0"
+                        maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!--W-->
+    <xsd:complexType name="WantedPersonRecordType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to structure data for a NCIC wanted person
+                record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ncic:PersonRecordType">
+                <xsd:sequence>
+                    <xsd:element ref="j:OffenseSubjectAssociation" minOccurs="0"/>
+                    <xsd:element ref="j:Subject" minOccurs="0"/>
+                    <xsd:element ref="j:Warrant" minOccurs="0"/>
+
+                    <xsd:element ref="ncic:Detainment" minOccurs="0"/>
+                    <xsd:element ref="ncic:LocateCancellationIndicator" minOccurs="0"/>
+                    <xsd:element ref="ncic:PersonMatchData" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="ncic:PublicDisseminationDateText" minOccurs="0"/>
+                    <xsd:element ref="ncic:RecoveredItemOffenseSummaryAssociation" minOccurs="0"/>
+                    <xsd:element ref="ncic:RelatedSearchHitIndicator" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- ***********Simple Types************* -->
+
+    <!--****************************************-->
+    <!--****************************************-->
+    <!--****************************************-->
+
+    <!--NCIC Element Declarations-->
+
+    <!--****************************************-->
+    <!--****************************************-->
+    <!--****************************************-->
+
+    <!-- A -->
+    <xsd:element name="ActivityAugmentation" type="ncic:ActivityAugmentationType"
+        substitutionGroup="nc:ActivityAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about an activity.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="AdditionalOffenseIndictator" type="niem-xsd:boolean">
+        <xsd:annotation>
+            <xsd:documentation>True if an additional offense is being entered; false
+                otherwise.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="AddressAugmentation" type="ncic:AddressAugmentationType"
+        substitutionGroup="nc:AddressAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about an address.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="AddressCategoryCodeText" type="xsd:string">
+        <xsd:annotation>
+            <xsd:documentation>A description of an address category.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- Truncated for scr:PersonAddressAssociation/nc:AssociationDateRange/nc:EndDate
+    <xsd:element name="AddressEndDate" type="nc:DateType">
+        <xsd:annotation>
+            <xsd:documentation>A date ending the term in which an address was
+                used.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    -->
+
+    <!-- Truncated for scr:PersonAddressAssociation/nc:AssociationDateRange/nc:StartDate
+    <xsd:element name="AddressStartDate" type="nc:DateType">
+        <xsd:annotation>
+            <xsd:documentation>A date beginning the term in which an address was
+                used.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    -->
+
+    <xsd:element name="AgencyNotificationIndicator" type="niem-xsd:boolean">
+        <xsd:annotation>
+            <xsd:documentation>True if notification should be sent to the investigative agency;
+                false otherwise.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ArticleRecord" type="ncic:ArticleRecordType" substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data about an article record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="AssociationAugmentation" type="ncic:SupplementalRecordAugmentationType"
+        substitutionGroup="nc:AssociationAugmentationPoint ">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about an association.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <!-- B -->
+    <xsd:element name="BenefitsActivity" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>Data about benefits activity.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="BenefitsItemOffenseSummaryAssociation"
+        type="ncic:BenefitsItemOffenseSummaryAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>An association between a benefits item and an offense
+                summary.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    
+    <xsd:element name="BoatRecord" type="ncic:BoatRecordType" substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data about a boat record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- C -->
+    <xsd:element name="CaseAugmentation" type="ncic:CaseAugmentationType"
+        substitutionGroup="nc:CaseAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about a case.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="CaseInvestigativeInterestIncidentAssociation"
+        type="ncic:ActivityCaseOrganizationAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>An association between a case, incident, and
+                organization.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="CaseRecoveryIncidentAssociation"
+        type="ncic:ActivityCaseOrganizationAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>An association between a case, incident, activity, and
+                organization.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="CaseRemovalIncidentAssociation"
+        type="ncic:CaseRemovalIncidentAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>An association between a removal case, incident and
+                activity.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="CodeManualCount" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>A count of code manuals.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="CommonRecord" type="ncic:CommonRecordType" substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data a common NCIC record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ContactInformationAugmentation"
+        type="ncic:ContactInformationAugmentationType"
+        substitutionGroup="nc:ContactInformationAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about a contact.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ControlNumberID" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>SPRQ control number.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ConveyanceColorPrimaryCodeText" type="nc:TextType"
+        substitutionGroup="nc:ItemColor">
+        <xsd:annotation>
+            <xsd:documentation>A single, upper-most, front-most, or majority color of a
+                vehicle.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ConveyanceColorSecondaryCodeText" type="nc:TextType"
+        substitutionGroup="nc:ItemColor">
+        <xsd:annotation>
+            <xsd:documentation>A lower-most or rear-most color of a two-tone vehicle or a lesser
+                color of a multi-colored vehicle.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ConveyancePartAugmentation" type="ncic:ConveyancePartAugmentationType"
+        substitutionGroup="j:ConveyancePartAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about a conveyance part.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ConveyancePartBrandCodeText" type="nc:TextType"
+        substitutionGroup="j:ConveyancePartBrand">
+        <xsd:annotation>
+            <xsd:documentation>A brand name or manufacturer name of a conveyance
+                part.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+ 
+    <xsd:element name="CourtOrderAugmentation" type="ncic:CourtOrderAugmentationType"
+     substitutionGroup="j:CourtOrderAugmentationPoint">
+     <xsd:annotation>
+      <xsd:documentation>Additional information about a court order</xsd:documentation>
+     </xsd:annotation>
+    </xsd:element>
+ 
+     <xsd:element name="CourtOrderServiceStatus" abstract="true">
+      <xsd:annotation>
+       <xsd:documentation>Additional information about a court order</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
+ 
+    <xsd:element name="CourtOrderServiceText" type="nc:TextType" substitutionGroup="ncic:CourtOrderServiceStatus">
+     <xsd:annotation>
+      <xsd:documentation>Additional information about a court order</xsd:documentation>
+     </xsd:annotation>
+    </xsd:element>
+  
+    <xsd:element name="CriminalOrganizationAugmentation"
+        type="ncic:CriminalOrganizationAugmentationType"
+        substitutionGroup="j:CriminalOrganizationAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about a criminal
+                organization.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- D -->
+
+    <xsd:element name="Detainment" type="ncic:DetainmentType">
+        <xsd:annotation>
+            <xsd:documentation>A data pertaining to the detainment of a wanted
+                person.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="DNALocationText" type="xsd:string" substitutionGroup="j:DNACollectionStatus">
+        <xsd:annotation>
+            <xsd:documentation>A descritpion of the location of DNA attached to the NCIC
+                record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="DocumentedAddressDate" type="nc:DateType">
+        <xsd:annotation>
+            <xsd:documentation>A date an address was documented.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- Truncated for RecordValidationDate
+    <xsd:element name="DocumentValidationDate" type="nc:DateType"
+        substitutionGroup="nc:ActivityDateRepresentation">
+        <xsd:annotation>
+            <xsd:documentation>A date a document was validated.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    -->
+    <!-- E -->
+    <xsd:element name="EntityAugmentation" type="ncic:EntityAugmentationType"
+        substitutionGroup="nc:OrganizationAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about an entity.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ExtendedNameSearchIndicator" type="niem-xsd:boolean">
+        <xsd:annotation>
+            <xsd:documentation>True if the requesting agency wishes to search additional patterns of
+                a submitted name; false otherwise.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- F -->
+    <xsd:element name="FingerprintClassificationText" type="nc:TextType"
+        substitutionGroup="j:PhysicalFeatureClassText">
+        <xsd:annotation>
+            <xsd:documentation>A description of a person's fingerprints.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="FirearmMakeCodeText" type="nc:TextType" substitutionGroup="j:FirearmMake">
+        <xsd:annotation>
+            <xsd:documentation>A manufacturer of a firearm.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ForiegnPostalCodeText" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>A foriegn postal code.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="FraudulentDriverLicense" type="j:DriverLicenseType">
+        <xsd:annotation>
+            <xsd:documentation>A fraudulent driver license.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="FraudulentDriverLicenseIdentification" type="j:DriverLicenseType">
+        <xsd:annotation>
+            <xsd:documentation>A Fradulent license possessed by a person granting driving
+                privileges.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="FraudulentPerson" type="nc:PersonType">
+        <xsd:annotation>
+            <xsd:documentation>Fradulent data about a person</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="FraudulentRecordIndicator" type="niem-xsd:boolean">
+        <xsd:annotation>
+            <xsd:documentation>An boolean value to indicate if the records is fraudulent
+                information.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+	
+	<!-- G -->
+	
+	<xsd:element name="GangMemberRecord" type="ncic:GangKSTMemberRecordType"
+		substitutionGroup="ncic:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to Gang Members record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	
+	<xsd:element name="GangReferenceRecord" type="ncic:GangKSTMemberRecordType"
+		substitutionGroup="ncic:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to Gang Organization record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	
+
+    <xsd:element name="GunRecord" type="ncic:GunRecordType" substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data about a gun record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- H -->
+    <!-- I -->    
+    <xsd:element name="IdentityTheftCategoryText" type="nc:TextType" substitutionGroup="nc:ActivityCategoryText">
+        <xsd:annotation>
+            <xsd:documentation>Data about a type of identity theft.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    
+    <xsd:element name="IdentityTheftRecord" type="ncic:IdentityTheftRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data about an identity theft record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ImageConveyancePart" type="j:ConveyancePartType">
+        <xsd:annotation>
+            <xsd:documentation>Image data for a conveyance part.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ImageIndicator" type="niem-xsd:boolean">
+        <xsd:annotation>
+            <xsd:documentation>True if the requesting agency wishes to have images returned; false
+                otherwise.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ImagePerson" type="nc:PersonType">
+        <xsd:annotation>
+            <xsd:documentation>Data about a person in an image.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ImageRecord" type="ncic:ImageRecordType" substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data about an image record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="IncidentAugmentation" type="ncic:IncidentAugmentationType"
+        substitutionGroup="nc:IncidentAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about an incident.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="InvestigativeInterest" type="ncic:InvestigativeInterestType">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to an investigative interest.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="InternetID" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to internet identification.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ImageItem" type="nc:ItemType">
+        <xsd:annotation>
+            <xsd:documentation>An image of an item.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ItemAugmentation" type="ncic:ItemAugmentationType"
+        substitutionGroup="nc:ItemAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about an item.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    
+    <xsd:element name="ItemRegistrationAssociationAugmentation"
+        type="ncic:SupplementalRecordAugmentationType"
+        substitutionGroup="j:ItemRegistrationAssociationAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about an item registration
+                association.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+	
+	<!-- J -->
+	
+	<!-- K -->
+	
+	<xsd:element name="KnownSuspectedTerroristMemberRecord" type="ncic:GangKSTMemberRecordType"
+		substitutionGroup="ncic:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to Known and Suspected Terrorists
+				record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	
+	<xsd:element name="KnownSuspectedTerroristReferenceRecord" type="ncic:GangKSTMemberRecordType"
+		substitutionGroup="ncic:Record">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to Known and Suspected Terrorists Organization
+				record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	
+
+    <!-- L -->
+    <xsd:element name="LicensePlateRecord" type="ncic:LicensePlateRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data about a license plate.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="LocateCancellationIndicator" type="niem-xsd:boolean">
+        <xsd:annotation>
+            <xsd:documentation>True if the flag for locate cancellation is 'Y'; false
+                otherwise.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+<!-- Depricated element, replaced by nc:LocationArea, used by ARE
+    <xsd:element name="LocationAugmentationPoint" type="ncic:LocationAugmentationPointType"
+        substitutionGroup="nc:LocationAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about a location.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+ -->
+
+    <!-- M -->
+    <xsd:element name="MatchFieldData" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>A data type that contains up to 3 matching MFC codes (in text format)
+                for an unknown or missing person match search; if more than 3 MFC codes match, the
+                value of this element should be 'ALL FIELDS'.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="MessageDateTime" type="niem-xsd:dateTime">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a given NCIC message.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="MessageIdentification" type="nc:IdentificationType">
+        <xsd:annotation>
+            <xsd:documentation>A data type to represent the user provided message
+                id.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="MessageInterfacingOrganization"
+        type="ncic:MessageInterfacingOrganizationType" abstract="true">
+        <xsd:annotation>
+            <xsd:documentation>A data type to represent the user provided message
+                id.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="MessageOrigin" type="ncic:MessageInterfacingOrganizationType"
+        substitutionGroup="ncic:MessageInterfacingOrganization">
+        <xsd:annotation>
+            <xsd:documentation>A data type to represent the user provided message
+                id.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="MessageDestination" type="ncic:MessageInterfacingOrganizationType"
+        substitutionGroup="ncic:MessageInterfacingOrganization">
+        <xsd:annotation>
+            <xsd:documentation>A data type to represent the user provided message
+                id.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="MessageTransaction" abstract="true">
+        <xsd:annotation>
+            <xsd:documentation>An abstract data type for message transaction.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="MessageTransactionText" type="nc:TextType"
+        substitutionGroup="ncic:MessageTransaction">
+        <xsd:annotation>
+            <xsd:documentation>A data type for message transaction.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+<!-- Deprecated element, replaced by nc:AreaDescriptionText, used by ARE
+    <xsd:element name="MissingPersonAreaText" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>Text to describe the area of a missing person.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+-->
+
+    <xsd:element name="MissingPersonRecord" type="ncic:MissingPersonRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a NCIC missing person record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- N -->
+    <xsd:element name="NewsletterCount" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>A count of newsletters.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="NICSDeniedRecord" type="ncic:NICSDeniedRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a NICS Denied record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="NICSTransactionID" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>NICS transaction number</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+	
+	<xsd:element name="NonExpiringDateText"
+        substitutionGroup="nc:DateAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>A field that contains a NONEXP if the date is non expiring.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="NotificationDateTime" type="niem-xsd:dateTime">
+        <xsd:annotation>
+            <xsd:documentation>A date and time of an NCIC notification.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="NotifyInvestigativeAgencyIndicator" type="niem-xsd:boolean">
+        <xsd:annotation>
+            <xsd:documentation>True if the investigative agency wishes to be notified is their
+                record is hit on; false otherwise.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="NotifyOriginatingAgencyIndicator" type="niem-xsd:boolean">
+        <xsd:annotation>
+            <xsd:documentation>True if the original agency wishes to be notified if their record is
+                hit on; false otherwise.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- O -->
+    <xsd:element name="OffenseAugmentation" type="ncic:OffenseAugmentationType"
+        substitutionGroup="j:OffenseAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about an offense.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="OffenseNCICCodeTranslationText" type="nc:TextType"
+        substitutionGroup="j:OffenseDesignation">
+        <xsd:annotation>
+            <xsd:documentation>A description of an NCIC offense code.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="OffenseSummaryAugmentation" type="ncic:OffenseSummaryAugmentationType"
+        substitutionGroup="j:OffenseSummaryAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about an offense summary.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="OffenseSummaryPersonsFoundQuantity" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>A quantity of offense summary persons found.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="OperatingManualCount" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>A count of operating manuals.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="OrganizationAugmentation" type="ncic:OrganizationAugmentationType"
+        substitutionGroup="nc:OrganizationAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about an organization.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="OrganizationDocumentCount" type="ncic:OrganizationDocumentCountType">
+        <xsd:annotation>
+            <xsd:documentation>A count of organization documents.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ORIRecord" type="ncic:ORIRecordType" substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to an ORI record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="OriginalOffense" type="ncic:OriginalOffenseType">
+        <xsd:annotation>
+            <xsd:documentation>The original offense for a given NCIC record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- P -->
+    
+ <xsd:element name="PersonAddressCategory" type="nc:TextType">
+  <xsd:annotation>
+   <xsd:documentation>A data type for an address category</xsd:documentation>
+  </xsd:annotation>
+ </xsd:element>
+
+    <xsd:element name="PersonAddressAssociationAugmentation" type="ncic:PersonAddressAssociationAugmentationType"
+        substitutionGroup="scr:PersonAddressAssociationAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about a person's address.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+ 	
+    <xsd:element name="PersonDentalCharacteristic" type="ncic:PersonDentalCharacteristicType"
+        substitutionGroup="j:PersonDentalCharacteristicGeneral">
+        <xsd:annotation>
+            <xsd:documentation>Data about a person's dental characteristics.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    
+    <xsd:element name="PersonIncarcerationAssociation"
+        type="ncic:PersonIncarcerationAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>An association between person information and incarceration
+                information.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="PersonWithInformation" type="ncic:PersonWithInformationType">
+        <xsd:annotation>
+            <xsd:documentation>data pertaining to a NCIC person with
+                information.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="PersonEmploymentEducationAssociationAugmentation"
+        type="ncic:PersonEmploymentEducationAssociationAugmentationType"
+        substitutionGroup="nc:PersonEmploymentAssociationAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about a person's employment
+                association.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="PersonEstimatedBirthYearDateRange"
+        substitutionGroup="nc:DateAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Estimated Year of Birth, SHALL have a value of 4 numerics followed by
+                a '-' (hyphen) followed by 4 numerics in the format 'AAAA-BBBB'.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="PersonMatchData" type="ncic:PersonMatchDataType">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a match field data and dental match for an
+                unidentified or missing person.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+
+    <xsd:element name="PersonMiscellaneous" type="ncic:PersonMiscellaneousType">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a miscellaneous person.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="PersonProfessionalCertificateTypeText" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>A description of a person's professional certificate
+                type.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ProtectionOrderAugmentation" type="ncic:ProtectionOrderAugmentationType"
+        substitutionGroup="j:ProtectionOrderAugmentationPoint">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about a protection order.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ProtectionOrderServiceInformationCodeText" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>A description of the protection order service inforamation
+                code.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ProtectionOrderExpirationDate" type="nc:DateType">
+        <xsd:annotation>
+            <xsd:documentation>A date of expiration for a protection order.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ProtectionOrderRecord" type="ncic:ProtectionOrderRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a protection order record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- Truncated for j:ProtectionOrder/j:CourtOrderServiceDate
+    <xsd:element name="ProtectionOrderServiceDate" type="nc:DateType">
+        <xsd:annotation>
+            <xsd:documentation>A date of protection order service.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    -->
+
+    <xsd:element name="ProtectiveInterestRecord" type="ncic:ProtectiveInterestRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a protective interest.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="PublicDisseminationDateText" type="xsd:string">
+        <xsd:annotation>
+            <xsd:documentation>A description of if and when a submitting agency wishes to have the
+                record published.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="PurgeDate" type="nc:DateType">
+        <xsd:annotation>
+            <xsd:documentation>A date of purging.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- R -->
+	<xsd:element name="Record" type="ncic:RecordType" abstract="false">
+		<xsd:annotation>
+			<xsd:documentation>Abstract data pertaining to an NCIC record.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+    <xsd:element name="RecordExpirationDate" type="nc:DateType" nillable="true">
+        <xsd:annotation>
+            <xsd:documentation>A date when NCIC will automatically remove the record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+	
+	<xsd:element name="RecordValidationDate" type="nc:DateType" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>A date a document was validated.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+    
+    <xsd:element name="RecordPurgeDate" type="nc:DateType" nillable="true">
+        <xsd:annotation>
+            <xsd:documentation>A date when the user selects for the record to be removed.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    
+    <xsd:element name="RecordRemovalReasonText" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>A data element that holds the reason data is being removed from a system.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="RecordStatus" type="ncic:RecordStatusType" nillable="true">
+        <xsd:annotation>
+            <xsd:documentation>A status of an NCIC record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    
+    <xsd:element name="RecoveredItemOffenseSummaryAssociation"
+        type="ncic:RecoveredItemOffenseSummaryAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>An association between a recovered item and an offense
+                summary.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="RelatedSearchHitIndicator" type="niem-xsd:boolean">
+        <xsd:annotation>
+            <xsd:documentation>True if the submitting agency wishes to recieve related hits; false
+                otherwise.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ReleaseDate" type="nc:DateType">
+        <xsd:annotation>
+            <xsd:documentation>A date of release.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="RestrictedPerson" type="nc:PersonType">
+        <xsd:annotation>
+            <xsd:documentation>Data about a restricted person.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- S -->
+
+    <xsd:element name="SecuritiesRecord" type="ncic:SecuritiesRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a securities record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SentryRecord" type="ncic:SentryRecordType" substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a sentry record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SchoolName" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>A name of a school.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SexualOffenderRecord" type="ncic:SexualOffenderRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a sexual offender record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+	<xsd:element name="StatusAugmentation" type="ncic:StatusAugmentationType"
+		substitutionGroup="nc:StatusAugmentationPoint">
+		<xsd:annotation>
+			<xsd:documentation>Additional information about a status.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	
+	<xsd:element name="StatusIssuerOrganization" type="nc:OrganizationType">
+		<xsd:annotation>
+			<xsd:documentation>An organization which assigns a status.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	
+
+    <xsd:element name="StopPlacedDate" type="nc:DateType">
+        <xsd:annotation>
+            <xsd:documentation>A date that a stop was placed.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupervisedReleaseRecord" type="ncic:SupervisedReleaseRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a supervised release record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupervisorContactInformationAssociation"
+        type="ncic:SupervisorContactInformationAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>An association between the supervisor contact and the supervisor
+                contact's information.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupplementalContactInformation" type="nc:ContactInformationType">
+        <xsd:annotation>
+            <xsd:documentation>Additional contact information.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupplementalPerson" type="nc:PersonType">
+        <xsd:annotation>
+            <xsd:documentation>Addition Data about a person.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupplementalPersonEmploymentAssociation"
+        type="nc:PersonEmploymentAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about a person with
+                employment.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupplementalPersonMiscellaneous" type="ncic:PersonMiscellaneousType">
+        <xsd:annotation>
+            <xsd:documentation>Additional information about a miscellaneous
+                person.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupplementalPersonWithInformation" type="nc:PersonType">
+        <xsd:annotation>
+            <xsd:documentation>Additional data about a person with information.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupplementalProtectionOrder" type="j:ProtectionOrderType">
+        <xsd:annotation>
+            <xsd:documentation>Additaional data about a protection order.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupplementalRestrictedPerson" type="nc:PersonType">
+        <xsd:annotation>
+            <xsd:documentation>Additional data about a restricted person.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupplementalRecordIndicator" type="niem-xsd:boolean">
+        <xsd:annotation>
+            <xsd:documentation>An boolean value to indicate if the records is supplemental
+                information.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupplementalSubjectVictimAssociation"
+        type="ncic:SupplementalSubjectVictimAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>Additional data about a subject victim
+                association.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupplementalVictim" type="j:VictimType">
+        <xsd:annotation>
+            <xsd:documentation>Additional data about a victim.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="SupplementalVictimMiscellaneous" type="ncic:VictimMiscellaneousType">
+        <xsd:annotation>
+            <xsd:documentation>Additional data about a miscellaneous victim.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- T -->
+    <xsd:element name="TotalNumberOfDentalMatches" type="nc:NumericType">
+        <xsd:annotation>
+            <xsd:documentation>A count of the total amount of matches from a dental data
+                compare.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="TotalNumberOfPossibleDentalMatches" type="nc:NumericType">
+        <xsd:annotation>
+            <xsd:documentation>A count of the total amount of possible matches from a dental data
+                compare.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="TotalNumberOfDentalMismatches" type="nc:NumericType">
+        <xsd:annotation>
+            <xsd:documentation>A count of the total amount of mismatches from a dental data
+                compare.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="TOUCount">
+        <xsd:annotation>
+            <xsd:documentation>A count of TOUs.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- U -->
+    <xsd:element name="UnidentifiedPersonRecord" type="ncic:UnidentifiedPersonRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to an unidentified person record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="UserCodeID" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>User code number.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- V -->
+    <xsd:element name="VehicleRecord" type="ncic:VehicleRecordType" substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>data pertaining to a NCIC vehicle record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="VehicleBoatPartRecord" type="ncic:VehicleBoatPartRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a Vehicle Boat Part record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+   
+    <xsd:element name="VehicleMakeCodeText" type="nc:TextType" substitutionGroup="nc:VehicleMake">
+        <xsd:annotation>
+            <xsd:documentation>A manufacturer of a vehicle.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="VehicleModelCodeText" type="nc:TextType" substitutionGroup="nc:VehicleModel">
+        <xsd:annotation>
+            <xsd:documentation>A specific design or class of vehicle made by a
+                manufacturer.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="VehicleRegistrationImageAssociation" type="j:ItemRegistrationAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>An associaiton between a vehicle and registration that are the
+                subject of a picture.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="VesselMakeCodeText" type="nc:TextType" substitutionGroup="nc:VesselMake">
+        <xsd:annotation>
+            <xsd:documentation>A manufacturer of a vessel.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="VesselColorPrimaryCodeText" type="nc:TextType"
+        substitutionGroup="nc:ItemColor">
+        <xsd:annotation>
+            <xsd:documentation>A color of the majority of a vessel.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="VesselColorSecondaryCodeText" type="nc:TextType"
+        substitutionGroup="nc:ItemColor">
+        <xsd:annotation>
+            <xsd:documentation>A minor color of a vessel.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="VesselRegistrationImageAssociation" type="j:ItemRegistrationAssociationType">
+        <xsd:annotation>
+            <xsd:documentation>An association between a vessel and registration that are the subject
+                of a picture.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="VictimMiscellaneous" type="ncic:VictimMiscellaneousType">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a miscellaneous victim.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="VictimToSubjectRelationshipCodeText" type="nc:TextType"
+        substitutionGroup="j:VictimToSubjectRelationship">
+        <xsd:annotation>
+            <xsd:documentation>Text to describe the victim to subject relationship
+                code.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ViolationDate" type="nc:DateType">
+        <xsd:annotation>
+            <xsd:documentation>A date describing the date of violation.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ViolentPersonCriteriaCodeText" type="nc:TextType">
+        <xsd:annotation>
+            <xsd:documentation>Text to describe the violent person criteria
+                code.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ViolentPersonRecord" type="ncic:ViolentPersonRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>Data pertaining to a violent person record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- W -->
+    <xsd:element name="WantedPersonRecord" type="ncic:WantedPersonRecordType"
+        substitutionGroup="ncic:Record">
+        <xsd:annotation>
+            <xsd:documentation>data pertaining to a NCIC wanted person record.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+</xsd:schema>

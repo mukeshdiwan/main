@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pq-request-ext="http://osms.org/Extensions/PersonQueryRequest/1.0"
+	xmlns:pq-request="http://osms.org/Exchange/PersonQueryRequest/1.0" xmlns:s="http://release.niem.gov/niem/structures/3.0/"
+	xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:niem-xsd="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+	targetNamespace="http://osms.org/Exchange/PersonQueryRequest/1.0">
+	<xsd:import namespace="http://osms.org/Extensions/PersonQueryRequest/1.0" schemaLocation="PersonQueryRequestExtension.xsd">
+		<xsd:annotation>
+			<xsd:documentation>OSMS elements to extend NIEM.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/structures/3.0/" schemaLocation="../xsd/niem/structures/3.0/structures.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Defined structures for creating types.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/niem-core/3.0/" schemaLocation="../xsd/niem/niem-core/3.0/niem-core.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Core Data Model.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/domains/jxdm/5.2/" schemaLocation="../xsd/niem/domains/jxdm/5.2/jxdm.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM Domain Schema, Justice Exchange, containing The base Justice information.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/" schemaLocation="../xsd/niem/proxy/xsd/3.0/xs.xsd">
+		<xsd:annotation>
+			<xsd:documentation>NIEM XML Proxy types.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:import>
+	<xsd:complexType name="ExchangeType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure all data in a OSMS Message.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="pq-request:Message" />
+					<xsd:element ref="pq-request:IncomingRecordData" minOccurs="0" />
+					<xsd:element ref="pq-request:IncomingMessage" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request:NoHitData" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:Record" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Address" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:ContactInformation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Incident" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:PersonResidenceAssociation" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="nc:Vehicle" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:DriverLicense" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:MissingPerson" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:InvestigativeInterest" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="IncomingRecordDataType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data in a OSMS incoming message.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pq-request:MessageRecordDataType">
+				<xsd:sequence>
+					<!-- Not sure if these next four elements should be here. -->
+					<xsd:element ref="pq-request-ext:ImageIndicator" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MessageRecordDataType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data in an OSMS message records.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:CaveatText" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:Record" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MessageType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure data in a OSMS Message.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ObjectType">
+				<xsd:sequence>
+					<xsd:element ref="pq-request-ext:MessageDateTime" minOccurs="0" />
+					<xsd:element ref="pq-request-ext:MessageIdentification" minOccurs="0" />
+					<xsd:element ref="pq-request-ext:MessageInterfacingOrganization" maxOccurs="unbounded" />
+					<xsd:element ref="pq-request-ext:MessageTransaction" minOccurs="0" />
+					<xsd:element ref="pq-request:MessageRecordData" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="NoHitDataType">
+		<xsd:annotation>
+			<xsd:documentation>A data type to structure all data in a OSMS no hit response.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pq-request:MessageRecordDataType">
+				<xsd:sequence>
+					<xsd:element ref="nc:Case" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element ref="j:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--OSMS Exchange Element Declarations -->
+	<xsd:element name="Exchange" type="pq-request:ExchangeType">
+		<xsd:annotation>
+			<xsd:documentation>A data structure that defines the entirety of a OSMS message.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="HitData" abstract="true" substitutionGroup="pq-request:MessageRecordData">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a OSMS record that a query hit on.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IncomingMessage" type="pq-request:MessageType">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a given OSMS message.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IncomingRecordData" type="pq-request:IncomingRecordDataType" substitutionGroup="pq-request:MessageRecordData">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to an incoming transaction to OSMS.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Message" type="pq-request:MessageType">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a given OSMS message.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageRecordData" type="pq-request:MessageRecordDataType" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>An abstract data type for message record data.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NoHitData" type="pq-request:NoHitDataType" substitutionGroup="pq-request:MessageRecordData">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining from a query that did not hit on any OSMS Records.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PrimaryHitData" type="pq-request:MessageRecordDataType" substitutionGroup="pq-request:HitData">
+		<xsd:annotation>
+			<xsd:documentation>Data pertaining to a OSMS record that a query hit on directly.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

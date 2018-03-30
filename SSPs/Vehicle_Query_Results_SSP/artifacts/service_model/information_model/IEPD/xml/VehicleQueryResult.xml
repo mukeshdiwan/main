@@ -19,17 +19,15 @@
 		</vq-results-ext:MessageDestination>
 		<vq-results:PrimaryHitData s:ref="PrimaryHitDataSection" />
 		<vq-results:IncomingRecordData s:ref="IncomingStolenVehicleEnterDataSection" />
-		<!--  vq-results:NoHitData s:ref="d77e28-NoHit_vehicleIncomingQueryDataSection" /-->
+		<!-- vq-results:NoHitData s:ref="d77e28-NoHit_vehicleIncomingQueryDataSection" / -->
 	</vq-results:Message>
 	<!-- ******************************************************************************** -->
 	<!-- ncic-ex:NoHitData. -->
 	<!-- ******************************************************************************** -->
-	<!-- vq-results:NoHitData s:id="d77e28-NoHit_vehicleIncomingQueryDataSection">
-		<nc:CaveatText>**TEST**THIS RESPONSE IS FROM NCIC TEST SYSTEM.</nc:CaveatText>
-		<nc:CaveatText>VERIFY VIN/WDBBA48D1GA051451; IT DOES NOT CONFORM TO VIN STANDARDS FOR 1981 AND LATER VEHICLES</nc:CaveatText>
-		<nc:CaveatText>NO RECORD VIN-SER-OAN</nc:CaveatText>
-		<vq-results-ext:VehicleRecord s:ref="VehicleRecordData" />
-	</vq-results:NoHitData -->
+	<!-- vq-results:NoHitData s:id="d77e28-NoHit_vehicleIncomingQueryDataSection"> <nc:CaveatText>**TEST**THIS RESPONSE IS FROM NCIC 
+		TEST SYSTEM.</nc:CaveatText> <nc:CaveatText>VERIFY VIN/WDBBA48D1GA051451; IT DOES NOT CONFORM TO VIN STANDARDS FOR 1981 AND LATER 
+		VEHICLES</nc:CaveatText> <nc:CaveatText>NO RECORD VIN-SER-OAN</nc:CaveatText> <vq-results-ext:VehicleRecord s:ref="VehicleRecordData" 
+		/> </vq-results:NoHitData -->
 	<!-- ******************************************************************************** -->
 	<!-- vq-results:IncomingRecordData (enter). -->
 	<!-- ******************************************************************************** -->
@@ -112,7 +110,7 @@
 		</j:ItemNCICIdentification>
 		<!-- Vehicle and Vehicle Registration Info Association -->
 		<j:ConveyanceRegistrationAssociation>
-			<j:ItemRegistration s:ref="VehicleLicensePlateInfo" />
+			<j:ItemRegistration s:ref="VehicleRegistrationInfo" />
 			<nc:Item s:ref="PrimaryVehicleInfo" />
 			<j:ItemRegistrationHolder s:ref="person_registrantPerson" />
 		</j:ConveyanceRegistrationAssociation>
@@ -129,24 +127,8 @@
 	<!-- ******************************************************************************** -->
 	<nc:Address s:id="PersonResidence">
 		<nc:LocationStreet>
-			<!-- SNU - Street number -->
-			<nc:StreetNumberText>8001</nc:StreetNumberText>
-			<!-- SNA - Street name -->
-			<nc:StreetName>LINCOLN BOULEVARD</nc:StreetName>
-		</nc:LocationStreet>
-		<!-- CTY - City name -->
-		<nc:LocationCityName>BETHESDA</nc:LocationCityName>
-		<!-- STA - State name -->
-		<j:LocationStateNCICLSTACode>MD</j:LocationStateNCICLSTACode>
-		<!-- ZIP - Zip code -->
-		<nc:LocationPostalCode>30001</nc:LocationPostalCode>
-	</nc:Address>
-	<!-- ******************************************************************************** -->
-	<!-- nc:Address. (Vehicle Registrant Mailing) -->
-	<!-- ******************************************************************************** -->
-	<nc:Address s:id="PersonMailingAddress">
-		<nc:LocationStreet>
 			<!-- ADD StreetFullText -->
+			<nc:StreetFullText>8001 LINCOLN BOULEVARD</nc:StreetFullText>
 			<!-- SNU - Street number -->
 			<nc:StreetNumberText>8001</nc:StreetNumberText>
 			<!-- SNA - Street name -->
@@ -155,7 +137,7 @@
 		<!-- CTY - City name -->
 		<nc:LocationCityName>BETHESDA</nc:LocationCityName>
 		<!-- STA - State name -->
-		<j:LocationStateNCICLSTACode>MD</j:LocationStateNCICLSTACode>
+		<nc:LocationStateName>MD</nc:LocationStateName>
 		<!-- ZIP - Zip code -->
 		<nc:LocationPostalCode>30001</nc:LocationPostalCode>
 	</nc:Address>
@@ -163,7 +145,22 @@
 	<!-- nc:ContactInformation. (RegistrantPerson) -->
 	<!-- ******************************************************************************** -->
 	<nc:ContactInformation s:id="PersonContactInfo">
-		<nc:ContactMailingAddress s:ref="PersonMailingAddress" />
+		<nc:ContactMailingAddress>
+			<nc:LocationStreet>
+				<!-- ADD StreetFullText -->
+				<nc:StreetFullText>8001 LINCOLN BOULEVARD</nc:StreetFullText>
+				<!-- SNU - Street number -->
+				<nc:StreetNumberText>8001</nc:StreetNumberText>
+				<!-- SNA - Street name -->
+				<nc:StreetName>LINCOLN BOULEVARD</nc:StreetName>
+			</nc:LocationStreet>
+			<!-- CTY - City name -->
+			<nc:LocationCityName>BETHESDA</nc:LocationCityName>
+			<!-- STA - State name -->
+			<nc:LocationStateName>MD</nc:LocationStateName>
+			<!-- ZIP - Zip code -->
+			<nc:LocationPostalCode>30001</nc:LocationPostalCode>
+		</nc:ContactMailingAddress>
 	</nc:ContactInformation>
 	<!-- ******************************************************************************** -->
 	<!-- nc:Incident. (vehicle) -->
@@ -253,7 +250,7 @@
 			<nc:PersonGivenName>JOHN</nc:PersonGivenName>
 			<nc:PersonMiddleName>JACOB</nc:PersonMiddleName>
 			<nc:PersonSurName>JONES</nc:PersonSurName>
-			<!-- ADD Suffix -->
+			<nc:PersonNameSuffixText>Jr</nc:PersonNameSuffixText>
 		</nc:PersonName>
 		<!-- SEX - Sex -->
 		<j:PersonSexCode>M</j:PersonSexCode>
@@ -267,6 +264,15 @@
 			<nc:Address s:ref="PersonResidence" />
 		</nc:Location>
 	</nc:PersonResidenceAssociation>
+	<!-- ******************************************************************************** -->
+	<!-- nc:Person Contact Information Association. -->
+	<!-- ******************************************************************************** -->
+	<nc:ContactInformationAssociation>
+		<nc:ContactEntity>
+			<nc:EntityPerson s:ref="person_registrantPerson" />
+		</nc:ContactEntity>
+		<nc:ContactInformation s:ref="PersonContactInfo" />
+	</nc:ContactInformationAssociation>
 	<!-- ******************************************************************************** -->
 	<!-- nc:Vehicle. (image) -->
 	<!-- ******************************************************************************** -->
@@ -323,9 +329,12 @@
 				<j:ImageCategoryCode>V</j:ImageCategoryCode>
 			</j:ImageAugmentation>
 		</nc:ItemImage>
+		<!-- Vehicle model name -->
+		<nc:ItemModelName>Vehicle Model Name</nc:ItemModelName>
 		<!-- VYR - Vehicle year -->
 		<nc:ItemModelYearDate>2006</nc:ItemModelYearDate>
 		<!-- VST - Vehicle style -->
+		<nc:ItemStyleText>Vehicle Style</nc:ItemStyleText>
 		<vq-results-ext:VehicleStyleCode>4D</vq-results-ext:VehicleStyleCode>
 		<nc:VehicleIdentification>
 			<!-- VIN - Vehicle identification number -->
@@ -356,11 +365,30 @@
 	<!-- ******************************************************************************** -->
 	<!-- j:ConveyanceRegistration. -->
 	<!-- ******************************************************************************** -->
-	<j:ConveyanceRegistration s:id="VehicleLicensePlateInfo">
+	<j:ConveyanceRegistration s:id="VehicleRegistrationInfo">
+		<j:RegistrationIdentification>
+			<nc:IdentificationID>nc:IdentificationID</nc:IdentificationID>
+			<nc:IdentificationJurisdiction>
+				<j:LocationStateNCICLISCode>00</j:LocationStateNCICLISCode>
+			</nc:IdentificationJurisdiction>
+		</j:RegistrationIdentification>
+		<j:RegistrationEffectiveDate>
+			<nc:Date>2001-12-31</nc:Date>
+		</j:RegistrationEffectiveDate>
+		<j:RegistrationExpirationDate>
+			<nc:Date>2001-12-31</nc:Date>
+		</j:RegistrationExpirationDate>
+		<j:RegistrationStatus>
+			<vq-results-ext:StateRegistrationStatusFieldName></vq-results-ext:StateRegistrationStatusFieldName>
+			<vq-results-ext:StateRegistrationStatusFieldValue></vq-results-ext:StateRegistrationStatusFieldValue>
+		</j:RegistrationStatus>
 		<j:ConveyanceRegistrationDecal>
 			<!-- LIY - License plate year of expiration -->
 			<nc:DecalYearDate>1999</nc:DecalYearDate>
 		</j:ConveyanceRegistrationDecal>
+		<j:ConveyanceRegistrationGrossWeightMeasure>
+			<nc:MeasureValueText>Vehicle Weight</nc:MeasureValueText>
+		</j:ConveyanceRegistrationGrossWeightMeasure>
 		<j:ConveyanceRegistrationPlateIdentification>
 			<!-- LIC - License plate number -->
 			<nc:IdentificationID>DOE345</nc:IdentificationID>
@@ -369,6 +397,7 @@
 				<j:JurisdictionNCICLSTACode>AZ</j:JurisdictionNCICLSTACode>
 			</nc:IdentificationJurisdiction>
 		</j:ConveyanceRegistrationPlateIdentification>
+		<j:ConveyanceRegistrationPlateCategoryText>Vehicle Plate Type</j:ConveyanceRegistrationPlateCategoryText>
 		<!-- LIT - License plate type -->
 		<vq-results-ext:ConveyanceRegistrationPlateCategoryCode>SC</vq-results-ext:ConveyanceRegistrationPlateCategoryCode>
 	</j:ConveyanceRegistration>

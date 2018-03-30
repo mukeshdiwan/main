@@ -25,7 +25,7 @@
 	</xsd:import>
 	<xsd:complexType name="VehicleRecordType">
 		<xsd:annotation>
-			<xsd:documentation>A data type to structure data for a NCIC vehicle record.
+			<xsd:documentation>A data type to structure data for a OSMS vehicle record.
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
@@ -37,7 +37,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="ConveyanceRecordType">
 		<xsd:annotation>
-			<xsd:documentation>A data type to structure data that identifies a specific record in NCIC.
+			<xsd:documentation>A data type to structure data that identifies a specific record in OSMS.
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
@@ -51,7 +51,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="RecordType">
 		<xsd:annotation>
-			<xsd:documentation>A data type to structure data that identifies a specific record in NCIC.
+			<xsd:documentation>A data type to structure data that identifies a specific record in OSMS.
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
@@ -63,7 +63,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="MessageInterfacingOrganizationType">
 		<xsd:annotation>
-			<xsd:documentation>A data type to structure data in a NCIC Message.</xsd:documentation>
+			<xsd:documentation>A data type to structure data in a OSMS Message.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="s:ObjectType">
@@ -75,7 +75,7 @@
 	</xsd:complexType>
 	<xsd:element name="MessageDateTime" type="niem-xsd:dateTime">
 		<xsd:annotation>
-			<xsd:documentation>Data pertaining to a given NCIC message.</xsd:documentation>
+			<xsd:documentation>Data pertaining to a given OSMS message.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:element name="MessageIdentification" type="nc:IdentificationType">
@@ -109,7 +109,7 @@
 	</xsd:element>
 	<xsd:element name="VehicleRecord" type="vq-request-ext:VehicleRecordType" substitutionGroup="vq-request-ext:Record">
 		<xsd:annotation>
-			<xsd:documentation>data pertaining to a NCIC vehicle record.</xsd:documentation>
+			<xsd:documentation>data pertaining to a OSMS vehicle record.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:element name="VehicleMakeCodeText" type="nc:TextType" substitutionGroup="nc:VehicleMake">
@@ -125,7 +125,7 @@
 	</xsd:element>
 	<xsd:element name="Record" type="vq-request-ext:RecordType" abstract="false">
 		<xsd:annotation>
-			<xsd:documentation>Abstract data pertaining to an NCIC record.</xsd:documentation>
+			<xsd:documentation>Abstract data pertaining to an OSMS record.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<!-- ********************************************************* -->

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/niem-core/3.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:fips_10-4="http://release.niem.gov/niem/codes/fips_10-4/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<xs:schema targetNamespace="http://release.niem.gov/niem/niem-core/3.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:fips_10-4="http://release.niem.gov/niem/codes/fips_10-4/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>NIEM Core.</xs:documentation>
   </xs:annotation>
@@ -31,6 +31,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
+          <xs:element ref="nc:AddressFullText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AddressDeliveryPoint" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationCityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationCounty" minOccurs="0" maxOccurs="unbounded"/>
@@ -500,6 +501,7 @@
           <xs:element ref="nc:PersonGivenName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonMiddleName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonSurName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonNameSuffixText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonFullName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonNameCategory" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -642,6 +644,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
+          <xs:element ref="nc:StreetFullText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:StreetNumberText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:StreetName" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -782,6 +785,11 @@
   <xs:element name="AddressDeliveryPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a single place or unit at which mail is delivered.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AddressFullText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A complete address.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Amount" type="niem-xs:decimal" nillable="true">
@@ -1189,6 +1197,11 @@
       <xs:documentation>A data concept for a style of an item.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ItemStyleText" type="nc:TextType" substitutionGroup="nc:ItemStyle">
+    <xs:annotation>
+      <xs:documentation>A style of a property item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ItemUsageText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A manner or way in which an item is used.</xs:documentation>
@@ -1312,6 +1325,11 @@
   <xs:element name="LocationStateFIPS10-4InternationalCode" type="fips_10-4:InternationalStateCodeType" substitutionGroup="nc:LocationState" nillable="true">
     <xs:annotation>
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationStateName" type="nc:ProperNameTextType" substitutionGroup="nc:LocationState">
+    <xs:annotation>
+      <xs:documentation>A name of a state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationStreet" type="nc:StreetType" substitutionGroup="nc:AddressDeliveryPoint" nillable="true">
@@ -1539,6 +1557,11 @@
       <xs:documentation>A kind of person name.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="PersonNameSuffixText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A term appended after the family name that qualifies the name.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="PersonOrganizationAssociation" type="nc:PersonOrganizationAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between a person and an organization.</xs:documentation>
@@ -1702,6 +1725,11 @@
   <xs:element name="StatusText" type="nc:TextType" substitutionGroup="nc:StatusDesignator" nillable="true">
     <xs:annotation>
       <xs:documentation>A status or condition of something or someone.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StreetFullText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A complete reference for a street.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="StreetName" type="nc:ProperNameTextType" nillable="true">

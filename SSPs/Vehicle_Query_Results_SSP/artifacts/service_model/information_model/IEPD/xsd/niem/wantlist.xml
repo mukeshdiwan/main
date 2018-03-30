@@ -32,6 +32,10 @@
     w:isReference="false" w:nillable="true"/>
   <w:Element w:name="j:ConveyanceRegistrationDecal"
     w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="j:ConveyanceRegistrationPlateCategory"
+    w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="j:ConveyanceRegistrationPlateCategoryText"
+    w:isReference="false" w:nillable="false"/>
   <w:Element w:name="j:ConveyanceRegistrationPlateIdentification"
     w:isReference="false" w:nillable="true"/>
   <w:Element w:name="j:CourtOrderServiceDate" w:isReference="false" w:nillable="true"/>
@@ -61,6 +65,7 @@
     w:isReference="false" w:nillable="true"/>
   <w:Element w:name="j:Jewelry" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="j:JewelryCategoryText" w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="j:JurisdictionNCICLISCode" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="j:JurisdictionNCICLSTACode" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="j:LocationCategoryCode" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="j:LocationStateNCICLISCode" w:isReference="false" w:nillable="true"/>
@@ -162,12 +167,15 @@
   <w:Element w:name="nc:ItemColor" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:ItemEntityAssociation" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:ItemImage" w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="nc:ItemStyle" w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="nc:ItemStyleText" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="nc:JurisdictionText" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:LastUpdatedDate" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:LocationCountryName" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:LocationCountyName" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:LocationStateFIPS10-4InternationalCode"
     w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="nc:LocationStateName" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="nc:LocationStreet" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:MeasureValueText" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:Organization" w:isReference="false" w:nillable="true"/>
@@ -4256,10 +4264,12 @@
       w:name="j:ConveyanceRegistrationStatusAugmentationPoint"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
-  <w:Type w:name="j:ConveyanceRegistrationType" w:isRequested="false">
+  <w:Type w:name="j:ConveyanceRegistrationType" w:isRequested="true">
     <w:ElementInType w:name="nc:Conveyance" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="j:ConveyanceRegistrationDecal"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="j:ConveyanceRegistrationGrossWeightMeasure"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType
       w:name="j:ConveyanceRegistrationPlateIdentification"
@@ -4382,7 +4392,18 @@
       w:name="j:ItemRegistrationAssociationAugmentationPoint"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
-  <w:Type w:name="j:ItemRegistrationType" w:isRequested="true"/>
+  <w:Type w:name="j:ItemRegistrationType" w:isRequested="true">
+    <w:ElementInType w:name="j:RegistrationIdentification"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="j:RegistrationEffectiveDate"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="j:RegistrationExpirationDate"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:JurisdictionAbstract"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="j:RegistrationStatus" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
   <w:Type w:name="j:JewelryType" w:isRequested="false">
     <w:ElementInType w:name="j:JewelryCategory" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
@@ -4609,6 +4630,8 @@
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
   <w:Type w:name="nc:AddressType" w:isRequested="false">
+    <w:ElementInType w:name="nc:AddressFullText" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="nc:AddressDeliveryPoint"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="nc:LocationCityName" w:isReference="false"
@@ -4666,7 +4689,7 @@
     <w:ElementInType w:name="nc:ContactInformation"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
-  <w:Type w:name="nc:ContactInformationType" w:isRequested="false">
+  <w:Type w:name="nc:ContactInformationType" w:isRequested="true">
     <w:ElementInType w:name="nc:ContactMeans" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="nc:ContactEntity" w:isReference="false"
@@ -4760,7 +4783,7 @@
     <w:ElementInType w:name="nc:Item" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
-  <w:Type w:name="nc:ItemType" w:isRequested="false">
+  <w:Type w:name="nc:ItemType" w:isRequested="true">
     <w:ElementInType w:name="nc:ItemDescriptionText"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="nc:ItemOwner" w:isReference="false"
@@ -4876,6 +4899,8 @@
       w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="nc:PersonSurName" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:PersonNameSuffixText"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="nc:PersonFullName" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="nc:PersonNameCategory"
@@ -4973,6 +4998,8 @@
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
   <w:Type w:name="nc:StreetType" w:isRequested="false">
+    <w:ElementInType w:name="nc:StreetFullText" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="nc:StreetNumberText" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="nc:StreetName" w:isReference="false"
